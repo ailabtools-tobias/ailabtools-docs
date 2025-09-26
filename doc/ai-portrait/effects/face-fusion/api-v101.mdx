@@ -1,0 +1,76 @@
+---
+title: "Merge Portraits - API:V1.0.1"
+description: "Based on computer vision technologies such as 3D face/GAN, the image fusion operation is performed on the portraits in the stencil and fusion maps, and the fused image is returned."
+---
+import apiOfflineNotice from '/snippets/api-offline-notice.mdx';
+
+<apiOfflineNotice />
+
+## Request
+
+- **URL**: `https://www.ailabapi.com/api/portrait/effects/face-fusion`
+- **Method**: `POST`
+- **Content-Type**: `multipart/form-data`
+
+### Image requirements
+
+| Field            | Requirements                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
+|:-----------------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `image_target`   | `Image format: `JPEG` `JPG` `BMP` `PNG``, `Image size: No more than 4 MB.`, `Image resolution: Larger than 50x50px, smaller than 2048x2048px.`, `Face pixel size: To ensure the fusion effect, it is recommended that the minimum value of the side length of the face box (square) in the image is not less than 200px.`, `Face quality: The higher the face quality, the better the fusion effect.`, `Factors affecting face quality include: occlusion of the five facial features, improper lighting (bright light, dark light, backlighting), excessive face angle (recommended yaw ≤ ±20°, pitch ≤ ±20°), etc.`, `Black and white images are not supported.` |
+| `image_template` | `Image format: `JPG` `JPEG``, `Image size: No more than 4 MB.`, `Image resolution: Larger than 200x200px, smaller than 1280x1280px.`, `Note that for special face materials, such as cartoon style images with large eyes, the original key point results will be deviated, and should be made accurate by dragging the position in the configuration tool. Most normal images are already very accurate and do not need to be adjusted.`, `The pixel area of the face in the image should not be too small (at least 200x200px, too small to change the face will not be clear), nor too large (the pixel size of the face area and speed is positively correlated, too large will affect the server speed and increase costs).`, `Pay attention to the quality of the material, make sure the face is clear enough, there should be no noise caused by compression, otherwise it will reduce the quality of the face replacement result.`, `For better results, the face of the material should be as positive as possible, with the highest yaw angle required (within plus or minus 10 degrees recommended), followed by the pitch angle (within plus or minus 20 degrees recommended), and the roll angle (within plus or minus 30 degrees).` |
+
+### Headers
+
+| Field              | Required | Type     | Description                                        |
+|:-------------------|:---------|:---------|:---------------------------------------------------|
+| `ailabapi-api-key` | YES      | `string` | Application API KEY. [Get API KEY](/doc/get-api-key) |
+
+### Body
+
+| Field               | Required | Type    | Scope  | Description                                                                                                                                                                                |
+|:--------------------|:---------|:--------|:-------|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `image_target`      | YES      | `file`  |        | Target image.                                                                                                                                                                              |
+| `image_template`    | YES      | `file`  |        | Template images.                                                                                                                                                                           |
+| `source_similarity` | NO       | `float` | [0, 1] | ``0`: Consistent with the original template.`, ``1`: Maximum similarity with the target image.` |
+
+## Response
+
+**Response Field Handling Flow**
+
+1. **Handle `Public Response Fields`**
+
+   Parse and validate the `Public Response Fields`, checking the status code or response message to ensure the request is successful and error-free.
+
+2. **Handle `Business Response Fields`**
+
+   If the `Public Response Fields` are valid and error-free, proceed with processing the business logic in the `Business Response Fields`.
+
+### Public Response Fields
+
+<a href="/doc/response-description" target="_blank">Viewing Public Response Fields and Error Codes</a>
+
+### Business Response Fields
+
+| Field    | Type     | Description                                                   |
+|:---------|:---------|:--------------------------------------------------------------|
+| `data`   | `object` | The content of the result data returned.                      |
+| +`image` | `string` | The result image, returning the Base64 encoding of the image. |
+
+### Response Example
+
+```json
+,
+  "data":           
+}
+```
+
+## Sample Code
+
+**[👉 Online Experience 👈**(https://www.ailabtools.com/portrait-face-fusion-example)]
+
+If you'd like to see the actual effects, please visit the experience page for a trial.
+
+- [Introduction to Get Sample Code](get-sample-code)
+- [Sample Code][PostmanURL]
+
+[PostmanURL]: https://documenter.getpostman.com/view/26387069/2s93JxqgHE#b2d172b0-46c9-455c-9d98-aa8495fa3b33

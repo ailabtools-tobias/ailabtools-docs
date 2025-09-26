@@ -1,0 +1,138 @@
+---
+title: "Degree & Score"
+description: "Accurate analysis of skin status, such as skin color , skin type, double eyelids, eye pouch, dark circles, wrinkles, acne and skin spots."
+---
+
+## `total_score`: Total Score
+
+- Formulas: ((`wrinkle_score` + `pores_score` + `blackhead_score` + `acne_score` + `melanin_score`) * 1.2 + (`water_score` + `oily_intensity_score` + `rough_score`) * 0.5 + `sensitivity_score` + `dark_circle_score`) / 10
+
+|               | Poor     | Fair     | Good     | Excellent |
+|:--------------|:---------|:---------|:---------|:----------|
+| Scoring range | [70, 75] | [76, 87] | [88, 94] | [95, 100] |
+
+## Pores Score
+
+|               | Severe   | Moderate | Mild     | None      |
+|:--------------|:---------|:---------|:---------|:----------|
+| Scoring range | [30, 49] | [50, 69] | [70, 89] | [90, 100] |
+
+### `pores_type_score`.`pores_forehead_score`: Forehead Pore Score
+
+- Formulas: 100 - (`enlarged_pore_count.forehead_count` * 0.1)
+
+### `pores_type_score`.`pores_rightcheek_score`: Right Cheek Pore Score
+
+- Formulas: 100 - (`enlarged_pore_count.right_cheek_count` * 0.22)
+
+### `pores_type_score`.`pores_leftcheek_score`: Left Cheek Pore Score
+
+- Formulas: 100 - (`enlarged_pore_count.left_cheek_count` * 0.22)
+
+### `pores_type_score`.`pores_jaw_score`: Jaw Pore Score
+
+- Formulas: 100 - (`enlarged_pore_count.chin_count` * 0.16)
+
+### `pores_score`: Total Score
+
+- Formulas: (`pores_type_score.pores_forehead_score` + `pores_type_score.pores_rightcheek_score` + `pores_type_score.pores_leftcheek_score` + `pores_type_score.pores_jaw_score`) / 4
+
+## `blackhead_score`: Blackheads Score
+
+- One blackhead ≈ 0.3
+- Formulas: 100 - (`blackhead_count` * 0.3)
+
+|                   | None      | Mild      | Moderate   | Severe   |
+|:------------------|:----------|:----------|:-----------|:---------|
+| `blackhead_count` | [0, 30]   | [31, 100] | [101, 160] | [161, +] |
+| Scoring range     | [100, 90] | [89, 70]  | [69, 50]   | [49, 30] |
+
+## `acne_score`: Acne Score
+
+- Formulas: 100 - (`closed_comedones`.`count` * 1.7) - (`acne`.`count` * 2.4) - (`acne_pustule`.`count` * 4.8) - (`acne_nodule`.`count` * 9.8)
+
+|               | Severe   | Moderate | Mild     | None      |
+|:--------------|:---------|:---------|:---------|:----------|
+| Scoring range | [30, 49] | [50, 69] | [70, 89] | [90, 100] |
+
+## `wrinkle_score`: Wrinkle Score
+
+|               | Severe   | Moderate | Mild     | None      |
+|:--------------|:---------|:---------|:---------|:----------|
+| Scoring range | [30, 49] | [50, 69] | [70, 89] | [90, 100] |
+
+## Dark Circles Score
+
+|               | Severe   | Moderate | Mild     | None      |
+|:--------------|:---------|:---------|:---------|:----------|
+| Scoring range | [30, 49] | [50, 69] | [70, 89] | [90, 100] |
+
+### Severity score
+
+|                                                             | None | Mild | Moderate | Severe |
+|:------------------------------------------------------------|:-----|:-----|:---------|:-------|
+| `dark_circle_pigment` (Left & Right Pigmented Dark Circles) | 0    | 7    | 11       | 16     |
+| `dark_circle_rete` (Left & Right Vascularized Dark Circles) | 0    | 9    | 15       | 20     |
+| `dark_circle_structura` (Left & Right Shaded Dark Circles)  | 0    | 11   | 19       | 28     |
+
+### `dark_circle_type_score`.`left_dark_circle_score`: Left Eye Dark Circle Score
+
+- Formulas: 100 - Severity score
+
+### `dark_circle_type_score`.`right_dark_circle_score`: Right Eye Dark Circle Score
+
+- Formulas: 100 - Severity score
+
+### `dark_circle_score`: Total Score
+
+- Formulas: 100 - (100 - `dark_circle_type_score`.`left_dark_circle_score`) - (100 - `dark_circle_type_score`.`right_dark_circle_score`)
+
+## `skin_type_score`: Skin Quality Score
+
+- Formulas: 100 - (`water_score` + `oily_intensity_score`) / 2
+
+| Skin Type     | Neutral skin | Dry skin | Combination skin | Oily skin |
+|:--------------|:-------------|:---------|:-----------------|:----------|
+| Scoring range | [1, 15]      | [16, 40] | [41, 60]         | [61, 100] |
+
+## `water_score`: Skin Moisture Score
+
+- Formulas: 100 - (`water`.`water_severity`)
+
+|                      | None      | Mild       | Moderate    | Severe    |
+|:---------------------|:----------|:-----------|:------------|:----------|
+| `water`.`water_area` | [0, 0.09] | [0.1, 0.3] | [0.31, 0.6] | [0.61, +] |
+| Scoring range        | [100, 90] | [89, 70]   | [69, 50]    | [49, 30]  |
+
+## `sensitivity_score`: Sensitivity Score
+
+- Formulas: 100 - (`sensitivity`.`sensitivity_intensity`)
+
+|                                  | None      | Mild       | Moderate    | Severe    |
+|:---------------------------------|:----------|:-----------|:------------|:----------|
+| `sensitivity`.`sensitivity_area` | [0, 0.09] | [0.1, 0.3] | [0.31, 0.6] | [0.61, +] |
+| Scoring range                    | [100, 90] | [89, 70]   | [69, 50]    | [49, 30]  |
+
+## `melanin_score`: Melanin Score
+
+- Formulas: 100 - (`melanin`.`melanin_concentration`)
+
+|                        | None      | Mild       | Moderate    | Severe    |
+|:-----------------------|:----------|:-----------|:------------|:----------|
+| `melanin`.`brown_area` | [0, 0.09] | [0.1, 0.3] | [0.31, 0.6] | [0.61, +] |
+| Scoring range          | [100, 90] | [89, 70]   | [69, 50]    | [49, 30]  |
+
+## `rough_score`: Skin Roughness Score
+
+- Formulas: 100 - (`rough`.`rough_severity`)
+
+|                      | None      | Mild        | Moderate    | Severe    |
+|:---------------------|:----------|:------------|:------------|:----------|
+| `rough`.`rough_area` | [0, 0.06] | [0.07, 0.2] | [0.21, 0.5] | [0.51, +] |
+| Scoring range        | [100, 90] | [89, 70]    | [69, 50]    | [49, 30]  |
+
+## `oily_intensity_score`: Oily Score
+
+|               | None      | Mild     | Moderate | Severe   |
+|:--------------|:----------|:---------|:---------|:---------|
+| Scoring range | [100, 90] | [89, 70] | [69, 50] | [49, 30] |

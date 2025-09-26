@@ -1,0 +1,396 @@
+---
+title: "AI Cartoon Generator - API:V1.0.0"
+description: "AI Cartoon Generator utilizes the technology of generative models to automatically generate cartoon-style images in different styles. This technology can create cartoonized images with the same resolution as the input image and specific cartoon styles, and supports users to choose from a variety of cartoon styles. It is worth mentioning that even for the same image and style, each generated image is unique. The tool provides users with dozens of cartoon style options to choose from."
+---
+
+import apiOfflineNotice from '/snippets/api-offline-notice.mdx';
+
+<apiOfflineNotice />
+
+## Request
+
+- **URL**: `https://www.ailabapi.com/api/image/effects/ai-anime-generator`
+- **Method**: `POST`
+- **Content-Type**: `multipart/form-data`
+
+### Image requirements
+
+- **Image format**: `JPEG` `PNG` `JPG` `BMP` `WEBP`
+- **Image size**: No more than 10 MB.
+- Can support any resolution output, to ensure the generation quality, it is recommended that the image resolution does
+  not exceed 1280x720px.
+
+### Headers
+
+| Field              | Required | Type     | Description                                        |
+|:-------------------|:---------|:---------|:---------------------------------------------------|
+| `ailabapi-api-key` | YES      | `string` | Application API KEY. [Get API KEY](/doc/get-api-key) |
+
+### Body
+
+| Field   | Required | Type     | Description                           |
+|:--------|:---------|:---------|:--------------------------------------|
+| `image` | YES      | `file`   |                                       |
+| `type`  | YES      | `string` | Style. [Range of values](#typeValues) |
+
+#### The range of `type` values. 
+
+<table>
+  <tr>
+    <th>Category</th>
+    <th>Value</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    
+    <td>default</td>
+    <td>Auto</td>
+  </tr>
+  <tr>
+    <td>Male photo</td>
+    <td>boy-0</td>
+    <td>Basic I</td>
+  </tr>
+  <tr>
+    <td>boy-1</td>
+    <td>Literary I</td>
+  </tr>
+  <tr>
+    <td>boy-2</td>
+    <td>Literary II</td>
+  </tr>
+  <tr>
+    <td>boy-3</td>
+    <td>Sports</td>
+  </tr>
+  <tr>
+    <td>boy-4</td>
+    <td>Beautification</td>
+  </tr>
+  <tr>
+    <td>boy-5</td>
+    <td>Mature and steady</td>
+  </tr>
+  <tr>
+    <td>boy-6</td>
+    <td>Ink wash painting</td>
+  </tr>
+  <tr>
+    <td>boy-7</td>
+    <td>Oil painting</td>
+  </tr>
+  <tr>
+    <td>boy-8</td>
+    <td>Detail enhancement</td>
+  </tr>
+  <tr>
+    <td>boy-9</td>
+    <td>Sunny boy</td>
+  </tr>
+  <tr>
+    <td>boy-10</td>
+    <td>Skin beautification</td>
+  </tr>
+  <tr>
+    <td>boy-11</td>
+    <td>Face slimming</td>
+  </tr>
+  <tr>
+    <td>boy-12</td>
+    <td>Aestheticism</td>
+  </tr>
+  <tr>
+    <td>boy-13</td>
+    <td>Violet</td>
+  </tr>
+  <tr>
+    <td>boy-14</td>
+    <td>Marvel</td>
+  </tr>
+  <tr>
+    <td>boy-15</td>
+    <td>Makoto Shinkai</td>
+  </tr>
+  <tr>
+    <td>boy-16</td>
+    <td>Zelda</td>
+  </tr>
+  <tr>
+    <td>boy-17</td>
+    <td>Genshin Impact</td>
+  </tr>
+  <tr>
+    <td>boy-18</td>
+    <td>Japanese kimono</td>
+  </tr>
+  <tr>
+    <td>boy-19</td>
+    <td>Saint Seiya</td>
+  </tr>
+  <tr>
+    <td>boy-20</td>
+    <td>Chinese Hanfu</td>
+  </tr>
+  <tr>
+    <td>boy-21</td>
+    <td>Yoshihiro Togashi</td>
+  </tr>
+  <tr>
+    <td>boy-22</td>
+    <td>Akira Toriyama</td>
+  </tr>
+  <tr>
+    <td>boy-23</td>
+    <td>One Piece</td>
+  </tr>
+  <tr>
+    <td>boy-24</td>
+    <td>Smile I</td>
+  </tr>
+  <tr>
+    <td>boy-25</td>
+    <td>Smile II</td>
+  </tr>
+  <tr>
+    <td>boy-26</td>
+    <td>Basic II</td>
+  </tr>
+  <tr>
+    <td>boy-27</td>
+    <td>Big eyes</td>
+  </tr>
+  <tr>
+    <td>Male group photo</td>
+    <td>boys-0</td>
+    <td>Basic I</td>
+  </tr>
+  <tr>
+    <td>boys-1</td>
+    <td>Basic II</td>
+  </tr>
+  <tr>
+    <td>Photos of women</td>
+    <td>girl-0</td>
+    <td>Sweet</td>
+  </tr>
+  <tr>
+    <td>girl-1</td>
+    <td>Loli</td>
+  </tr>
+  <tr>
+    <td>girl-2</td>
+    <td>Beautification I</td>
+  </tr>
+  <tr>
+    <td>girl-3</td>
+    <td>Beautification + Big eyes</td>
+  </tr>
+  <tr>
+    <td>girl-4</td>
+    <td>Beautification + Smile</td>
+  </tr>
+  <tr>
+    <td>girl-5</td>
+    <td>Beautification II</td>
+  </tr>
+  <tr>
+    <td>girl-6</td>
+    <td>Gaming</td>
+  </tr>
+  <tr>
+    <td>girl-7</td>
+    <td>Anime, comics and games (ACG)</td>
+  </tr>
+  <tr>
+    <td>girl-8</td>
+    <td>ACG + Big eyes</td>
+  </tr>
+  <tr>
+    <td>girl-9</td>
+    <td>ACG + Smile</td>
+  </tr>
+  <tr>
+    <td>girl-10</td>
+    <td>ACG + Big eyes + Smile</td>
+  </tr>
+  <tr>
+    <td>girl-11</td>
+    <td>Detail enhancement I</td>
+  </tr>
+  <tr>
+    <td>girl-12</td>
+    <td>Color sketch</td>
+  </tr>
+  <tr>
+    <td>girl-13</td>
+    <td>Pure</td>
+  </tr>
+  <tr>
+    <td>girl-14</td>
+    <td>Detail enhancement II</td>
+  </tr>
+  <tr>
+    <td>girl-15</td>
+    <td>Genshin Impact</td>
+  </tr>
+  <tr>
+    <td>girl-16</td>
+    <td>Zelda</td>
+  </tr>
+  <tr>
+    <td>girl-17</td>
+    <td>Oil painting</td>
+  </tr>
+  <tr>
+    <td>girl-18</td>
+    <td>Makoto Shinkai</td>
+  </tr>
+  <tr>
+    <td>girl-19</td>
+    <td>The Snow Queen</td>
+  </tr>
+  <tr>
+    <td>girl-20</td>
+    <td>Alice in Wonderland</td>
+  </tr>
+  <tr>
+    <td>girl-21</td>
+    <td>Work attire</td>
+  </tr>
+  <tr>
+    <td>girl-22</td>
+    <td>Retro girl</td>
+  </tr>
+  <tr>
+    <td>girl-23</td>
+    <td>Chinese Hanfu</td>
+  </tr>
+  <tr>
+    <td>girl-24</td>
+    <td>Violet</td>
+  </tr>
+  <tr>
+    <td>girl-25</td>
+    <td>Elf</td>
+  </tr>
+  <tr>
+    <td>girl-26</td>
+    <td>Saint Seiya</td>
+  </tr>
+  <tr>
+    <td>girl-27</td>
+    <td>Wuxia</td>
+  </tr>
+  <tr>
+    <td>Group photo of women</td>
+    <td>girls-0</td>
+    <td>Basic</td>
+  </tr>
+  <tr>
+    <td>girls-1</td>
+    <td>Chinese Hanfu</td>
+  </tr>
+  <tr>
+    <td>girls-2</td>
+    <td>Beautification</td>
+  </tr>
+  <tr>
+    <td>girls-3</td>
+    <td>Detail enhancement</td>
+  </tr>
+  <tr>
+    <td>Group photo of multiple people</td>
+    <td>people-0</td>
+    <td>Basic I</td>
+  </tr>
+  <tr>
+    <td>people-1</td>
+    <td>Basic II</td>
+  </tr>
+  <tr>
+    <td>people-2</td>
+    <td>Basic III</td>
+  </tr>
+  <tr>
+    <td>Animals</td>
+    <td>pet-0</td>
+    <td>Basic I</td>
+  </tr>
+  <tr>
+    <td>pet-1</td>
+    <td>Basic II</td>
+  </tr>
+  <tr>
+    <td>pet-2</td>
+    <td>Basic III</td>
+  </tr>
+  <tr>
+    <td>Landscapes</td>
+    <td>scene-0</td>
+    <td>Basic</td>
+  </tr>
+  <tr>
+    <td>scene-1</td>
+    <td>Ed Mell</td>
+  </tr>
+  <tr>
+    <td>scene-2</td>
+    <td>Jessica Rossier</td>
+  </tr>
+  <tr>
+    <td>scene-3</td>
+    <td>Violet</td>
+  </tr>
+  <tr>
+    <td>scene-4</td>
+    <td>Ian McQue</td>
+  </tr>
+  <tr>
+    <td>scene-5</td>
+    <td>Alice in Wonderland</td>
+  </tr>
+</table>
+
+## Response
+
+**Response Field Handling Flow**
+
+1. **Handle `Public Response Fields`**
+
+   Parse and validate the `Public Response Fields`, checking the status code or response message to ensure the request is successful and error-free.
+
+2. **Handle `Business Response Fields`**
+
+   If the `Public Response Fields` are valid and error-free, proceed with processing the business logic in the `Business Response Fields`.
+
+### Public Response Fields
+
+<a href="/doc/response-description" target="_blank">Viewing Public Response Fields and Error Codes</a>
+
+### Business Response Fields
+
+| Field         | Type     | Scope | Description                                                                                       |
+|:--------------|:---------|:------|:--------------------------------------------------------------------------------------------------|
+| `data`        | `object` |       | The content of the result data returned.                                                          |
+| +`result_url` | `string` |       | Result URL address. <br/>**Return when the result of the query asynchronous task is successful.** |
+
+The URL address is a temporary address, valid for 24 hours, and will not be accessible after it expires. If you need to save the file for a long time or permanently, please visit the URL address within 24 hours and download the file to your own storage space.
+
+This API is asynchronous API, if the processing result `result_url` is not obtained in synchronous state, please keep `request_id` and call [`Querying Async Task Results`](ai-image/async-task-results/api) API to obtain the processing result.
+
+Asynchronous task results are valid for 30 minutes. It is recommended that asynchronous task results be queried every 5 seconds.
+
+### Response Example
+
+```json
+,
+  "data":           
+}
+```
+
+## Sample Code
+
+- [Introduction to Get Sample Code](get-sample-code)
+- [Sample Code][PostmanURL]
+
+[PostmanURL]: https://documenter.getpostman.com/view/26387069/2s93JxqgHE#f4c695a1-6b26-49d2-88c3-3f4825a1acfe

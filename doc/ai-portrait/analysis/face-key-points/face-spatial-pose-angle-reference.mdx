@@ -1,0 +1,11 @@
+---
+title: "Facial Landmarks - Face Spatial Pose Angle Reference"
+description: "Locate key points for faces in pictures and return the commonly used 72, 150, 201 face key point coordinate positions, including face outline, eyes, eyebrows, lips and nose outline, etc., which can be applied to beauty shooting, video stickers and other scenarios to enrich user play."
+---
+
+- The pose angle is divided into Pitch, Roll and Yaw, which are used to indicate the angle of the face in the spatial three-dimensional coordinate system and are often used to determine the threshold value of the recognition angle. The angle thresholds are as follows.
+  - **Pitch**: the pitch angle of three-dimensional rotation, range: [-90 (up), 90 (down)], the recommended absolute value of the pitch angle is not more than 20 degrees.
+  - **Roll**: In-plane rotation angle, range: [-180 (counterclockwise), 180 (clockwise)], the recommended absolute value of rotation angle is not more than 20 degrees.
+  - **Yaw**: three-dimensional rotation of the left and right rotation angle, range: [-90 (left), 90 (right)], the recommended absolute value of the rotation angle is not more than 20 degrees.
+- Schematic diagram of each angle range.
+  ![Schematic diagram of angle range](https://img.ailabtools.com/rapidapi/KeyPointsOfHumanFace/angle.png)

@@ -1,0 +1,92 @@
+---
+title: "AILabTools API - Age & Gender swap API"
+description: "Through the artificial intelligence algorithm, the facial attributes are edited to realize special effects such as gender exchange and age change, and generate a variety of special effects photos for users, which can be applied to interesting social situations."
+---
+
+## Request
+
+### Image requirements
+
+- **Image format**: `JPEG` `JPG` `PNG` `BMP`
+- **Image size**: No more than 4 MB.
+- **Image resolution**: Larger than 256x256px, smaller than 4096x4096px. The face area must be 64x64px or more.
+
+### Body
+
+#### Fixed Fields
+
+| Field             | Required | Type          | Scope                                                                                                              | Default | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
+|:------------------|:---------|:--------------|:-------------------------------------------------------------------------------------------------------------------|:--------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `image`           | YES      | `file`        |                                                                                                                    |         |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| `action_type`     | YES      | `string`      | ``TO_KID``, ``TO_OLD``, ``TO_FEMALE``, ``TO_MALE``, ``V2_AGE``, ``V2_GENDER`` |         | ``TO_KID`: V1 version becomes a child.`, ``TO_OLD`: V1 version becomes old man.`, ``TO_FEMALE`: V1 version becomes girls.`, ``TO_MALE`: V1 version becomes boys.`, ``V2_AGE`: V2 version age change.`, ``V2_GENDER`: v2 version gender shift.` |
+| `quality_control` | NO       | `string`      | ``NONE``, ``LOW``, ``NORMAL``, ``HIGH`` | `NONE`  | ``NONE`: No control is performed.`, ``LOW`: Lower quality requirements.`, ``NORMAL`: General quality requirements.`, ``HIGH`: Higher quality requirements.` |
+| `face_location`   | NO       | `json string` |                                                                                                                    |         | When multiple faces are detected in the image, use this parameter to specify the position of the face to be edited in the image, or default to the largest face in the image if not specified. [More Details](#face_location)                                                                                                                                                                                                                                                                                              |
+
+#### `action_type` === `V2_AGE`
+
+| Field    | Required | Type      | Scope   | Description |
+|:---------|:---------|:----------|:--------|:------------|
+| `target` | YES      | `integer` | [1, 85] | Age.        |
+
+#### `action_type` === `V2_GENDER`
+
+| Field    | Required | Type      | Scope                     | Description                                       |
+|:---------|:---------|:----------|:--------------------------|:--------------------------------------------------|
+| `target` | YES      | `integer` | ``0``, ``1`` | Gender. ``0`: Male.` ``1`: Female.` |
+
+#### `quality_control` 
+
+The quality control thresholds corresponding to different control systems: If any quality information detected does not meet the requirements of the control threshold, an error will be returned.
+
+| `quality_control` = `LOW` | `quality_control` = `NORMAL` | `quality_control` = `HIGH` | Scope                                      | Description                                                                                                                                     |
+|:--------------------------|:-----------------------------|:---------------------------|:-------------------------------------------|:------------------------------------------------------------------------------------------------------------------------------------------------|
+| `0.8`	                    | `0.6`                        | `0.2`                      | [0, 1]                                     | The proportion of the left eye being obscured. `1` indicates complete obstruction.                                                              |
+| `0.8`	                    | `0.6`                        | `0.2`                      | [0, 1]                                     | The proportion of the right eye being obscured. `1` indicates complete obstruction.                                                             |
+| `0.8`	                    | `0.6`                        | `0.2`                      | [0, 1]                                     | The proportion of the nose being obscured. `1` indicates complete obstruction.                                                                  |
+| `0.8`	                    | `0.6`                        | `0.2`                      | [0, 1]                                     | The proportion of the mouth being obscured. `1` indicates complete obstruction.                                                                 |
+| `0.8`	                    | `0.6`                        | `0.2`                      | [0, 1]                                     | The proportion of the left cheek being obscured. `1` indicates complete obstruction.                                                            |
+| `0.8`	                    | `0.6`                        | `0.2`                      | [0, 1]                                     | The proportion of the right cheek being obscured. `1` indicates complete obstruction.                                                           |
+| `0.8`	                    | `0.6`                        | `0.2`                      | [0, 1]                                     | The proportion of the chin being obscured. `1` indicates complete obstruction.                                                                  |
+| `20`                      | `40`                         | `100`                      | [0, 255]                                   | Lighting. `0` indicates poor lighting.                                                                                                          |
+| `0.8`	                    | `0.6`                        | `0.2`                      | [0, 1]                                     | Image blur. `1` indicates complete blur.                                                                                                        |
+| `0`                       | `0`                          | `1`                        | ``0``, ``1`` | Completeness of the face.  ``0`: The face overflows the image boundaries.` ``1`: The entire face is within the image boundaries.` |
+| `45`                      | `30`                         | `20`                       | [-90 (left), 90 (right)]                   | Left-right rotation angle in three-dimensional rotation. A threshold of 30 indicates that the absolute value of the angle must be within 30.    |
+| `45`                      | `30`                         | `20`                       | [-180 (counterclockwise), 180 (clockwise)] | Rotation angle within the plane. A threshold of 30 indicates that the absolute value of the angle must be within 30.                            |
+| `45`                      | `30`                         | `20`                       | [-90 (up), 90 (down)]                      | Pitch angle in three-dimensional rotation. A threshold of 30 indicates that the absolute value of the angle must be within 30.                  |
+
+#### `face_location` 
+
+- **Request Example**
+
+  ``
+
+## Response
+
+**Response Field Handling Flow**
+
+1. **Handle `Public Response Fields`**
+
+   Parse and validate the `Public Response Fields`, checking the status code or response message to ensure the request is successful and error-free.
+
+2. **Handle `Business Response Fields`**
+
+   If the `Public Response Fields` are valid and error-free, proceed with processing the business logic in the `Business Response Fields`.
+
+### Public Response Fields
+
+<a href="/doc/response-description" target="_blank">Viewing Public Response Fields and Error Codes</a>
+
+### Business Response Fields
+
+| Field    | Type     | Description                              |
+|:---------|:---------|:-----------------------------------------|
+| `result` | `object` | The content of the result data returned. |
+| +`image` | `string` | The BASE64 value of the edited image.    |
+
+### Response Example
+
+```json
+,
+  "result":         
+}
+```

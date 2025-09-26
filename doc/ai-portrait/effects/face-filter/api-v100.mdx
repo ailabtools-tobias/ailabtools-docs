@@ -1,0 +1,167 @@
+---
+title: "Face Filters - API:V1.0.0"
+description: "Introducing Face Filters – Face Filters is a revolutionary image editing tool that leverages AI to automatically transform image styles. Our algorithm empowers you to apply nearly a hundred special effects to your images and fine-tune filter intensity according to your preferences. With Face Filters, effortlessly tailor the overall style of your photos and achieve the perfect look. Give it a try today and uncover the remarkable capabilities of AI-driven editing!"
+---
+
+import apiOfflineNotice from '/snippets/api-offline-notice.mdx';
+
+<apiOfflineNotice />
+
+## Request
+
+- **URL**: `https://www.ailabapi.com/api/portrait/effects/face-filter`
+- **Method**: `POST`
+- **Content-Type**: `multipart/form-data`
+
+### Image requirements
+
+- **Image format**: `JPEG` `JPG` `PNG` `BMP`
+- **Image size**: No more than 3 MB.
+- **Image resolution**: Larger than 10x10px, smaller than 2000x2000px.
+
+### Headers
+
+| Field              | Required | Type     | Description                                        |
+|:-------------------|:---------|:---------|:---------------------------------------------------|
+| `ailabapi-api-key` | YES      | `string` | Application API KEY. [Get API KEY](/doc/get-api-key) |
+
+### Body
+
+| Field           | Required | Type     | Scope                   | Description                                   |
+|:----------------|:---------|:---------|:------------------------|:----------------------------------------------|
+| `image`         | YES      | `file`   |                         |                                               |
+| `resource_type` | YES      | `string` | [Scope](#resource_type) | Picture style. [More Details](#resource_type) |
+| `strength`      | YES      | `float`  | [0, 1.0]                | Filter intensity.                             |
+
+#### `resource_type` 
+
+| `resource_type` | Description     |
+|:----------------|:----------------|
+| `0`             | Default         |
+| `1`             | Sunflower       |
+| `2`             | Bellflower      |
+| `3`             | Kenting         |
+| `4`             | Dali            |
+| `5`             | Lijiang         |
+| `10001`         | White Tea       |
+| `10002`         | Fair Skin       |
+| `10003`         | Early Summer    |
+| `10004`         | Tokyo           |
+| `10005`         | Confession      |
+| `10006`         | Warm Sunshine   |
+| `10007`         | Rose            |
+| `10008`         | Clarity         |
+| `10009`         | Crystal Clear   |
+| `10010`         | Sweet Mint      |
+| `10011`         | Basic           |
+| `10012`         | Heartbeat       |
+| `10013`         | Muted Gray      |
+| `10014`         | Cherry Pudding  |
+| `10015`         | Natural         |
+| `10016`         | Elegance        |
+| `10017`         | Black and White |
+| `10018`         | Fruit           |
+| `10019`         | Love            |
+| `10020`         | Winter          |
+| `10021`         | Photo           |
+| `10022`         | Summer          |
+| `10023`         | Fragrance       |
+| `10024`         | Charm           |
+| `10025`         | Throb           |
+| `10026`         | Beach           |
+| `10027`         | Street Snap     |
+| `10028`         | Sweet           |
+| `10029`         | First Kiss      |
+| `10030`         | Afternoon       |
+| `10031`         | Vitality        |
+| `10032`         | Hazy            |
+| `10033`         | Joyful          |
+| `10034`         | Fashion         |
+| `10035`         | Bubbles         |
+| `10036`         | Lemon           |
+| `10037`         | Cotton Candy    |
+| `10038`         | Brook           |
+| `10039`         | Beauty          |
+| `10040`         | Coffee          |
+| `10041`         | Tender Bud      |
+| `10042`         | Passion         |
+| `10043`         | Gradual Warmth  |
+| `10044`         | Breakfast       |
+| `10045`         | White Tea       |
+| `10046`         | Fair            |
+| `10047`         | Holy            |
+| `10048`         | Forest          |
+| `10049`         | Surfing         |
+| `10050`         | Milk Coffee     |
+| `10051`         | Clear           |
+| `10052`         | Breeze          |
+| `10053`         | Sunset          |
+| `10054`         | Water Glow      |
+| `10055`         | Japanese Style  |
+| `10056`         | Starlight       |
+| `10057`         | Sunshine        |
+| `10058`         | Falling Leaves  |
+| `10059`         | Vitality        |
+| `10060`         | Sweetheart      |
+| `10061`         | Elegance        |
+| `10062`         | Spring          |
+| `10063`         | Rome            |
+| `10064`         | Green           |
+| `10065`         | Gentle Breeze   |
+| `10066`         | Warm Heart      |
+| `10067`         | Seawater        |
+| `10068`         | Mysterious      |
+| `10069`         | Vintage 1       |
+| `10070`         | Vintage 2       |
+| `10071`         | Snowy Peak      |
+| `10072`         | Sunlight        |
+| `10073`         | Floating Clouds |
+| `10074`         | Flowing Colors  |
+| `10075`         | Film            |
+| `10076`         | Nostalgia       |
+| `10077`         | Cheese          |
+| `10078`         | Butterfly       |
+
+## Response
+
+**Response Field Handling Flow**
+
+1. **Handle `Public Response Fields`**
+
+   Parse and validate the `Public Response Fields`, checking the status code or response message to ensure the request is successful and error-free.
+
+2. **Handle `Business Response Fields`**
+
+   If the `Public Response Fields` are valid and error-free, proceed with processing the business logic in the `Business Response Fields`.
+
+### Public Response Fields
+
+<a href="/doc/response-description" target="_blank">Viewing Public Response Fields and Error Codes</a>
+
+### Business Response Fields
+
+| Field        | Type     | Description                              |
+|:-------------|:---------|:-----------------------------------------|
+| `data`       | `object` | The content of the result data returned. |
+| +`image_url` | `string` | Resulting image URL address.             |
+
+The URL address is a temporary address, valid for 24 hours, and will not be accessible after it expires. If you need to save the file for a long time or permanently, please visit the URL address within 24 hours and download the file to your own storage space.
+
+### Response Example
+
+```json
+,
+  "data":           
+}
+```
+
+## Sample Code
+
+**[👉 Online Experience 👈**(https://www.ailabtools.com/portrait-facial-filters-example)]
+
+If you'd like to see the actual effects, please visit the experience page for a trial.
+
+- [Introduction to Get Sample Code](get-sample-code)
+- [Sample Code][PostmanURL]
+
+[PostmanURL]: https://documenter.getpostman.com/view/26387069/2s93JxqgHE#8f883bbe-8c32-4a58-ad07-acb6f9dca07d

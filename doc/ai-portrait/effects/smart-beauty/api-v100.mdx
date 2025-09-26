@@ -1,0 +1,74 @@
+---
+title: "Smart Beauty - API:V1.0.0"
+description: "Retouch Portraits is the ultimate tool for perfecting your photos with ease. Our advanced image processing technology offers a range of features such as sharpening, skin tone whitening, face slimming, facial features adjustment, spot and acne treatment, AI face slimming, and AI makeup—all with just one click! Reduce the time spent editing photos, and achieve professional results without the hassle. With Retouch Portraits, your photos will look flawless."
+---
+
+import apiOfflineNotice from '/snippets/api-offline-notice.mdx';
+
+<apiOfflineNotice />
+
+## Request
+
+- **URL**: `https://www.ailabapi.com/api/portrait/effects/smart-beauty`
+- **Method**: `POST`
+- **Content-Type**: `multipart/form-data`
+
+### Image requirements
+
+- **Image format**: `JPEG` `JPG` `BMP` `PNG`
+- **Image size**: No more than 5 MB.
+- **Image resolution**: Less than 4096x4096px.
+
+### Headers
+
+| Field              | Required | Type     | Description                                        |
+|:-------------------|:---------|:---------|:---------------------------------------------------|
+| `ailabapi-api-key` | YES      | `string` | Application API KEY. [Get API KEY](/doc/get-api-key) |
+
+### Body
+
+| Field          | Required | Type   |
+|:---------------|:---------|:-------|
+| `image_target` | YES      | `file` |
+
+## Response
+
+**Response Field Handling Flow**
+
+1. **Handle `Public Response Fields`**
+
+   Parse and validate the `Public Response Fields`, checking the status code or response message to ensure the request is successful and error-free.
+
+2. **Handle `Business Response Fields`**
+
+   If the `Public Response Fields` are valid and error-free, proceed with processing the business logic in the `Business Response Fields`.
+
+### Public Response Fields
+
+<a href="/doc/response-description" target="_blank">Viewing Public Response Fields and Error Codes</a>
+
+### Business Response Fields
+
+| Field    | Type     | Description                                                   |
+|:---------|:---------|:--------------------------------------------------------------|
+| `data`   | `object` | The content of the result data returned.                      |
+| +`image` | `string` | The result image, returning the Base64 encoding of the image. |
+
+### Response Example
+
+```json
+,
+  "data":           
+}
+```
+
+## Sample Code
+
+**[👉 Online Experience 👈**(https://www.ailabtools.com/portrait-intelligent-beautification-example)]
+
+If you'd like to see the actual effects, please visit the experience page for a trial.
+
+- [Introduction to Get Sample Code](get-sample-code)
+- [Sample Code][PostmanURL]
+
+[PostmanURL]: https://documenter.getpostman.com/view/26387069/2s93JxqgHE#0cfa98ba-ff67-464e-9c21-8e497f829da8

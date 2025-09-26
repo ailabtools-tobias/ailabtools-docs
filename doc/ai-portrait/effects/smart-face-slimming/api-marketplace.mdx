@@ -1,0 +1,53 @@
+---
+title: "AI Face Slimming API"
+description: "Retouch Portraits is the ultimate tool for perfecting your photos with ease. Our advanced image processing technology offers a range of features such as sharpening, skin tone whitening, face slimming, facial features adjustment, spot and acne treatment, AI face slimming, and AI makeup—all with just one click! Reduce the time spent editing photos, and achieve professional results without the hassle. With Retouch Portraits, your photos will look flawless."
+---
+
+## Request
+
+### Image requirements
+
+- **Image format**: `JPEG` `JPG` `PNG`
+- **Image size**: No more than 6 MB.
+- **Image resolution**: Larger than 128x128px, smaller than 5000x5000px.
+- **Image content**: Contains at least 1 face and no more than 3 faces with a face share of more than 64x64px.
+
+### Body
+
+| Field         | Required | Type    | Scope    | Default | Description                                                                            |
+|:--------------|:---------|:--------|:---------|:--------|:---------------------------------------------------------------------------------------|
+| `image`       | YES      | `file`  |          |         |                                                                                        |
+| `slim_degree` | NO       | `float` | [0, 2.0] | `1.0`   | Standard strength. The higher the value, the more pronounced the face slimming effect. |
+
+## Response
+
+**Response Field Handling Flow**
+
+1. **Handle `Public Response Fields`**
+
+   Parse and validate the `Public Response Fields`, checking the status code or response message to ensure the request is successful and error-free.
+
+2. **Handle `Business Response Fields`**
+
+   If the `Public Response Fields` are valid and error-free, proceed with processing the business logic in the `Business Response Fields`.
+
+### Public Response Fields
+
+<a href="/doc/response-description" target="_blank">Viewing Public Response Fields and Error Codes</a>
+
+### Business Response Fields
+
+| Field        | Type     | Description                              |
+|:-------------|:---------|:-----------------------------------------|
+| `data`       | `object` | The content of the result data returned. |
+| +`image_url` | `string` | Resulting image URL address.             |
+
+The URL address is a temporary address, valid for 24 hours, and will not be accessible after it expires. If you need to save the file for a long time or permanently, please visit the URL address within 24 hours and download the file to your own storage space.
+
+### Response Example
+
+```json
+,
+  "data":           
+}
+```

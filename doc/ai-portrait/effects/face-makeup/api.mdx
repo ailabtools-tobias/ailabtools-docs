@@ -1,0 +1,80 @@
+---
+title: "AI Makeup API"
+description: "Retouch Portraits is the ultimate tool for perfecting your photos with ease. Our advanced image processing technology offers a range of features such as sharpening, skin tone whitening, face slimming, facial features adjustment, spot and acne treatment, AI face slimming, and AI makeup—all with just one click! Reduce the time spent editing photos, and achieve professional results without the hassle. With Retouch Portraits, your photos will look flawless."
+openapi: 'POST /api/portrait/effects/face-makeup'
+---
+
+<Danger>
+This API has been discontinued. Please refer to the latest API documentation.
+</Danger>
+
+## Request
+
+- **URL**: `https://www.ailabapi.com/api/portrait/effects/face-makeup`
+- **Method**: `POST`
+- **Content-Type**: `multipart/form-data`
+
+### Image requirements
+
+- **Image format**: `JPEG` `JPG` `PNG` `BMP` `TIFF` `WEBP`
+- **Image size**: No more than 3 MB.
+- **Image resolution**: Less than 2000x2000px.
+- **Image quality recommendation**: works well for most skin-quality portrait images in well-lit and uniform conditions, not for images containing scenes with more severe discoloration, acne, or low exposure.
+
+### Headers
+
+| Field              | Required | Type     | Description                                        |
+|:-------------------|:---------|:---------|:---------------------------------------------------|
+| `ailabapi-api-key` | YES      | `string` | Application API KEY. [Get API KEY](/doc/get-api-key) |
+
+### Body
+
+| Field           | Required | Type     | Scope                                                                                      | Description                                                                                                                                                                                                            |
+|:----------------|:---------|:---------|:-------------------------------------------------------------------------------------------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `image`         | YES      | `file`   |                                                                                            |                                                                                                                                                                                                                        |
+| `resource_type` | YES      | `string` | ``0``, ``1``, ``2``, ``3``, ``4``, ``5``, ``6`` | Beauty using the style. ``0`: whole.` ``1`: Basic makeup.` ``2`: Teenage makeup.` ``3`: Vibrant.` ``4`: Elegant makeup.` ``5`: Glamorous makeup.` ``6`: Plum makeup.` |
+| `strength`      | YES      | `float`  | [0, 1.0]                                                                                   | Beauty intensity.                                                                                                                                                                                                      |
+
+## Response
+
+**Response Field Handling Flow**
+
+1. **Handle `Public Response Fields`**
+
+   Parse and validate the `Public Response Fields`, checking the status code or response message to ensure the request is successful and error-free.
+
+2. **Handle `Business Response Fields`**
+
+   If the `Public Response Fields` are valid and error-free, proceed with processing the business logic in the `Business Response Fields`.
+
+### Public Response Fields
+
+<a href="/doc/response-description" target="_blank">Viewing Public Response Fields and Error Codes</a>
+
+### Business Response Fields
+
+| Field        | Type     | Description                              |
+|:-------------|:---------|:-----------------------------------------|
+| `data`       | `object` | The content of the result data returned. |
+| +`image_url` | `string` | Resulting image URL address.             |
+
+The URL address is a temporary address, valid for 24 hours, and will not be accessible after it expires. If you need to save the file for a long time or permanently, please visit the URL address within 24 hours and download the file to your own storage space.
+
+### Response Example
+
+```json
+,
+  "data":           
+}
+```
+
+## Sample Code
+
+**[👉 Online Experience 👈**(https://www.ailabtools.com/portrait-facial-makeup-example)]
+
+If you'd like to see the actual effects, please visit the experience page for a trial.
+
+- [Introduction to Get Sample Code](get-sample-code)
+- [Sample Code][PostmanURL]
+
+[PostmanURL]: https://documenter.getpostman.com/view/26387069/2s93JxqgHE#3fd6a644-a1e7-438b-a898-460c06398519

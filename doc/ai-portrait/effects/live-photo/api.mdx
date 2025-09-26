@@ -1,0 +1,81 @@
+---
+title: "Live Photos API"
+description: "Based on face driving algorithm, it can turn the face in the image into dynamic effect. It can drive the five senses in the image to do specified actions (currently nodding and smiling) to make the face come alive, and the dynamic effects become dynamic to make the user's photo full of motion. The ability subsequently supports the generation of various kinds of dynamic and complex actions by specifying faces that meet the requirements, and can make long-time dynamic expressions. It can be used for online entertainment video generation, expression pack production, etc."
+openapi: 'POST /api/portrait/effects/live-photo'
+---
+
+## Request
+
+- **URL**: `https://www.ailabapi.com/api/portrait/effects/live-photo`
+- **Method**: `POST`
+- **Content-Type**: `multipart/form-data`
+
+### Image requirements
+
+- **Image format**: `JPEG` `JPG` `PNG` `BMP`
+- **Image size**: No more than 5 MB.
+- **Image resolution**: Less than 4096x4096px.
+
+### Headers
+
+| Field              | Required | Type     | Description                                        |
+|:-------------------|:---------|:---------|:---------------------------------------------------|
+| `ailabapi-api-key` | YES      | `string` | Application API KEY. [Get API KEY](/doc/get-api-key) |
+
+### Body
+
+| Field          | Required | Type      | Scope                     | Default | Description                                                                     |
+|:---------------|:---------|:----------|:--------------------------|:--------|:--------------------------------------------------------------------------------|
+| `image_target` | YES      | `file`    |                           |         |                                                                                 |
+| `type`         | NO       | `integer` | ``0``, ``1`` | `0`     | ``0`: Avatar version.`, ``1`: Full body version.` |
+
+## Response
+<Warning>
+**Response Field Handling Flow**
+
+1. **Handle `Public Response Fields`**
+
+   Parse and validate the `Public Response Fields`, checking the status code or response message to ensure the request is successful and error-free.
+
+2. **Handle `Business Response Fields`**
+
+   If the `Public Response Fields` are valid and error-free, proceed with processing the business logic in the `Business Response Fields`.
+</Warning>
+### Public Response Fields
+
+<a href="/doc/response-description" target="_blank">Viewing Public Response Fields and Error Codes</a>
+
+### Business Response Fields
+
+| Field    | Type     | Description                                               |
+|:---------|:---------|:----------------------------------------------------------|
+| `data`   | `object` | The content of the result data returned.                  |
+| +`video` | `string` | Returns the base64 encoded string of the generated video. |
+
+### Response Example
+
+```json
+{
+  "request_id":     "",
+  "log_id":         "",
+  "error_code":     0,
+  "error_msg":      "",
+  "error_detail":   {
+    "status_code":  200,
+    "code":         "",
+    "code_message": "",
+    "message":      ""
+  },
+  "data":           {
+    "video": ""
+  }
+}
+```
+
+## Sample Code
+<Tip>
+- [Introduction to Get Sample Code](get-sample-code)
+- [Sample Code][PostmanURL]
+
+[PostmanURL]: https://documenter.getpostman.com/view/26387069/2s93JxqgHE#89ed0deb-0956-402b-9d7e-19ae90b38de1
+</Tip>

@@ -1,0 +1,94 @@
+---
+title: "Remove Objects Advanced API"
+description: "Remove Objects Advanced uses cutting-edge AI technology to intelligently remove unwanted objects such as text and people based on a mask image, delivering fast and precise results for image enhancement."
+openapi: 'POST /api/image/editing/remove-objects-advanced'
+---
+
+## Request
+
+- **URL**: `https://www.ailabapi.com/api/image/editing/remove-objects-advanced`
+- **Method**: `POST`
+- **Content-Type**: `multipart/form-data`
+
+### Image requirements
+
+- **Image format**: `JPEG` `JPG` `PNG`
+- **Image size**: No more than 5 MB.
+- **Image resolution**: Larger than 64x64px, smaller than 4096x4096px.
+
+#### Mask image requirements:
+
+1. Single-channel grayscale image (0-255).
+2. Three-channel image, with equal RGB values.
+3. RGBA four-channel image, with equal RGB values and the A channel all set to 255.
+4. File format: 8-bit PNG encoding, do not embed "ICC Profile".
+
+### Headers
+
+| Field              | Required | Type     | Description                                        |
+|:-------------------|:---------|:---------|:---------------------------------------------------|
+| `ailabapi-api-key` | YES      | `string` | Application API KEY. [Get API KEY](/doc/get-api-key) |
+
+### Body
+
+| Field         | Required | Type      | Scope                                  | Default | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
+|:--------------|:---------|:----------|:---------------------------------------|:--------|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `image`       | YES      | `file`    |                                        |         | Original image.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
+| `mask`        | YES      | `file`    |                                        |         | Mask image.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
+| `steps`       | NO       | `integer` | [1, +]                                 | `30`    | Sampling steps determine the level of detail in the generated image. A higher value may result in better quality, but it will significantly increase the processing time.                                                                                                                                                                                                                                                                                                                                                                                                      |
+| `strength`    | NO       | `float`   | [0.1, 1.0]                             | `0.8`   | The smaller the value, the closer it is to the original image.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
+| `scale`       | NO       | `float`   | [1, 20]                                | `7`     | The degree to which the text description influences the output.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
+| `seed`        | NO       | `integer` | [-1, +]                                | `0`     | Random seed, used as the basis for determining the initial state of the diffusion process. It must be a non-negative number (`-1` represents a random seed). If the random seed is the same positive integer and all other parameters are identical, the generated image will most likely be consistent.                                                                                                                                                                                                                                                                       |
+| `dilate_size` | NO       | `integer` | [1, +]                                 | `15`    | Mask Dilation Radius. The mask used for object removal should fully encompass the target object. When users manually draw the mask, it often extends beyond the object's boundary. However, if the mask is generated by a segmentation algorithm, it typically adheres closely to the object's edges, which might leave parts of the object uncovered. This can lead to incomplete removal or unexpected artifacts during generation. To avoid such issues, it's recommended to appropriately increase the `dilate_size` parameter to ensure the mask fully covers the object. |
+| `quality`     | NO       | `string`  | ``H``, ``M``, ``L`` | `M`     | ``H`: High quality — best output quality, but slightly slower processing.`, ``M`: Medium quality — balanced in both quality and speed.`, ``L`: Low quality — fastest processing, suitable for scenarios where speed is prioritized.` |
+
+## Response
+<Warning>
+**Response Field Handling Flow**
+
+1. **Handle `Public Response Fields`**
+
+   Parse and validate the `Public Response Fields`, checking the status code or response message to ensure the request is successful and error-free.
+
+2. **Handle `Business Response Fields`**
+
+   If the `Public Response Fields` are valid and error-free, proceed with processing the business logic in the `Business Response Fields`.
+</Warning>
+### Public Response Fields
+
+<a href="/doc/response-description" target="_blank">Viewing Public Response Fields and Error Codes</a>
+
+### Business Response Fields
+
+| Field                 | Type              | Description                                                  |
+|:----------------------|:------------------|:-------------------------------------------------------------|
+| `data`                | `object`          | The content of the result data returned.                     |
+| +`binary_data_base64` | `array of string` | Output the processed image as a Base64 array (single image). |
+
+### Response Example
+
+```json
+{
+  "request_id":   "",
+  "log_id":       "",
+  "error_code":   0,
+  "error_msg":    "",
+  "error_detail": {
+    "status_code":  200,
+    "code":         "",
+    "code_message": "",
+    "message":      ""
+  },
+  "data":         {
+    "binary_data_base64": []
+  }
+}
+```
+
+## Sample Code
+<Tip>
+- [Introduction to Get Sample Code](get-sample-code)
+- [Sample Code][PostmanURL]
+
+[PostmanURL]: https://documenter.getpostman.com/view/26387069/2s93JxqgHE#a527fef7-17ac-4dfc-900b-dded78bbbe63
+</Tip>

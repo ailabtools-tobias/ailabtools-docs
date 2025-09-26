@@ -1,0 +1,252 @@
+---
+title: "Skin analyze API"
+description: "Accurate analysis of skin status, such as skin color , skin type, double eyelids, eye pouch, dark circles, wrinkles, acne and skin spots."
+openapi: 'POST /api/portrait/analysis/skin-analysis'
+---
+
+## Request
+
+- **URL**: `https://www.ailabapi.com/api/portrait/analysis/skin-analysis`
+- **Method**: `POST`
+- **Content-Type**: `multipart/form-data`
+
+### Image requirements
+
+- **Image format**: `JPG` `JPEG`
+- **Image size**: No more than 2 MB.
+- **Image resolution**: Larger than 200x200px, smaller than 4096x4096px.
+- **Minimum face pixel size**: To ensure the effect, it is recommended that the minimum value of the face box (square) side length in the image is not less than 200 pixels. Calibration size: minimum of 160 pixels. The minimum value of the face frame edge length is not less than one-tenth of the shortest edge of the image.
+- **Face quality**: The higher the face quality, the more accurate the skin analysis. Factors affecting face quality include: occlusion of the five facial features, blurred images, improper lighting (bright, dark, backlight), excessive face angle (roll ≤ ±45°, yaw ≤ ±45°, pitch ≤ ±45° are recommended), etc.
+
+### Headers
+
+| Field              | Required | Type     | Description                                        |
+|:-------------------|:---------|:---------|:---------------------------------------------------|
+| `ailabapi-api-key` | YES      | `string` | Application API KEY. [Get API KEY](/doc/get-api-key) |
+
+### Body
+
+| Field   | Required | Type   |
+|:--------|:---------|:-------|
+| `image` | YES      | `file` |
+
+## Response
+<Warning>
+**Response Field Handling Flow**
+
+1. **Handle `Public Response Fields`**
+
+   Parse and validate the `Public Response Fields`, checking the status code or response message to ensure the request is successful and error-free.
+
+2. **Handle `Business Response Fields`**
+
+   If the `Public Response Fields` are valid and error-free, proceed with processing the business logic in the `Business Response Fields`.
+</Warning>
+
+### Public Response Fields
+
+<a href="/doc/response-description" target="_blank">Viewing Public Response Fields and Error Codes</a>
+
+### Business Response Fields
+
+| Field                | Type      | Scope                                               | Description                                                                                                                                                     |
+|:---------------------|:----------|:----------------------------------------------------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `warning`            | `array`   | ``imporper_headpose`` | Interference factors affecting the calculation results. ``imporper_headpose`: Improper head angle (Judgment condition roll,yaw,pitch exceeds [-45,45]).` |
+| `face_rectangle`     | `object`  |                                                     | The position of the face rectangle box.                                                                                                                         |
+| +`top`               | `float`   |                                                     | The vertical coordinate of the pixel point in the upper-left corner of the rectangle box.                                                                       |
+| +`left`              | `float`   |                                                     | The horizontal coordinate of the pixel point in the upper-left corner of the rectangle.                                                                         |
+| +`width`             | `float`   |                                                     | The width of the rectangle box.                                                                                                                                 |
+| +`height`            | `float`   |                                                     | The height of the rectangle box.                                                                                                                                |
+| `result`             | `object`  |                                                     | Results of face skin analysis.                                                                                                                                  |
+| +`left_eyelids`      | `object`  |                                                     | Results of the double eyelid test on the left eye.                                                                                                              |
+| ++`value`            | `integer` | ``0``, ``1``, ``2`` | Type. ``0`: Single eyelids` ``1`: Parallel Double Eyelids` ``2`: Scalloped Double Eyelids`                                                 |
+| ++`confidence`       | `float`   | [0, 1]                                              | Confidence.                                                                                                                                                     |
+| +`right_eyelids`     | `object`  |                                                     | Results of the double eyelid test on the right eye.                                                                                                             |
+| ++`value`            | `integer` | ``0``, ``1``, ``2`` | Type. ``0`: Single eyelids` ``1`: Parallel Double Eyelids` ``2`: Scalloped Double Eyelids`                                                 |
+| ++`confidence`       | `float`   | [0, 1]                                              | Confidence.                                                                                                                                                     |
+| +`eye_pouch`         | `object`  |                                                     | Eye bag test results.                                                                                                                                           |
+| ++`value`            | `integer` | ``0``, ``1`` | With or without eye bags. ``0`: No` ``1`: Yes`                                                                                                    |
+| ++`confidence`       | `float`   | [0, 1]                                              | Confidence.                                                                                                                                                     |
+| +`dark_circle`       | `object`  |                                                     | Dark circles test results.                                                                                                                                      |
+| ++`value`            | `integer` | ``0``, ``1`` | With or without dark circles under the eyes. ``0`: No` ``1`: Yes`                                                                                 |
+| ++`confidence`       | `float`   | [0, 1]                                              | Confidence.                                                                                                                                                     |
+| +`forehead_wrinkle`  | `object`  |                                                     | Results of the head-lift test.                                                                                                                                  |
+| ++`value`            | `integer` | ``0``, ``1`` | With or without headlines. ``0`: No` ``1`: Yes`                                                                                                   |
+| ++`confidence`       | `float`   | [0, 1]                                              | Confidence.                                                                                                                                                     |
+| +`crows_feet`        | `object`  |                                                     | Fishtail test results.                                                                                                                                          |
+| ++`value`            | `integer` | ``0``, ``1`` | With or without crow's feet. ``0`: No` ``1`: Yes`                                                                                                 |
+| ++`confidence`       | `float`   | [0, 1]                                              | Confidence.                                                                                                                                                     |
+| +`eye_finelines`     | `object`  |                                                     | Results of the eye fine lines test.                                                                                                                             |
+| ++`value`            | `integer` | ``0``, ``1`` | The presence or absence of fine lines under the eyes. ``0`: No` ``1`: Yes`                                                                        |
+| ++`confidence`       | `float`   | [0, 1]                                              | Confidence.                                                                                                                                                     |
+| +`glabella_wrinkle`  | `object`  |                                                     | Results of the interbrow line test.                                                                                                                             |
+| ++`value`            | `integer` | ``0``, ``1`` | With or without interbrow lines. ``0`: No` ``1`: Yes`                                                                                             |
+| ++`confidence`       | `float`   | [0, 1]                                              | Confidence.                                                                                                                                                     |
+| +`nasolabial_fold`   | `object`  |                                                     | Results of the forehead line test.                                                                                                                              |
+| ++`value`            | `integer` | ``0``, ``1`` | With or without lines. ``0`: No` ``1`: Yes`                                                                                                       |
+| ++`confidence`       | `float`   | [0, 1]                                              | Confidence.                                                                                                                                                     |
+| +`skin_type`         | `object`  |                                                     | Skin texture test results.                                                                                                                                      |
+| ++`skin_type`        | `integer` | ``0``, ``1``, ``2``, ``3`` | Type. ``0`: Oily skin.` ``1`: Dry skin.` ``2`: Neutral skin.` ``3`: Combination skin.`                                              |
+| ++`details`          | `object`  |                                                     | The confidence level of each classification.                                                                                                                    |
+| +++`0`               | `object`  |                                                     | Oily skin information.                                                                                                                                          |
+| ++++`value`          | `integer` | ``0``, ``1`` | Oily skin. ``0`: No.` ``1`: Yes.`                                                                                                                 |
+| ++++`confidence`     | `float`   |                                                     | Confidence.                                                                                                                                                     |
+| +++`1`               | `object`  |                                                     | Dry skin information.                                                                                                                                           |
+| ++++`value`          | `integer` | ``0``, ``1`` | Dry skin. ``0`: No.` ``1`: Yes.`                                                                                                                  |
+| ++++`confidence`     | `float`   |                                                     | Confidence.                                                                                                                                                     |
+| +++`2`               | `object`  |                                                     | Neutral skin information.                                                                                                                                       |
+| ++++`value`          | `integer` | ``0``, ``1`` | Neutral skin. ``0`: No.` ``1`: Yes.`                                                                                                              |
+| ++++`confidence`     | `float`   |                                                     | Confidence.                                                                                                                                                     |
+| +++`3`               | `object`  |                                                     | Combination skin information.                                                                                                                                   |
+| ++++`value`          | `integer` | ``0``, ``1`` | Combination skin. ``0`: No.` ``1`: Yes.`                                                                                                          |
+| ++++`confidence`     | `float`   |                                                     | Confidence.                                                                                                                                                     |
+| +`pores_forehead`    | `object`  |                                                     | Forehead pore test results.                                                                                                                                     |
+| ++`value`            | `integer` | ``0``, ``1`` | With or without enlarged pores. ``0`: No` ``1`: Yes`                                                                                              |
+| ++`confidence`       | `float`   | [0, 1]                                              | Confidence.                                                                                                                                                     |
+| +`pores_left_cheek`  | `object`  |                                                     | Results of the left cheek pore test.                                                                                                                            |
+| ++`value`            | `integer` | ``0``, ``1`` | With or without enlarged pores. ``0`: No` ``1`: Yes`                                                                                              |
+| ++`confidence`       | `float`   | [0, 1]                                              | Confidence.                                                                                                                                                     |
+| +`pores_right_cheek` | `object`  |                                                     | Results of the right cheek pore test.                                                                                                                           |
+| ++`value`            | `integer` | ``0``, ``1`` | With or without enlarged pores. ``0`: No` ``1`: Yes`                                                                                              |
+| ++`confidence`       | `float`   | [0, 1]                                              | Confidence.                                                                                                                                                     |
+| +`pores_jaw`         | `object`  |                                                     | Chin pore test results.                                                                                                                                         |
+| ++`value`            | `integer` | ``0``, ``1`` | With or without enlarged pores. ``0`: No` ``1`: Yes`                                                                                              |
+| ++`confidence`       | `float`   | [0, 1]                                              | Confidence.                                                                                                                                                     |
+| +`blackhead`         | `object`  |                                                     | Blackhead test results.                                                                                                                                         |
+| ++`value`            | `integer` | ``0``, ``1`` | With or without blackheads. ``0`: No` ``1`: Yes`                                                                                                  |
+| ++`confidence`       | `float`   | [0, 1]                                              | Confidence.                                                                                                                                                     |
+| +`acne`              | `object`  |                                                     | Acne test results.                                                                                                                                              |
+| ++`value`            | `integer` | ``0``, ``1`` | With or without Acne. ``0`: No` ``1`: Yes`                                                                                                        |
+| ++`confidence`       | `float`   | [0, 1]                                              | Confidence.                                                                                                                                                     |
+| +`mole`              | `object`  |                                                     | Mole test results.                                                                                                                                              |
+| ++`value`            | `integer` | ``0``, ``1`` | With or without moles. ``0`: No` ``1`: Yes`                                                                                                       |
+| ++`confidence`       | `float`   | [0, 1]                                              | Confidence.                                                                                                                                                     |
+| +`skin_spot`         | `object`  |                                                     | Spot detection results.                                                                                                                                         |
+| ++`value`            | `integer` | ``0``, ``1`` | With or without spotting. ``0`: No` ``1`: Yes`                                                                                                    |
+| ++`confidence`       | `float`   | [0, 1]                                              | Confidence.                                                                                                                                                     |
+
+### Response Example
+
+```json
+{
+  "request_id":     "",
+  "log_id":         "",
+  "error_code":     0,
+  "error_msg":      "",
+  "error_detail":   {
+    "status_code":  200,
+    "code":         "",
+    "code_message": "",
+    "message":      ""
+  },
+  "warning": [],
+  "face_rectangle": {
+    "top": 0,
+    "left": 0,
+    "width": 0,
+    "height": 0
+  },
+  "result": {
+    "left_eyelids": {
+      "value": 0,
+      "confidence": 0.89
+    },
+    "right_eyelids": {
+      "value": 0,
+      "confidence": 0.89
+    },
+    "eye_pouch": {
+      "value": 0,
+      "confidence": 0.89
+    },
+    "dark_circle": {
+      "value": 0,
+      "confidence": 0.89
+    },
+    "forehead_wrinkle": {
+      "value": 0,
+      "confidence": 0.89
+    },
+    "crows_feet": {
+      "value": 0,
+      "confidence": 0.89
+    },
+    "eye_finelines": {
+      "value": 0,
+      "confidence": 0.89
+    },
+    "glabella_wrinkle": {
+      "value": 0,
+      "confidence": 0.89
+    },
+    "nasolabial_fold": {
+      "value": 0,
+      "confidence": 0.89
+    },
+    "skin_type": {
+      "skin_type": 0,
+      "details": {
+        "0": {
+          "value": 1,
+          "confidence": 0.89
+        },
+        "1": {
+          "value": 1,
+          "confidence": 0.89
+        },
+        "2": {
+          "value": 1,
+          "confidence": 0.89
+        },
+        "3": {
+          "value": 1,
+          "confidence": 0.89
+        }
+      }
+    },
+    "pores": {
+      "value": 0,
+      "confidence": 1
+    },
+    "pores_forehead": {
+      "value": 0,
+      "confidence": 1
+    },
+    "pores_left_cheek": {
+      "value": 0,
+      "confidence": 1
+    },
+    "pores_right_cheek": {
+      "value": 0,
+      "confidence": 1
+    },
+    "pores_jaw": {
+      "value": 0,
+      "confidence": 1
+    },
+    "blackhead": {
+      "value": 0,
+      "confidence": 1
+    },
+    "acne": {
+      "value": 0,
+      "confidence": 1
+    },
+    "mole": {
+      "value": 0,
+      "confidence": 1
+    },
+    "skin_spot": {
+      "value": 0,
+      "confidence": 1
+    }
+  }
+}
+```
+
+## Sample Code
+
+- [Introduction to Get Sample Code](get-sample-code)
+- [Sample Code][PostmanURL]
+
+[PostmanURL]: https://documenter.getpostman.com/view/26387069/2s93JxqgHE#46be43ef-1022-4e8c-b697-b94f6bca1afd

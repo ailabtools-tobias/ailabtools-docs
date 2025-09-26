@@ -1,0 +1,75 @@
+---
+title: "Furniture background removal API"
+description: "The revolutionary new AI-powered background eraser! Our advanced artificial intelligence algorithms automatically identify the outline of your subject in the visual centre of the image and erase the background, creating a segmented foreground subject image that is perfect for people, animals, products, vehicles, furniture, clothing and other keying scenes. With Background Remover, you can create high-quality images with ease – no more tedious and time-consuming manual background removal. Try Background Remover today and unlock the power of AI-powered background erasing!"
+openapi: 'POST /api/cutout/general/furniture-background-removal'
+---
+
+<Danger>
+This API has been discontinued. Please refer to the latest API documentation.
+</Danger>
+## Request
+
+- **URL**: `https://www.ailabapi.com/api/cutout/general/furniture-background-removal`
+- **Method**: `POST`
+- **Content-Type**: `multipart/form-data`
+
+### Image requirements
+
+- **Image format**: `JPEG` `JPG` `BMP` `PNG`
+- **Image size**: No more than 4 MB.
+- **Image resolution**: Larger than 40x40px, smaller than 1999x1999px.
+
+### Headers
+
+| Field              | Required | Type     | Description                                        |
+|:-------------------|:---------|:---------|:---------------------------------------------------|
+| `ailabapi-api-key` | YES      | `string` | Application API KEY. [Get API KEY](/doc/get-api-key) |
+
+### Body
+
+| Field   | Required | Type   |
+|:--------|:---------|:-------|
+| `image` | YES      | `file` |
+
+## Response
+
+**Response Field Handling Flow**
+
+1. **Handle `Public Response Fields`**
+
+   Parse and validate the `Public Response Fields`, checking the status code or response message to ensure the request is successful and error-free.
+
+2. **Handle `Business Response Fields`**
+
+   If the `Public Response Fields` are valid and error-free, proceed with processing the business logic in the `Business Response Fields`.
+
+### Public Response Fields
+
+<a href="/doc/response-description" target="_blank">Viewing Public Response Fields and Error Codes</a>
+
+### Business Response Fields
+
+| Field         | Type     | Description                                  |
+|:--------------|:---------|:---------------------------------------------|
+| `data`        | `object` | The content of the result data returned.     |
+| +`elements`   | `array`  | Returns an array of elements.                |
+| ++`image_url` | `string` | Returns the keying result image URL address. |
+
+The URL address is a temporary address, valid for 24 hours, and will not be accessible after it expires. If you need to save the file for a long time or permanently, please visit the URL address within 24 hours and download the file to your own storage space.
+
+### Response Example
+
+```json
+,
+  "data":           
+    ]
+  }
+}
+```
+
+## Sample Code
+
+- [Introduction to Get Sample Code](get-sample-code)
+- [Sample Code][PostmanURL]
+
+[PostmanURL]: https://documenter.getpostman.com/view/26387069/2s93JxqgHE#ad080825-710a-4957-bf2e-36ade6f5e050

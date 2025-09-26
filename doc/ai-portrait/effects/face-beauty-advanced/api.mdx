@@ -1,0 +1,81 @@
+---
+title: "Face Beauty Advanced API"
+description: "The Face Beauty Advanced API supports precise facial feature localization and offers a range of beautification functions, including skin smoothing, skin brightening, acne removal, and eye enlargement effects. It can enhance up to five faces simultaneously, ensuring each face receives personalized beautification."
+openapi: 'POST /api/portrait/effects/face-beauty-advanced'
+---
+
+## Request
+
+- **URL**: `https://www.ailabapi.com/api/portrait/effects/face-beauty-advanced`
+- **Method**: `POST`
+- **Content-Type**: `multipart/form-data`
+
+### Image requirements
+
+- **Image format**: `JPEG` `JPG` `PNG` `BMP`
+- **Image size**: No more than 5 MB.
+- **Image resolution**: Less than 2000x2000px.
+
+### Headers
+
+| Field              | Required | Type     | Description                                        |
+|:-------------------|:---------|:---------|:---------------------------------------------------|
+| `ailabapi-api-key` | YES      | `string` | Application API KEY. [Get API KEY](/doc/get-api-key) |
+
+### Body
+
+| Field           | Required | Type      | Scope    | Default | Description                                                                              |
+|:----------------|:---------|:----------|:---------|:--------|:-----------------------------------------------------------------------------------------|
+| `image`         | YES      | `file`    |          |         |                                                                                          |
+| `whitening`     | NO       | `integer` | [0, 100] | `30`    | Whitening level: `0` means no whitening, `100` represents the highest level.             |
+| `smoothing`     | NO       | `integer` | [0, 100] | `10`    | Skin smoothing level: `0` means no skin smoothing, `100` represents the highest level.   |
+| `face_lifting`  | NO       | `integer` | [0, 100] | `70`    | Face slimming level: `0` means no face slimming, `100` represents the highest level.     |
+| `eye_enlarging` | NO       | `integer` | [0, 100] | `70`    | Eye enlargement level: `0` means no eye enlargement, `100` represents the highest level. |
+
+## Response
+
+<Warning>
+**Response Field Handling Flow**
+
+1. **Handle `Public Response Fields`**
+
+   Parse and validate the `Public Response Fields`, checking the status code or response message to ensure the request is successful and error-free.
+
+2. **Handle `Business Response Fields`**
+
+   If the `Public Response Fields` are valid and error-free, proceed with processing the business logic in the `Business Response Fields`.
+</Warning>
+### Public Response Fields
+
+<a href="/doc/response-description" target="_blank">Viewing Public Response Fields and Error Codes</a>
+
+### Business Response Fields
+
+| Field          | Type     | Description                                     |
+|:---------------|:---------|:------------------------------------------------|
+| `result_image` | `string` | Returns the base64 data of the processed image. |
+
+### Response Example
+
+```json
+{
+  "request_id":     "",
+  "log_id":         "",
+  "error_code":     0,
+  "error_msg":      "",
+  "error_detail":   {
+    "status_code":  200,
+    "code":         "",
+    "code_message": "",
+    "message":      ""
+  },
+  "result_image":   ""
+}
+```
+
+## Sample Code
+
+- [Introduction to Get Sample Code](get-sample-code)
+- [Sample Code][PostmanURL]
+
+[PostmanURL]: https://documenter.getpostman.com/view/26387069/2s93JxqgHE#8dfb7bd2-e2fb-4ddb-8c25-f66f18571b1a

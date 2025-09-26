@@ -1,0 +1,82 @@
+---
+title: "Image sharpness enhancement API"
+description: "Introducing Image Enhancer, the ultimate professional image enhancement tool for perfecting your photos. Our powerful suite of tools allows you to deblur, color correct, and adjust contrast with ease, giving you the best possible image quality. From simple corrections to complex tasks, Image Enhancer delivers professional-grade results in no time. Whether you're a professional photographer or just starting out, Image Enhancer has the tools you need to take your photos to the next level. Take control of your images and get the perfect look you desire with Image Enhancer."
+openapi: 'POST /api/image/enhance/image-sharpness-enhancement'
+---
+
+## Request
+
+- **URL**: `https://www.ailabapi.com/api/image/enhance/image-sharpness-enhancement`
+- **Method**: `POST`
+- **Content-Type**: `multipart/form-data`
+
+### Image requirements
+
+- **Image format**: `PNG` `JPG` `JPEG` `BMP`
+- **Image size**: No more than 8 MB.
+- **Image resolution**: Larger than 10x10px, smaller than 5000x5000px.
+- **Image aspect ratio**: Aspect ratio within 4:1.
+
+### Headers
+
+| Field              | Required | Type     | Description                                        |
+|:-------------------|:---------|:---------|:---------------------------------------------------|
+| `ailabapi-api-key` | YES      | `string` | Application API KEY. [Get API KEY](/doc/get-api-key) |
+
+### Body
+
+| Field   | Required | Type   |
+|:--------|:---------|:-------|
+| `image` | YES      | `file` |
+
+## Response
+<Warning>
+**Response Field Handling Flow**
+
+1. **Handle `Public Response Fields`**
+
+   Parse and validate the `Public Response Fields`, checking the status code or response message to ensure the request is successful and error-free.
+
+2. **Handle `Business Response Fields`**
+
+   If the `Public Response Fields` are valid and error-free, proceed with processing the business logic in the `Business Response Fields`.
+</Warning>
+### Public Response Fields
+
+<a href="/doc/response-description" target="_blank">Viewing Public Response Fields and Error Codes</a>
+
+### Business Response Fields
+
+| Field   | Type     | Description           |
+|:--------|:---------|:----------------------|
+| `image` | `string` | base64 encoded image. |
+
+### Response Example
+
+```json
+{
+  "request_id":     "",
+  "log_id":         "",
+  "error_code":     0,
+  "error_msg":      "",
+  "error_detail":   {
+    "status_code":  200,
+    "code":         "",
+    "code_message": "",
+    "message":      ""
+  },
+  "image":          ""
+}
+```
+
+## Sample Code
+<Tip>
+**[👉 Online Experience 👈](https://www.ailabtools.com/image-clarity-enhancement-example)**
+
+If you'd like to see the actual effects, please visit the experience page for a trial.
+
+- [Introduction to Get Sample Code](get-sample-code)
+- [Sample Code][PostmanURL]
+
+[PostmanURL]: https://documenter.getpostman.com/view/26387069/2s93JxqgHE#c7bb6c44-bd14-4eae-9f36-eaae013edcdf
+</Tip>

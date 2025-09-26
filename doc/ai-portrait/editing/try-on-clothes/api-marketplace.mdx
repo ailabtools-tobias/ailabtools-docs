@@ -1,0 +1,212 @@
+---
+title: "AILabTools API - Try on Clothes API"
+description: "Try on Clothes uses advanced AI to generate realistic try-on images from uploaded garment photos and full-body portraits, accurately displaying how clothing looks when worn. Perfect for enhancing the online shopping experience with lifelike fitting visuals."
+---
+
+If the Try on Clothes does not fully meet your expectations, you might consider using the [Try on Clothes Refiner](ai-portrait/enhance/try-on-clothes-refiner/api-marketplace) to enhance its results, or alternatively, the [Try on Clothes Pro](ai-portrait/editing/try-on-clothes-pro/api-marketplace) for a more advanced option.
+
+## Request
+
+### Image requirements
+
+#### Portrait
+
+- **Image format**: `JPG` `JPEG` `PNG`
+- **Image size**: No more than 3 MB.
+- **Image resolution**: Less than 4096x4096px.
+- **Pose requirements**: full-body front view with hands fully visible. Arm positioning should avoid wide openings, crossing, or other exaggerated gestures.
+
+##### Correct Example
+
+<table>
+  <tr>
+    <td>
+      <div>
+        
+        
+      </div>
+    </td>
+  </tr>
+</table>
+
+##### Incorrect Example
+
+<table>
+  <tr>
+    <td>
+      <div>
+        <div>Non-Front Full-Body Shot <br/> (Avoid uploading side views, sitting poses, lying down poses, or half-body photos.)</div>
+        <div>Group Photo</div>
+        <div>Clothing Obstruction <br/> (Avoid holding items, bags, etc.)</div>
+        <div>Lighting Too Dark / Blurry</div>
+      </div>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <div>
+        <div>
+          
+        </div>
+        <div>
+          
+        </div>
+        <div>
+          
+        </div>
+        <div>
+          
+        </div>
+      </div>
+    </td>
+  </tr>
+</table>
+
+#### Clothing
+
+- **Image format**: `JPG` `JPEG` `PNG`
+- **Image size**: No more than 3 MB.
+- **Image resolution**: Less than 4096x4096px.
+- **Pose requirements**: full-body front view with hands fully visible. Arm positioning should avoid wide openings, crossing, or other exaggerated gestures.
+- **Clothing Category**: Minimal Patterns & Prints. Examples include jeans, polo shirts, yoga wear, dresses, suits, T-shirts, etc.
+- **Upload a clear, well-aligned flat-lay image of the clothing.**
+- **Background should be simple, clean, and well-lit.**
+- **Only a single item of clothing should be displayed in the image.**
+- **No layering with other clothing items.**
+- **The clothing item should occupy as much of the image frame as possible.**
+
+##### Correct Example
+
+<table>
+  <tr>
+    <td>
+      <div>
+        
+        
+        
+        
+      </div>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <div>
+        
+        
+        
+        
+      </div>
+    </td>
+  </tr>
+</table>
+
+##### Incorrect Example
+
+<table>
+  <tr>
+    <td>
+      <div>
+        <div>Multiple Clothing Items</div>
+        <div>Non-Front View</div>
+        <div>Folded Obstruction</div>
+        <div>Clothing Wrinkles</div>
+      </div>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <div>
+        <div>
+          
+        </div>
+        <div>
+          
+        </div>
+        <div>
+          
+        </div>
+        <div>
+          
+        </div>
+      </div>
+    </td>
+  </tr>
+</table>
+
+### Body
+
+| Field           | Required | Type     | Scope                                                            | Description                                                                                                                                       |
+|:----------------|:---------|:---------|:-----------------------------------------------------------------|:--------------------------------------------------------------------------------------------------------------------------------------------------|
+| `task_type`     | YES      | `string` | ``async`` | Task Type. ``async`: Asynchronous tasks.`                                                                                                  |
+| `person_image`  | YES      | `file`   |                                                                  | Portrait image.                                                                                                                                   |
+| `clothes_image` | YES      | `file`   |                                                                  | Clothing image.                                                                                                                                   |
+| `clothes_type`  | YES      | `string` | ``upper_body``, ``lower_body``, ``full_body`` | Clothing Types. ``upper_body`: Upper body clothing.` ``lower_body`: Lower body clothing.` ``full_body`: Full body clothing.` |
+
+## Response
+
+**Response Field Handling Flow**
+
+1. **Handle `Public Response Fields`**
+
+   Parse and validate the `Public Response Fields`, checking the status code or response message to ensure the request is successful and error-free.
+
+2. **Handle `Business Response Fields`**
+
+   If the `Public Response Fields` are valid and error-free, proceed with processing the business logic in the `Business Response Fields`.
+
+### Public Response Fields
+
+<a href="/doc/response-description" target="_blank">Viewing Public Response Fields and Error Codes</a>
+
+### Business Response Fields
+
+| Field       | Type     | Scope            | Description                                      |
+|:------------|:---------|:-----------------|:-------------------------------------------------|
+| `task_type` | `string` | ``async`` | Task Type. ``async`: Asynchronous tasks.` |
+| `task_id`   | `string` |                  | Asynchronous task ID.                            |
+
+### Response Example
+
+```json
+,
+  "task_type":      "",
+  "task_id":        ""
+}
+```
+
+Asynchronous task results are valid for 24 hours. It is recommended that asynchronous task results be queried every 5 seconds.
+
+## `Querying Async Task Results` Response
+
+**Response Field Handling Flow**
+
+1. **Handle `Public Response Fields`**
+
+   Parse and validate the `Public Response Fields`, checking the status code or response message to ensure the request is successful and error-free.
+
+2. **Handle `Business Response Fields`**
+
+   If the `Public Response Fields` are valid and error-free, proceed with processing the business logic in the `Business Response Fields`.
+
+### Public Response Fields
+
+<a href="/doc/response-description" target="_blank">Viewing Public Response Fields and Error Codes</a>
+
+### Business Response Fields
+
+| Field         | Type      | Scope                                  | Description                                                                                                                                 |
+|:--------------|:----------|:---------------------------------------|:--------------------------------------------------------------------------------------------------------------------------------------------|
+| `task_status` | `integer` | ``0``, ``1``, ``2`` | Asynchronous task status. ``0`: The task is queued.` ``1`: Asynchronous processing.` ``2`: Processing was successful.` |
+| `data`        | `object`  |                                        |                                                                                                                                             |
+| +`image`      | `string`  |                                        | Result image URL.                                                                                                                           |
+
+The URL address is a temporary address, valid for 24 hours, and will not be accessible after it expires. If you need to save the file for a long time or permanently, please visit the URL address within 24 hours and download the file to your own storage space.
+
+### Response Example
+
+```json
+,
+  "task_status":    0,
+  "data":           
+}
+```

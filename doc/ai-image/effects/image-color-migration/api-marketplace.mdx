@@ -1,0 +1,73 @@
+---
+title: "AILabTools API - Color Migration API"
+description: "Convert input maps to color automatically or according to a specified color palette, while avoiding abnormal color topography in visual hotspot areas."
+---
+
+## Request
+
+### Image requirements
+
+- **Image format**: `JPEG` `JPG` `PNG` `BMP`
+- **Image size**: No more than 3 MB.
+- **Image resolution**: Larger than 64x64px, smaller than 1200x1200px.
+- The images must all be RGB 3-channel or RGBA 4-channel.
+
+### Body
+
+#### Fixed Fields
+
+| Field   | Required | Type     | Scope                                                  | Description                                                                                                                                                            |
+|:--------|:---------|:---------|:-------------------------------------------------------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `image` | YES      | `file`   |                                                        |                                                                                                                                                                        |
+| `mode`  | YES      | `string` | ``AUTO``, ``TEMPLATE``, ``REF_PIC`` | Color extension mode. ``AUTO`: Automatic color extension.` ``TEMPLATE`: Color palette extension.` ``REF_PIC`: Reference picture extension color.` |
+
+#### `mode` === `AUTO`
+
+| Field         | Required | Type      | Scope                                                                                                   | Default | Description                          |
+|:--------------|:---------|:----------|:--------------------------------------------------------------------------------------------------------|:--------|:-------------------------------------|
+| `color_count` | NO       | `integer` | ``1``, ``2``, ``3``, ``4``, ``5``, ``6``, ``7``, ``8`` | `1`     | Expand the number of color families. |
+
+#### `mode` === `TEMPLATE`
+
+| Field            | Required | Type     | Example         | Description                                                                                                 |
+|:-----------------|:---------|:---------|:----------------|:------------------------------------------------------------------------------------------------------------|
+| `color_template` | YES      | `string` | `056A6B,0A0B0C` | Color palette topology, Top master color list, color value definition ARGB. e.g. 0A0B0C, array size [1, 7]. |
+
+#### `mode` === `REF_PIC`
+
+| Field | Required | Type   | Description      |
+|:------|:---------|:-------|:-----------------|
+| `ref` | YES      | `file` | Reference image. |
+
+## Response
+
+**Response Field Handling Flow**
+
+1. **Handle `Public Response Fields`**
+
+   Parse and validate the `Public Response Fields`, checking the status code or response message to ensure the request is successful and error-free.
+
+2. **Handle `Business Response Fields`**
+
+   If the `Public Response Fields` are valid and error-free, proceed with processing the business logic in the `Business Response Fields`.
+
+### Public Response Fields
+
+<a href="/doc/response-description" target="_blank">Viewing Public Response Fields and Error Codes</a>
+
+### Business Response Fields
+
+| Field         | Type              | Description                                                                                |
+|:--------------|:------------------|:-------------------------------------------------------------------------------------------|
+| `data`        | `object`          | The content of the result data returned.                                                   |
+| +`image_list` | `array of string` | The URL address of the image after the coloring is completed, and the image format is PNG. |
+
+The URL address is a temporary address, valid for 24 hours, and will not be accessible after it expires. If you need to save the file for a long time or permanently, please visit the URL address within 24 hours and download the file to your own storage space.
+
+### Response Example
+
+```json
+,
+  "data":           
+}
+```

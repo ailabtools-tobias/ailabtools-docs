@@ -1,0 +1,96 @@
+---
+title: "AILabTools API - Try on Clothes Refiner API"
+description: "Try on Clothes Refiner API leverages advanced AI to intelligently enhance virtual try-on images, delivering highly realistic results with precise details and vibrant colors for a truly immersive online fitting experience."
+---
+
+## Request
+
+### Image requirements
+
+- **Image format**: `JPG` `JPEG` `PNG` `BMP`
+- **Image size**: No more than 5 MB.
+- **Image resolution**: Larger than 150x150px, smaller than 4096x4096px.
+- **Pose requirements**: full-body front view with hands fully visible. Arm positioning should avoid wide openings, crossing, or other exaggerated gestures.
+
+### Body
+
+| Field            | Required | Type     | Scope                           | Description                                                                   |
+|:-----------------|:---------|:---------|:--------------------------------|:------------------------------------------------------------------------------|
+| `task_type`      | YES      | `string` | ``async`` | Task Type. ``async`: Asynchronous tasks.`                              |
+| `person_image`   | YES      | `file`   |                                 | Model image for calling the Try on Clothes API.                               |
+| `top_garment`    | YES      | `file`   |                                 | Top clothing image for calling the Try on Clothes API.                        |
+| `coarse_image`   | YES      | `file`   |                                 | Result image obtained from calling the Try on Clothes API.                    |
+| `gender`         | YES      | `string` | ``woman``, ``man`` | Gender of the `person_image`. ``woman`: Female.` ``man`: Male.` |
+| `bottom_garment` | NO       | `file`   |                                 | Bottom clothing image for calling the Try on Clothes API.                     |
+
+## Response
+
+**Response Field Handling Flow**
+
+1. **Handle `Public Response Fields`**
+
+   Parse and validate the `Public Response Fields`, checking the status code or response message to ensure the request is successful and error-free.
+
+2. **Handle `Business Response Fields`**
+
+   If the `Public Response Fields` are valid and error-free, proceed with processing the business logic in the `Business Response Fields`.
+
+### Public Response Fields
+
+<a href="/doc/response-description" target="_blank">Viewing Public Response Fields and Error Codes</a>
+
+### Business Response Fields
+
+| Field       | Type     | Scope            | Description                                      |
+|:------------|:---------|:-----------------|:-------------------------------------------------|
+| `task_type` | `string` | ``async`` | Task Type. ``async`: Asynchronous tasks.` |
+| `task_id`   | `string` |                  | Asynchronous task ID.                            |
+
+### Response Example
+
+```json
+,
+  "task_type":      "",
+  "task_id":        ""
+}
+```
+
+Asynchronous task results are valid for 24 hours. It is recommended that asynchronous task results be queried every 5 seconds.
+
+## `Querying Async Task Results` Response
+
+**Response Field Handling Flow**
+
+1. **Handle `Public Response Fields`**
+
+   Parse and validate the `Public Response Fields`, checking the status code or response message to ensure the request is successful and error-free.
+
+2. **Handle `Business Response Fields`**
+
+   If the `Public Response Fields` are valid and error-free, proceed with processing the business logic in the `Business Response Fields`.
+
+### Public Response Fields
+
+<a href="/doc/response-description" target="_blank">Viewing Public Response Fields and Error Codes</a>
+
+### Business Response Fields
+
+| Field          | Type      | Scope                                  | Description                                                                                                                                 |
+|:---------------|:----------|:---------------------------------------|:--------------------------------------------------------------------------------------------------------------------------------------------|
+| `task_status`  | `integer` | ``0``, ``1``, ``2`` | Asynchronous task status. ``0`: The task is queued.` ``1`: Asynchronous processing.` ``2`: Processing was successful.` |
+| `output`       | `object`  |                                        |                                                                                                                                             |
+| +`image_url`   | `string`  |                                        | Result image URL.                                                                                                                           |
+| `usage`        | `object`  |                                        |                                                                                                                                             |
+| +`image_count` | `integer` |                                        | Number of generated images.                                                                                                                 |
+
+The URL address is a temporary address, valid for 24 hours, and will not be accessible after it expires. If you need to save the file for a long time or permanently, please visit the URL address within 24 hours and download the file to your own storage space.
+
+### Response Example
+
+```json
+,
+   "task_status":    0,
+   "output":         ,
+   "usage":          
+}
+```

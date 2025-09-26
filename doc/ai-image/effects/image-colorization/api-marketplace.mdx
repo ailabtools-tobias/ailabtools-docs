@@ -1,0 +1,49 @@
+---
+title: "AILabTools API - AI Photo Colorize API"
+description: "The AI Photo Colorize tool allows you to quickly and easily turn your black and white images into full-color images. With a few simple steps, you can swiftly transform any black and white image into a stunning, vivid piece of art. Bring your memories back to life with AI Photo Colorize!"
+---
+
+## Request
+
+### Image requirements
+
+- **Image format**: `PNG` `JPG` `JPEG` `BMP`
+- **Image size**: No more than 8 MB.
+- **Image resolution**: Larger than 10x10px, smaller than 5000x5000px.
+- **Image aspect ratio**: Aspect ratio within 4:1.
+
+### Body
+
+| Field   | Required | Type   |
+|:--------|:---------|:-------|
+| `image` | YES      | `file` |
+
+## Response
+
+**Response Field Handling Flow**
+
+1. **Handle `Public Response Fields`**
+
+   Parse and validate the `Public Response Fields`, checking the status code or response message to ensure the request is successful and error-free.
+
+2. **Handle `Business Response Fields`**
+
+   If the `Public Response Fields` are valid and error-free, proceed with processing the business logic in the `Business Response Fields`.
+
+### Public Response Fields
+
+<a href="/doc/response-description" target="_blank">Viewing Public Response Fields and Error Codes</a>
+
+### Business Response Fields
+
+| Field   | Type     | Description           |
+|:--------|:---------|:----------------------|
+| `image` | `string` | base64 encoded image. |
+
+### Response Example
+
+```json
+,
+  "image":          ""
+}
+```

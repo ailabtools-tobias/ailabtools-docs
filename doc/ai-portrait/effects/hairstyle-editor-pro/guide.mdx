@@ -1,0 +1,38 @@
+---
+title: "Photo Validation Guide"
+description: "To ensure that user-uploaded photos meet the requirements for the Hairstyle Processing API, it’s recommended to split the workflow into two stages: “Face Analysis” and “Hairstyle Processing.” This approach helps minimize long error return times by validating the image at the frontend to confirm it meets the standards before calling the Hairstyle Processing API, ultimately enhancing the user experience."
+---
+
+## Frontend Validation Requirements
+
+Before calling the Hairstyle Processing API, the frontend should perform the following validations:
+
+1. **Image Resolution and Size**: Ensure the image meets the API’s resolution and file size requirements for optimal processing quality.
+2. **Face Detection**: Verify the presence of a face, the number of faces, the face-to-image ratio, and that the face’s angle meets the required standards.
+
+## Specific Validation Details
+
+### 1. Face and Face-to-Image Ratio Validation
+
+- **No Face or Multiple Faces**: If no face or multiple faces are detected in the image, the frontend should return an error message, prompting the user to retake or re-upload a suitable photo.
+- **Non-compliant Face-to-Image Ratio**: If the face occupies less than the specified percentage of the image (typically 15%), crop the image at the frontend to meet the required face-to-image ratio.
+
+### 2. Validation Method
+
+To accomplish the validations above, the frontend can use the [Facial Landmarks API](ai-portrait/analysis/face-key-points) to obtain key face data for assessing face count, face-to-image ratio, and face angle.
+
+### 3. Validation Criteria
+
+- **Face Count**:
+  - `face_num == 0`: No face detected, return an error.
+  - `face_num != 1`: Multiple faces detected, return an error.
+
+- **Face-to-Image Ratio**:
+  - Calculation formula: (`location.width` * `location.height`) / (`image.width` * `image.height`) > `0.15`
+  - If the ratio is less than `0.15`, it does not meet the requirement. Using the `location` values for `left`, `top`, `width`, and `height` and the overall image dimensions, determine the appropriate crop area to adjust the face-to-image ratio.
+
+- **Face Angle**:
+  - Validation criteria: If any criterion is not met, return an error message, prompting the user to retake or re-upload the photo.
+    - The absolute value of `angle.yaw` should be less than `30`
+    - The absolute value of `angle.pitch` should be less than `30`
+    - The absolute value of `angle.roll` should be less than `30`

@@ -1,0 +1,75 @@
+---
+title: "Hairstyle changer - API:V1.0.0"
+description: "Introducing Hairstyle Changer - the revolutionary new deep learning algorithm that can transform the look of your portraits in an instant. With Hairstyle Changer, you can add bangs, change hair length, and increase hair volume to create stunningly unique hairstyles. From thick and luxurious locks to sleek and chic bobs, Hairstyle Changer is the ultimate tool for giving your portraits the perfect look. Plus, with its advanced technology, you can trust that the results are realistic and natural-looking. Try Hairstyle Changer today and let your creativity shine!"
+---
+
+import apiOfflineNotice from '/snippets/api-offline-notice.mdx';
+
+<apiOfflineNotice />
+
+## Request
+
+- **URL**: `https://www.ailabapi.com/api/portrait/effects/hairstyle-editor`
+- **Method**: `POST`
+- **Content-Type**: `multipart/form-data`
+
+### Image requirements
+
+- **Image format**: `JPEG` `JPG` `PNG` `BMP`
+- **Image size**: No more than 5 MB.
+- **Image resolution**: Less than 4096x4096px.
+
+### Headers
+
+| Field              | Required | Type     | Description                                        |
+|:-------------------|:---------|:---------|:---------------------------------------------------|
+| `ailabapi-api-key` | YES      | `string` | Application API KEY. [Get API KEY](/doc/get-api-key) |
+
+### Body
+
+| Field          | Required | Type      | Scope                                                              | Default | Description                                                                                                                                                                 |
+|:---------------|:---------|:----------|:-------------------------------------------------------------------|:--------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `image_target` | YES      | `file`    |                                                                    |         |                                                                                                                                                                             |
+| `hair_type`    | NO       | `integer` | ``0``, ``1``, ``2``, ``3``, ``901`` | `0`     | ``0`: Bangs.`, ``1`: Long hair.`, ``2`: Bangs with long hair.`, ``3`: Increase the number of hair.`, ``901`: Straight hair.` |
+
+## Response
+
+**Response Field Handling Flow**
+
+1. **Handle `Public Response Fields`**
+
+   Parse and validate the `Public Response Fields`, checking the status code or response message to ensure the request is successful and error-free.
+
+2. **Handle `Business Response Fields`**
+
+   If the `Public Response Fields` are valid and error-free, proceed with processing the business logic in the `Business Response Fields`.
+
+### Public Response Fields
+
+<a href="/doc/response-description" target="_blank">Viewing Public Response Fields and Error Codes</a>
+
+### Business Response Fields
+
+| Field    | Type     | Description                                                   |
+|:---------|:---------|:--------------------------------------------------------------|
+| `data`   | `object` | The content of the result data returned.                      |
+| +`image` | `string` | The result image, returning the Base64 encoding of the image. |
+
+### Response Example
+
+```json
+,
+  "data":           
+}
+```
+
+## Sample Code
+
+**[👉 Online Experience 👈**(https://www.ailabtools.com/portrait-hairstyle-editing-example)]
+
+If you'd like to see the actual effects, please visit the experience page for a trial.
+
+- [Introduction to Get Sample Code](get-sample-code)
+- [Sample Code][PostmanURL]
+
+[PostmanURL]: https://documenter.getpostman.com/view/26387069/2s93JxqgHE#dcf4ffec-ef4e-42de-85bd-23cd435adc42

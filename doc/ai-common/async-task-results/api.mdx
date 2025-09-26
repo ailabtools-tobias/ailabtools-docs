@@ -1,0 +1,91 @@
+---
+title: "Querying Async Task Results API"
+description: ""
+openapi: 'GET /api/common/query-async-task-result'
+---
+<Tip>
+For asynchronous interface, after calling the API, the returned result is not the real request result, you need to save the task_id in the returned result and then call this interface to get the real request result.
+
+Asynchronous task results are valid for 24 hours. It is recommended that asynchronous task results be queried every 5 seconds.
+</Tip>
+
+## Request
+
+- **URL**: `https://www.ailabapi.com/api/common/query-async-task-result`
+- **Method**: `GET`
+
+### Headers
+
+| Field              | Required | Type     | Description                                        |
+|:-------------------|:---------|:---------|:---------------------------------------------------|
+| `ailabapi-api-key` | YES      | `string` | Application API KEY. [Get API KEY](/doc/get-api-key) |
+
+### Query Params
+
+| Field     | Required | Type     | Description                                     |
+|:----------|:---------|:---------|:------------------------------------------------|
+| `task_id` | YES      | `string` | The `task_id` returned by the asynchronous API. |
+
+## Response
+
+<Warning>
+**Response Field Handling Flow**
+
+1. **Handle `Public Response Fields`**
+
+   Parse and validate the `Public Response Fields`, checking the status code or response message to ensure the request is successful and error-free.
+
+2. **Handle `Business Response Fields`**
+
+   If the `Public Response Fields` are valid and error-free, proceed with processing the business logic in the `Business Response Fields`.
+</Warning>
+
+### Public Response Fields
+
+<a href="/doc/response-description" target="_blank">Viewing Public Response Fields and Error Codes</a>
+
+### Business Response Fields
+
+| Field         | Type      | Scope                                  | Description                                                                                                                                 |
+|:--------------|:----------|:---------------------------------------|:--------------------------------------------------------------------------------------------------------------------------------------------|
+| `task_status` | `integer` | ``0``, ``1``, ``2`` | Asynchronous task status. ``0`: The task is queued.` ``1`: Asynchronous processing.` ``2`: Processing was successful.` |
+
+### Response Example
+
+```json
+{
+  "error_code":     0,
+  "error_msg":      "",
+  "error_detail":   {
+    "status_code":  200,
+    "code":         "",
+    "code_message": "",
+    "message":      ""
+  },
+  "task_status":    0
+}
+```
+
+## Sample Code
+
+- [Introduction to Get Sample Code](get-sample-code)
+- [Sample Code][PostmanURL]
+
+## File Storage Policy
+
+- **Response Files**:
+  - **Storage Duration**: 24 hours.
+  - **Deletion Method**: Automatic Deletion upon Timeout.
+
+## Async APIs
+
+- [AI Cartoon Generator](ai-image/effects/ai-anime-generator/api)
+- [HD color migration](ai-image/effects/image-hd-color-migration/api)
+- [Hairstyle changer Pro](ai-portrait/effects/hairstyle-editor-pro/api)
+- [Smart Beauty](ai-portrait/effects/smart-beauty/async-api)
+- [Face Beauty Pro](ai-portrait/effects/face-beauty-pro/async-api)
+- [Try on Clothes](ai-portrait/editing/try-on-clothes/api)
+- [Try on Clothes Pro](ai-portrait/editing/try-on-clothes-pro/api)
+- [Try on Clothes Refiner](ai-portrait/enhance/try-on-clothes-refiner/api)
+
+[PostmanURL]: https://documenter.getpostman.com/view/26387069/2s93JxqgHE#e57f808e-f0a6-4e22-afd0-c509267e5b53

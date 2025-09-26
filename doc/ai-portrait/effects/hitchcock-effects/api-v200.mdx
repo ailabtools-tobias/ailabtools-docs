@@ -1,0 +1,80 @@
+---
+title: "Hitchcock special effects - API:V2.0.0"
+description: "Based on portrait segmentation technology, it realizes 2D to 3D conversion of photos to achieve the effect of 3D naked eye slow motion. The selfie image and the background image using Hitchcock technology senseless fusion, open the scene stretching video shooting new way to play, can be used for personal social entertainment, film and television drama effect simulation shooting, etc."
+---
+
+# AILabTools API - Hitchcock special effects - API:V2.0.0
+
+## Request
+
+- **URL**: `https://www.ailabapi.com/api/portrait/effects/hitchcock-effects`
+- **Method**: `POST`
+- **Content-Type**: `multipart/form-data`
+
+### Image requirements
+
+- **Image format**: `JPEG` `JPG` `PNG` `BMP`
+- **Image size**: No more than 5 MB.
+- **Image resolution**: Larger than 64x64px, smaller than 2048x2048px.
+
+### Headers
+
+| Field              | Required | Type     | Description                                        |
+|:-------------------|:---------|:---------|:---------------------------------------------------|
+| `ailabapi-api-key` | YES      | `string` | Application API KEY. [Get API KEY](/doc/get-api-key) |
+
+### Body
+
+| Field          | Required | Type      | Scope                                                            | Default        | Description                                                                                                                                                                                                                                                                                                                                                                                                             |
+|:---------------|:---------|:----------|:-----------------------------------------------------------------|:---------------|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `version`      | YES      | `string`  | ``v2`` |                | Version.                                                                                                                                                                                                                                                                                                                                                                                                                |
+| `image_target` | YES      | `file`    |                                                                  |                |                                                                                                                                                                                                                                                                                                                                                                                                                         |
+| `mode`         | NO       | `integer` | ``0``, ``1``, ``2``, ``3``, ``4`` | `0`            | ``0`: Push forward shot, default with flowing effect.`, ``1`: Wide-angle camera movement.`, ``2`: Hitchcock camera movement.`, ``3`: Swing camera movement.`, ``4`: Bounce camera movement.` |
+| `long_side`    | NO       | `integer` | [0, 1920]                                                        | `960`          | The length of the video's longer side for rendering. The larger the value, the longer it takes, growing exponentially in powers of two.                                                                                                                                                                                                                                                                                 |
+| `frame_num`    | NO       | `integer` |                                                                  | `90`           | Video frame rate (without speed change). The larger the value, the longer it takes, increasing linearly.                                                                                                                                                                                                                                                                                                                |
+| `fps`          | NO       | `integer` |                                                                  | `30`           | Video frame rate. `frame_num`/`fps` determines the video duration.                                                                                                                                                                                                                                                                                                                                                      |
+| `use_flow`     | NO       | `integer` | ``-1``, ``0``, ``1`` | `-1`           | ``-1`: The algorithm determines whether to enable the flow effect based on the `mode` value.`, ``0`: Forcefully disable the flow effect.`, ``1`: Forcefully enable the flow effect.` |
+| `speed_shift`  | NO       | `string`  |                                                                  | Constant Speed | `Each pair of adjacent values represents the x and y values of a control point.`, `x range [0, 1]: Progress from the beginning to the end of the original video.`, `y range [0.1, 10]: Speed rate.`, `Each pair of adjacent control points represents a speed change curve, with the curve function being a trigonometric function.` |
+
+#### `speed_shift` 
+
+For example, `0,1,0.5,4,0.5,4,1,1` represents the curve in the following diagram.
+![Video Curve Speed Variation](https://ai-resource.ailabtools.com/hitchcock-special-effects/doc/speed_shift-example.webp)
+
+## Response
+
+**Response Field Handling Flow**
+
+1. **Handle `Public Response Fields`**
+
+   Parse and validate the `Public Response Fields`, checking the status code or response message to ensure the request is successful and error-free.
+
+2. **Handle `Business Response Fields`**
+
+   If the `Public Response Fields` are valid and error-free, proceed with processing the business logic in the `Business Response Fields`.
+
+### Public Response Fields
+
+<a href="/doc/response-description" target="_blank">Viewing Public Response Fields and Error Codes</a>
+
+### Business Response Fields
+
+| Field    | Type     | Description                                               |
+|:---------|:---------|:----------------------------------------------------------|
+| `data`   | `object` | The content of the result data returned.                  |
+| +`video` | `string` | Returns the base64 encoded string of the generated video. |
+
+### Response Example
+
+```json
+,
+  "data":           
+}
+```
+
+## Sample Code
+
+- [Introduction to Get Sample Code](get-sample-code)
+- [Sample Code][PostmanURL]
+
+[PostmanURL]: https://documenter.getpostman.com/view/26387069/2s93JxqgHE#914a42a6-9cf7-46a9-b75c-d9726e31a3f0

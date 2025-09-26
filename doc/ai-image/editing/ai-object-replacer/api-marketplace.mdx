@@ -1,0 +1,61 @@
+---
+title: "AILabTools API - AI Object Replacer API"
+description: "AI Object Replacer utilizes advanced AI technology to intelligently remove unwanted objects such as text and people based on a mask image, and seamlessly fill the gaps with appropriate content based on user prompts."
+---
+
+## Request
+
+### Image requirements
+
+- **Image format**: `JPEG` `JPG` `PNG`
+- **Image size**: No more than 5 MB.
+- **Image resolution**: Larger than 64x64px, smaller than 4096x4096px.
+
+#### Mask image requirements:
+
+1. Single-channel grayscale image (0-255).
+2. Three-channel image, with equal RGB values.
+3. RGBA four-channel image, with equal RGB values and the A channel all set to 255.
+4. File format: 8-bit PNG encoding, do not embed "ICC Profile".
+
+### Body
+
+| Field           | Required | Type      | Scope   | Default | Description                                                                                                                                                                                                                                                                                              |
+|:----------------|:---------|:----------|:--------|:--------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `image`         | YES      | `file`    |         |         | Original image.                                                                                                                                                                                                                                                                                          |
+| `mask`          | YES      | `file`    |         |         | Mask image.                                                                                                                                                                                                                                                                                              |
+| `custom_prompt` | NO       | `string`  |         |         | Prompt Content (English only). Please limit the prompt content to 100 English words or fewer. Any content beyond this limit may have minimal impact on the generated result. Use standard vocabulary to avoid failing the review process.                                                                |
+| `steps`         | NO       | `integer` | [1, +]  | `25`    | Sampling steps determine the level of detail in the generated image. A higher value may result in better quality, but it will significantly increase the processing time.                                                                                                                                |
+| `scale`         | NO       | `float`   | [1, 20] | `5`     | The degree to which the text description influences the output.                                                                                                                                                                                                                                          |
+| `seed`          | NO       | `integer` | [-1, +] | `-1`    | Random seed, used as the basis for determining the initial state of the diffusion process. It must be a non-negative number (`-1` represents a random seed). If the random seed is the same positive integer and all other parameters are identical, the generated image will most likely be consistent. |
+
+## Response
+
+**Response Field Handling Flow**
+
+1. **Handle `Public Response Fields`**
+
+   Parse and validate the `Public Response Fields`, checking the status code or response message to ensure the request is successful and error-free.
+
+2. **Handle `Business Response Fields`**
+
+   If the `Public Response Fields` are valid and error-free, proceed with processing the business logic in the `Business Response Fields`.
+
+### Public Response Fields
+
+<a href="/doc/response-description" target="_blank">Viewing Public Response Fields and Error Codes</a>
+
+### Business Response Fields
+
+| Field                 | Type              | Description                                                  |
+|:----------------------|:------------------|:-------------------------------------------------------------|
+| `data`                | `object`          | The content of the result data returned.                     |
+| +`binary_data_base64` | `array of string` | Output the processed image as a Base64 array (single image). |
+
+### Response Example
+
+```json
+,
+  "data":           
+}
+```

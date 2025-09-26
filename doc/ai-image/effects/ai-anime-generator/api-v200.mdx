@@ -1,0 +1,114 @@
+---
+title: "AI Cartoon Generator - API:V2.0.0"
+description: "AI Cartoon Generator utilizes the technology of generative models to automatically generate cartoon-style images in different styles. This technology can create cartoonized images with the same resolution as the input image and specific cartoon styles, and supports users to choose from a variety of cartoon styles. It is worth mentioning that even for the same image and style, each generated image is unique. The tool provides users with dozens of cartoon style options to choose from."
+---
+
+# AILabTools API - AI Cartoon Generator - API:V2.0.0
+
+## Request
+
+- **URL**: `https://www.ailabapi.com/api/image/effects/ai-anime-generator`
+- **Method**: `POST`
+- **Content-Type**: `multipart/form-data`
+
+### Image requirements
+
+- **Image format**: `JPEG` `PNG` `JPG` `BMP` `WEBP`
+- **Image size**: No more than 10 MB.
+- The input image dimensions should be greater than or equal to 256x256 pixels and less than or equal to 5760x3240 pixels. The short side of the output image will be 1536 pixels. If the ratio of the long side to the short side of the input image is less than or equal to 1.5:1, the original aspect ratio will be maintained. If this ratio is greater than 1.5:1, adaptive cropping will be applied to achieve an output aspect ratio of 1.5:1.
+
+### Headers
+
+| Field              | Required | Type     | Description                                        |
+|:-------------------|:---------|:---------|:---------------------------------------------------|
+| `ailabapi-api-key` | YES      | `string` | Application API KEY. [Get API KEY](/doc/get-api-key) |
+
+### Body
+
+| Field       | Required | Type      | Scope                                                                                                                | Default      | Description                                                                                                                                                                                                                                                                                                                                              |
+|:------------|:---------|:----------|:---------------------------------------------------------------------------------------------------------------------|:-------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `task_type` | YES      | `string`  | ``async`` | `async`      | ``async`: Asynchronous tasks.` |
+| `image`     | YES      | `file`    |                                                                                                                      |              |                                                                                                                                                                                                                                                                                                                                                          |
+| `index`     | YES      | `integer` | ``0``, ``1``, ``2``, ``3``, ``4``, ``5``, ``6``, ``7``, ``8`` | ``0`` | ``0`: Vintage Comic.`, ``1`: 3D Fairy Tale.`, ``2`: Two-dimensional (2D).`, ``3`: Refreshing and Elegant.`, ``4`: Future Technology.`, ``5`: Traditional Chinese Painting Style.`, ``6`: General in a Hundred Battles.`, ``7`: Colorful Cartoon.`, ``8`: Graceful Chinese Style.` |
+
+## Response
+
+**Response Field Handling Flow**
+
+1. **Handle `Public Response Fields`**
+
+   Parse and validate the `Public Response Fields`, checking the status code or response message to ensure the request is successful and error-free.
+
+2. **Handle `Business Response Fields`**
+
+   If the `Public Response Fields` are valid and error-free, proceed with processing the business logic in the `Business Response Fields`.
+
+### Public Response Fields
+
+<a href="/doc/response-description" target="_blank">Viewing Public Response Fields and Error Codes</a>
+
+### Business Response Fields
+
+| Field       | Type     | Scope            | Description                                                                                                                                   |
+|:------------|:---------|:-----------------|:----------------------------------------------------------------------------------------------------------------------------------------------|
+| `task_type` | `string` | ``async`` | Task Type. ``async`: Asynchronous tasks.`                                                                                              |
+| `task_id`   | `string` |                  | Asynchronous task ID. <br/>**Please use this field when calling the [Querying Async Task Results](ai-common/async-task-results/api) API.** |
+
+### Response Example
+
+```json
+,
+  "task_type":      "",
+  "task_id":        ""
+}
+```
+
+This API is asynchronous, please keep `task_id` and call [`Querying Async Task Results`](ai-common/async-task-results/api) to get the final results.
+
+Asynchronous task results are valid for 24 hours. It is recommended that asynchronous task results be queried every 5 seconds.
+
+## `Querying Async Task Results` Response
+
+**Response Field Handling Flow**
+
+1. **Handle `Public Response Fields`**
+
+   Parse and validate the `Public Response Fields`, checking the status code or response message to ensure the request is successful and error-free.
+
+2. **Handle `Business Response Fields`**
+
+   If the `Public Response Fields` are valid and error-free, proceed with processing the business logic in the `Business Response Fields`.
+
+### Public Response Fields
+
+<a href="/doc/response-description" target="_blank">Viewing Public Response Fields and Error Codes</a>
+
+### Business Response Fields
+
+| Field         | Type      | Scope                                  | Description                                                                                                                                 |
+|:--------------|:----------|:---------------------------------------|:--------------------------------------------------------------------------------------------------------------------------------------------|
+| `task_status` | `integer` | ``0``, ``1``, ``2`` | Asynchronous task status. ``0`: The task is queued.` ``1`: Asynchronous processing.` ``2`: Processing was successful.` |
+| `data`        | `object`  |                                        | The content of the result data returned.                                                                                                    |
+| +`result_url` | `string`  |                                        | Result URL address.                                                                                                                         |
+
+The URL address is a temporary address, valid for 24 hours, and will not be accessible after it expires. If you need to save the file for a long time or permanently, please visit the URL address within 24 hours and download the file to your own storage space.
+
+### Response Example
+
+```json
+,
+  "task_status":    0,
+  "data":           
+}
+```
+
+## Sample Code
+
+**[👉 Online Experience 👈**(https://www.ailabtools.com/image-ai-cartoon-generator-example)]
+
+If you'd like to see the actual effects, please visit the experience page for a trial.
+
+- [Introduction to Get Sample Code](get-sample-code)
+- [Sample Code][PostmanURL]
+
+[PostmanURL]: https://documenter.getpostman.com/view/26387069/2s93JxqgHE#f4c695a1-6b26-49d2-88c3-3f4825a1acfe

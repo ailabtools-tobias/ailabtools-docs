@@ -1,0 +1,47 @@
+---
+title: "File Storage Policy"
+description: "AILabTools is an advanced tool that offers a vast array of simple and flexible API endpoints to suit your specific needs. With just one API KEY, you can easily call any of the endpoints and integrate them quickly into your application or workflow, allowing for smooth and efficient operations. AILabTools is continuously evolving, and you can anticipate even more API endpoints being added in the future, further enhancing its capabilities and usefulness for your artificial intelligence and machine learning requirements."
+---
+
+# AILabTools API - File Storage Policy
+
+This document outlines the file storage policy for the API, which is designed to ensure that uploaded and returned file data are handled and protected appropriately. The policy adheres to strict principles to guarantee data security, privacy, and compliance.
+
+### 1. Handling of Uploaded Files
+
+- **No Storage**: All files uploaded via the API are not stored. They are only used temporarily for processing and are deleted immediately after processing is completed. No files will be retained or stored under any circumstances.
+- **Processing Method**: Upon upload, files are loaded into memory for necessary processing (such as format conversion, analysis, etc.). After processing is completed, the file data is immediately erased from the system without leaving any traces.
+
+### 2. Handling of Returned Files
+
+#### 2.1 Returned Files in URL Format
+
+- **Cloud Storage**: Files returned in URL format will be stored in cloud storage.
+- **Storage Duration**: These files will be stored in cloud storage for a default period of 24 hours.
+- **Automatic Deletion**: After 24 hours, the file will be automatically deleted. The system does not allow any intervention or extension of the storage period.
+- **No Intervention**: Users cannot modify the storage duration or delay the deletion process of the file once it exceeds the 24-hour period. The file will be automatically deleted after this period.
+
+#### 2.2 Returned Files in BASE64 Format
+
+- **No Storage**: Files returned in BASE64 encoded format will not be stored. The file data will be discarded immediately after being returned to the user, with no persistence or caching of the data.
+
+### 3. Data Privacy and Security
+
+- **Data Encryption**: All uploaded files are transmitted securely using encryption protocols (e.g., HTTPS) to ensure data protection during transfer.
+- **Privacy Protection**: The system will not retain uploaded files for any long-term use, and files will not be used for any unauthorized purposes. Uploaded files are only used for processing and returning, and will not be used for any other purposes, including but not limited to AI model training, data analysis, or statistics.
+- **Guaranteed Deletion**: All files will be deleted immediately after processing is completed, and returned BASE64 files will not be stored.
+
+### 4. Files Not Used for AI Training
+
+- **No Data Collection for AI Training**: None of the files uploaded by users, including the returned files in URL or BASE64 format, will be used for training any AI models. The use of files is strictly limited to the current API request and is deleted immediately after processing. Files will not be used for future algorithm training, data mining, or analytics.
+
+<Tip>
+The file storage policy of this API strictly adheres to the following principles:
+
+- **Temporary Processing**: Uploaded files exist only during processing and are deleted immediately afterward.
+- **Cloud Storage URL**: Files returned in URL format will be stored for 24 hours, after which they will be automatically deleted with no intervention allowed.
+- **BASE64 Files**: Files returned in BASE64 format will not be stored.
+- **Privacy Protection**: Uploaded files will not be used for any form of AI model training or analysis.
+
+This policy ensures a secure, transparent, and compliant file handling and storage environment. If you have any questions or need further clarification about the file storage policy, please feel free to contact us.
+</Tip>

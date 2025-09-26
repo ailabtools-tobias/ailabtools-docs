@@ -1,0 +1,52 @@
+---
+title: "AILabTools API - Image Erasure API"
+description: "Introducing Image Erasure, the revolutionary new tool that makes photo editing easier and faster than ever before. With our advanced artificial intelligence algorithms, you can quickly and easily remove objects, people, and text from photos with just a few clicks. Clean up your photos and make them look beautiful with Image Erasure! With our AI-powered technology, the editing process has never been simpler or more efficient. Get perfect results in no time at all – try Image Erasure today!"
+---
+
+## Request
+
+### Image requirements
+
+- **Image format**: `JPEG` `JPG` `PNG` `BMP` `WEBP`
+- **Image size**: No more than 3 MB.
+- **Image resolution**: Less than 4096x4096px.
+
+### Body
+
+| Field       | Required | Type   | Description             |
+|:------------|:---------|:-------|:------------------------|
+| `image`     | YES      | `file` | The image to be erased. |
+| `user_mask` | YES      | `file` | Mask image.             |
+
+## Response
+
+**Response Field Handling Flow**
+
+1. **Handle `Public Response Fields`**
+
+   Parse and validate the `Public Response Fields`, checking the status code or response message to ensure the request is successful and error-free.
+
+2. **Handle `Business Response Fields`**
+
+   If the `Public Response Fields` are valid and error-free, proceed with processing the business logic in the `Business Response Fields`.
+
+### Public Response Fields
+
+<a href="/doc/response-description" target="_blank">Viewing Public Response Fields and Error Codes</a>
+
+### Business Response Fields
+
+| Field        | Type     | Description                              |
+|:-------------|:---------|:-----------------------------------------|
+| `data`       | `object` | The content of the result data returned. |
+| +`image_url` | `string` | The URL of the image after erasing.      |
+
+The URL address is a temporary address, valid for 24 hours, and will not be accessible after it expires. If you need to save the file for a long time or permanently, please visit the URL address within 24 hours and download the file to your own storage space.
+
+### Response Example
+
+```json
+,
+  "data":           
+}
+```

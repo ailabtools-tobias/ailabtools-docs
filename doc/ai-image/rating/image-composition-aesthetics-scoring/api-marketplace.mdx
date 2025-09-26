@@ -1,0 +1,49 @@
+---
+title: "AILabTools API - Image composition aesthetics score API"
+description: "Input an image and output the aesthetic rating of the composition of the image (0~5, with 3.8 or more recommended as better composition)."
+---
+
+## Request
+
+### Image requirements
+
+- **Image format**: `JPG` `JPEG` `BMP` `PNG` `WEBP`
+- **Image size**: No more than 3 MB.
+- **Image resolution**: Larger than 32x32px, smaller than 4096x4096px.
+
+### Body
+
+| Field   | Required | Type   |
+|:--------|:---------|:-------|
+| `image` | YES      | `file` |
+
+## Response
+
+**Response Field Handling Flow**
+
+1. **Handle `Public Response Fields`**
+
+   Parse and validate the `Public Response Fields`, checking the status code or response message to ensure the request is successful and error-free.
+
+2. **Handle `Business Response Fields`**
+
+   If the `Public Response Fields` are valid and error-free, proceed with processing the business logic in the `Business Response Fields`.
+
+### Public Response Fields
+
+<a href="/doc/response-description" target="_blank">Viewing Public Response Fields and Error Codes</a>
+
+### Business Response Fields
+
+| Field    | Type     | Description                                                                                                                     |
+|:---------|:---------|:--------------------------------------------------------------------------------------------------------------------------------|
+| `data`   | `object` | The content of the result data returned.                                                                                        |
+| +`score` | `float`  | The higher the score, the better the composition, with a recommended score of 3.8 or higher being the better composition score. |
+
+### Response Example
+
+```json
+,
+  "data":           
+}
+```

@@ -1,0 +1,87 @@
+---
+title: "Photo retouch API"
+description: "Input two images, content (also called the image to be repaired) and style (also called the reference image). The content image is transformed according to the style of the style image to get a result image."
+openapi: 'POST /api/image/editing/photo-retouching'
+---
+
+## Request
+
+- **URL**: `https://www.ailabapi.com/api/image/editing/photo-retouching`
+- **Method**: `POST`
+- **Content-Type**: `multipart/form-data`
+
+### Image requirements
+
+- **Image format**: `JPEG` `JPG` `PNG`
+- **Image size**: No more than 3 MB.
+- **Image resolution**: Larger than 32x32px, smaller than 3000x3000px.
+
+### Headers
+
+| Field              | Required | Type     | Description                                        |
+|:-------------------|:---------|:---------|:---------------------------------------------------|
+| `ailabapi-api-key` | YES      | `string` | Application API KEY. [Get API KEY](/doc/get-api-key) |
+
+### Body
+
+| Field   | Required | Type   | Description                                 |
+|:--------|:---------|:-------|:--------------------------------------------|
+| `image` | YES      | `file` | Images that require a style transformation. |
+| `style` | YES      | `file` | Reference image.                            |
+
+## Response
+<Warning>
+**Response Field Handling Flow**
+
+1. **Handle `Public Response Fields`**
+
+   Parse and validate the `Public Response Fields`, checking the status code or response message to ensure the request is successful and error-free.
+
+2. **Handle `Business Response Fields`**
+
+   If the `Public Response Fields` are valid and error-free, proceed with processing the business logic in the `Business Response Fields`.
+</Warning>
+### Public Response Fields
+
+<a href="/doc/response-description" target="_blank">Viewing Public Response Fields and Error Codes</a>
+
+### Business Response Fields
+
+| Field        | Type     | Description                                                    |
+|:-------------|:---------|:---------------------------------------------------------------|
+| `data`       | `object` | The content of the result data returned.                       |
+| +`image_url` | `string` | The resulting image after performing the style transformation. |
+<Tip>
+The URL address is a temporary address, valid for 24 hours, and will not be accessible after it expires. If you need to save the file for a long time or permanently, please visit the URL address within 24 hours and download the file to your own storage space.
+</Tip>
+### Response Example
+
+```json
+{
+  "request_id":     "",
+  "log_id":         "",
+  "error_code":     0,
+  "error_msg":      "",
+  "error_detail":   {
+    "status_code":  200,
+    "code":         "",
+    "code_message": "",
+    "message":      ""
+  },
+  "data":           {
+    "image_url": ""
+  }
+}
+```
+
+## Sample Code
+<Tip>
+**[👉 Online Experience 👈](https://www.ailabtools.com/image-photo-editing-example)**
+
+If you'd like to see the actual effects, please visit the experience page for a trial.
+
+- [Introduction to Get Sample Code](get-sample-code)
+- [Sample Code][PostmanURL]
+
+[PostmanURL]: https://documenter.getpostman.com/view/26387069/2s93JxqgHE#c5dfe1e1-ca55-4145-b35b-a3eb8041a4d3
+</Tip>

@@ -1,0 +1,55 @@
+---
+title: "AILabTools API - AI Face Enhancer API"
+description: "Enhance facial images using a face-driven algorithm. Improve image quality, bring out details, and clarify blurry faces."
+---
+
+## Request
+
+### Image requirements
+
+- **Image format**: `JPEG` `JPG` `PNG` `BMP`
+- **Image size**: No more than 3 MB.
+- **Image resolution**: Larger than 32x32px, smaller than 2048x2048px (longest side less than or equal to 2047px), with a face occupying no less than 64x64px.
+- The input image needs to contain faces.
+- The number of faces in the input image should not exceed 10, otherwise only the first 10 faces with the largest area are processed.
+- The face in the input image should not have scratches, breaks, etc., and the algorithm does not support such repairs at this time.
+- The quality of the faces in the input image should not be too sharp or too high in resolution, as this may lead to inverse quality degradation.
+
+### Body
+
+| Field   | Required | Type   |
+|:--------|:---------|:-------|
+| `image` | YES      | `file` |
+
+## Response
+
+**Response Field Handling Flow**
+
+1. **Handle `Public Response Fields`**
+
+   Parse and validate the `Public Response Fields`, checking the status code or response message to ensure the request is successful and error-free.
+
+2. **Handle `Business Response Fields`**
+
+   If the `Public Response Fields` are valid and error-free, proceed with processing the business logic in the `Business Response Fields`.
+
+### Public Response Fields
+
+<a href="/doc/response-description" target="_blank">Viewing Public Response Fields and Error Codes</a>
+
+### Business Response Fields
+
+| Field        | Type     | Description                              |
+|:-------------|:---------|:-----------------------------------------|
+| `data`       | `object` | The content of the result data returned. |
+| +`image_url` | `string` | Resulting image URL address.             |
+
+The URL address is a temporary address, valid for 24 hours, and will not be accessible after it expires. If you need to save the file for a long time or permanently, please visit the URL address within 24 hours and download the file to your own storage space.
+
+### Response Example
+
+```json
+,
+  "data":           
+}
+```

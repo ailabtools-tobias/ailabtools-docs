@@ -1,0 +1,101 @@
+---
+title: "Querying Async Task Results - API"
+description: "For asynchronous interface, after calling the API, the returned result is not the real request result, you need to save the request_id in the returned result and then call this interface to get the real request result."
+openapi: 'GET /api/image/asyn-task-results'
+---
+
+# AILabTools API - Querying Async Task Results - API
+
+For asynchronous interface, after calling the API, the returned result is not the real request result, you need to save the `request_id` in the returned result and then call this interface to get the real request result.
+
+Asynchronous task results are valid for 30 minutes. It is recommended that asynchronous task results be queried every 5 seconds.
+
+## Request
+
+- **URL**: `https://www.ailabapi.com/api/image/asyn-task-results`
+- **Method**: `GET`
+
+### Headers
+
+| Field              | Required | Type     | Description                                        |
+|:-------------------|:---------|:---------|:---------------------------------------------------|
+| `ailabapi-api-key` | YES      | `string` | Application API KEY. [Get API KEY](/doc/get-api-key) |
+
+### Query Params
+
+| Field    | Required | Type     | Scope                                                                | Description                                                                                                                                                                                                                      |
+|:---------|:---------|:---------|:---------------------------------------------------------------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `job_id` | YES      | `string` |                                                                      | The `request_id` returned by the asynchronous API.                                                                                                                                                                               |
+| `type`   | YES      | `string` | ``HD_COLOUR_MIGRATION``, ``GENERATE_CARTOONIZED_IMAGE`` | Asynchronous task type. ``HD_COLOUR_MIGRATION`: [HD color migration](ai-image/effects/image-hd-color-migration)` ``GENERATE_CARTOONIZED_IMAGE`: [AI Cartoon Generator](ai-image/effects/ai-anime-generator)` |
+
+## Response
+
+**Response Field Handling Flow**
+
+1. **Handle `Public Response Fields`**
+
+   Parse and validate the `Public Response Fields`, checking the status code or response message to ensure the request is successful and error-free.
+
+2. **Handle `Business Response Fields`**
+
+   If the `Public Response Fields` are valid and error-free, proceed with processing the business logic in the `Business Response Fields`.
+
+### Public Response Fields
+
+<a href="/doc/response-description" target="_blank">Viewing Public Response Fields and Error Codes</a>
+
+### Business Response Fields [`type` = `HD_COLOUR_MIGRATION`]
+
+| Field         | Type              | Scope                                                                                                                                                 | Description                                                                                                                                                                                                                                                                                                                                                                     |
+|:--------------|:------------------|:------------------------------------------------------------------------------------------------------------------------------------------------------|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `data`        | `object`          |                                                                                                                                                       | The content of the result data returned.                                                                                                                                                                                                                                                                                                                                        |
+| +`status`     | `string`          | ``QUEUING``, ``PROCESSING``, ``PROCESS_SUCCESS``, ``PROCESS_FAILED``, ``TIMEOUT_FAILED``, ``LIMIT_RETRY_FAILED`` | Asynchronous task status. ``QUEUING`: The task is queued.` ``PROCESSING`: Asynchronous processing.` ``PROCESS_SUCCESS`: Processing was successful.` ``PROCESS_FAILED`: Processing failed.` ``TIMEOUT_FAILED`: The task timeout did not complete.` ``LIMIT_RETRY_FAILED`: Exceeded maximum number of retries for processing failures.` |
+| +`image_list` | `array of string` |                                                                                                                                                       | [HD color migration](ai-image/effects/image-hd-color-migration) processing results.                                                                                                                                                                                                                                                                                          |
+
+The URL address is a temporary address, valid for 24 hours, and will not be accessible after it expires. If you need to save the file for a long time or permanently, please visit the URL address within 24 hours and download the file to your own storage space.
+
+### Business Response Fields [`type` = `GENERATE_CARTOONIZED_IMAGE`]
+
+| Field         | Type     | Scope                                                                                                                                                 | Description                                                                                                                                                                                                                                                                                                                                                                     |
+|:--------------|:---------|:------------------------------------------------------------------------------------------------------------------------------------------------------|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `data`        | `object` |                                                                                                                                                       | The content of the result data returned.                                                                                                                                                                                                                                                                                                                                        |
+| +`status`     | `string` | ``QUEUING``, ``PROCESSING``, ``PROCESS_SUCCESS``, ``PROCESS_FAILED``, ``TIMEOUT_FAILED``, ``LIMIT_RETRY_FAILED`` | Asynchronous task status. ``QUEUING`: The task is queued.` ``PROCESSING`: Asynchronous processing.` ``PROCESS_SUCCESS`: Processing was successful.` ``PROCESS_FAILED`: Processing failed.` ``TIMEOUT_FAILED`: The task timeout did not complete.` ``LIMIT_RETRY_FAILED`: Exceeded maximum number of retries for processing failures.` |
+| +`result_url` | `string` |                                                                                                                                                       | [AI Cartoon Generator](ai-image/effects/ai-anime-generator) processing results.                                                                                                                                                                                                                                                                                              |
+
+The URL address is a temporary address, valid for 24 hours, and will not be accessible after it expires. If you need to save the file for a long time or permanently, please visit the URL address within 24 hours and download the file to your own storage space.
+
+### Response Example
+
+#### [`type` = `HD_COLOUR_MIGRATION`]
+
+```json
+,
+  "data":         
+}
+```
+
+#### [`type` = `GENERATE_CARTOONIZED_IMAGE`]
+
+```json
+,
+  "data":         
+}
+```
+
+## Sample Code
+
+- [Introduction to Get Sample Code](get-sample-code)
+- [Sample Code][PostmanURL]
+
+## File Storage Policy
+
+- **Response Files**:
+  - **Storage Duration**: 24 hours.
+  - **Deletion Method**: Automatic Deletion upon Timeout.
+
+## Async APIs
+
+- [HD color migration](ai-image/effects/image-hd-color-migration)
+- [AI Cartoon Generator](ai-image/effects/ai-anime-generator)
+
+[PostmanURL]: https://documenter.getpostman.com/view/26387069/2s93JxqgHE#f94e60a3-0761-4429-8ea4-7f2cb2bc6721

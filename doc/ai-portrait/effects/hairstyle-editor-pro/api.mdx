@@ -1,0 +1,511 @@
+---
+title: "Hairstyle Changer Pro API"
+description: "Based on the stable diffusion model, it supports dozens of different hairstyles and colors, with each generated result being unique. It can simultaneously produce up to four result images for easy comparison and selection of the most suitable hairstyle."
+openapi: 'POST /api/portrait/effects/hairstyle-editor-pro'
+---
+<Tip>
+**Photo Validation Guide**
+
+To ensure user-uploaded photos meet the Hairstyle Processing API requirements, we recommend splitting the workflow into two stages: **Face Analysis** and **Hairstyle Processing**. This approach minimizes error wait times by validating images on the frontend, ensuring they meet API standards before proceeding to hairstyle processing. This enhances overall user experience.
+
+For detailed information, refer to the [Photo Validation Guide](ai-portrait/effects/hairstyle-editor-pro/guide).
+</Tip>
+
+## Request
+
+- **URL**: `https://www.ailabapi.com/api/portrait/effects/hairstyle-editor-pro`
+- **Method**: `POST`
+- **Content-Type**: `multipart/form-data`
+
+### Image requirements
+
+- **Image format**: `PNG` `JPG` `JPEG`
+- **Image size**: No more than 3 MB.
+- **Image resolution**: Larger than 200x200px, smaller than 1999x1999px.
+- **Minimum Face Proportion**: To ensure effectiveness, the proportion of the face in the image cannot be less than 20%.
+- **Facial Integrity**: To ensure effectiveness, the face in the image should ideally not be obscured.
+- **Facial Angle**: To ensure effectiveness, the face in the image should ideally be front-facing, with no more than a 45-degree rotation to the left or right.
+
+<table className="border border-collapse border-gray-300">
+  <tr>
+    <th style={{'text-align':'center'}} className="border border-gray-300">Image Validity</th>
+    <th style={{'text-align':'center'}} className="border border-gray-300"></th>
+    <th style={{'text-align':'center'}} className="border border-gray-300">Reason for Invalidity</th>
+  </tr>
+  <tr className="odd:bg-gray-50">
+    <td style={{'text-align':'center'}} className="border border-gray-300">✅</td>
+    <td className="border border-gray-300">
+      <div style={{'display':'flex','flex-wrap':'wrap','justify-content':'space-around'}}>
+        <div style={{'max-width':'100px','margin':'5px'}}>
+          <img alt="Hairstyle Changer Pro" src="https://ai-resource.ailabtools.com/hairstyle-changer-pro/valid-invalid-examples/valid-1.webp" />
+        </div>
+        <div style={{'max-width':'100px','margin':'5px'}}>
+          <img alt="Hairstyle Changer Pro" src="https://ai-resource.ailabtools.com/hairstyle-changer-pro/valid-invalid-examples/valid-2.webp" />
+        </div>
+        <div style={{'max-width':'100px','margin':'5px'}}>
+          <img alt="Hairstyle Changer Pro" src="https://ai-resource.ailabtools.com/hairstyle-changer-pro/valid-invalid-examples/valid-3.webp" />
+        </div>
+        <div style={{'max-width':'100px','margin':'5px'}}>
+          <img alt="Hairstyle Changer Pro" src="https://ai-resource.ailabtools.com/hairstyle-changer-pro/valid-invalid-examples/valid-4.webp" />
+        </div>      
+      </div>
+    </td>
+    <td style={{'text-align':'center'}} className="border border-gray-300"></td>
+  </tr>
+  <tr className="odd:bg-gray-50">
+    <td style={{'text-align':'center'}} rowSpan="5" className="border border-gray-300">❌</td>
+    <td className="border border-gray-300">
+      <div style={{'display':'flex','flex-wrap':'wrap','justify-content':'space-around'}}>
+        <div style={{'max-width':'100px','margin':'5px'}}>
+          <img alt="Hairstyle Changer Pro" src="https://ai-resource.ailabtools.com/hairstyle-changer-pro/valid-invalid-examples/no-face-1.webp" />
+        </div>
+        <div style={{'max-width':'100px','margin':'5px'}}>
+          <img alt="Hairstyle Changer Pro" src="https://ai-resource.ailabtools.com/hairstyle-changer-pro/valid-invalid-examples/no-face-2.webp" />
+        </div>    
+      </div>
+    </td>
+    <td style={{'text-align':'center'}} className="border border-gray-300">No face</td>
+  </tr>
+  <tr className="odd:bg-gray-50">
+    <td className="border border-gray-300">
+      <div style={{'display':'flex','flex-wrap':'wrap','justify-content':'space-around'}}>
+        <div style={{'max-width':'100px','margin':'5px'}}>
+          <img alt="Hairstyle Changer Pro" src="https://ai-resource.ailabtools.com/hairstyle-changer-pro/valid-invalid-examples/face-incomplete-1.webp" />
+        </div>
+        <div style={{'max-width':'100px','margin':'5px'}}>
+          <img alt="Hairstyle Changer Pro" src="https://ai-resource.ailabtools.com/hairstyle-changer-pro/valid-invalid-examples/face-incomplete-2.webp" />
+        </div>    
+      </div>
+    </td>
+    <td style={{'text-align':'center'}} className="border border-gray-300">Incomplete face</td>
+  </tr>
+  <tr className="odd:bg-gray-50">
+    <td className="border border-gray-300">
+      <div style={{'display':'flex','flex-wrap':'wrap','justify-content':'space-around'}}>
+        <div style={{'max-width':'100px','margin':'5px'}}>
+          <img alt="Hairstyle Changer Pro" src="https://ai-resource.ailabtools.com/hairstyle-changer-pro/valid-invalid-examples/face-blocked-1.webp" />
+        </div>
+        <div style={{'max-width':'100px','margin':'5px'}}>
+          <img alt="Hairstyle Changer Pro" src="https://ai-resource.ailabtools.com/hairstyle-changer-pro/valid-invalid-examples/face-blocked-2.webp" />
+        </div>    
+      </div>
+    </td>
+    <td style={{'text-align':'center'}} className="border border-gray-300">Face obscured</td>
+  </tr>
+  <tr className="odd:bg-gray-50">
+    <td className="border border-gray-300">
+      <div style={{'display':'flex','flex-wrap':'wrap','justify-content':'space-around'}}>
+        <div style={{'max-width':'100px','margin':'5px'}}>
+          <img alt="Hairstyle Changer Pro" src="https://ai-resource.ailabtools.com/hairstyle-changer-pro/valid-invalid-examples/face-small-1.webp" />
+        </div>
+        <div style={{'max-width':'100px','margin':'5px'}}>
+          <img alt="Hairstyle Changer Pro" src="https://ai-resource.ailabtools.com/hairstyle-changer-pro/valid-invalid-examples/face-small-2.webp" />
+        </div>    
+      </div>
+    </td>
+    <td style={{'text-align':'center'}} className="border border-gray-300">Face proportion too small</td>
+  </tr>
+  <tr className="odd:bg-gray-50">
+    <td className="border border-gray-300">
+      <div style={{'display':'flex','flex-wrap':'wrap','justify-content':'space-around'}}>
+        <div style={{'max-width':'100px','margin':'5px'}}>
+          <img alt="Hairstyle Changer Pro" src="https://ai-resource.ailabtools.com/hairstyle-changer-pro/valid-invalid-examples/face-big-1.webp" />
+        </div>
+        <div style={{'max-width':'100px','margin':'5px'}}>
+          <img alt="Hairstyle Changer Pro" src="https://ai-resource.ailabtools.com/hairstyle-changer-pro/valid-invalid-examples/face-big-2.webp" />
+        </div>    
+      </div>
+    </td>
+    <td style={{'text-align':'center'}} className="border border-gray-300">The face is too large to edit the hairstyle</td>
+  </tr>
+</table>
+
+### Headers
+
+| Field              | Required | Type     | Description                                        |
+|:-------------------|:---------|:---------|:---------------------------------------------------|
+| `ailabapi-api-key` | YES      | `string` | Application API KEY. [Get API KEY](/doc/get-api-key) |
+
+### Body
+
+#### Fixed Fields
+
+| Field        | Required | Type      | Scope                                               | Default | Description                                      |
+|:-------------|:---------|:----------|:----------------------------------------------------|:--------|:-------------------------------------------------|
+| `task_type`  | YES      | `string`  | ``async`` |         | ``async`: Asynchronous tasks.` |
+| `auto`       | YES      | `integer` | ``1`` | `1`     | ``1`: Automatic mode.` |
+| `image`      | YES      | `file`    |                                                     |         | Main image.                                      |
+| `hair_style` | YES      | `string`  | [Scope](#hair_style)                                |         | Hairstyle. [More Details](#hair_style)           |
+| `color`      | NO       | `string`  | [Scope](#color)                                     |         | Color. [More Details](#color)                    |
+| `image_size` | NO       | `integer` | ``1``, ``2``, ``3``, ``4`` | `1`     | Returns the number of images.                    |
+
+#### `hair_style` 
+
+<table className="border border-collapse border-gray-300">
+  <tr>
+    <th className="border border-gray-300">Category: Gender</th>
+    <th className="border border-gray-300">hair_style</th>
+    <th className="border border-gray-300">Description</th>
+  </tr>
+  <tr className="odd:bg-gray-50">
+    <td rowSpan="22" style={{'text-align':'center'}} className="border border-gray-300">Male</td>
+    <td style={{'text-align':'center'}} className="border border-gray-300">BuzzCut</td>
+    <td style={{'text-align':'center'}} className="border border-gray-300">Buzz Cut hair</td>
+  </tr>
+  <tr className="odd:bg-gray-50">
+    <td style={{'text-align':'center'}} className="border border-gray-300">UnderCut</td>
+    <td style={{'text-align':'center'}} className="border border-gray-300">UnderCut hair</td>
+  </tr>
+  <tr className="odd:bg-gray-50">
+    <td style={{'text-align':'center'}} className="border border-gray-300">Pompadour</td>
+    <td style={{'text-align':'center'}} className="border border-gray-300">Pompadour hair</td>
+  </tr>
+  <tr className="odd:bg-gray-50">
+    <td style={{'text-align':'center'}} className="border border-gray-300">SlickBack</td>
+    <td style={{'text-align':'center'}} className="border border-gray-300">Slick Back hair</td>
+  </tr>
+  <tr className="odd:bg-gray-50">
+    <td style={{'text-align':'center'}} className="border border-gray-300">CurlyShag</td>
+    <td style={{'text-align':'center'}} className="border border-gray-300">Curly Shag hair</td>
+  </tr>
+  <tr className="odd:bg-gray-50">
+    <td style={{'text-align':'center'}} className="border border-gray-300">WavyShag</td>
+    <td style={{'text-align':'center'}} className="border border-gray-300">Wavy Shag hair</td>
+  </tr>
+  <tr className="odd:bg-gray-50">
+    <td style={{'text-align':'center'}} className="border border-gray-300">FauxHawk</td>
+    <td style={{'text-align':'center'}} className="border border-gray-300">Faux Hawk hair</td>
+  </tr>
+  <tr className="odd:bg-gray-50">
+    <td style={{'text-align':'center'}} className="border border-gray-300">Spiky</td>
+    <td style={{'text-align':'center'}} className="border border-gray-300">Spiky hair</td>
+  </tr>
+  <tr className="odd:bg-gray-50">
+    <td style={{'text-align':'center'}} className="border border-gray-300">CombOver</td>
+    <td style={{'text-align':'center'}} className="border border-gray-300">Comb-over hair</td>
+  </tr>
+  <tr className="odd:bg-gray-50">
+    <td style={{'text-align':'center'}} className="border border-gray-300">HighTightFade</td>
+    <td style={{'text-align':'center'}} className="border border-gray-300">High and Tight Fade hair</td>
+  </tr>
+  <tr className="odd:bg-gray-50">
+    <td style={{'text-align':'center'}} className="border border-gray-300">ManBun</td>
+    <td style={{'text-align':'center'}} className="border border-gray-300">Man Bun hair</td>
+  </tr>
+  <tr className="odd:bg-gray-50">
+    <td style={{'text-align':'center'}} className="border border-gray-300">Afro</td>
+    <td style={{'text-align':'center'}} className="border border-gray-300">Afro hair</td>
+  </tr>
+  <tr className="odd:bg-gray-50">
+    <td style={{'text-align':'center'}} className="border border-gray-300">LowFade</td>
+    <td style={{'text-align':'center'}} className="border border-gray-300">Low Fade hair</td>
+  </tr>
+  <tr className="odd:bg-gray-50">
+    <td style={{'text-align':'center'}} className="border border-gray-300">UndercutLongHair</td>
+    <td style={{'text-align':'center'}} className="border border-gray-300">Undercut With Long Hair</td>
+  </tr>
+  <tr className="odd:bg-gray-50">
+    <td style={{'text-align':'center'}} className="border border-gray-300">TwoBlockHaircut</td>
+    <td style={{'text-align':'center'}} className="border border-gray-300">Two Block Haircut</td>
+  </tr>
+  <tr className="odd:bg-gray-50">
+    <td style={{'text-align':'center'}} className="border border-gray-300">TexturedFringe</td>
+    <td style={{'text-align':'center'}} className="border border-gray-300">Textured Fringe Hair</td>
+  </tr>
+  <tr className="odd:bg-gray-50">
+    <td style={{'text-align':'center'}} className="border border-gray-300">BluntBowlCut</td>
+    <td style={{'text-align':'center'}} className="border border-gray-300">Blunt Bowl Cut</td>
+  </tr>
+  <tr className="odd:bg-gray-50">
+    <td style={{'text-align':'center'}} className="border border-gray-300">LongWavyCurtainBangs</td>
+    <td style={{'text-align':'center'}} className="border border-gray-300">Long Wavy Curtain Bangs Hair</td>
+  </tr>
+  <tr className="odd:bg-gray-50">
+    <td style={{'text-align':'center'}} className="border border-gray-300">MessyTousled</td>
+    <td style={{'text-align':'center'}} className="border border-gray-300">Messy Tousled hair</td>
+  </tr>
+  <tr className="odd:bg-gray-50">
+    <td style={{'text-align':'center'}} className="border border-gray-300">CornrowBraids</td>
+    <td style={{'text-align':'center'}} className="border border-gray-300">Cornrow Braids hair</td>
+  </tr>
+  <tr className="odd:bg-gray-50">
+    <td style={{'text-align':'center'}} className="border border-gray-300">LongHairTiedUp</td>
+    <td style={{'text-align':'center'}} className="border border-gray-300">Long Hair Tied Up Hair</td>
+  </tr>
+  <tr className="odd:bg-gray-50">
+    <td style={{'text-align':'center'}} className="border border-gray-300">Middle-parted</td>
+    <td style={{'text-align':'center'}} className="border border-gray-300">Middle-parted Hair</td>
+  </tr>
+
+  <tr>
+    <td rowSpan="29" style={{'text-align':'center'}} className="border border-gray-300">Female</td>
+    <td style={{'text-align':'center'}} className="border border-gray-300">ShortPixieWithShavedSides</td>
+    <td style={{'text-align':'center'}} className="border border-gray-300">Short Pixie With Shaved Sides</td>
+  </tr>
+  <tr className="odd:bg-gray-50">
+    <td style={{'text-align':'center'}} className="border border-gray-300">ShortNeatBob</td>
+    <td style={{'text-align':'center'}} className="border border-gray-300">short neat bob hair</td>
+  </tr>
+  <tr className="odd:bg-gray-50">
+    <td style={{'text-align':'center'}} className="border border-gray-300">DoubleBun</td>
+    <td style={{'text-align':'center'}} className="border border-gray-300">double bun hair</td>
+  </tr>
+  <tr className="odd:bg-gray-50">
+    <td style={{'text-align':'center'}} className="border border-gray-300">Updo</td>
+    <td style={{'text-align':'center'}} className="border border-gray-300">Updo hair</td>
+  </tr>
+  <tr className="odd:bg-gray-50">
+    <td style={{'text-align':'center'}} className="border border-gray-300">Spiked</td>
+    <td style={{'text-align':'center'}} className="border border-gray-300">spiked hair</td>
+  </tr>
+  <tr className="odd:bg-gray-50">
+    <td style={{'text-align':'center'}} className="border border-gray-300">bowlCut</td>
+    <td style={{'text-align':'center'}} className="border border-gray-300">bowl cut hair</td>
+  </tr>
+  <tr className="odd:bg-gray-50">
+    <td style={{'text-align':'center'}} className="border border-gray-300">Chignon</td>
+    <td style={{'text-align':'center'}} className="border border-gray-300">Chignon hair</td>
+  </tr>
+  <tr className="odd:bg-gray-50">
+    <td style={{'text-align':'center'}} className="border border-gray-300">PixieCut</td>
+    <td style={{'text-align':'center'}} className="border border-gray-300">Pixie Cut hair</td>
+  </tr>
+  <tr className="odd:bg-gray-50">
+    <td style={{'text-align':'center'}} className="border border-gray-300">SlickedBack</td>
+    <td style={{'text-align':'center'}} className="border border-gray-300">slicked back hair</td>
+  </tr>
+  <tr className="odd:bg-gray-50">
+    <td style={{'text-align':'center'}} className="border border-gray-300">LongCurly</td>
+    <td style={{'text-align':'center'}} className="border border-gray-300">Long curly hair</td>
+  </tr>
+  <tr className="odd:bg-gray-50">
+    <td style={{'text-align':'center'}} className="border border-gray-300">CurlyBob</td>
+    <td style={{'text-align':'center'}} className="border border-gray-300">Curly bob hair</td>
+  </tr>
+  <tr className="odd:bg-gray-50">
+    <td style={{'text-align':'center'}} className="border border-gray-300">StackedCurlsInShortBob</td>
+    <td style={{'text-align':'center'}} className="border border-gray-300">Stacked Curls in Short Bob hair</td>
+  </tr>
+  <tr className="odd:bg-gray-50">
+    <td style={{'text-align':'center'}} className="border border-gray-300">SidePartCombOverHairstyleWithHighFade</td>
+    <td style={{'text-align':'center'}} className="border border-gray-300">Side Part Comb-Over Hairstyle With High Fade hair</td>
+  </tr>
+  <tr className="odd:bg-gray-50">
+    <td style={{'text-align':'center'}} className="border border-gray-300">WavyFrenchBobVibesfrom1920</td>
+    <td style={{'text-align':'center'}} className="border border-gray-300">Wavy French Bob Vibes from 1920</td>
+  </tr>
+  <tr className="odd:bg-gray-50">
+    <td style={{'text-align':'center'}} className="border border-gray-300">BobCut</td>
+    <td style={{'text-align':'center'}} className="border border-gray-300">bob Haircut hair</td>
+  </tr>
+  <tr className="odd:bg-gray-50">
+    <td style={{'text-align':'center'}} className="border border-gray-300">ShortTwintails</td>
+    <td style={{'text-align':'center'}} className="border border-gray-300">Short Twintails hair</td>
+  </tr>
+  <tr className="odd:bg-gray-50">
+    <td style={{'text-align':'center'}} className="border border-gray-300">ShortCurlyPixie</td>
+    <td style={{'text-align':'center'}} className="border border-gray-300">Short Curly Pixie</td>
+  </tr>
+  <tr className="odd:bg-gray-50">
+    <td style={{'text-align':'center'}} className="border border-gray-300">LongStraight</td>
+    <td style={{'text-align':'center'}} className="border border-gray-300">Long straight hair</td>
+  </tr>
+  <tr className="odd:bg-gray-50">
+    <td style={{'text-align':'center'}} className="border border-gray-300">LongWavy</td>
+    <td style={{'text-align':'center'}} className="border border-gray-300">Long wavy hair</td>
+  </tr>
+  <tr className="odd:bg-gray-50">
+    <td style={{'text-align':'center'}} className="border border-gray-300">FishtailBraid</td>
+    <td style={{'text-align':'center'}} className="border border-gray-300">Fishtail braid hair</td>
+  </tr>
+  <tr className="odd:bg-gray-50">
+    <td style={{'text-align':'center'}} className="border border-gray-300">TwinBraids</td>
+    <td style={{'text-align':'center'}} className="border border-gray-300">Twin Braids hair</td>
+  </tr>
+  <tr className="odd:bg-gray-50">
+    <td style={{'text-align':'center'}} className="border border-gray-300">Ponytail</td>
+    <td style={{'text-align':'center'}} className="border border-gray-300">Ponytail hair</td>
+  </tr>
+  <tr className="odd:bg-gray-50">
+    <td style={{'text-align':'center'}} className="border border-gray-300">Dreadlocks</td>
+    <td style={{'text-align':'center'}} className="border border-gray-300">dreadlocks hair</td>
+  </tr>
+  <tr className="odd:bg-gray-50">
+    <td style={{'text-align':'center'}} className="border border-gray-300">Cornrows</td>
+    <td style={{'text-align':'center'}} className="border border-gray-300">Cornrows hair</td>
+  </tr>
+  <tr className="odd:bg-gray-50">
+    <td style={{'text-align':'center'}} className="border border-gray-300">ShoulderLengthHair</td>
+    <td style={{'text-align':'center'}} className="border border-gray-300">Shoulder Length Straight Hair</td>
+  </tr>
+  <tr className="odd:bg-gray-50">
+    <td style={{'text-align':'center'}} className="border border-gray-300">LooseCurlyAfro</td>
+    <td style={{'text-align':'center'}} className="border border-gray-300">Loose Curly Afro hair</td>
+  </tr>
+  <tr className="odd:bg-gray-50">
+    <td style={{'text-align':'center'}} className="border border-gray-300">LongTwintails</td>
+    <td style={{'text-align':'center'}} className="border border-gray-300">Long Twintails hair</td>
+  </tr>
+  <tr className="odd:bg-gray-50">
+    <td style={{'text-align':'center'}} className="border border-gray-300">LongHimeCut</td>
+    <td style={{'text-align':'center'}} className="border border-gray-300">Long Hime Cut hair</td>
+  </tr>
+  <tr className="odd:bg-gray-50">
+    <td style={{'text-align':'center'}} className="border border-gray-300">BoxBraids</td>
+    <td style={{'text-align':'center'}} className="border border-gray-300">Box Braids hair</td>
+  </tr>
+</table>
+
+#### `color` 
+
+| `color`          | Description          |
+|:-----------------|:---------------------|
+| `blonde`         | blonde hair          |
+| `platinumBlonde` | platinum blonde hair |
+| `brown`          | brown hair           |
+| `lightBrown`     | light brown hair     |
+| `blue`           | blue hair            |
+| `lightBlue`      | light blue hair      |
+| `purple`         | purple hair          |
+| `lightPurple`    | light purple hair    |
+| `pink`           | pink hair            |
+| `black`          | black hair           |
+| `white`          | white hair           |
+| `grey`           | grey hair            |
+| `silver`         | silver hair          |
+| `red`            | red hair             |
+| `orange`         | orange hair          |
+| `green`          | green hair           |
+| `gradient`       | gradient hair        |
+| `multicolored`   | multicolored hair    |
+| `darkBlue`       | dark blue hair       |
+| `burgundy`       | burgundy hair        |
+| `darkGreen`      | dark green hair      |
+
+## Response
+<Warning>
+**Response Field Handling Flow**
+
+1. **Handle `Public Response Fields`**
+
+   Parse and validate the `Public Response Fields`, checking the status code or response message to ensure the request is successful and error-free.
+
+2. **Handle `Business Response Fields`**
+
+   If the `Public Response Fields` are valid and error-free, proceed with processing the business logic in the `Business Response Fields`.
+</Warning>
+
+### Public Response Fields
+
+<a href="/doc/response-description" target="_blank">Viewing Public Response Fields and Error Codes</a>
+
+### Business Response Fields
+
+| Field       | Type     | Scope            | Description                                                                                                                                   |
+|:------------|:---------|:-----------------|:----------------------------------------------------------------------------------------------------------------------------------------------|
+| `task_type` | `string` | ``async`` | Task Type. ``async`: Asynchronous tasks.`                                                                                              |
+| `task_id`   | `string` |                  | Asynchronous task ID. <br/>**Please use this field when calling the [Querying Async Task Results](ai-common/async-task-results/api) API.** |
+
+### Response Example
+
+```json
+{
+  "request_id":     "",
+  "log_id":         "",
+  "error_code":     0,
+  "error_msg":      "",
+  "error_detail":   {
+    "status_code":  200,
+    "code":         "",
+    "code_message": "",
+    "message":      ""
+  },
+  "task_type":      "",
+  "task_id":        ""
+}
+```
+<Tip>
+This API is asynchronous, please keep `task_id` and call [`Querying Async Task Results`](ai-common/async-task-results/api) to get the final results.
+
+Asynchronous task results are valid for 24 hours. It is recommended that asynchronous task results be queried every 5 seconds.
+</Tip>
+## `Querying Async Task Results` Response
+<Warning>
+**Response Field Handling Flow**
+
+1. **Handle `Public Response Fields`**
+
+   Parse and validate the `Public Response Fields`, checking the status code or response message to ensure the request is successful and error-free.
+
+2. **Handle `Business Response Fields`**
+
+   If the `Public Response Fields` are valid and error-free, proceed with processing the business logic in the `Business Response Fields`.
+</Warning>
+### Public Response Fields
+
+<a href="/doc/response-description" target="_blank">Viewing Public Response Fields and Error Codes</a>
+
+### Business Response Fields
+
+| Field         | Type      | Scope                                  | Description                                                                                                                                 |
+|:--------------|:----------|:---------------------------------------|:--------------------------------------------------------------------------------------------------------------------------------------------|
+| `task_status` | `integer` | ``0``, ``1``, ``2`` | Asynchronous task status. ``0`: The task is queued.` ``1`: Asynchronous processing.` ``2`: Processing was successful.` |
+| `data`        | `object`  |                                        | The content of the result data returned.                                                                                                    |
+| +`images`     | `array`   |                                        | Array of resultant image addresses.                                                                                                         |
+<Tip>
+The URL address is a temporary address, valid for 24 hours, and will not be accessible after it expires. If you need to save the file for a long time or permanently, please visit the URL address within 24 hours and download the file to your own storage space.
+</Tip>
+### Response Example
+
+```json
+{
+  "error_code":     0,
+  "error_msg":      "",
+  "error_detail":   {
+    "status_code":  200,
+    "code":         "",
+    "code_message": "",
+    "message":      ""
+  },
+  "task_status":    0,
+  "data":           {
+    "images": [
+      "Image URL",
+      "Image URL"
+    ]
+  }
+}
+```
+
+## Sample Code
+<Tip>
+**[👉 Online Experience 👈](https://www.ailabtools.com/portrait-hairstyle-editing-pro-example)**
+
+If you'd like to see the actual effects, please visit the experience page for a trial.
+
+- [Introduction to Get Sample Code](get-sample-code)
+- [Sample Code][PostmanURL]
+</Tip>
+[PostmanURL]: https://documenter.getpostman.com/view/26387069/2s93JxqgHE#1165e9fd-450b-491d-a08b-757a89f4fb9e
+
+[OriginalImage-comparison-bangs-1]: https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/OriginalImage-comparison-bangs-1.webp
+
+[ResultImage-comparison-bangs-1-valid-0]: https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/ResultImage-comparison-bangs-1-valid-0.webp
+
+[ResultImage-comparison-bangs-1-valid-1]: https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/ResultImage-comparison-bangs-1-valid-1.webp
+
+[ResultImage-comparison-bangs-1-invalid-0]: https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/ResultImage-comparison-bangs-1-invalid-0.webp
+
+[ResultImage-comparison-bangs-1-invalid-1]: https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/ResultImage-comparison-bangs-1-invalid-1.webp
+
+[OriginalImage-comparison-mode-1]: https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/OriginalImage-comparison-mode-1.webp
+
+[ResultImage-comparison-mode-1-1]: https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/ResultImage-comparison-mode-1-1.webp
+
+[ResultImage-comparison-mode-1-2]: https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/ResultImage-comparison-mode-1-2.webp
+
+[OriginalImage-comparison-reference-1]: https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/OriginalImage-comparison-reference-1.webp
+
+[ResultImage-comparison-reference-1-0]: https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/ResultImage-comparison-reference-1-0.webp
+
+[ResultImage-comparison-reference-1-1]: https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/ResultImage-comparison-reference-1-1.webp

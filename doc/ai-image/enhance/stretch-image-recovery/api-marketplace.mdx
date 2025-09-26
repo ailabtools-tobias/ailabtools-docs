@@ -1,0 +1,51 @@
+---
+title: "AILabTools API - Stretched Image Restoration API"
+description: "Introducing the Stretched Image Restoration, an amazing way to restore your overstretched images with the help of artificial intelligence algorithms. This revolutionary tool will automatically recognize the overstretched image and restore it to its original proportions with just a few clicks. With its advanced algorithms, it can restore your images quickly and accurately, giving you the perfect look you need. Get the Stretched Image Restoration and get your images back to the perfect proportions!"
+---
+
+## Request
+
+### Image requirements
+
+- **Image format**: `PNG` `JPG` `JPEG` `BMP`
+- **Image size**: No more than 8 MB.
+- **Image resolution**: Larger than 10x10px, smaller than 5000x5000px.
+- **Image aspect ratio**: Aspect ratio within 4:1.
+
+### Body
+
+| Field   | Required | Type   |
+|:--------|:---------|:-------|
+| `image` | YES      | `file` |
+
+## Response
+
+**Response Field Handling Flow**
+
+1. **Handle `Public Response Fields`**
+
+   Parse and validate the `Public Response Fields`, checking the status code or response message to ensure the request is successful and error-free.
+
+2. **Handle `Business Response Fields`**
+
+   If the `Public Response Fields` are valid and error-free, proceed with processing the business logic in the `Business Response Fields`.
+
+### Public Response Fields
+
+<a href="/doc/response-description" target="_blank">Viewing Public Response Fields and Error Codes</a>
+
+### Business Response Fields
+
+| Field   | Type     | Description           |
+|:--------|:---------|:----------------------|
+| `image` | `string` | base64 encoded image. |
+| `ratio` | `float`  | Recover ratio.        |
+
+### Response Example
+
+```json
+,
+  "image":          "",
+  "ratio":          0
+}
+```

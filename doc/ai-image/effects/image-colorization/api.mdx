@@ -1,0 +1,82 @@
+---
+title: "AI Photo Colorize - API"
+description: "The AI Photo Colorize tool allows you to quickly and easily turn your black and white images into full-color images. With a few simple steps, you can swiftly transform any black and white image into a stunning, vivid piece of art. Bring your memories back to life with AI Photo Colorize!"
+openapi: 'POST /api/image/effects/image-colorization'
+---
+
+## Request
+
+- **URL**: `https://www.ailabapi.com/api/image/effects/image-colorization`
+- **Method**: `POST`
+- **Content-Type**: `multipart/form-data`
+
+### Image requirements
+
+- **Image format**: `PNG` `JPG` `JPEG` `BMP`
+- **Image size**: No more than 8 MB.
+- **Image resolution**: Larger than 10x10px, smaller than 5000x5000px.
+- **Image aspect ratio**: Aspect ratio within 4:1.
+
+### Headers
+
+| Field              | Required | Type     | Description                                        |
+|:-------------------|:---------|:---------|:---------------------------------------------------|
+| `ailabapi-api-key` | YES      | `string` | Application API KEY. [Get API KEY](/doc/get-api-key) |
+
+### Body
+
+| Field   | Required | Type   |
+|:--------|:---------|:-------|
+| `image` | YES      | `file` |
+
+## Response
+<Warning>
+**Response Field Handling Flow**
+
+1. **Handle `Public Response Fields`**
+
+   Parse and validate the `Public Response Fields`, checking the status code or response message to ensure the request is successful and error-free.
+
+2. **Handle `Business Response Fields`**
+
+   If the `Public Response Fields` are valid and error-free, proceed with processing the business logic in the `Business Response Fields`.
+</Warning>
+### Public Response Fields
+
+<a href="/doc/response-description" target="_blank">Viewing Public Response Fields and Error Codes</a>
+
+### Business Response Fields
+
+| Field   | Type     | Description           |
+|:--------|:---------|:----------------------|
+| `image` | `string` | base64 encoded image. |
+
+### Response Example
+
+```json
+{
+  "request_id":     "",
+  "log_id":         "",
+  "error_code":     0,
+  "error_msg":      "",
+  "error_detail":   {
+    "status_code":  200,
+    "code":         "",
+    "code_message": "",
+    "message":      ""
+  },
+  "image":          ""
+}
+```
+
+## Sample Code
+<Tip>
+**[👉 Online Experience 👈](https://www.ailabtools.com/image-coloring-example)**
+
+If you'd like to see the actual effects, please visit the experience page for a trial.
+
+- [Introduction to Get Sample Code](get-sample-code)
+- [Sample Code][PostmanURL]
+
+[PostmanURL]: https://documenter.getpostman.com/view/26387069/2s93JxqgHE#5a097e3f-8230-4393-8425-af750d3954a3
+</Tip>

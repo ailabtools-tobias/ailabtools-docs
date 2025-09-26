@@ -1,0 +1,75 @@
+---
+title: "Image color enhancement API"
+description: "Introducing Image Enhancer, the ultimate professional image enhancement tool for perfecting your photos. Our powerful suite of tools allows you to deblur, color correct, and adjust contrast with ease, giving you the best possible image quality. From simple corrections to complex tasks, Image Enhancer delivers professional-grade results in no time. Whether you're a professional photographer or just starting out, Image Enhancer has the tools you need to take your photos to the next level. Take control of your images and get the perfect look you desire with Image Enhancer."
+openapi: 'POST /api/image/enhance/image-color-enhancement'
+---
+
+## Request
+
+- **URL**: `https://www.ailabapi.com/api/image/enhance/image-color-enhancement`
+- **Method**: `POST`
+- **Content-Type**: `multipart/form-data`
+
+### Image requirements
+
+- **Image format**: `JPG` `PNG` `BMP`
+- **Image size**: No more than 3 MB.
+- **Image resolution**: Larger than 64x64px, smaller than 3840x2160px.
+
+### Headers
+
+| Field              | Required | Type     | Description                                        |
+|:-------------------|:---------|:---------|:---------------------------------------------------|
+| `ailabapi-api-key` | YES      | `string` | Application API KEY. [Get API KEY](/doc/get-api-key) |
+
+### Body
+
+| Field           | Required | Type     | Scope                                                 | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
+|:----------------|:---------|:---------|:------------------------------------------------------|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `image`         | YES      | `file`   |                                                       |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| `output_format` | YES      | `string` | ``png``, ``jpg`` | The format of the output image.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| `mode`          | YES      | `string` | ``LogC``, ``Rec709``, ``ln17_256`` | Color mixing mode. ``LogC`: Suitable for gray film (low contrast raw map) input, adjust the image color perception substantially to restore the color texture of the SDR domain.` ``Rec709`: Suitable for images taken under general conditions, appropriate to enhance the image brightness, saturation, etc., the adjustment range is more conservative.` ``ln17_256`: Suitable for images taken under general conditions, drastically adjusts image brightness, saturation, contrast, and improves color quality.` |
+
+## Response
+
+**Response Field Handling Flow**
+
+1. **Handle `Public Response Fields`**
+
+   Parse and validate the `Public Response Fields`, checking the status code or response message to ensure the request is successful and error-free.
+
+2. **Handle `Business Response Fields`**
+
+   If the `Public Response Fields` are valid and error-free, proceed with processing the business logic in the `Business Response Fields`.
+
+### Public Response Fields
+
+<a href="/doc/response-description" target="_blank">Viewing Public Response Fields and Error Codes</a>
+
+### Business Response Fields
+
+| Field        | Type     | Description                                     |
+|:-------------|:---------|:------------------------------------------------|
+| `data`       | `object` | The content of the result data returned.        |
+| +`image_url` | `string` | Returns the URL address of the processed image. |
+
+The URL address is a temporary address, valid for 24 hours, and will not be accessible after it expires. If you need to save the file for a long time or permanently, please visit the URL address within 24 hours and download the file to your own storage space.
+
+### Response Example
+
+```json
+,
+  "data":           
+}
+```
+
+## Sample Code
+
+**[👉 Online Experience 👈**(https://www.ailabtools.com/image-color-enhancement-example)]
+
+If you'd like to see the actual effects, please visit the experience page for a trial.
+
+- [Introduction to Get Sample Code](get-sample-code)
+- [Sample Code][PostmanURL]
+
+[PostmanURL]: https://documenter.getpostman.com/view/26387069/2s93JxqgHE#ea688a11-b74a-41c3-a9a1-9b3576679aa5

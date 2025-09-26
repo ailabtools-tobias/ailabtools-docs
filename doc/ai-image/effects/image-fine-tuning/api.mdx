@@ -1,0 +1,74 @@
+---
+title: "Image Micro Motion - API"
+description: "You can still rotate the sky area and human hair area included in the input image to get a micro-motion AVI format video."
+openapi: 'POST /api/image/effects/image-fine-tuning'
+---
+
+# AILabTools API - Image Micro Motion - API
+
+This API has been discontinued. Please refer to the latest API documentation.
+
+## Request
+
+- **URL**: `https://www.ailabapi.com/api/image/effects/image-fine-tuning`
+- **Method**: `POST`
+- **Content-Type**: `multipart/form-data`
+
+### Image requirements
+
+- **Image format**: `JPEG` `JPG` `PNG` `BMP`
+- **Image size**: No more than 3 MB.
+- **Image resolution**: Larger than 32x32px, smaller than 2000x2000px.
+
+### Headers
+
+| Field              | Required | Type     | Description                                        |
+|:-------------------|:---------|:---------|:---------------------------------------------------|
+| `ailabapi-api-key` | YES      | `string` | Application API KEY. [Get API KEY](/doc/get-api-key) |
+
+### Body
+
+| Field       | Required | Type     | Scope                                                  | Description                                                                                                                                                                                                                                     |
+|:------------|:---------|:---------|:-------------------------------------------------------|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `image`     | YES      | `file`   |                                                        |                                                                                                                                                                                                                                                 |
+| `operation` | YES      | `string` | ``1``, ``01``, ``10``, ``11`` | The micro-motion state of the sky and hair. ``1`: The sky moves slightly.` ``01`: The sky moves slightly.` ``10`: The hair moves slightly, the sky does not move.` ``11`: Both the hair and the sky move slightly.` |
+
+## Response
+
+**Response Field Handling Flow**
+
+1. **Handle `Public Response Fields`**
+
+   Parse and validate the `Public Response Fields`, checking the status code or response message to ensure the request is successful and error-free.
+
+2. **Handle `Business Response Fields`**
+
+   If the `Public Response Fields` are valid and error-free, proceed with processing the business logic in the `Business Response Fields`.
+
+### Public Response Fields
+
+<a href="/doc/response-description" target="_blank">Viewing Public Response Fields and Error Codes</a>
+
+### Business Response Fields
+
+| Field  | Type     | Description                                                           |
+|:-------|:---------|:----------------------------------------------------------------------|
+| `data` | `object` | The content of the result data returned.                              |
+| +`url` | `string` | The URL address of the video after the micro-movement transformation. |
+
+The URL address is a temporary address, valid for 24 hours, and will not be accessible after it expires. If you need to save the file for a long time or permanently, please visit the URL address within 24 hours and download the file to your own storage space.
+
+### Response Example
+
+```json
+,
+  "data":           
+}
+```
+
+## Sample Code
+
+- [Introduction to Get Sample Code](get-sample-code)
+- [Sample Code][PostmanURL]
+
+[PostmanURL]: https://documenter.getpostman.com/view/26387069/2s93JxqgHE#202b16d4-c8e9-455e-ab8a-7ae2b4a051bb

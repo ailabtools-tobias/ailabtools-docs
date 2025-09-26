@@ -1,0 +1,85 @@
+---
+title: "Hairstyle changer API"
+description: "Introducing Hairstyle Changer - the revolutionary new deep learning algorithm that can transform the look of your portraits in an instant. With Hairstyle Changer, you can add bangs, change hair length, and increase hair volume to create stunningly unique hairstyles. From thick and luxurious locks to sleek and chic bobs, Hairstyle Changer is the ultimate tool for giving your portraits the perfect look. Plus, with its advanced technology, you can trust that the results are realistic and natural-looking. Try Hairstyle Changer today and let your creativity shine!"
+openapi: 'POST /api/portrait/effects/hairstyle-editor'
+---
+
+## Request
+
+- **URL**: `https://www.ailabapi.com/api/portrait/effects/hairstyle-editor`
+- **Method**: `POST`
+- **Content-Type**: `multipart/form-data`
+
+### Image requirements
+
+- **Image format**: `JPEG` `JPG` `PNG` `BMP`
+- **Image size**: No more than 5 MB.
+- **Image resolution**: Less than 4096x4096px.
+
+### Headers
+
+| Field              | Required | Type     | Description                                        |
+|:-------------------|:---------|:---------|:---------------------------------------------------|
+| `ailabapi-api-key` | YES      | `string` | Application API KEY. [Get API KEY](/doc/get-api-key) |
+
+### Body
+
+| Field          | Required | Type      | Scope                                                                                                                                                                                                                                | Default | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
+|:---------------|:---------|:----------|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:--------|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `image_target` | YES      | `file`    |                                                                                                                                                                                                                                      |         |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
+| `hair_type`    | NO       | `integer` | ``101``, ``201``, ``301``, ``401``, ``402``, ``403``, ``502``, ``503``, ``603``, ``801``, ``901``, ``1001``, ``1101``, ``1201``, ``1301`` | `101`   | ``101`: Bangs (default)`, ``201`: Long hair`, ``301`: Bangs with long hair`, ``401`: Medium hair increase`, ``402`: Light hair increase`, ``403`: Heavy hair increase`, ``502`: Light curling`, ``503`: Heavy curling`, ``801`: Blonde`, ``901`: Straight hair`, ``1001`: Oil-free hair (slight effect, recommended for images with noticeable issues)`, ``1101`: Hairline fill (slight effect, recommended for images with noticeable issues of a high hairline)`, ``1201`: Smooth hair (slight effect, recommended for images with a large hairstyle area)`, ``1301`: Fill hair gap (slight effect, fills the scalp part in the hair area, recommended for images with noticeable issues)` |
+
+## Response
+<Warning>
+**Response Field Handling Flow**
+
+1. **Handle `Public Response Fields`**
+
+   Parse and validate the `Public Response Fields`, checking the status code or response message to ensure the request is successful and error-free.
+
+2. **Handle `Business Response Fields`**
+
+   If the `Public Response Fields` are valid and error-free, proceed with processing the business logic in the `Business Response Fields`.
+</Warning>
+### Public Response Fields
+
+<a href="/doc/response-description" target="_blank">Viewing Public Response Fields and Error Codes</a>
+
+### Business Response Fields
+
+| Field    | Type     | Description                                                   |
+|:---------|:---------|:--------------------------------------------------------------|
+| `data`   | `object` | The content of the result data returned.                      |
+| +`image` | `string` | The result image, returning the Base64 encoding of the image. |
+
+### Response Example
+
+```json
+{
+  "request_id":     "",
+  "log_id":         "",
+  "error_code":     0,
+  "error_msg":      "",
+  "error_detail":   {
+    "status_code":  200,
+    "code":         "",
+    "code_message": "",
+    "message":      ""
+  },
+  "data":           {
+    "image": ""
+  }
+}
+```
+
+## Sample Code
+<Tip>
+**[👉 Online Experience 👈](https://www.ailabtools.com/portrait-hairstyle-editing-example)**
+
+If you'd like to see the actual effects, please visit the experience page for a trial.
+
+- [Introduction to Get Sample Code](get-sample-code)
+- [Sample Code][PostmanURL]
+
+[PostmanURL]: https://documenter.getpostman.com/view/26387069/2s93JxqgHE#dcf4ffec-ef4e-42de-85bd-23cd435adc42
+</Tip>

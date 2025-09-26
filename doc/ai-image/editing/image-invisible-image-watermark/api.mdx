@@ -1,0 +1,117 @@
+---
+title: "Image Invisible Picture Watermark API"
+description: "Image blind watermarking algorithm, add/resolve watermark, add content including image or logo. algorithm service body is divided into two：`encode_pic`, `decode_pic`."
+openapi: 'POST /api/image/editing/image-invisible-image-watermark'
+---
+
+## Request
+
+- **URL**: `https://www.ailabapi.com/api/image/editing/image-invisible-image-watermark`
+- **Method**: `POST`
+- **Content-Type**: `multipart/form-data`
+
+### Image requirements
+
+- **Image format**: `JPEG` `JPG` `PNG` `BMP`
+- **Image size**: No more than 3 MB.
+- **Image resolution**: Larger than 5x5px, smaller than 4096x4096px.
+
+### Headers
+
+| Field              | Required | Type     | Description                                        |
+|:-------------------|:---------|:---------|:---------------------------------------------------|
+| `ailabapi-api-key` | YES      | `string` | Application API KEY. [Get API KEY](/doc/get-api-key) |
+
+### Body
+
+#### Fixed Fields
+
+| Field           | Required | Type     | Scope                                                                                                                                                   | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
+|:----------------|:---------|:---------|:--------------------------------------------------------------------------------------------------------------------------------------------------------|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `function_type` | YES      | `string` | ``encode_pic``, ``encode_pic_plus``, ``encode_pic_bold``, ``decode_pic``, ``decode_pic_plus``, ``decode_pic_bold`` | Specifies the calling function. ``encode_pic`: Add image watermark using the old model.` ``encode_pic_plus`: Add image watermark with new version model 1.` ``encode_pic_bold`: Add image watermark with new version model 2.` ``decode_pic`: Use the old model to decode the image watermark in the image.` ``decode_pic_plus`: Use the new version Model 1 to decode the image watermark in the image.` ``decode_pic_bold`: Use the new version Model 2 to decode the image watermark in the image.` |
+
+#### `function_type` === `encode_pic`|`encode_pic_plus`|`encode_pic_bold`
+
+| Field              | Required | Type     | Scope                                                        | Default | Description       |
+|:-------------------|:---------|:---------|:-------------------------------------------------------------|:--------|:------------------|
+| `origin_image`     | YES      | `file`   |                                                              |         | Original image.   |
+| `logo`             | YES      | `file`   |                                                              |         | Watermark images. |
+| `output_file_type` | NO       | `string` | ``jpeg``, ``png``, ``jpg``, ``bmp`` | `png`   | Output format.    |
+
+#### `function_type` === `decode_pic`
+
+| Field             | Required | Type   | Scope | Default | Description                                                                  |
+|:------------------|:---------|:-------|:------|:--------|:-----------------------------------------------------------------------------|
+| `watermark_image` | YES      | `file` |       |         | The image to be resolved, i.e. the composite image with the image watermark. |
+| `origin_image`    | YES      | `file` |       |         | Original image.                                                              |
+
+#### `function_type` === `decode_pic_plus`|`decode_pic_bold`
+
+| Field             | Required | Type   | Scope | Default | Description                                                                  |
+|:------------------|:---------|:-------|:------|:--------|:-----------------------------------------------------------------------------|
+| `watermark_image` | YES      | `file` |       |         | The image to be resolved, i.e. the composite image with the image watermark. |
+
+#### `output_file_type` === `jpg`
+
+| Field            | Required | Type      | Scope    | Default | Description                                                                        |
+|:-----------------|:---------|:----------|:---------|:--------|:-----------------------------------------------------------------------------------|
+| `quality_factor` | NO       | `integer` | [1, 100] | `100`   | The quality size of the output image, the higher the quality the larger the image. |
+
+## Response
+<Warning>
+**Response Field Handling Flow**
+
+1. **Handle `Public Response Fields`**
+
+   Parse and validate the `Public Response Fields`, checking the status code or response message to ensure the request is successful and error-free.
+
+2. **Handle `Business Response Fields`**
+
+   If the `Public Response Fields` are valid and error-free, proceed with processing the business logic in the `Business Response Fields`.
+</Warning>
+### Public Response Fields
+
+<a href="/doc/response-description" target="_blank">Viewing Public Response Fields and Error Codes</a>
+
+### Business Response Fields
+
+| Field                  | Type     | Description                                 |
+|:-----------------------|:---------|:--------------------------------------------|
+| `data`                 | `object` | The content of the result data returned.    |
+| +`watermark_image_url` | `string` | The URL address after adding the watermark. |
+| +`logo_url`            | `string` | Watermark URL address after decoding.       |
+<Tip>
+The URL address is a temporary address, valid for 24 hours, and will not be accessible after it expires. If you need to save the file for a long time or permanently, please visit the URL address within 24 hours and download the file to your own storage space.
+</Tip>
+### Response Example
+
+```json
+{
+  "request_id":     "",
+  "log_id":         "",
+  "error_code":     0,
+  "error_msg":      "",
+  "error_detail":   {
+    "status_code":  200,
+    "code":         "",
+    "code_message": "",
+    "message":      ""
+  },
+  "data":           {
+    "watermark_image_url": "",
+    "logo_url":            ""
+  }
+}
+```
+
+## Sample Code
+<Tip>
+**[👉 Online Experience 👈**(https://www.ailabtools.com/image-invisible-image-watermark-example)]
+
+If you'd like to see the actual effects, please visit the experience page for a trial.
+
+- [Introduction to Get Sample Code](get-sample-code)
+- [Sample Code][PostmanURL]
+
+[PostmanURL]: https://documenter.getpostman.com/view/26387069/2s93JxqgHE#7075d5af-037f-472d-ae1b-348baf0582b6
+</Tip>

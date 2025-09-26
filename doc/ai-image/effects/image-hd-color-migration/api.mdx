@@ -1,0 +1,156 @@
+---
+title: "HD color migration API"
+description: "Color topping of HD images and the ability to ensure that the color of the portrait portion does not change."
+openapi: 'POST /api/image/effects/image-hd-color-migration'
+---
+
+## Request
+
+- **URL**: `https://www.ailabapi.com/api/image/effects/image-hd-color-migration`
+- **Method**: `POST`
+- **Content-Type**: `multipart/form-data`
+
+### Image requirements
+
+- **Image format**: `PNG` `JPG` `JPEG`
+- **Image size**: No more than 3 MB.
+- **Image resolution**: Larger than 64x64px, smaller than 10000x10000px.
+- The image must be RGB 3-channel.
+
+### Headers
+
+| Field              | Required | Type     | Description                                        |
+|:-------------------|:---------|:---------|:---------------------------------------------------|
+| `ailabapi-api-key` | YES      | `string` | Application API KEY. [Get API KEY](/doc/get-api-key) |
+
+### Body
+
+#### Fixed Fields
+
+| Field       | Required | Type     | Scope                                                  | Default | Example | Description                                                                                                                                                            |
+|:------------|:---------|:---------|:-------------------------------------------------------|:--------|:--------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `task_type` | YES      | `string` | ``async`` | `async` |         | ``async`: Asynchronous tasks.` |
+| `image`     | YES      | `file`   |                                                        |         |         |                                                                                                                                                                        |
+| `mode`      | YES      | `string` | ``AUTO``, ``TEMPLATE``, ``REF_PIC`` |         |         | ``AUTO`: Automatic color extension.`, ``TEMPLATE`: Color palette extension.`, ``REF_PIC`: Reference picture extension color.` |
+| `degree`    | YES      | `string` | [0, 1]                                                 |         | `0.4`   | Top color degree.                                                                                                                                                      |
+
+#### `mode` === `AUTO`
+
+| Field         | Required | Type      | Scope                                                                                                   | Default | Description                          |
+|:--------------|:---------|:----------|:--------------------------------------------------------------------------------------------------------|:--------|:-------------------------------------|
+| `color_count` | NO       | `integer` | ``1``, ``2``, ``3``, ``4``, ``5``, ``6``, ``7``, ``8`` | `1`     | Expand the number of color families. |
+
+#### `mode` === `TEMPLATE`
+
+| Field            | Required | Type     | Example         | Description                                                                                                 |
+|:-----------------|:---------|:---------|:----------------|:------------------------------------------------------------------------------------------------------------|
+| `color_template` | YES      | `string` | `056A6B,0A0B0C` | Color palette topology, Top master color list, color value definition ARGB. e.g. 0A0B0C, array size [1, 7]. |
+
+#### `mode` === `REF_PIC`
+
+| Field | Required | Type   | Description      |
+|:------|:---------|:-------|:-----------------|
+| `ref` | YES      | `file` | Reference image. |
+
+## Response
+<Warning>
+**Response Field Handling Flow**
+
+1. **Handle `Public Response Fields`**
+
+   Parse and validate the `Public Response Fields`, checking the status code or response message to ensure the request is successful and error-free.
+
+2. **Handle `Business Response Fields`**
+
+   If the `Public Response Fields` are valid and error-free, proceed with processing the business logic in the `Business Response Fields`.
+</Warning>
+### Public Response Fields
+
+<a href="/doc/response-description" target="_blank">Viewing Public Response Fields and Error Codes</a>
+
+### Business Response Fields
+
+| Field       | Type     | Scope            | Description                                                                                                                                   |
+|:------------|:---------|:-----------------|:----------------------------------------------------------------------------------------------------------------------------------------------|
+| `task_type` | `string` | ``async`` | Task Type. ``async`: Asynchronous tasks.`                                                                                              |
+| `task_id`   | `string` |                  | Asynchronous task ID. <br/>**Please use this field when calling the [Querying Async Task Results](ai-common/async-task-results/api) API.** |
+
+### Response Example
+
+```json
+{
+  "request_id":     "",
+  "log_id":         "",
+  "error_code":     0,
+  "error_msg":      "",
+  "error_detail":   {
+    "status_code":  200,
+    "code":         "",
+    "code_message": "",
+    "message":      ""
+  },
+  "task_type":      "",
+  "task_id":        ""
+}
+```
+<Tip>
+This API is asynchronous, please keep `task_id` and call [`Querying Async Task Results`](ai-common/async-task-results/api) to get the final results.
+
+Asynchronous task results are valid for 24 hours. It is recommended that asynchronous task results be queried every 5 seconds.
+</Tip>
+## `Querying Async Task Results` Response
+<Warning>
+**Response Field Handling Flow**
+
+1. **Handle `Public Response Fields`**
+
+   Parse and validate the `Public Response Fields`, checking the status code or response message to ensure the request is successful and error-free.
+
+2. **Handle `Business Response Fields`**
+
+   If the `Public Response Fields` are valid and error-free, proceed with processing the business logic in the `Business Response Fields`.
+</Warning>
+### Public Response Fields
+
+<a href="/doc/response-description" target="_blank">Viewing Public Response Fields and Error Codes</a>
+
+### Business Response Fields
+
+| Field         | Type              | Scope                                  | Description                                                                                                                                 |
+|:--------------|:------------------|:---------------------------------------|:--------------------------------------------------------------------------------------------------------------------------------------------|
+| `task_status` | `integer`         | ``0``, ``1``, ``2`` | Asynchronous task status. ``0`: The task is queued.` ``1`: Asynchronous processing.` ``2`: Processing was successful.` |
+| `data`        | `object`          |                                        | The content of the result data returned.                                                                                                    |
+| +`image_list` | `array of string` |                                        | Result URL address.                                                                                                                         |
+<Tip>
+The URL address is a temporary address, valid for 24 hours, and will not be accessible after it expires. If you need to save the file for a long time or permanently, please visit the URL address within 24 hours and download the file to your own storage space.
+</Tip>
+### Response Example
+
+```json
+{
+   "error_code":     0,
+   "error_msg":      "",
+   "error_detail":   {
+      "status_code":  200,
+      "code":         "",
+      "code_message": "",
+      "message":      ""
+   },
+   "task_status":    0,
+   "data":           {
+      "image_list": []
+   }
+}
+```
+
+## Sample Code
+<Tip>
+**[👉 Online Experience 👈](https://www.ailabtools.com/image-hd-color-migration-example)**
+
+If you'd like to see the actual effects, please visit the experience page for a trial.
+
+- [Introduction to Get Sample Code](get-sample-code)
+- [Sample Code][PostmanURL]
+
+[PostmanURL]: https://documenter.getpostman.com/view/26387069/2s93JxqgHE#4c8a1b3e-3702-4d30-8846-bc77b48ebe3e
+</Tip>

@@ -1,0 +1,487 @@
+---
+title: "Hairstyle Changer Pro - API:V2.0.0"
+description: "Based on the stable diffusion model, it supports dozens of different hairstyles and colors, with each generated result being unique. It can simultaneously produce up to four result images for easy comparison and selection of the most suitable hairstyle."
+---
+
+import apiOfflineNotice from '/snippets/api-offline-notice.mdx';
+
+<apiOfflineNotice />
+
+## Request
+
+- **URL**: `https://www.ailabapi.com/api/portrait/effects/hairstyle-editor-pro`
+- **Method**: `POST`
+- **Content-Type**: `multipart/form-data`
+
+### Image requirements
+
+- **Image format**: `PNG` `JPG` `JPEG`
+- **Image size**: No more than 3 MB.
+- **Image resolution**: Larger than 200x200px, smaller than 1999x1999px.
+- **Minimum Face Proportion**: To ensure effectiveness, the proportion of the face in the image cannot be less than 20%.
+- **Facial Integrity**: To ensure effectiveness, the face in the image should ideally not be obscured.
+- **Facial Angle**: To ensure effectiveness, the face in the image should ideally be front-facing, with no more than a 45-degree rotation to the left or right.
+
+<table>
+  <tr>
+    <th>Image Validity</th>
+    
+    <th>Reason for Invalidity</th>
+  </tr>
+  <tr>
+    <td>✅</td>
+    <td>
+      <div>
+        <div>
+          
+        </div>
+        <div>
+          
+        </div>
+        <div>
+          
+        </div>
+        <div>
+          
+        </div>      
+      </div>
+    </td>
+    
+  </tr>
+  <tr>
+    <td>❌</td>
+    <td>
+      <div>
+        <div>
+          
+        </div>
+        <div>
+          
+        </div>    
+      </div>
+    </td>
+    <td>No face</td>
+  </tr>
+  <tr>
+    <td>
+      <div>
+        <div>
+          
+        </div>
+        <div>
+          
+        </div>    
+      </div>
+    </td>
+    <td>Incomplete face</td>
+  </tr>
+  <tr>
+    <td>
+      <div>
+        <div>
+          
+        </div>
+        <div>
+          
+        </div>    
+      </div>
+    </td>
+    <td>Face obscured</td>
+  </tr>
+  <tr>
+    <td>
+      <div>
+        <div>
+          
+        </div>
+        <div>
+          
+        </div>    
+      </div>
+    </td>
+    <td>Face proportion too small</td>
+  </tr>
+  <tr>
+    <td>
+      <div>
+        <div>
+          
+        </div>
+        <div>
+          
+        </div>    
+      </div>
+    </td>
+    <td>The face is too large to edit the hairstyle</td>
+  </tr>
+</table>
+
+### Headers
+
+| Field              | Required | Type     | Description                                        |
+|:-------------------|:---------|:---------|:---------------------------------------------------|
+| `ailabapi-api-key` | YES      | `string` | Application API KEY. [Get API KEY](/doc/get-api-key) |
+
+### Body
+
+#### Fixed Fields
+
+| Field        | Required | Type      | Scope                                               | Default | Description                                      |
+|:-------------|:---------|:----------|:----------------------------------------------------|:--------|:-------------------------------------------------|
+| `task_type`  | YES      | `string`  | ``async`` |         | ``async`: Asynchronous tasks.` |
+| `auto`       | YES      | `integer` | ``1`` | `1`     | ``1`: Automatic mode.` |
+| `image`      | YES      | `file`    |                                                     |         | Main image.                                      |
+| `hair_style` | YES      | `string`  | [Scope](#hair_style)                                |         | Hairstyle. [More Details](#hair_style)           |
+| `color`      | NO       | `string`  | [Scope](#color)                                     |         | Color. [More Details](#color)                    |
+| `image_size` | NO       | `integer` | ``1``, ``2``, ``3``, ``4`` | `1`     | Returns the number of images.                    |
+
+#### `hair_style` 
+
+<table>
+  <tr>
+    <th>Category: Gender</th>
+    <th>hair_style</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td>Male</td>
+    <td>BuzzCut</td>
+    <td>Buzz Cut hair</td>
+  </tr>
+  <tr>
+    <td>UnderCut</td>
+    <td>UnderCut hair</td>
+  </tr>
+  <tr>
+    <td>Pompadour</td>
+    <td>Pompadour hair</td>
+  </tr>
+  <tr>
+    <td>SlickBack</td>
+    <td>Slick Back hair</td>
+  </tr>
+  <tr>
+    <td>CurlyShag</td>
+    <td>Curly Shag hair</td>
+  </tr>
+  <tr>
+    <td>WavyShag</td>
+    <td>Wavy Shag hair</td>
+  </tr>
+  <tr>
+    <td>FauxHawk</td>
+    <td>Faux Hawk hair</td>
+  </tr>
+  <tr>
+    <td>Spiky</td>
+    <td>Spiky hair</td>
+  </tr>
+  <tr>
+    <td>CombOver</td>
+    <td>Comb-over hair</td>
+  </tr>
+  <tr>
+    <td>HighTightFade</td>
+    <td>High and Tight Fade hair</td>
+  </tr>
+  <tr>
+    <td>ManBun</td>
+    <td>Man Bun hair</td>
+  </tr>
+  <tr>
+    <td>Afro</td>
+    <td>Afro hair</td>
+  </tr>
+  <tr>
+    <td>LowFade</td>
+    <td>Low Fade hair</td>
+  </tr>
+  <tr>
+    <td>UndercutLongHair</td>
+    <td>Undercut With Long Hair</td>
+  </tr>
+  <tr>
+    <td>TwoBlockHaircut</td>
+    <td>Two Block Haircut</td>
+  </tr>
+  <tr>
+    <td>TexturedFringe</td>
+    <td>Textured Fringe Hair</td>
+  </tr>
+  <tr>
+    <td>BluntBowlCut</td>
+    <td>Blunt Bowl Cut</td>
+  </tr>
+  <tr>
+    <td>LongWavyCurtainBangs</td>
+    <td>Long Wavy Curtain Bangs Hair</td>
+  </tr>
+  <tr>
+    <td>MessyTousled</td>
+    <td>Messy Tousled hair</td>
+  </tr>
+  <tr>
+    <td>MediumLengthWavy</td>
+    <td>Medium Length Wavy hair</td>
+  </tr>
+  <tr>
+    <td>CornrowBraids</td>
+    <td>Cornrow Braids hair</td>
+  </tr>
+  <tr>
+    <td>LongHairTiedUp</td>
+    <td>Long Hair Tied Up Hair</td>
+  </tr>
+  <tr>
+    <td>Middle-parted</td>
+    <td>Middle-parted Hair</td>
+  </tr>
+
+  <tr>
+    <td>Female</td>
+    <td>ShortPixieWithShavedSides</td>
+    <td>Short Pixie With Shaved Sides</td>
+  </tr>
+  <tr>
+    <td>ShortNeatBob</td>
+    <td>short neat bob hair</td>
+  </tr>
+  <tr>
+    <td>DoubleBun</td>
+    <td>double bun hair</td>
+  </tr>
+  <tr>
+    <td>Updo</td>
+    <td>Updo hair</td>
+  </tr>
+  <tr>
+    <td>Spiked</td>
+    <td>spiked hair</td>
+  </tr>
+  <tr>
+    <td>bowlCut</td>
+    <td>bowl cut hair</td>
+  </tr>
+  <tr>
+    <td>Chignon</td>
+    <td>Chignon hair</td>
+  </tr>
+  <tr>
+    <td>PixieCut</td>
+    <td>Pixie Cut hair</td>
+  </tr>
+  <tr>
+    <td>SlickedBack</td>
+    <td>slicked back hair</td>
+  </tr>
+  <tr>
+    <td>LongCurly</td>
+    <td>Long curly hair</td>
+  </tr>
+  <tr>
+    <td>CurlyBob</td>
+    <td>Curly bob hair</td>
+  </tr>
+  <tr>
+    <td>StackedCurlsInShortBob</td>
+    <td>Stacked Curls in Short Bob hair</td>
+  </tr>
+  <tr>
+    <td>SidePartCombOverHairstyleWithHighFade</td>
+    <td>Side Part Comb-Over Hairstyle With High Fade hair</td>
+  </tr>
+  <tr>
+    <td>WavyFrenchBobVibesfrom1920</td>
+    <td>Wavy French Bob Vibes from 1920</td>
+  </tr>
+  <tr>
+    <td>BobCut</td>
+    <td>bob Haircut hair</td>
+  </tr>
+  <tr>
+    <td>ShortTwintails</td>
+    <td>Short Twintails hair</td>
+  </tr>
+  <tr>
+    <td>ShortCurlyPixie</td>
+    <td>Short Curly Pixie</td>
+  </tr>
+  <tr>
+    <td>LongStraight</td>
+    <td>Long straight hair</td>
+  </tr>
+  <tr>
+    <td>LongWavy</td>
+    <td>Long wavy hair</td>
+  </tr>
+  <tr>
+    <td>FishtailBraid</td>
+    <td>Fishtail braid hair</td>
+  </tr>
+  <tr>
+    <td>TwinBraids</td>
+    <td>Twin Braids hair</td>
+  </tr>
+  <tr>
+    <td>Ponytail</td>
+    <td>Ponytail hair</td>
+  </tr>
+  <tr>
+    <td>Dreadlocks</td>
+    <td>dreadlocks hair</td>
+  </tr>
+  <tr>
+    <td>Cornrows</td>
+    <td>Cornrows hair</td>
+  </tr>
+  <tr>
+    <td>ShoulderLengthHair</td>
+    <td>Shoulder Length Straight Hair</td>
+  </tr>
+  <tr>
+    <td>LooseCurlyAfro</td>
+    <td>Loose Curly Afro hair</td>
+  </tr>
+  <tr>
+    <td>LongTwintails</td>
+    <td>Long Twintails hair</td>
+  </tr>
+  <tr>
+    <td>LongHimeCut</td>
+    <td>Long Hime Cut hair</td>
+  </tr>
+  <tr>
+    <td>BoxBraids</td>
+    <td>Box Braids hair</td>
+  </tr>
+</table>
+
+#### `color` 
+
+| `color`          | Description          |
+|:-----------------|:---------------------|
+| `blonde`         | blonde hair          |
+| `platinumBlonde` | platinum blonde hair |
+| `brown`          | brown hair           |
+| `lightBrown`     | light brown hair     |
+| `blue`           | blue hair            |
+| `lightBlue`      | light blue hair      |
+| `purple`         | purple hair          |
+| `lightPurple`    | light purple hair    |
+| `pink`           | pink hair            |
+| `black`          | black hair           |
+| `white`          | white hair           |
+| `grey`           | grey hair            |
+| `silver`         | silver hair          |
+| `red`            | red hair             |
+| `orange`         | orange hair          |
+| `green`          | green hair           |
+| `gradient`       | gradient hair        |
+| `multicolored`   | multicolored hair    |
+| `darkBlue`       | dark blue hair       |
+| `burgundy`       | burgundy hair        |
+| `darkGreen`      | dark green hair      |
+
+## Response
+
+**Response Field Handling Flow**
+
+1. **Handle `Public Response Fields`**
+
+   Parse and validate the `Public Response Fields`, checking the status code or response message to ensure the request is successful and error-free.
+
+2. **Handle `Business Response Fields`**
+
+   If the `Public Response Fields` are valid and error-free, proceed with processing the business logic in the `Business Response Fields`.
+
+### Public Response Fields
+
+<a href="/doc/response-description" target="_blank">Viewing Public Response Fields and Error Codes</a>
+
+### Business Response Fields
+
+| Field       | Type     | Scope            | Description                                                                                                                                   |
+|:------------|:---------|:-----------------|:----------------------------------------------------------------------------------------------------------------------------------------------|
+| `task_type` | `string` | ``async`` | Task Type. ``async`: Asynchronous tasks.`                                                                                              |
+| `task_id`   | `string` |                  | Asynchronous task ID. <br/>**Please use this field when calling the [Querying Async Task Results](ai-common/async-task-results/api) API.** |
+
+### Response Example
+
+```json
+,
+  "task_type":      "",
+  "task_id":        ""
+}
+```
+
+This API is asynchronous, please keep `task_id` and call [`Querying Async Task Results`](ai-common/async-task-results/api) to get the final results.
+
+Asynchronous task results are valid for 24 hours. It is recommended that asynchronous task results be queried every 5 seconds.
+
+## `Querying Async Task Results` Response
+
+**Response Field Handling Flow**
+
+1. **Handle `Public Response Fields`**
+
+   Parse and validate the `Public Response Fields`, checking the status code or response message to ensure the request is successful and error-free.
+
+2. **Handle `Business Response Fields`**
+
+   If the `Public Response Fields` are valid and error-free, proceed with processing the business logic in the `Business Response Fields`.
+
+### Public Response Fields
+
+<a href="/doc/response-description" target="_blank">Viewing Public Response Fields and Error Codes</a>
+
+### Business Response Fields
+
+| Field         | Type      | Scope                                  | Description                                                                                                                                 |
+|:--------------|:----------|:---------------------------------------|:--------------------------------------------------------------------------------------------------------------------------------------------|
+| `task_status` | `integer` | ``0``, ``1``, ``2`` | Asynchronous task status. ``0`: The task is queued.` ``1`: Asynchronous processing.` ``2`: Processing was successful.` |
+| `data`        | `object`  |                                        | The content of the result data returned.                                                                                                    |
+| +`images`     | `array`   |                                        | Array of resultant image addresses.                                                                                                         |
+
+The URL address is a temporary address, valid for 24 hours, and will not be accessible after it expires. If you need to save the file for a long time or permanently, please visit the URL address within 24 hours and download the file to your own storage space.
+
+### Response Example
+
+```json
+,
+  "task_status":    0,
+  "data":           
+}
+```
+
+## Sample Code
+
+**[👉 Online Experience 👈**(https://www.ailabtools.com/portrait-hairstyle-editing-pro-example)]
+
+If you'd like to see the actual effects, please visit the experience page for a trial.
+
+- [Introduction to Get Sample Code](get-sample-code)
+- [Sample Code][PostmanURL]
+
+[PostmanURL]: https://documenter.getpostman.com/view/26387069/2s93JxqgHE#1165e9fd-450b-491d-a08b-757a89f4fb9e
+
+[OriginalImage-comparison-bangs-1]: https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/OriginalImage-comparison-bangs-1.webp
+
+[ResultImage-comparison-bangs-1-valid-0]: https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/ResultImage-comparison-bangs-1-valid-0.webp
+
+[ResultImage-comparison-bangs-1-valid-1]: https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/ResultImage-comparison-bangs-1-valid-1.webp
+
+[ResultImage-comparison-bangs-1-invalid-0]: https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/ResultImage-comparison-bangs-1-invalid-0.webp
+
+[ResultImage-comparison-bangs-1-invalid-1]: https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/ResultImage-comparison-bangs-1-invalid-1.webp
+
+[OriginalImage-comparison-mode-1]: https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/OriginalImage-comparison-mode-1.webp
+
+[ResultImage-comparison-mode-1-1]: https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/ResultImage-comparison-mode-1-1.webp
+
+[ResultImage-comparison-mode-1-2]: https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/ResultImage-comparison-mode-1-2.webp
+
+[OriginalImage-comparison-reference-1]: https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/OriginalImage-comparison-reference-1.webp
+
+[ResultImage-comparison-reference-1-0]: https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/ResultImage-comparison-reference-1-0.webp
+
+[ResultImage-comparison-reference-1-1]: https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/ResultImage-comparison-reference-1-1.webp

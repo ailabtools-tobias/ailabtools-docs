@@ -1,0 +1,94 @@
+---
+title: "Intelligent Composition API"
+description: "By evaluating the aesthetics of the input image, the bounding box is intelligently output, and according to these bounding boxes the original image can be cropped into a better image."
+openapi: 'POST /api/image/editing/intelligent-composition'
+---
+
+## Request
+
+- **URL**: `https://www.ailabapi.com/api/image/editing/intelligent-composition`
+- **Method**: `POST`
+- **Content-Type**: `multipart/form-data`
+
+### Image requirements
+
+- **Image format**: `JPEG` `JPG` `PNG` `BMP` `WEBP`
+- **Image size**: No more than 3 MB.
+- **Image resolution**: Larger than 32x32px, smaller than 4096x4096px.
+
+### Headers
+
+| Field              | Required | Type     | Description                                        |
+|:-------------------|:---------|:---------|:---------------------------------------------------|
+| `ailabapi-api-key` | YES      | `string` | Application API KEY. [Get API KEY](/doc/get-api-key) |
+
+### Body
+
+| Field       | Required | Type      | Scope                                                                                                                              | Default | Description                 |
+|:------------|:---------|:----------|:-----------------------------------------------------------------------------------------------------------------------------------|:--------|:----------------------------|
+| `image`     | YES      | `file`    |                                                                                                                                    |         |                             |
+| `num_boxes` | NO       | `integer` | ``1``, ``2``, ``3``, ``4``, ``5``, ``6``, ``7``, ``8``, ``9``, ``10`` | `5`     | The number of output boxes. |
+
+## Response
+<Warning>
+**Response Field Handling Flow**
+
+1. **Handle `Public Response Fields`**
+
+   Parse and validate the `Public Response Fields`, checking the status code or response message to ensure the request is successful and error-free.
+
+2. **Handle `Business Response Fields`**
+
+   If the `Public Response Fields` are valid and error-free, proceed with processing the business logic in the `Business Response Fields`.
+</Warning>
+### Public Response Fields
+
+<a href="/doc/response-description" target="_blank">Viewing Public Response Fields and Error Codes</a>
+
+### Business Response Fields
+
+| Field       | Type      | Description                                                                                                  |
+|:------------|:----------|:-------------------------------------------------------------------------------------------------------------|
+| `data`      | `object`  | The content of the result data returned.                                                                     |
+| +`elements` | `array`   | Intelligent composition results.                                                                             |
+| ++`min_x`   | `integer` | The horizontal coordinate of the upper-left corner of the output box.                                        |
+| ++`max_x`   | `integer` | The horizontal coordinate of the lower-right corner of the output box.                                       |
+| ++`min_y`   | `integer` | The vertical coordinate of the upper-left corner of the output box.                                          |
+| ++`max_y`   | `integer` | The lower-right vertical coordinate of the output box.                                                       |
+| ++`score`   | `float`   | The higher the score, the better the composition. 3.8 or above is recommended as a better composition score. |
+
+### Response Example
+
+```json
+{
+  "request_id":     "",
+  "log_id":         "",
+  "error_code":     0,
+  "error_msg":      "",
+  "error_detail":   {
+    "status_code":  200,
+    "code":         "",
+    "code_message": "",
+    "message":      ""
+  },
+  "data": {
+    "elements": [
+      {
+        "min_x": 0,
+        "max_x": 0,
+        "min_y": 0,
+        "max_y": 0,
+        "score": 0
+      }
+    ]
+  }
+}
+```
+
+## Sample Code
+<Tip>
+- [Introduction to Get Sample Code](get-sample-code)
+- [Sample Code][PostmanURL]
+
+[PostmanURL]: https://documenter.getpostman.com/view/26387069/2s93JxqgHE#ef141385-86da-462f-950c-a3a9fe3eeeda
+</Tip>

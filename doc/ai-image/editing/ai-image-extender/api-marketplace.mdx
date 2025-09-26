@@ -1,0 +1,74 @@
+---
+title: "AILabTools API - AI Image Extender API"
+description: "AI Image Extender uses advanced AI technology to intelligently recognize image content and extend visuals beyond original boundaries based on user prompts. Supports proportional, frame, four-side, and canvas extensions for seamless image expansion."
+---
+
+## Request
+
+### Image requirements
+
+- **Image format**: `JPEG` `JPG` `PNG`
+- **Image size**: No more than 5 MB.
+- **Image resolution**: Larger than 64x64px, smaller than 4096x4096px.
+
+### Body
+
+#### Fixed Fields
+
+| Field           | Required | Type      | Scope      | Default | Description                                                                                                                                                                                                                                                                                              |
+|:----------------|:---------|:----------|:-----------|:--------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `custom_prompt` | NO       | `string`  |            |         | Prompt Content (English only). Please limit the prompt content to 100 English words or fewer. Any content beyond this limit may have minimal impact on the generated result. Use standard vocabulary to avoid failing the review process.                                                                |
+| `steps`         | NO       | `integer` | [1, +]     | `30`    | Sampling steps determine the level of detail in the generated image. A higher value may result in better quality, but it will significantly increase the processing time.                                                                                                                                |
+| `strength`      | NO       | `float`   | [0.1, 1.0] | `0.8`   | The smaller the value, the closer it is to the original image.                                                                                                                                                                                                                                           |
+| `scale`         | NO       | `float`   | [1, 20]    | `7`     | The degree to which the text description influences the output.                                                                                                                                                                                                                                          |
+| `seed`          | NO       | `integer` | [-1, +]    | `0`     | Random seed, used as the basis for determining the initial state of the diffusion process. It must be a non-negative number (`-1` represents a random seed). If the random seed is the same positive integer and all other parameters are identical, the generated image will most likely be consistent. |
+| `max_height`    | NO       | `integer` | [0, +]     | `1920`  | Maximum output height. Resized to the specified dimensions as a fallback after the image expansion process.                                                                                                                                                                                              |
+| `max_width`     | NO       | `integer` | [0, +]     | `1920`  | Maximum output width. Resized to the specified dimensions as a fallback after the image expansion process.                                                                                                                                                                                               |
+
+#### Non-Mask Expanded Image
+
+| Field    | Required | Type    | Scope    | Default | Example                                                                                          | Description                |
+|:---------|:---------|:--------|:---------|:--------|:-------------------------------------------------------------------------------------------------|:---------------------------|
+| `image`  | YES      | `file`  |          |         | ![Original Image](https://ai-resource.ailabtools.com/ai-image-extender/doc/OriginalImage-1.webp) | Original image.            |
+| `top`    | NO       | `float` | [0, 1.0] | `0.1`   |                                                                                                  | Upward expansion ratio.    |
+| `bottom` | NO       | `float` | [0, 1.0] | `0.1`   |                                                                                                  | Downward expansion ratio.  |
+| `left`   | NO       | `float` | [0, 1.0] | `0.1`   |                                                                                                  | Leftward expansion ratio.  |
+| `right`  | NO       | `float` | [0, 1.0] | `0.1`   |                                                                                                  | Rightward expansion ratio. |
+
+#### Mask Expanded Image
+
+| Field   | Required | Type   | Example                                                                                               | Description     |
+|:--------|:---------|:-------|:------------------------------------------------------------------------------------------------------|:----------------|
+| `image` | YES      | `file` | ![Original Image](https://ai-resource.ailabtools.com/ai-image-extender/doc/mask-OriginalImage-1.webp) | Original image. |
+| `mask`  | YES      | `file` | ![Mask Image](https://ai-resource.ailabtools.com/ai-image-extender/doc/mask-MaskImage-1.webp)         | Mask image.     |
+
+## Response
+
+**Response Field Handling Flow**
+
+1. **Handle `Public Response Fields`**
+
+   Parse and validate the `Public Response Fields`, checking the status code or response message to ensure the request is successful and error-free.
+
+2. **Handle `Business Response Fields`**
+
+   If the `Public Response Fields` are valid and error-free, proceed with processing the business logic in the `Business Response Fields`.
+
+### Public Response Fields
+
+<a href="/doc/response-description" target="_blank">Viewing Public Response Fields and Error Codes</a>
+
+### Business Response Fields
+
+| Field                 | Type              | Description                                                  |
+|:----------------------|:------------------|:-------------------------------------------------------------|
+| `data`                | `object`          | The content of the result data returned.                     |
+| +`binary_data_base64` | `array of string` | Output the processed image as a Base64 array (single image). |
+
+### Response Example
+
+```json
+,
+  "data":           
+}
+```

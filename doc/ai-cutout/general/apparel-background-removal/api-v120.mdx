@@ -1,0 +1,92 @@
+---
+title: "Costume background removal - API:V1.2.0"
+description: "Costume background removal API uses advanced AI to intelligently detect and isolate clothing items, erasing backgrounds to highlight garment details effortlessly. Ideal for e-commerce and display."
+---
+
+# AILabTools API - Costume background removal - API:V1.2.0
+
+## Request
+
+- **URL**: `https://www.ailabapi.com/api/cutout/general/apparel-background-removal`
+- **Method**: `POST`
+- **Content-Type**: `multipart/form-data`
+
+### Image requirements
+
+- **Image format**: `JPEG` `JPG` `BMP` `PNG`
+- **Image size**: No more than 5 MB.
+- **Image resolution**: Larger than 50x50px, smaller than 3000x3000px.
+
+### Headers
+
+| Field              | Required | Type     | Description                                        |
+|:-------------------|:---------|:---------|:---------------------------------------------------|
+| `ailabapi-api-key` | YES      | `string` | Application API KEY. [Get API KEY](/doc/get-api-key) |
+
+### Body
+
+| Field         | Required | Type      | Scope                                                                                                            | Example     | Description                                                                                                                                                                                                                                                |
+|:--------------|:---------|:----------|:-----------------------------------------------------------------------------------------------------------------|-------------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `image`       | YES      | `file`    |                                                                                                                  |             |                                                                                                                                                                                                                                                            |
+| `out_mode`    | NO       | `integer` | ``0``, ``1`` | `0`         | `0`                                                                                                                                                                                                                                                        | ``0`: Default segmentation result of the main clothing.`, ``1`: Combined segmentation result based on the category specified by `cloth_class`.` |
+| `cloth_class` | NO       | `string`  | ``tops``, ``coat``, ``skirt``, ``pants``, ``bag``, ``shoes``, ``hat`` | `tops,coat` | ``tops`: Tops.`, ``coat`: Coat.`, ``skirt`: Skirt.`, ``pants`: Pants.`, ``bag`: Bag.`, ``shoes`: Shoes.`, ``hat`: Hat.` |
+| `return_form` | NO       | `string`  | ``mask``, ``whiteBK`` |             | ``whiteBK`: Returns an image with a white background.`, ``mask`: Returns a single-channel mask.`, `If not specified, a four-channel PNG image will be returned.` |
+
+## Response
+
+**Response Field Handling Flow**
+
+1. **Handle `Public Response Fields`**
+
+   Parse and validate the `Public Response Fields`, checking the status code or response message to ensure the request is successful and error-free.
+
+2. **Handle `Business Response Fields`**
+
+   If the `Public Response Fields` are valid and error-free, proceed with processing the business logic in the `Business Response Fields`.
+
+### Public Response Fields
+
+<a href="/doc/response-description" target="_blank">Viewing Public Response Fields and Error Codes</a>
+
+### Business Response Fields
+
+| Field          | Type     | Description                                                                             |
+|:---------------|:---------|:----------------------------------------------------------------------------------------|
+| `data`         | `object` | The content of the result data returned.                                                |
+| +`elements`    | `array`  | Returns an array of elements.                                                           |
+| ++`0`          | `object` |                                                                                         |
+| +++`image_url` | `string` | Returns the keying result image URL address.                                            |
+| ++`1`          | `object` |                                                                                         |
+| +++`class_url` | `object` | Return the URL corresponding to the clothing category based on the input `cloth_class`. |
+| ++++`tops`     | `string` | Tops URL.                                                                               |
+| ++++`coat`     | `string` | Coat URL.                                                                               |
+| ++++`skirt`    | `string` | Skirt URL.                                                                              |
+| ++++`pants`    | `string` | Pants URL.                                                                              |
+| ++++`bag`      | `string` | Bag URL.                                                                                |
+| ++++`shoes`    | `string` | Shoes URL.                                                                              |
+| ++++`hat`      | `string` | Hat URL.                                                                                |
+
+The URL address is a temporary address, valid for 24 hours, and will not be accessible after it expires. If you need to save the file for a long time or permanently, please visit the URL address within 24 hours and download the file to your own storage space.
+
+### Response Example
+
+```json
+,
+  "data":         ,
+      
+      }
+    ]
+  }
+}
+```
+
+## Sample Code
+
+**[👉 Online Experience 👈**(https://www.ailabtools.com/cutout-clothing-background-removal-example)]
+
+If you'd like to see the actual effects, please visit the experience page for a trial.
+
+- [Introduction to Get Sample Code](get-sample-code)
+- [Sample Code][PostmanURL]
+
+[PostmanURL]: https://documenter.getpostman.com/view/26387069/2s93JxqgHE#34bba950-f2c5-4033-be02-09669b6b1d01

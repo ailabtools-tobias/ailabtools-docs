@@ -1,0 +1,91 @@
+---
+title: "Face Beauty API"
+description: "Retouch Portraits is the ultimate tool for perfecting your photos with ease. Our advanced image processing technology offers a range of features such as sharpening, skin tone whitening, face slimming, facial features adjustment, spot and acne treatment, AI face slimming, and AI makeup—all with just one click! Reduce the time spent editing photos, and achieve professional results without the hassle. With Retouch Portraits, your photos will look flawless."
+openapi: 'POST /api/portrait/effects/face-beauty'
+---
+
+## Request
+
+- **URL**: `https://www.ailabapi.com/api/portrait/effects/face-beauty`
+- **Method**: `POST`
+- **Content-Type**: `multipart/form-data`
+
+### Image requirements
+
+- **Image format**: `JPEG` `JPG` `PNG` `BMP`
+- **Image size**: No more than 3 MB.
+- **Image resolution**: Larger than 10x10px, smaller than 2000x2000px.
+- **Image quality recommendation**: Suitable for portrait images of most skin types, with average results for images containing scenes with more severe discoloration, acne, or low exposure.
+
+### Headers
+
+| Field              | Required | Type     | Description                                        |
+|:-------------------|:---------|:---------|:---------------------------------------------------|
+| `ailabapi-api-key` | YES      | `string` | Application API KEY. [Get API KEY](/doc/get-api-key) |
+
+### Body
+
+| Field    | Required | Type    | Scope    | Description                                                              |
+|:---------|:---------|:--------|:---------|:-------------------------------------------------------------------------|
+| `image`  | YES      | `file`  |          |                                                                          |
+| `sharp`  | YES      | `float` | [0, 1.0] | Sharpness level. A higher value indicates a greater degree of sharpness. |
+| `smooth` | YES      | `float` | [0, 1.0] | Smoothness level. A higher value results in a smoother appearance.       |
+| `white`  | YES      | `float` | [0, 1.0] | Whitening level. A higher value leads to lighter skin.                   |
+
+## Response
+
+<Warning>
+**Response Field Handling Flow**
+
+1. **Handle `Public Response Fields`**
+
+   Parse and validate the `Public Response Fields`, checking the status code or response message to ensure the request is successful and error-free.
+
+2. **Handle `Business Response Fields`**
+
+   If the `Public Response Fields` are valid and error-free, proceed with processing the business logic in the `Business Response Fields`.
+</Warning>
+
+### Public Response Fields
+
+<a href="/doc/response-description" target="_blank">Viewing Public Response Fields and Error Codes</a>
+
+### Business Response Fields
+
+| Field        | Type     | Description                              |
+|:-------------|:---------|:-----------------------------------------|
+| `data`       | `object` | The content of the result data returned. |
+| +`image_url` | `string` | Resulting image URL address.             |
+
+<Tip>
+The URL address is a temporary address, valid for 24 hours, and will not be accessible after it expires. If you need to save the file for a long time or permanently, please visit the URL address within 24 hours and download the file to your own storage space.
+</Tip>
+### Response Example
+
+```json
+{
+  "request_id":     "",
+  "log_id":         "",
+  "error_code":     0,
+  "error_msg":      "",
+  "error_detail":   {
+    "status_code":  200,
+    "code":         "",
+    "code_message": "",
+    "message":      ""
+  },
+  "data":           {
+    "image_url": ""
+  }
+}
+```
+
+## Sample Code
+<Tip>
+**[👉 Online Experience 👈](https://www.ailabtools.com/portrait-facial-beautification-example)**
+
+If you'd like to see the actual effects, please visit the experience page for a trial.
+
+- [Introduction to Get Sample Code](get-sample-code)
+- [Sample Code][PostmanURL]
+</Tip>

@@ -1,0 +1,76 @@
+---
+title: "AILabTools API - Lips Color Changer API"
+description: "Transform your lip color effortlessly with our cutting-edge Lips Color Changer. Explore a world of virtual makeup possibilities as you digitally experiment with different lip shades and enhance your natural beauty. Our advanced technology uses facial recognition and precise lip detection to seamlessly blend and customize lip colors, providing you with a virtual lipstick try-on experience like never before. Try our Lip Color Changer today and discover your perfect lip look without ever picking up a physical lipstick."
+---
+
+## Request
+
+### Image requirements
+
+- **Image format**: `JPEG` `JPG` `PNG` `BMP`
+- **Image size**: No more than 5 MB.
+- **Image resolution**: Less than 2000x2000px.
+
+### Body
+
+| Field             | Required | Type          | Description                                                                                                                                         |
+|:------------------|:---------|:--------------|:----------------------------------------------------------------------------------------------------------------------------------------------------|
+| `image`           | YES      | `file`        |                                                                                                                                                     |
+| `lip_color_infos` | YES      | `json string` | Lip Color Info. You can enter up to 3 lip_color_info to enable changing the lip color for up to 3 faces in a graph. [Description](#lip_color_infos) |
+
+#### `lip_color_infos` 
+
+| Field       | Required | Type      | Scope    | Description                                                                                                                                                                                                                                                                      |
+|:------------|:---------|:----------|:---------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `rgba`      | YES      | `object`  |          | Lip color.                                                                                                                                                                                                                                                                       |
+| +`r`        | YES      | `integer` | [0, 255] | R channel values.                                                                                                                                                                                                                                                                |
+| +`g`        | YES      | `integer` | [0, 255] | G channel values.                                                                                                                                                                                                                                                                |
+| +`b`        | YES      | `integer` | [0, 255] | B channel values.                                                                                                                                                                                                                                                                |
+| +`a`        | YES      | `integer` | [0, 100] | A channel values. Transparency, the smaller the value, the more transparent.                                                                                                                                                                                                     |
+| `face_rect` | NO       | `object`  |          | Face box position. If not entered the face with the largest area in the image is selected. You can use the [Face Analyzer](ai-portrait/analysis/face-analyzer) API or [Facial Landmarks](ai-portrait/analysis/face-key-points) API to get face frame position information. |
+| +`x`        | YES      | `integer` |          | Horizontal coordinate of the upper left corner of the face box.                                                                                                                                                                                                                  |
+| +`y`        | YES      | `integer` |          | The vertical coordinate of the upper left corner of the face box.                                                                                                                                                                                                                |
+| +`width`    | YES      | `integer` |          | Face frame width.                                                                                                                                                                                                                                                                |
+| +`height`   | YES      | `integer` |          | Face frame height.                                                                                                                                                                                                                                                               |
+
+###### Example
+
+```json5
+}]'
+}
+```
+
+```json5
+,"face_rect":}]'
+}
+```
+
+## Response
+
+**Response Field Handling Flow**
+
+1. **Handle `Public Response Fields`**
+
+   Parse and validate the `Public Response Fields`, checking the status code or response message to ensure the request is successful and error-free.
+
+2. **Handle `Business Response Fields`**
+
+   If the `Public Response Fields` are valid and error-free, proceed with processing the business logic in the `Business Response Fields`.
+
+### Public Response Fields
+
+<a href="/doc/response-description" target="_blank">Viewing Public Response Fields and Error Codes</a>
+
+### Business Response Fields
+
+| Field          | Type     | Description                                     |
+|:---------------|:---------|:------------------------------------------------|
+| `result_image` | `string` | Returns the base64 data of the processed image. |
+
+### Response Example
+
+```json
+,
+  "result_image":   ""
+}
+```

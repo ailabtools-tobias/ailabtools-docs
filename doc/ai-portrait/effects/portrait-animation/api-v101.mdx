@@ -1,0 +1,200 @@
+---
+title: "Cartoon yourself - API:V1.0.1"
+description: "The revolutionary new technology that uses advanced adversarial generation network technology to create highly cute cartoon faces with artistic aesthetics for users. With multi-dimensional retention of user characteristics, you can get the effect of a thousand faces! Choose from a variety of cartoon effects including Pixar, 3D, angel, devil, ukiyo-e, American comic, pop, Japanese comic, Chinese comic, retro comic, moe comic, hand-drawn, pencil drawing, and art effects. With Cartoon Yourself, you can turn any picture into a cartoon and add a unique touch of art to your photos. Get creative and cartoon yourself today!"
+---
+
+import apiOfflineNotice from '/snippets/api-offline-notice.mdx';
+
+<apiOfflineNotice />
+
+## Request
+
+- **URL**: `https://www.ailabapi.com/api/portrait/effects/portrait-animation`
+- **Method**: `POST`
+- **Content-Type**: `multipart/form-data`
+
+### Image requirements
+
+- **Image format**: `JPEG` `JPG` `PNG`
+- **Image size**: No more than 3 MB.
+- **Image resolution**: Larger than 100x100px, smaller than 2000x2000px.
+
+### Headers
+
+| Field              | Required | Type     | Description                                        |
+|:-------------------|:---------|:---------|:---------------------------------------------------|
+| `ailabapi-api-key` | YES      | `string` | Application API KEY. [Get API KEY](/doc/get-api-key) |
+
+### Body
+
+| Field   | Required | Type     | Scope                 |
+|:--------|:---------|:---------|:----------------------|
+| `image` | YES      | `file`   |                       |
+| `type`  | YES      | `string` | [More Details](#type) |
+
+#### `type` 
+
+<table>
+  <tr>
+    <th>Category</th>
+    <th>type</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td rowspan="13">Full-Body Cartoonization</td>
+    <td>jpcartoon</td>
+    <td>Japanese Manga (I)</td>
+  </tr>
+  <tr>
+    <td>anime</td>
+    <td>Japanese Manga (II)</td>
+  </tr>
+  <tr>
+    <td>claborate</td>
+    <td>Chinese fine brushwork painting</td>
+  </tr>
+  <tr>
+    <td>hongkong</td>
+    <td>Hong Kong-style comic style</td>
+  </tr>
+  <tr>
+    <td>comic</td>
+    <td>Comic</td>
+  </tr>
+  <tr>
+    <td>animation3d</td>
+    <td>3D Animation</td>
+  </tr>
+  <tr>
+    <td>handdrawn</td>
+    <td>hand-painted</td>
+  </tr>
+  <tr>
+    <td>sketch</td>
+    <td>Pencil drawing (I)</td>
+  </tr>
+  <tr>
+    <td>full</td>
+    <td>Pencil drawing (II)</td>
+  </tr>
+  <tr>
+    <td>artstyle</td>
+    <td>Artistic effects</td>
+  </tr>
+  <tr>
+    <td>classic_cartoon</td>
+    <td>Retro Cartoon</td>
+  </tr>
+  <tr>
+    <td>tccartoon</td>
+    <td>Moe Manga</td>
+  </tr>
+  <tr>
+    <td>hkcartoon</td>
+    <td>China Comics</td>
+  </tr>
+
+  <tr>
+    <td rowspan="10">Facial Cartoonization</td>
+    <td>3d_cartoon</td>
+    <td>3D cartoon</td>
+  </tr>
+  <tr>
+    <td>pixar</td>
+    <td>Pixar</td>
+  </tr>
+  <tr>
+    <td>pixar_plus</td>
+    <td>Pixar Pro</td>
+  </tr>
+  <tr>
+    <td>angel</td>
+    <td>Angel</td>
+  </tr>
+  <tr>
+    <td>angel_plus</td>
+    <td>Angel Pro</td>
+  </tr>
+  <tr>
+    <td>demon</td>
+    <td>Demon</td>
+  </tr>
+  <tr>
+    <td>ukiyoe_cartoon</td>
+    <td>Ukiyo-e</td>
+  </tr>
+  <tr>
+    <td>amcartoon</td>
+    <td>American Manga</td>
+  </tr>
+  <tr>
+    <td>3d</td>
+    <td>3D Effects</td>
+  </tr>
+  <tr>
+    <td>3d_game</td>
+    <td>3D game effects</td>
+  </tr>
+
+  <tr>
+    <td rowspan="4">Avatar Cartoonization</td>
+    <td>western</td>
+    <td>Western</td>
+  </tr>
+  <tr>
+    <td>avatar</td>
+    <td>Avatar</td>
+  </tr>
+  <tr>
+    <td>jpcartoon_head</td>
+    <td>Japanese Manga (portrait)</td>
+  </tr>
+  <tr>
+    <td>head</td>
+    <td>Pencil drawing (head)</td>
+  </tr>
+
+</table>
+## Response
+
+**Response Field Handling Flow**
+
+1. **Handle `Public Response Fields`**
+
+   Parse and validate the `Public Response Fields`, checking the status code or response message to ensure the request is successful and error-free.
+
+2. **Handle `Business Response Fields`**
+
+   If the `Public Response Fields` are valid and error-free, proceed with processing the business logic in the `Business Response Fields`.
+
+### Public Response Fields
+
+<a href="/doc/response-description" target="_blank">Viewing Public Response Fields and Error Codes</a>
+
+### Business Response Fields
+
+| Field        | Type     | Description                              |
+|:-------------|:---------|:-----------------------------------------|
+| `data`       | `object` | The content of the result data returned. |
+| +`image_url` | `string` | Resulting image URL address.             |
+
+The URL address is a temporary address, valid for 24 hours, and will not be accessible after it expires. If you need to save the file for a long time or permanently, please visit the URL address within 24 hours and download the file to your own storage space.
+
+### Response Example
+
+```json
+,
+  "data":           
+}
+```
+
+## Sample Code
+
+**[👉 Online Experience 👈**(https://www.ailabtools.com/portrait-cartoonization-example)]
+
+If you'd like to see the actual effects, please visit the experience page for a trial.
+
+- [Introduction to Get Sample Code](get-sample-code)
+- [Sample Code][PostmanURL]
+
+[PostmanURL]: https://documenter.getpostman.com/view/26387069/2s93JxqgHE#61918668-cec5-45d4-b462-24f51c56fc3a

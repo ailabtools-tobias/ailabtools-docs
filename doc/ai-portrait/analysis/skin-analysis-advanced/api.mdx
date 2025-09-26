@@ -1,0 +1,397 @@
+---
+title: "Skin analyze Advanced API"
+description: "Accurate analysis of skin status, such as skin color , skin type, double eyelids, eye pouch, dark circles, wrinkles, acne and skin spots."
+openapi: 'POST /api/portrait/analysis/skin-analysis-advanced'
+---
+
+## Request
+
+- **URL**: `https://www.ailabapi.com/api/portrait/analysis/skin-analysis-advanced`
+- **Method**: `POST`
+- **Content-Type**: `multipart/form-data`
+
+### Image requirements
+
+- **Image format**: `JPG` `JPEG`
+- **Image size**: No more than 5 MB.
+- **Image resolution**: Larger than 200x200px, smaller than 4096x4096px.
+- **Minimum face pixel size**: To ensure the effect, the minimum value of the face frame (square) in the image should be higher than 400 pixels (which can be verified by passing a reference through the interface).
+- **Face quality**: The higher the face quality, the more accurate the skin analysis. Factors affecting face quality include: occlusion of the five facial features, blurred images, improper lighting (bright, dark, backlight), excessive face angle (recommended yaw ≤ ±30°, pitch ≤ ±40°), etc.
+
+### Headers
+
+| Field              | Required | Type     | Description                                        |
+|:-------------------|:---------|:---------|:---------------------------------------------------|
+| `ailabapi-api-key` | YES      | `string` | Application API KEY. [Get API KEY](/doc/get-api-key) |
+
+### Body
+
+| Field                    | Required | Type      | Scope                     | Description                                                                                                                                                                                                                                                                                            |
+|:-------------------------|:---------|:----------|:--------------------------|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `image`                  | YES      | `file`    |                           |                                                                                                                                                                                                                                                                                                        |
+| `face_quality_control`   | NO       | `integer` | ``0``, ``1`` | Whether to restrict the quality of faces in incoming images. ``0`: No face quality control is performed, and skin measurement results are returned as long as the face can be detected.` ``1`: Perform face quality control, if the face quality does not pass it will prompt an error.` |
+| `return_rect_confidence` | NO       | `integer` | ``0``, ``1`` | The confidence level of the area whether to return acne, occlusion, blemishes and moles. ``0`: No regional confidence is returned.` ``1`: Returns the regional confidence.`                                                                                                              |
+| `return_maps`            | NO       | `string`  | ``red_area`` | Enter a comma-separated string containing the type of skin chromatography image to be returned. (#return_maps)                                                                                                                                                                           |
+
+#### `return_maps` 
+
+- **Request Example**
+
+  `red_area`
+
+- **Field Parsing**
+
+| Field      | Description                                                                               | Return image information |
+|:-----------|:------------------------------------------------------------------------------------------|:-------------------------|
+| `red_area` | A red zone map that shows areas of redness caused by facial sensitivity and inflammation. |
+
+## Response
+<Warning>
+**Response Field Handling Flow**
+
+1. **Handle `Public Response Fields`**
+
+   Parse and validate the `Public Response Fields`, checking the status code or response message to ensure the request is successful and error-free.
+
+2. **Handle `Business Response Fields`**
+
+   If the `Public Response Fields` are valid and error-free, proceed with processing the business logic in the `Business Response Fields`.
+</Warning>
+
+### Public Response Fields
+
+<a href="/doc/response-description" target="_blank">Viewing Public Response Fields and Error Codes</a>
+
+### Business Response Fields
+
+| Field                       | Type      | Scope                                                                                      | Description                                                                                                                                                                                                                                                                              |
+|:----------------------------|:----------|:-------------------------------------------------------------------------------------------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `warning`                   | `array`   | ``imporper_headpose`` | Interference factors affecting the calculation results. ``imporper_headpose`: Improper head angle (Judgment condition roll,yaw,pitch exceeds [-45,45]).`                                                                                                                          |
+| `face_rectangle`            | `object`  |                                                                                            | The position of the face rectangle box.                                                                                                                                                                                                                                                  |
+| +`top`                      | `float`   |                                                                                            | The vertical coordinate of the pixel point in the upper-left corner of the rectangle box.                                                                                                                                                                                                |
+| +`left`                     | `float`   |                                                                                            | The horizontal coordinate of the pixel point in the upper-left corner of the rectangle.                                                                                                                                                                                                  |
+| +`width`                    | `float`   |                                                                                            | The width of the rectangle box.                                                                                                                                                                                                                                                          |
+| +`height`                   | `float`   |                                                                                            | The height of the rectangle box.                                                                                                                                                                                                                                                         |
+| `result`                    | `object`  |                                                                                            | Results of face skin analysis.                                                                                                                                                                                                                                                           |
+| +`skin_color`               | `object`  |                                                                                            | Skin color test results.                                                                                                                                                                                                                                                                 |
+| ++`value`                   | `integer` | ``0``, ``1``, ``2``, ``3``, ``4`` | Skin color. ``0`: Transparent white.` ``1`: White.` ``2`: Naturally.` ``3`: Wheat.` ``4`: Dark.`                                                                                                                                                      |
+| ++`confidence`              | `float`   | [0, 1]                                                                                     | Confidence.                                                                                                                                                                                                                                                                              |
+| +`skintone_ita`             | `object`  |                                                                                            | Returns skin color classification information based on the ITA (Individual Typology Angle) standard. **[NOTE](#skintone_ita)**                                                                                                                                                           |
+| ++`ITA`                     | `float`   | [-90, 90]                                                                                  | Angle value.                                                                                                                                                                                                                                                                             |
+| ++`skintone`                | `integer` | ``0``, ``1``, ``2``, ``3``, ``4``, ``5``, ``6`` | Classified according to the skin tone of ITA. ``0`: Very light.` ``1`: Light.` ``2`: Intermediate.` ``3`: Tan.` ``4`: Brown.` ``5`: Dark.` ``6`: Abnormal color values that may be caused by weak lighting conditions or overexposure.` |
+| +`skin_hue_ha`              | `object`  |                                                                                            | Returns skin tone classification information based on HA (Hue Angle). **[NOTE](#skin_hue_ha)**                                                                                                                                                                                           |
+| ++`HA`                      | `float`   | [0, 90]                                                                                    | HA angle value.                                                                                                                                                                                                                                                                          |
+| ++`skintone`                | `integer` | ``0``, ``1``, ``2``, ``3`` | Classified according to HA's skin tone hue. ``0`: Yellowish.` ``1`: Neutral.` ``2`: Reddish.` ``3`: Abnormal hue values may be caused by abnormal ambient light tones or weak light environment or overexposure.`                                            |
+| +`skin_age`                 | `object`  |                                                                                            | Skin age test results.                                                                                                                                                                                                                                                                   |
+| ++`value`                   | `integer` | [0, 100)                                                                                   | Face skin age value.                                                                                                                                                                                                                                                                     |
+| +`left_eyelids`             | `object`  |                                                                                            | Results of the double eyelid test on the left eye.                                                                                                                                                                                                                                       |
+| ++`value`                   | `integer` | ``0``, ``1``, ``2`` | Type. ``0`: Single eyelids` ``1`: Parallel Double Eyelids` ``2`: Scalloped Double Eyelids`                                                                                                                                                                          |
+| ++`confidence`              | `float`   | [0, 1]                                                                                     | Confidence.                                                                                                                                                                                                                                                                              |
+| +`right_eyelids`            | `object`  |                                                                                            | Results of the double eyelid test on the right eye.                                                                                                                                                                                                                                      |
+| ++`value`                   | `integer` | ``0``, ``1``, ``2`` | Type. ``0`: Single eyelids` ``1`: Parallel Double Eyelids` ``2`: Scalloped Double Eyelids`                                                                                                                                                                          |
+| ++`confidence`              | `float`   | [0, 1]                                                                                     | Confidence.                                                                                                                                                                                                                                                                              |
+| +`eye_pouch`                | `object`  |                                                                                            | Eye bag test results.                                                                                                                                                                                                                                                                    |
+| ++`value`                   | `integer` | ``0``, ``1`` | With or without eye bags. ``0`: No` ``1`: Yes`                                                                                                                                                                                                                             |
+| ++`confidence`              | `float`   | [0, 1]                                                                                     | Confidence.                                                                                                                                                                                                                                                                              |
+| +`eye_pouch_severity`       | `object`  |                                                                                            | Severity of puffiness under the eyes (return when puffiness test result is 1)                                                                                                                                                                                                            |
+| ++`value`                   | `integer` | ``0``, ``1``, ``2`` | Severity. ``0`: Mild.` ``1`: Moderate.` ``2`: Severe.`                                                                                                                                                                                                              |
+| ++`confidence`              | `float`   | [0, 1]                                                                                     | Confidence.                                                                                                                                                                                                                                                                              |
+| +`dark_circle`              | `object`  |                                                                                            | Dark circles test results.                                                                                                                                                                                                                                                               |
+| ++`value`                   | `integer` | ``0``, ``1``, ``2``, ``3`` | Type of dark circles under the eyes. ``0`: No dark circles under the eyes.` ``1`: Pigmented dark circles.` ``2`: Vascular type dark circles under the eyes.` ``3`: Shadow-type dark circles under the eyes.`                                                 |
+| ++`confidence`              | `float`   | [0, 1]                                                                                     | Confidence.                                                                                                                                                                                                                                                                              |
+| +`forehead_wrinkle`         | `object`  |                                                                                            | Results of the head-lift test.                                                                                                                                                                                                                                                           |
+| ++`value`                   | `integer` | ``0``, ``1`` | With or without headlines. ``0`: No` ``1`: Yes`                                                                                                                                                                                                                            |
+| ++`confidence`              | `float`   | [0, 1]                                                                                     | Confidence.                                                                                                                                                                                                                                                                              |
+| +`crows_feet`               | `object`  |                                                                                            | Fishtail test results.                                                                                                                                                                                                                                                                   |
+| ++`value`                   | `integer` | ``0``, ``1`` | With or without crow's feet. ``0`: No` ``1`: Yes`                                                                                                                                                                                                                          |
+| ++`confidence`              | `float`   | [0, 1]                                                                                     | Confidence.                                                                                                                                                                                                                                                                              |
+| +`eye_finelines`            | `object`  |                                                                                            | Results of the eye fine lines test.                                                                                                                                                                                                                                                      |
+| ++`value`                   | `integer` | ``0``, ``1`` | The presence or absence of fine lines under the eyes. ``0`: No` ``1`: Yes`                                                                                                                                                                                                 |
+| ++`confidence`              | `float`   | [0, 1]                                                                                     | Confidence.                                                                                                                                                                                                                                                                              |
+| +`glabella_wrinkle`         | `object`  |                                                                                            | Results of the interbrow line test.                                                                                                                                                                                                                                                      |
+| ++`value`                   | `integer` | ``0``, ``1`` | With or without interbrow lines. ``0`: No` ``1`: Yes`                                                                                                                                                                                                                      |
+| ++`confidence`              | `float`   | [0, 1]                                                                                     | Confidence.                                                                                                                                                                                                                                                                              |
+| +`nasolabial_fold`          | `object`  |                                                                                            | Results of the forehead line test.                                                                                                                                                                                                                                                       |
+| ++`value`                   | `integer` | ``0``, ``1`` | With or without lines. ``0`: No` ``1`: Yes`                                                                                                                                                                                                                                |
+| ++`confidence`              | `float`   | [0, 1]                                                                                     | Confidence.                                                                                                                                                                                                                                                                              |
+| +`nasolabial_fold_severity` | `object`  |                                                                                            | Severity of the forehead lines (returned when the result of the forehead line test is 1)                                                                                                                                                                                                 |
+| ++`value`                   | `integer` | ``0``, ``1``, ``2`` | Severity. ``0`: Mild.` ``1`: Moderate.` ``1`: Severe.`                                                                                                                                                                                                              |
+| ++`confidence`              | `float`   | [0, 1]                                                                                     | Confidence.                                                                                                                                                                                                                                                                              |
+| +`skin_type`                | `object`  |                                                                                            | Skin texture test results.                                                                                                                                                                                                                                                               |
+| ++`skin_type`               | `integer` | ``0``, ``1``, ``2``, ``3`` | Type. ``0`: Oily skin.` ``1`: Dry skin.` ``2`: Neutral skin.` ``3`: Combination skin.`                                                                                                                                                                       |
+| ++`details`                 | `object`  |                                                                                            | The confidence level of each classification.                                                                                                                                                                                                                                             |
+| +++`0`                      | `object`  |                                                                                            | Oily skin information.                                                                                                                                                                                                                                                                   |
+| ++++`value`                 | `integer` | ``0``, ``1`` | Oily skin. ``0`: No.` ``1`: Yes.`                                                                                                                                                                                                                                          |
+| ++++`confidence`            | `float`   |                                                                                            | Confidence.                                                                                                                                                                                                                                                                              |
+| +++`1`                      | `object`  |                                                                                            | Dry skin information.                                                                                                                                                                                                                                                                    |
+| ++++`value`                 | `integer` | ``0``, ``1`` | Dry skin. ``0`: No.` ``1`: Yes.`                                                                                                                                                                                                                                           |
+| ++++`confidence`            | `float`   |                                                                                            | Confidence.                                                                                                                                                                                                                                                                              |
+| +++`2`                      | `object`  |                                                                                            | Neutral skin information.                                                                                                                                                                                                                                                                |
+| ++++`value`                 | `integer` | ``0``, ``1`` | Neutral skin. ``0`: No.` ``1`: Yes.`                                                                                                                                                                                                                                       |
+| ++++`confidence`            | `float`   |                                                                                            | Confidence.                                                                                                                                                                                                                                                                              |
+| +++`3`                      | `object`  |                                                                                            | Combination skin information.                                                                                                                                                                                                                                                            |
+| ++++`value`                 | `integer` | ``0``, ``1`` | Combination skin. ``0`: No.` ``1`: Yes.`                                                                                                                                                                                                                                   |
+| ++++`confidence`            | `float`   |                                                                                            | Confidence.                                                                                                                                                                                                                                                                              |
+| +`pores_forehead`           | `object`  |                                                                                            | Forehead pore test results.                                                                                                                                                                                                                                                              |
+| ++`value`                   | `integer` | ``0``, ``1`` | With or without enlarged pores. ``0`: No` ``1`: Yes`                                                                                                                                                                                                                       |
+| ++`confidence`              | `float`   | [0, 1]                                                                                     | Confidence.                                                                                                                                                                                                                                                                              |
+| +`pores_left_cheek`         | `object`  |                                                                                            | Results of the left cheek pore test.                                                                                                                                                                                                                                                     |
+| ++`value`                   | `integer` | ``0``, ``1`` | With or without enlarged pores. ``0`: No` ``1`: Yes`                                                                                                                                                                                                                       |
+| ++`confidence`              | `float`   | [0, 1]                                                                                     | Confidence.                                                                                                                                                                                                                                                                              |
+| +`pores_right_cheek`        | `object`  |                                                                                            | Results of the right cheek pore test.                                                                                                                                                                                                                                                    |
+| ++`value`                   | `integer` | ``0``, ``1`` | With or without enlarged pores. ``0`: No` ``1`: Yes`                                                                                                                                                                                                                       |
+| ++`confidence`              | `float`   | [0, 1]                                                                                     | Confidence.                                                                                                                                                                                                                                                                              |
+| +`pores_jaw`                | `object`  |                                                                                            | Chin pore test results.                                                                                                                                                                                                                                                                  |
+| ++`value`                   | `integer` | ``0``, ``1`` | With or without enlarged pores. ``0`: No` ``1`: Yes`                                                                                                                                                                                                                       |
+| ++`confidence`              | `float`   | [0, 1]                                                                                     | Confidence.                                                                                                                                                                                                                                                                              |
+| +`blackhead`                | `object`  |                                                                                            | Blackhead test results.                                                                                                                                                                                                                                                                  |
+| ++`value`                   | `integer` | ``0``, ``1``, ``2``, ``3`` | Severity. ``0`: No blackheads.` ``1`: Mild.` ``2`: Moderate.` ``3`: Severe.`                                                                                                                                                                                 |
+| ++`confidence`              | `float`   | [0, 1]                                                                                     | Confidence.                                                                                                                                                                                                                                                                              |
+| +`acne`                     | `Object`  |                                                                                            | Acne test results.                                                                                                                                                                                                                                                                       |
+| ++`rectangle`               | `array`   |                                                                                            | The location of each pimple box.                                                                                                                                                                                                                                                         |
+| +++`width`                  | `float`   |                                                                                            | Width.                                                                                                                                                                                                                                                                                   |
+| +++`height`                 | `float`   |                                                                                            | Height.                                                                                                                                                                                                                                                                                  |
+| +++`left`                   | `float`   |                                                                                            | The distance from the leftmost part of the picture.                                                                                                                                                                                                                                      |
+| +++`top`                    | `float`   |                                                                                            | The distance from the topmost edge of the image.                                                                                                                                                                                                                                         |
+| ++`confidence`              | `array`   |                                                                                            | If `return_rect_confidence` is 1, the confidence that each rectangular region is discriminated as a positive case is returned.                                                                                                                                                           |
+| +`mole`                     | `Object`  |                                                                                            | Mole test results.                                                                                                                                                                                                                                                                       |
+| ++`rectangle`               | `array`   |                                                                                            | The position of each mole frame.                                                                                                                                                                                                                                                         |
+| +++`width`                  | `float`   |                                                                                            | Width.                                                                                                                                                                                                                                                                                   |
+| +++`height`                 | `float`   |                                                                                            | Height.                                                                                                                                                                                                                                                                                  |
+| +++`left`                   | `float`   |                                                                                            | The distance from the leftmost part of the picture.                                                                                                                                                                                                                                      |
+| +++`top`                    | `float`   |                                                                                            | The distance from the topmost edge of the image.                                                                                                                                                                                                                                         |
+| ++`confidence`              | `array`   |                                                                                            | If `return_rect_confidence` is 1, the confidence that each rectangular region is discriminated as a positive case is returned.                                                                                                                                                           |
+| +`closed_comedones`         | `Object`  |                                                                                            | Closure returns the result.                                                                                                                                                                                                                                                              |
+| ++`rectangle`               | `array`   |                                                                                            | The position of each closure frame.                                                                                                                                                                                                                                                      |
+| +++`width`                  | `float`   |                                                                                            | Width.                                                                                                                                                                                                                                                                                   |
+| +++`height`                 | `float`   |                                                                                            | Height.                                                                                                                                                                                                                                                                                  |
+| +++`left`                   | `float`   |                                                                                            | The distance from the leftmost part of the picture.                                                                                                                                                                                                                                      |
+| +++`top`                    | `float`   |                                                                                            | The distance from the topmost edge of the image.                                                                                                                                                                                                                                         |
+| ++`confidence`              | `array`   |                                                                                            | If `return_rect_confidence` is 1, the confidence that each rectangular region is discriminated as a positive case is returned.                                                                                                                                                           |
+| +`skin_spot`                | `Object`  |                                                                                            | Spot detection results.                                                                                                                                                                                                                                                                  |
+| ++`rectangle`               | `array`   |                                                                                            | The position of each spot box.                                                                                                                                                                                                                                                           |
+| +++`width`                  | `float`   |                                                                                            | Width.                                                                                                                                                                                                                                                                                   |
+| +++`height`                 | `float`   |                                                                                            | Height.                                                                                                                                                                                                                                                                                  |
+| +++`left`                   | `float`   |                                                                                            | The distance from the leftmost part of the picture.                                                                                                                                                                                                                                      |
+| +++`top`                    | `float`   |                                                                                            | The distance from the topmost edge of the image.                                                                                                                                                                                                                                         |
+| ++`confidence`              | `array`   |                                                                                            | If `return_rect_confidence` is 1, the confidence that each rectangular region is discriminated as a positive case is returned.                                                                                                                                                           |
+| +`face_maps`                | `Object`  |                                                                                            | Returns the skin chromatography visualization image set in the entry (`return_maps`).                                                                                                                                                                                                    |
+| ++`red_area`                | `base64`  |                                                                                            | Red zone map. jpeg images for base64.                                                                                                                                                                                                                                                    |
+| +`sensitivity`              | `Object`  |                                                                                            | The sensitivity of the human face within the photo. This return value must be used with the red area map, you need to set the return red area map ("red_area") in the input parameter `return_maps` first.                                                                               |
+| ++`sensitivity_area`        | `float`   | [0, 1]                                                                                     | Sensitive redness areas account for the proportion of cheeks and T-zone.                                                                                                                                                                                                                 |
+| ++`sensitivity_intensity`   | `float`   | [0, 100]                                                                                   | The intensity of redness in sensitive areas.                                                                                                                                                                                                                                             |
+
+#### `skintone_ita` 
+
+ITA (Individual Typology Angle) is an international standard for skin color, which is a method to classify skin color by measuring the color attributes of skin color Lab space. The method is strongly dependent on ambient light, we recommend using flash to take HD face photos for uploading and processing, the ITA angle value measured in natural light or dark environment may not be allowed or abnormal.
+
+According to the data taken by the rear flash of the phone, the current skin color classification reference.
+
+| `skintone` | Scope               | Description                                                                           |
+|:-----------|:--------------------|:--------------------------------------------------------------------------------------|
+| `0`        | 56 `<` ITA `<` 90   | Very light.                                                                           |
+| `1`        | 43 `<` ITA `<=` 56  | Light.                                                                                |
+| `2`        | 36 `<` ITA `<=` 43  | Intermediate.                                                                         |
+| `3`        | 20 `<` ITA `<=` 36  | Tan.                                                                                  |
+| `4`        | 10 `<` ITA `<=` 20  | Brown.                                                                                |
+| `5`        | -90 `<` ITA `<=` 10 | Dark.                                                                                 |
+| `6`        | Other               | Abnormal color values that may be caused by weak lighting conditions or overexposure. |
+<Tip>
+You can also use the returned ITA value to define your classification based on the returned ITA angle at the time of access.
+</Tip>
+#### `skin_hue_ha` 
+
+HA (Hue Angle) is an international standard for skin color, which is a method to classify skin color by measuring the color attributes of skin color Lab space. The method is strongly dependent on ambient light, we recommend using flash to take HD face photos for uploading and processing, the HA angle value measured in natural light or dark light environment may not be allowed or abnormal.
+
+According to the data taken by the rear flash of the phone, the current skin tone classification reference.
+
+| `skintone` | Scope             | Description                                                                                                  |
+|:-----------|:------------------|:-------------------------------------------------------------------------------------------------------------|
+| `0`        | 49 `<` HA `<=` 90 | Yellowish.                                                                                                   |
+| `1`        | 46 `<=` HA `<` 49 | Neutral.                                                                                                     |
+| `2`        | 10 `<=` HA `<` 46 | Reddish.                                                                                                     |
+| `3`        | Other             | Abnormal hue values may be caused by abnormal ambient light tones or weak light environment or overexposure. |
+<Tip>
+You can also use the returned HA value to define your classification based on the returned HA angle at the time of access.
+</Tip>
+
+### Response Example
+
+```json
+{
+  "request_id":     "",
+  "log_id":         "",
+  "error_code":     0,
+  "error_msg":      "",
+  "error_detail":   {
+    "status_code":  200,
+    "code":         "",
+    "code_message": "",
+    "message":      ""
+  },
+  "warning":        [],
+  "face_rectangle": {
+    "top":    0,
+    "left":   0,
+    "width":  0,
+    "height": 0
+  },
+  "result":         {
+    "skin_color":        {
+      "value":      0,
+      "confidence": 0.89
+    },
+    "skin_age":          {
+      "value": 9
+    },
+    "left_eyelids":      {
+      "value":      0,
+      "confidence": 0.89
+    },
+    "right_eyelids":     {
+      "value":      0,
+      "confidence": 0.89
+    },
+    "eye_pouch":         {
+      "value":      0,
+      "confidence": 0.89
+    },
+    "dark_circle":       {
+      "value":      0,
+      "confidence": 0.89
+    },
+    "forehead_wrinkle":  {
+      "value":      0,
+      "confidence": 0.89
+    },
+    "crows_feet":        {
+      "value":      0,
+      "confidence": 0.89
+    },
+    "eye_finelines":     {
+      "value":      0,
+      "confidence": 0.89
+    },
+    "glabella_wrinkle":  {
+      "value":      0,
+      "confidence": 0.89
+    },
+    "nasolabial_fold":   {
+      "value":      0,
+      "confidence": 0.89
+    },
+    "skin_type":         {
+      "skin_type": 0,
+      "details":   {
+        "0": {
+          "value":      1,
+          "confidence": 0.89
+        },
+        "1": {
+          "value":      1,
+          "confidence": 0.89
+        },
+        "2": {
+          "value":      0,
+          "confidence": 0.01
+        },
+        "3": {
+          "value":      0,
+          "confidence": 0.01
+        }
+      }
+    },
+    "pores_forehead":    {
+      "value":      0,
+      "confidence": 1
+    },
+    "pores_left_cheek":  {
+      "value":      0,
+      "confidence": 1
+    },
+    "pores_right_cheek": {
+      "value":      0,
+      "confidence": 1
+    },
+    "pores_jaw":         {
+      "value":      0,
+      "confidence": 1
+    },
+    "blackhead":         {
+      "value":      0,
+      "confidence": 1
+    },
+    "acne":              {
+      "rectangle": [
+        {
+          "width":  3,
+          "top":    17,
+          "height": 1,
+          "left":   35
+        },
+        {
+          "width":  4,
+          "top":    20,
+          "height": 1,
+          "left":   35
+        }
+      ]
+    },
+    "closed_comedones":  {
+      "rectangle": [
+        {
+          "width":  3,
+          "top":    17,
+          "height": 1,
+          "left":   35
+        },
+        {
+          "width":  4,
+          "top":    20,
+          "height": 1,
+          "left":   35
+        }
+      ]
+    },
+    "mole":              {
+      "rectangle": [
+        {
+          "width":  3,
+          "top":    17,
+          "height": 1,
+          "left":   35
+        },
+        {
+          "width":  4,
+          "top":    20,
+          "height": 1,
+          "left":   35
+        }
+      ]
+    },
+    "skin_spot":         {
+      "rectangle": [
+        {
+          "width":  3,
+          "top":    17,
+          "height": 1,
+          "left":   35
+        },
+        {
+          "width":  4,
+          "top":    20,
+          "height": 1,
+          "left":   35
+        }
+      ]
+    }
+  }
+}
+```
+
+## Sample Code
+
+- [Introduction to Get Sample Code](get-sample-code)
+- [Sample Code][PostmanURL]
+
+[PostmanURL]: https://documenter.getpostman.com/view/26387069/2s93JxqgHE#bc10fbd8-9598-4798-99b0-524cd76f6bca

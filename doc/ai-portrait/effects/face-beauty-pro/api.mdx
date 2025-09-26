@@ -1,0 +1,87 @@
+---
+title: "Face Beauty Pro API"
+description: "The Face Beauty Pro API allows for advanced portrait enhancement, including beautification features like whitening and smoothing skin, as well as face shaping tools such as enlarging eyes, slimming faces, and eyebrow removal. Additionally, it offers a variety of filters to enhance your images and add artistic flair."
+openapi: 'POST /api/portrait/effects/face-beauty-pro'
+---
+
+## Request
+
+- **URL**: `https://www.ailabapi.com/api/portrait/effects/face-beauty-pro`
+- **Method**: `POST`
+- **Content-Type**: `multipart/form-data`
+
+### Image requirements
+
+- **Image format**: `JPEG` `JPG` `PNG`
+- **Image size**: No more than 2 MB.
+- **Image resolution**: Larger than 48x48px, smaller than 4096x4096px.
+
+### Headers
+
+| Field              | Required | Type     | Description                                        |
+|:-------------------|:---------|:---------|:---------------------------------------------------|
+| `ailabapi-api-key` | YES      | `string` | Application API KEY. [Get API KEY](/doc/get-api-key) |
+
+### Body
+
+| Field            | Required | Type      | Scope                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            | Default | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
+|:-----------------|:---------|:----------|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:--------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `image`          | YES      | `file`    |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |         |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
+| `whitening`      | NO       | `integer` | [0, 100]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         | `50`    | Whitening Degree. `0` means no whitening effect, `100` represents the highest degree.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
+| `smoothing`      | NO       | `integer` | [0, 100]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         | `50`    | Smoothing Degree. `0` means no smoothing effect, `100` represents the highest degree.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
+| `thinface`       | NO       | `integer` | [0, 100]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         | `50`    | Face Slimming Degree. `0` means no face slimming effect, `100` represents the highest degree.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
+| `shrink_face`    | NO       | `integer` | [0, 100]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         | `50`    | Small Face Degree. `0` means no small face effect, `100` represents the highest degree.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
+| `enlarge_eye`    | NO       | `integer` | [0, 100]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         | `50`    | Big Eyes Degree. `0` means no big eyes effect, `100` represents the highest degree.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+| `remove_eyebrow` | NO       | `integer` | [0, 100]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         | `50`    | Eyebrow Removal Degree. `0` means no eyebrow removal effect, `100` represents the highest degree.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
+| `filter_type`    | NO       | `integer` | ``1``, ``2``, ``3``, ``4``, ``5``, ``6``, ``7``, ``8``, ``9``, ``10``, ``11``, ``12``, ``13``, ``14``, ``15``, ``16``, ``17``, ``18``, ``19``, ``20``, ``21``, ``22``, ``23``, ``24``, ``25``, ``26``, ``27``, ``28``, ``29``, ``30``, ``31``, ``32``, ``33``, ``34``, ``35`` |         | ``1`: Black and White.`, ``2`: Calm.`, ``3`: Sunny Day.`, ``4`: Journey.`, ``5`: Beautify Skin.`, ``6`: Hong Kong Style.`, ``7`: Aesthetic.`, ``8`: Lovely.`, ``9`: New York.`, ``10`: Sakura.`, ``11`: Seventeen.`, ``12`: Soft Light.`, ``13`: Afternoon Tea.`, ``14`: Brighten Skin.`, ``15`: Chaplin.`, ``16`: Floral.`, ``17`: Memories.`, ``18`: Ice Beauty.`, ``19`: Paris.`, ``20`: Time.`, ``21`: LOMO.`, ``22`: Old Times.`, ``23`: Early Spring.`, ``24`: Story.`, ``25`: Abao Color.`, ``26`: Fill Light.`, ``27`: Warm.`, ``28`: Gorgeous.`, ``29`: Lavender.`, ``30`: Chanel.`, ``31`: Prague.`, ``32`: Old Dreams.`, ``33`: Peach Blossom.`, ``34`: Pink.`, ``35`: Misty Rain.` |
+| `task_type`      | NO       | `string`  | ``sync`` | `sync`  | ``sync`: Synchronous tasks.` |
+
+## Response
+<Warning>
+**Response Field Handling Flow**
+
+1. **Handle `Public Response Fields`**
+
+   Parse and validate the `Public Response Fields`, checking the status code or response message to ensure the request is successful and error-free.
+
+2. **Handle `Business Response Fields`**
+
+   If the `Public Response Fields` are valid and error-free, proceed with processing the business logic in the `Business Response Fields`.
+</Warning>
+### Public Response Fields
+
+<a href="/doc/response-description" target="_blank">Viewing Public Response Fields and Error Codes</a>
+
+### Business Response Fields
+
+| Field       | Type     | Scope           | Description                                     |
+|:------------|:---------|:----------------|:------------------------------------------------|
+| `task_type` | `string` | ``sync`` | Task Type. ``sync`: Synchronous tasks.`  |
+| `result`    | `string` |                 | Returns the base64 data of the processed image. |
+
+### Response Example
+
+```json
+{
+  "request_id":     "",
+  "log_id":         "",
+  "error_code":     0,
+  "error_msg":      "",
+  "error_detail":   {
+    "status_code":  200,
+    "code":         "",
+    "code_message": "",
+    "message":      ""
+  },
+  "task_type":      "sync",
+  "result":         ""
+}
+```
+
+## Sample Code
+<Tip>
+- [Introduction to Get Sample Code](get-sample-code)
+- [Sample Code][PostmanURL]
+
+[PostmanURL]: https://documenter.getpostman.com/view/26387069/2s93JxqgHE#81da67ce-6ed8-4bb4-ad97-0c7d05ba923c
+</Tip>

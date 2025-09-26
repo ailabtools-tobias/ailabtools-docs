@@ -1,0 +1,190 @@
+---
+title: "Response Description"
+description: "AILabTools is an advanced tool that offers a vast array of simple and flexible API endpoints to suit your specific needs. With just one API KEY, you can easily call any of the endpoints and integrate them quickly into your application or workflow, allowing for smooth and efficient operations. AILabTools is continuously evolving, and you can anticipate even more API endpoints being added in the future, further enhancing its capabilities and usefulness for your artificial intelligence and machine learning requirements."
+---
+
+## Public Response Fields
+
+| Field           | Required | Type      | Scope                      | Description                                                                                                                   |
+|:----------------|:---------|:----------|:---------------------------|:------------------------------------------------------------------------------------------------------------------------------|
+| `request_id`    | YES      | `string`  |                            | `If there is a problem that cannot be located, this field can be sent to technology for problem location.` |
+| `log_id`        | YES      | `string`  |                            | `If there is a problem that cannot be located, this field can be sent to technology for problem location.` |
+| `error_code`    | YES      | `integer` |                            | `When HTTP Status is 200: error_code=0; otherwise exactly the same as HTTP Status.` |
+| `error_detail`  | YES      | `object`  |                            | Error Details.                                                                                                                |
+| +`status_code`  | YES      | `integer` |                            | Status Code.                                                                                                                  |
+| +`code`         | YES      | `string`  | [View](#parsing-of-error-detail-code) | Error Code.                                                                                                                   |
+| +`code_message` | YES      | `string`  |                            | The information represented by the Error Code(`code`).                                                                        |
+| +`message`      | YES      | `string`  |                            | Supplementary information for the `code_message` field.                                                                       |
+
+## How to Verify if a Request is Successful?
+
+<Warning>
+
+- By using the HTTP Status Code:
+  - **200**: Success.
+  - **Other**: Failure.
+- By using the `error_code` field:
+  - **0**: Success.
+  - **Other**: Failure.
+</Warning>
+
+## Successful Response Example
+
+```json
+{
+  "request_id":   "Request ID",
+  "log_id":       "Log ID",
+  "error_code":   0,
+  "error_detail": {
+    "status_code":  200,
+    "code":         "",
+    "code_message": "",
+    "message":      ""
+  }
+}
+```
+
+## Failed Response Example
+
+```json
+{
+  "request_id":   "Request ID",
+  "log_id":       "Log ID",
+  "error_code":   422,
+  "error_detail": {
+    "status_code":  422,
+    "code":         "ERROR_NO_FACE_IN_FILE",
+    "code_message": "No face detected in the file.",
+    "message":      "pic not has face"
+  }
+}
+```
+
+## Parsing of `error_detail.code` 
+
+| HTTP Status | Value                                       | Description                                                                                         |
+|:------------|:--------------------------------------------|:----------------------------------------------------------------------------------------------------|
+| 400         | `PROCESSING_FAILURE`                        | Processing failed.                                                                                  |
+| 400         | `ERROR_PARAMETERS`                          | Invalid parameters.                                                                                 |
+| 400         | `MISSING_PARAMETERS`                        | Missing parameters.                                                                                 |
+| 400         | `ERROR_INVALID_PARAMETER`                   | Invalid parameter.                                                                                  |
+| 400         | `PARAMETERS_CANNOT_EMPTY`                   | Parameters cannot be empty.                                                                         |
+| 400         | `ERROR_MISSING_LIMIT_PARAMETER`             | Missing Limit parameter.                                                                            |
+| 400         | `ERROR_MISSING_TASKS_PARAMETER`             | Missing Tasks parameter.                                                                            |
+| 400         | `ERROR_MISSING_ASSURE_DIRECTION_PARAMETER`  | Missing AssureDirection parameter.                                                                  |
+| 400         | `ERROR_MISSING_MIN_HEIGHT_PARAMETER`        | Missing MinHeight parameter.                                                                        |
+| 400         | `ERROR_INVALID_SIDE_PARAMETER`              | Invalid value for Side parameter.                                                                   |
+| 400         | `ERROR_TOO_MANY_FILES`                      | Number of files exceeds the limit.                                                                  |
+| 400         | `ERROR_FACE_TRACE_LIMIT_EXCEEDED`           | Face or Trace limit exceeded.                                                                       |
+| 400         | `ERROR_INVALID_URL`                         | Invalid URL.                                                                                        |
+| 400         | `ERROR_DATABASE_LIMIT_EXCEEDED`             | Database limit exceeded.                                                                            |
+| 400         | `ERROR_INVALID_RESPONSE_FORMAT`             | Incorrect response format (Accept not supported).                                                   |
+| 400         | `ERROR_UNSUPPORTED_RESPONSE_FORMAT`         | Incorrect response format (Format not supported).                                                   |
+| 400         | `ERROR_TOO_MANY_GROUPS_IN_GROUP_LIST`       | Too many groups in group_list.                                                                      |
+| 400         | `ERROR_TOO_MANY_UIDS_IN_UID_LIST`           | Too many UIDs in uid_list.                                                                          |
+| 400         | `ERROR_TOO_MANY_APPS_IN_APP_LIST`           | Too many apps in app_list.                                                                          |
+| 400         | `ERROR_BATCH_TASK_LIMIT_EXCEEDED`           | Batch task processing limit exceeded.                                                               |
+| 400         | `ERROR_CLEANING_USER_GROUP_DATA`            | Cleaning user group data.                                                                           |
+| 400         | `ERROR_IMAGE_STORAGE_NOT_SUPPORTED`         | Image storage not supported.                                                                        |
+| 400         | `ERROR_INSUFFICIENT_RESOURCES`              | Insufficient resources.                                                                             |
+| 400         | `ERROR_RESOURCE_IN_TRANSIT`                 | Resource in transit.                                                                                |
+| 400         | `ERROR_FILE_DOWNLOAD_FAILED`                | File download failed.                                                                               |
+| 400         | `ERROR_FILE_UPLOAD_FAILED`                  | File upload failed.                                                                                 |
+| 400         | `FILE_DECODING_FAILURE`                     | File decoding failed.                                                                               |
+| 400         | `ERROR_FACE_BLENDING_FAILED`                | Face blending failed.                                                                               |
+| 400         | `ERROR_FACE_IMAGE_ADDITION_FAILED`          | Failed to add face image.                                                                           |
+| 400         | `ERROR_GET_FACE_IMAGE_FAILED`               | Failed to get face image.                                                                           |
+| 400         | `ERROR_DATA_TRANSFER_FAILED`                | Data transfer (download or upload) failed.                                                          |
+| 400         | `ERROR_TASK_REVOCATION_FAILED`              | Task revocation failed.                                                                             |
+| 400         | `ERROR_RESOURCE_UNAVAILABLE`                | Resource temporarily unavailable.                                                                   |
+| 400         | `ERROR_FILE_DOWNLOAD_TIMEOUT`               | File download timeout.                                                                              |
+| 401         | `ERROR_USER_NOT_EXISTS`                     | The user does not exist.                                                                            |
+| 401         | `ERROR_APPLICATIONS_NOT_EXISTS`             | The application does not exist.                                                                     |
+| 403         | `ERROR_USER_LOCKED`                         | The user is locked.                                                                                 |
+| 403         | `AI_SERVICE_UNAUTHORIZED`                   | AI service unauthorized. Please try again later. If not resolved promptly, contact the platform.    |
+| 403         | `ERROR_ILLEGAL_FILE`                        | Illegal file.                                                                                       |
+| 404         | `ERROR_AI_NOT_EXISTS`                       | AI does not exist or has been deactivated, please contact the platform.                             |
+| 404         | `AI_SERVICE_NOT_FOUND`                      | AI service not found. Please try again later. If not resolved promptly, contact the platform.       |
+| 404         | `ERROR_FILE_NOT_FOUND`                      | File not found.                                                                                     |
+| 404         | `ERROR_FACE_NOT_FOUND`                      | Face not found.                                                                                     |
+| 404         | `ERROR_USER_GROUP_NOT_FOUND`                | User group not found.                                                                               |
+| 404         | `ERROR_USER_NOT_FOUND`                      | User not found.                                                                                     |
+| 404         | `ERROR_FACE_TOKEN_NOT_FOUND`                | Face token not found.                                                                               |
+| 404         | `ERROR_CONTENT_NOT_FOUND`                   | Content not found.                                                                                  |
+| 404         | `ERROR_RESOURCE_NOT_FOUND`                  | Resource not found.                                                                                 |
+| 405         | `ERROR_ILLEGAL_OPERATION`                   | Illegal operation.                                                                                  |
+| 409         | `ERROR_FACE_ALREADY_EXISTS`                 | Face already exists.                                                                                |
+| 409         | `ERROR_DATA_ALREADY_EXISTS`                 | Data already exists.                                                                                |
+| 409         | `ERROR_USER_GROUP_ALREADY_EXISTS`           | User group already exists.                                                                          |
+| 409         | `ERROR_USER_ALREADY_EXISTS`                 | User already exists.                                                                                |
+| 409         | `ERROR_DUPLICATE_GROUP_NAME`                | Duplicate group name.                                                                               |
+| 409         | `ERROR_RESOURCE_IN_USE`                     | Resource is in use.                                                                                 |
+| 409         | `ERROR_TASK_CONFLICT`                       | Task conflict.                                                                                      |
+| 409         | `ERROR_TASK_REVOKED`                        | Task has already been revoked.                                                                      |
+| 410         | `ERROR_RESOURCE_RECLAIMED`                  | Resource has been reclaimed.                                                                        |
+| 413         | `FILE_SIZE_EXCEEDS_LIMIT`                   | File size exceeds limit.                                                                            |
+| 413         | `ERROR_CONTENT_TOO_LONG`                    | Content length exceeds limit.                                                                       |
+| 413         | `ERROR_VIDEO_DURATION_EXCEEDED`             | Video duration exceeds limit.                                                                       |
+| 413         | `ERROR_REQUEST_BODY_TOO_LARGE`              | Request body size exceeds limit.                                                                    |
+| 413         | `ERROR_RESPONSE_BODY_TOO_LARGE`             | Response body size exceeds limit.                                                                   |
+| 415         | `UNSUPPORTED_FILE_TYPES`                    | Unsupported file types.                                                                             |
+| 415         | `ERROR_INVALID_OUTPUT_FORMAT`               | Invalid output format.                                                                              |
+| 415         | `ERROR_UNSUPPORTED_GRAYSCALE_IMAGE`         | Grayscale image not supported.                                                                      |
+| 422         | `UNSUPPORTED_PARAMETER_VALUES`              | Invalid parameter values.                                                                           |
+| 422         | `ERROR_INVALID_FACE_BOX_PARAMETER`          | Face box parameter does not meet requirements.                                                      |
+| 422         | `ERROR_INVALID_BIG_EYES_PARAMETER`          | Big eyes parameter does not meet requirements.                                                      |
+| 422         | `ERROR_INVALID_FACE_SLIMMING_PARAMETER`     | Face slimming parameter does not meet requirements.                                                 |
+| 422         | `ERROR_INVALID_SMOOTHING_PARAMETER`         | Smoothing parameter does not meet requirements.                                                     |
+| 422         | `ERROR_INVALID_SKIN_WHITENING_PARAMETER`    | Skin whitening parameter does not meet requirements.                                                |
+| 422         | `ERROR_INVALID_PARAMETER_FORMAT`            | Invalid parameter format.                                                                           |
+| 422         | `ERROR_PARAMETER_CONVERSION_FAILED`         | Parameter conversion failed.                                                                        |
+| 422         | `FILE_RESOLUTION_EXCEEDS_LIMITS`            | File resolution exceeds limits.                                                                     |
+| 422         | `ERROR_LOW_RESOLUTION`                      | File resolution too low.                                                                            |
+| 422         | `ERROR_HIGH_RESOLUTION`                     | File resolution too high.                                                                           |
+| 422         | `ERROR_INVALID_FILE`                        | Invalid file.                                                                                       |
+| 422         | `FILE_CONTENT_NON_COMPLIANCE`               | File content does not meet requirements.                                                            |
+| 422         | `ERROR_INCORRECT_FILE_COUNT`                | Incorrect number of files.                                                                          |
+| 422         | `ERROR_NO_FACE_IN_FILE`                     | No face detected in the file.                                                                       |
+| 422         | `ERROR_FACE_SIZE_NOT_MEET_REQUIREMENTS`     | Face size does not meet requirements.                                                               |
+| 422         | `ERROR_FACE_SIZE_RATIO_NOT_MET`             | Face size ratio does not meet requirements.                                                         |
+| 422         | `ERROR_SMALL_FACE_SIZE`                     | Face size too small.                                                                                |
+| 422         | `ERROR_FACE_COPY_SCENE_MISMATCH`            | Face copy scene type mismatch.                                                                      |
+| 422         | `ERROR_FACE_UNRECOGNIZABLE`                 | Unable to recognize face.                                                                           |
+| 422         | `ERROR_POOR_FACE_QUALITY`                   | Poor face quality.                                                                                  |
+| 422         | `ERROR_BLURRY_FACE`                         | Blurry face.                                                                                        |
+| 422         | `ERROR_OBSTRUCTED_FACE`                     | Obstructed face.                                                                                    |
+| 422         | `ERROR_POOR_FACE_LIGHTING`                  | Poor face lighting.                                                                                 |
+| 422         | `ERROR_INCOMPLETE_FACE`                     | Incomplete face.                                                                                    |
+| 422         | `ERROR_FACE_NOT_FACING_FORWARD`             | Face not facing forward.                                                                            |
+| 422         | `ERROR_MISSING_OUTPUT_FORMAT`               | Missing output format.                                                                              |
+| 422         | `ERROR_QUALITY_SCORE_NOT_MEET_REQUIREMENTS` | Quality score does not meet requirements.                                                           |
+| 422         | `ERROR_QUALITY_CONTROL_ERROR`               | Quality control error.                                                                              |
+| 422         | `ERROR_LIVENESS_CONTROL_ERROR`              | Liveness control error.                                                                             |
+| 422         | `ERROR_SCENE_TYPE_MISMATCH`                 | Scene type mismatch.                                                                                |
+| 422         | `ERROR_CARTOON_FACE_NOT_SUPPORTED`          | Cartoon face not supported.                                                                         |
+| 422         | `ERROR_TEMPLATE_IMAGE_QUALITY_TOO_LOW`      | Template image quality too low.                                                                     |
+| 422         | `ERROR_ACTION_VERIFICATION_FAILED`          | Action verification failed.                                                                         |
+| 422         | `ERROR_LEFT_EYE_OCCLUSION_TOO_HIGH`         | Left eye occlusion too high.                                                                        |
+| 422         | `ERROR_RIGHT_EYE_OCCLUSION_TOO_HIGH`        | Right eye occlusion too high.                                                                       |
+| 422         | `ERROR_LEFT_FACE_OCCLUSION_TOO_HIGH`        | Left face occlusion too high.                                                                       |
+| 422         | `ERROR_RIGHT_FACE_OCCLUSION_TOO_HIGH`       | Right face occlusion too high.                                                                      |
+| 422         | `ERROR_CHIN_OCCLUSION_TOO_HIGH`             | Chin occlusion too high.                                                                            |
+| 422         | `ERROR_NOSE_OCCLUSION_TOO_HIGH`             | Nose occlusion too high.                                                                            |
+| 422         | `ERROR_MOUTH_OCCLUSION_TOO_HIGH`            | Mouth occlusion too high.                                                                           |
+| 422         | `ERROR_SYNTHESIS_DETECTION_FAILED`          | Synthesis detection failed.                                                                         |
+| 422         | `ERROR_LIVENESS_DETECTION_FAILED`           | Liveness detection failed.                                                                          |
+| 422         | `ERROR_NO_RECOGNITION_TARGET_DETECTED`      | No recognition target detected in the image.                                                        |
+| 422         | `ERROR_IMAGE_RECOGNITION_FAILED`            | Image recognition error.                                                                            |
+| 422         | `ERROR_MASK_IMAGE_RESOLUTION_MISMATCH`      | Resolution of `mask` and `image` must be the same.                                                  |
+| 422         | `ERROR_TASK_STOPPED_PROCESSING`             | Task has been stopped processing.                                                                   |
+| 422         | `EXCEEDING_LIMITS`                          | Exceeds limit.                                                                                      |
+| 422         | `ERROR_CONTENT_NON_COMPLIANCE`              | Content does not meet requirements.                                                                 |
+| 429         | `ERROR_NOT_ENOUGH_CREDITS`                  | Insufficient credits.                                                                               |
+| 500         | `UNKNOWN_ERROR`                             | Unknown error. Please try again later. If not resolved promptly, contact the platform.              |
+| 500         | `SERVICE_INTERNAL_ERROR`                    | Service internal error. Please try again later. If not resolved promptly, contact the platform.     |
+| 500         | `FILE_SERVICE_ERROR`                        | File service error. Please try again later. If not resolved promptly, contact the platform.         |
+| 500         | `AI_SERVICE_ERROR`                          | AI service error. Please try again later. If not resolved promptly, contact the platform.           |
+| 500         | `AI_SERVICE_INTERNAL_ERROR`                 | AI service internal error. Please try again later. If not resolved promptly, contact the platform.  |
+| 502         | `ERROR_GATEWAY`                             | Gateway error, please try again later. If it is not resolved in time, please contact the platform.  |
+| 503         | `AI_SERVICE_FLOW_RESTRICTION`               | AI service is rate-limited. Please try again later. If not resolved promptly, contact the platform. |
+| 504         | `AI_SERVICE_TIMEOUT`                        | AI service timeout. Please try again later. If not resolved promptly, contact the platform.         |

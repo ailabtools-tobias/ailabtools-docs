@@ -1,0 +1,78 @@
+---
+title: "Image Upscaler - API:V1.0.0"
+description: "Introducing Image Upscaler - revolutionary new software that uses AI technology to deliver fast image upgrades 2x to 4x without loss of quality. Now you can quickly and easily upgrade your images to higher resolutions without any loss of quality.Image Upscaler uses advanced AI technology to accurately identify and enhance the details in your images, ensuring the highest quality possible. With Image Upscaler, you can upgrade your images with confidence, knowing that the quality of your images will remain the same."
+---
+
+import apiOfflineNotice from '/snippets/api-offline-notice.mdx';
+
+<apiOfflineNotice />
+
+## Request
+
+- **URL**: `https://www.ailabapi.com/api/image/enhance/image-lossless-enlargement`
+- **Method**: `POST`
+- **Content-Type**: `multipart/form-data`
+
+### Image requirements
+
+- **Image format**: `JPEG` `JPG` `PNG` `BMP`
+- **Image size**: No more than 3 MB.
+- **Image resolution**: Larger than 32x32px, smaller than 1920x1080px.
+
+### Headers
+
+| Field              | Required | Type     | Description                                        |
+|:-------------------|:---------|:---------|:---------------------------------------------------|
+| `ailabapi-api-key` | YES      | `string` | Application API KEY. [Get API KEY](/doc/get-api-key) |
+
+### Body
+
+| Field            | Required | Type      | Scope                                  | Default | Description                                                                                                                                                                                                                                                          |
+|:-----------------|:---------|:----------|:---------------------------------------|:--------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `image`          | YES      | `file`    |                                        |         |                                                                                                                                                                                                                                                                      |
+| `upscale_factor` | NO       | `integer` | ``2``, ``3``, ``4`` | `2`     | Magnification.                                                                                                                                                                                                                                                       |
+| `mode`           | NO       | `string`  | ``base``, ``enhancement`` | `base`  | ``base`: Normal mode, i.e. stable super-resolution effect.`, ``enhancement`: Enhancement mode, which has a more prominent enhancement effect than the normal mode, further improving the clarity and sharpness of the output image.` |
+
+## Response
+
+**Response Field Handling Flow**
+
+1. **Handle `Public Response Fields`**
+
+   Parse and validate the `Public Response Fields`, checking the status code or response message to ensure the request is successful and error-free.
+
+2. **Handle `Business Response Fields`**
+
+   If the `Public Response Fields` are valid and error-free, proceed with processing the business logic in the `Business Response Fields`.
+
+### Public Response Fields
+
+<a href="/doc/response-description" target="_blank">Viewing Public Response Fields and Error Codes</a>
+
+### Business Response Fields
+
+| Field  | Type     | Description                                                                 |
+|:-------|:---------|:----------------------------------------------------------------------------|
+| `data` | `object` | The content of the result data returned.                                    |
+| +`url` | `string` | URL address of the image after resolution enlargement, image format is PNG. |
+
+The URL address is a temporary address, valid for 24 hours, and will not be accessible after it expires. If you need to save the file for a long time or permanently, please visit the URL address within 24 hours and download the file to your own storage space.
+
+### Response Example
+
+```json
+,
+  "data":           
+}
+```
+
+## Sample Code
+
+**[👉 Online Experience 👈**(https://www.ailabtools.com/image-lossless-enlargement-example)]
+
+If you'd like to see the actual effects, please visit the experience page for a trial.
+
+- [Introduction to Get Sample Code](get-sample-code)
+- [Sample Code][PostmanURL]
+
+[PostmanURL]: https://documenter.getpostman.com/view/26387069/2s93JxqgHE#35001165-9d0a-4a8a-ad02-d921c9be6352

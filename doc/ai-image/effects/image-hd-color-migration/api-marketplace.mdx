@@ -1,0 +1,111 @@
+---
+title: "AILabTools API - HD color migration API"
+description: "Color topping of HD images and the ability to ensure that the color of the portrait portion does not change."
+---
+
+## Request
+
+### Image requirements
+
+- **Image format**: `PNG` `JPG` `JPEG`
+- **Image size**: No more than 3 MB.
+- **Image resolution**: Larger than 64x64px, smaller than 10000x10000px.
+- The image must be RGB 3-channel.
+
+### Body
+
+#### Fixed Fields
+
+| Field       | Required | Type     | Scope                                                  | Default | Example | Description                                                                                                                                                            |
+|:------------|:---------|:---------|:-------------------------------------------------------|:--------|:--------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `task_type` | YES      | `string` | ``async`` | `async` |         | ``async`: Asynchronous tasks.` |
+| `image`     | YES      | `file`   |                                                        |         |         |                                                                                                                                                                        |
+| `mode`      | YES      | `string` | ``AUTO``, ``TEMPLATE``, ``REF_PIC`` |         |         | ``AUTO`: Automatic color extension.`, ``TEMPLATE`: Color palette extension.`, ``REF_PIC`: Reference picture extension color.` |
+| `degree`    | YES      | `string` | [0, 1]                                                 |         | `0.4`   | Top color degree.                                                                                                                                                      |
+
+#### `mode` === `AUTO`
+
+| Field         | Required | Type      | Scope                                                                                                   | Default | Description                          |
+|:--------------|:---------|:----------|:--------------------------------------------------------------------------------------------------------|:--------|:-------------------------------------|
+| `color_count` | NO       | `integer` | ``1``, ``2``, ``3``, ``4``, ``5``, ``6``, ``7``, ``8`` | `1`     | Expand the number of color families. |
+
+#### `mode` === `TEMPLATE`
+
+| Field            | Required | Type     | Example         | Description                                                                                                 |
+|:-----------------|:---------|:---------|:----------------|:------------------------------------------------------------------------------------------------------------|
+| `color_template` | YES      | `string` | `056A6B,0A0B0C` | Color palette topology, Top master color list, color value definition ARGB. e.g. 0A0B0C, array size [1, 7]. |
+
+#### `mode` === `REF_PIC`
+
+| Field | Required | Type   | Description      |
+|:------|:---------|:-------|:-----------------|
+| `ref` | YES      | `file` | Reference image. |
+
+## Response
+
+**Response Field Handling Flow**
+
+1. **Handle `Public Response Fields`**
+
+   Parse and validate the `Public Response Fields`, checking the status code or response message to ensure the request is successful and error-free.
+
+2. **Handle `Business Response Fields`**
+
+   If the `Public Response Fields` are valid and error-free, proceed with processing the business logic in the `Business Response Fields`.
+
+### Public Response Fields
+
+<a href="/doc/response-description" target="_blank">Viewing Public Response Fields and Error Codes</a>
+
+### Business Response Fields
+
+| Field       | Type     | Scope            | Description                                      |
+|:------------|:---------|:-----------------|:-------------------------------------------------|
+| `task_type` | `string` | ``async`` | Task Type. ``async`: Asynchronous tasks.` |
+| `task_id`   | `string` |                  | Asynchronous task ID.                            |
+
+### Response Example
+
+```json
+,
+  "task_type":      "",
+  "task_id":        ""
+}
+```
+
+Asynchronous task results are valid for 24 hours. It is recommended that asynchronous task results be queried every 5 seconds.
+
+## `Querying Async Task Results` Response
+
+**Response Field Handling Flow**
+
+1. **Handle `Public Response Fields`**
+
+   Parse and validate the `Public Response Fields`, checking the status code or response message to ensure the request is successful and error-free.
+
+2. **Handle `Business Response Fields`**
+
+   If the `Public Response Fields` are valid and error-free, proceed with processing the business logic in the `Business Response Fields`.
+
+### Public Response Fields
+
+<a href="/doc/response-description" target="_blank">Viewing Public Response Fields and Error Codes</a>
+
+### Business Response Fields
+
+| Field         | Type              | Scope                                  | Description                                                                                                                                 |
+|:--------------|:------------------|:---------------------------------------|:--------------------------------------------------------------------------------------------------------------------------------------------|
+| `task_status` | `integer`         | ``0``, ``1``, ``2`` | Asynchronous task status. ``0`: The task is queued.` ``1`: Asynchronous processing.` ``2`: Processing was successful.` |
+| `data`        | `object`          |                                        | The content of the result data returned.                                                                                                    |
+| +`image_list` | `array of string` |                                        | Result URL address.                                                                                                                         |
+
+The URL address is a temporary address, valid for 24 hours, and will not be accessible after it expires. If you need to save the file for a long time or permanently, please visit the URL address within 24 hours and download the file to your own storage space.
+
+### Response Example
+
+```json
+,
+  "task_status":    0,
+  "data":           
+}
+```

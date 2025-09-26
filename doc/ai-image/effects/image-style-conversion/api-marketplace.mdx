@@ -1,0 +1,50 @@
+---
+title: "AILabTools API - Photo to Painting API"
+description: "This product offers an amazing range of features to help you transform any image with just the click of a button. Our artificial intelligence algorithm has the capability to convert any image into nine different styles including cartoon, pencil, colored pencil, gothic oil painting, colored sugar oil painting, shouting oil painting, Kanagawa Surfing oil painting, strange oil painting, and lavender oil painting. With this product, you can easily create stunning works of art with a variety of styles. Whether you're looking to add a touch of whimsy to a photograph or to create a unique statement piece, this product has you covered."
+---
+
+## Request
+
+### Image requirements
+
+- **Image format**: `PNG` `JPG` `JPEG` `BMP`
+- **Image size**: No more than 8 MB.
+- **Image resolution**: Larger than 10x10px, smaller than 5000x5000px.
+- **Image aspect ratio**: Aspect ratio within 4:1.
+
+### Body
+
+| Field    | Required | Type     | Scope                                                                                                                                                                    | Description                                                                                                                                                                                                                                                                                                                                                                                                                                         |
+|:---------|:---------|:---------|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `image`  | YES      | `file`   |                                                                                                                                                                          |                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
+| `option` | YES      | `string` | ``cartoon``, ``pencil``, ``color_pencil``, ``warm``, ``wave``, ``lavender``, ``mononoke``, ``scream``, ``gothic`` | ``cartoon`: Cartoon style.` ``pencil`: Pencil style.` ``color_pencil`: Color pencil drawing style.` ``warm`: The style of colorful sugar cube oil painting.` ``wave`: Oil painting style in surfing in Kanagawa.` ``lavender`: Lavender oil painting style.` ``mononoke`: Strange oil painting style.` ``scream`: Scream oil painting style.` ``gothic`: Gothic oil painting style.` |
+
+## Response
+
+**Response Field Handling Flow**
+
+1. **Handle `Public Response Fields`**
+
+   Parse and validate the `Public Response Fields`, checking the status code or response message to ensure the request is successful and error-free.
+
+2. **Handle `Business Response Fields`**
+
+   If the `Public Response Fields` are valid and error-free, proceed with processing the business logic in the `Business Response Fields`.
+
+### Public Response Fields
+
+<a href="/doc/response-description" target="_blank">Viewing Public Response Fields and Error Codes</a>
+
+### Business Response Fields
+
+| Field   | Type     | Description           |
+|:--------|:---------|:----------------------|
+| `image` | `string` | base64 encoded image. |
+
+### Response Example
+
+```json
+,
+  "image":          ""
+}
+```
