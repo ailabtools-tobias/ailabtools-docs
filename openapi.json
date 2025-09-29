@@ -7795,6 +7795,174 @@
         }
       }
     },
+    "/api/portrait/analysis/face-analyzer-advanced": {
+      "post": {
+        "tags": [
+          "AI PORTRAIT > Portrait Analysis"
+        ],
+        "summary": "Face Analyzer Advanced",
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "image": {
+                    "type": "string",
+                    "format": "binary"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "application/json"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                },
+                "example": {
+                  "request_id": "",
+                  "log_id": "",
+                  "error_code": 0,
+                  "error_code_str": "",
+                  "error_msg": "",
+                  "error_detail": {
+                    "status_code": 200,
+                    "code": "",
+                    "code_message": "",
+                    "message": ""
+                  },
+                  "image_width": 0,
+                  "image_height": 0,
+                  "face_detail_infos": [
+                    {
+                      "face_rect": {
+                        "x": 0,
+                        "y": 0,
+                        "width": 0,
+                        "height": 0
+                      },
+                      "face_detail_attributes_info": {
+                        "age": 0,
+                        "beauty": 0,
+                        "emotion": {
+                          "type": 0,
+                          "probability": 0
+                        },
+                        "eye": {
+                          "glass": {
+                            "type": 0,
+                            "probability": 0.99936753511429
+                          },
+                          "eye_open": {
+                            "type": 0,
+                            "probability": 0.99949336051941
+                          },
+                          "eyelid_type": {
+                            "type": 1,
+                            "probability": 0.75467920303345
+                          },
+                          "eye_size": {
+                            "type": 2,
+                            "probability": 0.59152442216873
+                          }
+                        },
+                        "eyebrow": {
+                          "eyebrow_density": {
+                            "type": 0,
+                            "probability": 0
+                          },
+                          "eyebrow_curve": {
+                            "type": 0,
+                            "probability": 0
+                          },
+                          "eyebrow_length": {
+                            "type": 0,
+                            "probability": 0
+                          }
+                        },
+                        "gender": {
+                          "type": 0,
+                          "probability": 0
+                        },
+                        "hair": {
+                          "length": {
+                            "type": 0,
+                            "probability": 0
+                          },
+                          "bang": {
+                            "type": 0,
+                            "probability": 0
+                          },
+                          "color": {
+                            "type": 0,
+                            "probability": 0
+                          }
+                        },
+                        "hat": {
+                          "style": {
+                            "type": 0,
+                            "probability": 0
+                          },
+                          "color": {
+                            "type": 0,
+                            "probability": 0
+                          }
+                        },
+                        "head_pose": {
+                          "pitch": 0,
+                          "yaw": 0,
+                          "roll": 0
+                        },
+                        "mask": {
+                          "type": 0,
+                          "probability": 0
+                        },
+                        "mouth": {
+                          "mouth_open": {
+                            "type": 0,
+                            "probability": 0
+                          }
+                        },
+                        "moustache": {
+                          "type": 0,
+                          "probability": 0
+                        },
+                        "nose": {
+                          "type": 2,
+                          "probability": 0.75233882665634
+                        },
+                        "shape": {
+                          "type": 0,
+                          "probability": 0
+                        },
+                        "skin": {
+                          "type": 0,
+                          "probability": 0
+                        },
+                        "smile": 0
+                      }
+                    }
+                  ]
+                }
+              }
+            },
+            "description": "Success"
+          }
+        }
+      }
+    },
     "/api/common/query-async-task-result": {
       "get": {
         "tags": [

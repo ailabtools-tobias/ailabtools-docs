@@ -1,8 +1,9 @@
 {
   "$schema": "https://mintlify.com/schema.json",
   "name": "AILabTools Docs",
-  "theme": "maple",
+  "theme": "aspen",
   "layout": "sidenav",
+  "description": "AILabTools is an advanced tool that offers a vast array of simple and flexible API endpoints to suit your specific needs. With just one API KEY, you can easily call any of the endpoints and integrate them quickly into your application or workflow, allowing for smooth and efficient operations.",
   "sidebar": {
     "items": "card",
     "width": 280
@@ -13,6 +14,118 @@
   "search": {
     "location": "top"
   },
+  "seo": {
+    "metatags": {
+      "robots": "noindex",
+      "description": "AILabTools is an advanced tool that offers a vast array of simple and flexible API endpoints to suit your specific needs.",
+      "keywords": "AILabTools, API, AI, Machine Learning, Computer Vision, Natural Language Processing",
+      "author": "AILabTools",
+      "theme-color": "#000000",
+      "canonical": "https://www.ailabtools.com",
+      "og:title": "AILabTools",
+      "og:type": "website", 
+      "og:url": "https://www.ailabtools.com",
+      "og:image": "https://www.ailabtools.com/docs/images/AILab-Tools-Making-the-world-enjoy-AI-and-making-AI-empowerment-easier.png",
+      "og:description": "AILabTools is an advanced tool that offers a vast array of simple and flexible API endpoints to suit your specific needs.",
+      "og:site_name": "AILabTools",
+      "og:locale": "en"
+    }
+  },
+  "navbar": {
+    "links": [
+      {
+        "label": "Explore",
+        "href": "https://www.ailabtools.com"
+      },
+      {
+        "label": "API Keys",
+        "href": "https://www.ailabtools.com/developer-platform"
+      },
+      {
+        "label": "Pricing",
+        "href": "https://www.ailabtools.com/price?tab=developer"
+      },
+      {
+        "label": "Contact",
+        "href": "https://www.ailabtools.com/support"
+      }
+    ]
+  },
+  "footer": {
+  "links": [
+    {
+      "header": "Popular Recommendations",
+      "items": [
+        {
+          "label": "Cartoon Yourself",
+          "href": "https://www.ailabtools.com/docs/ai-portrait/effects/portrait-animation"
+        },
+        {
+          "label": "Hairstyle Changer",
+          "href": "https://www.ailabtools.com/docs/ai-portrait/effects/hairstyle-editor-pro"
+        },
+        {
+          "label": "Age & Gender Swap",
+          "href": "https://www.ailabtools.com/docs/ai-portrait/effects/face-attribute-editing"
+        },
+        {
+          "label": "Skin Analysis",
+          "href": "https://www.ailabtools.com/docs/ai-portrait/analysis/skin-analysis-pro"
+        },
+        {
+          "label": "Object Removal",
+          "href": "https://www.ailabtools.com/docs/ai-image/editing/remove-objects-pro"
+        },
+        {
+          "label": "Image Extender",
+          "href": "https://www.ailabtools.com/docs/ai-image/editing/ai-image-extender"
+        },
+        {
+          "label": "Background Removal",
+          "href": "https://www.ailabtools.com/docs/ai-cutout/general/universal-background-removal"
+        }
+      ]
+    },
+    {
+      "header": "Support",
+      "items": [
+        {
+          "label": "Documentation",
+          "href": "https://www.ailabtools.com/docs"
+        },
+        {
+          "label": "Pricing",
+          "href": "https://www.ailabtools.com/price?tab=developer"
+        },
+        {
+          "label": "Contact Us",
+          "href": "https://www.ailabtools.com/support"
+        }
+      ]
+    },
+    {
+      "header": "More",
+      "items": [
+        {
+          "label": "About Us",
+          "href": "https://www.ailabtools.com/price?tab=developer"
+        },
+        {
+          "label": "Blog",
+          "href": "https://www.ailabtools.com/blog/"
+        },
+        {
+          "label": "Terms of Service",
+          "href": "https://www.ailabtools.com/term-of-use"
+        },
+        {
+          "label": "Privacy Policy",
+          "href": "https://www.ailabtools.com/privacy-policy"
+        }
+      ]
+    }
+  ]
+},
   "rounded": "default",
   "codeBlock": {
     "mode": "dark"
@@ -22,14 +135,14 @@
   "customCSS": [
   ],
   "logo": {
-    "light": "/images/logo-black.webp",
-    "dark": "/images/logo-white.webp"
+    "light": "/images/logo-black.png",
+    "dark": "/images/logo-white.png"
   },
-  "favicon": "/images/favicon.ico",
+  "favicon": "/images/logo-bg.webp",
   "colors": {
-    "primary": "#0D9373",
-    "light": "#55D799", 
-    "dark": "#0D9373"
+    "primary": "#f61b5b",
+    "light": "#f61b5b", 
+    "dark": "#f61b5b"
   },
   "topbarCtaButton": {
     "name": "Developer Platform",
@@ -147,6 +260,14 @@
                     "pages": [
                       "docs/ai-portrait/analysis/face-analyzer",
                       "docs/ai-portrait/analysis/face-analyzer/api"
+                    ]
+                  },
+                  {
+                    "group": "Face Analyzer Advanced",
+                    "icon": "face-smile",
+                    "pages": [
+                      "docs/ai-portrait/analysis/face-analyzer-advanced",
+                      "docs/ai-portrait/analysis/face-analyzer-advanced/api"
                     ]
                   }
                 ]

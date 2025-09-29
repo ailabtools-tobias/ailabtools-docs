@@ -1,0 +1,374 @@
+---
+title: Face Analyzer Advanced API
+description: Detect facial attributes with high precision, including gender, age, expression, glasses, and hats. The API also provides a comprehensive quality score based on occlusion, lighting, blur, pose, and noise, and supports multi-face detection in a single image.
+image: /images/ailabtools.svg
+unlisted: true
+---
+
+## Request
+
+### Image requirements
+
+- **Image format**: `JPG` `JPEG` `PNG` `BMP`
+- **Image size**: No more than 20 MB.
+- **Image resolution**: Larger than 32×32px, smaller than 4096×4096px, face no smaller than 64×64px.
+
+### Body
+
+| Field   | Required | Type   | 
+|:--------|:---------|:-------|
+| `image` | YES      | `file` |  
+
+## Response
+
+:::warning[Response Field Handling Flow]
+
+1. **Handle `Public Response Fields`**
+
+   Parse and validate the `Public Response Fields`, checking the status code or response message to ensure the request is successful and error-free.
+
+2. **Handle `Business Response Fields`**
+
+   If the `Public Response Fields` are valid and error-free, proceed with processing the business logic in the `Business Response Fields`.
+
+:::
+
+### Public Response Fields
+
+<a href="/doc/response-description" target="_blank">Viewing Public Response Fields and Error Codes</a>
+
+### Business Response Fields
+
+| Field                    | Type               | Scope                                  | Description                                                                                                                                                                                                                                                                                                                                                                                             |
+|:-------------------------|:-------------------|:---------------------------------------|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `data`                   | `object`           |                                        |                                                                                                                                                                                                                                                                                                                                                                                                         |
+| +`pupils`                | `array of float`   |                                        | The center point coordinates and radius of the left and right pupils, with 6 floating-point values per face, in the order of `[left_iris_cenpt.x, left_iris_cenpt.y, left_iris_radius, right_iris_cenpt.x, right_iris_cenpt.y, right_iris_radius]`. If multiple faces are detected, results are returned in order.                                                                                      |
+| +`gender_list`           | `array of integer` | <li>`0`</li> <li>`1`</li>              | Gender. If multiple faces are detected, results are returned in order. <li>`0`: Female.</li> <li>`1`: Male.</li>                                                                                                                                                                                                                                                                                        |
+| +`expressions`           | `array of integer` | <li>`0`</li> <li>`1`</li>              | Expression. If multiple faces are detected, results are returned in order. <li>`0`: Neutral.</li> <li>`1`: Smile.</li>                                                                                                                                                                                                                                                                                  |
+| +`face_count`            | `integer`          |                                        | Number of faces.                                                                                                                                                                                                                                                                                                                                                                                        |
+| +`landmarks`             | `array of float`   |                                        | Facial landmark detection results. A set of landmark coordinates is returned for each face, represented as (x0, y0, x1, y1, …). If multiple faces are detected, results are returned in order.                                                                                                                                                                                                          |
+| +`landmark_count`        | `integer`          | <li>`105`</li>                         | Number of facial landmarks. distributed as follows: <li>Eyebrows: 24 points</li> <li>Eyes: 32 points</li> <li>Nose: 6 points</li> <li>Mouth: 34 points</li> <li>Outer contour: 9 points</li>                                                                                                                                                                                                            |
+| +`beauty_list`           | `array of float`   | [0, 100]                               | Attractiveness score. A higher score indicates a higher level of attractiveness. If multiple faces are detected, results are returned in order.                                                                                                                                                                                                                                                         |
+| +`hat_list`              | `array of integer` | <li>`0`</li> <li>`1`</li>              | Whether wearing a hat. If multiple faces are detected, results are returned in order. <li>`0`: No.</li> <li>`1`: Yes.</li>                                                                                                                                                                                                                                                                              |
+| +`face_probability_list` | `array of float`   | [0, 1]                                 | Probability of a face. If multiple faces are detected, results are returned in order.                                                                                                                                                                                                                                                                                                                   |
+| +`glasses`               | `array of integer` | <li>`0`</li> <li>`1`</li> <li>`2`</li> | Whether wearing glasses. If multiple faces are detected, results are returned in order. <li>`0`: No glasses.</li> <li>`1`: Wearing regular glasses.</li> <li>`2`: Wearing sunglasses.</li>                                                                                                                                                                                                              |
+| +`face_rectangles`       | `array of integer` |                                        | Face bounding box, represented as `[left, top, width, height]`. If multiple faces are detected, results are returned in order.                                                                                                                                                                                                                                                                          |
+| +`pose_list`             | `array of float`   |                                        | Face pose, in the format `[yaw, pitch, roll]`. If multiple faces are detected, results are returned in order. <li>`yaw`: left-right angle. Range: `[-90, 90]`.</li> <li>`pitch`: up-down angle. Range: `[-90, 90]`.</li> <li>`roll`: in-plane rotation angle. Range: `[-180, 180]`.</li>                                                                                                                |
+| +`age_list`              | `array of integer` | [0, 100]                               | Age. If multiple faces are detected, results are returned in order.                                                                                                                                                                                                                                                                                                                                     |
+| +`dense_feature_length`  | `integer`          | <li>`1024`</li>                        | The feature dimension returned by face recognition.                                                                                                                                                                                                                                                                                                                                                     |
+| +`masks`                 | `array of integer` | <li>`0`</li> <li>`1`</li> <li>`2`</li> | Whether wearing a mask. If multiple faces are detected, results are returned in order. <li>`0`: No.</li> <li>`1`: Yes.</li> <li>`2`: Mask worn incorrectly.</li>                                                                                                                                                                                                                                        |
+| +`qualities`             | `object`           |                                        | Face quality score, where a higher score indicates better suitability for recognition.                                                                                                                                                                                                                                                                                                                  |
+| ++`score_list`           | `array of float`   | [0, 100]                               | Overall quality score, where a higher score indicates better suitability for recognition. It is recommended to set a threshold of ≥85 during recognition: a score above 85 indicates high overall image quality, while a score below 85 indicates lower overall image quality. If multiple faces are detected, results are returned in order.                                                           |
+| ++`blur_list`            | `array of float`   | [0, 100]                               | Face blur score indicating the impact of blurriness on recognition, where a higher score is more favorable for recognition. It is recommended to set a threshold of ≥85 during recognition: a score above 85 indicates a lower likelihood of the image being blurry, while a score below 85 indicates a higher likelihood of blurriness. If multiple faces are detected, results are returned in order. |
+| ++`fnf_list`             | `array of float`   | [0, 100]                               | Score indicating whether the target is a face and its impact on recognition, where a higher score is more favorable for recognition. It is recommended to set a threshold of ≥85 during recognition: a score above 85 indicates a higher probability that the image is a face, while a score below 85 indicates a lower probability. If multiple faces are detected, results are returned in order.     |
+| ++`glass_list`           | `array of float`   | [0, 100]                               | Score indicating the impact of upper-face occlusion (e.g., glasses) on recognition, where a higher score is more favorable for recognition. It is recommended to set a threshold of ≥85 during recognition: a score above 85 indicates a lower probability of wearing glasses, while a score below 85 indicates a higher probability. If multiple faces are detected, results are returned in order.    |
+| ++`illu_list`            | `array of float`   | [0, 100]                               | Score indicating the impact of lighting on recognition, where a higher score is more favorable for recognition. It is recommended to set a threshold of ≥85 during recognition: a score above 85 indicates a higher probability that the image has good lighting, while a score below 85 indicates a lower probability. If multiple faces are detected, results are returned in order.                  |
+| ++`mask_list`            | `array of float`   | [0, 100]                               | Score indicating the impact of lower-face occlusion (e.g., mask) on recognition, where a higher score is more favorable for recognition. It is recommended to set a threshold of ≥85 during recognition: a score above 85 indicates a lower probability of wearing a mask, while a score below 85 indicates a higher probability. If multiple faces are detected, results are returned in order.        |
+| ++`noise_list`           | `array of float`   | [0, 100]                               | Score indicating the impact of image noise on recognition, where a higher score is more favorable for recognition. It is recommended to set a threshold of ≥85 during recognition: a score above 85 indicates a lower probability of image noise, while a score below 85 indicates a higher probability. If multiple faces are detected, results are returned in order.                                 |
+| ++`pose_list`            | `array of float`   | [0, 100]                               | Score indicating the impact of face pose on recognition, where a higher score is more favorable for recognition. It is recommended to set a threshold of ≥85 during recognition: a score above 85 indicates a higher probability of the face being frontal, while a score below 85 indicates a lower probability. If multiple faces are detected, results are returned in order.                        |
+
+### Response Example
+
+```json
+{
+   "request_id":     "",
+   "log_id":         "",
+   "error_code":     0,
+   "error_code_str": "",
+   "error_msg":      "",
+   "error_detail":   {
+      "status_code":  200,
+      "code":         "",
+      "code_message": "",
+      "message":      ""
+   },
+   "image_width":    0,
+   "image_height":   0,
+   "data":           {
+      "beauty_list":           [
+         52
+      ],
+      "face_rectangles":       [
+         189,
+         152,
+         307,
+         412
+      ],
+      "qualities":             {
+         "score_list": [
+            96.41
+         ],
+         "noise_list": [
+            98.3
+         ],
+         "blur_list":  [
+            99.82
+         ],
+         "fnf_list":   [
+            100
+         ],
+         "glass_list": [
+            100
+         ],
+         "mask_list":  [
+            86.71
+         ],
+         "illu_list":  [
+            99.96
+         ],
+         "pose_list":  [
+            95.15
+         ]
+      },
+      "dense_feature_length":  1024,
+      "pupils":                [
+         271.97,
+         323.93,
+         11.85,
+         411.95,
+         313.45,
+         11.85
+      ],
+      "gender_list":           [
+         1
+      ],
+      "pose_list":             [
+         0.84,
+         -2.23,
+         -3.3
+      ],
+      "masks":                 [
+         0
+      ],
+      "face_probability_list": [
+         0.98
+      ],
+      "hat_list":              [
+         0
+      ],
+      "landmark_count":        105,
+      "age_list":              [
+         39
+      ],
+      "glasses":               [
+         0
+      ],
+      "landmarks":             [
+         216.84,
+         307.4,
+         309.35,
+         298.43,
+         261.93,
+         289.62,
+         262.17,
+         303.41,
+         229.42,
+         299.44,
+         244.93,
+         291.53,
+         278.59,
+         289.6,
+         294.53,
+         290.61,
+         229.94,
+         308.02,
+         245.65,
+         305.05,
+         278.97,
+         303.66,
+         295.33,
+         304.58,
+         375.47,
+         294.46,
+         468.65,
+         295.67,
+         422.46,
+         279.5,
+         423.25,
+         294.1,
+         389.97,
+         285,
+         406.23,
+         281.84,
+         438.5,
+         280.1,
+         454.31,
+         286.7,
+         390.78,
+         299.35,
+         406.83,
+         296.41,
+         439.46,
+         293.85,
+         454.84,
+         295.42,
+         243.03,
+         327.34,
+         307.29,
+         324.87,
+         251.11,
+         322.3,
+         256.89,
+         317.29,
+         265.83,
+         315.46,
+         273.42,
+         312.38,
+         282.65,
+         313.8,
+         291.55,
+         314.5,
+         299.28,
+         320.32,
+         251.54,
+         328.95,
+         258.26,
+         330.92,
+         266.74,
+         331.13,
+         274.47,
+         331.72,
+         282.61,
+         330.52,
+         291.06,
+         329.53,
+         298.9,
+         327.67,
+         382.22,
+         321.26,
+         444.41,
+         316.94,
+         389.53,
+         315.41,
+         396.52,
+         309.38,
+         405.45,
+         307.33,
+         414.04,
+         304.87,
+         421.57,
+         307.02,
+         430.19,
+         307.97,
+         435.96,
+         312.63,
+         390.44,
+         322.84,
+         398.17,
+         324.31,
+         406.3,
+         324.36,
+         414.3,
+         324.93,
+         421.45,
+         323.53,
+         429.97,
+         322.42,
+         435.81,
+         319.33,
+         343.81,
+         320.48,
+         349.93,
+         409.17,
+         346.66,
+         364.53,
+         351.7,
+         427.48,
+         311.34,
+         416.64,
+         387.58,
+         411.33,
+         283.8,
+         457.18,
+         420.32,
+         447.05,
+         288.01,
+         458.31,
+         416.69,
+         449.18,
+         352.79,
+         450.82,
+         339.8,
+         451.36,
+         365.22,
+         449.34,
+         311.04,
+         451.25,
+         393.19,
+         445.49,
+         297.18,
+         453.88,
+         325.15,
+         451.15,
+         379.17,
+         447.65,
+         407.07,
+         446.47,
+         356.25,
+         497.12,
+         314.05,
+         485.85,
+         395.68,
+         479.71,
+         298.35,
+         471.26,
+         334.99,
+         491.6,
+         375.75,
+         488.11,
+         408.05,
+         462.5,
+         353.32,
+         458.86,
+         354.39,
+         480.15,
+         320.54,
+         457.99,
+         319.1,
+         475.61,
+         385.77,
+         453.35,
+         388.76,
+         469.72,
+         304.64,
+         457.9,
+         303.31,
+         467.65,
+         336.77,
+         458.03,
+         336.73,
+         478.77,
+         369.57,
+         455.94,
+         371.46,
+         475.34,
+         400.6,
+         451.33,
+         402.4,
+         459.7,
+         184.69,
+         329.94,
+         499.09,
+         312.63,
+         361.16,
+         572.93,
+         221.75,
+         483.35,
+         477.01,
+         466.47,
+         196.83,
+         406.88,
+         493.73,
+         391.53,
+         280.2,
+         543.24,
+         432.97,
+         532.44
+      ],
+      "expressions":           [
+         1
+      ],
+      "face_count":            1
+   }
+}
+```
