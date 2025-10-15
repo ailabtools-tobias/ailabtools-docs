@@ -1,0 +1,1142 @@
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+    
+  <url>
+    <loc>https://www.ailabtools.com/docs/api-reference/ai-background-removal-&gt;-general/costume-background-removal</loc>
+    <lastmod>2025-09-29T08:45:28.256Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/api-reference/ai-background-removal-&gt;-general/food-background-removal</loc>
+    <lastmod>2025-09-29T08:45:28.239Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/api-reference/ai-background-removal-&gt;-general/product-background-removal</loc>
+    <lastmod>2025-09-29T08:45:28.247Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/api-reference/ai-background-removal-&gt;-general/universal-background-removal</loc>
+    <lastmod>2025-09-29T08:45:28.228Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/api-reference/ai-background-removal-&gt;-portrait/hairstyle-extraction</loc>
+    <lastmod>2025-09-29T08:45:28.220Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/api-reference/ai-background-removal-&gt;-portrait/head-extraction</loc>
+    <lastmod>2025-09-29T08:45:28.213Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/api-reference/ai-background-removal-&gt;-portrait/human-background-removal</loc>
+    <lastmod>2025-09-29T08:45:28.204Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/api-reference/ai-common/querying-async-task-results</loc>
+    <lastmod>2025-09-29T08:45:28.511Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/api-reference/ai-common/querying-credits</loc>
+    <lastmod>2025-09-29T08:45:28.519Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/api-reference/ai-image-&gt;-image-editing/ai-image-cropping</loc>
+    <lastmod>2025-09-29T08:45:28.092Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/api-reference/ai-image-&gt;-image-editing/ai-image-extender</loc>
+    <lastmod>2025-09-29T08:45:28.173Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/api-reference/ai-image-&gt;-image-editing/ai-object-replacer</loc>
+    <lastmod>2025-09-29T08:45:28.165Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/api-reference/ai-image-&gt;-image-editing/image-erasure</loc>
+    <lastmod>2025-09-29T08:45:28.132Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/api-reference/ai-image-&gt;-image-editing/image-invisible-picture-watermark</loc>
+    <lastmod>2025-09-29T08:45:28.116Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/api-reference/ai-image-&gt;-image-editing/image-invisible-text-watermark</loc>
+    <lastmod>2025-09-29T08:45:28.123Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/api-reference/ai-image-&gt;-image-editing/intelligent-composition</loc>
+    <lastmod>2025-09-29T08:45:28.100Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/api-reference/ai-image-&gt;-image-editing/photo-retouch</loc>
+    <lastmod>2025-09-29T08:45:28.108Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/api-reference/ai-image-&gt;-image-editing/remove-objects</loc>
+    <lastmod>2025-09-29T08:45:28.140Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/api-reference/ai-image-&gt;-image-editing/remove-objects-advanced</loc>
+    <lastmod>2025-09-29T08:45:28.148Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/api-reference/ai-image-&gt;-image-editing/remove-objects-pro</loc>
+    <lastmod>2025-09-29T08:45:28.156Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/api-reference/ai-image-&gt;-image-effects/ai-cartoon-generator</loc>
+    <lastmod>2025-09-29T08:45:28.031Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/api-reference/ai-image-&gt;-image-effects/ai-photo-colorize</loc>
+    <lastmod>2025-09-29T08:45:28.041Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/api-reference/ai-image-&gt;-image-effects/color-migration</loc>
+    <lastmod>2025-09-29T08:45:28.067Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/api-reference/ai-image-&gt;-image-effects/hd-color-migration</loc>
+    <lastmod>2025-09-29T08:45:28.076Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/api-reference/ai-image-&gt;-image-effects/image-micro-motion</loc>
+    <lastmod>2025-09-29T08:45:28.084Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/api-reference/ai-image-&gt;-image-effects/photo-to-painting</loc>
+    <lastmod>2025-09-29T08:45:28.049Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/api-reference/ai-image-&gt;-image-effects/style-transfer</loc>
+    <lastmod>2025-09-29T08:45:28.060Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/api-reference/ai-image-&gt;-image-enhancement/image-color-enhancement</loc>
+    <lastmod>2025-09-29T08:45:28.022Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/api-reference/ai-image-&gt;-image-enhancement/image-contrast-enhancement</loc>
+    <lastmod>2025-09-29T08:45:28.015Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/api-reference/ai-image-&gt;-image-enhancement/image-dehaze</loc>
+    <lastmod>2025-09-29T08:45:27.973Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/api-reference/ai-image-&gt;-image-enhancement/image-sharpness-enhancement</loc>
+    <lastmod>2025-09-29T08:45:28.006Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/api-reference/ai-image-&gt;-image-enhancement/image-upscaler</loc>
+    <lastmod>2025-09-29T08:45:27.987Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/api-reference/ai-image-&gt;-image-enhancement/stretched-image-restoration</loc>
+    <lastmod>2025-09-29T08:45:27.997Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/api-reference/ai-image-&gt;-image-scoring/image-composition-aesthetics-score</loc>
+    <lastmod>2025-09-29T08:45:28.181Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/api-reference/ai-image-&gt;-image-scoring/image-exposure-score</loc>
+    <lastmod>2025-09-29T08:45:28.188Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/api-reference/ai-image/querying-async-task-results</loc>
+    <lastmod>2025-09-29T08:45:28.196Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/api-reference/ai-portrait-&gt;-portrait-analysis/detect-skin-disease</loc>
+    <lastmod>2025-09-29T08:45:28.460Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/api-reference/ai-portrait-&gt;-portrait-analysis/face-analyzer</loc>
+    <lastmod>2025-09-29T08:45:28.493Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/api-reference/ai-portrait-&gt;-portrait-analysis/face-analyzer-advanced</loc>
+    <lastmod>2025-09-29T08:45:28.503Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/api-reference/ai-portrait-&gt;-portrait-analysis/facial-landmarks</loc>
+    <lastmod>2025-09-29T08:45:28.453Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/api-reference/ai-portrait-&gt;-portrait-analysis/skin-analyze</loc>
+    <lastmod>2025-09-29T08:45:28.468Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/api-reference/ai-portrait-&gt;-portrait-analysis/skin-analyze-advanced</loc>
+    <lastmod>2025-09-29T08:45:28.476Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/api-reference/ai-portrait-&gt;-portrait-analysis/skin-analyze-pro</loc>
+    <lastmod>2025-09-29T08:45:28.484Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/api-reference/ai-portrait-&gt;-portrait-editing/try-on-clothes</loc>
+    <lastmod>2025-09-29T08:45:28.438Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/api-reference/ai-portrait-&gt;-portrait-editing/try-on-clothes-pro</loc>
+    <lastmod>2025-09-29T08:45:28.445Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/api-reference/ai-portrait-&gt;-portrait-effects/age-&amp;-gender-swap</loc>
+    <lastmod>2025-09-29T08:45:28.407Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/api-reference/ai-portrait-&gt;-portrait-effects/ai-face-enhancer</loc>
+    <lastmod>2025-09-29T08:45:28.414Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/api-reference/ai-portrait-&gt;-portrait-effects/ai-face-slimming</loc>
+    <lastmod>2025-09-29T08:45:28.298Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/api-reference/ai-portrait-&gt;-portrait-effects/ai-makeup</loc>
+    <lastmod>2025-09-29T08:45:28.330Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/api-reference/ai-portrait-&gt;-portrait-effects/ai-skin-beauty</loc>
+    <lastmod>2025-09-29T08:45:28.290Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/api-reference/ai-portrait-&gt;-portrait-effects/cartoon-yourself</loc>
+    <lastmod>2025-09-29T08:45:28.264Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/api-reference/ai-portrait-&gt;-portrait-effects/change-facial-expressions</loc>
+    <lastmod>2025-09-29T08:45:28.359Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/api-reference/ai-portrait-&gt;-portrait-effects/face-beauty</loc>
+    <lastmod>2025-09-29T08:45:28.306Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/api-reference/ai-portrait-&gt;-portrait-effects/face-beauty-advanced</loc>
+    <lastmod>2025-09-29T08:45:28.314Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/api-reference/ai-portrait-&gt;-portrait-effects/face-beauty-pro</loc>
+    <lastmod>2025-09-29T08:45:28.322Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/api-reference/ai-portrait-&gt;-portrait-effects/face-blur</loc>
+    <lastmod>2025-09-29T08:45:28.399Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/api-reference/ai-portrait-&gt;-portrait-effects/face-filters</loc>
+    <lastmod>2025-09-29T08:45:28.342Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/api-reference/ai-portrait-&gt;-portrait-effects/facial-aesthetics</loc>
+    <lastmod>2025-09-29T08:45:28.351Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/api-reference/ai-portrait-&gt;-portrait-effects/hairstyle-changer</loc>
+    <lastmod>2025-09-29T08:45:28.366Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/api-reference/ai-portrait-&gt;-portrait-effects/hairstyle-changer-pro</loc>
+    <lastmod>2025-09-29T08:45:28.374Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/api-reference/ai-portrait-&gt;-portrait-effects/hitchcock-special-effects</loc>
+    <lastmod>2025-09-29T08:45:28.391Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/api-reference/ai-portrait-&gt;-portrait-effects/lips-color-changer</loc>
+    <lastmod>2025-09-29T08:45:28.422Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/api-reference/ai-portrait-&gt;-portrait-effects/live-photos</loc>
+    <lastmod>2025-09-29T08:45:28.382Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/api-reference/ai-portrait-&gt;-portrait-effects/merge-portraits</loc>
+    <lastmod>2025-09-29T08:45:28.273Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/api-reference/ai-portrait-&gt;-portrait-effects/smart-beauty</loc>
+    <lastmod>2025-09-29T08:45:28.281Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/api-reference/ai-portrait-&gt;-portrait-enhance/try-on-clothes-refiner</loc>
+    <lastmod>2025-09-29T08:45:28.430Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/docs/ai-common/async-task-results/api</loc>
+    <lastmod>2025-10-09T09:55:13.477Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/docs/ai-common/querying-credits/api</loc>
+    <lastmod>2025-10-09T09:55:13.483Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/docs/ai-cutout/general/apparel-background-removal</loc>
+    <lastmod>2025-09-29T08:45:52.305Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/docs/ai-cutout/general/apparel-background-removal/api</loc>
+    <lastmod>2025-10-09T09:55:13.482Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/docs/ai-cutout/general/apparel-background-removal/api-v100</loc>
+    <lastmod>2025-10-09T09:55:13.481Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/docs/ai-cutout/general/apparel-background-removal/api-v110</loc>
+    <lastmod>2025-10-09T09:55:13.489Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/docs/ai-cutout/general/commodity-background-removal</loc>
+    <lastmod>2025-09-29T08:45:53.394Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/docs/ai-cutout/general/commodity-background-removal/api</loc>
+    <lastmod>2025-10-09T09:55:15.295Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/docs/ai-cutout/general/food-background-removal</loc>
+    <lastmod>2025-09-29T08:45:53.397Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/docs/ai-cutout/general/food-background-removal/api</loc>
+    <lastmod>2025-10-09T09:55:15.291Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/docs/ai-cutout/general/universal-background-removal</loc>
+    <lastmod>2025-09-29T08:45:53.433Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/docs/ai-cutout/general/universal-background-removal/api</loc>
+    <lastmod>2025-10-09T09:55:16.399Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/docs/ai-cutout/portrait/avatar-extraction</loc>
+    <lastmod>2025-09-29T08:45:53.455Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/docs/ai-cutout/portrait/avatar-extraction/api</loc>
+    <lastmod>2025-10-09T09:55:16.402Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/docs/ai-cutout/portrait/hairstyle-extraction</loc>
+    <lastmod>2025-09-29T08:45:53.459Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/docs/ai-cutout/portrait/hairstyle-extraction/api</loc>
+    <lastmod>2025-10-09T09:55:16.400Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/docs/ai-cutout/portrait/portrait-background-removal</loc>
+    <lastmod>2025-09-29T08:45:53.459Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/docs/ai-cutout/portrait/portrait-background-removal/api</loc>
+    <lastmod>2025-10-09T09:55:17.156Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/docs/ai-image/editing/ai-image-extender</loc>
+    <lastmod>2025-09-29T08:45:53.480Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/docs/ai-image/editing/ai-image-extender/api</loc>
+    <lastmod>2025-10-09T09:55:17.158Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/docs/ai-image/editing/ai-object-replacer</loc>
+    <lastmod>2025-09-29T08:45:53.484Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/docs/ai-image/editing/ai-object-replacer/api</loc>
+    <lastmod>2025-10-09T09:55:17.161Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/docs/ai-image/editing/image-cropping</loc>
+    <lastmod>2025-09-29T08:45:53.481Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/docs/ai-image/editing/image-cropping/api</loc>
+    <lastmod>2025-10-09T09:55:18.326Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/docs/ai-image/editing/image-invisible-image-watermark</loc>
+    <lastmod>2025-09-29T08:45:53.507Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/docs/ai-image/editing/image-invisible-image-watermark/api</loc>
+    <lastmod>2025-10-09T09:55:18.335Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/docs/ai-image/editing/image-invisible-text-watermarking</loc>
+    <lastmod>2025-09-29T08:45:53.509Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/docs/ai-image/editing/image-invisible-text-watermarking/api</loc>
+    <lastmod>2025-10-09T09:55:19.561Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/docs/ai-image/editing/intelligent-composition</loc>
+    <lastmod>2025-09-29T08:45:53.535Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/docs/ai-image/editing/intelligent-composition/api</loc>
+    <lastmod>2025-10-09T09:55:19.562Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/docs/ai-image/editing/photo-retouching</loc>
+    <lastmod>2025-09-29T08:45:53.532Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/docs/ai-image/editing/photo-retouching/api</loc>
+    <lastmod>2025-10-09T09:55:19.558Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/docs/ai-image/editing/remove-objects</loc>
+    <lastmod>2025-09-29T08:45:53.564Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/docs/ai-image/editing/remove-objects-advanced</loc>
+    <lastmod>2025-09-29T08:45:53.531Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/docs/ai-image/editing/remove-objects-advanced/api</loc>
+    <lastmod>2025-10-09T09:55:19.565Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/docs/ai-image/editing/remove-objects-pro</loc>
+    <lastmod>2025-09-29T08:45:53.565Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/docs/ai-image/editing/remove-objects-pro/api</loc>
+    <lastmod>2025-10-09T09:55:20.395Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/docs/ai-image/editing/remove-objects/api</loc>
+    <lastmod>2025-10-09T09:55:20.397Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/docs/ai-image/effects/ai-anime-generator</loc>
+    <lastmod>2025-09-29T08:45:53.558Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/docs/ai-image/effects/ai-anime-generator/api</loc>
+    <lastmod>2025-10-09T09:55:21.344Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/docs/ai-image/effects/ai-anime-generator/api-v100</loc>
+    <lastmod>2025-10-09T09:55:20.398Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/docs/ai-image/effects/ai-anime-generator/api-v110</loc>
+    <lastmod>2025-10-09T09:55:20.399Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/docs/ai-image/effects/image-color-migration</loc>
+    <lastmod>2025-09-29T08:45:53.593Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/docs/ai-image/effects/image-color-migration/api</loc>
+    <lastmod>2025-10-09T09:55:21.347Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/docs/ai-image/effects/image-colorization</loc>
+    <lastmod>2025-09-29T08:45:53.590Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/docs/ai-image/effects/image-colorization/api</loc>
+    <lastmod>2025-10-09T09:55:21.348Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/docs/ai-image/effects/image-hd-color-migration</loc>
+    <lastmod>2025-10-09T09:55:22.232Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/docs/ai-image/effects/image-hd-color-migration/api</loc>
+    <lastmod>2025-10-09T09:55:22.230Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/docs/ai-image/effects/image-hd-color-migration/api-v100</loc>
+    <lastmod>2025-10-09T09:55:22.226Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/docs/ai-image/effects/image-style-conversion</loc>
+    <lastmod>2025-09-29T08:45:53.619Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/docs/ai-image/effects/image-style-conversion/api</loc>
+    <lastmod>2025-10-09T09:55:22.231Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/docs/ai-image/effects/image-style-migration</loc>
+    <lastmod>2025-09-29T08:45:53.615Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/docs/ai-image/effects/image-style-migration/api</loc>
+    <lastmod>2025-10-09T09:55:23.027Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/docs/ai-image/effects/image-style-migration/api-v100</loc>
+    <lastmod>2025-10-09T09:55:23.022Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/docs/ai-image/enhance/image-color-enhancement</loc>
+    <lastmod>2025-09-29T08:45:53.637Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/docs/ai-image/enhance/image-color-enhancement/api</loc>
+    <lastmod>2025-10-09T09:55:23.023Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/docs/ai-image/enhance/image-contrast-enhancement</loc>
+    <lastmod>2025-09-29T08:45:53.640Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/docs/ai-image/enhance/image-contrast-enhancement/api</loc>
+    <lastmod>2025-10-09T09:55:23.025Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/docs/ai-image/enhance/image-defogging</loc>
+    <lastmod>2025-09-29T08:45:53.642Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/docs/ai-image/enhance/image-defogging/api</loc>
+    <lastmod>2025-10-09T09:55:23.829Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/docs/ai-image/enhance/image-lossless-enlargement</loc>
+    <lastmod>2025-09-29T08:45:53.661Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/docs/ai-image/enhance/image-lossless-enlargement/api</loc>
+    <lastmod>2025-10-09T09:55:23.832Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/docs/ai-image/enhance/image-lossless-enlargement/api-v100</loc>
+    <lastmod>2025-10-09T09:55:23.831Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/docs/ai-image/enhance/image-sharpness-enhancement</loc>
+    <lastmod>2025-09-29T08:45:53.663Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/docs/ai-image/enhance/image-sharpness-enhancement/api</loc>
+    <lastmod>2025-10-09T09:55:23.833Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/docs/ai-image/enhance/stretch-image-recovery</loc>
+    <lastmod>2025-09-29T08:45:53.682Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/docs/ai-image/enhance/stretch-image-recovery/api</loc>
+    <lastmod>2025-10-09T09:55:25.201Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/docs/ai-image/rating/image-composition-aesthetics-scoring</loc>
+    <lastmod>2025-09-29T08:45:53.688Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/docs/ai-image/rating/image-composition-aesthetics-scoring/api</loc>
+    <lastmod>2025-10-09T09:55:25.204Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/docs/ai-image/rating/image-exposure-score</loc>
+    <lastmod>2025-09-29T08:45:53.683Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/docs/ai-image/rating/image-exposure-score/api</loc>
+    <lastmod>2025-10-09T09:55:25.202Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/docs/ai-portrait/analysis/face-analyzer</loc>
+    <lastmod>2025-09-29T08:45:54.117Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/docs/ai-portrait/analysis/face-analyzer-advanced</loc>
+    
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/docs/ai-portrait/analysis/face-analyzer-advanced/api</loc>
+    <lastmod>2025-10-09T09:55:25.935Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/docs/ai-portrait/analysis/face-analyzer/api</loc>
+    <lastmod>2025-10-09T09:55:25.938Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/docs/ai-portrait/analysis/face-key-points</loc>
+    <lastmod>2025-09-29T08:45:54.122Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/docs/ai-portrait/analysis/face-key-points/api</loc>
+    <lastmod>2025-10-09T09:55:25.938Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/docs/ai-portrait/analysis/face-key-points/face-spatial-pose-angle-reference</loc>
+    <lastmod>2025-09-29T08:45:54.120Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/docs/ai-portrait/analysis/face-key-points/feature-points-150</loc>
+    <lastmod>2025-09-29T08:45:54.124Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/docs/ai-portrait/analysis/face-key-points/feature-points-201</loc>
+    <lastmod>2025-09-29T08:45:54.128Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/docs/ai-portrait/analysis/face-key-points/feature-points-72</loc>
+    <lastmod>2025-09-29T08:45:54.125Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/docs/ai-portrait/analysis/skin-analysis</loc>
+    <lastmod>2025-09-29T08:45:56.265Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/docs/ai-portrait/analysis/skin-analysis-advanced</loc>
+    <lastmod>2025-09-29T08:45:56.204Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/docs/ai-portrait/analysis/skin-analysis-advanced/api</loc>
+    <lastmod>2025-10-09T09:55:28.130Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/docs/ai-portrait/analysis/skin-analysis-pro</loc>
+    <lastmod>2025-09-29T08:45:56.202Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/docs/ai-portrait/analysis/skin-analysis-pro/api</loc>
+    <lastmod>2025-10-09T09:55:28.134Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/docs/ai-portrait/analysis/skin-analysis-pro/api-v151</loc>
+    <lastmod>2025-09-27T08:57:40.506Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/docs/ai-portrait/analysis/skin-analysis-pro/api-v162</loc>
+    <lastmod>2025-09-27T08:57:40.510Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/docs/ai-portrait/analysis/skin-analysis-pro/api-v166</loc>
+    <lastmod>2025-10-09T09:55:28.146Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/docs/ai-portrait/analysis/skin-analysis-pro/api-v171</loc>
+    <lastmod>2025-10-09T09:55:28.133Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/docs/ai-portrait/analysis/skin-analysis-pro/case1/result</loc>
+    <lastmod>2025-10-09T09:55:28.210Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/docs/ai-portrait/analysis/skin-analysis-pro/case2/result</loc>
+    <lastmod>2025-10-09T09:56:16.340Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/docs/ai-portrait/analysis/skin-analysis-pro/case3/result</loc>
+    <lastmod>2025-10-09T09:56:16.373Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/docs/ai-portrait/analysis/skin-analysis-pro/case4/result</loc>
+    <lastmod>2025-10-09T09:56:16.483Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/docs/ai-portrait/analysis/skin-analysis-pro/degree-score</loc>
+    
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/docs/ai-portrait/analysis/skin-analysis/api</loc>
+    <lastmod>2025-10-09T09:56:16.314Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/docs/ai-portrait/analysis/skin-disease-detection</loc>
+    <lastmod>2025-09-29T08:45:56.263Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/docs/ai-portrait/analysis/skin-disease-detection/api</loc>
+    <lastmod>2025-10-09T09:56:16.312Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/docs/ai-portrait/editing/try-on-clothes</loc>
+    <lastmod>2025-09-29T08:45:56.294Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/docs/ai-portrait/editing/try-on-clothes-pro</loc>
+    <lastmod>2025-09-29T08:45:56.261Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/docs/ai-portrait/editing/try-on-clothes-pro/api</loc>
+    <lastmod>2025-10-09T09:58:37.452Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/docs/ai-portrait/editing/try-on-clothes/api</loc>
+    <lastmod>2025-10-09T09:58:37.404Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/docs/ai-portrait/effects/ai-face-enhancer</loc>
+    <lastmod>2025-09-29T08:45:56.290Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/docs/ai-portrait/effects/ai-face-enhancer/api</loc>
+    <lastmod>2025-10-09T09:58:37.408Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/docs/ai-portrait/effects/blurred-faces</loc>
+    <lastmod>2025-09-29T08:45:56.298Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/docs/ai-portrait/effects/blurred-faces/api</loc>
+    <lastmod>2025-10-09T09:58:39.045Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/docs/ai-portrait/effects/emotion-editor</loc>
+    <lastmod>2025-09-29T08:45:56.316Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/docs/ai-portrait/effects/emotion-editor/api</loc>
+    <lastmod>2025-10-09T09:58:39.047Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/docs/ai-portrait/effects/emotion-editor/api-v100</loc>
+    <lastmod>2025-10-09T09:58:39.044Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/docs/ai-portrait/effects/emotion-editor/api-v101</loc>
+    <lastmod>2025-10-09T09:58:39.046Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/docs/ai-portrait/effects/face-attribute-editing</loc>
+    <lastmod>2025-09-29T08:45:56.319Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/docs/ai-portrait/effects/face-attribute-editing/api</loc>
+    <lastmod>2025-10-09T09:58:39.050Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/docs/ai-portrait/effects/face-beauty</loc>
+    <lastmod>2025-09-29T08:45:56.341Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/docs/ai-portrait/effects/face-beauty-advanced</loc>
+    <lastmod>2025-09-29T08:45:56.346Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/docs/ai-portrait/effects/face-beauty-advanced/api</loc>
+    <lastmod>2025-10-09T09:58:40.992Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/docs/ai-portrait/effects/face-beauty-pro</loc>
+    <lastmod>2025-09-29T08:45:56.337Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/docs/ai-portrait/effects/face-beauty-pro/api</loc>
+    <lastmod>2025-10-09T09:58:40.993Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/docs/ai-portrait/effects/face-beauty-pro/async-api</loc>
+    <lastmod>2025-10-09T09:58:40.994Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/docs/ai-portrait/effects/face-beauty/api</loc>
+    <lastmod>2025-10-09T09:58:40.995Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/docs/ai-portrait/effects/face-filter</loc>
+    <lastmod>2025-09-29T08:45:56.344Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/docs/ai-portrait/effects/face-filter/api</loc>
+    <lastmod>2025-10-09T09:58:42.098Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/docs/ai-portrait/effects/face-filter/api-v100</loc>
+    <lastmod>2025-10-09T09:58:40.997Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/docs/ai-portrait/effects/face-fusion</loc>
+    <lastmod>2025-09-29T08:45:56.371Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/docs/ai-portrait/effects/face-fusion/api</loc>
+    <lastmod>2025-10-09T09:58:42.101Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/docs/ai-portrait/effects/face-fusion/api-v100</loc>
+    <lastmod>2025-10-09T09:58:42.099Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/docs/ai-portrait/effects/face-fusion/api-v101</loc>
+    <lastmod>2025-10-09T09:58:42.097Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/docs/ai-portrait/effects/hairstyle-editor</loc>
+    <lastmod>2025-10-09T09:58:44.998Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/docs/ai-portrait/effects/hairstyle-editor-pro</loc>
+    <lastmod>2025-10-09T09:58:43.357Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/docs/ai-portrait/effects/hairstyle-editor-pro/api</loc>
+    <lastmod>2025-10-09T09:58:45.004Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/docs/ai-portrait/effects/hairstyle-editor-pro/api-v100</loc>
+    <lastmod>2025-10-09T09:58:43.355Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/docs/ai-portrait/effects/hairstyle-editor-pro/api-v200</loc>
+    <lastmod>2025-10-09T09:58:45.002Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/docs/ai-portrait/effects/hairstyle-editor-pro/guide</loc>
+    
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/docs/ai-portrait/effects/hairstyle-editor/api</loc>
+    <lastmod>2025-10-09T09:58:45.001Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/docs/ai-portrait/effects/hairstyle-editor/api-v100</loc>
+    <lastmod>2025-10-09T09:58:45.000Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/docs/ai-portrait/effects/hitchcock-effects</loc>
+    <lastmod>2025-09-29T08:45:56.479Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/docs/ai-portrait/effects/hitchcock-effects/api</loc>
+    <lastmod>2025-10-09T09:58:47.079Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/docs/ai-portrait/effects/hitchcock-effects/api-v100</loc>
+    <lastmod>2025-10-09T09:58:47.077Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/docs/ai-portrait/effects/lips-color-changer</loc>
+    <lastmod>2025-09-29T08:45:56.499Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/docs/ai-portrait/effects/lips-color-changer/api</loc>
+    <lastmod>2025-10-09T09:58:47.085Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/docs/ai-portrait/effects/live-photo</loc>
+    <lastmod>2025-09-29T08:45:56.502Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/docs/ai-portrait/effects/live-photo/api</loc>
+    <lastmod>2025-10-09T09:58:47.081Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/docs/ai-portrait/effects/portrait-animation</loc>
+    <lastmod>2025-09-29T08:45:56.522Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/docs/ai-portrait/effects/portrait-animation/api</loc>
+    <lastmod>2025-10-09T09:58:48.144Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/docs/ai-portrait/effects/portrait-animation/api-v100</loc>
+    <lastmod>2025-10-09T09:58:48.146Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/docs/ai-portrait/effects/portrait-animation/api-v101</loc>
+    <lastmod>2025-10-09T09:58:48.145Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/docs/ai-portrait/effects/smart-beauty</loc>
+    <lastmod>2025-09-29T08:45:56.523Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/docs/ai-portrait/effects/smart-beauty/api</loc>
+    <lastmod>2025-10-09T09:58:48.147Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/docs/ai-portrait/effects/smart-beauty/api-v100</loc>
+    <lastmod>2025-10-09T09:58:48.148Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/docs/ai-portrait/effects/smart-beauty/async-api</loc>
+    <lastmod>2025-10-09T09:58:48.150Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/docs/ai-portrait/effects/smart-face-slimming</loc>
+    <lastmod>2025-09-29T08:45:56.544Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/docs/ai-portrait/effects/smart-face-slimming/api</loc>
+    <lastmod>2025-10-09T09:58:49.250Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/docs/ai-portrait/effects/smart-skin</loc>
+    <lastmod>2025-09-29T08:45:56.545Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/docs/ai-portrait/effects/smart-skin/api</loc>
+    <lastmod>2025-10-09T09:58:49.247Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/docs/ai-portrait/enhance/try-on-clothes-refiner</loc>
+    <lastmod>2025-09-29T08:45:56.549Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/docs/ai-portrait/enhance/try-on-clothes-refiner/api</loc>
+    <lastmod>2025-10-09T09:58:49.248Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/docs/billing-introduction</loc>
+    <lastmod>2025-09-29T08:45:56.550Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/docs/debugging</loc>
+    <lastmod>2025-09-27T08:57:54.794Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/docs/file-storage-policy</loc>
+    
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/docs/get-api-key</loc>
+    
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/docs/get-sample-code</loc>
+    
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/docs/introduction</loc>
+    <lastmod>2025-09-29T08:45:57.577Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://www.ailabtools.com/docs/docs/response-description</loc>
+    <lastmod>2025-10-09T09:58:50.101Z</lastmod>
+  </url>
+</urlset>
