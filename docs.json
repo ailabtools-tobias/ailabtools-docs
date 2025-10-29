@@ -16,7 +16,6 @@
   },
   "seo": {
     "metatags": {
-      "robots": "noindex",
       "description": "AILabTools is an advanced tool that offers a vast array of simple and flexible API endpoints to suit your specific needs.",
       "keywords": "AILabTools, API, AI, Machine Learning, Computer Vision, Natural Language Processing",
       "author": "AILabTools",
