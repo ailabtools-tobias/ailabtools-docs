@@ -1,7 +1,7 @@
 ---
 title: "Try on Clothes API"
 sidebarTitle: "API"
-description: "If the Try on Clothes does not fully meet your expectations, you might consider using the [Try on Clothes Refiner](/doc/ai-portrait/enhance/try-on-clothes-refiner) to enhance its results, or alternatively, the [Try on Clothes Pro](/doc/ai-portrait/editing/try-on-clothes-pro) for a more advanced option."
+description: "If the Try on Clothes does not fully meet your expectations, you might consider using the [Try on Clothes Refiner](/docs/ai-portrait/enhance/try-on-clothes-refiner) to enhance its results, or alternatively, the [Try on Clothes Pro](/doc/ai-portrait/editing/try-on-clothes-pro) for a more advanced option."
 openapi: 'POST /api/portrait/editing/try-on-clothes'
 ---
 
@@ -173,7 +173,7 @@ openapi: 'POST /api/portrait/editing/try-on-clothes'
 | Field       | Type     | Scope            | Description                                                                                                                                   |
 |:------------|:---------|:-----------------|:----------------------------------------------------------------------------------------------------------------------------------------------|
 | `task_type` | `string` | ``async`` | Task Type. ``async`: Asynchronous tasks.`                                                                                              |
-| `task_id`   | `string` |                  | Asynchronous task ID. <br/>**Please use this field when calling the [Querying Async Task Results](ai-common/async-task-results/api) API.** |
+| `task_id`   | `string` |                  | Asynchronous task ID. <br/>**Please use this field when calling the [Querying Async Task Results](/docs/ai-common/async-task-results/api) API.** |
 
 ### Response Example
 
@@ -194,7 +194,7 @@ openapi: 'POST /api/portrait/editing/try-on-clothes'
 }
 ```
 <Tip>
-This API is asynchronous, please keep `task_id` and call [`Querying Async Task Results`](ai-common/async-task-results/api) to get the final results.
+This API is asynchronous, please keep `task_id` and call [`Querying Async Task Results`](/docs/ai-common/async-task-results/api) to get the final results.
 
 Asynchronous task results are valid for 24 hours. It is recommended that asynchronous task results be queried every 5 seconds.
 </Tip>

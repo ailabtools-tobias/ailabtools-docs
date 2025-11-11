@@ -373,7 +373,7 @@ import apiOfflineNotice from '/snippets/api-offline-notice.mdx';
 | Field       | Type     | Scope            | Description                                                                                                                                   |
 |:------------|:---------|:-----------------|:----------------------------------------------------------------------------------------------------------------------------------------------|
 | `task_type` | `string` | ``async`` | Task Type. ``async`: Asynchronous tasks.`                                                                                              |
-| `task_id`   | `string` |                  | Asynchronous task ID. <br/>**Please use this field when calling the [Querying Async Task Results](ai-common/async-task-results/api) API.** |
+| `task_id`   | `string` |                  | Asynchronous task ID. <br/>**Please use this field when calling the [Querying Async Task Results](/docs/ai-common/async-task-results/api) API.** |
 
 ### Response Example
 
@@ -384,7 +384,7 @@ import apiOfflineNotice from '/snippets/api-offline-notice.mdx';
 }
 ```
 
-This API is asynchronous, please keep `task_id` and call [`Querying Async Task Results`](ai-common/async-task-results/api) to get the final results.
+This API is asynchronous, please keep `task_id` and call [`Querying Async Task Results`](/docs/ai-common/async-task-results/api) to get the final results.
 
 Asynchronous task results are valid for 24 hours. It is recommended that asynchronous task results be queried every 5 seconds.
 
