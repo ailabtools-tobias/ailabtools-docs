@@ -18,6 +18,11 @@
     "default": "light",
     "strict": false
   },
+  "api": {
+    "playground": {
+      "proxy": false
+    }
+  },
   "seo": {
     "metatags": {
       "description": "AILabTools is an advanced tool that offers a vast array of simple and flexible API endpoints to suit your specific needs.",
