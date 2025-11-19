@@ -836,6 +836,14 @@
                     ]
                   },
                   {
+                    "group": "HD Human Background Removal",
+                    "icon": "box",
+                    "pages": [
+                      "docs/ai-cutout/portrait/hd-portrait-background-removal",
+                      "docs/ai-cutout/portrait/hd-portrait-background-removal/api"
+                    ]
+                  },
+                  {
                     "group": "Head Extraction",
                     "icon": "head-side-virus",
                     "pages": [

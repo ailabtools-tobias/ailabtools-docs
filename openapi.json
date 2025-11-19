@@ -2667,6 +2667,69 @@
         }
       }
     },
+    "/api/cutout/portrait/hd-portrait-background-removal": {
+      "post": {
+        "tags": [
+          "AI BACKGROUND REMOVAL > General"
+        ],
+        "summary": "Costume background removal",
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "image": {
+                    "type": "string",
+                    "format": "binary"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "application/json"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                },
+                "example": {
+                  "request_id": "",
+                  "log_id": "",
+                  "error_code": 0,
+                  "error_code_str": "",
+                  "error_msg": "",
+                  "error_detail": {
+                    "status_code": 200,
+                    "code": "",
+                    "code_message": "",
+                    "message": ""
+                  },
+                  "data": {
+                    "elements": [
+                      {
+                        "image_url": ""
+                      }
+                    ]
+                  }
+                }
+              }
+            },
+            "description": "Success"
+          }
+        }
+      }
+    },
     "/api/portrait/effects/portrait-animation": {
       "post": {
         "tags": [
