@@ -135,9 +135,6 @@
   ]
 },
   "rounded": "default",
-  "codeBlock": {
-    "mode": "dark"
-  },
   "breadcrumbs": true,
   "mobileOptimized": true,
   "customCSS": [

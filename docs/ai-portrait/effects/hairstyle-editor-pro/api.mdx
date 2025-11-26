@@ -143,219 +143,795 @@ For detailed information, refer to the [Photo Validation Guide](ai-portrait/effe
 #### `hair_style` 
 
 <table className="border border-collapse border-gray-300">
-  <tr>
-    <th className="border border-gray-300">Category: Gender</th>
-    <th className="border border-gray-300">hair_style</th>
-    <th className="border border-gray-300">Description</th>
-  </tr>
-  <tr className="odd:bg-gray-50">
-    <td rowSpan="22" style={{'text-align':'center'}} className="border border-gray-300">Male</td>
-    <td style={{'text-align':'center'}} className="border border-gray-300">BuzzCut</td>
-    <td style={{'text-align':'center'}} className="border border-gray-300">Buzz Cut hair</td>
-  </tr>
-  <tr className="odd:bg-gray-50">
-    <td style={{'text-align':'center'}} className="border border-gray-300">UnderCut</td>
-    <td style={{'text-align':'center'}} className="border border-gray-300">UnderCut hair</td>
-  </tr>
-  <tr className="odd:bg-gray-50">
-    <td style={{'text-align':'center'}} className="border border-gray-300">Pompadour</td>
-    <td style={{'text-align':'center'}} className="border border-gray-300">Pompadour hair</td>
-  </tr>
-  <tr className="odd:bg-gray-50">
-    <td style={{'text-align':'center'}} className="border border-gray-300">SlickBack</td>
-    <td style={{'text-align':'center'}} className="border border-gray-300">Slick Back hair</td>
-  </tr>
-  <tr className="odd:bg-gray-50">
-    <td style={{'text-align':'center'}} className="border border-gray-300">CurlyShag</td>
-    <td style={{'text-align':'center'}} className="border border-gray-300">Curly Shag hair</td>
-  </tr>
-  <tr className="odd:bg-gray-50">
-    <td style={{'text-align':'center'}} className="border border-gray-300">WavyShag</td>
-    <td style={{'text-align':'center'}} className="border border-gray-300">Wavy Shag hair</td>
-  </tr>
-  <tr className="odd:bg-gray-50">
-    <td style={{'text-align':'center'}} className="border border-gray-300">FauxHawk</td>
-    <td style={{'text-align':'center'}} className="border border-gray-300">Faux Hawk hair</td>
-  </tr>
-  <tr className="odd:bg-gray-50">
-    <td style={{'text-align':'center'}} className="border border-gray-300">Spiky</td>
-    <td style={{'text-align':'center'}} className="border border-gray-300">Spiky hair</td>
-  </tr>
-  <tr className="odd:bg-gray-50">
-    <td style={{'text-align':'center'}} className="border border-gray-300">CombOver</td>
-    <td style={{'text-align':'center'}} className="border border-gray-300">Comb-over hair</td>
-  </tr>
-  <tr className="odd:bg-gray-50">
-    <td style={{'text-align':'center'}} className="border border-gray-300">HighTightFade</td>
-    <td style={{'text-align':'center'}} className="border border-gray-300">High and Tight Fade hair</td>
-  </tr>
-  <tr className="odd:bg-gray-50">
-    <td style={{'text-align':'center'}} className="border border-gray-300">ManBun</td>
-    <td style={{'text-align':'center'}} className="border border-gray-300">Man Bun hair</td>
-  </tr>
-  <tr className="odd:bg-gray-50">
-    <td style={{'text-align':'center'}} className="border border-gray-300">Afro</td>
-    <td style={{'text-align':'center'}} className="border border-gray-300">Afro hair</td>
-  </tr>
-  <tr className="odd:bg-gray-50">
-    <td style={{'text-align':'center'}} className="border border-gray-300">LowFade</td>
-    <td style={{'text-align':'center'}} className="border border-gray-300">Low Fade hair</td>
-  </tr>
-  <tr className="odd:bg-gray-50">
-    <td style={{'text-align':'center'}} className="border border-gray-300">UndercutLongHair</td>
-    <td style={{'text-align':'center'}} className="border border-gray-300">Undercut With Long Hair</td>
-  </tr>
-  <tr className="odd:bg-gray-50">
-    <td style={{'text-align':'center'}} className="border border-gray-300">TwoBlockHaircut</td>
-    <td style={{'text-align':'center'}} className="border border-gray-300">Two Block Haircut</td>
-  </tr>
-  <tr className="odd:bg-gray-50">
-    <td style={{'text-align':'center'}} className="border border-gray-300">TexturedFringe</td>
-    <td style={{'text-align':'center'}} className="border border-gray-300">Textured Fringe Hair</td>
-  </tr>
-  <tr className="odd:bg-gray-50">
-    <td style={{'text-align':'center'}} className="border border-gray-300">BluntBowlCut</td>
-    <td style={{'text-align':'center'}} className="border border-gray-300">Blunt Bowl Cut</td>
-  </tr>
-  <tr className="odd:bg-gray-50">
-    <td style={{'text-align':'center'}} className="border border-gray-300">LongWavyCurtainBangs</td>
-    <td style={{'text-align':'center'}} className="border border-gray-300">Long Wavy Curtain Bangs Hair</td>
-  </tr>
-  <tr className="odd:bg-gray-50">
-    <td style={{'text-align':'center'}} className="border border-gray-300">MessyTousled</td>
-    <td style={{'text-align':'center'}} className="border border-gray-300">Messy Tousled hair</td>
-  </tr>
-  <tr className="odd:bg-gray-50">
-    <td style={{'text-align':'center'}} className="border border-gray-300">CornrowBraids</td>
-    <td style={{'text-align':'center'}} className="border border-gray-300">Cornrow Braids hair</td>
-  </tr>
-  <tr className="odd:bg-gray-50">
-    <td style={{'text-align':'center'}} className="border border-gray-300">LongHairTiedUp</td>
-    <td style={{'text-align':'center'}} className="border border-gray-300">Long Hair Tied Up Hair</td>
-  </tr>
-  <tr className="odd:bg-gray-50">
-    <td style={{'text-align':'center'}} className="border border-gray-300">Middle-parted</td>
-    <td style={{'text-align':'center'}} className="border border-gray-300">Middle-parted Hair</td>
-  </tr>
+	<tr>
+		<th className="border border-gray-300">Category: Gender</th>
+		<th className="border border-gray-300">hair_style</th>
+		<th className="border border-gray-300">Description</th>
+	</tr>
 
-  <tr>
-    <td rowSpan="29" style={{'text-align':'center'}} className="border border-gray-300">Female</td>
-    <td style={{'text-align':'center'}} className="border border-gray-300">ShortPixieWithShavedSides</td>
-    <td style={{'text-align':'center'}} className="border border-gray-300">Short Pixie With Shaved Sides</td>
-  </tr>
-  <tr className="odd:bg-gray-50">
-    <td style={{'text-align':'center'}} className="border border-gray-300">ShortNeatBob</td>
-    <td style={{'text-align':'center'}} className="border border-gray-300">short neat bob hair</td>
-  </tr>
-  <tr className="odd:bg-gray-50">
-    <td style={{'text-align':'center'}} className="border border-gray-300">DoubleBun</td>
-    <td style={{'text-align':'center'}} className="border border-gray-300">double bun hair</td>
-  </tr>
-  <tr className="odd:bg-gray-50">
-    <td style={{'text-align':'center'}} className="border border-gray-300">Updo</td>
-    <td style={{'text-align':'center'}} className="border border-gray-300">Updo hair</td>
-  </tr>
-  <tr className="odd:bg-gray-50">
-    <td style={{'text-align':'center'}} className="border border-gray-300">Spiked</td>
-    <td style={{'text-align':'center'}} className="border border-gray-300">spiked hair</td>
-  </tr>
-  <tr className="odd:bg-gray-50">
-    <td style={{'text-align':'center'}} className="border border-gray-300">bowlCut</td>
-    <td style={{'text-align':'center'}} className="border border-gray-300">bowl cut hair</td>
-  </tr>
-  <tr className="odd:bg-gray-50">
-    <td style={{'text-align':'center'}} className="border border-gray-300">Chignon</td>
-    <td style={{'text-align':'center'}} className="border border-gray-300">Chignon hair</td>
-  </tr>
-  <tr className="odd:bg-gray-50">
-    <td style={{'text-align':'center'}} className="border border-gray-300">PixieCut</td>
-    <td style={{'text-align':'center'}} className="border border-gray-300">Pixie Cut hair</td>
-  </tr>
-  <tr className="odd:bg-gray-50">
-    <td style={{'text-align':'center'}} className="border border-gray-300">SlickedBack</td>
-    <td style={{'text-align':'center'}} className="border border-gray-300">slicked back hair</td>
-  </tr>
-  <tr className="odd:bg-gray-50">
-    <td style={{'text-align':'center'}} className="border border-gray-300">LongCurly</td>
-    <td style={{'text-align':'center'}} className="border border-gray-300">Long curly hair</td>
-  </tr>
-  <tr className="odd:bg-gray-50">
-    <td style={{'text-align':'center'}} className="border border-gray-300">CurlyBob</td>
-    <td style={{'text-align':'center'}} className="border border-gray-300">Curly bob hair</td>
-  </tr>
-  <tr className="odd:bg-gray-50">
-    <td style={{'text-align':'center'}} className="border border-gray-300">StackedCurlsInShortBob</td>
-    <td style={{'text-align':'center'}} className="border border-gray-300">Stacked Curls in Short Bob hair</td>
-  </tr>
-  <tr className="odd:bg-gray-50">
-    <td style={{'text-align':'center'}} className="border border-gray-300">SidePartCombOverHairstyleWithHighFade</td>
-    <td style={{'text-align':'center'}} className="border border-gray-300">Side Part Comb-Over Hairstyle With High Fade hair</td>
-  </tr>
-  <tr className="odd:bg-gray-50">
-    <td style={{'text-align':'center'}} className="border border-gray-300">WavyFrenchBobVibesfrom1920</td>
-    <td style={{'text-align':'center'}} className="border border-gray-300">Wavy French Bob Vibes from 1920</td>
-  </tr>
-  <tr className="odd:bg-gray-50">
-    <td style={{'text-align':'center'}} className="border border-gray-300">BobCut</td>
-    <td style={{'text-align':'center'}} className="border border-gray-300">bob Haircut hair</td>
-  </tr>
-  <tr className="odd:bg-gray-50">
-    <td style={{'text-align':'center'}} className="border border-gray-300">ShortTwintails</td>
-    <td style={{'text-align':'center'}} className="border border-gray-300">Short Twintails hair</td>
-  </tr>
-  <tr className="odd:bg-gray-50">
-    <td style={{'text-align':'center'}} className="border border-gray-300">ShortCurlyPixie</td>
-    <td style={{'text-align':'center'}} className="border border-gray-300">Short Curly Pixie</td>
-  </tr>
-  <tr className="odd:bg-gray-50">
-    <td style={{'text-align':'center'}} className="border border-gray-300">LongStraight</td>
-    <td style={{'text-align':'center'}} className="border border-gray-300">Long straight hair</td>
-  </tr>
-  <tr className="odd:bg-gray-50">
-    <td style={{'text-align':'center'}} className="border border-gray-300">LongWavy</td>
-    <td style={{'text-align':'center'}} className="border border-gray-300">Long wavy hair</td>
-  </tr>
-  <tr className="odd:bg-gray-50">
-    <td style={{'text-align':'center'}} className="border border-gray-300">FishtailBraid</td>
-    <td style={{'text-align':'center'}} className="border border-gray-300">Fishtail braid hair</td>
-  </tr>
-  <tr className="odd:bg-gray-50">
-    <td style={{'text-align':'center'}} className="border border-gray-300">TwinBraids</td>
-    <td style={{'text-align':'center'}} className="border border-gray-300">Twin Braids hair</td>
-  </tr>
-  <tr className="odd:bg-gray-50">
-    <td style={{'text-align':'center'}} className="border border-gray-300">Ponytail</td>
-    <td style={{'text-align':'center'}} className="border border-gray-300">Ponytail hair</td>
-  </tr>
-  <tr className="odd:bg-gray-50">
-    <td style={{'text-align':'center'}} className="border border-gray-300">Dreadlocks</td>
-    <td style={{'text-align':'center'}} className="border border-gray-300">dreadlocks hair</td>
-  </tr>
-  <tr className="odd:bg-gray-50">
-    <td style={{'text-align':'center'}} className="border border-gray-300">Cornrows</td>
-    <td style={{'text-align':'center'}} className="border border-gray-300">Cornrows hair</td>
-  </tr>
-  <tr className="odd:bg-gray-50">
-    <td style={{'text-align':'center'}} className="border border-gray-300">ShoulderLengthHair</td>
-    <td style={{'text-align':'center'}} className="border border-gray-300">Shoulder Length Straight Hair</td>
-  </tr>
-  <tr className="odd:bg-gray-50">
-    <td style={{'text-align':'center'}} className="border border-gray-300">LooseCurlyAfro</td>
-    <td style={{'text-align':'center'}} className="border border-gray-300">Loose Curly Afro hair</td>
-  </tr>
-  <tr className="odd:bg-gray-50">
-    <td style={{'text-align':'center'}} className="border border-gray-300">LongTwintails</td>
-    <td style={{'text-align':'center'}} className="border border-gray-300">Long Twintails hair</td>
-  </tr>
-  <tr className="odd:bg-gray-50">
-    <td style={{'text-align':'center'}} className="border border-gray-300">LongHimeCut</td>
-    <td style={{'text-align':'center'}} className="border border-gray-300">Long Hime Cut hair</td>
-  </tr>
-  <tr className="odd:bg-gray-50">
-    <td style={{'text-align':'center'}} className="border border-gray-300">BoxBraids</td>
-    <td style={{'text-align':'center'}} className="border border-gray-300">Box Braids hair</td>
-  </tr>
+	{/* --- Male --- */}
+	<tr className="odd:bg-gray-50">
+		<td rowSpan="35" style={{ 'text-align': 'center' }} className="border border-gray-300">
+			Male
+		</td>
+		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
+			BuzzCut
+		</td>
+		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
+			Buzz Cut hair
+		</td>
+	</tr>
+	<tr className="odd:bg-gray-50">
+		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
+			UnderCut
+		</td>
+		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
+			UnderCut hair
+		</td>
+	</tr>
+	<tr className="odd:bg-gray-50">
+		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
+			Pompadour
+		</td>
+		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
+			Pompadour hair
+		</td>
+	</tr>
+	<tr className="odd:bg-gray-50">
+		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
+			SlickBack
+		</td>
+		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
+			Slick Back hair
+		</td>
+	</tr>
+	<tr className="odd:bg-gray-50">
+		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
+			CurlyShag
+		</td>
+		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
+			Curly Shag hair
+		</td>
+	</tr>
+	<tr className="odd:bg-gray-50">
+		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
+			WavyShag
+		</td>
+		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
+			Wavy Shag hair
+		</td>
+	</tr>
+	<tr className="odd:bg-gray-50">
+		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
+			FauxHawk
+		</td>
+		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
+			Faux Hawk hair
+		</td>
+	</tr>
+	<tr className="odd:bg-gray-50">
+		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
+			Spiky
+		</td>
+		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
+			Spiky hair
+		</td>
+	</tr>
+	<tr className="odd:bg-gray-50">
+		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
+			CombOver
+		</td>
+		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
+			Comb-over hair
+		</td>
+	</tr>
+	<tr className="odd:bg-gray-50">
+		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
+			HighTightFade
+		</td>
+		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
+			High and Tight Fade hair
+		</td>
+	</tr>
+	<tr className="odd:bg-gray-50">
+		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
+			ManBun
+		</td>
+		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
+			Man Bun hair
+		</td>
+	</tr>
+	<tr className="odd:bg-gray-50">
+		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
+			Afro
+		</td>
+		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
+			Afro hair
+		</td>
+	</tr>
+	<tr className="odd:bg-gray-50">
+		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
+			LowFade
+		</td>
+		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
+			Low Fade hair
+		</td>
+	</tr>
+	<tr className="odd:bg-gray-50">
+		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
+			UndercutLongHair
+		</td>
+		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
+			Undercut With Long Hair
+		</td>
+	</tr>
+	<tr className="odd:bg-gray-50">
+		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
+			TwoBlockHaircut
+		</td>
+		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
+			Two Block Haircut
+		</td>
+	</tr>
+	<tr className="odd:bg-gray-50">
+		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
+			TexturedFringe
+		</td>
+		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
+			Textured Fringe Hair
+		</td>
+	</tr>
+	<tr className="odd:bg-gray-50">
+		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
+			BluntBowlCut
+		</td>
+		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
+			Blunt Bowl Cut
+		</td>
+	</tr>
+	<tr className="odd:bg-gray-50">
+		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
+			LongWavyCurtainBangs
+		</td>
+		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
+			Long Wavy Curtain Bangs Hair
+		</td>
+	</tr>
+	<tr className="odd:bg-gray-50">
+		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
+			MessyTousled
+		</td>
+		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
+			Messy Tousled hair
+		</td>
+	</tr>
+	<tr className="odd:bg-gray-50">
+		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
+			CornrowBraids
+		</td>
+		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
+			Cornrow Braids hair
+		</td>
+	</tr>
+	<tr className="odd:bg-gray-50">
+		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
+			LongHairTiedUp
+		</td>
+		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
+			Long Hair Tied Up Hair
+		</td>
+	</tr>
+	<tr className="odd:bg-gray-50">
+		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
+			Middle-parted
+		</td>
+		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
+			Middle-parted Hair
+		</td>
+	</tr>
+
+	{/* extra from MALE_HAIRSTYLES */}
+	<tr className="odd:bg-gray-50">
+		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
+			ManGreased
+		</td>
+		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
+			Man greased slick-back hair
+		</td>
+	</tr>
+	<tr className="odd:bg-gray-50">
+		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
+			WavyMiddlePart
+		</td>
+		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
+			Wavy middle-part hair
+		</td>
+	</tr>
+	<tr className="odd:bg-gray-50">
+		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
+			Natural_Side-Part
+		</td>
+		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
+			Natural side-part hair
+		</td>
+	</tr>
+	<tr className="odd:bg-gray-50">
+		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
+			Wolf_Crop
+		</td>
+		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
+			Wolf crop hair
+		</td>
+	</tr>
+	<tr className="odd:bg-gray-50">
+		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
+			Wind-Tousled_Crop
+		</td>
+		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
+			Wind-tousled crop hair
+		</td>
+	</tr>
+	<tr className="odd:bg-gray-50">
+		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
+			Side-Parted_Textured
+		</td>
+		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
+			Side-parted textured hair
+		</td>
+	</tr>
+	<tr className="odd:bg-gray-50">
+		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
+			FluffyMiddlePart
+		</td>
+		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
+			Fluffy middle-part hair
+		</td>
+	</tr>
+	<tr className="odd:bg-gray-50">
+		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
+			FreshSide-Parted
+		</td>
+		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
+			Fresh side-parted hair
+		</td>
+	</tr>
+	<tr className="odd:bg-gray-50">
+		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
+			Smooth_Crop
+		</td>
+		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
+			Smooth crop hair
+		</td>
+	</tr>
+	<tr className="odd:bg-gray-50">
+		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
+			Korean_Wavy_Crop
+		</td>
+		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
+			Korean wavy crop hair
+		</td>
+	</tr>
+	<tr className="odd:bg-gray-50">
+		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
+			Comma_Hair
+		</td>
+		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
+			Comma hair
+		</td>
+	</tr>
+	<tr className="odd:bg-gray-50">
+		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
+			Side-Part_Crop
+		</td>
+		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
+			Side-part crop hair
+		</td>
+	</tr>
+	<tr className="odd:bg-gray-50">
+		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
+			Natural_Middle_Part
+		</td>
+		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
+			Natural middle-part hair
+		</td>
+	</tr>
+
+	{/* --- Female --- */}
+	<tr>
+		<td rowSpan="62" style={{ 'text-align': 'center' }} className="border border-gray-300">
+			Female
+		</td>
+		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
+			ShortPixieWithShavedSides
+		</td>
+		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
+			Short Pixie With Shaved Sides
+		</td>
+	</tr>
+	<tr className="odd:bg-gray-50">
+		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
+			ShortNeatBob
+		</td>
+		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
+			Short neat bob hair
+		</td>
+	</tr>
+	<tr className="odd:bg-gray-50">
+		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
+			DoubleBun
+		</td>
+		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
+			Double bun hair
+		</td>
+	</tr>
+	<tr className="odd:bg-gray-50">
+		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
+			Updo
+		</td>
+		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
+			Updo hair
+		</td>
+	</tr>
+	<tr className="odd:bg-gray-50">
+		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
+			Spiked
+		</td>
+		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
+			Spiked hair
+		</td>
+	</tr>
+	<tr className="odd:bg-gray-50">
+		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
+			bowlCut
+		</td>
+		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
+			Bowl cut hair
+		</td>
+	</tr>
+	<tr className="odd:bg-gray-50">
+		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
+			Chignon
+		</td>
+		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
+			Chignon hair
+		</td>
+	</tr>
+	<tr className="odd:bg-gray-50">
+		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
+			PixieCut
+		</td>
+		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
+			Pixie Cut hair
+		</td>
+	</tr>
+	<tr className="odd:bg-gray-50">
+		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
+			SlickedBack
+		</td>
+		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
+			Slicked back hair
+		</td>
+	</tr>
+	<tr className="odd:bg-gray-50">
+		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
+			LongCurly
+		</td>
+		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
+			Long curly hair
+		</td>
+	</tr>
+	<tr className="odd:bg-gray-50">
+		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
+			CurlyBob
+		</td>
+		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
+			Curly bob hair
+		</td>
+	</tr>
+	<tr className="odd:bg-gray-50">
+		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
+			StackedCurlsInShortBob
+		</td>
+		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
+			Stacked curls in short bob hair
+		</td>
+	</tr>
+	<tr className="odd:bg-gray-50">
+		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
+			SidePartCombOverHairstyleWithHighFade
+		</td>
+		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
+			Side Part Comb-Over Hairstyle With High Fade hair
+		</td>
+	</tr>
+	<tr className="odd:bg-gray-50">
+		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
+			WavyFrenchBobVibesfrom1920
+		</td>
+		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
+			Wavy French Bob Vibes from 1920
+		</td>
+	</tr>
+	<tr className="odd:bg-gray-50">
+		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
+			BobCut
+		</td>
+		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
+			Bob haircut hair
+		</td>
+	</tr>
+	<tr className="odd:bg-gray-50">
+		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
+			ShortTwintails
+		</td>
+		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
+			Short twintails hair
+		</td>
+	</tr>
+	<tr className="odd:bg-gray-50">
+		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
+			ShortCurlyPixie
+		</td>
+		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
+			Short curly pixie
+		</td>
+	</tr>
+	<tr className="odd:bg-gray-50">
+		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
+			LongStraight
+		</td>
+		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
+			Long straight hair
+		</td>
+	</tr>
+	<tr className="odd:bg-gray-50">
+		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
+			LongWavy
+		</td>
+		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
+			Long wavy hair
+		</td>
+	</tr>
+	<tr className="odd:bg-gray-50">
+		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
+			FishtailBraid
+		</td>
+		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
+			Fishtail braid hair
+		</td>
+	</tr>
+	<tr className="odd:bg-gray-50">
+		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
+			TwinBraids
+		</td>
+		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
+			Twin braids hair
+		</td>
+	</tr>
+	<tr className="odd:bg-gray-50">
+		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
+			Ponytail
+		</td>
+		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
+			Ponytail hair
+		</td>
+	</tr>
+	<tr className="odd:bg-gray-50">
+		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
+			Dreadlocks
+		</td>
+		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
+			Dreadlocks hair
+		</td>
+	</tr>
+	<tr className="odd:bg-gray-50">
+		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
+			Cornrows
+		</td>
+		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
+			Cornrows hair
+		</td>
+	</tr>
+	<tr className="odd:bg-gray-50">
+		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
+			ShoulderLengthHair
+		</td>
+		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
+			Shoulder length straight hair
+		</td>
+	</tr>
+	<tr className="odd:bg-gray-50">
+		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
+			LooseCurlyAfro
+		</td>
+		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
+			Loose curly afro hair
+		</td>
+	</tr>
+	<tr className="odd:bg-gray-50">
+		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
+			LongTwintails
+		</td>
+		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
+			Long twintails hair
+		</td>
+	</tr>
+	<tr className="odd:bg-gray-50">
+		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
+			LongHimeCut
+		</td>
+		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
+			Long Hime cut hair
+		</td>
+	</tr>
+	<tr className="odd:bg-gray-50">
+		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
+			BoxBraids
+		</td>
+		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
+			Box braids hair
+		</td>
+	</tr>
+
+	{/* extra from FEMALE_HAIRSTYLES */}
+	<tr className="odd:bg-gray-50">
+		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
+			Layered_Waves
+		</td>
+		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
+			Layered waves hair
+		</td>
+	</tr>
+	<tr className="odd:bg-gray-50">
+		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
+			Side_Flip_Perm
+		</td>
+		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
+			Side flip perm hair
+		</td>
+	</tr>
+	<tr className="odd:bg-gray-50">
+		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
+			Textured_Crop
+		</td>
+		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
+			Textured crop short hair
+		</td>
+	</tr>
+	<tr className="odd:bg-gray-50">
+		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
+			Mushroom_Curl
+		</td>
+		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
+			Mushroom curl hair
+		</td>
+	</tr>
+	<tr className="odd:bg-gray-50">
+		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
+			Vintage_Curls
+		</td>
+		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
+			Vintage short curls hair
+		</td>
+	</tr>
+	<tr className="odd:bg-gray-50">
+		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
+			Magic_Perm
+		</td>
+		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
+			Magic perm hair
+		</td>
+	</tr>
+	<tr className="odd:bg-gray-50">
+		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
+			Side-Parted_Waves
+		</td>
+		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
+			Side-parted waves hair
+		</td>
+	</tr>
+	<tr className="odd:bg-gray-50">
+		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
+			Fluffy_Short
+		</td>
+		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
+			Fluffy short hair
+		</td>
+	</tr>
+	<tr className="odd:bg-gray-50">
+		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
+			Smooth_Inward_Bob
+		</td>
+		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
+			Smooth inward bob hair
+		</td>
+	</tr>
+	<tr className="odd:bg-gray-50">
+		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
+			Neat_Short
+		</td>
+		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
+			Neat short hair
+		</td>
+	</tr>
+	<tr className="odd:bg-gray-50">
+		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
+			Natural_Short
+		</td>
+		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
+			Natural airy short hair
+		</td>
+	</tr>
+	<tr className="odd:bg-gray-50">
+		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
+			Chic_Tapered_Bob
+		</td>
+		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
+			Chic layered bob hair
+		</td>
+	</tr>
+	<tr className="odd:bg-gray-50">
+		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
+			Edgy_Textured_Pixie
+		</td>
+		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
+			Edgy textured pixie cut
+		</td>
+	</tr>
+	<tr className="odd:bg-gray-50">
+		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
+			Elegant_Wavy_Crop
+		</td>
+		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
+			Elegant wavy short crop
+		</td>
+	</tr>
+	<tr className="odd:bg-gray-50">
+		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
+			Chic_Wavy_Pixie
+		</td>
+		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
+			Chic wavy pixie cut
+		</td>
+	</tr>
+	<tr className="odd:bg-gray-50">
+		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
+			Elegant_Side_Wave
+		</td>
+		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
+			Elegant side-part wave hair
+		</td>
+	</tr>
+	<tr className="odd:bg-gray-50">
+		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
+			Soft_Layered_Curl
+		</td>
+		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
+			Soft layered curl hair
+		</td>
+	</tr>
+	<tr className="odd:bg-gray-50">
+		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
+			Executive_Pixie
+		</td>
+		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
+			Executive neat pixie cut
+		</td>
+	</tr>
+	<tr className="odd:bg-gray-50">
+		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
+			Curved_Chic_Bob
+		</td>
+		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
+			Curved chic bob hair
+		</td>
+	</tr>
+	<tr className="odd:bg-gray-50">
+		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
+			Airy_Short_Curls
+		</td>
+		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
+			Airy short curls hair
+		</td>
+	</tr>
+	<tr className="odd:bg-gray-50">
+		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
+			Playful_Curly_Bob
+		</td>
+		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
+			Playful curly bob hair
+		</td>
+	</tr>
+	<tr className="odd:bg-gray-50">
+		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
+			Playful_Wavy_Bob
+		</td>
+		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
+			Playful wavy bob hair
+		</td>
+	</tr>
+	<tr className="odd:bg-gray-50">
+		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
+			Elegant_Soft_Curl
+		</td>
+		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
+			Elegant soft large curls
+		</td>
+	</tr>
+	<tr className="odd:bg-gray-50">
+		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
+			Elegant_Smooth_Bob
+		</td>
+		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
+			Elegant smooth short bob
+		</td>
+	</tr>
+	<tr className="odd:bg-gray-50">
+		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
+			Retro_Airy_Curl
+		</td>
+		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
+			Retro airy curl hair
+		</td>
+	</tr>
+	<tr className="odd:bg-gray-50">
+		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
+			Soft_Wavy_Bob
+		</td>
+		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
+			Soft wavy bob hair
+		</td>
+	</tr>
+	<tr className="odd:bg-gray-50">
+		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
+			Light_Inward_Bob
+		</td>
+		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
+			Light inward short bob hair
+		</td>
+	</tr>
+	<tr className="odd:bg-gray-50">
+		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
+			Neat_Curly_Crop_Cut
+		</td>
+		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
+			Neat curly crop short hair
+		</td>
+	</tr>
+	<tr className="odd:bg-gray-50">
+		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
+			Elegant_Volumized_Bob
+		</td>
+		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
+			Elegant volumized bob hair
+		</td>
+	</tr>
+	<tr className="odd:bg-gray-50">
+		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
+			Modern_Curls_Chic
+		</td>
+		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
+			Modern chic large curl hair
+		</td>
+	</tr>
+	<tr className="odd:bg-gray-50">
+		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
+			Mocha_Volume_Pixie
+		</td>
+		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
+			Mocha-toned volumized pixie cut
+		</td>
+	</tr>
+	<tr className="odd:bg-gray-50">
+		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
+			Elegant_Side_Flow
+		</td>
+		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
+			Elegant side-flowing short hair
+		</td>
+	</tr>
 </table>
+
 
 #### `color` 
 
