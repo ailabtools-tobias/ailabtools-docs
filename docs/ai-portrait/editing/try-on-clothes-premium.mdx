@@ -1,0 +1,174 @@
+---
+sidebarTitle: "Introduction"
+title: Try on Clothes Premium
+description: "Try on Clothes Premium is an upgraded AI virtual try-on engine that delivers higher-fidelity garment fit, fabric texture, and overall realism, designed for brands and teams that put image quality ahead of pure speed."
+---
+
+## What Is Try on Clothes Premium?
+
+Try on Clothes Premium is the **high-quality version** of our Try on Clothes Pro engine.  
+Both products follow the same basic workflow, but Premium uses a more advanced generation pipeline to:
+
+- refine garment fit and silhouette,
+- preserve fabric details and prints,
+- reduce artifacts around edges, hands, and complex areas.
+
+Because of this enhancement, **each Premium request typically takes about 80 seconds**, compared to roughly **40 seconds** for Try on Clothes Pro.  
+In return, you get **cleaner, sharper, and more reliable try-on images** that are better suited for:
+
+- product main images and detail pages,
+- marketing and ad creatives,
+- any scenario where visual quality is a priority.
+
+---
+
+## Typical Use Cases
+
+- **E-commerce product & detail page images**  
+  Generate high-quality on-model visuals for category pages and product detail pages, focusing on garment shape, fit, and texture. Ideal for main images and hero placements.
+
+- **Virtual try-on for models and consumers**  
+  Create personalized try-on results across different body types, skin tones, and styles so shoppers see looks that feel closer to their real-world appearance.
+
+- **Marketing and social media content**  
+  Produce realistic lifestyle images for ads, social posts, and store banners, reducing reliance on physical shoots while keeping brand visuals consistent.
+
+- **New product launch & design reference**  
+  Use virtual try-on images to support early listings, internal reviews, and concept boards. Combine fabric reference images with different styles for quick visual exploration.
+
+---
+
+## How Is Try on Clothes Premium Different from Try on Clothes Pro?
+
+Try on Clothes Premium and Try on Clothes Pro share the same API structure and overall workflow, but they are tuned for different priorities.
+
+**1. Image Quality & Detail**
+
+- **Premium**  
+  - Enhanced pipeline for garment reconstruction and texture.  
+  - Better at preserving prints, seams, edges, and structural elements.  
+  - Recommended for main product images, campaigns, and high-visibility placements.
+
+- **Pro**  
+  - Balanced quality with faster inference.  
+  - Well-suited for bulk generation, day-to-day e-commerce visuals, and rapid iteration.
+
+**2. Processing Speed**
+
+- **Premium**: ~**80 seconds** per successful request (per input combination), due to additional refinement and quality steps.  
+- **Pro**: ~**40 seconds** per request, better when quick preview and throughput matter.
+
+**Recommended usage pattern:**
+
+- Use **Try on Clothes Pro** for **preview, internal review, and large-scale testing**.  
+- Use **Try on Clothes Premium** for **final outputs** that will be exposed directly to users (main images, key detail shots, ad creatives).
+
+---
+
+## Upload Guidelines
+
+To get the best results from Try on Clothes Premium, we recommend following the guidelines below.
+
+### Garment Image (Flat Lay or Mannequin)
+
+- Use a **high-resolution image** that shows the entire garment.  
+- Flat lay shots are ideal; clean mannequin photos also work well.  
+- Avoid heavy shadows, strong reflections, and busy backgrounds that hide edges.  
+- Make sure sleeves, hems, collars, and key design elements are **not cropped**.
+
+Clean, complete garment images allow Premium to more accurately reconstruct **fit, shape, and fabric behavior**.
+
+### Model Image (Person / Consumer Photo)
+
+- Use a **front-facing full-body or half-body** photo with the model clearly visible.  
+- Prefer simple base clothing (e.g., T-shirt and shorts) so **arms and legs are not blocked**.  
+- Avoid:
+  - long skirts covering the legs,
+  - bulky outerwear or multi-layer outfits,
+  - large accessories like scarves, umbrellas, or big bags.
+
+The clearer the body silhouette, the more precisely Premium can overlay and adapt the garment.
+
+---
+
+## FAQ
+
+- **Do I still need a flat lay garment image for Premium?**  
+  Yes. Premium is stronger at reconstruction, but it still depends on **clear garment structure and pattern information**. A high-quality flat lay or mannequin photo greatly improves the final try-on quality.
+
+- **What if I don’t have a flat lay image?**  
+  You can photograph a colleague or friend wearing the garment in a well-lit environment, or place it on a mannequin. As long as the clothing is **fully visible and not heavily distorted**, Premium can process it.
+
+- **Why does the generated image sometimes look soft or lack texture?**  
+  This usually indicates the **source garment image is low resolution, cropped, or blurry**. Try re-uploading a higher-resolution, fully framed garment photo so Premium can better enhance texture and structure.
+
+- **When should I choose Premium instead of Pro?**  
+  Choose **Premium** for:
+  - product **main images and detail close-ups**,  
+  - assets used in **ads, campaigns, and lookbooks**,  
+  - cases where visual quality is more important than speed.  
+  Choose **Pro** when you need **faster turnaround, bulk generation, or quick experimentation**.
+
+---
+
+## Example Results
+
+| ORIGINAL IMAGE                                                                                    | GARMENT IMAGE                                                                                                                                                                           | RESULT IMAGE                                                                                  |
+|:--------------------------------------------------------------------------------------------------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:----------------------------------------------------------------------------------------------|
+| ![ORIGINAL IMAGE](https://ai-resource.ailabtools.com/try-on-clothes-pro/doc/OriginalImage-1.webp) | ![CLOTHING IMAGE](https://ai-resource.ailabtools.com/try-on-clothes-pro/doc/top-1.webp) <br/> ![CLOTHING IMAGE](https://ai-resource.ailabtools.com/try-on-clothes-pro/doc/bottom-1.webp) | ![RESULT IMAGE](https://ai-resource.ailabtools.com/try-on-clothes-pro/doc/ResultImage-1.webp) |
+| ![ORIGINAL IMAGE](https://ai-resource.ailabtools.com/try-on-clothes-pro/doc/OriginalImage-1.webp) | ![CLOTHING IMAGE](https://ai-resource.ailabtools.com/try-on-clothes-pro/doc/suit-1.webp)                                                                                                | ![RESULT IMAGE](https://ai-resource.ailabtools.com/try-on-clothes-pro/doc/ResultImage-2.webp) |
+
+> You can replace these with Try on Clothes Premium–specific examples later to further distinguish from the Pro documentation.
+
+---
+
+## Pricing & Credits
+
+Each successful **Try on Clothes Premium** API call consumes a fixed number of credits.
+
+### Credits per API Call
+
+| API                    | Credits per Call |
+|:-----------------------|:-----------------|
+| Try on Clothes Premium | 50               |
+
+---
+
+### Universal Credit Packages (All APIs)
+
+Universal credit packages can be used across all AILabTools APIs, including **Try on Clothes Premium**.
+
+|   Amount |   Credits | Price / Credit | Approx. Premium Calls (50 credits/call) | Cost / Premium Call |
+|---------:|----------:|---------------:|-----------------------------------------:|---------------------:|
+|   $12.00 |     2,000 |        $0.0060 |                                       40 |            $0.300000 |
+|   $27.50 |     5,000 |        $0.0055 |                                      100 |            $0.275000 |
+|   $50.00 |    10,000 |        $0.0050 |                                      200 |            $0.250000 |
+|  $135.00 |    30,000 |        $0.0045 |                                      600 |            $0.225000 |
+|  $212.00 |    50,000 |        $0.0043 |                                    1,000 |            $0.212500 |
+|  $400.00 |   100,000 |        $0.0040 |                                    2,000 |            $0.200000 |
+| $1,050.00 |   300,000 |        $0.0035 |                                    6,000 |            $0.175000 |
+| $1,500.00 |   500,000 |        $0.0030 |                                   10,000 |            $0.150000 |
+| $2,500.00 | 1,000,000 |        $0.0025 |                                   20,000 |            $0.125000 |
+
+<Tip>
+**Buy Credits**
+
+- <a href="https://www.ailabtools.com/price?tab=developer" target="_blank">Pricing</a>  
+- <a href="https://www.ailabtools.com/developer-platform" target="_blank">Developer Platform</a>  
+
+**Need a Larger Plan?**
+
+If you require more credits or custom terms, please contact us at  
+<a href="mailto:business@ailabtools.com">business@ailabtools.com</a>.
+</Tip>
+
+---
+
+## File Storage Policy
+
+<Tip>
+- **Uploaded Files**: Not stored. Used only for processing the current request.  
+- **Generated Files**:  
+  - **Retention**: Stored for up to 24 hours to support download and integration.  
+  - **Deletion**: Automatically deleted after the retention period expires.
+</Tip>

@@ -4469,6 +4469,90 @@
         }
       }
     },
+    "/api/portrait/editing/try-on-clothes-premium": {
+      "post": {
+        "tags": [
+          "AI PORTRAIT > Portrait Editing"
+        ],
+        "summary": "Try on Clothes Premium",
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "task_type": {
+                    "type": "string",
+                    "description": "Task Type. <li>`async`: Asynchronous tasks.</li>",
+                    "example": "async"
+                  },
+                  "person_image": {
+                    "type": "string",
+                    "description": "Portrait image.",
+                    "format": "binary"
+                  },
+                  "top_garment": {
+                    "type": "string",
+                    "description": "Upper Body Clothing Image.",
+                    "format": "binary"
+                  },
+                  "resolution": {
+                    "type": "number",
+                    "description": "Output Image Resolution. If you need to call **[Try on Clothes Refiner](https://documenter.getpostman.com/view/26387069/2s93JxqgHE#75de8e09-37dd-4b31-b4f8-33a666cebb2a)** in the future, select `-1`. <li>`-1`: Original image resolution.</li> <li>`1024`: 576x1024px.</li> <li>`1280`: 720x1280px.</li>",
+                    "example": "-1"
+                  },
+                  "restore_face": {
+                    "type": "boolean",
+                    "description": "Whether to Keep the Model’s Face. If you need to call **[Try on Clothes Refiner](https://documenter.getpostman.com/view/26387069/2s93JxqgHE#75de8e09-37dd-4b31-b4f8-33a666cebb2a)** in the future, select `true`. <li>`true`: Keep the model’s original face.</li> <li>`false`: Regenerate the model’s face.</li>",
+                    "example": "true"
+                  },
+                  "bottom_garment": {
+                    "type": "string",
+                    "description": "Lower Body Clothing Image. <li>If no lower body clothing image is provided, the lower body clothing effect will be randomly generated.</li> <li>If lower body clothing is not needed (e.g., when the upper body garment is a dress), this value should be left empty.</li>",
+                    "format": "binary"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "application/json"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                },
+                "example": {
+                  "request_id": "",
+                  "log_id": "",
+                  "error_code": 0,
+                  "error_code_str": "",
+                  "error_msg": "",
+                  "error_detail": {
+                    "status_code": 200,
+                    "code": "",
+                    "code_message": "",
+                    "message": ""
+                  },
+                  "task_type": "",
+                  "task_id": ""
+                }
+              }
+            },
+            "description": "Success"
+          }
+        }
+      }
+    },
     "/api/portrait/analysis/face-key-points": {
       "post": {
         "tags": [
@@ -8018,6 +8102,70 @@
                       }
                     }
                   ]
+                }
+              }
+            },
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/portrait/editing/ai-big-tits": {
+      "post": {
+        "tags": [
+          "AI PORTRAIT > AI Big Tits"
+        ],
+        "summary": "AI Big Tits",
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "task_type": {
+                    "type": "string",
+                    "description": "Task Type. <li>`async`: Asynchronous tasks.</li>",
+                    "example": "async"
+                  },
+                  "person_image": {
+                    "type": "string",
+                    "format": "binary"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "application/json"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                },
+                "example": {
+                  "request_id": "",
+                  "log_id": "",
+                  "error_code": 0,
+                  "error_code_str": "",
+                  "error_msg": "",
+                  "error_detail": {
+                    "status_code": 200,
+                    "code": "",
+                    "code_message": "",
+                    "message": ""
+                  },
+                  "data": {
+                    "image": ""
+                  }
                 }
               }
             },
