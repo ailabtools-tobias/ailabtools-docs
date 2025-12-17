@@ -1,9 +1,101 @@
 ---
 sidebarTitle: "Introduction"
-title: Age & Gender Swap
+title: "Age & Gender Swap"
 description: "Edit the face attribute features to achieve gender swap, age change and other special effects to generate a variety of special effects photos for users."
 ---
 
+import BillingInstructions from "/snippets/billing-instructions.jsx";
+
+## Renderings show
+
+<div class="cm-border-2-solid-218221225100 cm-border-radius-8 cm-text-align-center">
+  <div class="cm-grid-template-columns-3 cm-grid-gap-8 cm-padding-8 cm-border-bottom-2-solid-218221225100">
+    <div class="cm-grid-column-2-span-1">
+      <img class="cm-w cm-border-radius-8" src="https://img.ailabtools.com/rapidapi/FaceAttributesedit/untreated-1-min.jpeg" alt="Original Image" />
+      <div class="cm-margin cm-word-break-break-all">Original Image</div>
+    </div>
+  </div>
+  <div class="cm-grid-template-columns-3 cm-grid-gap-8 cm-padding-8">
+    <div>
+      <img class="cm-w cm-border-radius-8" src="https://img.ailabtools.com/rapidapi/FaceAttributesedit/TO_OLD-1-min.jpeg" alt />
+      <div class="cm-margin cm-word-break-break-all">`action_type`=`TO_OLD`</div>
+    </div>
+    <div>
+      <img class="cm-w cm-border-radius-8" src="https://img.ailabtools.com/rapidapi/FaceAttributesedit/TO_KID-1-min.jpeg" alt />
+      <div class="cm-margin cm-word-break-break-all">`action_type`=`TO_KID`</div>
+    </div>
+    <div>
+      <img class="cm-w cm-border-radius-8" src="https://img.ailabtools.com/rapidapi/FaceAttributesedit/TO_FEMALE-1-min.jpeg" alt />
+      <div class="cm-margin cm-word-break-break-all">`action_type`=`TO_FEMALE`</div>
+    </div>
+    <div>
+      <img class="cm-w cm-border-radius-8" src="https://img.ailabtools.com/rapidapi/FaceAttributesedit/TO_MALE-1-min.jpeg" alt />
+      <div class="cm-margin cm-word-break-break-all">`action_type`=`TO_MALE`</div>
+    </div>
+    <div>
+      <img class="cm-w cm-border-radius-8" src="https://img.ailabtools.com/rapidapi/FaceAttributesedit/V2_AGE-70-1-min.jpeg" alt />
+      <div class="cm-margin cm-word-break-break-all">`action_type`=`V2_AGE` <br/> `target`=`70`</div>
+    </div>
+    <div>
+      <img class="cm-w cm-border-radius-8" src="https://img.ailabtools.com/rapidapi/FaceAttributesedit/V2_GENDER-1-1-min.jpeg" alt />
+      <div class="cm-margin cm-word-break-break-all">`action_type`=`V2_GENDER` <br/> `target`=`0`</div>
+    </div>
+  </div>
+</div>
+
+<div class="cm-border-2-solid-218221225100 cm-border-radius-8 cm-text-align-center">
+  <div class="cm-grid-template-columns-3 cm-grid-gap-8 cm-padding-8 cm-border-bottom-2-solid-218221225100">
+    <div class="cm-grid-column-2-span-1">
+      <img class="cm-w cm-border-radius-8" src="https://img.ailabtools.com/rapidapi/FaceAttributesedit/untreated-2-min.jpeg" alt="Original Image" />
+      <div class="cm-margin cm-word-break-break-all">Original Image</div>
+    </div>
+  </div>
+  <div class="cm-grid-template-columns-3 cm-grid-gap-8 cm-padding-8">
+    <div>
+      <img class="cm-w cm-border-radius-8" src="https://img.ailabtools.com/rapidapi/FaceAttributesedit/TO_OLD-2-min.jpeg" alt />
+      <div class="cm-margin cm-word-break-break-all">`action_type`=`TO_OLD`</div>
+    </div>
+    <div>
+      <img class="cm-w cm-border-radius-8" src="https://img.ailabtools.com/rapidapi/FaceAttributesedit/TO_KID-2-min.jpeg" alt />
+      <div class="cm-margin cm-word-break-break-all">`action_type`=`TO_KID`</div>
+    </div>
+    <div>
+      <img class="cm-w cm-border-radius-8" src="https://img.ailabtools.com/rapidapi/FaceAttributesedit/TO_FEMALE-2-min.jpeg" alt />
+      <div class="cm-margin cm-word-break-break-all">`action_type`=`TO_FEMALE`</div>
+    </div>
+    <div>
+      <img class="cm-w cm-border-radius-8" src="https://img.ailabtools.com/rapidapi/FaceAttributesedit/TO_MALE-2-min.jpeg" alt />
+      <div class="cm-margin cm-word-break-break-all">`action_type`=`TO_MALE`</div>
+    </div>
+    <div>
+      <img class="cm-w cm-border-radius-8" src="https://img.ailabtools.com/rapidapi/FaceAttributesedit/V2_AGE-70-2-min.jpeg" alt />
+      <div class="cm-margin cm-word-break-break-all">`action_type`=`V2_AGE` <br/> `target`=`70`</div>
+    </div>
+    <div>
+      <img class="cm-w cm-border-radius-8" src="https://img.ailabtools.com/rapidapi/FaceAttributesedit/V2_GENDER-0-2-min.jpeg" alt />
+      <div class="cm-margin cm-word-break-break-all">`action_type`=`V2_GENDER` <br/> `target`=`1`</div>
+    </div>
+  </div>
+</div>
+
+<Tip>
+  [👉 Online Experience 👈](https://www.ailabtools.com/portrait-face-attribute-editing-example)
+
+  If you'd like to see the actual effects, please visit the experience page for a trial.
+</Tip>
+
+## Billing Instructions
+
+<BillingInstructions creditsPerRequest={8}/>
+
+## File Storage Policy
+
+<Tip>
+  **TIP**
+
+  - **Uploaded Files**: Not stored.
+  - **Response Files**: Not stored.
+</Tip>
 
 ## Application Scenarios
 
@@ -16,124 +108,3 @@ description: "Edit the face attribute features to achieve gender swap, age chang
 - **Key point positioning**: The algorithm accurately includes eyes, eyebrows, lips, nose and face contour, providing 72 high-precision key points FDDB official measurement.
 - **Fast response time**: Using advanced neural portrait editing technology, the single image feature extraction speed (GPU), on average, reaches 100 ms, enabling fast response to face attribute transformation and generating a new face with the desired attributes.
 - **Excellent effect**: the output face's expression, angle, background and other attributes are highly compatible with the input face, generating a unique artificial intelligence face effect with high image generation quality to meet the demand for visual effects.
-
-## Renderings show
-
-<div class="cm-border-2-solid-218221225100 cm-border-radius-8 cm-text-align-center">
-  <div class="cm-grid-template-columns-3 cm-grid-gap-8 cm-padding-8 cm-border-bottom-2-solid-218221225100">
-    <div class="cm-grid-column-2-span-1">
-      <img class="cm-w cm-border-radius-8" src="https://img.ailabtools.com/rapidapi/FaceAttributesedit/untreated-1-min.jpeg" alt="Original Image" />
-      <h4 class="cm-margin cm-word-break-break-all">Original Image</h4>
-    </div>
-  </div>
-  <div class="cm-grid-template-columns-3 cm-grid-gap-8 cm-padding-8">
-    <div>
-      <img class="cm-w cm-border-radius-8" src="https://img.ailabtools.com/rapidapi/FaceAttributesedit/TO_OLD-1-min.jpeg" alt />
-      <h4 class="cm-margin cm-word-break-break-all">`action_type`=`TO_OLD`</h4>
-    </div>
-    <div>
-      <img class="cm-w cm-border-radius-8" src="https://img.ailabtools.com/rapidapi/FaceAttributesedit/TO_KID-1-min.jpeg" alt />
-      <h4 class="cm-margin cm-word-break-break-all">`action_type`=`TO_KID`</h4>
-    </div>
-    <div>
-      <img class="cm-w cm-border-radius-8" src="https://img.ailabtools.com/rapidapi/FaceAttributesedit/TO_FEMALE-1-min.jpeg" alt />
-      <h4 class="cm-margin cm-word-break-break-all">`action_type`=`TO_FEMALE`</h4>
-    </div>
-    <div>
-      <img class="cm-w cm-border-radius-8" src="https://img.ailabtools.com/rapidapi/FaceAttributesedit/TO_MALE-1-min.jpeg" alt />
-      <h4 class="cm-margin cm-word-break-break-all">`action_type`=`TO_MALE`</h4>
-    </div>
-    <div>
-      <img class="cm-w cm-border-radius-8" src="https://img.ailabtools.com/rapidapi/FaceAttributesedit/V2_AGE-70-1-min.jpeg" alt />
-      <h4 class="cm-margin cm-word-break-break-all">`action_type`=`V2_AGE` <br/> `target`=`70`</h4>
-    </div>
-    <div>
-      <img class="cm-w cm-border-radius-8" src="https://img.ailabtools.com/rapidapi/FaceAttributesedit/V2_GENDER-1-1-min.jpeg" alt />
-      <h4 class="cm-margin cm-word-break-break-all">`action_type`=`V2_GENDER` <br/> `target`=`0`</h4>
-    </div>
-  </div>
-</div>
-
-<div class="cm-border-2-solid-218221225100 cm-border-radius-8 cm-text-align-center">
-  <div class="cm-grid-template-columns-3 cm-grid-gap-8 cm-padding-8 cm-border-bottom-2-solid-218221225100">
-    <div class="cm-grid-column-2-span-1">
-      <img class="cm-w cm-border-radius-8" src="https://img.ailabtools.com/rapidapi/FaceAttributesedit/untreated-2-min.jpeg" alt="Original Image" />
-      <h4 class="cm-margin cm-word-break-break-all">Original Image</h4>
-    </div>
-  </div>
-  <div class="cm-grid-template-columns-3 cm-grid-gap-8 cm-padding-8">
-    <div>
-      <img class="cm-w cm-border-radius-8" src="https://img.ailabtools.com/rapidapi/FaceAttributesedit/TO_OLD-2-min.jpeg" alt />
-      <h4 class="cm-margin cm-word-break-break-all">`action_type`=`TO_OLD`</h4>
-    </div>
-    <div>
-      <img class="cm-w cm-border-radius-8" src="https://img.ailabtools.com/rapidapi/FaceAttributesedit/TO_KID-2-min.jpeg" alt />
-      <h4 class="cm-margin cm-word-break-break-all">`action_type`=`TO_KID`</h4>
-    </div>
-    <div>
-      <img class="cm-w cm-border-radius-8" src="https://img.ailabtools.com/rapidapi/FaceAttributesedit/TO_FEMALE-2-min.jpeg" alt />
-      <h4 class="cm-margin cm-word-break-break-all">`action_type`=`TO_FEMALE`</h4>
-    </div>
-    <div>
-      <img class="cm-w cm-border-radius-8" src="https://img.ailabtools.com/rapidapi/FaceAttributesedit/TO_MALE-2-min.jpeg" alt />
-      <h4 class="cm-margin cm-word-break-break-all">`action_type`=`TO_MALE`</h4>
-    </div>
-    <div>
-      <img class="cm-w cm-border-radius-8" src="https://img.ailabtools.com/rapidapi/FaceAttributesedit/V2_AGE-70-2-min.jpeg" alt />
-      <h4 class="cm-margin cm-word-break-break-all">`action_type`=`V2_AGE` <br/> `target`=`70`</h4>
-    </div>
-    <div>
-      <img class="cm-w cm-border-radius-8" src="https://img.ailabtools.com/rapidapi/FaceAttributesedit/V2_GENDER-0-2-min.jpeg" alt />
-      <h4 class="cm-margin cm-word-break-break-all">`action_type`=`V2_GENDER` <br/> `target`=`1`</h4>
-    </div>
-  </div>
-</div>
-
----
-<Tip>
-**[👉 Online Experience 👈](https://www.ailabtools.com/portrait-face-attribute-editing-example)**
-
-If you'd like to see the actual effects, please visit the experience page for a trial.
-</Tip>
-## Billing Instructions
-
-- A certain number of credits will be consumed for each successful API call.
-
-### Amount of Credits Deducted
-
-| API               | Number of Credits |
-|:------------------|:------------------|
-| Age & Gender Swap | 8                 |
-
-### Resource Package
-
-#### Universal Credits (Supports All APIs)
-
-##### Applied to Age & Gender Swap
-
-|   Amounts |   Credits | Amounts/Credit | Allowable Requests | Amounts/Request |
-|----------:|----------:|---------------:|-------------------:|----------------:|
-|    $12.00 |     2,000 |        $0.0060 |                250 |         $0.0480 |
-|    $27.50 |     5,000 |        $0.0055 |                625 |         $0.0440 |
-|    $50.00 |    10,000 |        $0.0050 |              1,250 |         $0.0400 |
-|   $135.00 |    30,000 |        $0.0045 |              3,750 |         $0.0360 |
-|   $212.00 |    50,000 |        $0.0043 |              6,250 |         $0.0344 |
-|   $400.00 |   100,000 |        $0.0040 |             12,500 |         $0.0320 |
-| $1,050.00 |   300,000 |        $0.0035 |             37,500 |         $0.0280 |
-| $1,500.00 |   500,000 |        $0.0030 |             62,500 |         $0.0240 |
-| $2,500.00 | 1,000,000 |        $0.0025 |            125,000 |         $0.0200 |
-<Tip>
-**Buy Now**
-
-- <a href="https://www.ailabtools.com/price?tab=developer" target="_blank">Pricing</a>
-- <a href="https://www.ailabtools.com/developer-platform" target="_blank">Developer Platform</a>
-
-**Customization**
-
-If you require more credits, please contact us at <a href="mailto:business@ailabtools.com">business@ailabtools.com</a>.
-</Tip>
-## File Storage Policy
-<Tip>
-- **Uploaded Files**: Not stored.
-- **Response Files**: Not stored.
-</Tip>

@@ -1,8 +1,8 @@
 ---
-title: "Hairstyle Changer Pro API"
 sidebarTitle: "API"
+title: "Hairstyle Changer Pro API"
 description: "Based on the stable diffusion model, it supports dozens of different hairstyles and colors, with each generated result being unique. It can simultaneously produce up to four result images for easy comparison and selection of the most suitable hairstyle."
-openapi: 'POST /api/portrait/effects/hairstyle-editor-pro'
+openapi: "POST /api/portrait/effects/hairstyle-editor-pro"
 ---
 <Tip>
 **Photo Validation Guide**
@@ -48,7 +48,7 @@ For detailed information, refer to the [Photo Validation Guide](ai-portrait/effe
         </div>
         <div style={{'max-width':'100px','margin':'5px'}}>
           <img alt="Hairstyle Changer Pro" src="https://ai-resource.ailabtools.com/hairstyle-changer-pro/valid-invalid-examples/valid-4.webp" />
-        </div>      
+        </div>
       </div>
     </td>
     <td style={{'text-align':'center'}} className="border border-gray-300"></td>
@@ -62,7 +62,7 @@ For detailed information, refer to the [Photo Validation Guide](ai-portrait/effe
         </div>
         <div style={{'max-width':'100px','margin':'5px'}}>
           <img alt="Hairstyle Changer Pro" src="https://ai-resource.ailabtools.com/hairstyle-changer-pro/valid-invalid-examples/no-face-2.webp" />
-        </div>    
+        </div>
       </div>
     </td>
     <td style={{'text-align':'center'}} className="border border-gray-300">No face</td>
@@ -75,7 +75,7 @@ For detailed information, refer to the [Photo Validation Guide](ai-portrait/effe
         </div>
         <div style={{'max-width':'100px','margin':'5px'}}>
           <img alt="Hairstyle Changer Pro" src="https://ai-resource.ailabtools.com/hairstyle-changer-pro/valid-invalid-examples/face-incomplete-2.webp" />
-        </div>    
+        </div>
       </div>
     </td>
     <td style={{'text-align':'center'}} className="border border-gray-300">Incomplete face</td>
@@ -88,7 +88,7 @@ For detailed information, refer to the [Photo Validation Guide](ai-portrait/effe
         </div>
         <div style={{'max-width':'100px','margin':'5px'}}>
           <img alt="Hairstyle Changer Pro" src="https://ai-resource.ailabtools.com/hairstyle-changer-pro/valid-invalid-examples/face-blocked-2.webp" />
-        </div>    
+        </div>
       </div>
     </td>
     <td style={{'text-align':'center'}} className="border border-gray-300">Face obscured</td>
@@ -101,7 +101,7 @@ For detailed information, refer to the [Photo Validation Guide](ai-portrait/effe
         </div>
         <div style={{'max-width':'100px','margin':'5px'}}>
           <img alt="Hairstyle Changer Pro" src="https://ai-resource.ailabtools.com/hairstyle-changer-pro/valid-invalid-examples/face-small-2.webp" />
-        </div>    
+        </div>
       </div>
     </td>
     <td style={{'text-align':'center'}} className="border border-gray-300">Face proportion too small</td>
@@ -114,7 +114,7 @@ For detailed information, refer to the [Photo Validation Guide](ai-portrait/effe
         </div>
         <div style={{'max-width':'100px','margin':'5px'}}>
           <img alt="Hairstyle Changer Pro" src="https://ai-resource.ailabtools.com/hairstyle-changer-pro/valid-invalid-examples/face-big-2.webp" />
-        </div>    
+        </div>
       </div>
     </td>
     <td style={{'text-align':'center'}} className="border border-gray-300">The face is too large to edit the hairstyle</td>
@@ -140,7 +140,7 @@ For detailed information, refer to the [Photo Validation Guide](ai-portrait/effe
 | `color`      | NO       | `string`  | [Scope](#color)                                     |         | Color. [More Details](#color)                    |
 | `image_size` | NO       | `integer` | ``1``, ``2``, ``3``, ``4`` | `1`     | Returns the number of images.                    |
 
-#### `hair_style` 
+#### `hair_style`
 
 <table className="border border-collapse border-gray-300">
 	<tr>
@@ -933,7 +933,7 @@ For detailed information, refer to the [Photo Validation Guide](ai-portrait/effe
 </table>
 
 
-#### `color` 
+#### `color`
 
 | `color`          | Description          |
 |:-----------------|:---------------------|
@@ -1056,13 +1056,14 @@ The URL address is a temporary address, valid for 24 hours, and will not be acce
 
 ## Sample Code
 <Tip>
-**[👉 Online Experience 👈](https://www.ailabtools.com/portrait-hairstyle-editing-pro-example)**
+  [👉 Online Experience 👈](https://www.ailabtools.com/portrait-hairstyle-editing-pro-example)
 
-If you'd like to see the actual effects, please visit the experience page for a trial.
+  If you'd like to see the actual effects, please visit the experience page for a trial.
 
-- [Introduction to Get Sample Code](get-sample-code)
-- [Sample Code][PostmanURL]
+  - [Introduction to Get Sample Code](get-sample-code)
+  - [Sample Code][PostmanURL]
 </Tip>
+
 [PostmanURL]: https://documenter.getpostman.com/view/26387069/2s93JxqgHE#1165e9fd-450b-491d-a08b-757a89f4fb9e
 
 [OriginalImage-comparison-bangs-1]: https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/OriginalImage-comparison-bangs-1.webp

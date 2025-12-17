@@ -36,7 +36,7 @@
       "theme-color": "#000000",
       "canonical": "https://www.ailabtools.com",
       "og:title": "AILabTools",
-      "og:type": "website", 
+      "og:type": "website",
       "og:url": "https://www.ailabtools.com",
       "og:image": "https://www.ailabtools.com/docs/images/AILab-Tools-Making-the-world-enjoy-AI-and-making-AI-empowerment-easier.png",
       "og:description": "AILabTools is an advanced tool that offers a vast array of simple and flexible API endpoints to suit your specific needs.",
@@ -151,7 +151,7 @@
   "favicon": "/images/logo-bg.webp",
   "colors": {
     "primary": "#f61b5b",
-    "light": "#f61b5b", 
+    "light": "#f61b5b",
     "dark": "#f61b5b"
   },
   "topbarCtaButton": {
@@ -169,7 +169,7 @@
             "icon": "info",
             "pages": [
               "docs/introduction",
-              "docs/billing-introduction", 
+              "docs/billing-introduction",
               "docs/file-storage-policy"
             ]
           },
@@ -222,7 +222,7 @@
                     ]
                   },
                   {
-                    "group": "Skin Disease Detection",
+                    "group": "Detect Skin Disease",
                     "icon": "stethoscope",
                     "pages": [
                       "docs/ai-portrait/analysis/skin-disease-detection",
@@ -332,7 +332,7 @@
                           "docs/ai-portrait/effects/smart-beauty/api-v100"
                         ]
                       }
-                    ] 
+                    ]
                   },
                   {
                     "group": "AI Skin Beauty",
@@ -569,7 +569,7 @@
                     "group": "Image Upscaler",
                     "icon": "expand",
                     "pages": [
-                      "docs/ai-image/enhance/image-lossless-enlargement", 
+                      "docs/ai-image/enhance/image-lossless-enlargement",
                       "docs/ai-image/enhance/image-lossless-enlargement/api",
                       {
                         "group": "Version Logs",

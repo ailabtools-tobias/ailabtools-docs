@@ -1,8 +1,40 @@
 ---
 sidebarTitle: "Introduction"
-title: "universal Background Removal"
+title: "Universal Background Removal"
 description: "Universal Background Removal API uses advanced AI to intelligently detect and isolate subjects, automatically erasing backgrounds. Suitable for people, animals, food, and objects in various scenes."
 ---
+
+import BillingInstructions from "/snippets/billing-instructions.jsx";
+
+## Renderings show
+
+| `return_form` | ORIGINAL IMAGE                     | RESULT IMAGE                           |
+|:--------------|:-----------------------------------|:---------------------------------------|
+| -             | ![ORIGINAL IMAGE][OriginalImage-1] | ![RESULT IMAGE][ResultImage-default-1] |
+| `mask`        | ![ORIGINAL IMAGE][OriginalImage-1] | ![RESULT IMAGE][ResultImage-mask-1]    |
+| `whiteBK`     | ![ORIGINAL IMAGE][OriginalImage-1] | ![RESULT IMAGE][ResultImage-whiteBK-1] |
+| `crop`        | ![ORIGINAL IMAGE][OriginalImage-1] | ![RESULT IMAGE][ResultImage-crop-1]    |
+
+<Tip>
+  [👉 Online Experience 👈](https://www.ailabtools.com/cutout-general-background-removal-example)
+
+  If you'd like to see the actual effects, please visit the experience page for a trial.
+</Tip>
+
+## Billing Instructions
+
+<BillingInstructions creditsPerRequest={1}/>
+
+## File Storage Policy
+
+<Tip>
+  **TIP**
+
+  - **Uploaded Files**: Not stored.
+  - **Response Files**:
+    - **Storage Duration**: 24 hours.
+    - **Deletion Method**: Automatic Deletion upon Timeout.
+</Tip>
 
 ## Application Scenarios
 
@@ -13,63 +45,6 @@ description: "Universal Background Removal API uses advanced AI to intelligently
 - **Automatic subject recognition**: automatically identifies the subject object in the image without additional specification.
 - **Applicable to multiple scenes**: Applicable to people, animals, food, objects, home and other keying scenes, not applicable to cartoon pictures.
 
-## Renderings show
-
-| `return_form` | ORIGINAL IMAGE                     | RESULT IMAGE                           |
-|:--------------|:-----------------------------------|:---------------------------------------|
-| -             | ![ORIGINAL IMAGE][OriginalImage-1] | ![RESULT IMAGE][ResultImage-default-1] |
-| `mask`        | ![ORIGINAL IMAGE][OriginalImage-1] | ![RESULT IMAGE][ResultImage-mask-1]    |
-| `whiteBK`     | ![ORIGINAL IMAGE][OriginalImage-1] | ![RESULT IMAGE][ResultImage-whiteBK-1] |
-| `crop`        | ![ORIGINAL IMAGE][OriginalImage-1] | ![RESULT IMAGE][ResultImage-crop-1]    |
-<Tip>
-**[👉 Online Experience 👈](https://www.ailabtools.com/cutout-general-background-removal-example)**
-
-If you'd like to see the actual effects, please visit the experience page for a trial.
-</Tip>
-## Billing Instructions
-
-- A certain number of credits will be consumed for each successful API call.
-
-### Amount of Credits Deducted
-
-| API                          | Number of Credits |
-|:-----------------------------|:------------------|
-| Universal Background Removal | 1                 |
-
-### Resource Package
-
-#### Universal Credits (Supports All APIs)
-
-##### Applied to Universal Background Removal
-
-|   Amounts |   Credits | Amounts/Credit | Allowable Requests | Amounts/Request |
-|----------:|----------:|---------------:|-------------------:|----------------:|
-|    $12.00 |     2,000 |        $0.0060 |              2,000 |         $0.0060 |
-|    $27.50 |     5,000 |        $0.0055 |              5,000 |         $0.0055 |
-|    $50.00 |    10,000 |        $0.0050 |             10,000 |         $0.0050 |
-|   $135.00 |    30,000 |        $0.0045 |             30,000 |         $0.0045 |
-|   $212.00 |    50,000 |        $0.0043 |             50,000 |         $0.0043 |
-|   $400.00 |   100,000 |        $0.0040 |            100,000 |         $0.0040 |
-| $1,050.00 |   300,000 |        $0.0035 |            300,000 |         $0.0035 |
-| $1,500.00 |   500,000 |        $0.0030 |            500,000 |         $0.0030 |
-| $2,500.00 | 1,000,000 |        $0.0025 |          1,000,000 |         $0.0025 |
-<Tip>
-**Buy Now**
-
-- <a href="https://www.ailabtools.com/price?tab=developer" target="_blank">Pricing</a>
-- <a href="https://www.ailabtools.com/developer-platform" target="_blank">Developer Platform</a>
-
-**Customization**
-
-If you require more credits, please contact us at <a href="mailto:business@ailabtools.com">business@ailabtools.com</a>.
-</Tip>
-## File Storage Policy
-<Tip>
-- **Uploaded Files**: Not stored.
-- **Response Files**:
-  - **Storage Duration**: 24 hours.
-  - **Deletion Method**: Automatic Deletion upon Timeout.
-</Tip>
 [OriginalImage-1]: https://ai-resource.ailabtools.com/rapidapi/cutout/UniversalBackgroundRemoval/OriginalImage-1.webp
 
 [ResultImage-default-1]: https://ai-resource.ailabtools.com/rapidapi/cutout/UniversalBackgroundRemoval/ResultImage-default-1.webp

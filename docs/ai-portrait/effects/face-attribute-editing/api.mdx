@@ -1,8 +1,8 @@
 ---
-title: "Age & Gender swap API"
 sidebarTitle: "API"
+title: "Age & Gender Swap API"
 description: "Through the artificial intelligence algorithm, the facial attributes are edited to realize special effects such as gender exchange and age change, and generate a variety of special effects photos for users, which can be applied to interesting social situations."
-openapi: 'POST /api/portrait/effects/face-attribute-editing'
+openapi: "POST /api/portrait/effects/face-attribute-editing"
 ---
 
 ## Request
@@ -46,7 +46,7 @@ openapi: 'POST /api/portrait/effects/face-attribute-editing'
 |:---------|:---------|:----------|:--------------------------|:--------------------------------------------------|
 | `target` | YES      | `integer` | ``0``, ``1`` | Gender. ``0`: Male.` ``1`: Female.` |
 
-#### `quality_control` 
+#### `quality_control`
 
 The quality control thresholds corresponding to different control systems: If any quality information detected does not meet the requirements of the control threshold, an error will be returned.
 
@@ -66,7 +66,7 @@ The quality control thresholds corresponding to different control systems: If an
 | `45`                      | `30`                         | `20`                       | [-180 (counterclockwise), 180 (clockwise)] | Rotation angle within the plane. A threshold of 30 indicates that the absolute value of the angle must be within 30.                            |
 | `45`                      | `30`                         | `20`                       | [-90 (up), 90 (down)]                      | Pitch angle in three-dimensional rotation. A threshold of 30 indicates that the absolute value of the angle must be within 30.                  |
 
-#### `face_location` 
+#### `face_location`
 
 - **Request Example**
 
@@ -119,12 +119,12 @@ The quality control thresholds corresponding to different control systems: If an
 
 ## Sample Code
 <Tip>
-**[👉 Online Experience 👈](https://www.ailabtools.com/portrait-face-attribute-editing-example)**
+  [👉 Online Experience 👈](https://www.ailabtools.com/portrait-face-attribute-editing-example)
 
-If you'd like to see the actual effects, please visit the experience page for a trial.
+  If you'd like to see the actual effects, please visit the experience page for a trial.
 
-- [Introduction to Get Sample Code](get-sample-code)
-- [Sample Code][PostmanURL]
+  - [Introduction to Get Sample Code](get-sample-code)
+  - [Sample Code][PostmanURL]
+</Tip>
 
 [PostmanURL]: https://documenter.getpostman.com/view/26387069/2s93JxqgHE#00ca77b0-cb2a-47b0-9a50-559b39b8db3c
-</Tip>

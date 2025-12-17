@@ -1,8 +1,8 @@
 ---
-title: "Skin analyze Advanced API"
 sidebarTitle: "API"
+title: "Skin Analyze Advanced API"
 description: "Accurate analysis of skin status, such as skin color , skin type, double eyelids, eye pouch, dark circles, wrinkles, acne and skin spots."
-openapi: 'POST /api/portrait/analysis/skin-analysis-advanced'
+openapi: "POST /api/portrait/analysis/skin-analysis-advanced"
 ---
 
 ## Request
@@ -34,7 +34,7 @@ openapi: 'POST /api/portrait/analysis/skin-analysis-advanced'
 | `return_rect_confidence` | NO       | `integer` | ``0``, ``1`` | The confidence level of the area whether to return acne, occlusion, blemishes and moles. ``0`: No regional confidence is returned.` ``1`: Returns the regional confidence.`                                                                                                              |
 | `return_maps`            | NO       | `string`  | ``red_area`` | Enter a comma-separated string containing the type of skin chromatography image to be returned. (#return_maps)                                                                                                                                                                           |
 
-#### `return_maps` 
+#### `return_maps`
 
 - **Request Example**
 
@@ -182,7 +182,7 @@ openapi: 'POST /api/portrait/analysis/skin-analysis-advanced'
 | ++`sensitivity_area`        | `float`   | [0, 1]                                                                                     | Sensitive redness areas account for the proportion of cheeks and T-zone.                                                                                                                                                                                                                 |
 | ++`sensitivity_intensity`   | `float`   | [0, 100]                                                                                   | The intensity of redness in sensitive areas.                                                                                                                                                                                                                                             |
 
-#### `skintone_ita` 
+#### `skintone_ita`
 
 ITA (Individual Typology Angle) is an international standard for skin color, which is a method to classify skin color by measuring the color attributes of skin color Lab space. The method is strongly dependent on ambient light, we recommend using flash to take HD face photos for uploading and processing, the ITA angle value measured in natural light or dark environment may not be allowed or abnormal.
 
@@ -200,7 +200,7 @@ According to the data taken by the rear flash of the phone, the current skin col
 <Tip>
 You can also use the returned ITA value to define your classification based on the returned ITA angle at the time of access.
 </Tip>
-#### `skin_hue_ha` 
+#### `skin_hue_ha`
 
 HA (Hue Angle) is an international standard for skin color, which is a method to classify skin color by measuring the color attributes of skin color Lab space. The method is strongly dependent on ambient light, we recommend using flash to take HD face photos for uploading and processing, the HA angle value measured in natural light or dark light environment may not be allowed or abnormal.
 

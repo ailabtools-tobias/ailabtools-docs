@@ -1,8 +1,31 @@
 ---
 sidebarTitle: "Introduction"
-title: Live Photos
+title: "Live Photos"
 description: "Based on face driving algorithm, it can turn the face in the image into dynamic effect. It can drive the five senses in the image to do specified actions (currently nodding and smiling) to make the face come alive, and the dynamic effects become dynamic to make the user's photo full of motion. The ability subsequently supports the generation of various kinds of dynamic and complex actions by specifying faces that meet the requirements, and can make long-time dynamic expressions. It can be used for online entertainment video generation, expression pack production, etc."
 ---
+
+import BillingInstructions from "/snippets/billing-instructions.jsx";
+
+## Renderings show
+
+| ORIGINAL IMAGE | ![ORIGINAL IMAGE](https://ai-resource.ailabtools.com/rapidapi/facebody/DynamicPortrait/OriginalImage-1.webp)                                                                                                                                                                | ![ORIGINAL IMAGE](https://ai-resource.ailabtools.com/rapidapi/facebody/DynamicPortrait/OriginalImage-1.webp)                                                                                                                                                                |
+|:---------------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `type`         | `0`                                                                                                                                                                                                                                                                         | `1`                                                                                                                                                                                                                                                                         |
+| RESULT VIDEO   | <video width="100%" controls autoplay poster="https://ai-resource.ailabtools.com/rapidapi/facebody/DynamicPortrait/OriginalImage-1.webp"><source src="https://ai-resource.ailabtools.com/rapidapi/facebody/DynamicPortrait/ResultVideo-0-1.mp4" type="video/mp4" /></video> | <video width="100%" controls autoplay poster="https://ai-resource.ailabtools.com/rapidapi/facebody/DynamicPortrait/OriginalImage-1.webp"><source src="https://ai-resource.ailabtools.com/rapidapi/facebody/DynamicPortrait/ResultVideo-1-1.mp4" type="video/mp4" /></video> |
+
+
+## Billing Instructions
+
+<BillingInstructions creditsPerRequest={22}/>
+
+## File Storage Policy
+
+<Tip>
+  **TIP**
+
+  - **Uploaded Files**: Not stored.
+  - **Response Files**: Not stored.
+</Tip>
 
 ## Application Scenarios
 
@@ -15,53 +38,3 @@ description: "Based on face driving algorithm, it can turn the face in the image
 - **Rich play**: compatible with all kinds of complex expressions of users, and can make dynamic expressions for a long time.
 - **High accuracy**: accurate recognition of user expressions and prominent expressions in many scenarios.
 - **Real-time response**: millisecond response processing speed, reflecting dynamic effects in real time.
-
-## Renderings show
-
-| ORIGINAL IMAGE | ![ORIGINAL IMAGE](https://ai-resource.ailabtools.com/rapidapi/facebody/DynamicPortrait/OriginalImage-1.webp)                                                                                                                                                                | ![ORIGINAL IMAGE](https://ai-resource.ailabtools.com/rapidapi/facebody/DynamicPortrait/OriginalImage-1.webp)                                                                                                                                                                |
-|:---------------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `type`         | `0`                                                                                                                                                                                                                                                                         | `1`                                                                                                                                                                                                                                                                         |
-| RESULT VIDEO   | <video width="100%" controls autoplay poster="https://ai-resource.ailabtools.com/rapidapi/facebody/DynamicPortrait/OriginalImage-1.webp"><source src="https://ai-resource.ailabtools.com/rapidapi/facebody/DynamicPortrait/ResultVideo-0-1.mp4" type="video/mp4" /></video> | <video width="100%" controls autoplay poster="https://ai-resource.ailabtools.com/rapidapi/facebody/DynamicPortrait/OriginalImage-1.webp"><source src="https://ai-resource.ailabtools.com/rapidapi/facebody/DynamicPortrait/ResultVideo-1-1.mp4" type="video/mp4" /></video> |
-
-## Billing Instructions
-
-- A certain number of credits will be consumed for each successful API call.
-
-### Amount of Credits Deducted
-
-| API         | Number of Credits |
-|:------------|:------------------|
-| Live Photos | 22                |
-
-### Resource Package
-
-#### Universal Credits (Supports All APIs)
-
-##### Applied to Live Photos
-
-|   Amounts |   Credits | Amounts/Credit | Allowable Requests | Amounts/Request |
-|----------:|----------:|---------------:|-------------------:|----------------:|
-|    $12.00 |     2,000 |        $0.0060 |                 91 |         $0.1320 |
-|    $27.50 |     5,000 |        $0.0055 |                227 |         $0.1210 |
-|    $50.00 |    10,000 |        $0.0050 |                455 |         $0.1100 |
-|   $135.00 |    30,000 |        $0.0045 |              1,364 |         $0.0990 |
-|   $212.00 |    50,000 |        $0.0043 |              2,273 |         $0.0946 |
-|   $400.00 |   100,000 |        $0.0040 |              4,545 |         $0.0880 |
-| $1,050.00 |   300,000 |        $0.0035 |             13,636 |         $0.0770 |
-| $1,500.00 |   500,000 |        $0.0030 |             22,727 |         $0.0660 |
-| $2,500.00 | 1,000,000 |        $0.0025 |             45,455 |         $0.0550 |
-<Tip>
-**Buy Now**
-
-- <a href="https://www.ailabtools.com/price?tab=developer" target="_blank">Pricing</a>
-- <a href="https://www.ailabtools.com/developer-platform" target="_blank">Developer Platform</a>
-
-**Customization**
-
-If you require more credits, please contact us at <a href="mailto:business@ailabtools.com">business@ailabtools.com</a>.
-</Tip>
-## File Storage Policy
-<Tip>
-- **Uploaded Files**: Not stored.
-- **Response Files**: Not stored.
-</Tip>

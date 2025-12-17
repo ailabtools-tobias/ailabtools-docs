@@ -39,7 +39,7 @@ import apiOfflineNotice from '/snippets/api-offline-notice.mdx';
 | `roi_outline_color`   | NO       | `json string` |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        | Customize the drawing colors for the problem areas in the image returned by `return_maps`. [More Details](#roi_outline_color)                                           |
 | `return_side_results` | NO       | `string`      | ``jawline_info`` | To return the side profile information, you need to upload a side profile image. Separate multiple information fields with commas. (#return_side_results) |
 
-#### `return_maps` 
+#### `return_maps`
 
 - **Request Example**
 
@@ -60,7 +60,7 @@ import apiOfflineNotice from '/snippets/api-offline-notice.mdx';
 | `roi_outline_map`             | The image for plotting coordinates of facial spots and acne                                                             | Transparent background PNG, annotating facial spots and acne areas. The image size is the same as the original, allowing for overlay and comparison with the original image. |
 | `texture_enhanced_bw`         | The black-and-white enhanced image for facial blackheads and enlarged pores                                             | JPG, with cropping. The API returns coordinates and cropping ratios, which can be mapped to pixel coordinates in the original image.                                         |
 
-#### `return_marks` 
+#### `return_marks`
 
 - **Request Example**
 
@@ -89,7 +89,7 @@ import apiOfflineNotice from '/snippets/api-offline-notice.mdx';
 | `dark_circle_outline`    | Coordinates of the contour lines for dark circles under the left and right eyes.                         |
 | `cheekbone_mark`         | Coordinates of the facial apple cheeks.                                                                  |
 
-#### `roi_outline_color` 
+#### `roi_outline_color`
 
 - **Request Example**
 
@@ -119,7 +119,7 @@ The input format is restricted to a 6-digit hexadecimal string, case-insensitive
 
 If no modifications are made, the default color parameters will be used for drawing.
 
-#### `return_side_results` 
+#### `return_side_results`
 
 - **Request Example**
 
@@ -156,7 +156,7 @@ If no modifications are made, the default color parameters will be used for draw
 | `face_rectangle`    | `object`      | The position of the face rectangle box. [More Details](#face_rectangle)  |
 | `result`            | `object`      | Results of the facial skin analysis. [More Details](#result)             |
 
-#### `left_side_result` 
+#### `left_side_result`
 
 | Field                        | Type      | Scope                                                                         | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
 |:-----------------------------|:----------|:------------------------------------------------------------------------------|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -166,7 +166,7 @@ If no modifications are made, the default color parameters will be used for draw
 | ++`left_jawline_mark`        | `array`   |                                                                               | Coordinates of the facial keypoints for the jawline.                                                                                                                                                                                                                                                                                                                                                                                                                                            |
 | ++`left_jawline_angle_level` | `integer` | ``0``, ``1`` | Standard degree of the jawline. ``0`: Standard (116°–120°)` ``1`: Not Standard`                                                                                                                                                                                                                                                                                                                                                                                                   |
 
-#### `right_side_result` 
+#### `right_side_result`
 
 | Field                         | Type      | Scope                                                                         | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
 |:------------------------------|:----------|:------------------------------------------------------------------------------|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -176,7 +176,7 @@ If no modifications are made, the default color parameters will be used for draw
 | ++`right_jawline_mark`        | `array`   |                                                                               | Coordinates of the facial keypoints for the jawline.                                                                                                                                                                                                                                                                                                                                                                                                                                              |
 | ++`right_jawline_angle_level` | `integer` | ``0``, ``1`` | Standard degree of the jawline. ``0`: Standard (116°–120°)` ``1`: Not Standard`                                                                                                                                                                                                                                                                                                                                                                                                     |
 
-#### `face_rectangle` 
+#### `face_rectangle`
 
 | Field     | Type    | Description                                                             |
 |:----------|:--------|:------------------------------------------------------------------------|
@@ -185,7 +185,7 @@ If no modifications are made, the default color parameters will be used for draw
 | +`width`  | `float` | The width of the rectangular box.                                       |
 | +`height` | `float` | The height of the rectangular box.                                      |
 
-#### `result` 
+#### `result`
 
 | Modules                                                         | Field                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
 |:----------------------------------------------------------------|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -201,7 +201,7 @@ If no modifications are made, the default color parameters will be used for draw
 | [Digital Scoring System Module](#digital_scoring_system_module) | ``score_info`` |
 | [Custom Module](#custom_module)                                 | ``enhanced_bw_info``, ``face_maps`` |
 
-##### Image Quality Module 
+##### Image Quality Module
 
 It returns the proportion of the face in the image, face coordinates, face angle values, and the proportion of bangs. The face coordinates can be used to extract the face for custom interactive design.
 
@@ -223,7 +223,7 @@ The face proportion in the image, face angle values, and bangs proportion can be
 | ++`hair_occlusion`   | `float`       | [0, 1]                    | The proportion of bangs on the face: the larger the value, the greater the proportion of bangs.                                             |
 | ++`glasses`          | `integer`     | ``0``, ``1`` | ``0`: No eyeglasses were worn.` ``1`: Wearing eyeglasses.`                                                                    |
 
-##### Skin Quality Analysis Module 
+##### Skin Quality Analysis Module
 
 It analyzes the skin's oil-dryness index. `skin_type` serves as an overall classification to determine the user's skin type, while `oily_intensity` and `water` analyze the current state of the user's skin in terms of moisture level and oiliness.
 
@@ -270,7 +270,7 @@ It analyzes the skin's oil-dryness index. `skin_type` serves as an overall class
 | ++`water_leftcheek`  | `object`  |                                                     | Percentage of dehydrated area on the left cheek.                                                                                                      |
 | +++`area`            | `float`   | [0, 1]                                              | Area share.                                                                                                                                           |
 
-##### Skin Tone Analysis Module 
+##### Skin Tone Analysis Module
 
 `skintone_ita` is an upgraded version of `skintone`. You can use either of the two, but it's recommended to use the combination of `skintone_ita` and `skin_hue_ha`.
 
@@ -286,7 +286,7 @@ It analyzes the skin's oil-dryness index. `skin_type` serves as an overall class
 | ++`HA`          | `float`   | [0, 90]                                                                                    | HA angle value.                                                                                                                                                                                                                                                                          |
 | ++`skin_hue`    | `integer` | ``0``, ``1``, ``2``, ``3`` | Classified according to HA's skin tone hue. ``0`: Yellowish.` ``1`: Neutral.` ``2`: Reddish.` ``3`: Abnormal hue values may be caused by abnormal ambient light tones or weak light environment or overexposure.`                                            |
 
-###### `skintone_ita` 
+###### `skintone_ita`
 
 ITA (Individual Typology Angle) is an internationally recognized skin color standard. It classifies skin color based on measurements of color attributes in the Lab color space. This method is highly sensitive to ambient lighting conditions. For best results, we recommend using a flash to take high-definition photos of the face for processing. Measurements taken in natural or low-light conditions may be inaccurate or inconsistent.
 
@@ -304,7 +304,7 @@ Based on data from the smartphone's rear flash, the current skin color classific
 
 You can also use the returned ITA value to define your classification based on the returned ITA angle at the time of access.
 
-###### `skin_hue_ha` 
+###### `skin_hue_ha`
 
 HA (Hue Angle) is an internationally recognized skin color standard. It classifies skin color by measuring color attributes in the Lab color space. This method is highly sensitive to ambient lighting conditions. For accurate results, we recommend using a flash to take high-definition photos of the face for processing, as HA angle values measured in natural or low-light conditions may be inaccurate or inconsistent.
 
@@ -319,7 +319,7 @@ According to the data taken by the rear flash of the phone, the current skin ton
 
 You can also use the returned HA value to define your classification based on the returned HA angle at the time of access.
 
-##### Roughness Analysis Module 
+##### Roughness Analysis Module
 
 - `blackhead` indicates the severity of blackheads, while `blackhead_count` represents the number of blackheads.
 - `enlarged_pore_count` is the count of enlarged pores.
@@ -361,7 +361,7 @@ You can also use the returned HA value to define your classification based on th
 | ++`rough_jaw`          | `object`  |                                                     | Jaw.                                                                                                                                                                                                                                    |
 | +++`area`              | `float`   | [0, 1]                                              | Area share.                                                                                                                                                                                                                             |
 
-##### Pigmentation Analysis Module 
+##### Pigmentation Analysis Module
 
 - `melanin` indicates the degree and area proportion of pigmentation on the face. The degree is represented by a score, with higher numbers indicating more severe pigmentation issues. The pigmentation score can be calculated using the `score_info > melanin_score` field.
 - `melanin_mark` provides the coordinates of the pigmentation areas, which can be used to directly draw these areas.
@@ -412,7 +412,7 @@ If detailed results on specific pigmentation issues (such as moles or spots) are
 | ++`value`                 | `integer` | ``0``, ``1`` | ``0`: No freckles.` ``1`: There are freckles.`                                                                                                               |
 | ++`confidence`            | `float`   |                           | Confidence.                                                                                                                                                                |
 
-##### Acne Analysis Module 
+##### Acne Analysis Module
 
 - `acne`, `acne_pustule`, `acne_nodule`, `acne_mark`, and `closed_comedones` represent different types of acne analysis. You can use the returned coordinates to draw rectangular and polygonal boxes around these types.
 - To assess the severity of acne, you can refer to the score provided in the `score_info > acne_score` field.
@@ -480,7 +480,7 @@ If detailed results on specific pigmentation issues (such as moles or spots) are
 | ++++`y`             | `float`   |       |                                                                                                                                                                                                                                                                                                                  |
 | ++`count`           | `integer` |       | Quantity.                                                                                                                                                                                                                                                                                                        |
 
-##### Sensitivity Analysis Module 
+##### Sensitivity Analysis Module
 
 - `sensitivity` indicates the degree of sensitivity on the face and the area proportion affected. The degree is represented by a score, with higher numbers indicating more severe sensitivity issues. The sensitivity score can be calculated using the `score_info > sensitivity_score` field.
 - `sensitivity_mark` provides the coordinates of the sensitive areas on the face, which can be used to directly draw these areas.
@@ -496,7 +496,7 @@ If detailed results on specific pigmentation issues (such as moles or spots) are
 | ++++`x`                   | `float`  |          |                                                                                                                                                                                                                          |
 | ++++`y`                   | `float`  |          |                                                                                                                                                                                                                          |
 
-##### Aging Analysis Module 
+##### Aging Analysis Module
 
 - `skin_age` assesses the overall skin condition and aging level of the face.
 - The `forehead_wrinkle_info` series provides detailed information about wrinkles in specific areas, including severity and scores. To receive these details, you need to check the severity levels using the following fields: `forehead_wrinkle_severity`, `left_eye_finelines_severity`, and `right_eye_finelines_severity`. If the severity is returned as 0 (none), the wrinkle details (`wrinkle_info`) will not be provided.
@@ -775,7 +775,7 @@ If detailed results on specific pigmentation issues (such as moles or spots) are
 | +++`x`                            | `float`   |                                                     |                                                                                                               |
 | +++`y`                            | `float`   |                                                     |                                                                                                               |
 
-##### Eye Analysis Module 
+##### Eye Analysis Module
 
 - `eye_pouch` determines the presence of under-eye bags. The severity of the bags is provided only if the result is 1, and can be found in `eye_pouch_severity`.
 - Similarly, `dark_circle` and `dark_circle_severity` indicate the presence and severity of dark circles.
@@ -888,7 +888,7 @@ For drawing on areas such as dark circles and eye bags, use the following fields
 | +++`x`                               | `float`   |                                                     |                                                                                                                                                                   |
 | +++`y`                               | `float`   |                                                     |                                                                                                                                                                   |
 
-##### Digital Scoring System Module 
+##### Digital Scoring System Module
 
 It includes a total score and 12 parameters. You can directly assess the level of each dimension based on these parameters.
 
@@ -916,7 +916,7 @@ It includes a total score and 12 parameters. You can directly assess the level o
 | +++`left_dark_circle_score`  | `integer` | [0, 100] | Left Eye Dark Circle Score                                                      |
 | +++`right_dark_circle_score` | `integer` | [0, 100] | Right Eye Dark Circle Score                                                     |
 
-##### Custom Module 
+##### Custom Module
 
 | Field                           | Type     | Scope | Description                                                                                                                                                                                     |
 |:--------------------------------|:---------|:------|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -939,7 +939,7 @@ It includes a total score and 12 parameters. You can directly assess the level o
 | ++`roi_outline_map`             | `base64` |       | [More Details](#return_maps)                                                                                                                                                                    |
 | ++`texture_enhanced_bw`         | `base64` |       | [More Details](#return_maps)                                                                                                                                                                    |
 
-###### Coordinate conversion formula between original image and black and white enhanced image 
+###### Coordinate conversion formula between original image and black and white enhanced image
 
 x_enhance = (x_img - left) * ratio
 
@@ -959,7 +959,7 @@ This API has been discontinued. Please refer to the latest API documentation.
 
 ## Sample Code
 
-**[👉 Online Experience 👈**(https://www.ailabtools.com/portrait-skin-analysis-professional-example)]
+[👉 Online Experience 👈](https://www.ailabtools.com/portrait-skin-analysis-professional-example)
 
 If you'd like to see the actual effects, please visit the experience page for a trial.
 
