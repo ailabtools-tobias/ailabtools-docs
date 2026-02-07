@@ -3,9 +3,9 @@ title: "Skin analyze Pro - API:V1.6.6"
 description: "Analysis of skin condition, such as skin color, skin texture, double eyelids, eye bags, dark circles, wrinkles, acne, spots, etc."
 ---
 
-import apiOfflineNotice from '/snippets/api-offline-notice.mdx';
+import ApiVersionUpdateNotice from '/snippets/api-version-update-notice.mdx';
 
-<apiOfflineNotice />
+<ApiVersionUpdateNotice />
 
 ## Request
 
@@ -39,7 +39,7 @@ import apiOfflineNotice from '/snippets/api-offline-notice.mdx';
 | `roi_outline_color`   | NO       | `json string` |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        | Customize the color. [More Details](#roi_outline_color)                                                                                                                                                                                                                                                                           |
 | `return_side_results` | NO       | `string`      | ``jawline_info`` | The side face information that needs to be returned. Use commas to separate multiple types. (#return_side_results)                                                                                                                                                                                                  |
 
-#### `return_maps` 
+#### `return_maps`
 
 - **Request Example**
 
@@ -60,7 +60,7 @@ import apiOfflineNotice from '/snippets/api-offline-notice.mdx';
 | `roi_outline_map`             | Facial blemishes and acne coordinates mapping                                                                          | Transparent background PNG, labeled facial spots and acne areas, image size is the same as the original image, can be overlaid with the original image for viewing. |
 | `texture_enhanced_bw`         | Facial blackheads & enlarged pores black & white enhancement chart                                                     | JPG with crop, interface with return coordinates and cropped scale that can correspond to the pixel coordinates in the original image.                              |
 
-#### `return_marks` 
+#### `return_marks`
 
 - **Request Example**
 
@@ -89,7 +89,7 @@ import apiOfflineNotice from '/snippets/api-offline-notice.mdx';
 | `dark_circle_outline`    | Left and right eye dark circle contour line coordinates                                                    |
 | `cheekbone_mark`         | Facial apple coordinates                                                                                   |
 
-#### `roi_outline_color` 
+#### `roi_outline_color`
 
 - **Request Example**
 
@@ -115,7 +115,7 @@ The input format is limited to a 6-bit hexadecimal string and is not case-sensit
 
 If not modified, it will draw directly using the default parameter colors.
 
-#### `return_side_results` 
+#### `return_side_results`
 
 - **Request Example**
 
@@ -152,7 +152,7 @@ If not modified, it will draw directly using the default parameter colors.
 | `face_rectangle`    | `object`      | Face position. [More Details](#face_rectangle)                    |
 | `result`            | `object`      | Results of face skin analysis. [More Details](#result)            |
 
-#### `left_side_result` 
+#### `left_side_result`
 
 | Field                   | Type      | Scope                                                                         | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
 |:------------------------|:----------|:------------------------------------------------------------------------------|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -160,7 +160,7 @@ If not modified, it will draw directly using the default parameter colors.
 | +`left_jawline_angle`   | `float`   |                                                                               | The angle of the jawline.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
 | +`left_jawline_mark`    | `array`   |                                                                               | Coordinates of jawline face key points.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
 
-#### `right_side_result` 
+#### `right_side_result`
 
 | Field                    | Type      | Scope                                                                         | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
 |:-------------------------|:----------|:------------------------------------------------------------------------------|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -168,7 +168,7 @@ If not modified, it will draw directly using the default parameter colors.
 | +`right_jawline_angle`   | `float`   |                                                                               | The angle of the jawline.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
 | +`right_jawline_mark`    | `array`   |                                                                               | Coordinates of jawline face key points.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
 
-#### `face_rectangle` 
+#### `face_rectangle`
 
 | Field     | Type    | Description                                                                               |
 |:----------|:--------|:------------------------------------------------------------------------------------------|
@@ -177,7 +177,7 @@ If not modified, it will draw directly using the default parameter colors.
 | +`width`  | `float` | The width of the rectangle box.                                                           |
 | +`height` | `float` | The height of the rectangle box.                                                          |
 
-#### `result` 
+#### `result`
 
 | Modules                                       |
 |:----------------------------------------------|
@@ -192,7 +192,7 @@ If not modified, it will draw directly using the default parameter colors.
 | [Overall Score](#overall_score)               |
 | [Customization](#customization)               |
 
-##### Image quality 
+##### Image quality
 
 | Field                | Type          | Scope                     | Description                                                                                                                             |
 |:---------------------|:--------------|:--------------------------|:----------------------------------------------------------------------------------------------------------------------------------------|
@@ -210,7 +210,7 @@ If not modified, it will draw directly using the default parameter colors.
 | ++`hair_occlusion`   | `float`       |                           | The proportion of bangs to the human face.                                                                                              |
 | ++`glasses`          | `integer`     | ``0``, ``1`` | ``0`: No eyeglasses were worn.` ``1`: Wearing eyeglasses.`                                                                |
 
-##### Skin Type Analysis 
+##### Skin Type Analysis
 
 | Field                | Type      | Scope                                                                                      | Description                                                                                                                                                                                                                                                                              |
 |:---------------------|:----------|:-------------------------------------------------------------------------------------------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -261,7 +261,7 @@ If not modified, it will draw directly using the default parameter colors.
 | ++`HA`               | `float`   | [0, 90]                                                                                    | HA angle value.                                                                                                                                                                                                                                                                          |
 | ++`skintone`         | `integer` | ``0``, ``1``, ``2``, ``3`` | Classified according to HA's skin tone hue. ``0`: Yellowish.` ``1`: Neutral.` ``2`: Reddish.` ``3`: Abnormal hue values may be caused by abnormal ambient light tones or weak light environment or overexposure.`                                            |
 
-##### Roughness analysis 
+##### Roughness analysis
 
 | Field                  | Type      | Scope                                               | Description                                                                                                                                                                                                                             |
 |:-----------------------|:----------|:----------------------------------------------------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -306,7 +306,7 @@ If not modified, it will draw directly using the default parameter colors.
 | ++`rough_jaw`          | `object`  |                                                     | Jaw.                                                                                                                                                                                                                                    |
 | +++`area`              | `float`   | [0, 1]                                              | Area share.                                                                                                                                                                                                                             |
 
-##### Pigmentation 
+##### Pigmentation
 
 | Field                     | Type      | Scope                     | Description                                                                                                                                                                |
 |:--------------------------|:----------|:--------------------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -350,7 +350,7 @@ If not modified, it will draw directly using the default parameter colors.
 | ++`value`                 | `integer` | ``0``, ``1`` | ``0`: No freckles.` ``1`: There are freckles.`                                                                                                               |
 | ++`confidence`            | `float`   |                           | Confidence.                                                                                                                                                                |
 
-##### Acne Analysis 
+##### Acne Analysis
 
 | Field               | Type     | Scope | Description                                                                                                                                                                                                                                                                                                      |
 |:--------------------|:---------|:------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -410,7 +410,7 @@ If not modified, it will draw directly using the default parameter colors.
 | ++++`x`             | `float`  |       |                                                                                                                                                                                                                                                                                                                  |
 | ++++`y`             | `float`  |       |                                                                                                                                                                                                                                                                                                                  |
 
-##### Sensitivity Analysis 
+##### Sensitivity Analysis
 
 | Field                     | Type     | Scope    | Description                                                                                                                                                                                                              |
 |:--------------------------|:---------|:---------|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -423,7 +423,7 @@ If not modified, it will draw directly using the default parameter colors.
 | ++++`x`                   | `float`  |          |                                                                                                                                                                                                                          |
 | ++++`y`                   | `float`  |          |                                                                                                                                                                                                                          |
 
-##### Senescence analysis 
+##### Senescence analysis
 
 | Field                             | Type      | Scope                                               | Description                                                                                                   |
 |:----------------------------------|:----------|:----------------------------------------------------|:--------------------------------------------------------------------------------------------------------------|
@@ -693,7 +693,7 @@ If not modified, it will draw directly using the default parameter colors.
 | +++`x`                            | `float`   |                                                     |                                                                                                               |
 | +++`y`                            | `float`   |                                                     |                                                                                                               |
 
-##### Eye Analysis 
+##### Eye Analysis
 
 | Field                                | Type      | Scope                                               | Description                                                                                                                                                       |
 |:-------------------------------------|:----------|:----------------------------------------------------|:------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -797,7 +797,7 @@ If not modified, it will draw directly using the default parameter colors.
 | +++`x`                               | `float`   |                                                     |                                                                                                                                                                   |
 | +++`y`                               | `float`   |                                                     |                                                                                                                                                                   |
 
-##### Overall Score 
+##### Overall Score
 
 | Field                        | Type      | Scope    | Description                                                                     |
 |:-----------------------------|:----------|:---------|:--------------------------------------------------------------------------------|
@@ -823,7 +823,7 @@ If not modified, it will draw directly using the default parameter colors.
 | +++`left_dark_circle_score`  | `integer` | [0, 100] | Left Eye Dark Circle Score                                                      |
 | +++`right_dark_circle_score` | `integer` | [0, 100] | Right Eye Dark Circle Score                                                     |
 
-##### Customization 
+##### Customization
 
 | Field                           | Type     | Scope | Description                                                                                                  |
 |:--------------------------------|:---------|:------|:-------------------------------------------------------------------------------------------------------------|
@@ -846,7 +846,7 @@ If not modified, it will draw directly using the default parameter colors.
 | ++`roi_outline_map`             | `base64` |       | [More Details](#return_maps)                                                                                 |
 | ++`texture_enhanced_bw`         | `base64` |       | [More Details](#return_maps)                                                                                 |
 
-#### `skintone_ita` 
+#### `skintone_ita`
 
 ITA (Individual Typology Angle) is an international standard for skin color, which is a method to classify skin color by measuring the color attributes of skin color Lab space. The method is strongly dependent on ambient light, we recommend using flash to take HD face photos for uploading and processing, the ITA angle value measured in natural light or dark environment may not be allowed or abnormal.
 
@@ -864,7 +864,7 @@ According to the data taken by the rear flash of the phone, the current skin col
 
 You can also use the returned ITA value to define your classification based on the returned ITA angle at the time of access.
 
-#### `skin_hue_ha` 
+#### `skin_hue_ha`
 
 HA (Hue Angle) is an international standard for skin color, which is a method to classify skin color by measuring the color attributes of skin color Lab space. The method is strongly dependent on ambient light, we recommend using flash to take HD face photos for uploading and processing, the HA angle value measured in natural light or dark light environment may not be allowed or abnormal.
 
@@ -879,7 +879,7 @@ According to the data taken by the rear flash of the phone, the current skin ton
 
 You can also use the returned HA value to define your classification based on the returned HA angle at the time of access.
 
-#### Coordinate conversion formula between original image and black and white enhanced image 
+#### Coordinate conversion formula between original image and black and white enhanced image
 
 x_enhance = (x_img - left) * ratio
 

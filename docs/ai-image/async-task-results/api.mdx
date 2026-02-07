@@ -5,6 +5,10 @@ description: "For asynchronous interface, after calling the API, the returned re
 openapi: "GET /api/image/asyn-task-results"
 ---
 
+import ApiOfflineNotice from "/snippets/api-offline-notice.mdx";
+
+<ApiOfflineNotice />
+
 # AILabTools API - Querying Async Task Results - API
 
 For asynchronous interface, after calling the API, the returned result is not the real request result, you need to save the `request_id` in the returned result and then call this interface to get the real request result.

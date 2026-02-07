@@ -3,6 +3,10 @@ title: "Hitchcock special effects - API:V2.0.0"
 description: "Based on portrait segmentation technology, it realizes 2D to 3D conversion of photos to achieve the effect of 3D naked eye slow motion. The selfie image and the background image using Hitchcock technology senseless fusion, open the scene stretching video shooting new way to play, can be used for personal social entertainment, film and television drama effect simulation shooting, etc."
 ---
 
+import ApiVersionUpdateNotice from '/snippets/api-version-update-notice.mdx';
+
+<ApiVersionUpdateNotice />
+
 # AILabTools API - Hitchcock special effects - API:V2.0.0
 
 ## Request
@@ -36,7 +40,7 @@ description: "Based on portrait segmentation technology, it realizes 2D to 3D co
 | `use_flow`     | NO       | `integer` | ``-1``, ``0``, ``1`` | `-1`           | ``-1`: The algorithm determines whether to enable the flow effect based on the `mode` value.`, ``0`: Forcefully disable the flow effect.`, ``1`: Forcefully enable the flow effect.` |
 | `speed_shift`  | NO       | `string`  |                                                                  | Constant Speed | `Each pair of adjacent values represents the x and y values of a control point.`, `x range [0, 1]: Progress from the beginning to the end of the original video.`, `y range [0.1, 10]: Speed rate.`, `Each pair of adjacent control points represents a speed change curve, with the curve function being a trigonometric function.` |
 
-#### `speed_shift` 
+#### `speed_shift`
 
 For example, `0,1,0.5,4,0.5,4,1,1` represents the curve in the following diagram.
 ![Video Curve Speed Variation](https://ai-resource.ailabtools.com/hitchcock-special-effects/doc/speed_shift-example.webp)
@@ -68,7 +72,7 @@ For example, `0,1,0.5,4,0.5,4,1,1` represents the curve in the following diagram
 
 ```json
 ,
-  "data":           
+  "data":
 }
 ```
 
