@@ -1,28 +1,21 @@
 ---
 sidebarTitle: "API"
-title: "AI Object Replacer API"
-description: "AI Object Replacer utilizes advanced AI technology to intelligently remove unwanted objects such as text and people based on a mask image, and seamlessly fill the gaps with appropriate content based on user prompts."
-openapi: "POST /api/image/editing/ai-object-replacer"
+title: "AI Nail Art API"
+description: "AI Nail Art applies AI-generated nail designs to real nail photos based on a name and detailed description, producing realistic and clean nail renderings."
+openapi: "POST /api/image/editing/ai-nail-art"
 ---
 
 ## Request
 
-- **URL**: `https://www.ailabapi.com/api/image/editing/ai-object-replacer`
+- **URL**: `https://www.ailabapi.com/api/image/editing/ai-nail-art`
 - **Method**: `POST`
 - **Content-Type**: `multipart/form-data`
 
 ### Image requirements
 
-- **Image format**: `JPEG` `JPG` `PNG`
-- **Image size**: No more than 5 MB.
-- **Image resolution**: Larger than 64x64px, smaller than 4096x4096px.
-
-#### Mask image requirements:
-
-1. Single-channel grayscale image (0-255).
-2. Three-channel image, with equal RGB values.
-3. RGBA four-channel image, with equal RGB values and the A channel all set to 255.
-4. File format: 8-bit PNG encoding, do not embed "ICC Profile".
+- **Image format**: `JPEG` `JPG` `PNG` `WEBP`
+- **Image size**: No more than 10 MB.
+- **Image resolution**: Less than 4096x4096px.
 
 ### Headers
 
@@ -32,14 +25,11 @@ openapi: "POST /api/image/editing/ai-object-replacer"
 
 ### Body
 
-| Field           | Required | Type      | Scope   | Default | Description                                                                                                                                                                                                                                                                                              |
-|:----------------|:---------|:----------|:--------|:--------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `image`         | YES      | `file`    |         |         | Original image.                                                                                                                                                                                                                                                                                          |
-| `mask`          | YES      | `file`    |         |         | Mask image.                                                                                                                                                                                                                                                                                              |
-| `custom_prompt` | NO       | `string`  |         |         | Prompt Content (English only). Please limit the prompt content to 100 English words or fewer. Any content beyond this limit may have minimal impact on the generated result. Use standard vocabulary to avoid failing the review process.                                                                |
-| `steps`         | NO       | `integer` | [1, +]  | `25`    | Sampling steps determine the level of detail in the generated image. A higher value may result in better quality, but it will significantly increase the processing time.                                                                                                                                |
-| `scale`         | NO       | `float`   | [1, 20] | `5`     | The degree to which the text description influences the output.                                                                                                                                                                                                                                          |
-| `seed`          | NO       | `integer` | [-1, +] | `-1`    | Random seed, used as the basis for determining the initial state of the diffusion process. It must be a non-negative number (`-1` represents a random seed). If the random seed is the same positive integer and all other parameters are identical, the generated image will most likely be consistent. |
+| Field       | Required | Type     | Scope   | Default | Description                                                                                                                                                     |
+|:------------|:---------|:---------|:--------|:--------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `image`     | YES      | `file`   |         |         | Original image.                                                                                                                                                |
+| `nail_name` | YES      | `string` |         |         | Nail name (English only). Max 500 characters; extra text will be automatically truncated. Use standard vocabulary to pass review.                              |
+| `nail_desc` | YES      | `string` |         |         | Nail description (English only). Max 1000 characters; extra text will be automatically truncated. Use standard vocabulary to pass review.                      |
 
 ## Response
 <Warning>
@@ -59,10 +49,10 @@ openapi: "POST /api/image/editing/ai-object-replacer"
 
 ### Business Response Fields
 
-| Field                 | Type              | Description                                                  |
-|:----------------------|:------------------|:-------------------------------------------------------------|
-| `data`                | `object`          | The content of the result data returned.                     |
-| +`binary_data_base64` | `array of string` | Output the processed image as a Base64 array (single image). |
+| Field       | Type     | Scope            | Description                                                                                                                                   |
+|:------------|:---------|:-----------------|:----------------------------------------------------------------------------------------------------------------------------------------------|
+| `task_type` | `string` | ``async`` | Task Type. ``async`: Asynchronous tasks.`                                                                                              |
+| `task_id`   | `string` |                  | Asynchronous task ID. <br/>**Please use this field when calling the [Querying Async Task Results](/docs/ai-common/async-task-results/api) API.** |
 
 ### Response Example
 
@@ -71,6 +61,7 @@ openapi: "POST /api/image/editing/ai-object-replacer"
   "request_id":     "",
   "log_id":         "",
   "error_code":     0,
+  "error_code_str": "",
   "error_msg":      "",
   "error_detail":   {
     "status_code":  200,
@@ -78,16 +69,17 @@ openapi: "POST /api/image/editing/ai-object-replacer"
     "code_message": "",
     "message":      ""
   },
-  "data":           {
-    "binary_data_base64": []
-  }
+  "task_type":      "async",
+  "task_id":        ""
 }
 ```
+<Tip>
+This API is asynchronous, please keep `task_id` and call [`Querying Async Task Results`](ai-common/async-task-results/api) to get the final results.
+
+Asynchronous task results are valid for 24 hours. It is recommended that asynchronous task results be queried every 5 seconds.
+</Tip>
 
 ## Sample Code
 <Tip>
   - [Introduction to Get Sample Code](get-sample-code)
-  - [Sample Code][PostmanURL]
 </Tip>
-
-[PostmanURL]: https://documenter.getpostman.com/view/26387069/2s93JxqgHE#16a4449a-4054-4b13-8f08-e7a13dbdae86

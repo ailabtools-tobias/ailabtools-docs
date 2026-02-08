@@ -772,6 +772,30 @@
                       "docs/ai-image/editing/ai-image-extender",
                       "docs/ai-image/editing/ai-image-extender/api"
                     ]
+                  },
+                  {
+                    "group": "AI Nail Art",
+                    "icon": "hand-holding-heart",
+                    "pages": [
+                      "docs/ai-image/editing/ai-nail-art",
+                      "docs/ai-image/editing/ai-nail-art/api"
+                    ]
+                  },
+                  {
+                    "group": "Photo to Coloring Page",
+                    "icon": "palette",
+                    "pages": [
+                      "docs/ai-image/editing/photo-to-line-art",
+                      "docs/ai-image/editing/photo-to-line-art/api"
+                    ]
+                  },
+                  {
+                    "group": "AI Emoji Generator",
+                    "icon": "face-smile",
+                    "pages": [
+                      "docs/ai-image/editing/photo-to-emoji-grid",
+                      "docs/ai-image/editing/photo-to-emoji-grid/api"
+                    ]
                   }
                 ]
               },
