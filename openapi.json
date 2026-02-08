@@ -1006,6 +1006,181 @@
         }
       }
     },
+    "/api/image/effects/photo-to-line-art": {
+      "post": {
+        "tags": [
+          "AI IMAGE > Image Effects"
+        ],
+        "summary": "Photo to Coloring Page",
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "image"
+                ],
+                "properties": {
+                  "image": {
+                    "type": "string",
+                    "description": "Original image. \n- Image format: `JPEG` `JPG` `PNG` `WEBP` \n- Image size: No more than 10 MB. \n- Image resolution: Less than 4096x4096px.",
+                    "format": "binary"
+                  },
+                  "prompt": {
+                    "type": "string",
+                    "description": "Prompt (English only). Max 3000 characters; extra text will be automatically truncated. Use standard vocabulary to pass review.",
+                    "maxLength": 3000
+                  },
+                  "image_size": {
+                    "type": "string",
+                    "description": "Output Image Aspect Ratio.",
+                    "enum": [
+                      "A4",
+                      "auto",
+                      "1:1",
+                      "2:3",
+                      "3:2",
+                      "3:4",
+                      "4:3",
+                      "4:5",
+                      "5:4",
+                      "9:16",
+                      "16:9",
+                      "21:9"
+                    ],
+                    "default": "A4"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "application/json"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                },
+                "example": {
+                  "request_id": "",
+                  "log_id": "",
+                  "error_code": 0,
+                  "error_code_str": "",
+                  "error_msg": "",
+                  "error_detail": {
+                    "status_code": 200,
+                    "code": "",
+                    "code_message": "",
+                    "message": ""
+                  },
+                  "task_type": "async",
+                  "task_id": ""
+                }
+              }
+            },
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/image/effects/photo-to-emoji-grid": {
+      "post": {
+        "tags": [
+          "AI IMAGE > Image Effects"
+        ],
+        "summary": "AI Emoji Generator",
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "image",
+                  "expression",
+                  "style",
+                  "scene"
+                ],
+                "properties": {
+                  "image": {
+                    "type": "string",
+                    "description": "Original image. \n- Image format: `JPEG` `JPG` `PNG` `WEBP` \n- Image size: No more than 10 MB. \n- Image resolution: Less than 4096x4096px.",
+                    "format": "binary"
+                  },
+                  "expression": {
+                    "type": "string",
+                    "description": "Expression (English only). Max 100 characters; extra text will be automatically truncated. Use standard vocabulary to pass review.",
+                    "maxLength": 100,
+                    "example": "Angry"
+                  },
+                  "style": {
+                    "type": "string",
+                    "description": "Style (English only). Max 100 characters; extra text will be automatically truncated. Use standard vocabulary to pass review.",
+                    "maxLength": 100,
+                    "example": "3D Emoji Render"
+                  },
+                  "scene": {
+                    "type": "string",
+                    "description": "Scene (English only). Max 100 characters; extra text will be automatically truncated. Use standard vocabulary to pass review.",
+                    "maxLength": 100,
+                    "example": "Baby Shower"
+                  },
+                  "filler": {
+                    "type": "string",
+                    "description": "Filler Text (English only). Max 20 characters; extra text will be automatically truncated. Use standard vocabulary to pass review.",
+                    "maxLength": 20,
+                    "example": "Go Go Go"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "application/json"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                },
+                "example": {
+                  "request_id": "",
+                  "log_id": "",
+                  "error_code": 0,
+                  "error_code_str": "",
+                  "error_msg": "",
+                  "error_detail": {
+                    "status_code": 200,
+                    "code": "",
+                    "code_message": "",
+                    "message": ""
+                  },
+                  "task_type": "async",
+                  "task_id": ""
+                }
+              }
+            },
+            "description": "Success"
+          }
+        }
+      }
+    },
     "/api/image/editing/image-cropping": {
       "post": {
         "tags": [
@@ -1975,6 +2150,82 @@
                       }
                     }
                   }
+                }
+              }
+            },
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/image/editing/ai-nail-art": {
+      "post": {
+        "tags": [
+          "AI IMAGE > Image Editing"
+        ],
+        "summary": "AI Nail Art",
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "image",
+                  "nail_name",
+                  "nail_desc"
+                ],
+                "properties": {
+                  "image": {
+                    "type": "string",
+                    "description": "Original image. \n- Image format: `JPEG` `JPG` `PNG` `WEBP` \n- Image size: No more than 10 MB. \n- Image resolution: Less than 4096x4096px.",
+                    "format": "binary"
+                  },
+                  "nail_name": {
+                    "type": "string",
+                    "description": "Nail Name (English only). Max 500 characters; extra text will be automatically truncated. Use standard vocabulary to pass review.",
+                    "maxLength": 500,
+                    "example": "Golden Butterfly Glow"
+                  },
+                  "nail_desc": {
+                    "type": "string",
+                    "description": "Nail Description (English only). Max 1000 characters; extra text will be automatically truncated. Use standard vocabulary to pass review.",
+                    "maxLength": 1000,
+                    "example": "Champagne nude shimmer with gold butterfly accents for a soft, luxe finish."
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "application/json"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                },
+                "example": {
+                  "request_id": "",
+                  "log_id": "",
+                  "error_code": 0,
+                  "error_code_str": "",
+                  "error_msg": "",
+                  "error_detail": {
+                    "status_code": 200,
+                    "code": "",
+                    "code_message": "",
+                    "message": ""
+                  },
+                  "task_type": "async",
+                  "task_id": ""
                 }
               }
             },
