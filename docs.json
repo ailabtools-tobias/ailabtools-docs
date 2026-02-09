@@ -177,13 +177,11 @@
             "icon": "rocket",
             "pages": [
               "docs/get-api-key",
-              "docs/get-sample-code",
-              "docs/debugging",
               "docs/response-description"
             ]
           },
           {
-            "group": "AI Common APIs",
+            "group": "AI Common",
             "icon": "brain",
             "pages": [
               "docs/ai-common/querying-credits/api",
@@ -191,96 +189,9 @@
             ]
           },
           {
-            "group": "Report Json",
-            "hidden": true,
-            "pages": [
-              "docs/ai-portrait/analysis/skin-analysis-pro/case1/result",
-              "docs/ai-portrait/analysis/skin-analysis-pro/case2/result",
-              "docs/ai-portrait/analysis/skin-analysis-pro/case3/result",
-              "docs/ai-portrait/analysis/skin-analysis-pro/case4/result"
-            ]
-          },
-          {
             "group": "AI Portrait",
             "icon": "user",
             "pages": [
-              {
-                "group": "Portrait Analysis",
-                "icon": "magnifying-glass",
-                "pages": [
-                  {
-                    "group": "Facial Landmarks",
-                    "icon": "crosshairs",
-                    "pages": [
-                      "docs/ai-portrait/analysis/face-key-points",
-                      "docs/ai-portrait/analysis/face-key-points/api",
-                      "docs/ai-portrait/analysis/face-key-points/face-spatial-pose-angle-reference",
-                      "docs/ai-portrait/analysis/face-key-points/feature-points-72",
-                      "docs/ai-portrait/analysis/face-key-points/feature-points-150",
-                      "docs/ai-portrait/analysis/face-key-points/feature-points-201"
-                    ]
-                  },
-                  {
-                    "group": "Detect Skin Disease",
-                    "icon": "stethoscope",
-                    "pages": [
-                      "docs/ai-portrait/analysis/skin-disease-detection",
-                      "docs/ai-portrait/analysis/skin-disease-detection/api"
-                    ]
-                  },
-                  {
-                    "group": "Skin Analyze",
-                    "icon": "hand",
-                    "pages": [
-                      "docs/ai-portrait/analysis/skin-analysis",
-                      "docs/ai-portrait/analysis/skin-analysis/api"
-                    ]
-                  },
-                  {
-                    "group": "Skin Analyze Advanced",
-                    "icon": "hand-sparkles",
-                    "pages": [
-                      "docs/ai-portrait/analysis/skin-analysis-advanced",
-                      "docs/ai-portrait/analysis/skin-analysis-advanced/api"
-                    ]
-                  },
-                  {
-                    "group": "Skin Analyze Pro",
-                    "icon": "gem",
-                    "pages": [
-                      "docs/ai-portrait/analysis/skin-analysis-pro",
-                      "docs/ai-portrait/analysis/skin-analysis-pro/api",
-                      "docs/ai-portrait/analysis/skin-analysis-pro/degree-score",
-                      {
-                        "group": "Version Logs",
-                        "icon": "clock-rotate-left",
-                        "pages": [
-                          "docs/ai-portrait/analysis/skin-analysis-pro/api-v171",
-                          "docs/ai-portrait/analysis/skin-analysis-pro/api-v166",
-                          "docs/ai-portrait/analysis/skin-analysis-pro/api-v162",
-                          "docs/ai-portrait/analysis/skin-analysis-pro/api-v151"
-                        ]
-                      }
-                    ]
-                  },
-                  {
-                    "group": "Face Analyzer",
-                    "icon": "face-smile",
-                    "pages": [
-                      "docs/ai-portrait/analysis/face-analyzer",
-                      "docs/ai-portrait/analysis/face-analyzer/api"
-                    ]
-                  },
-                  {
-                    "group": "Face Analyzer Advanced",
-                    "icon": "face-smile",
-                    "pages": [
-                      "docs/ai-portrait/analysis/face-analyzer-advanced",
-                      "docs/ai-portrait/analysis/face-analyzer-advanced/api"
-                    ]
-                  }
-                ]
-              },
               {
                 "group": "Portrait Effects",
                 "icon": "wand-magic-sparkles",
@@ -406,21 +317,6 @@
                     ]
                   },
                   {
-                    "group": "Hairstyle Changer",
-                    "icon": "scissors",
-                    "pages": [
-                      "docs/ai-portrait/effects/hairstyle-editor",
-                      "docs/ai-portrait/effects/hairstyle-editor/api",
-                      {
-                        "group": "Version Logs",
-                        "icon": "clock-rotate-left",
-                        "pages": [
-                          "docs/ai-portrait/effects/hairstyle-editor/api-v100"
-                        ]
-                      }
-                    ]
-                  },
-                  {
                     "group": "Hairstyle Changer Pro",
                     "icon": "scissors",
                     "pages": [
@@ -433,29 +329,6 @@
                         "pages": [
                           "docs/ai-portrait/effects/hairstyle-editor-pro/api-v200",
                           "docs/ai-portrait/effects/hairstyle-editor-pro/api-v100"
-                        ]
-                      }
-                    ]
-                  },
-                  {
-                    "group": "Live Photos",
-                    "icon": "camera",
-                    "pages": [
-                      "docs/ai-portrait/effects/live-photo",
-                      "docs/ai-portrait/effects/live-photo/api"
-                    ]
-                  },
-                  {
-                    "group": "Hitchcock Special Effects",
-                    "icon": "film",
-                    "pages": [
-                      "docs/ai-portrait/effects/hitchcock-effects",
-                      "docs/ai-portrait/effects/hitchcock-effects/api",
-                      {
-                        "group": "Version Logs",
-                        "icon": "clock-rotate-left",
-                        "pages": [
-                          "docs/ai-portrait/effects/hitchcock-effects/api-v100"
                         ]
                       }
                     ]
@@ -545,6 +418,75 @@
                     ]
                   }
                 ]
+              },
+              {
+                "group": "Portrait Analysis",
+                "icon": "magnifying-glass",
+                "pages": [
+                  {
+                    "group": "Facial Landmarks",
+                    "icon": "crosshairs",
+                    "pages": [
+                      "docs/ai-portrait/analysis/face-key-points",
+                      "docs/ai-portrait/analysis/face-key-points/api",
+                      "docs/ai-portrait/analysis/face-key-points/face-spatial-pose-angle-reference",
+                      "docs/ai-portrait/analysis/face-key-points/feature-points-72",
+                      "docs/ai-portrait/analysis/face-key-points/feature-points-150",
+                      "docs/ai-portrait/analysis/face-key-points/feature-points-201"
+                    ]
+                  },
+                  {
+                    "group": "Skin Analyze",
+                    "icon": "hand",
+                    "pages": [
+                      "docs/ai-portrait/analysis/skin-analysis",
+                      "docs/ai-portrait/analysis/skin-analysis/api"
+                    ]
+                  },
+                  {
+                    "group": "Skin Analyze Advanced",
+                    "icon": "hand-sparkles",
+                    "pages": [
+                      "docs/ai-portrait/analysis/skin-analysis-advanced",
+                      "docs/ai-portrait/analysis/skin-analysis-advanced/api"
+                    ]
+                  },
+                  {
+                    "group": "Skin Analyze Pro",
+                    "icon": "gem",
+                    "pages": [
+                      "docs/ai-portrait/analysis/skin-analysis-pro",
+                      "docs/ai-portrait/analysis/skin-analysis-pro/api",
+                      "docs/ai-portrait/analysis/skin-analysis-pro/degree-score",
+                      {
+                        "group": "Version Logs",
+                        "icon": "clock-rotate-left",
+                        "pages": [
+                          "docs/ai-portrait/analysis/skin-analysis-pro/api-v171",
+                          "docs/ai-portrait/analysis/skin-analysis-pro/api-v166",
+                          "docs/ai-portrait/analysis/skin-analysis-pro/api-v162",
+                          "docs/ai-portrait/analysis/skin-analysis-pro/api-v151"
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "group": "Face Analyzer",
+                    "icon": "face-smile",
+                    "pages": [
+                      "docs/ai-portrait/analysis/face-analyzer",
+                      "docs/ai-portrait/analysis/face-analyzer/api"
+                    ]
+                  },
+                  {
+                    "group": "Face Analyzer Advanced",
+                    "icon": "face-smile",
+                    "pages": [
+                      "docs/ai-portrait/analysis/face-analyzer-advanced",
+                      "docs/ai-portrait/analysis/face-analyzer-advanced/api"
+                    ]
+                  }
+                ]
               }
             ]
           },
@@ -552,67 +494,6 @@
             "group": "AI Image",
             "icon": "image",
             "pages": [
-              {
-                "group": "Image Enhancement",
-                "icon": "arrow-up",
-                "pages": [
-                  {
-                    "group": "Image Dehaze",
-                    "icon": "cloud",
-                    "pages": [
-                      "docs/ai-image/enhance/image-defogging",
-                      "docs/ai-image/enhance/image-defogging/api"
-                    ]
-                  },
-                  {
-                    "group": "Image Upscaler",
-                    "icon": "expand",
-                    "pages": [
-                      "docs/ai-image/enhance/image-lossless-enlargement",
-                      "docs/ai-image/enhance/image-lossless-enlargement/api",
-                      {
-                        "group": "Version Logs",
-                        "icon": "clock-rotate-left",
-                        "pages": [
-                          "docs/ai-image/enhance/image-lossless-enlargement/api-v100"
-                        ]
-                      }
-                    ]
-                  },
-                  {
-                    "group": "Stretched Image Restoration",
-                    "icon": "down-left-and-up-right-to-center",
-                    "pages": [
-                      "docs/ai-image/enhance/stretch-image-recovery",
-                      "docs/ai-image/enhance/stretch-image-recovery/api"
-                    ]
-                  },
-                  {
-                    "group": "Image Sharpness Enhancement",
-                    "icon": "crosshairs",
-                    "pages": [
-                      "docs/ai-image/enhance/image-sharpness-enhancement",
-                      "docs/ai-image/enhance/image-sharpness-enhancement/api"
-                    ]
-                  },
-                  {
-                    "group": "Image Contrast Enhancement",
-                    "icon": "circle-half-stroke",
-                    "pages": [
-                      "docs/ai-image/enhance/image-contrast-enhancement",
-                      "docs/ai-image/enhance/image-contrast-enhancement/api"
-                    ]
-                  },
-                  {
-                    "group": "Image Color Enhancement",
-                    "icon": "palette",
-                    "pages": [
-                      "docs/ai-image/enhance/image-color-enhancement",
-                      "docs/ai-image/enhance/image-color-enhancement/api"
-                    ]
-                  }
-                ]
-              },
               {
                 "group": "Image Effects",
                 "icon": "wand-magic",
@@ -650,41 +531,19 @@
                     ]
                   },
                   {
-                    "group": "Style Transfer",
-                    "icon": "paint-roller",
-                    "pages": [
-                      "docs/ai-image/effects/image-style-migration",
-                      "docs/ai-image/effects/image-style-migration/api",
-                      {
-                        "group": "Version Logs",
-                        "icon": "clock-rotate-left",
-                        "pages": [
-                          "docs/ai-image/effects/image-style-migration/api-v100"
-                        ]
-                      }
-                    ]
-                  },
-                  {
-                    "group": "Color Migration",
+                    "group": "Photo to Coloring Page",
                     "icon": "palette",
                     "pages": [
-                      "docs/ai-image/effects/image-color-migration",
-                      "docs/ai-image/effects/image-color-migration/api"
+                      "docs/ai-image/effects/photo-to-line-art",
+                      "docs/ai-image/effects/photo-to-line-art/api"
                     ]
                   },
                   {
-                    "group": "HD Color Migration",
-                    "icon": "gem",
+                    "group": "AI Emoji Generator",
+                    "icon": "face-smile",
                     "pages": [
-                      "docs/ai-image/effects/image-hd-color-migration",
-                      "docs/ai-image/effects/image-hd-color-migration/api",
-                      {
-                        "group": "Version Logs",
-                        "icon": "clock-rotate-left",
-                        "pages": [
-                          "docs/ai-image/effects/image-hd-color-migration/api-v100"
-                        ]
-                      }
+                      "docs/ai-image/effects/photo-to-emoji-grid",
+                      "docs/ai-image/effects/photo-to-emoji-grid/api"
                     ]
                   }
                 ]
@@ -780,21 +639,66 @@
                       "docs/ai-image/editing/ai-nail-art",
                       "docs/ai-image/editing/ai-nail-art/api"
                     ]
-                  },
+                  }
+                ]
+              },
+              {
+                "group": "Image Enhancement",
+                "icon": "arrow-up",
+                "pages": [
                   {
-                    "group": "Photo to Coloring Page",
-                    "icon": "palette",
+                    "group": "Image Dehaze",
+                    "icon": "cloud",
                     "pages": [
-                      "docs/ai-image/editing/photo-to-line-art",
-                      "docs/ai-image/editing/photo-to-line-art/api"
+                      "docs/ai-image/enhance/image-defogging",
+                      "docs/ai-image/enhance/image-defogging/api"
                     ]
                   },
                   {
-                    "group": "AI Emoji Generator",
-                    "icon": "face-smile",
+                    "group": "Image Upscaler",
+                    "icon": "expand",
                     "pages": [
-                      "docs/ai-image/editing/photo-to-emoji-grid",
-                      "docs/ai-image/editing/photo-to-emoji-grid/api"
+                      "docs/ai-image/enhance/image-lossless-enlargement",
+                      "docs/ai-image/enhance/image-lossless-enlargement/api",
+                      {
+                        "group": "Version Logs",
+                        "icon": "clock-rotate-left",
+                        "pages": [
+                          "docs/ai-image/enhance/image-lossless-enlargement/api-v100"
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "group": "Stretched Image Restoration",
+                    "icon": "down-left-and-up-right-to-center",
+                    "pages": [
+                      "docs/ai-image/enhance/stretch-image-recovery",
+                      "docs/ai-image/enhance/stretch-image-recovery/api"
+                    ]
+                  },
+                  {
+                    "group": "Image Sharpness Enhancement",
+                    "icon": "crosshairs",
+                    "pages": [
+                      "docs/ai-image/enhance/image-sharpness-enhancement",
+                      "docs/ai-image/enhance/image-sharpness-enhancement/api"
+                    ]
+                  },
+                  {
+                    "group": "Image Contrast Enhancement",
+                    "icon": "circle-half-stroke",
+                    "pages": [
+                      "docs/ai-image/enhance/image-contrast-enhancement",
+                      "docs/ai-image/enhance/image-contrast-enhancement/api"
+                    ]
+                  },
+                  {
+                    "group": "Image Color Enhancement",
+                    "icon": "palette",
+                    "pages": [
+                      "docs/ai-image/enhance/image-color-enhancement",
+                      "docs/ai-image/enhance/image-color-enhancement/api"
                     ]
                   }
                 ]
@@ -911,6 +815,16 @@
                   }
                 ]
               }
+            ]
+          },
+          {
+            "group": "Report Json",
+            "hidden": true,
+            "pages": [
+              "docs/ai-portrait/analysis/skin-analysis-pro/case1/result",
+              "docs/ai-portrait/analysis/skin-analysis-pro/case2/result",
+              "docs/ai-portrait/analysis/skin-analysis-pro/case3/result",
+              "docs/ai-portrait/analysis/skin-analysis-pro/case4/result"
             ]
           }
         ]

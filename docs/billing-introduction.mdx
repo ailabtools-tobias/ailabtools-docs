@@ -2,6 +2,8 @@
 title: "Billing Introduction"
 ---
 
+import BillingTableRow from "/snippets/billing-table-row.jsx";
+
 ## Universal Credits (Applicable to All APIs)
 
 |     Price |   Credits | Cost / Credit |
@@ -13,392 +15,119 @@ title: "Billing Introduction"
 | $2,500.50 | 1,000,000 |       $0.0025 |
 
 <Tip>
-**Purchase & Access**
+  **Purchase & Access**
 
   - <a href="https://www.ailabtools.com/price?tab=developer" target="_blank">View Pricing</a>
   - <a href="https://www.ailabtools.com/developer-platform" target="_blank">Developer Platform</a>
 </Tip>
 
 <Tip>
-**Custom Plans**
+  **Custom Plans**
 
   For higher credit requirements or enterprise plans, please contact us at business@ailabtools.com.
 </Tip>
 
 <Tabs>
-<Tab title="AI IMAGE">
-<table class="collapse w-full">
-  <thead class="border border-gray-300 p-2">
-    <tr>
-      <th class="border border-gray-300 p-2 text-center">Category</th>
-      <th class="border border-gray-300 p-2">API Name</th>
-      <th class="border border-gray-300 p-2">Credits / Request</th>
-      <th class="border border-gray-300 p-2">Cost / Request</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td rowspan="1" class="border border-gray-300 p-2 align-middle">Querying Async Task Results</td>
-      <td class="border border-gray-300 p-2"><a href="ai-common/async-task-results/api">Querying Async Task Results</a></td>
-      <td class="border border-gray-300 p-2">0</td>
-      <td class="border border-gray-300 p-2">= $0.0000</td>
-    </tr>
-    <tr>
-      <td rowspan="6" class="border border-gray-300 p-2 align-middle">Image Enhancement</td>
-      <td class="border border-gray-300 p-2"><a href="ai-image/enhance/image-defogging">Image Dehaze</a></td>
-      <td class="border border-gray-300 p-2">1</td>
-      <td class="border border-gray-300 p-2">≈ $0.0027</td>
-    </tr>
-    <tr>
-      <td class="border border-gray-300 p-2"><a href="ai-image/enhance/image-lossless-enlargement">Image Upscaler</a></td>
-      <td class="border border-gray-300 p-2">5</td>
-      <td class="border border-gray-300 p-2">≈ $0.0135</td>
-    </tr>
-    <tr>
-      <td class="border border-gray-300 p-2"><a href="ai-image/enhance/stretch-image-recovery">Stretched Image Restoration</a></td>
-      <td class="border border-gray-300 p-2">2</td>
-      <td class="border border-gray-300 p-2">≈ $0.0054</td>
-    </tr>
-    <tr>
-      <td class="border border-gray-300 p-2"><a href="ai-image/enhance/image-sharpness-enhancement">Image Sharpness Enhancement</a></td>
-      <td class="border border-gray-300 p-2">2</td>
-      <td class="border border-gray-300 p-2">≈ $0.0054</td>
-    </tr>
-    <tr>
-      <td class="border border-gray-300 p-2"><a href="ai-image/enhance/image-contrast-enhancement">Image Contrast Enhancement</a></td>
-      <td class="border border-gray-300 p-2">1</td>
-      <td class="border border-gray-300 p-2">≈ $0.0027</td>
-    </tr>
-    <tr>
-      <td class="border border-gray-300 p-2"><a href="ai-image/enhance/image-color-enhancement">Image Color Enhancement</a></td>
-      <td class="border border-gray-300 p-2">5</td>
-      <td class="border border-gray-300 p-2">≈ $0.0135</td>
-    </tr>
-    <tr>
-      <td rowspan="6" class="border border-gray-300 p-2 align-middle">Image Effects</td>
-      <td class="border border-gray-300 p-2"><a href="ai-image/effects/ai-anime-generator">AI Cartoon Generator</a></td>
-      <td class="border border-gray-300 p-2">10</td>
-      <td class="border border-gray-300 p-2">≈ $0.0270</td>
-    </tr>
-    <tr>
-      <td class="border border-gray-300 p-2"><a href="ai-image/effects/image-colorization">AI Photo Colorize</a></td>
-      <td class="border border-gray-300 p-2">2</td>
-      <td class="border border-gray-300 p-2">≈ $0.0054</td>
-    </tr>
-    <tr>
-      <td class="border border-gray-300 p-2"><a href="ai-image/effects/image-style-conversion">Photo to Painting</a></td>
-      <td class="border border-gray-300 p-2">7</td>
-      <td class="border border-gray-300 p-2">≈ $0.0189</td>
-    </tr>
-    <tr>
-      <td class="border border-gray-300 p-2"><a href="ai-image/effects/image-style-migration">Style Transfer</a></td>
-      <td class="border border-gray-300 p-2">3</td>
-      <td class="border border-gray-300 p-2">≈ $0.0081</td>
-    </tr>
-    <tr>
-      <td class="border border-gray-300 p-2"><a href="ai-image/effects/image-color-migration">Color Migration</a></td>
-      <td class="border border-gray-300 p-2">3</td>
-      <td class="border border-gray-300 p-2">≈ $0.0081</td>
-    </tr>
-    <tr>
-      <td class="border border-gray-300 p-2"><a href="ai-image/effects/image-hd-color-migration">HD Color Migration</a></td>
-      <td class="border border-gray-300 p-2">5</td>
-      <td class="border border-gray-300 p-2">≈ $0.0135</td>
-    </tr>
-    <tr>
-      <td rowspan="10" class="border border-gray-300 p-2 align-middle">Image Editing</td>
-      <td class="border border-gray-300 p-2"><a href="ai-image/editing/image-cropping">AI Image Cropping</a></td>
-      <td class="border border-gray-300 p-2">3</td>
-      <td class="border border-gray-300 p-2">≈ $0.0081</td>
-    </tr>
-    <tr>
-      <td class="border border-gray-300 p-2"><a href="ai-image/editing/intelligent-composition">Intelligent Composition</a></td>
-      <td class="border border-gray-300 p-2">2</td>
-      <td class="border border-gray-300 p-2">≈ $0.0054</td>
-    </tr>
-    <tr>
-      <td class="border border-gray-300 p-2"><a href="ai-image/editing/photo-retouching">Photo Retouch</a></td>
-      <td class="border border-gray-300 p-2">3</td>
-      <td class="border border-gray-300 p-2">≈ $0.0081</td>
-    </tr>
-    <tr>
-      <td class="border border-gray-300 p-2"><a href="ai-image/editing/image-invisible-image-watermark">Image Invisible Picture Watermark</a></td>
-      <td class="border border-gray-300 p-2">3</td>
-      <td class="border border-gray-300 p-2">≈ $0.0081</td>
-    </tr>
-    <tr>
-      <td class="border border-gray-300 p-2"><a href="ai-image/editing/image-invisible-text-watermarking">Image Invisible Text Watermarking</a></td>
-      <td class="border border-gray-300 p-2">3</td>
-      <td class="border border-gray-300 p-2">≈ $0.0081</td>
-    </tr>
-    <tr>
-      <td class="border border-gray-300 p-2"><a href="ai-image/editing/remove-objects">Remove Objects</a></td>
-      <td class="border border-gray-300 p-2">5</td>
-      <td class="border border-gray-300 p-2">≈ $0.0135</td>
-    </tr>
-    <tr>
-      <td class="border border-gray-300 p-2"><a href="ai-image/editing/remove-objects-advanced">Remove Objects Advanced</a></td>
-      <td class="border border-gray-300 p-2">20</td>
-      <td class="border border-gray-300 p-2">≈ $0.0540</td>
-    </tr>
-    <tr>
-      <td class="border border-gray-300 p-2"><a href="ai-image/editing/remove-objects-pro">Remove Objects Pro</a></td>
-      <td class="border border-gray-300 p-2">35</td>
-      <td class="border border-gray-300 p-2">≈ $0.0945</td>
-    </tr>
-    <tr>
-      <td class="border border-gray-300 p-2"><a href="ai-image/editing/ai-object-replacer">AI Object Replacer</a></td>
-      <td class="border border-gray-300 p-2">25</td>
-      <td class="border border-gray-300 p-2">≈ $0.0675</td>
-    </tr>
-    <tr>
-      <td class="border border-gray-300 p-2"><a href="ai-image/editing/ai-image-extender">AI Image Extender</a></td>
-      <td class="border border-gray-300 p-2">25</td>
-      <td class="border border-gray-300 p-2">≈ $0.0675</td>
-    </tr>
-    <tr>
-      <td rowspan="2" class="border border-gray-300 p-2 align-middle">Image Scoring</td>
-      <td class="border border-gray-300 p-2"><a href="ai-image/rating/image-composition-aesthetics-scoring">Image Composition Aesthetics Score</a></td>
-      <td class="border border-gray-300 p-2">1</td>
-      <td class="border border-gray-300 p-2">≈ $0.0027</td>
-    </tr>
-    <tr>
-      <td class="border border-gray-300 p-2"><a href="ai-image/rating/image-exposure-score">Image Exposure Score</a></td>
-      <td class="border border-gray-300 p-2">1</td>
-      <td class="border border-gray-300 p-2">≈ $0.0027</td>
-    </tr>
-  </tbody>
-</table>
-</Tab>
+  <Tab title="AI PORTRAIT">
+    <table class="collapse w-full">
+      <thead class="border border-gray-300 p-2">
+      <tr>
+        <th class="border border-gray-300 p-2">Category</th>
+        <th class="border border-gray-300 p-2">API Name</th>
+        <th class="border border-gray-300 p-2">Credits / Request</th>
+        <th class="border border-gray-300 p-2">Cost / Request</th>
+      </tr>
+      </thead>
+      <tbody>
+      <BillingTableRow rowSpan={15} category="Portrait Effects" href="ai-portrait/effects/portrait-animation" apiName="Cartoon Yourself" credits={20} />
+      <BillingTableRow href="ai-portrait/effects/face-fusion" apiName="Merge Portraits" credits={8}/>
+      <BillingTableRow href="ai-portrait/effects/smart-beauty" apiName="Smart Beauty" credits={8} />
+      <BillingTableRow href="ai-portrait/effects/smart-skin" apiName="AI Skin Beauty" credits={5} />
+      <BillingTableRow href="ai-portrait/effects/smart-face-slimming" apiName="AI Face Slimming" credits={5} />
+      <BillingTableRow href="ai-portrait/effects/face-beauty" apiName="Face Beauty" credits={5} />
+      <BillingTableRow href="ai-portrait/effects/face-beauty-advanced" apiName="Face Beauty Advanced" credits={5} />
+      <BillingTableRow href="ai-portrait/effects/face-beauty-pro" apiName="Face Beauty Pro" credits={15} />
+      <BillingTableRow href="ai-portrait/effects/face-filter" apiName="Face Filters" credits={1} />
+      <BillingTableRow href="ai-portrait/effects/emotion-editor" apiName="Change Facial Expressions" credits={12} />
+      <BillingTableRow href="ai-portrait/effects/hairstyle-editor-pro" apiName="Hairstyle Changer Pro" credits={10} />
+      <BillingTableRow href="ai-portrait/effects/blurred-faces" apiName="Face Blur" credits={1} />
+      <BillingTableRow href="ai-portrait/effects/face-attribute-editing" apiName="Age & Gender Swap" credits={8} />
+      <BillingTableRow href="ai-portrait/effects/ai-face-enhancer" apiName="AI Face Enhancer" credits={15} />
+      <BillingTableRow href="ai-portrait/effects/lips-color-changer" apiName="Lips Color Changer" credits={2} />
+      <BillingTableRow rowSpan={4} category="Portrait Editing" href="ai-portrait/editing/ai-breast-expansion" apiName="AI Breast Expansion" credits={5} />
+      <BillingTableRow href="ai-portrait/editing/try-on-clothes" apiName="Try on Clothes" credits={10} />
+      <BillingTableRow href="ai-portrait/editing/try-on-clothes-pro" apiName="Try on Clothes Pro" credits={30} />
+      <BillingTableRow href="ai-portrait/editing/try-on-clothes-premium" apiName="Try on Clothes Premium" credits={50} />
+      <BillingTableRow rowSpan={1} category="Portrait Enhance" href="ai-portrait/enhance/try-on-clothes-refiner" apiName="Try on Clothes Refiner" credits={25} />
+      <BillingTableRow rowSpan={6} category="Portrait Analysis" href="ai-portrait/analysis/face-key-points" apiName="Facial Landmarks" credits={2} />
+      <BillingTableRow href="ai-portrait/analysis/skin-analysis" apiName="Skin Analyze" credits={15} />
+      <BillingTableRow href="ai-portrait/analysis/skin-analysis-advanced" apiName="Skin Analyze Advanced" credits={50} />
+      <BillingTableRow href="ai-portrait/analysis/skin-analysis-pro" apiName="Skin Analyze Pro" credits={70} />
+      <BillingTableRow href="ai-portrait/analysis/face-analyzer" apiName="Face Analyzer" credits={1} />
+      <BillingTableRow href="ai-portrait/analysis/face-analyzer-advanced" apiName="Face Analyzer Advanced" credits={1} />
+      </tbody>
+    </table>
+  </Tab>
 
-<Tab title="AI PORTRAIT">
-<table class="collapse w-full">
-  <thead class="border border-gray-300 p-2">
-    <tr>
-      <th class="border border-gray-300 p-2">Category</th>
-      <th class="border border-gray-300 p-2">API Name</th>
-      <th class="border border-gray-300 p-2">Credits / Request</th>
-      <th class="border border-gray-300 p-2">Cost / Request</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td rowspan="19" class="border border-gray-300 p-2 align-middle">Portrait Effects</td>
-      <td class="border border-gray-300 p-2"><a href="ai-portrait/effects/portrait-animation">Cartoon Yourself</a></td>
-      <td class="border border-gray-300 p-2">20</td>
-      <td class="border border-gray-300 p-2">≈ $0.0540</td>
-    </tr>
-    <tr>
-      <td class="border border-gray-300 p-2"><a href="ai-portrait/effects/face-fusion">Merge Portraits</a></td>
-      <td class="border border-gray-300 p-2">8</td>
-      <td class="border border-gray-300 p-2">≈ $0.0216</td>
-    </tr>
-    <tr>
-      <td class="border border-gray-300 p-2"><a href="ai-portrait/effects/smart-beauty">Smart Beauty</a></td>
-      <td class="border border-gray-300 p-2">8</td>
-      <td class="border border-gray-300 p-2">≈ $0.0216</td>
-    </tr>
-    <tr>
-      <td class="border border-gray-300 p-2"><a href="ai-portrait/effects/smart-skin">AI Skin Beauty</a></td>
-      <td class="border border-gray-300 p-2">5</td>
-      <td class="border border-gray-300 p-2">≈ $0.0135</td>
-    </tr>
-    <tr>
-      <td class="border border-gray-300 p-2"><a href="ai-portrait/effects/smart-face-slimming">AI Face Slimming</a></td>
-      <td class="border border-gray-300 p-2">5</td>
-      <td class="border border-gray-300 p-2">≈ $0.0135</td>
-    </tr>
-    <tr>
-      <td class="border border-gray-300 p-2"><a href="ai-portrait/effects/face-beauty">Face Beauty</a></td>
-      <td class="border border-gray-300 p-2">5</td>
-      <td class="border border-gray-300 p-2">≈ $0.0135</td>
-    </tr>
-    <tr>
-      <td class="border border-gray-300 p-2"><a href="ai-portrait/effects/face-beauty-advanced">Face Beauty Advanced</a></td>
-      <td class="border border-gray-300 p-2">5</td>
-      <td class="border border-gray-300 p-2">≈ $0.0135</td>
-    </tr>
-    <tr>
-      <td class="border border-gray-300 p-2"><a href="ai-portrait/effects/face-beauty-pro">Face Beauty Pro</a></td>
-      <td class="border border-gray-300 p-2">15</td>
-      <td class="border border-gray-300 p-2">≈ $0.0405</td>
-    </tr>
-    <tr>
-      <td class="border border-gray-300 p-2"><a href="ai-portrait/effects/face-filter">Face Filters</a></td>
-      <td class="border border-gray-300 p-2">1</td>
-      <td class="border border-gray-300 p-2">≈ $0.0027</td>
-    </tr>
-    <tr>
-      <td class="border border-gray-300 p-2"><a href="ai-portrait/effects/face-tidyup">Facial Aesthetics</a></td>
-      <td class="border border-gray-300 p-2">1</td>
-      <td class="border border-gray-300 p-2">≈ $0.0027</td>
-    </tr>
-    <tr>
-      <td class="border border-gray-300 p-2"><a href="ai-portrait/effects/emotion-editor">Change Facial Expressions</a></td>
-      <td class="border border-gray-300 p-2">12</td>
-      <td class="border border-gray-300 p-2">≈ $0.0324</td>
-    </tr>
-    <tr>
-      <td class="border border-gray-300 p-2"><a href="ai-portrait/effects/hairstyle-editor">Hairstyle Changer</a></td>
-      <td class="border border-gray-300 p-2">12</td>
-      <td class="border border-gray-300 p-2">≈ $0.0324</td>
-    </tr>
-    <tr>
-      <td class="border border-gray-300 p-2"><a href="ai-portrait/effects/hairstyle-editor-pro">Hairstyle Changer Pro</a></td>
-      <td class="border border-gray-300 p-2">10</td>
-      <td class="border border-gray-300 p-2">≈ $0.0270</td>
-    </tr>
-    <tr>
-      <td class="border border-gray-300 p-2"><a href="ai-portrait/effects/live-photo">Live Photos</a></td>
-      <td class="border border-gray-300 p-2">22</td>
-      <td class="border border-gray-300 p-2">≈ $0.0594</td>
-    </tr>
-    <tr>
-      <td class="border border-gray-300 p-2"><a href="ai-portrait/effects/hitchcock-effects">Hitchcock Special Effects</a></td>
-      <td class="border border-gray-300 p-2">15</td>
-      <td class="border border-gray-300 p-2">≈ $0.0405</td>
-    </tr>
-    <tr>
-      <td class="border border-gray-300 p-2"><a href="ai-portrait/effects/blurred-faces">Face Blur</a></td>
-      <td class="border border-gray-300 p-2">1</td>
-      <td class="border border-gray-300 p-2">≈ $0.0027</td>
-    </tr>
-    <tr>
-      <td class="border border-gray-300 p-2"><a href="ai-portrait/effects/face-attribute-editing">Age & Gender Swap</a></td>
-      <td class="border border-gray-300 p-2">8</td>
-      <td class="border border-gray-300 p-2">≈ $0.0216</td>
-    </tr>
-    <tr>
-      <td class="border border-gray-300 p-2"><a href="ai-portrait/effects/ai-face-enhancer">AI Face Enhancer</a></td>
-      <td class="border border-gray-300 p-2">15</td>
-      <td class="border border-gray-300 p-2">≈ $0.0405</td>
-    </tr>
-    <tr>
-      <td class="border border-gray-300 p-2"><a href="ai-portrait/effects/lips-color-changer">Lips Color Changer</a></td>
-      <td class="border border-gray-300 p-2">2</td>
-      <td class="border border-gray-300 p-2">≈ $0.0054</td>
-    </tr>
-    <tr>
-      <td rowspan="7" class="border border-gray-300 p-2 align-middle">Portrait Analysis</td>
-      <td class="border border-gray-300 p-2"><a href="ai-portrait/analysis/face-key-points">Facial Landmarks</a></td>
-      <td class="border border-gray-300 p-2">2</td>
-      <td class="border border-gray-300 p-2">≈ $0.0054</td>
-    </tr>
-    <tr>
-      <td class="border border-gray-300 p-2"><a href="ai-portrait/analysis/skin-disease-detection">Detect Skin Disease</a></td>
-      <td class="border border-gray-300 p-2">20</td>
-      <td class="border border-gray-300 p-2">≈ $0.0540</td>
-    </tr>
-    <tr>
-      <td class="border border-gray-300 p-2"><a href="ai-portrait/analysis/skin-analysis">Skin Analyze</a></td>
-      <td class="border border-gray-300 p-2">15</td>
-      <td class="border border-gray-300 p-2">≈ $0.0405</td>
-    </tr>
-    <tr>
-      <td class="border border-gray-300 p-2"><a href="ai-portrait/analysis/skin-analysis-advanced">Skin Analyze Advanced</a></td>
-      <td class="border border-gray-300 p-2">50</td>
-      <td class="border border-gray-300 p-2">≈ $0.1350</td>
-    </tr>
-    <tr>
-      <td class="border border-gray-300 p-2"><a href="ai-portrait/analysis/skin-analysis-pro">Skin Analyze Pro</a></td>
-      <td class="border border-gray-300 p-2">70</td>
-      <td class="border border-gray-300 p-2">≈ $0.1890</td>
-    </tr>
-    <tr>
-      <td class="border border-gray-300 p-2"><a href="ai-portrait/analysis/face-analyzer">Face Analyzer</a></td>
-      <td class="border border-gray-300 p-2">1</td>
-      <td class="border border-gray-300 p-2">≈ $0.0027</td>
-    </tr>
-     <tr>
-      <td class="border border-gray-300 p-2"><a href="ai-portrait/analysis/face-analyzer-advanced">Face Analyzer Advanced</a></td>
-      <td class="border border-gray-300 p-2">1</td>
-       <td class="border border-gray-300 p-2">≈ $0.0027</td>
-    </tr>
-    <tr>
-      <td rowspan="4" class="border border-gray-300 p-2 align-middle">Portrait Editing</td>
-      <td class="border border-gray-300 p-2"><a href="ai-portrait/editing/try-on-clothes">Try on Clothes</a></td>
-      <td class="border border-gray-300 p-2">10</td>
-      <td class="border border-gray-300 p-2">≈ $0.0270</td>
-    </tr>
-    <tr>
-      <td class="border border-gray-300 p-2"><a href="ai-portrait/editing/try-on-clothes-pro">Try on Clothes Pro</a></td>
-      <td class="border border-gray-300 p-2">30</td>
-      <td class="border border-gray-300 p-2">≈ $0.0810</td>
-    </tr>
-    <tr>
-      <td class="border border-gray-300 p-2"><a href="ai-portrait/editing/try-on-clothes-premium">Try on Clothes Premium</a></td>
-      <td class="border border-gray-300 p-2">50</td>
-      <td class="border border-gray-300 p-2">≈ $0.1350</td>
-    </tr>
-    <tr>
-      <td class="border border-gray-300 p-2"><a href="ai-portrait/editing/ai-breast-expansion">AI Breast Expansion</a></td>
-      <td class="border border-gray-300 p-2">5</td>
-      <td class="border border-gray-300 p-2">≈ $0.0135</td>
-    </tr>
-    <tr>
-      <td rowspan="1" class="border border-gray-300 p-2 align-middle">Portrait Enhance</td>
-      <td class="border border-gray-300 p-2"><a href="ai-portrait/enhance/try-on-clothes-refiner">Try on Clothes Refiner</a></td>
-      <td class="border border-gray-300 p-2">25</td>
-      <td class="border border-gray-300 p-2">≈ $0.0675</td>
-    </tr>
-  </tbody>
-</table>
-</Tab>
+  <Tab title="AI IMAGE">
+    <table class="collapse w-full">
+      <thead class="border border-gray-300 p-2">
+      <tr>
+        <th class="border border-gray-300 p-2 text-center">Category</th>
+        <th class="border border-gray-300 p-2">API Name</th>
+        <th class="border border-gray-300 p-2">Credits / Request</th>
+        <th class="border border-gray-300 p-2">Cost / Request</th>
+      </tr>
+      </thead>
+      <tbody>
+      <BillingTableRow rowSpan={5} category="Image Effects" href="ai-image/effects/ai-anime-generator" apiName="AI Cartoon Generator" credits={10} />
+      <BillingTableRow href="ai-image/effects/image-colorization" apiName="AI Photo Colorize" credits={2} />
+      <BillingTableRow href="ai-image/effects/image-style-conversion" apiName="Photo to Painting" credits={7} />
+      <BillingTableRow href="ai-image/effects/photo-to-line-art" apiName="Photo to Coloring Page" credits={15} />
+      <BillingTableRow href="ai-image/effects/photo-to-emoji-grid" apiName="AI Emoji Generator" credits={15} />
+      <BillingTableRow rowSpan={11} category="Image Editing" href="ai-image/editing/image-cropping" apiName="AI Image Cropping" credits={3} />
+      <BillingTableRow href="ai-image/editing/intelligent-composition" apiName="Intelligent Composition" credits={2} />
+      <BillingTableRow href="ai-image/editing/photo-retouching" apiName="Photo Retouch" credits={3} />
+      <BillingTableRow href="ai-image/editing/image-invisible-image-watermark" apiName="Image Invisible Picture Watermark" credits={3} />
+      <BillingTableRow href="ai-image/editing/image-invisible-text-watermarking" apiName="Image Invisible Text Watermarking" credits={3} />
+      <BillingTableRow href="ai-image/editing/remove-objects" apiName="Remove Objects" credits={5} />
+      <BillingTableRow href="ai-image/editing/remove-objects-advanced" apiName="Remove Objects Advanced" credits={20} />
+      <BillingTableRow href="ai-image/editing/remove-objects-pro" apiName="Remove Objects Pro" credits={35} />
+      <BillingTableRow href="ai-image/editing/ai-object-replacer" apiName="AI Object Replacer" credits={25} />
+      <BillingTableRow href="ai-image/editing/ai-image-extender" apiName="AI Image Extender" credits={25} />
+      <BillingTableRow href="ai-image/editing/ai-nail-art" apiName="AI Nail Art" credits={15} />
+      <BillingTableRow rowSpan={6} category="Image Enhancement" href="ai-image/enhance/image-defogging" apiName="Image Dehaze" credits={1} />
+      <BillingTableRow href="ai-image/enhance/image-lossless-enlargement" apiName="Image Upscaler" credits={5} />
+      <BillingTableRow href="ai-image/enhance/stretch-image-recovery" apiName="Stretched Image Restoration" credits={2} />
+      <BillingTableRow href="ai-image/enhance/image-sharpness-enhancement" apiName="Image Sharpness Enhancement" credits={2} />
+      <BillingTableRow href="ai-image/enhance/image-contrast-enhancement" apiName="Image Contrast Enhancement" credits={1} />
+      <BillingTableRow href="ai-image/enhance/image-color-enhancement" apiName="Image Color Enhancement" credits={5} />
+      <BillingTableRow rowSpan={2} category="Image Scoring" href="ai-image/rating/image-composition-aesthetics-scoring" apiName="Image Composition Aesthetics Score" credits={1} />
+      <BillingTableRow href="ai-image/rating/image-exposure-score" apiName="Image Exposure Score" credits={1} />
+      </tbody>
+    </table>
+  </Tab>
 
-<Tab title="AI BACKGROUND REMOVAL">
-<table class="collapse w-full">
-  <thead class="border border-gray-300 p-2">
-    <tr>
-      <th class="border border-gray-300 p-2">Category</th>
-      <th class="border border-gray-300 p-2">API Name</th>
-      <th class="border border-gray-300 p-2">Credits / Request</th>
-      <th class="border border-gray-300 p-2">Cost / Request</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td rowspan="4" class="border border-gray-300 p-2 align-middle">General</td>
-      <td class="border border-gray-300 p-2"><a href="ai-cutout/general/universal-background-removal">Universal Background Removal</a></td>
-      <td class="border border-gray-300 p-2">1</td>
-      <td class="border border-gray-300 p-2">≈ $0.0027</td>
-    </tr>
-    <tr>
-      <td class="border border-gray-300 p-2"><a href="ai-cutout/general/food-background-removal">Food Background Removal</a></td>
-      <td class="border border-gray-300 p-2">1</td>
-      <td class="border border-gray-300 p-2">≈ $0.0027</td>
-    </tr>
-    <tr>
-      <td class="border border-gray-300 p-2"><a href="ai-cutout/general/commodity-background-removal">Product Background Removal</a></td>
-      <td class="border border-gray-300 p-2">1</td>
-      <td class="border border-gray-300 p-2">≈ $0.0027</td>
-    </tr>
-    <tr>
-      <td class="border border-gray-300 p-2"><a href="ai-cutout/general/apparel-background-removal">Costume Background Removal</a></td>
-      <td class="border border-gray-300 p-2">1</td>
-      <td class="border border-gray-300 p-2">≈ $0.0027</td>
-    </tr>
-    <tr>
-      <td rowspan="4" class="border border-gray-300 p-2 align-middle">Portrait</td>
-      <td class="border border-gray-300 p-2"><a href="ai-cutout/portrait/portrait-background-removal">Human Background Removal</a></td>
-      <td class="border border-gray-300 p-2">1</td>
-      <td class="border border-gray-300 p-2">≈ $0.0027</td>
-    </tr>
-    <tr>
-      <td class="border border-gray-300 p-2"><a href="ai-cutout/portrait/hd-portrait-background-removal">HD Human Background Removal</a></td>
-      <td class="border border-gray-300 p-2">5</td>
-      <td class="border border-gray-300 p-2">≈ $0.0135</td>
-    </tr>
-    <tr>
-      <td class="border border-gray-300 p-2"><a href="ai-cutout/portrait/avatar-extraction">Head Extraction</a></td>
-      <td class="border border-gray-300 p-2">1</td>
-      <td class="border border-gray-300 p-2">≈ $0.0027</td>
-    </tr>
-    <tr>
-      <td class="border border-gray-300 p-2"><a href="ai-cutout/portrait/hairstyle-extraction">Hairstyle Extraction</a></td>
-      <td class="border border-gray-300 p-2">1</td>
-      <td class="border border-gray-300 p-2">≈ $0.0027</td>
-    </tr>
-  </tbody>
-</table>
-</Tab>
+  <Tab title="AI BACKGROUND REMOVAL">
+    <table class="collapse w-full">
+      <thead class="border border-gray-300 p-2">
+      <tr>
+        <th class="border border-gray-300 p-2">Category</th>
+        <th class="border border-gray-300 p-2">API Name</th>
+        <th class="border border-gray-300 p-2">Credits / Request</th>
+        <th class="border border-gray-300 p-2">Cost / Request</th>
+      </tr>
+      </thead>
+      <tbody>
+      <BillingTableRow rowSpan={4} category="General" href="ai-cutout/general/universal-background-removal" apiName="Universal Background Removal" credits={1} />
+      <BillingTableRow href="ai-cutout/general/food-background-removal" apiName="Food Background Removal" credits={1} />
+      <BillingTableRow href="ai-cutout/general/commodity-background-removal" apiName="Product Background Removal" credits={1} />
+      <BillingTableRow href="ai-cutout/general/apparel-background-removal" apiName="Costume Background Removal" credits={1} />
+      <BillingTableRow rowSpan={4} category="Portrait" href="ai-cutout/portrait/portrait-background-removal" apiName="Human Background Removal" credits={1} />
+      <BillingTableRow href="ai-cutout/portrait/hd-portrait-background-removal" apiName="HD Human Background Removal" credits={5} />
+      <BillingTableRow href="ai-cutout/portrait/avatar-extraction" apiName="Head Extraction" credits={1} />
+      <BillingTableRow href="ai-cutout/portrait/hairstyle-extraction" apiName="Hairstyle Extraction" credits={1} />
+      </tbody>
+    </table>
+  </Tab>
 </Tabs>

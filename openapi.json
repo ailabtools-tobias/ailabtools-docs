@@ -71,27 +71,12 @@
     }
   ],
   "paths": {
-    "/api/image/enhance/image-defogging": {
-      "post": {
+    "/api/common/query-credits": {
+      "get": {
         "tags": [
-          "AI IMAGE > Image Enhancement"
+          "AI COMMON"
         ],
-        "summary": "Image Dehaze",
-        "requestBody": {
-          "content": {
-            "multipart/form-data": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "image": {
-                    "type": "string",
-                    "format": "binary"
-                  }
-                }
-              }
-            }
-          }
-        },
+        "summary": "Querying Credits",
         "responses": {
           "200": {
             "headers": {
@@ -108,8 +93,6 @@
                   "type": "object"
                 },
                 "example": {
-                  "request_id": "",
-                  "log_id": "",
                   "error_code": 0,
                   "error_code_str": "",
                   "error_msg": "",
@@ -119,754 +102,18 @@
                     "code_message": "",
                     "message": ""
                   },
-                  "image": ""
-                }
-              }
-            },
-            "description": "Success"
-          }
-        }
-      }
-    },
-    "/api/image/enhance/image-lossless-enlargement": {
-      "post": {
-        "tags": [
-          "AI IMAGE > Image Enhancement"
-        ],
-        "summary": "Image Upscaler",
-        "requestBody": {
-          "content": {
-            "multipart/form-data": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "image": {
-                    "type": "string",
-                    "format": "binary"
-                  },
-                  "upscale_factor": {
-                    "type": "string",
-                    "description": "Magnification."
-                  },
-                  "mode": {
-                    "type": "string",
-                    "description": "Image output mode. <li>`base`: Normal mode, i.e. stable super-resolution effect.</li> <li>`enhancement`: Enhancement mode, which has a more prominent enhancement effect than the normal mode, further improving the clarity and sharpness of the output image.</li>"
-                  },
-                  "output_format": {
-                    "type": "string",
-                    "description": "Output image format."
-                  },
-                  "output_quality": {
-                    "type": "string",
-                    "description": "Quality factor of the output image, where a higher value corresponds to higher quality. Only applicable when `output_format=jpg`."
-                  }
-                }
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "headers": {
-              "Content-Type": {
-                "schema": {
-                  "type": "string",
-                  "example": "application/json"
-                }
-              }
-            },
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object"
-                },
-                "example": {
-                  "request_id": "",
-                  "log_id": "",
-                  "error_code": 0,
-                  "error_code_str": "",
-                  "error_msg": "",
-                  "error_detail": {
-                    "status_code": 200,
-                    "code": "",
-                    "code_message": "",
-                    "message": ""
-                  },
-                  "data": {
-                    "url": ""
-                  }
-                }
-              }
-            },
-            "description": "Success"
-          }
-        }
-      }
-    },
-    "/api/image/enhance/stretch-image-recovery": {
-      "post": {
-        "tags": [
-          "AI IMAGE > Image Enhancement"
-        ],
-        "summary": "Stretched Image Restoration",
-        "requestBody": {
-          "content": {
-            "multipart/form-data": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "image": {
-                    "type": "string",
-                    "format": "binary"
-                  }
-                }
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "headers": {
-              "Content-Type": {
-                "schema": {
-                  "type": "string",
-                  "example": "application/json"
-                }
-              }
-            },
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object"
-                },
-                "example": {
-                  "request_id": "",
-                  "log_id": "",
-                  "error_code": 0,
-                  "error_code_str": "",
-                  "error_msg": "",
-                  "error_detail": {
-                    "status_code": 200,
-                    "code": "",
-                    "code_message": "",
-                    "message": ""
-                  },
-                  "image": "",
-                  "ratio": 0
-                }
-              }
-            },
-            "description": "Success"
-          }
-        }
-      }
-    },
-    "/api/image/enhance/image-sharpness-enhancement": {
-      "post": {
-        "tags": [
-          "AI IMAGE > Image Enhancement"
-        ],
-        "summary": "Image sharpness enhancement",
-        "requestBody": {
-          "content": {
-            "multipart/form-data": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "image": {
-                    "type": "string",
-                    "format": "binary"
-                  }
-                }
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "headers": {
-              "Content-Type": {
-                "schema": {
-                  "type": "string",
-                  "example": "application/json"
-                }
-              }
-            },
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object"
-                },
-                "example": {
-                  "request_id": "",
-                  "log_id": "",
-                  "error_code": 0,
-                  "error_code_str": "",
-                  "error_msg": "",
-                  "error_detail": {
-                    "status_code": 200,
-                    "code": "",
-                    "code_message": "",
-                    "message": ""
-                  },
-                  "image": ""
-                }
-              }
-            },
-            "description": "Success"
-          }
-        }
-      }
-    },
-    "/api/image/enhance/image-contrast-enhancement": {
-      "post": {
-        "tags": [
-          "AI IMAGE > Image Enhancement"
-        ],
-        "summary": "Image contrast enhancement",
-        "requestBody": {
-          "content": {
-            "multipart/form-data": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "image": {
-                    "type": "string",
-                    "format": "binary"
-                  }
-                }
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "headers": {
-              "Content-Type": {
-                "schema": {
-                  "type": "string",
-                  "example": "application/json"
-                }
-              }
-            },
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object"
-                },
-                "example": {
-                  "request_id": "",
-                  "log_id": "",
-                  "error_code": 0,
-                  "error_code_str": "",
-                  "error_msg": "",
-                  "error_detail": {
-                    "status_code": 200,
-                    "code": "",
-                    "code_message": "",
-                    "message": ""
-                  },
-                  "image": ""
-                }
-              }
-            },
-            "description": "Success"
-          }
-        }
-      }
-    },
-    "/api/image/enhance/image-color-enhancement": {
-      "post": {
-        "tags": [
-          "AI IMAGE > Image Enhancement"
-        ],
-        "summary": "Image color enhancement",
-        "requestBody": {
-          "content": {
-            "multipart/form-data": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "image": {
-                    "type": "string",
-                    "format": "binary"
-                  },
-                  "output_format": {
-                    "type": "string",
-                    "description": "The format of the output image."
-                  },
-                  "mode": {
-                    "type": "string",
-                    "description": "Color mixing mode. <li>`LogC`: Suitable for gray film (low contrast raw map) input, adjust the image color perception substantially to restore the color texture of the SDR domain.</li> <li>`Rec709`: Suitable for images taken under general conditions, appropriate to enhance the image brightness, saturation, etc., the adjustment range is more conservative.</li> <li>`ln17_256`: Suitable for images taken under general conditions, drastically adjusts image brightness, saturation, contrast, and improves color quality.</li>"
-                  }
-                }
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "headers": {
-              "Content-Type": {
-                "schema": {
-                  "type": "string",
-                  "example": "application/json"
-                }
-              }
-            },
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object"
-                },
-                "example": {
-                  "request_id": "",
-                  "log_id": "",
-                  "error_code": 0,
-                  "error_code_str": "",
-                  "error_msg": "",
-                  "error_detail": {
-                    "status_code": 200,
-                    "code": "",
-                    "code_message": "",
-                    "message": ""
-                  },
-                  "data": {
-                    "image_url": ""
-                  }
-                }
-              }
-            },
-            "description": "Success"
-          }
-        }
-      }
-    },
-    "/api/image/effects/ai-anime-generator": {
-      "post": {
-        "tags": [
-          "AI IMAGE > Image Effects"
-        ],
-        "summary": "AI Cartoon Generator",
-        "requestBody": {
-          "content": {
-            "multipart/form-data": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "task_type": {
-                    "type": "string",
-                    "description": "Task Type.",
-                    "example": "async"
-                  },
-                  "image": {
-                    "type": "string",
-                    "format": "binary"
-                  },
-                  "index": {
-                    "type": "string",
-                    "description": "Cartoon effect. <li>`0`: Vintage Comic.</li> <li>`1`: 3D Fairy Tale.</li> <li>`2`: Two-dimensional (2D).</li> <li>`3`: Refreshing and Elegant.</li> <li>`4`: Future Technology.</li> <li>`5`: Traditional Chinese Painting Style.</li> <li>`6`: General in a Hundred Battles.</li> <li>`7`: Colorful Cartoon.</li> <li>`8`: Graceful Chinese Style.</li>"
-                  }
-                }
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "headers": {
-              "Content-Type": {
-                "schema": {
-                  "type": "string",
-                  "example": "application/json"
-                }
-              }
-            },
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object"
-                },
-                "example": {
-                  "request_id": "",
-                  "log_id": "",
-                  "error_code": 0,
-                  "error_code_str": "",
-                  "error_msg": "",
-                  "error_detail": {
-                    "status_code": 200,
-                    "code": "",
-                    "code_message": "",
-                    "message": ""
-                  },
-                  "task_type": "",
-                  "task_id": ""
-                }
-              }
-            },
-            "description": "Success"
-          }
-        }
-      }
-    },
-    "/api/image/effects/image-colorization": {
-      "post": {
-        "tags": [
-          "AI IMAGE > Image Effects"
-        ],
-        "summary": "AI Photo Colorize",
-        "requestBody": {
-          "content": {
-            "multipart/form-data": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "image": {
-                    "type": "string",
-                    "format": "binary"
-                  }
-                }
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "headers": {
-              "Content-Type": {
-                "schema": {
-                  "type": "string",
-                  "example": "application/json"
-                }
-              }
-            },
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object"
-                },
-                "example": {
-                  "request_id": "",
-                  "log_id": "",
-                  "error_code": 0,
-                  "error_code_str": "",
-                  "error_msg": "",
-                  "error_detail": {
-                    "status_code": 200,
-                    "code": "",
-                    "code_message": "",
-                    "message": ""
-                  },
-                  "image": ""
-                }
-              }
-            },
-            "description": "Success"
-          }
-        }
-      }
-    },
-    "/api/image/effects/image-style-conversion": {
-      "post": {
-        "tags": [
-          "AI IMAGE > Image Effects"
-        ],
-        "summary": "Photo to Painting",
-        "requestBody": {
-          "content": {
-            "multipart/form-data": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "image": {
-                    "type": "string",
-                    "format": "binary"
-                  },
-                  "option": {
-                    "type": "string",
-                    "description": "<li>`cartoon`: Cartoon style.</li> <li>`pencil`: Pencil style.</li> <li>`color_pencil`: Color pencil drawing style.</li> <li>`warm`: The style of colorful sugar cube oil painting.</li> <li>`wave`: Oil painting style in surfing in Kanagawa.</li> <li>`lavender`: Lavender oil painting style.</li> <li>`mononoke`: Strange oil painting style.</li> <li>`scream`: Scream oil painting style.</li> <li>`gothic`: Gothic oil painting style.</li>"
-                  }
-                }
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "headers": {
-              "Content-Type": {
-                "schema": {
-                  "type": "string",
-                  "example": "application/json"
-                }
-              }
-            },
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object"
-                },
-                "example": {
-                  "request_id": "",
-                  "log_id": "",
-                  "error_code": 0,
-                  "error_code_str": "",
-                  "error_msg": "",
-                  "error_detail": {
-                    "status_code": 200,
-                    "code": "",
-                    "code_message": "",
-                    "message": ""
-                  },
-                  "image": ""
-                }
-              }
-            },
-            "description": "Success"
-          }
-        }
-      }
-    },
-    "/api/image/effects/photo-to-line-art": {
-      "post": {
-        "tags": [
-          "AI IMAGE > Image Effects"
-        ],
-        "summary": "Photo to Coloring Page",
-        "requestBody": {
-          "content": {
-            "multipart/form-data": {
-              "schema": {
-                "type": "object",
-                "required": [
-                  "image"
-                ],
-                "properties": {
-                  "image": {
-                    "type": "string",
-                    "description": "Original image. \n- Image format: `JPEG` `JPG` `PNG` `WEBP` \n- Image size: No more than 10 MB. \n- Image resolution: Less than 4096x4096px.",
-                    "format": "binary"
-                  },
-                  "prompt": {
-                    "type": "string",
-                    "description": "Prompt (English only). Max 3000 characters; extra text will be automatically truncated. Use standard vocabulary to pass review.",
-                    "maxLength": 3000
-                  },
-                  "image_size": {
-                    "type": "string",
-                    "description": "Output Image Aspect Ratio.",
-                    "enum": [
-                      "A4",
-                      "auto",
-                      "1:1",
-                      "2:3",
-                      "3:2",
-                      "3:4",
-                      "4:3",
-                      "4:5",
-                      "5:4",
-                      "9:16",
-                      "16:9",
-                      "21:9"
-                    ],
-                    "default": "A4"
-                  }
-                }
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "headers": {
-              "Content-Type": {
-                "schema": {
-                  "type": "string",
-                  "example": "application/json"
-                }
-              }
-            },
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object"
-                },
-                "example": {
-                  "request_id": "",
-                  "log_id": "",
-                  "error_code": 0,
-                  "error_code_str": "",
-                  "error_msg": "",
-                  "error_detail": {
-                    "status_code": 200,
-                    "code": "",
-                    "code_message": "",
-                    "message": ""
-                  },
-                  "task_type": "async",
-                  "task_id": ""
-                }
-              }
-            },
-            "description": "Success"
-          }
-        }
-      }
-    },
-    "/api/image/effects/photo-to-emoji-grid": {
-      "post": {
-        "tags": [
-          "AI IMAGE > Image Effects"
-        ],
-        "summary": "AI Emoji Generator",
-        "requestBody": {
-          "content": {
-            "multipart/form-data": {
-              "schema": {
-                "type": "object",
-                "required": [
-                  "image",
-                  "expression",
-                  "style",
-                  "scene"
-                ],
-                "properties": {
-                  "image": {
-                    "type": "string",
-                    "description": "Original image. \n- Image format: `JPEG` `JPG` `PNG` `WEBP` \n- Image size: No more than 10 MB. \n- Image resolution: Less than 4096x4096px.",
-                    "format": "binary"
-                  },
-                  "expression": {
-                    "type": "string",
-                    "description": "Expression (English only). Max 100 characters; extra text will be automatically truncated. Use standard vocabulary to pass review.",
-                    "maxLength": 100,
-                    "example": "Angry"
-                  },
-                  "style": {
-                    "type": "string",
-                    "description": "Style (English only). Max 100 characters; extra text will be automatically truncated. Use standard vocabulary to pass review.",
-                    "maxLength": 100,
-                    "example": "3D Emoji Render"
-                  },
-                  "scene": {
-                    "type": "string",
-                    "description": "Scene (English only). Max 100 characters; extra text will be automatically truncated. Use standard vocabulary to pass review.",
-                    "maxLength": 100,
-                    "example": "Baby Shower"
-                  },
-                  "filler": {
-                    "type": "string",
-                    "description": "Filler Text (English only). Max 20 characters; extra text will be automatically truncated. Use standard vocabulary to pass review.",
-                    "maxLength": 20,
-                    "example": "Go Go Go"
-                  }
-                }
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "headers": {
-              "Content-Type": {
-                "schema": {
-                  "type": "string",
-                  "example": "application/json"
-                }
-              }
-            },
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object"
-                },
-                "example": {
-                  "request_id": "",
-                  "log_id": "",
-                  "error_code": 0,
-                  "error_code_str": "",
-                  "error_msg": "",
-                  "error_detail": {
-                    "status_code": 200,
-                    "code": "",
-                    "code_message": "",
-                    "message": ""
-                  },
-                  "task_type": "async",
-                  "task_id": ""
-                }
-              }
-            },
-            "description": "Success"
-          }
-        }
-      }
-    },
-    "/api/image/editing/image-cropping": {
-      "post": {
-        "tags": [
-          "AI IMAGE > Image Editing"
-        ],
-        "summary": "AI Image cropping",
-        "requestBody": {
-          "content": {
-            "multipart/form-data": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "image": {
-                    "type": "string",
-                    "format": "binary"
-                  },
-                  "width": {
-                    "type": "string",
-                    "description": "The width of the target. Unit: px."
-                  },
-                  "height": {
-                    "type": "string",
-                    "description": "The height of the target. Unit: px."
-                  }
-                }
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "headers": {
-              "Content-Type": {
-                "schema": {
-                  "type": "string",
-                  "example": "application/json"
-                }
-              }
-            },
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object"
-                },
-                "example": {
-                  "request_id": "",
-                  "log_id": "",
-                  "error_code": 0,
-                  "error_code_str": "",
-                  "error_msg": "",
-                  "error_detail": {
-                    "status_code": 200,
-                    "code": "",
-                    "code_message": "",
-                    "message": ""
-                  },
-                  "data": {
-                    "url": "",
-                    "retain_location": {
-                      "width": 0,
-                      "height": 0,
-                      "y": 0,
-                      "x": 0
+                  "data": [
+                    {
+                      "unique_sign": "",
+                      "name": "",
+                      "balance": 0,
+                      "total": 0,
+                      "last_recharge_balance": 0,
+                      "balance_warning": 0,
+                      "first_buy_time": 0,
+                      "last_update_time": 0
                     }
-                  }
+                  ]
                 }
               }
             },
@@ -875,31 +122,22 @@
         }
       }
     },
-    "/api/image/editing/intelligent-composition": {
-      "post": {
+    "/api/common/query-async-task-result": {
+      "get": {
         "tags": [
-          "AI IMAGE > Image Editing"
+          "AI COMMON"
         ],
-        "summary": "Intelligent Composition",
-        "requestBody": {
-          "content": {
-            "multipart/form-data": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "image": {
-                    "type": "string",
-                    "format": "binary"
-                  },
-                  "num_boxes": {
-                    "type": "string",
-                    "description": "The number of output boxes."
-                  }
-                }
-              }
-            }
+        "summary": "Querying Async Task Results",
+        "parameters": [
+          {
+            "name": "task_id",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            },
+            "description": "The task_id returned by the asynchronous API."
           }
-        },
+        ],
         "responses": {
           "200": {
             "headers": {
@@ -916,8 +154,6 @@
                   "type": "object"
                 },
                 "example": {
-                  "request_id": "",
-                  "log_id": "",
                   "error_code": 0,
                   "error_code_str": "",
                   "error_msg": "",
@@ -927,17 +163,7 @@
                     "code_message": "",
                     "message": ""
                   },
-                  "data": {
-                    "elements": [
-                      {
-                        "min_x": 0,
-                        "max_x": 0,
-                        "min_y": 0,
-                        "max_y": 0,
-                        "score": 0
-                      }
-                    ]
-                  }
+                  "task_status": 0
                 }
               }
             },
@@ -946,1513 +172,13 @@
         }
       }
     },
-    "/api/image/editing/photo-retouching": {
-      "post": {
-        "tags": [
-          "AI IMAGE > Image Editing"
-        ],
-        "summary": "Photo retouch",
-        "requestBody": {
-          "content": {
-            "multipart/form-data": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "image": {
-                    "type": "string",
-                    "description": "Images that require a style transformation.",
-                    "format": "binary"
-                  },
-                  "style": {
-                    "type": "string",
-                    "description": "Reference image.",
-                    "format": "binary"
-                  }
-                }
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "headers": {
-              "Content-Type": {
-                "schema": {
-                  "type": "string",
-                  "example": "application/json"
-                }
-              }
-            },
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object"
-                },
-                "example": {
-                  "request_id": "",
-                  "log_id": "",
-                  "error_code": 0,
-                  "error_code_str": "",
-                  "error_msg": "",
-                  "error_detail": {
-                    "status_code": 200,
-                    "code": "",
-                    "code_message": "",
-                    "message": ""
-                  },
-                  "data": {
-                    "image_url": ""
-                  }
-                }
-              }
-            },
-            "description": "Success"
-          }
-        }
-      }
-    },
-    "/api/image/editing/image-invisible-image-watermark": {
-      "post": {
-        "tags": [
-          "AI IMAGE > Image Editing"
-        ],
-        "summary": "Image Invisible Picture Watermark",
-        "requestBody": {
-          "content": {
-            "multipart/form-data": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "function_type": {
-                    "type": "string",
-                    "description": "Specifies the calling function."
-                  },
-                  "origin_image": {
-                    "type": "string",
-                    "description": "Original image.",
-                    "format": "binary"
-                  },
-                  "logo": {
-                    "type": "string",
-                    "description": "Watermark images.",
-                    "format": "binary"
-                  },
-                  "output_file_type": {
-                    "type": "string",
-                    "description": "Output format."
-                  },
-                  "watermark_image": {
-                    "type": "string",
-                    "description": "The image to be resolved, i.e. the composite image with the image watermark.",
-                    "format": "binary"
-                  },
-                  "quality_factor": {
-                    "type": "string",
-                    "description": "The quality size of the output image, the higher the quality the larger the image."
-                  }
-                }
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "headers": {
-              "Content-Type": {
-                "schema": {
-                  "type": "string",
-                  "example": "application/json"
-                }
-              }
-            },
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object"
-                },
-                "examples": {
-                  "example-0": {
-                    "summary": "encode_pic|encode_pic_plus|encode_pic_bold",
-                    "value": {
-                      "request_id": "",
-                      "log_id": "",
-                      "error_code": 0,
-                      "error_code_str": "",
-                      "error_msg": "",
-                      "error_detail": {
-                        "status_code": 200,
-                        "code": "",
-                        "code_message": "",
-                        "message": ""
-                      },
-                      "data": {
-                        "watermark_image_url": "",
-                        "logo_url": ""
-                      }
-                    }
-                  },
-                  "example-1": {
-                    "summary": "decode_pic",
-                    "value": {
-                      "request_id": "",
-                      "log_id": "",
-                      "error_code": 0,
-                      "error_code_str": "",
-                      "error_msg": "",
-                      "error_detail": {
-                        "status_code": 200,
-                        "code": "",
-                        "code_message": "",
-                        "message": ""
-                      },
-                      "data": {
-                        "watermark_image_url": "",
-                        "logo_url": ""
-                      }
-                    }
-                  },
-                  "example-2": {
-                    "summary": "decode_pic_plus|decode_pic_bold",
-                    "value": {
-                      "request_id": "",
-                      "log_id": "",
-                      "error_code": 0,
-                      "error_code_str": "",
-                      "error_msg": "",
-                      "error_detail": {
-                        "status_code": 200,
-                        "code": "",
-                        "code_message": "",
-                        "message": ""
-                      },
-                      "data": {
-                        "watermark_image_url": "",
-                        "logo_url": ""
-                      }
-                    }
-                  }
-                }
-              }
-            },
-            "description": "Success"
-          }
-        }
-      }
-    },
-    "/api/image/editing/image-invisible-text-watermarking": {
-      "post": {
-        "tags": [
-          "AI IMAGE > Image Editing"
-        ],
-        "summary": "Image Invisible Text Watermark",
-        "requestBody": {
-          "content": {
-            "multipart/form-data": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "function_type": {
-                    "type": "string",
-                    "description": "Specifies the calling function."
-                  },
-                  "origin_image": {
-                    "type": "string",
-                    "description": "Original image.",
-                    "format": "binary"
-                  },
-                  "text": {
-                    "type": "string",
-                    "description": "The text of the watermark to be added."
-                  },
-                  "output_file_type": {
-                    "type": "string",
-                    "description": "Output format."
-                  },
-                  "watermark_image": {
-                    "type": "string",
-                    "description": "The image to be resolved, i.e., a composite image with a text watermark.",
-                    "format": "binary"
-                  },
-                  "quality_factor": {
-                    "type": "string",
-                    "description": "The quality size of the output image, the higher the quality the larger the image."
-                  }
-                }
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "headers": {
-              "Content-Type": {
-                "schema": {
-                  "type": "string",
-                  "example": "application/json"
-                }
-              }
-            },
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object"
-                },
-                "examples": {
-                  "example-0": {
-                    "summary": "encode_text|encode_text_plus|encode_text_bold",
-                    "value": {
-                      "request_id": "",
-                      "log_id": "",
-                      "error_code": 0,
-                      "error_code_str": "",
-                      "error_msg": "",
-                      "error_detail": {
-                        "status_code": 200,
-                        "code": "",
-                        "code_message": "",
-                        "message": ""
-                      },
-                      "data": {
-                        "watermark_image_url": "",
-                        "text_image_url": ""
-                      }
-                    }
-                  },
-                  "example-1": {
-                    "summary": "decode_text",
-                    "value": {
-                      "request_id": "",
-                      "log_id": "",
-                      "error_code": 0,
-                      "error_code_str": "",
-                      "error_msg": "",
-                      "error_detail": {
-                        "status_code": 200,
-                        "code": "",
-                        "code_message": "",
-                        "message": ""
-                      },
-                      "data": {
-                        "watermark_image_url": "",
-                        "text_image_url": ""
-                      }
-                    }
-                  },
-                  "example-2": {
-                    "summary": "decode_text_plus|decode_text_bold",
-                    "value": {
-                      "request_id": "",
-                      "log_id": "",
-                      "error_code": 0,
-                      "error_code_str": "",
-                      "error_msg": "",
-                      "error_detail": {
-                        "status_code": 200,
-                        "code": "",
-                        "code_message": "",
-                        "message": ""
-                      },
-                      "data": {
-                        "watermark_image_url": "",
-                        "text_image_url": ""
-                      }
-                    }
-                  }
-                }
-              }
-            },
-            "description": "Success"
-          }
-        }
-      }
-    },
-    "/api/image/editing/remove-objects": {
-      "post": {
-        "tags": [
-          "AI IMAGE > Image Editing"
-        ],
-        "summary": "Remove Objects",
-        "requestBody": {
-          "content": {
-            "multipart/form-data": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "image": {
-                    "type": "string",
-                    "description": "Original image.",
-                    "format": "binary"
-                  },
-                  "mask": {
-                    "type": "string",
-                    "description": "Mask image.",
-                    "format": "binary"
-                  }
-                }
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "headers": {
-              "Content-Type": {
-                "schema": {
-                  "type": "string",
-                  "example": "application/json"
-                }
-              }
-            },
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object"
-                },
-                "example": {
-                  "request_id": "",
-                  "log_id": "",
-                  "error_code": 0,
-                  "error_code_str": "",
-                  "error_msg": "",
-                  "error_detail": {
-                    "status_code": 200,
-                    "code": "",
-                    "code_message": "",
-                    "message": ""
-                  },
-                  "data": {
-                    "image_url": ""
-                  }
-                }
-              }
-            },
-            "description": "Success"
-          }
-        }
-      }
-    },
-    "/api/image/editing/remove-objects-advanced": {
-      "post": {
-        "tags": [
-          "AI IMAGE > Image Editing"
-        ],
-        "summary": "Remove Objects Advanced",
-        "requestBody": {
-          "content": {
-            "multipart/form-data": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "image": {
-                    "type": "string",
-                    "description": "Original image.",
-                    "format": "binary"
-                  },
-                  "mask": {
-                    "type": "string",
-                    "description": "Mask image.",
-                    "format": "binary"
-                  },
-                  "steps": {
-                    "type": "integer",
-                    "description": "Sampling steps determine the level of detail in the generated image. A higher value may result in better quality, but it will significantly increase the processing time.",
-                    "example": "30"
-                  },
-                  "strength": {
-                    "type": "number",
-                    "description": "The smaller the value, the closer it is to the original image.",
-                    "example": "0.8"
-                  },
-                  "scale": {
-                    "type": "integer",
-                    "description": "The degree to which the text description influences the output.",
-                    "example": "7"
-                  },
-                  "seed": {
-                    "type": "integer",
-                    "description": "Random seed, used as the basis for determining the initial state of the diffusion process. It must be a non-negative number (`-1` represents a random seed). If the random seed is the same positive integer and all other parameters are identical, the generated image will most likely be consistent.",
-                    "example": "0"
-                  },
-                  "dilate_size": {
-                    "type": "integer",
-                    "description": "Mask Dilation Radius. The mask used for object removal should fully encompass the target object. When users manually draw the mask, it often extends beyond the object's boundary. However, if the mask is generated by a segmentation algorithm, it typically adheres closely to the object's edges, which might leave parts of the object uncovered. This can lead to incomplete removal or unexpected artifacts during generation. To avoid such issues, it's recommended to appropriately increase the `dilate_size` parameter to ensure the mask fully covers the object.",
-                    "example": "15"
-                  },
-                  "quality": {
-                    "type": "string",
-                    "description": "Quality Parameter. <li>`H`: High quality — best output quality, but slightly slower processing.</li> <li>`M`: Medium quality — balanced in both quality and speed.</li> <li>`L`: Low quality — fastest processing, suitable for scenarios where speed is prioritized.</li>",
-                    "example": "M"
-                  }
-                }
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "headers": {
-              "Content-Type": {
-                "schema": {
-                  "type": "string",
-                  "example": "application/json"
-                }
-              }
-            },
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object"
-                },
-                "example": {
-                  "request_id": "",
-                  "log_id": "",
-                  "error_code": 0,
-                  "error_code_str": "",
-                  "error_msg": "",
-                  "error_detail": {
-                    "status_code": 200,
-                    "code": "",
-                    "code_message": "",
-                    "message": ""
-                  },
-                  "data": {
-                    "binary_data_base64": []
-                  }
-                }
-              }
-            },
-            "description": "Success"
-          }
-        }
-      }
-    },
-    "/api/image/editing/remove-objects-pro": {
-      "post": {
-        "tags": [
-          "AI IMAGE > Image Editing"
-        ],
-        "summary": "Remove Objects Pro",
-        "requestBody": {
-          "content": {
-            "multipart/form-data": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "image": {
-                    "type": "string",
-                    "description": "Original image.",
-                    "format": "binary"
-                  },
-                  "mask": {
-                    "type": "string",
-                    "description": "Mask image.",
-                    "format": "binary"
-                  }
-                }
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "headers": {
-              "Content-Type": {
-                "schema": {
-                  "type": "string",
-                  "example": "application/json"
-                }
-              }
-            },
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object"
-                },
-                "example": {
-                  "request_id": "",
-                  "log_id": "",
-                  "error_code": 0,
-                  "error_code_str": "",
-                  "error_msg": "",
-                  "error_detail": {
-                    "status_code": 200,
-                    "code": "",
-                    "code_message": "",
-                    "message": ""
-                  },
-                  "data": {
-                    "image_url": ""
-                  }
-                }
-              }
-            },
-            "description": "Success"
-          }
-        }
-      }
-    },
-    "/api/image/editing/ai-object-replacer": {
-      "post": {
-        "tags": [
-          "AI IMAGE > Image Editing"
-        ],
-        "summary": "AI Object Replacer",
-        "requestBody": {
-          "content": {
-            "multipart/form-data": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "image": {
-                    "type": "string",
-                    "description": "Original image.",
-                    "format": "binary"
-                  },
-                  "mask": {
-                    "type": "string",
-                    "description": "Mask image.",
-                    "format": "binary"
-                  },
-                  "custom_prompt": {
-                    "type": "string",
-                    "description": "Prompt Content (English only). Please limit the prompt content to 100 English words or fewer. Any content beyond this limit may have minimal impact on the generated result. Use standard vocabulary to avoid failing the review process."
-                  },
-                  "steps": {
-                    "type": "integer",
-                    "description": "Sampling steps determine the level of detail in the generated image. A higher value may result in better quality, but it will significantly increase the processing time.",
-                    "example": "25"
-                  },
-                  "scale": {
-                    "type": "integer",
-                    "description": "The degree to which the text description influences the output.",
-                    "example": "5"
-                  },
-                  "seed": {
-                    "type": "number",
-                    "description": "Random seed, used as the basis for determining the initial state of the diffusion process. It must be a non-negative number (`-1` represents a random seed). If the random seed is the same positive integer and all other parameters are identical, the generated image will most likely be consistent.",
-                    "example": "-1"
-                  }
-                }
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "headers": {
-              "Content-Type": {
-                "schema": {
-                  "type": "string",
-                  "example": "application/json"
-                }
-              }
-            },
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object"
-                },
-                "example": {
-                  "request_id": "",
-                  "log_id": "",
-                  "error_code": 0,
-                  "error_code_str": "",
-                  "error_msg": "",
-                  "error_detail": {
-                    "status_code": 200,
-                    "code": "",
-                    "code_message": "",
-                    "message": ""
-                  },
-                  "data": {
-                    "binary_data_base64": []
-                  }
-                }
-              }
-            },
-            "description": "Success"
-          }
-        }
-      }
-    },
-    "/api/image/editing/ai-image-extender": {
-      "post": {
-        "tags": [
-          "AI IMAGE > Image Editing"
-        ],
-        "summary": "AI Image Extender",
-        "requestBody": {
-          "content": {
-            "multipart/form-data": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "image": {
-                    "type": "string",
-                    "description": "Original image.",
-                    "format": "binary"
-                  },
-                  "mask": {
-                    "type": "string",
-                    "description": "Mask image.",
-                    "format": "binary"
-                  },
-                  "steps": {
-                    "type": "integer",
-                    "description": "Sampling steps determine the level of detail in the generated image. A higher value may result in better quality, but it will significantly increase the processing time.",
-                    "example": "30"
-                  },
-                  "strength": {
-                    "type": "number",
-                    "description": "The smaller the value, the closer it is to the original image.",
-                    "example": "0.8"
-                  },
-                  "scale": {
-                    "type": "integer",
-                    "description": "The degree to which the text description influences the output.",
-                    "example": "7"
-                  },
-                  "seed": {
-                    "type": "integer",
-                    "description": "Random seed, used as the basis for determining the initial state of the diffusion process. It must be a non-negative number (`-1` represents a random seed). If the random seed is the same positive integer and all other parameters are identical, the generated image will most likely be consistent.",
-                    "example": "0"
-                  },
-                  "top": {
-                    "type": "number",
-                    "description": "Upward expansion ratio.",
-                    "example": "0.1"
-                  },
-                  "bottom": {
-                    "type": "number",
-                    "description": "Downward expansion ratio.",
-                    "example": "0.1"
-                  },
-                  "left": {
-                    "type": "number",
-                    "description": "Leftward expansion ratio.",
-                    "example": "0.1"
-                  },
-                  "right": {
-                    "type": "number",
-                    "description": "Rightward expansion ratio.",
-                    "example": "0.1"
-                  },
-                  "max_height": {
-                    "type": "integer",
-                    "description": "Maximum output height. Resized to the specified dimensions as a fallback after the image expansion process.",
-                    "example": "1920"
-                  },
-                  "max_width": {
-                    "type": "integer",
-                    "description": "Maximum output width. Resized to the specified dimensions as a fallback after the image expansion process.",
-                    "example": "1920"
-                  }
-                }
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "headers": {
-              "Content-Type": {
-                "schema": {
-                  "type": "string",
-                  "example": "application/json"
-                }
-              }
-            },
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object"
-                },
-                "examples": {
-                  "example-0": {
-                    "summary": "Non-Mask Expanded Image",
-                    "value": {
-                      "request_id": "",
-                      "log_id": "",
-                      "error_code": 0,
-                      "error_code_str": "",
-                      "error_msg": "",
-                      "error_detail": {
-                        "status_code": 200,
-                        "code": "",
-                        "code_message": "",
-                        "message": ""
-                      },
-                      "data": {
-                        "binary_data_base64": []
-                      }
-                    }
-                  },
-                  "example-1": {
-                    "summary": "Mask Expanded Image",
-                    "value": {
-                      "request_id": "",
-                      "log_id": "",
-                      "error_code": 0,
-                      "error_code_str": "",
-                      "error_msg": "",
-                      "error_detail": {
-                        "status_code": 200,
-                        "code": "",
-                        "code_message": "",
-                        "message": ""
-                      },
-                      "data": {
-                        "binary_data_base64": []
-                      }
-                    }
-                  }
-                }
-              }
-            },
-            "description": "Success"
-          }
-        }
-      }
-    },
-    "/api/image/editing/ai-nail-art": {
-      "post": {
-        "tags": [
-          "AI IMAGE > Image Editing"
-        ],
-        "summary": "AI Nail Art",
-        "requestBody": {
-          "content": {
-            "multipart/form-data": {
-              "schema": {
-                "type": "object",
-                "required": [
-                  "image",
-                  "nail_name",
-                  "nail_desc"
-                ],
-                "properties": {
-                  "image": {
-                    "type": "string",
-                    "description": "Original image. \n- Image format: `JPEG` `JPG` `PNG` `WEBP` \n- Image size: No more than 10 MB. \n- Image resolution: Less than 4096x4096px.",
-                    "format": "binary"
-                  },
-                  "nail_name": {
-                    "type": "string",
-                    "description": "Nail Name (English only). Max 500 characters; extra text will be automatically truncated. Use standard vocabulary to pass review.",
-                    "maxLength": 500,
-                    "example": "Golden Butterfly Glow"
-                  },
-                  "nail_desc": {
-                    "type": "string",
-                    "description": "Nail Description (English only). Max 1000 characters; extra text will be automatically truncated. Use standard vocabulary to pass review.",
-                    "maxLength": 1000,
-                    "example": "Champagne nude shimmer with gold butterfly accents for a soft, luxe finish."
-                  }
-                }
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "headers": {
-              "Content-Type": {
-                "schema": {
-                  "type": "string",
-                  "example": "application/json"
-                }
-              }
-            },
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object"
-                },
-                "example": {
-                  "request_id": "",
-                  "log_id": "",
-                  "error_code": 0,
-                  "error_code_str": "",
-                  "error_msg": "",
-                  "error_detail": {
-                    "status_code": 200,
-                    "code": "",
-                    "code_message": "",
-                    "message": ""
-                  },
-                  "task_type": "async",
-                  "task_id": ""
-                }
-              }
-            },
-            "description": "Success"
-          }
-        }
-      }
-    },
-    "/api/image/rating/image-composition-aesthetics-scoring": {
-      "post": {
-        "tags": [
-          "AI IMAGE > Image Scoring"
-        ],
-        "summary": "Image composition aesthetics score",
-        "requestBody": {
-          "content": {
-            "multipart/form-data": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "image": {
-                    "type": "string",
-                    "format": "binary"
-                  }
-                }
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "headers": {
-              "Content-Type": {
-                "schema": {
-                  "type": "string",
-                  "example": "application/json"
-                }
-              }
-            },
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object"
-                },
-                "example": {
-                  "request_id": "",
-                  "log_id": "",
-                  "error_code": 0,
-                  "error_code_str": "",
-                  "error_msg": "",
-                  "error_detail": {
-                    "status_code": 200,
-                    "code": "",
-                    "code_message": "",
-                    "message": ""
-                  },
-                  "data": {
-                    "score": 0
-                  }
-                }
-              }
-            },
-            "description": "Success"
-          }
-        }
-      }
-    },
-    "/api/image/rating/image-exposure-score": {
-      "post": {
-        "tags": [
-          "AI IMAGE > Image Scoring"
-        ],
-        "summary": "Image exposure score",
-        "requestBody": {
-          "content": {
-            "multipart/form-data": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "image": {
-                    "type": "string",
-                    "format": "binary"
-                  }
-                }
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "headers": {
-              "Content-Type": {
-                "schema": {
-                  "type": "string",
-                  "example": "application/json"
-                }
-              }
-            },
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object"
-                },
-                "example": {
-                  "request_id": "",
-                  "log_id": "",
-                  "error_code": 0,
-                  "error_code_str": "",
-                  "error_msg": "",
-                  "error_detail": {
-                    "status_code": 200,
-                    "code": "",
-                    "code_message": "",
-                    "message": ""
-                  },
-                  "data": {
-                    "exposure": 0
-                  }
-                }
-              }
-            },
-            "description": "Success"
-          }
-        }
-      }
-    },
-    "/api/cutout/portrait/portrait-background-removal": {
-      "post": {
-        "tags": [
-          "AI BACKGROUND REMOVAL > Portrait"
-        ],
-        "summary": "Human background removal",
-        "requestBody": {
-          "content": {
-            "multipart/form-data": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "image": {
-                    "type": "string",
-                    "format": "binary"
-                  },
-                  "return_form": {
-                    "type": "string",
-                    "description": "Specifies the form of the returned image. <li>If not set, the four-channel PNG map is returned.</li> <li>`mask`: Returns a single channel mask.</li> <li>`whiteBK`: Return to white background image.</li> <li>`crop`: Returns the four-channel PNG image after cropping (cropping out the blank areas around the edges).</li>"
-                  }
-                }
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "headers": {
-              "Content-Type": {
-                "schema": {
-                  "type": "string",
-                  "example": "application/json"
-                }
-              }
-            },
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object"
-                },
-                "example": {
-                  "request_id": "",
-                  "log_id": "",
-                  "error_code": 0,
-                  "error_code_str": "",
-                  "error_msg": "",
-                  "error_detail": {
-                    "status_code": 200,
-                    "code": "",
-                    "code_message": "",
-                    "message": ""
-                  },
-                  "data": {
-                    "image_url": ""
-                  }
-                }
-              }
-            },
-            "description": "Success"
-          }
-        }
-      }
-    },
-    "/api/cutout/portrait/avatar-extraction": {
-      "post": {
-        "tags": [
-          "AI BACKGROUND REMOVAL > Portrait"
-        ],
-        "summary": "Head Extraction",
-        "requestBody": {
-          "content": {
-            "multipart/form-data": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "image": {
-                    "type": "string",
-                    "format": "binary"
-                  },
-                  "return_form": {
-                    "type": "string",
-                    "description": "Specifies the form of the returned image. <li>If not set, the four-channel PNG map is returned.</li> <li>`mask`: Returns a single channel mask.</li>"
-                  }
-                }
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "headers": {
-              "Content-Type": {
-                "schema": {
-                  "type": "string",
-                  "example": "application/json"
-                }
-              }
-            },
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object"
-                },
-                "example": {
-                  "request_id": "",
-                  "log_id": "",
-                  "error_code": 0,
-                  "error_code_str": "",
-                  "error_msg": "",
-                  "error_detail": {
-                    "status_code": 200,
-                    "code": "",
-                    "code_message": "",
-                    "message": ""
-                  },
-                  "data": {
-                    "elements": [
-                      {
-                        "image_url": "",
-                        "width": 0,
-                        "height": 0,
-                        "x": 0,
-                        "y": 0
-                      }
-                    ]
-                  }
-                }
-              }
-            },
-            "description": "Success"
-          }
-        }
-      }
-    },
-    "/api/cutout/portrait/hairstyle-extraction": {
-      "post": {
-        "tags": [
-          "AI BACKGROUND REMOVAL > Portrait"
-        ],
-        "summary": "Hairstyle Extraction",
-        "requestBody": {
-          "content": {
-            "multipart/form-data": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "image": {
-                    "type": "string",
-                    "format": "binary"
-                  }
-                }
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "headers": {
-              "Content-Type": {
-                "schema": {
-                  "type": "string",
-                  "example": "application/json"
-                }
-              }
-            },
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object"
-                },
-                "example": {
-                  "request_id": "",
-                  "log_id": "",
-                  "error_code": 0,
-                  "error_code_str": "",
-                  "error_msg": "",
-                  "error_detail": {
-                    "status_code": 200,
-                    "code": "",
-                    "code_message": "",
-                    "message": ""
-                  },
-                  "data": {
-                    "elements": [
-                      {
-                        "image_url": "",
-                        "width": 0,
-                        "height": 0,
-                        "x": 0,
-                        "y": 0
-                      }
-                    ]
-                  }
-                }
-              }
-            },
-            "description": "Success"
-          }
-        }
-      }
-    },
-    "/api/cutout/general/universal-background-removal": {
-      "post": {
-        "tags": [
-          "AI BACKGROUND REMOVAL > General"
-        ],
-        "summary": "Universal Background Removal",
-        "requestBody": {
-          "content": {
-            "multipart/form-data": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "image": {
-                    "type": "string",
-                    "format": "binary"
-                  },
-                  "return_form": {
-                    "type": "string",
-                    "description": "Specifies the form of the returned image. <li>If not set, the four-channel PNG map is returned.</li> <li>`mask`: Returns a single channel mask.</li> <li>`whiteBK`: Return to white background image.</li> <li>`crop`: Returns the four-channel PNG image after cropping (cropping out the blank areas around the edges).</li>"
-                  }
-                }
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "headers": {
-              "Content-Type": {
-                "schema": {
-                  "type": "string",
-                  "example": "application/json"
-                }
-              }
-            },
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object"
-                },
-                "example": {
-                  "request_id": "",
-                  "log_id": "",
-                  "error_code": 0,
-                  "error_code_str": "",
-                  "error_msg": "",
-                  "error_detail": {
-                    "status_code": 200,
-                    "code": "",
-                    "code_message": "",
-                    "message": ""
-                  },
-                  "data": {
-                    "image_url": ""
-                  }
-                }
-              }
-            },
-            "description": "Success"
-          }
-        }
-      }
-    },
-    "/api/cutout/general/food-background-removal": {
-      "post": {
-        "tags": [
-          "AI BACKGROUND REMOVAL > General"
-        ],
-        "summary": "Food Background Removal",
-        "requestBody": {
-          "content": {
-            "multipart/form-data": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "image": {
-                    "type": "string",
-                    "format": "binary"
-                  },
-                  "return_form": {
-                    "type": "string",
-                    "description": "Specifies the form of the returned image. <li>If not set, the four-channel PNG map is returned.</li> <li>`mask`: Returns a single channel mask.</li> <li>`whiteBK`: Return to white background image.</li>"
-                  }
-                }
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "headers": {
-              "Content-Type": {
-                "schema": {
-                  "type": "string",
-                  "example": "application/json"
-                }
-              }
-            },
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object"
-                },
-                "example": {
-                  "request_id": "",
-                  "log_id": "",
-                  "error_code": 0,
-                  "error_code_str": "",
-                  "error_msg": "",
-                  "error_detail": {
-                    "status_code": 200,
-                    "code": "",
-                    "code_message": "",
-                    "message": ""
-                  },
-                  "data": {
-                    "image_url": ""
-                  }
-                }
-              }
-            },
-            "description": "Success"
-          }
-        }
-      }
-    },
-    "/api/cutout/general/commodity-background-removal": {
-      "post": {
-        "tags": [
-          "AI BACKGROUND REMOVAL > General"
-        ],
-        "summary": "Product background removal",
-        "requestBody": {
-          "content": {
-            "multipart/form-data": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "image": {
-                    "type": "string",
-                    "format": "binary"
-                  },
-                  "return_form": {
-                    "type": "string",
-                    "description": "Specifies the form of the returned image. <li>If not set, the four-channel PNG map is returned.</li> <li>`mask`: Returns a single channel mask.</li> <li>`whiteBK`: Return to white background image.</li> <li>`crop`: Returns the four-channel PNG image after cropping (cropping out the blank areas around the edges).</li>"
-                  }
-                }
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "headers": {
-              "Content-Type": {
-                "schema": {
-                  "type": "string",
-                  "example": "application/json"
-                }
-              }
-            },
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object"
-                },
-                "example": {
-                  "request_id": "",
-                  "log_id": "",
-                  "error_code": 0,
-                  "error_code_str": "",
-                  "error_msg": "",
-                  "error_detail": {
-                    "status_code": 200,
-                    "code": "",
-                    "code_message": "",
-                    "message": ""
-                  },
-                  "data": {
-                    "image_url": ""
-                  }
-                }
-              }
-            },
-            "description": "Success"
-          }
-        }
-      }
-    },
-    "/api/cutout/general/apparel-background-removal": {
-      "post": {
-        "tags": [
-          "AI BACKGROUND REMOVAL > General"
-        ],
-        "summary": "Costume background removal",
-        "requestBody": {
-          "content": {
-            "multipart/form-data": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "image": {
-                    "type": "string",
-                    "format": "binary"
-                  },
-                  "out_mode": {
-                    "type": "string",
-                    "description": "Specifies the type of segmentation result to return, which affects the content of the `image_url` field. <li>`0`: Default segmentation result of the main clothing.</li> <li>`1`: Combined segmentation result based on the category specified by `cloth_class`.</li>"
-                  },
-                  "cloth_class": {
-                    "type": "string",
-                    "description": "Clothing categories. Multiple values can be submitted at once, separated by commas (,). <li>`tops`: Tops.</li> <li>`coat`: Coat.</li> <li>`skirt`: Skirt.</li> <li>`pants`: Pants.</li> <li>`bag`: Bag.</li> <li>`shoes`: Shoes.</li> <li>`hat`: Hat.</li>"
-                  },
-                  "return_form": {
-                    "type": "string",
-                    "description": "Specify the desired image format for the output. <li>`whiteBK`: Returns an image with a white background.</li> <li>`mask`: Returns a single-channel mask.</li> <li>If not specified, a four-channel PNG image will be returned.</li>"
-                  }
-                }
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "headers": {
-              "Content-Type": {
-                "schema": {
-                  "type": "string",
-                  "example": "application/json"
-                }
-              }
-            },
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object"
-                },
-                "example": {
-                  "request_id": "",
-                  "log_id": "",
-                  "error_code": 0,
-                  "error_code_str": "",
-                  "error_msg": "",
-                  "error_detail": {
-                    "status_code": 200,
-                    "code": "",
-                    "code_message": "",
-                    "message": ""
-                  },
-                  "data": {
-                    "elements": [
-                      {
-                        "image_url": ""
-                      },
-                      {
-                        "class_url": {
-                          "tops": "",
-                          "coat": "",
-                          "skirt": "",
-                          "pants": "",
-                          "bag": "",
-                          "shoes": "",
-                          "hat": ""
-                        }
-                      }
-                    ]
-                  }
-                }
-              }
-            },
-            "description": "Success"
-          }
-        }
-      }
-    },
-    "/api/cutout/portrait/hd-portrait-background-removal": {
-      "post": {
-        "tags": [
-          "AI BACKGROUND REMOVAL > General"
-        ],
-        "summary": "Costume background removal",
-        "requestBody": {
-          "content": {
-            "multipart/form-data": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "image": {
-                    "type": "string",
-                    "format": "binary"
-                  }
-                }
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "headers": {
-              "Content-Type": {
-                "schema": {
-                  "type": "string",
-                  "example": "application/json"
-                }
-              }
-            },
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object"
-                },
-                "example": {
-                  "request_id": "",
-                  "log_id": "",
-                  "error_code": 0,
-                  "error_code_str": "",
-                  "error_msg": "",
-                  "error_detail": {
-                    "status_code": 200,
-                    "code": "",
-                    "code_message": "",
-                    "message": ""
-                  },
-                  "data": {
-                    "elements": [
-                      {
-                        "image_url": ""
-                      }
-                    ]
-                  }
-                }
-              }
-            },
-            "description": "Success"
-          }
-        }
-      }
-    },
+
     "/api/portrait/effects/portrait-animation": {
       "post": {
         "tags": [
           "AI PORTRAIT > Portrait Effects"
         ],
-        "summary": "Cartoon yourself",
+        "summary": "Cartoon Yourself",
         "requestBody": {
           "content": {
             "multipart/form-data": {
@@ -3067,73 +793,6 @@
         }
       }
     },
-    "/api/portrait/effects/face-makeup": {
-      "post": {
-        "tags": [
-          "AI PORTRAIT > Portrait Effects"
-        ],
-        "summary": "AI Makeup",
-        "requestBody": {
-          "content": {
-            "multipart/form-data": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "image": {
-                    "type": "string",
-                    "format": "binary"
-                  },
-                  "resource_type": {
-                    "type": "string",
-                    "description": "Beauty using the style. <li>`0`: whole.</li> <li>`1`: Basic makeup.</li> <li>`2`: Teenage makeup.</li> <li>`3`: Vibrant.</li> <li>`4`: Elegant makeup.</li> <li>`5`: Glamorous makeup.</li> <li>`6`: Plum makeup.</li>"
-                  },
-                  "strength": {
-                    "type": "string",
-                    "description": "Beauty intensity."
-                  }
-                }
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "headers": {
-              "Content-Type": {
-                "schema": {
-                  "type": "string",
-                  "example": "application/json"
-                }
-              }
-            },
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object"
-                },
-                "example": {
-                  "request_id": "",
-                  "log_id": "",
-                  "error_code": 0,
-                  "error_code_str": "",
-                  "error_msg": "",
-                  "error_detail": {
-                    "status_code": 200,
-                    "code": "",
-                    "code_message": "",
-                    "message": ""
-                  },
-                  "data": {
-                    "image_url": ""
-                  }
-                }
-              }
-            },
-            "description": "Success"
-          }
-        }
-      }
-    },
     "/api/portrait/effects/face-filter": {
       "post": {
         "tags": [
@@ -3201,79 +860,12 @@
         }
       }
     },
-    "/api/portrait/effects/face-tidyup": {
-      "post": {
-        "tags": [
-          "AI PORTRAIT > Portrait Effects"
-        ],
-        "summary": "Facial aesthetics",
-        "requestBody": {
-          "content": {
-            "multipart/form-data": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "image": {
-                    "type": "string",
-                    "format": "binary"
-                  },
-                  "shape_type": {
-                    "type": "string",
-                    "description": "Beauty parts."
-                  },
-                  "strength": {
-                    "type": "string",
-                    "description": "Aesthetic strength."
-                  }
-                }
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "headers": {
-              "Content-Type": {
-                "schema": {
-                  "type": "string",
-                  "example": "application/json"
-                }
-              }
-            },
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object"
-                },
-                "example": {
-                  "request_id": "",
-                  "log_id": "",
-                  "error_code": 0,
-                  "error_code_str": "",
-                  "error_msg": "",
-                  "error_detail": {
-                    "status_code": 200,
-                    "code": "",
-                    "code_message": "",
-                    "message": ""
-                  },
-                  "data": {
-                    "image_url": ""
-                  }
-                }
-              }
-            },
-            "description": "Success"
-          }
-        }
-      }
-    },
     "/api/portrait/effects/emotion-editor": {
       "post": {
         "tags": [
           "AI PORTRAIT > Portrait Effects"
         ],
-        "summary": "Change facial expressions",
+        "summary": "Change Facial Expressions",
         "requestBody": {
           "content": {
             "multipart/form-data": {
@@ -3331,75 +923,12 @@
         }
       }
     },
-    "/api/portrait/effects/hairstyle-editor": {
-      "post": {
-        "tags": [
-          "AI PORTRAIT > Portrait Effects"
-        ],
-        "summary": "Hairstyle changer",
-        "requestBody": {
-          "content": {
-            "multipart/form-data": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "image_target": {
-                    "type": "string",
-                    "format": "binary"
-                  },
-                  "hair_type": {
-                    "type": "string",
-                    "description": "Hairstyle type. <li>`101`: Bangs (default)</li> <li>`201`: Long hair</li> <li>`301`: Bangs with long hair</li> <li>`401`: Medium hair increase</li> <li>`402`: Light hair increase</li> <li>`403`: Heavy hair increase</li> <li>`502`: Light curling</li> <li>`503`: Heavy curling</li> <li>`603`: Short hair (requires input size `<` 2048x2048; if the input is larger than 2048x2048, the output image will be resized to a maximum of 2048 on the longest side.)</li> <li>`801`: Blonde</li> <li>`901`: Straight hair</li> <li>`1001`: Oil-free hair (slight effect, recommended for images with noticeable issues)</li> <li>`1101`: Hairline fill (slight effect, recommended for images with noticeable issues of a high hairline)</li> <li>`1201`: Smooth hair (slight effect, recommended for images with a large hairstyle area)</li> <li>`1301`: Fill hair gap (slight effect, fills the scalp part in the hair area, recommended for images with noticeable issues)</li>"
-                  }
-                }
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "headers": {
-              "Content-Type": {
-                "schema": {
-                  "type": "string",
-                  "example": "application/json"
-                }
-              }
-            },
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object"
-                },
-                "example": {
-                  "request_id": "",
-                  "log_id": "",
-                  "error_code": 0,
-                  "error_code_str": "",
-                  "error_msg": "",
-                  "error_detail": {
-                    "status_code": 200,
-                    "code": "",
-                    "code_message": "",
-                    "message": ""
-                  },
-                  "data": {
-                    "image": ""
-                  }
-                }
-              }
-            },
-            "description": "Success"
-          }
-        }
-      }
-    },
     "/api/portrait/effects/hairstyle-editor-pro": {
       "post": {
         "tags": [
           "AI PORTRAIT > Portrait Effects"
         ],
-        "summary": "Hairstyle changer Pro",
+        "summary": "Hairstyle Changer Pro",
         "requestBody": {
           "content": {
             "multipart/form-data": {
@@ -3461,186 +990,6 @@
                   },
                   "task_type": "",
                   "task_id": ""
-                }
-              }
-            },
-            "description": "Success"
-          }
-        }
-      }
-    },
-    "/api/portrait/effects/live-photo": {
-      "post": {
-        "tags": [
-          "AI PORTRAIT > Portrait Effects"
-        ],
-        "summary": "Live Photos",
-        "requestBody": {
-          "content": {
-            "multipart/form-data": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "image_target": {
-                    "type": "string",
-                    "format": "binary"
-                  },
-                  "type": {
-                    "type": "string",
-                    "description": "Live photo type. <li>`0`: Avatar version.</li> <li>`1`: Full body version.</li>"
-                  }
-                }
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "headers": {
-              "Content-Type": {
-                "schema": {
-                  "type": "string",
-                  "example": "application/json"
-                }
-              }
-            },
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object"
-                },
-                "example": {
-                  "request_id": "",
-                  "log_id": "",
-                  "error_code": 0,
-                  "error_code_str": "",
-                  "error_msg": "",
-                  "error_detail": {
-                    "status_code": 200,
-                    "code": "",
-                    "code_message": "",
-                    "message": ""
-                  },
-                  "data": {
-                    "video": ""
-                  }
-                }
-              }
-            },
-            "description": "Success"
-          }
-        }
-      }
-    },
-    "/api/portrait/effects/hitchcock-effects": {
-      "post": {
-        "tags": [
-          "AI PORTRAIT > Portrait Effects"
-        ],
-        "summary": "Hitchcock special effects",
-        "requestBody": {
-          "content": {
-            "multipart/form-data": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "version": {
-                    "type": "string",
-                    "description": "Version.",
-                    "example": "v2"
-                  },
-                  "image_target": {
-                    "type": "string",
-                    "format": "binary"
-                  },
-                  "mode": {
-                    "type": "integer",
-                    "description": "Camera movement mode. <li>`0`: Push forward shot, default with flowing effect.</li> <li>`1`: Wide-angle camera movement.</li> <li>`2`: Hitchcock camera movement.</li> <li>`3`: Swing camera movement.</li> <li>`4`: Bounce camera movement.</li>",
-                    "example": "0"
-                  },
-                  "long_side": {
-                    "type": "integer",
-                    "description": "The length of the video's longer side for rendering. The larger the value, the longer it takes, growing exponentially in powers of two.",
-                    "example": "960"
-                  },
-                  "frame_num": {
-                    "type": "integer",
-                    "description": "Video frame rate (without speed change). The larger the value, the longer it takes, increasing linearly.",
-                    "example": "90"
-                  },
-                  "fps": {
-                    "type": "integer",
-                    "description": "Video frame rate. `frame_num`/`fps` determines the video duration.",
-                    "example": "30"
-                  },
-                  "use_flow": {
-                    "type": "number",
-                    "description": "Whether to apply the flow effect. Enabling the flow effect typically increases processing time by approximately 20% to 30%. <li>`-1`: The algorithm determines whether to enable the flow effect based on the `mode` value.</li> <li>`0`: Forcefully disable the flow effect.</li> <li>`1`: Forcefully enable the flow effect.</li>",
-                    "example": "-1"
-                  },
-                  "speed_shift": {
-                    "type": "string",
-                    "description": "Video Curve Speed Variation. <li>Each pair of adjacent values represents the x and y values of a control point.</li> <li>x range [0, 1]: Progress from the beginning to the end of the original video.</li> <li>y range [0.1, 10]: Speed rate.</li> <li>Each pair of adjacent control points represents a speed change curve, with the curve function being a trigonometric function.</li>"
-                  }
-                }
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "headers": {
-              "Content-Type": {
-                "schema": {
-                  "type": "string",
-                  "example": "application/json"
-                }
-              }
-            },
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object"
-                },
-                "examples": {
-                  "example-0": {
-                    "summary": "Hitchcock special effects - V2.0.0",
-                    "value": {
-                      "request_id": "",
-                      "log_id": "",
-                      "error_code": 0,
-                      "error_code_str": "",
-                      "error_msg": "",
-                      "error_detail": {
-                        "status_code": 200,
-                        "code": "",
-                        "code_message": "",
-                        "message": ""
-                      },
-                      "data": {
-                        "video": ""
-                      }
-                    }
-                  },
-                  "example-1": {
-                    "summary": "Hitchcock special effects - V1.0.0",
-                    "value": {
-                      "request_id": "",
-                      "log_id": "",
-                      "error_code": 0,
-                      "error_code_str": "",
-                      "error_msg": "",
-                      "error_detail": {
-                        "status_code": 200,
-                        "code": "",
-                        "code_message": "",
-                        "message": ""
-                      },
-                      "data": {
-                        "video": ""
-                      }
-                    }
-                  }
                 }
               }
             },
@@ -3945,12 +1294,13 @@
         }
       }
     },
-    "/api/portrait/enhance/try-on-clothes-refiner": {
+
+    "/api/portrait/editing/ai-big-tits": {
       "post": {
         "tags": [
-          "AI PORTRAIT > Portrait Enhance"
+          "AI PORTRAIT > Portrait Editing"
         ],
-        "summary": "Try on Clothes Refiner",
+        "summary": "AI Breast Expansion",
         "requestBody": {
           "content": {
             "multipart/form-data": {
@@ -3964,27 +1314,6 @@
                   },
                   "person_image": {
                     "type": "string",
-                    "description": "Model image for calling the Try on Clothes API.",
-                    "format": "binary"
-                  },
-                  "top_garment": {
-                    "type": "string",
-                    "description": "Top clothing image for calling the Try on Clothes API.",
-                    "format": "binary"
-                  },
-                  "coarse_image": {
-                    "type": "string",
-                    "description": "Result image obtained from calling the Try on Clothes API.",
-                    "format": "binary"
-                  },
-                  "gender": {
-                    "type": "string",
-                    "description": "Gender of the `person_image`. <li>`woman`: Female.</li> <li>`man`: Male.</li>",
-                    "example": "man"
-                  },
-                  "bottom_garment": {
-                    "type": "string",
-                    "description": "Bottom clothing image for calling the Try on Clothes API.",
                     "format": "binary"
                   }
                 }
@@ -4019,8 +1348,9 @@
                     "code_message": "",
                     "message": ""
                   },
-                  "task_type": "",
-                  "task_id": ""
+                  "data": {
+                    "image": ""
+                  }
                 }
               }
             },
@@ -4270,6 +1600,92 @@
         }
       }
     },
+
+    "/api/portrait/enhance/try-on-clothes-refiner": {
+      "post": {
+        "tags": [
+          "AI PORTRAIT > Portrait Enhance"
+        ],
+        "summary": "Try on Clothes Refiner",
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "task_type": {
+                    "type": "string",
+                    "description": "Task Type. <li>`async`: Asynchronous tasks.</li>",
+                    "example": "async"
+                  },
+                  "person_image": {
+                    "type": "string",
+                    "description": "Model image for calling the Try on Clothes API.",
+                    "format": "binary"
+                  },
+                  "top_garment": {
+                    "type": "string",
+                    "description": "Top clothing image for calling the Try on Clothes API.",
+                    "format": "binary"
+                  },
+                  "coarse_image": {
+                    "type": "string",
+                    "description": "Result image obtained from calling the Try on Clothes API.",
+                    "format": "binary"
+                  },
+                  "gender": {
+                    "type": "string",
+                    "description": "Gender of the `person_image`. <li>`woman`: Female.</li> <li>`man`: Male.</li>",
+                    "example": "man"
+                  },
+                  "bottom_garment": {
+                    "type": "string",
+                    "description": "Bottom clothing image for calling the Try on Clothes API.",
+                    "format": "binary"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "application/json"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                },
+                "example": {
+                  "request_id": "",
+                  "log_id": "",
+                  "error_code": 0,
+                  "error_code_str": "",
+                  "error_msg": "",
+                  "error_detail": {
+                    "status_code": 200,
+                    "code": "",
+                    "code_message": "",
+                    "message": ""
+                  },
+                  "task_type": "",
+                  "task_id": ""
+                }
+              }
+            },
+            "description": "Success"
+          }
+        }
+      }
+    },
+
     "/api/portrait/analysis/face-key-points": {
       "post": {
         "tags": [
@@ -6223,79 +3639,12 @@
         }
       }
     },
-    "/api/portrait/analysis/skin-disease-detection": {
-      "post": {
-        "tags": [
-          "AI PORTRAIT > Portrait Analysis"
-        ],
-        "summary": "Detect Skin Disease",
-        "requestBody": {
-          "content": {
-            "multipart/form-data": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "image": {
-                    "type": "string",
-                    "format": "binary"
-                  }
-                }
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "headers": {
-              "Content-Type": {
-                "schema": {
-                  "type": "string",
-                  "example": "application/json"
-                }
-              }
-            },
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object"
-                },
-                "example": {
-                  "request_id": "",
-                  "log_id": "",
-                  "error_code": 0,
-                  "error_code_str": "",
-                  "error_msg": "",
-                  "error_detail": {
-                    "status_code": 200,
-                    "code": "",
-                    "code_message": "",
-                    "message": ""
-                  },
-                  "data": {
-                    "body_part": "",
-                    "image_quality": "",
-                    "image_type": "",
-                    "results_english": {
-                      "acne": 0
-                    },
-                    "results": {
-                      "痤疮": 0
-                    }
-                  }
-                }
-              }
-            },
-            "description": "Success"
-          }
-        }
-      }
-    },
     "/api/portrait/analysis/skin-analysis": {
       "post": {
         "tags": [
           "AI PORTRAIT > Portrait Analysis"
         ],
-        "summary": "Skin analyze",
+        "summary": "Skin Analyze",
         "requestBody": {
           "content": {
             "multipart/form-data": {
@@ -6457,7 +3806,7 @@
         "tags": [
           "AI PORTRAIT > Portrait Analysis"
         ],
-        "summary": "Skin analyze Advanced",
+        "summary": "Skin Analyze Advanced",
         "requestBody": {
           "content": {
             "multipart/form-data": {
@@ -6683,7 +4032,7 @@
         "tags": [
           "AI PORTRAIT > Portrait Analysis"
         ],
-        "summary": "Skin analyze Pro",
+        "summary": "Skin Analyze Pro",
         "requestBody": {
           "required": true,
           "content": {
@@ -7827,12 +5176,13 @@
         }
       }
     },
-    "/api/portrait/editing/ai-big-tits": {
+
+    "/api/image/effects/ai-anime-generator": {
       "post": {
         "tags": [
-          "AI PORTRAIT > AI Big Tits"
+          "AI IMAGE > Image Effects"
         ],
-        "summary": "AI Big Tits",
+        "summary": "AI Cartoon Generator",
         "requestBody": {
           "content": {
             "multipart/form-data": {
@@ -7841,10 +5191,1727 @@
                 "properties": {
                   "task_type": {
                     "type": "string",
-                    "description": "Task Type. <li>`async`: Asynchronous tasks.</li>",
+                    "description": "Task Type.",
                     "example": "async"
                   },
-                  "person_image": {
+                  "image": {
+                    "type": "string",
+                    "format": "binary"
+                  },
+                  "index": {
+                    "type": "string",
+                    "description": "Cartoon effect. <li>`0`: Vintage Comic.</li> <li>`1`: 3D Fairy Tale.</li> <li>`2`: Two-dimensional (2D).</li> <li>`3`: Refreshing and Elegant.</li> <li>`4`: Future Technology.</li> <li>`5`: Traditional Chinese Painting Style.</li> <li>`6`: General in a Hundred Battles.</li> <li>`7`: Colorful Cartoon.</li> <li>`8`: Graceful Chinese Style.</li>"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "application/json"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                },
+                "example": {
+                  "request_id": "",
+                  "log_id": "",
+                  "error_code": 0,
+                  "error_code_str": "",
+                  "error_msg": "",
+                  "error_detail": {
+                    "status_code": 200,
+                    "code": "",
+                    "code_message": "",
+                    "message": ""
+                  },
+                  "task_type": "",
+                  "task_id": ""
+                }
+              }
+            },
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/image/effects/image-colorization": {
+      "post": {
+        "tags": [
+          "AI IMAGE > Image Effects"
+        ],
+        "summary": "AI Photo Colorize",
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "image": {
+                    "type": "string",
+                    "format": "binary"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "application/json"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                },
+                "example": {
+                  "request_id": "",
+                  "log_id": "",
+                  "error_code": 0,
+                  "error_code_str": "",
+                  "error_msg": "",
+                  "error_detail": {
+                    "status_code": 200,
+                    "code": "",
+                    "code_message": "",
+                    "message": ""
+                  },
+                  "image": ""
+                }
+              }
+            },
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/image/effects/image-style-conversion": {
+      "post": {
+        "tags": [
+          "AI IMAGE > Image Effects"
+        ],
+        "summary": "Photo to Painting",
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "image": {
+                    "type": "string",
+                    "format": "binary"
+                  },
+                  "option": {
+                    "type": "string",
+                    "description": "<li>`cartoon`: Cartoon style.</li> <li>`pencil`: Pencil style.</li> <li>`color_pencil`: Color pencil drawing style.</li> <li>`warm`: The style of colorful sugar cube oil painting.</li> <li>`wave`: Oil painting style in surfing in Kanagawa.</li> <li>`lavender`: Lavender oil painting style.</li> <li>`mononoke`: Strange oil painting style.</li> <li>`scream`: Scream oil painting style.</li> <li>`gothic`: Gothic oil painting style.</li>"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "application/json"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                },
+                "example": {
+                  "request_id": "",
+                  "log_id": "",
+                  "error_code": 0,
+                  "error_code_str": "",
+                  "error_msg": "",
+                  "error_detail": {
+                    "status_code": 200,
+                    "code": "",
+                    "code_message": "",
+                    "message": ""
+                  },
+                  "image": ""
+                }
+              }
+            },
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/image/effects/photo-to-line-art": {
+      "post": {
+        "tags": [
+          "AI IMAGE > Image Effects"
+        ],
+        "summary": "Photo to Coloring Page",
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "image"
+                ],
+                "properties": {
+                  "image": {
+                    "type": "string",
+                    "description": "Original image. \n- Image format: `JPEG` `JPG` `PNG` `WEBP` \n- Image size: No more than 10 MB. \n- Image resolution: Less than 4096x4096px.",
+                    "format": "binary"
+                  },
+                  "prompt": {
+                    "type": "string",
+                    "description": "Prompt (English only). Max 3000 characters; extra text will be automatically truncated. Use standard vocabulary to pass review.",
+                    "maxLength": 3000
+                  },
+                  "image_size": {
+                    "type": "string",
+                    "description": "Output Image Aspect Ratio.",
+                    "enum": [
+                      "A4",
+                      "auto",
+                      "1:1",
+                      "2:3",
+                      "3:2",
+                      "3:4",
+                      "4:3",
+                      "4:5",
+                      "5:4",
+                      "9:16",
+                      "16:9",
+                      "21:9"
+                    ],
+                    "default": "A4"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "application/json"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                },
+                "example": {
+                  "request_id": "",
+                  "log_id": "",
+                  "error_code": 0,
+                  "error_code_str": "",
+                  "error_msg": "",
+                  "error_detail": {
+                    "status_code": 200,
+                    "code": "",
+                    "code_message": "",
+                    "message": ""
+                  },
+                  "task_type": "async",
+                  "task_id": ""
+                }
+              }
+            },
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/image/effects/photo-to-emoji-grid": {
+      "post": {
+        "tags": [
+          "AI IMAGE > Image Effects"
+        ],
+        "summary": "AI Emoji Generator",
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "image",
+                  "expression",
+                  "style",
+                  "scene"
+                ],
+                "properties": {
+                  "image": {
+                    "type": "string",
+                    "description": "Original image. \n- Image format: `JPEG` `JPG` `PNG` `WEBP` \n- Image size: No more than 10 MB. \n- Image resolution: Less than 4096x4096px.",
+                    "format": "binary"
+                  },
+                  "expression": {
+                    "type": "string",
+                    "description": "Expression (English only). Max 100 characters; extra text will be automatically truncated. Use standard vocabulary to pass review.",
+                    "maxLength": 100,
+                    "example": "Angry"
+                  },
+                  "style": {
+                    "type": "string",
+                    "description": "Style (English only). Max 100 characters; extra text will be automatically truncated. Use standard vocabulary to pass review.",
+                    "maxLength": 100,
+                    "example": "3D Emoji Render"
+                  },
+                  "scene": {
+                    "type": "string",
+                    "description": "Scene (English only). Max 100 characters; extra text will be automatically truncated. Use standard vocabulary to pass review.",
+                    "maxLength": 100,
+                    "example": "Baby Shower"
+                  },
+                  "filler": {
+                    "type": "string",
+                    "description": "Filler Text (English only). Max 20 characters; extra text will be automatically truncated. Use standard vocabulary to pass review.",
+                    "maxLength": 20,
+                    "example": "Go Go Go"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "application/json"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                },
+                "example": {
+                  "request_id": "",
+                  "log_id": "",
+                  "error_code": 0,
+                  "error_code_str": "",
+                  "error_msg": "",
+                  "error_detail": {
+                    "status_code": 200,
+                    "code": "",
+                    "code_message": "",
+                    "message": ""
+                  },
+                  "task_type": "async",
+                  "task_id": ""
+                }
+              }
+            },
+            "description": "Success"
+          }
+        }
+      }
+    },
+
+    "/api/image/editing/image-cropping": {
+      "post": {
+        "tags": [
+          "AI IMAGE > Image Editing"
+        ],
+        "summary": "AI Image Cropping",
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "image": {
+                    "type": "string",
+                    "format": "binary"
+                  },
+                  "width": {
+                    "type": "string",
+                    "description": "The width of the target. Unit: px."
+                  },
+                  "height": {
+                    "type": "string",
+                    "description": "The height of the target. Unit: px."
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "application/json"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                },
+                "example": {
+                  "request_id": "",
+                  "log_id": "",
+                  "error_code": 0,
+                  "error_code_str": "",
+                  "error_msg": "",
+                  "error_detail": {
+                    "status_code": 200,
+                    "code": "",
+                    "code_message": "",
+                    "message": ""
+                  },
+                  "data": {
+                    "url": "",
+                    "retain_location": {
+                      "width": 0,
+                      "height": 0,
+                      "y": 0,
+                      "x": 0
+                    }
+                  }
+                }
+              }
+            },
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/image/editing/intelligent-composition": {
+      "post": {
+        "tags": [
+          "AI IMAGE > Image Editing"
+        ],
+        "summary": "Intelligent Composition",
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "image": {
+                    "type": "string",
+                    "format": "binary"
+                  },
+                  "num_boxes": {
+                    "type": "string",
+                    "description": "The number of output boxes."
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "application/json"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                },
+                "example": {
+                  "request_id": "",
+                  "log_id": "",
+                  "error_code": 0,
+                  "error_code_str": "",
+                  "error_msg": "",
+                  "error_detail": {
+                    "status_code": 200,
+                    "code": "",
+                    "code_message": "",
+                    "message": ""
+                  },
+                  "data": {
+                    "elements": [
+                      {
+                        "min_x": 0,
+                        "max_x": 0,
+                        "min_y": 0,
+                        "max_y": 0,
+                        "score": 0
+                      }
+                    ]
+                  }
+                }
+              }
+            },
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/image/editing/photo-retouching": {
+      "post": {
+        "tags": [
+          "AI IMAGE > Image Editing"
+        ],
+        "summary": "Photo Retouch",
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "image": {
+                    "type": "string",
+                    "description": "Images that require a style transformation.",
+                    "format": "binary"
+                  },
+                  "style": {
+                    "type": "string",
+                    "description": "Reference image.",
+                    "format": "binary"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "application/json"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                },
+                "example": {
+                  "request_id": "",
+                  "log_id": "",
+                  "error_code": 0,
+                  "error_code_str": "",
+                  "error_msg": "",
+                  "error_detail": {
+                    "status_code": 200,
+                    "code": "",
+                    "code_message": "",
+                    "message": ""
+                  },
+                  "data": {
+                    "image_url": ""
+                  }
+                }
+              }
+            },
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/image/editing/image-invisible-image-watermark": {
+      "post": {
+        "tags": [
+          "AI IMAGE > Image Editing"
+        ],
+        "summary": "Image Invisible Picture Watermark",
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "function_type": {
+                    "type": "string",
+                    "description": "Specifies the calling function."
+                  },
+                  "origin_image": {
+                    "type": "string",
+                    "description": "Original image.",
+                    "format": "binary"
+                  },
+                  "logo": {
+                    "type": "string",
+                    "description": "Watermark images.",
+                    "format": "binary"
+                  },
+                  "output_file_type": {
+                    "type": "string",
+                    "description": "Output format."
+                  },
+                  "watermark_image": {
+                    "type": "string",
+                    "description": "The image to be resolved, i.e. the composite image with the image watermark.",
+                    "format": "binary"
+                  },
+                  "quality_factor": {
+                    "type": "string",
+                    "description": "The quality size of the output image, the higher the quality the larger the image."
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "application/json"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                },
+                "examples": {
+                  "example-0": {
+                    "summary": "encode_pic|encode_pic_plus|encode_pic_bold",
+                    "value": {
+                      "request_id": "",
+                      "log_id": "",
+                      "error_code": 0,
+                      "error_code_str": "",
+                      "error_msg": "",
+                      "error_detail": {
+                        "status_code": 200,
+                        "code": "",
+                        "code_message": "",
+                        "message": ""
+                      },
+                      "data": {
+                        "watermark_image_url": "",
+                        "logo_url": ""
+                      }
+                    }
+                  },
+                  "example-1": {
+                    "summary": "decode_pic",
+                    "value": {
+                      "request_id": "",
+                      "log_id": "",
+                      "error_code": 0,
+                      "error_code_str": "",
+                      "error_msg": "",
+                      "error_detail": {
+                        "status_code": 200,
+                        "code": "",
+                        "code_message": "",
+                        "message": ""
+                      },
+                      "data": {
+                        "watermark_image_url": "",
+                        "logo_url": ""
+                      }
+                    }
+                  },
+                  "example-2": {
+                    "summary": "decode_pic_plus|decode_pic_bold",
+                    "value": {
+                      "request_id": "",
+                      "log_id": "",
+                      "error_code": 0,
+                      "error_code_str": "",
+                      "error_msg": "",
+                      "error_detail": {
+                        "status_code": 200,
+                        "code": "",
+                        "code_message": "",
+                        "message": ""
+                      },
+                      "data": {
+                        "watermark_image_url": "",
+                        "logo_url": ""
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/image/editing/image-invisible-text-watermarking": {
+      "post": {
+        "tags": [
+          "AI IMAGE > Image Editing"
+        ],
+        "summary": "Image Invisible Text Watermark",
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "function_type": {
+                    "type": "string",
+                    "description": "Specifies the calling function."
+                  },
+                  "origin_image": {
+                    "type": "string",
+                    "description": "Original image.",
+                    "format": "binary"
+                  },
+                  "text": {
+                    "type": "string",
+                    "description": "The text of the watermark to be added."
+                  },
+                  "output_file_type": {
+                    "type": "string",
+                    "description": "Output format."
+                  },
+                  "watermark_image": {
+                    "type": "string",
+                    "description": "The image to be resolved, i.e., a composite image with a text watermark.",
+                    "format": "binary"
+                  },
+                  "quality_factor": {
+                    "type": "string",
+                    "description": "The quality size of the output image, the higher the quality the larger the image."
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "application/json"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                },
+                "examples": {
+                  "example-0": {
+                    "summary": "encode_text|encode_text_plus|encode_text_bold",
+                    "value": {
+                      "request_id": "",
+                      "log_id": "",
+                      "error_code": 0,
+                      "error_code_str": "",
+                      "error_msg": "",
+                      "error_detail": {
+                        "status_code": 200,
+                        "code": "",
+                        "code_message": "",
+                        "message": ""
+                      },
+                      "data": {
+                        "watermark_image_url": "",
+                        "text_image_url": ""
+                      }
+                    }
+                  },
+                  "example-1": {
+                    "summary": "decode_text",
+                    "value": {
+                      "request_id": "",
+                      "log_id": "",
+                      "error_code": 0,
+                      "error_code_str": "",
+                      "error_msg": "",
+                      "error_detail": {
+                        "status_code": 200,
+                        "code": "",
+                        "code_message": "",
+                        "message": ""
+                      },
+                      "data": {
+                        "watermark_image_url": "",
+                        "text_image_url": ""
+                      }
+                    }
+                  },
+                  "example-2": {
+                    "summary": "decode_text_plus|decode_text_bold",
+                    "value": {
+                      "request_id": "",
+                      "log_id": "",
+                      "error_code": 0,
+                      "error_code_str": "",
+                      "error_msg": "",
+                      "error_detail": {
+                        "status_code": 200,
+                        "code": "",
+                        "code_message": "",
+                        "message": ""
+                      },
+                      "data": {
+                        "watermark_image_url": "",
+                        "text_image_url": ""
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/image/editing/remove-objects": {
+      "post": {
+        "tags": [
+          "AI IMAGE > Image Editing"
+        ],
+        "summary": "Remove Objects",
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "image": {
+                    "type": "string",
+                    "description": "Original image.",
+                    "format": "binary"
+                  },
+                  "mask": {
+                    "type": "string",
+                    "description": "Mask image.",
+                    "format": "binary"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "application/json"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                },
+                "example": {
+                  "request_id": "",
+                  "log_id": "",
+                  "error_code": 0,
+                  "error_code_str": "",
+                  "error_msg": "",
+                  "error_detail": {
+                    "status_code": 200,
+                    "code": "",
+                    "code_message": "",
+                    "message": ""
+                  },
+                  "data": {
+                    "image_url": ""
+                  }
+                }
+              }
+            },
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/image/editing/remove-objects-advanced": {
+      "post": {
+        "tags": [
+          "AI IMAGE > Image Editing"
+        ],
+        "summary": "Remove Objects Advanced",
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "image": {
+                    "type": "string",
+                    "description": "Original image.",
+                    "format": "binary"
+                  },
+                  "mask": {
+                    "type": "string",
+                    "description": "Mask image.",
+                    "format": "binary"
+                  },
+                  "steps": {
+                    "type": "integer",
+                    "description": "Sampling steps determine the level of detail in the generated image. A higher value may result in better quality, but it will significantly increase the processing time.",
+                    "example": "30"
+                  },
+                  "strength": {
+                    "type": "number",
+                    "description": "The smaller the value, the closer it is to the original image.",
+                    "example": "0.8"
+                  },
+                  "scale": {
+                    "type": "integer",
+                    "description": "The degree to which the text description influences the output.",
+                    "example": "7"
+                  },
+                  "seed": {
+                    "type": "integer",
+                    "description": "Random seed, used as the basis for determining the initial state of the diffusion process. It must be a non-negative number (`-1` represents a random seed). If the random seed is the same positive integer and all other parameters are identical, the generated image will most likely be consistent.",
+                    "example": "0"
+                  },
+                  "dilate_size": {
+                    "type": "integer",
+                    "description": "Mask Dilation Radius. The mask used for object removal should fully encompass the target object. When users manually draw the mask, it often extends beyond the object's boundary. However, if the mask is generated by a segmentation algorithm, it typically adheres closely to the object's edges, which might leave parts of the object uncovered. This can lead to incomplete removal or unexpected artifacts during generation. To avoid such issues, it's recommended to appropriately increase the `dilate_size` parameter to ensure the mask fully covers the object.",
+                    "example": "15"
+                  },
+                  "quality": {
+                    "type": "string",
+                    "description": "Quality Parameter. <li>`H`: High quality — best output quality, but slightly slower processing.</li> <li>`M`: Medium quality — balanced in both quality and speed.</li> <li>`L`: Low quality — fastest processing, suitable for scenarios where speed is prioritized.</li>",
+                    "example": "M"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "application/json"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                },
+                "example": {
+                  "request_id": "",
+                  "log_id": "",
+                  "error_code": 0,
+                  "error_code_str": "",
+                  "error_msg": "",
+                  "error_detail": {
+                    "status_code": 200,
+                    "code": "",
+                    "code_message": "",
+                    "message": ""
+                  },
+                  "data": {
+                    "binary_data_base64": []
+                  }
+                }
+              }
+            },
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/image/editing/remove-objects-pro": {
+      "post": {
+        "tags": [
+          "AI IMAGE > Image Editing"
+        ],
+        "summary": "Remove Objects Pro",
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "image": {
+                    "type": "string",
+                    "description": "Original image.",
+                    "format": "binary"
+                  },
+                  "mask": {
+                    "type": "string",
+                    "description": "Mask image.",
+                    "format": "binary"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "application/json"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                },
+                "example": {
+                  "request_id": "",
+                  "log_id": "",
+                  "error_code": 0,
+                  "error_code_str": "",
+                  "error_msg": "",
+                  "error_detail": {
+                    "status_code": 200,
+                    "code": "",
+                    "code_message": "",
+                    "message": ""
+                  },
+                  "data": {
+                    "image_url": ""
+                  }
+                }
+              }
+            },
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/image/editing/ai-object-replacer": {
+      "post": {
+        "tags": [
+          "AI IMAGE > Image Editing"
+        ],
+        "summary": "AI Object Replacer",
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "image": {
+                    "type": "string",
+                    "description": "Original image.",
+                    "format": "binary"
+                  },
+                  "mask": {
+                    "type": "string",
+                    "description": "Mask image.",
+                    "format": "binary"
+                  },
+                  "custom_prompt": {
+                    "type": "string",
+                    "description": "Prompt Content (English only). Please limit the prompt content to 100 English words or fewer. Any content beyond this limit may have minimal impact on the generated result. Use standard vocabulary to avoid failing the review process."
+                  },
+                  "steps": {
+                    "type": "integer",
+                    "description": "Sampling steps determine the level of detail in the generated image. A higher value may result in better quality, but it will significantly increase the processing time.",
+                    "example": "25"
+                  },
+                  "scale": {
+                    "type": "integer",
+                    "description": "The degree to which the text description influences the output.",
+                    "example": "5"
+                  },
+                  "seed": {
+                    "type": "number",
+                    "description": "Random seed, used as the basis for determining the initial state of the diffusion process. It must be a non-negative number (`-1` represents a random seed). If the random seed is the same positive integer and all other parameters are identical, the generated image will most likely be consistent.",
+                    "example": "-1"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "application/json"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                },
+                "example": {
+                  "request_id": "",
+                  "log_id": "",
+                  "error_code": 0,
+                  "error_code_str": "",
+                  "error_msg": "",
+                  "error_detail": {
+                    "status_code": 200,
+                    "code": "",
+                    "code_message": "",
+                    "message": ""
+                  },
+                  "data": {
+                    "binary_data_base64": []
+                  }
+                }
+              }
+            },
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/image/editing/ai-image-extender": {
+      "post": {
+        "tags": [
+          "AI IMAGE > Image Editing"
+        ],
+        "summary": "AI Image Extender",
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "image": {
+                    "type": "string",
+                    "description": "Original image.",
+                    "format": "binary"
+                  },
+                  "mask": {
+                    "type": "string",
+                    "description": "Mask image.",
+                    "format": "binary"
+                  },
+                  "steps": {
+                    "type": "integer",
+                    "description": "Sampling steps determine the level of detail in the generated image. A higher value may result in better quality, but it will significantly increase the processing time.",
+                    "example": "30"
+                  },
+                  "strength": {
+                    "type": "number",
+                    "description": "The smaller the value, the closer it is to the original image.",
+                    "example": "0.8"
+                  },
+                  "scale": {
+                    "type": "integer",
+                    "description": "The degree to which the text description influences the output.",
+                    "example": "7"
+                  },
+                  "seed": {
+                    "type": "integer",
+                    "description": "Random seed, used as the basis for determining the initial state of the diffusion process. It must be a non-negative number (`-1` represents a random seed). If the random seed is the same positive integer and all other parameters are identical, the generated image will most likely be consistent.",
+                    "example": "0"
+                  },
+                  "top": {
+                    "type": "number",
+                    "description": "Upward expansion ratio.",
+                    "example": "0.1"
+                  },
+                  "bottom": {
+                    "type": "number",
+                    "description": "Downward expansion ratio.",
+                    "example": "0.1"
+                  },
+                  "left": {
+                    "type": "number",
+                    "description": "Leftward expansion ratio.",
+                    "example": "0.1"
+                  },
+                  "right": {
+                    "type": "number",
+                    "description": "Rightward expansion ratio.",
+                    "example": "0.1"
+                  },
+                  "max_height": {
+                    "type": "integer",
+                    "description": "Maximum output height. Resized to the specified dimensions as a fallback after the image expansion process.",
+                    "example": "1920"
+                  },
+                  "max_width": {
+                    "type": "integer",
+                    "description": "Maximum output width. Resized to the specified dimensions as a fallback after the image expansion process.",
+                    "example": "1920"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "application/json"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                },
+                "examples": {
+                  "example-0": {
+                    "summary": "Non-Mask Expanded Image",
+                    "value": {
+                      "request_id": "",
+                      "log_id": "",
+                      "error_code": 0,
+                      "error_code_str": "",
+                      "error_msg": "",
+                      "error_detail": {
+                        "status_code": 200,
+                        "code": "",
+                        "code_message": "",
+                        "message": ""
+                      },
+                      "data": {
+                        "binary_data_base64": []
+                      }
+                    }
+                  },
+                  "example-1": {
+                    "summary": "Mask Expanded Image",
+                    "value": {
+                      "request_id": "",
+                      "log_id": "",
+                      "error_code": 0,
+                      "error_code_str": "",
+                      "error_msg": "",
+                      "error_detail": {
+                        "status_code": 200,
+                        "code": "",
+                        "code_message": "",
+                        "message": ""
+                      },
+                      "data": {
+                        "binary_data_base64": []
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/image/editing/ai-nail-art": {
+      "post": {
+        "tags": [
+          "AI IMAGE > Image Editing"
+        ],
+        "summary": "AI Nail Art",
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "image",
+                  "nail_name",
+                  "nail_desc"
+                ],
+                "properties": {
+                  "image": {
+                    "type": "string",
+                    "description": "Original image. \n- Image format: `JPEG` `JPG` `PNG` `WEBP` \n- Image size: No more than 10 MB. \n- Image resolution: Less than 4096x4096px.",
+                    "format": "binary"
+                  },
+                  "nail_name": {
+                    "type": "string",
+                    "description": "Nail Name (English only). Max 500 characters; extra text will be automatically truncated. Use standard vocabulary to pass review.",
+                    "maxLength": 500,
+                    "example": "Golden Butterfly Glow"
+                  },
+                  "nail_desc": {
+                    "type": "string",
+                    "description": "Nail Description (English only). Max 1000 characters; extra text will be automatically truncated. Use standard vocabulary to pass review.",
+                    "maxLength": 1000,
+                    "example": "Champagne nude shimmer with gold butterfly accents for a soft, luxe finish."
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "application/json"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                },
+                "example": {
+                  "request_id": "",
+                  "log_id": "",
+                  "error_code": 0,
+                  "error_code_str": "",
+                  "error_msg": "",
+                  "error_detail": {
+                    "status_code": 200,
+                    "code": "",
+                    "code_message": "",
+                    "message": ""
+                  },
+                  "task_type": "async",
+                  "task_id": ""
+                }
+              }
+            },
+            "description": "Success"
+          }
+        }
+      }
+    },
+
+    "/api/image/enhance/image-defogging": {
+      "post": {
+        "tags": [
+          "AI IMAGE > Image Enhancement"
+        ],
+        "summary": "Image Dehaze",
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "image": {
+                    "type": "string",
+                    "format": "binary"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "application/json"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                },
+                "example": {
+                  "request_id": "",
+                  "log_id": "",
+                  "error_code": 0,
+                  "error_code_str": "",
+                  "error_msg": "",
+                  "error_detail": {
+                    "status_code": 200,
+                    "code": "",
+                    "code_message": "",
+                    "message": ""
+                  },
+                  "image": ""
+                }
+              }
+            },
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/image/enhance/image-lossless-enlargement": {
+      "post": {
+        "tags": [
+          "AI IMAGE > Image Enhancement"
+        ],
+        "summary": "Image Upscaler",
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "image": {
+                    "type": "string",
+                    "format": "binary"
+                  },
+                  "upscale_factor": {
+                    "type": "string",
+                    "description": "Magnification."
+                  },
+                  "mode": {
+                    "type": "string",
+                    "description": "Image output mode. <li>`base`: Normal mode, i.e. stable super-resolution effect.</li> <li>`enhancement`: Enhancement mode, which has a more prominent enhancement effect than the normal mode, further improving the clarity and sharpness of the output image.</li>"
+                  },
+                  "output_format": {
+                    "type": "string",
+                    "description": "Output image format."
+                  },
+                  "output_quality": {
+                    "type": "string",
+                    "description": "Quality factor of the output image, where a higher value corresponds to higher quality. Only applicable when `output_format=jpg`."
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "application/json"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                },
+                "example": {
+                  "request_id": "",
+                  "log_id": "",
+                  "error_code": 0,
+                  "error_code_str": "",
+                  "error_msg": "",
+                  "error_detail": {
+                    "status_code": 200,
+                    "code": "",
+                    "code_message": "",
+                    "message": ""
+                  },
+                  "data": {
+                    "url": ""
+                  }
+                }
+              }
+            },
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/image/enhance/stretch-image-recovery": {
+      "post": {
+        "tags": [
+          "AI IMAGE > Image Enhancement"
+        ],
+        "summary": "Stretched Image Restoration",
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "image": {
+                    "type": "string",
+                    "format": "binary"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "application/json"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                },
+                "example": {
+                  "request_id": "",
+                  "log_id": "",
+                  "error_code": 0,
+                  "error_code_str": "",
+                  "error_msg": "",
+                  "error_detail": {
+                    "status_code": 200,
+                    "code": "",
+                    "code_message": "",
+                    "message": ""
+                  },
+                  "image": "",
+                  "ratio": 0
+                }
+              }
+            },
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/image/enhance/image-sharpness-enhancement": {
+      "post": {
+        "tags": [
+          "AI IMAGE > Image Enhancement"
+        ],
+        "summary": "Image Sharpness Enhancement",
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "image": {
+                    "type": "string",
+                    "format": "binary"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "application/json"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                },
+                "example": {
+                  "request_id": "",
+                  "log_id": "",
+                  "error_code": 0,
+                  "error_code_str": "",
+                  "error_msg": "",
+                  "error_detail": {
+                    "status_code": 200,
+                    "code": "",
+                    "code_message": "",
+                    "message": ""
+                  },
+                  "image": ""
+                }
+              }
+            },
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/image/enhance/image-contrast-enhancement": {
+      "post": {
+        "tags": [
+          "AI IMAGE > Image Enhancement"
+        ],
+        "summary": "Image Contrast Enhancement",
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "image": {
+                    "type": "string",
+                    "format": "binary"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "application/json"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                },
+                "example": {
+                  "request_id": "",
+                  "log_id": "",
+                  "error_code": 0,
+                  "error_code_str": "",
+                  "error_msg": "",
+                  "error_detail": {
+                    "status_code": 200,
+                    "code": "",
+                    "code_message": "",
+                    "message": ""
+                  },
+                  "image": ""
+                }
+              }
+            },
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/image/enhance/image-color-enhancement": {
+      "post": {
+        "tags": [
+          "AI IMAGE > Image Enhancement"
+        ],
+        "summary": "Image Color Enhancement",
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "image": {
+                    "type": "string",
+                    "format": "binary"
+                  },
+                  "output_format": {
+                    "type": "string",
+                    "description": "The format of the output image."
+                  },
+                  "mode": {
+                    "type": "string",
+                    "description": "Color mixing mode. <li>`LogC`: Suitable for gray film (low contrast raw map) input, adjust the image color perception substantially to restore the color texture of the SDR domain.</li> <li>`Rec709`: Suitable for images taken under general conditions, appropriate to enhance the image brightness, saturation, etc., the adjustment range is more conservative.</li> <li>`ln17_256`: Suitable for images taken under general conditions, drastically adjusts image brightness, saturation, contrast, and improves color quality.</li>"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "application/json"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                },
+                "example": {
+                  "request_id": "",
+                  "log_id": "",
+                  "error_code": 0,
+                  "error_code_str": "",
+                  "error_msg": "",
+                  "error_detail": {
+                    "status_code": 200,
+                    "code": "",
+                    "code_message": "",
+                    "message": ""
+                  },
+                  "data": {
+                    "image_url": ""
+                  }
+                }
+              }
+            },
+            "description": "Success"
+          }
+        }
+      }
+    },
+
+    "/api/image/rating/image-composition-aesthetics-scoring": {
+      "post": {
+        "tags": [
+          "AI IMAGE > Image Scoring"
+        ],
+        "summary": "Image Composition Aesthetics Score",
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "image": {
                     "type": "string",
                     "format": "binary"
                   }
@@ -7881,7 +6948,7 @@
                     "message": ""
                   },
                   "data": {
-                    "image": ""
+                    "score": 0
                   }
                 }
               }
@@ -7891,22 +6958,27 @@
         }
       }
     },
-    "/api/common/query-async-task-result": {
-      "get": {
+    "/api/image/rating/image-exposure-score": {
+      "post": {
         "tags": [
-          "AI COMMON"
+          "AI IMAGE > Image Scoring"
         ],
-        "summary": "Querying Async Task Results",
-        "parameters": [
-          {
-            "name": "task_id",
-            "in": "query",
-            "schema": {
-              "type": "string"
-            },
-            "description": "The task_id returned by the asynchronous API."
+        "summary": "Image Exposure Score",
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "image": {
+                    "type": "string",
+                    "format": "binary"
+                  }
+                }
+              }
+            }
           }
-        ],
+        },
         "responses": {
           "200": {
             "headers": {
@@ -7923,46 +6995,8 @@
                   "type": "object"
                 },
                 "example": {
-                  "error_code": 0,
-                  "error_code_str": "",
-                  "error_msg": "",
-                  "error_detail": {
-                    "status_code": 200,
-                    "code": "",
-                    "code_message": "",
-                    "message": ""
-                  },
-                  "task_status": 0
-                }
-              }
-            },
-            "description": "Success"
-          }
-        }
-      }
-    },
-    "/api/common/query-credits": {
-      "get": {
-        "tags": [
-          "AI COMMON"
-        ],
-        "summary": "Querying credits",
-        "responses": {
-          "200": {
-            "headers": {
-              "Content-Type": {
-                "schema": {
-                  "type": "string",
-                  "example": "application/json"
-                }
-              }
-            },
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object"
-                },
-                "example": {
+                  "request_id": "",
+                  "log_id": "",
                   "error_code": 0,
                   "error_code_str": "",
                   "error_msg": "",
@@ -7973,14 +7007,548 @@
                     "message": ""
                   },
                   "data": {
-                    "unique_sign": "",
-                    "name": "",
-                    "balance": 0,
-                    "total": 0,
-                    "last_recharge_balance": 0,
-                    "balance_warning": 0,
-                    "first_buy_time": 0,
-                    "last_update_time": 0
+                    "exposure": 0
+                  }
+                }
+              }
+            },
+            "description": "Success"
+          }
+        }
+      }
+    },
+
+    "/api/cutout/general/universal-background-removal": {
+      "post": {
+        "tags": [
+          "AI BACKGROUND REMOVAL > General"
+        ],
+        "summary": "Universal Background Removal",
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "image": {
+                    "type": "string",
+                    "format": "binary"
+                  },
+                  "return_form": {
+                    "type": "string",
+                    "description": "Specifies the form of the returned image. <li>If not set, the four-channel PNG map is returned.</li> <li>`mask`: Returns a single channel mask.</li> <li>`whiteBK`: Return to white background image.</li> <li>`crop`: Returns the four-channel PNG image after cropping (cropping out the blank areas around the edges).</li>"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "application/json"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                },
+                "example": {
+                  "request_id": "",
+                  "log_id": "",
+                  "error_code": 0,
+                  "error_code_str": "",
+                  "error_msg": "",
+                  "error_detail": {
+                    "status_code": 200,
+                    "code": "",
+                    "code_message": "",
+                    "message": ""
+                  },
+                  "data": {
+                    "image_url": ""
+                  }
+                }
+              }
+            },
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/cutout/general/food-background-removal": {
+      "post": {
+        "tags": [
+          "AI BACKGROUND REMOVAL > General"
+        ],
+        "summary": "Food Background Removal",
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "image": {
+                    "type": "string",
+                    "format": "binary"
+                  },
+                  "return_form": {
+                    "type": "string",
+                    "description": "Specifies the form of the returned image. <li>If not set, the four-channel PNG map is returned.</li> <li>`mask`: Returns a single channel mask.</li> <li>`whiteBK`: Return to white background image.</li>"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "application/json"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                },
+                "example": {
+                  "request_id": "",
+                  "log_id": "",
+                  "error_code": 0,
+                  "error_code_str": "",
+                  "error_msg": "",
+                  "error_detail": {
+                    "status_code": 200,
+                    "code": "",
+                    "code_message": "",
+                    "message": ""
+                  },
+                  "data": {
+                    "image_url": ""
+                  }
+                }
+              }
+            },
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/cutout/general/commodity-background-removal": {
+      "post": {
+        "tags": [
+          "AI BACKGROUND REMOVAL > General"
+        ],
+        "summary": "Product Background Removal",
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "image": {
+                    "type": "string",
+                    "format": "binary"
+                  },
+                  "return_form": {
+                    "type": "string",
+                    "description": "Specifies the form of the returned image. <li>If not set, the four-channel PNG map is returned.</li> <li>`mask`: Returns a single channel mask.</li> <li>`whiteBK`: Return to white background image.</li> <li>`crop`: Returns the four-channel PNG image after cropping (cropping out the blank areas around the edges).</li>"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "application/json"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                },
+                "example": {
+                  "request_id": "",
+                  "log_id": "",
+                  "error_code": 0,
+                  "error_code_str": "",
+                  "error_msg": "",
+                  "error_detail": {
+                    "status_code": 200,
+                    "code": "",
+                    "code_message": "",
+                    "message": ""
+                  },
+                  "data": {
+                    "image_url": ""
+                  }
+                }
+              }
+            },
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/cutout/general/apparel-background-removal": {
+      "post": {
+        "tags": [
+          "AI BACKGROUND REMOVAL > General"
+        ],
+        "summary": "Costume Background Removal",
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "image": {
+                    "type": "string",
+                    "format": "binary"
+                  },
+                  "out_mode": {
+                    "type": "string",
+                    "description": "Specifies the type of segmentation result to return, which affects the content of the `image_url` field. <li>`0`: Default segmentation result of the main clothing.</li> <li>`1`: Combined segmentation result based on the category specified by `cloth_class`.</li>"
+                  },
+                  "cloth_class": {
+                    "type": "string",
+                    "description": "Clothing categories. Multiple values can be submitted at once, separated by commas (,). <li>`tops`: Tops.</li> <li>`coat`: Coat.</li> <li>`skirt`: Skirt.</li> <li>`pants`: Pants.</li> <li>`bag`: Bag.</li> <li>`shoes`: Shoes.</li> <li>`hat`: Hat.</li>"
+                  },
+                  "return_form": {
+                    "type": "string",
+                    "description": "Specify the desired image format for the output. <li>`whiteBK`: Returns an image with a white background.</li> <li>`mask`: Returns a single-channel mask.</li> <li>If not specified, a four-channel PNG image will be returned.</li>"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "application/json"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                },
+                "example": {
+                  "request_id": "",
+                  "log_id": "",
+                  "error_code": 0,
+                  "error_code_str": "",
+                  "error_msg": "",
+                  "error_detail": {
+                    "status_code": 200,
+                    "code": "",
+                    "code_message": "",
+                    "message": ""
+                  },
+                  "data": {
+                    "elements": [
+                      {
+                        "image_url": ""
+                      },
+                      {
+                        "class_url": {
+                          "tops": "",
+                          "coat": "",
+                          "skirt": "",
+                          "pants": "",
+                          "bag": "",
+                          "shoes": "",
+                          "hat": ""
+                        }
+                      }
+                    ]
+                  }
+                }
+              }
+            },
+            "description": "Success"
+          }
+        }
+      }
+    },
+
+    "/api/cutout/portrait/portrait-background-removal": {
+      "post": {
+        "tags": [
+          "AI BACKGROUND REMOVAL > Portrait"
+        ],
+        "summary": "Human Background Removal",
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "image": {
+                    "type": "string",
+                    "format": "binary"
+                  },
+                  "return_form": {
+                    "type": "string",
+                    "description": "Specifies the form of the returned image. <li>If not set, the four-channel PNG map is returned.</li> <li>`mask`: Returns a single channel mask.</li> <li>`whiteBK`: Return to white background image.</li> <li>`crop`: Returns the four-channel PNG image after cropping (cropping out the blank areas around the edges).</li>"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "application/json"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                },
+                "example": {
+                  "request_id": "",
+                  "log_id": "",
+                  "error_code": 0,
+                  "error_code_str": "",
+                  "error_msg": "",
+                  "error_detail": {
+                    "status_code": 200,
+                    "code": "",
+                    "code_message": "",
+                    "message": ""
+                  },
+                  "data": {
+                    "image_url": ""
+                  }
+                }
+              }
+            },
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/cutout/portrait/hd-portrait-background-removal": {
+      "post": {
+        "tags": [
+          "AI BACKGROUND REMOVAL > General"
+        ],
+        "summary": "Costume Background Removal",
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "image": {
+                    "type": "string",
+                    "format": "binary"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "application/json"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                },
+                "example": {
+                  "request_id": "",
+                  "log_id": "",
+                  "error_code": 0,
+                  "error_code_str": "",
+                  "error_msg": "",
+                  "error_detail": {
+                    "status_code": 200,
+                    "code": "",
+                    "code_message": "",
+                    "message": ""
+                  },
+                  "data": {
+                    "elements": [
+                      {
+                        "image_url": ""
+                      }
+                    ]
+                  }
+                }
+              }
+            },
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/cutout/portrait/avatar-extraction": {
+      "post": {
+        "tags": [
+          "AI BACKGROUND REMOVAL > Portrait"
+        ],
+        "summary": "Head Extraction",
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "image": {
+                    "type": "string",
+                    "format": "binary"
+                  },
+                  "return_form": {
+                    "type": "string",
+                    "description": "Specifies the form of the returned image. <li>If not set, the four-channel PNG map is returned.</li> <li>`mask`: Returns a single channel mask.</li>"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "application/json"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                },
+                "example": {
+                  "request_id": "",
+                  "log_id": "",
+                  "error_code": 0,
+                  "error_code_str": "",
+                  "error_msg": "",
+                  "error_detail": {
+                    "status_code": 200,
+                    "code": "",
+                    "code_message": "",
+                    "message": ""
+                  },
+                  "data": {
+                    "elements": [
+                      {
+                        "image_url": "",
+                        "width": 0,
+                        "height": 0,
+                        "x": 0,
+                        "y": 0
+                      }
+                    ]
+                  }
+                }
+              }
+            },
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/cutout/portrait/hairstyle-extraction": {
+      "post": {
+        "tags": [
+          "AI BACKGROUND REMOVAL > Portrait"
+        ],
+        "summary": "Hairstyle Extraction",
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "image": {
+                    "type": "string",
+                    "format": "binary"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "application/json"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                },
+                "example": {
+                  "request_id": "",
+                  "log_id": "",
+                  "error_code": 0,
+                  "error_code_str": "",
+                  "error_msg": "",
+                  "error_detail": {
+                    "status_code": 200,
+                    "code": "",
+                    "code_message": "",
+                    "message": ""
+                  },
+                  "data": {
+                    "elements": [
+                      {
+                        "image_url": "",
+                        "width": 0,
+                        "height": 0,
+                        "x": 0,
+                        "y": 0
+                      }
+                    ]
                   }
                 }
               }
