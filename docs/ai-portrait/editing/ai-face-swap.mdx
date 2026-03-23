@@ -1,0 +1,53 @@
+---
+sidebarTitle: "Introduction"
+title: "AI Face Swap"
+description: "Swap the face in a target portrait with a face from a template image, and return a natural-looking result image."
+---
+
+import BillingInstructions from "/snippets/billing-instructions.jsx";
+
+## Renderings show
+
+| TEMPLATE IMAGE                      | TARGET IMAGE                   | RESULT IMAGE                   |
+|:------------------------------------|:-------------------------------|:-------------------------------|
+| ![TEMPLATE IMAGE][TemplateImage-1]  | ![TARGET IMAGE][TargetImage-1] | ![RESULT IMAGE][ResultImage-1] |
+
+## Billing Instructions
+
+<BillingInstructions creditsPerRequest={5}/>
+
+## File Storage Policy
+
+<Tip>
+  **TIP**
+
+  - **Uploaded Files**: Not stored.
+  - **Response Files**:
+    - **Storage Duration**: 24 hours.
+    - **Deletion Method**: Automatic Deletion upon Timeout.
+</Tip>
+
+## Application Scenarios
+
+- **Social avatar generation**: create fun face-swapped portraits for profile pictures and personal branding.
+- **Campaign interaction**: build interactive face-swap activities for events, promotions, and festive content.
+- **Creative prototyping**: quickly produce face-replacement mockups for storyboards, ads, and visual testing.
+
+## Featured Advantages
+
+- **High facial consistency**: the swapped face preserves key identity features with natural blending.
+- **Context retention**: keeps the target image’s pose, lighting, and background as much as possible.
+- **Asynchronous workflow**: supports async processing for high-concurrency scenarios and batch submission.
+
+## API Information
+
+| Field | Value |
+|:------|:------|
+| API Name | `AI Face Swap` |
+| API URL | `/api/portrait/editing/ai-face-swap` |
+| Documentation URL | `/docs/ai-portrait/editing/ai-face-swap` |
+| Unique identification | `portrait_ai_face_swap` |
+
+[TemplateImage-1]: https://ai-resource.ailabtools.com/rapidapi/facebody/AIFaceSwap/TemplateImages-1.webp
+[TargetImage-1]: https://ai-resource.ailabtools.com/rapidapi/facebody/AIFaceSwap/TargetImage-1.webp
+[ResultImage-1]: https://ai-resource.ailabtools.com/rapidapi/facebody/AIFaceSwap/ResultImage-1.webp

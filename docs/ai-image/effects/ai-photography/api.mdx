@@ -1,0 +1,94 @@
+---
+sidebarTitle: "API"
+title: "AI Photography API"
+description: "AI Photography generates stylized artificial intelligence photoshoot images from prompt-defined style scenes."
+openapi: "POST /api/image/effects/ai-photography"
+---
+
+## Request
+
+- **URL**: `https://www.ailabapi.com/api/image/effects/ai-photography`
+- **Method**: `POST`
+- **Content-Type**: `multipart/form-data`
+
+### API Information
+
+| Field | Value |
+|:------|:------|
+| API Name | `AI Photography` |
+| API URL | `/api/image/effects/ai-photography` |
+| Documentation URL | `/docs/ai-image/effects/ai-photography` |
+| Unique identification | `image_photography` |
+
+### Image requirements
+
+- **Image format**: `JPEG` `JPG` `PNG` `WEBP`
+- **Image size**: No more than 10 MB.
+- **Image resolution**: Less than 4096x4096px.
+
+### Headers
+
+| Field              | Required | Type     | Description                                        |
+|:-------------------|:---------|:---------|:---------------------------------------------------|
+| `ailabapi-api-key` | YES      | `string` | Application API KEY. [Get API KEY](/docs/get-api-key) |
+
+### Body
+
+| Field         | Required | Type     | Scope                                                                                                                      | Default  | Description                                                                                                                  |
+|:--------------|:---------|:---------|:---------------------------------------------------------------------------------------------------------------------------|:---------|:-----------------------------------------------------------------------------------------------------------------------------|
+| `image`       | YES      | `file`   |                                                                                                                            |          | Original image.                                                                                                              |
+| `style_title` | YES      | `string` |                                                                                                                            |          | Style name (English only). Max 500 characters; extra text will be automatically truncated. Use standard vocabulary.         |
+| `style_desc`  | YES      | `string` |                                                                                                                            |          | Style description (English only). Max 1000 characters; extra text will be automatically truncated. Use standard vocabulary. |
+| `image_size`  | NO       | `string` | ``auto``, ``1:1``, ``2:3``, ``3:2``, ``3:4``, ``4:3``, ``4:5``, ``5:4``, ``9:16``, ``16:9``, ``21:9`` | `auto`   | Output image aspect ratio.                                                                                                   |
+
+## Response
+<Warning>
+**Response Field Handling Flow**
+
+1. **Handle `Public Response Fields`**
+
+   Parse and validate the `Public Response Fields`, checking the status code or response message to ensure the request is successful and error-free.
+
+2. **Handle `Business Response Fields`**
+
+   If the `Public Response Fields` are valid and error-free, proceed with processing the business logic in the `Business Response Fields`.
+</Warning>
+### Public Response Fields
+
+<a href="/docs/response-description" target="_blank">Viewing Public Response Fields and Error Codes</a>
+
+### Business Response Fields
+
+| Field       | Type     | Scope            | Description                                                                                                                                   |
+|:------------|:---------|:-----------------|:----------------------------------------------------------------------------------------------------------------------------------------------|
+| `task_type` | `string` | ``async`` | Task Type. ``async`: Asynchronous tasks.`                                                                                              |
+| `task_id`   | `string` |                  | Asynchronous task ID. <br/>**Please use this field when calling the [Querying Async Task Results](/docs/ai-common/async-task-results/api) API.** |
+
+### Response Example
+
+```json
+{
+  "request_id": "",
+  "log_id": "",
+  "error_code": 0,
+  "error_code_str": "",
+  "error_msg": "",
+  "error_detail": {
+    "status_code": 200,
+    "code": "",
+    "code_message": "",
+    "message": ""
+  },
+  "task_type": "async",
+  "task_id": ""
+}
+```
+<Tip>
+This API is asynchronous, please keep `task_id` and call [`Querying Async Task Results`](/docs/ai-common/async-task-results/api) to get the final results.
+
+Asynchronous task results are valid for 24 hours. It is recommended that asynchronous task results be queried every 5 seconds.
+</Tip>
+
+## Sample Code
+
+- [Introduction to Get Sample Code](/docs/get-sample-code)

@@ -380,6 +380,14 @@
                     ]
                   },
                   {
+                    "group": "AI Face Swap",
+                    "icon": "arrows-rotate",
+                    "pages": [
+                      "docs/ai-portrait/editing/ai-face-swap",
+                      "docs/ai-portrait/editing/ai-face-swap/api"
+                    ]
+                  },
+                  {
                     "group": "Try-on Clothes",
                     "icon": "shirt",
                     "pages": [
@@ -545,6 +553,14 @@
                       "docs/ai-image/effects/photo-to-emoji-grid",
                       "docs/ai-image/effects/photo-to-emoji-grid/api"
                     ]
+                  },
+                  {
+                    "group": "AI Photography",
+                    "icon": "camera",
+                    "pages": [
+                      "docs/ai-image/effects/ai-photography",
+                      "docs/ai-image/effects/ai-photography/api"
+                    ]
                   }
                 ]
               },
@@ -638,6 +654,14 @@
                     "pages": [
                       "docs/ai-image/editing/ai-nail-art",
                       "docs/ai-image/editing/ai-nail-art/api"
+                    ]
+                  },
+                  {
+                    "group": "AI Nail Art Pro",
+                    "icon": "hand-holding-heart",
+                    "pages": [
+                      "docs/ai-image/editing/ai-nail-art-pro",
+                      "docs/ai-image/editing/ai-nail-art-pro/api"
                     ]
                   }
                 ]

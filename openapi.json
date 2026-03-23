@@ -1600,6 +1600,74 @@
         }
       }
     },
+    "/api/portrait/editing/ai-face-swap": {
+      "post": {
+        "tags": [
+          "AI PORTRAIT > Portrait Editing"
+        ],
+        "summary": "AI Face Swap",
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "image_target",
+                  "image_template"
+                ],
+                "properties": {
+                  "image_target": {
+                    "type": "string",
+                    "description": "The image to be modified. The face in this image will be replaced. \n- Image format: `JPEG` `JPG` `PNG` \n- Image size: No more than 5 MB. \n- Image resolution: Less than 4096x4096px.",
+                    "format": "binary"
+                  },
+                  "image_template": {
+                    "type": "string",
+                    "description": "The image that provides the face to use. \n- Image format: `JPEG` `JPG` `PNG` \n- Image size: No more than 5 MB. \n- Image resolution: Less than 4096x4096px.",
+                    "format": "binary"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "application/json"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                },
+                "example": {
+                  "request_id": "",
+                  "log_id": "",
+                  "error_code": 0,
+                  "error_code_str": "",
+                  "error_msg": "",
+                  "error_detail": {
+                    "status_code": 200,
+                    "code": "",
+                    "code_message": "",
+                    "message": ""
+                  },
+                  "task_type": "async",
+                  "task_id": ""
+                }
+              }
+            },
+            "description": "Success"
+          }
+        }
+      }
+    },
 
     "/api/portrait/enhance/try-on-clothes-refiner": {
       "post": {
@@ -5537,6 +5605,98 @@
         }
       }
     },
+    "/api/image/effects/ai-photography": {
+      "post": {
+        "tags": [
+          "AI IMAGE > Image Effects"
+        ],
+        "summary": "AI Photography",
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "image",
+                  "style_title",
+                  "style_desc"
+                ],
+                "properties": {
+                  "image": {
+                    "type": "string",
+                    "description": "Original image. \n- Image format: `JPEG` `JPG` `PNG` `WEBP` \n- Image size: No more than 10 MB. \n- Image resolution: Less than 4096x4096px.",
+                    "format": "binary"
+                  },
+                  "style_title": {
+                    "type": "string",
+                    "description": "Style name (English only). Max 500 characters; extra text will be automatically truncated. Use standard vocabulary to pass review.",
+                    "maxLength": 500
+                  },
+                  "style_desc": {
+                    "type": "string",
+                    "description": "Style description (English only). Max 1000 characters; extra text will be automatically truncated. Use standard vocabulary to pass review.",
+                    "maxLength": 1000
+                  },
+                  "image_size": {
+                    "type": "string",
+                    "description": "Output Image Aspect Ratio.",
+                    "enum": [
+                      "auto",
+                      "1:1",
+                      "2:3",
+                      "3:2",
+                      "3:4",
+                      "4:3",
+                      "4:5",
+                      "5:4",
+                      "9:16",
+                      "16:9",
+                      "21:9"
+                    ],
+                    "default": "auto"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "application/json"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                },
+                "example": {
+                  "request_id": "",
+                  "log_id": "",
+                  "error_code": 0,
+                  "error_code_str": "",
+                  "error_msg": "",
+                  "error_detail": {
+                    "status_code": 200,
+                    "code": "",
+                    "code_message": "",
+                    "message": ""
+                  },
+                  "task_type": "async",
+                  "task_id": ""
+                }
+              }
+            },
+            "description": "Success"
+          }
+        }
+      }
+    },
 
     "/api/image/editing/image-cropping": {
       "post": {
@@ -6483,6 +6643,83 @@
                     "description": "Nail Description (English only). Max 1000 characters; extra text will be automatically truncated. Use standard vocabulary to pass review.",
                     "maxLength": 1000,
                     "example": "Champagne nude shimmer with gold butterfly accents for a soft, luxe finish."
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "application/json"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                },
+                "example": {
+                  "request_id": "",
+                  "log_id": "",
+                  "error_code": 0,
+                  "error_code_str": "",
+                  "error_msg": "",
+                  "error_detail": {
+                    "status_code": 200,
+                    "code": "",
+                    "code_message": "",
+                    "message": ""
+                  },
+                  "task_type": "async",
+                  "task_id": ""
+                }
+              }
+            },
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/image/editing/ai-nail-art-pro": {
+      "post": {
+        "tags": [
+          "AI IMAGE > Image Editing"
+        ],
+        "summary": "AI Nail Art Pro",
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "image",
+                  "reference_image"
+                ],
+                "properties": {
+                  "image": {
+                    "type": "string",
+                    "description": "Source image. \n- Image format: `JPEG` `JPG` `PNG` `WEBP` \n- Image size: No more than 10 MB. \n- Image resolution: Less than 4096x4096px.",
+                    "format": "binary"
+                  },
+                  "reference_image": {
+                    "type": "string",
+                    "description": "Reference image for guidance. \n- Image format: `JPEG` `JPG` `PNG` `WEBP` \n- Image size: No more than 10 MB. \n- Image resolution: Less than 4096x4096px.",
+                    "format": "binary"
+                  },
+                  "resolution": {
+                    "type": "string",
+                    "description": "Output resolution.",
+                    "enum": [
+                      "1K",
+                      "2K"
+                    ],
+                    "default": "1K"
                   }
                 }
               }
