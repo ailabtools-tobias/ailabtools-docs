@@ -3,6 +3,8 @@ title: "Querying Credits API"
 openapi: 'GET /api/common/query-credits'
 ---
 
+import QueryingCreditsTableRow from "/snippets/querying-credits-table-row.jsx";
+
 ## Request
 
 - **URL**: `https://www.ailabapi.com/api/common/query-credits`
@@ -48,314 +50,131 @@ openapi: 'GET /api/common/query-credits'
 
 #### Unique Identification
 
-<Tabs queryString="tabs-category">
-  <Tab value="common" title="COMMON">
-    <div className="overflow-x-auto">
-      <table className="min-w-full divide-y divide-gray-200">
-        <thead className="bg-gray-50">
-          <tr>
-            <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Name</th>
-            <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Unique identification</th>
-          </tr>
-        </thead>
-        <tbody className="bg-white divide-y divide-gray-200">
-          <tr>
-            <td className="px-6 py-4 whitespace-nowrap">Universal credits (all APIs supported)</td>
-            <td className="px-6 py-4 whitespace-nowrap">common</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+<Tabs>
+  <Tab title="COMMON">
+    <table class="collapse w-full">
+      <thead class="border border-gray-300 p-2">
+      <tr>
+        <th class="border border-gray-300 p-2">Name</th>
+        <th class="border border-gray-300 p-2">Unique identification</th>
+      </tr>
+      </thead>
+      <tbody>
+      <QueryingCreditsTableRow apiName="Universal credits (all APIs supported)" sign="common" />
+      </tbody>
+    </table>
   </Tab>
-  <Tab value="ai-portrait" title="AI PORTRAIT">
-    <div className="overflow-x-auto">
-      <table className="min-w-full divide-y divide-gray-200">
-        <thead className="bg-gray-50">
-        <tr>
-          <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Category</th>
-          <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">API Name</th>
-          <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Unique identification</th>
-        </tr>
-        </thead>
-        <tbody className="bg-white divide-y divide-gray-200">
-        <tr>
-          <td rowSpan={15} className="px-6 py-4 whitespace-nowrap align-middle">Portrait Effects</td>
-          <td className="px-6 py-4 whitespace-nowrap">[Cartoon Yourself](/docs/ai-portrait/effects/portrait-animation)</td>
-          <td className="px-6 py-4 whitespace-nowrap">portrait_cartoonization</td>
-        </tr>
-        <tr>
-          <td className="px-6 py-4 whitespace-nowrap">[Merge Portraits](/docs/ai-portrait/effects/face-fusion)</td>
-          <td className="px-6 py-4 whitespace-nowrap">portrait_face_fusion</td>
-        </tr>
-        <tr>
-          <td className="px-6 py-4 whitespace-nowrap">[Smart Beauty](/docs/ai-portrait/effects/smart-beauty)</td>
-          <td className="px-6 py-4 whitespace-nowrap">portrait_intelligent_beautification</td>
-        </tr>
-        <tr>
-          <td className="px-6 py-4 whitespace-nowrap">[AI Skin Beauty](/docs/ai-portrait/effects/smart-skin)</td>
-          <td className="px-6 py-4 whitespace-nowrap">portrait_intelligent_skin_retouching</td>
-        </tr>
-        <tr>
-          <td className="px-6 py-4 whitespace-nowrap">[AI Face Slimming](/docs/ai-portrait/effects/smart-face-slimming)</td>
-          <td className="px-6 py-4 whitespace-nowrap">portrait_intelligent_face_slimming</td>
-        </tr>
-        <tr>
-          <td className="px-6 py-4 whitespace-nowrap">[Face Beauty](/docs/ai-portrait/effects/face-beauty)</td>
-          <td className="px-6 py-4 whitespace-nowrap">portrait_facial_beautification</td>
-        </tr>
-        <tr>
-          <td className="px-6 py-4 whitespace-nowrap">[Face Beauty Advanced](/docs/ai-portrait/effects/face-beauty-advanced)</td>
-          <td className="px-6 py-4 whitespace-nowrap">portrait_facial_beautification_advanced</td>
-        </tr>
-        <tr>
-          <td className="px-6 py-4 whitespace-nowrap">[Face Beauty Pro](/docs/ai-portrait/effects/face-beauty-pro)</td>
-          <td className="px-6 py-4 whitespace-nowrap">portrait_facial_beautification_pro</td>
-        </tr>
-        <tr>
-          <td className="px-6 py-4 whitespace-nowrap">[Face Filters](/docs/ai-portrait/effects/face-filter)</td>
-          <td className="px-6 py-4 whitespace-nowrap">portrait_facial_filters</td>
-        </tr>
-        <tr>
-          <td className="px-6 py-4 whitespace-nowrap">[Change Facial Expressions](/docs/ai-portrait/effects/emotion-editor)</td>
-          <td className="px-6 py-4 whitespace-nowrap">portrait_expression_editing</td>
-        </tr>
-        <tr>
-          <td className="px-6 py-4 whitespace-nowrap">[Hairstyle Changer Pro](/docs/ai-portrait/effects/hairstyle-editor-pro)</td>
-          <td className="px-6 py-4 whitespace-nowrap">portrait_hairstyle_editing_pro</td>
-        </tr>
-        <tr>
-          <td className="px-6 py-4 whitespace-nowrap">[Face Blur](/docs/ai-portrait/effects/blurred-faces)</td>
-          <td className="px-6 py-4 whitespace-nowrap">portrait_facial_blurring</td>
-        </tr>
-        <tr>
-          <td className="px-6 py-4 whitespace-nowrap">[Age & Gender swap](/docs/ai-portrait/effects/face-attribute-editing)</td>
-          <td className="px-6 py-4 whitespace-nowrap">portrait_face_attribute_editing</td>
-        </tr>
-        <tr>
-          <td className="px-6 py-4 whitespace-nowrap">[AI Face Enhancer](/docs/ai-portrait/effects/ai-face-enhancer)</td>
-          <td className="px-6 py-4 whitespace-nowrap">portrait_face_restoration_enhancement</td>
-        </tr>
-        <tr>
-          <td className="px-6 py-4 whitespace-nowrap">[Lips Color Changer](/docs/ai-portrait/effects/lips-color-changer)</td>
-          <td className="px-6 py-4 whitespace-nowrap">portrait_lips_color_changer</td>
-        </tr>
-        <tr>
-          <td rowSpan={4} className="px-6 py-4 whitespace-nowrap align-middle">Portrait Editing</td>
-          <td className="px-6 py-4 whitespace-nowrap">[AI Breast Expansion](/docs/ai-portrait/editing/ai-breast-expansion)</td>
-          <td className="px-6 py-4 whitespace-nowrap">portrait_ai_big_tits</td>
-        </tr>
-        <tr>
-          <td className="px-6 py-4 whitespace-nowrap">[Try on Clothes](/docs/ai-portrait/editing/try-on-clothes)</td>
-          <td className="px-6 py-4 whitespace-nowrap">portrait_try_on_clothes</td>
-        </tr>
-        <tr>
-          <td className="px-6 py-4 whitespace-nowrap">[Try on Clothes Pro](/docs/ai-portrait/editing/try-on-clothes-pro)</td>
-          <td className="px-6 py-4 whitespace-nowrap">portrait_try_on_clothes_pro</td>
-        </tr>
-        <tr>
-          <td className="px-6 py-4 whitespace-nowrap">[Try on Clothes Premium](/docs/ai-portrait/editing/try-on-clothes-premium)</td>
-          <td className="px-6 py-4 whitespace-nowrap">portrait_try_on_clothes_premium</td>
-        </tr>
-        <tr>
-          <td rowSpan={1} className="px-6 py-4 whitespace-nowrap align-middle">Portrait Enhance</td>
-          <td className="px-6 py-4 whitespace-nowrap">[Try on Clothes Refiner](/docs/ai-portrait/enhance/try-on-clothes-refiner)</td>
-          <td className="px-6 py-4 whitespace-nowrap">portrait_try_on_clothes_refiner</td>
-        </tr>
-        <tr>
-          <td rowSpan={6} className="px-6 py-4 whitespace-nowrap align-middle">Portrait Analysis</td>
-          <td className="px-6 py-4 whitespace-nowrap">[Facial Landmarks](/docs/ai-portrait/analysis/face-key-points)</td>
-          <td className="px-6 py-4 whitespace-nowrap">portrait_facial_keypoints</td>
-        </tr>
-        <tr>
-          <td className="px-6 py-4 whitespace-nowrap">[Skin Analyze](/docs/ai-portrait/analysis/skin-analysis)</td>
-          <td className="px-6 py-4 whitespace-nowrap">portrait_skin_analysis_basic</td>
-        </tr>
-        <tr>
-          <td className="px-6 py-4 whitespace-nowrap">[Skin Analyze Advanced](/docs/ai-portrait/analysis/skin-analysis-advanced)</td>
-          <td className="px-6 py-4 whitespace-nowrap">portrait_skin_analysis_advanced</td>
-        </tr>
-        <tr>
-          <td className="px-6 py-4 whitespace-nowrap">[Skin Analyze Pro](/docs/ai-portrait/analysis/skin-analysis-pro)</td>
-          <td className="px-6 py-4 whitespace-nowrap">portrait_skin_analysis_professional</td>
-        </tr>
-        <tr>
-          <td className="px-6 py-4 whitespace-nowrap">[Face Analyzer](/docs/ai-portrait/analysis/face-analyzer)</td>
-          <td className="px-6 py-4 whitespace-nowrap">portrait_face_analyzer</td>
-        </tr>
-        <tr>
-          <td className="px-6 py-4 whitespace-nowrap">[Face Analyzer Advanced](/docs/ai-portrait/analysis/face-analyzer-advanced)</td>
-          <td className="px-6 py-4 whitespace-nowrap">portrait_face_analyzer_advanced</td>
-        </tr>
-        </tbody>
-      </table>
-    </div>
+
+  <Tab title="AI PORTRAIT">
+    <table class="collapse w-full">
+      <thead class="border border-gray-300 p-2">
+      <tr>
+        <th class="border border-gray-300 p-2">Category</th>
+        <th class="border border-gray-300 p-2">Name</th>
+        <th class="border border-gray-300 p-2">Unique identification</th>
+      </tr>
+      </thead>
+      <tbody>
+      <QueryingCreditsTableRow rowSpan={15} category="Portrait Effects" href="/docs/ai-portrait/effects/portrait-animation" apiName="Cartoon Yourself" sign="portrait_cartoonization" />
+      <QueryingCreditsTableRow href="/docs/ai-portrait/effects/face-fusion" apiName="Merge Portraits" sign="portrait_face_fusion" />
+      <QueryingCreditsTableRow href="/docs/ai-portrait/effects/smart-beauty" apiName="Smart Beauty" sign="portrait_intelligent_beautification" />
+      <QueryingCreditsTableRow href="/docs/ai-portrait/effects/smart-skin" apiName="AI Skin Beauty" sign="portrait_intelligent_skin_retouching" />
+      <QueryingCreditsTableRow href="/docs/ai-portrait/effects/smart-face-slimming" apiName="AI Face Slimming" sign="portrait_intelligent_face_slimming" />
+      <QueryingCreditsTableRow href="/docs/ai-portrait/effects/face-beauty" apiName="Face Beauty" sign="portrait_facial_beautification" />
+      <QueryingCreditsTableRow href="/docs/ai-portrait/effects/face-beauty-advanced" apiName="Face Beauty Advanced" sign="portrait_facial_beautification_advanced" />
+      <QueryingCreditsTableRow href="/docs/ai-portrait/effects/face-beauty-pro" apiName="Face Beauty Pro" sign="portrait_facial_beautification_pro" />
+      <QueryingCreditsTableRow href="/docs/ai-portrait/effects/face-filter" apiName="Face Filters" sign="portrait_facial_filters" />
+      <QueryingCreditsTableRow href="/docs/ai-portrait/effects/emotion-editor" apiName="Change Facial Expressions" sign="portrait_expression_editing" />
+      <QueryingCreditsTableRow href="/docs/ai-portrait/effects/hairstyle-editor-pro" apiName="Hairstyle Changer Pro" sign="portrait_hairstyle_editing_pro" />
+      <QueryingCreditsTableRow href="/docs/ai-portrait/effects/blurred-faces" apiName="Face Blur" sign="portrait_facial_blurring" />
+      <QueryingCreditsTableRow href="/docs/ai-portrait/effects/face-attribute-editing" apiName="Age & Gender swap" sign="portrait_face_attribute_editing" />
+      <QueryingCreditsTableRow href="/docs/ai-portrait/effects/ai-face-enhancer" apiName="AI Face Enhancer" sign="portrait_face_restoration_enhancement" />
+      <QueryingCreditsTableRow href="/docs/ai-portrait/effects/lips-color-changer" apiName="Lips Color Changer" sign="portrait_lips_color_changer" />
+
+      <QueryingCreditsTableRow rowSpan={5} category="Portrait Editing" href="/docs/ai-portrait/editing/ai-breast-expansion" apiName="AI Breast Expansion" sign="portrait_ai_big_tits" />
+      <QueryingCreditsTableRow href="/docs/ai-portrait/editing/ai-face-swap" apiName="AI Face Swap" sign="portrait_ai_face_swap" />
+      <QueryingCreditsTableRow href="/docs/ai-portrait/editing/try-on-clothes" apiName="Try on Clothes" sign="portrait_try_on_clothes" />
+      <QueryingCreditsTableRow href="/docs/ai-portrait/editing/try-on-clothes-pro" apiName="Try on Clothes Pro" sign="portrait_try_on_clothes_pro" />
+      <QueryingCreditsTableRow href="/docs/ai-portrait/editing/try-on-clothes-premium" apiName="Try on Clothes Premium" sign="portrait_try_on_clothes_premium" />
+
+      <QueryingCreditsTableRow rowSpan={1} category="Portrait Enhance" href="/docs/ai-portrait/enhance/try-on-clothes-refiner" apiName="Try on Clothes Refiner" sign="portrait_try_on_clothes_refiner" />
+
+      <QueryingCreditsTableRow rowSpan={6} category="Portrait Analysis" href="/docs/ai-portrait/analysis/face-key-points" apiName="Facial Landmarks" sign="portrait_facial_keypoints" />
+      <QueryingCreditsTableRow href="/docs/ai-portrait/analysis/skin-analysis" apiName="Skin Analyze" sign="portrait_skin_analysis_basic" />
+      <QueryingCreditsTableRow href="/docs/ai-portrait/analysis/skin-analysis-advanced" apiName="Skin Analyze Advanced" sign="portrait_skin_analysis_advanced" />
+      <QueryingCreditsTableRow href="/docs/ai-portrait/analysis/skin-analysis-pro" apiName="Skin Analyze Pro" sign="portrait_skin_analysis_professional" />
+      <QueryingCreditsTableRow href="/docs/ai-portrait/analysis/face-analyzer" apiName="Face Analyzer" sign="portrait_face_analyzer" />
+      <QueryingCreditsTableRow href="/docs/ai-portrait/analysis/face-analyzer-advanced" apiName="Face Analyzer Advanced" sign="portrait_face_analyzer_advanced" />
+      </tbody>
+    </table>
   </Tab>
-  <Tab value="ai-image" title="AI IMAGE">
-    <div className="overflow-x-auto">
-      <table className="min-w-full divide-y divide-gray-200">
-        <thead className="bg-gray-50">
-          <tr>
-            <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Category</th>
-            <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">API Name</th>
-            <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Unique identification</th>
-          </tr>
-        </thead>
-        <tbody className="bg-white divide-y divide-gray-200">
-          <tr>
-            <td rowSpan={5} className="px-6 py-4 whitespace-nowrap align-middle">Image Effects</td>
-            <td className="px-6 py-4 whitespace-nowrap">[AI Cartoon Generator](/docs/ai-image/effects/ai-anime-generator)</td>
-            <td className="px-6 py-4 whitespace-nowrap">image_ai_cartoon_generator</td>
-          </tr>
-          <tr>
-            <td className="px-6 py-4 whitespace-nowrap">[AI Photo Colorize](/docs/ai-image/effects/image-colorization)</td>
-            <td className="px-6 py-4 whitespace-nowrap">image_coloring</td>
-          </tr>
-          <tr>
-            <td className="px-6 py-4 whitespace-nowrap">[Photo to Painting](/docs/ai-image/effects/image-style-conversion)</td>
-            <td className="px-6 py-4 whitespace-nowrap">image_style_transfer</td>
-          </tr>
-          <tr>
-            <td className="px-6 py-4 whitespace-nowrap">[Photo to Coloring Page](/docs/ai-image/effects/photo-to-line-art)</td>
-            <td className="px-6 py-4 whitespace-nowrap">image_line_art</td>
-          </tr>
-          <tr>
-            <td className="px-6 py-4 whitespace-nowrap">[AI Emoji Generator](/docs/ai-image/effects/photo-to-emoji-grid)</td>
-            <td className="px-6 py-4 whitespace-nowrap">image_generate_emoji</td>
-          </tr>
-          <tr>
-            <td rowSpan={11} className="px-6 py-4 whitespace-nowrap align-middle">Image Editing</td>
-            <td className="px-6 py-4 whitespace-nowrap">[AI Image Cropping](/docs/ai-image/editing/image-cropping)</td>
-            <td className="px-6 py-4 whitespace-nowrap">image_cropping</td>
-          </tr>
-          <tr>
-            <td className="px-6 py-4 whitespace-nowrap">[Intelligent Composition](/docs/ai-image/editing/intelligent-composition)</td>
-            <td className="px-6 py-4 whitespace-nowrap">image_intelligent_composition</td>
-          </tr>
-          <tr>
-            <td className="px-6 py-4 whitespace-nowrap">[Photo Retouch](/docs/ai-image/editing/photo-retouching)</td>
-            <td className="px-6 py-4 whitespace-nowrap">image_photo_editing</td>
-          </tr>
-          <tr>
-            <td className="px-6 py-4 whitespace-nowrap">[Image Invisible Picture Watermark](/docs/ai-image/editing/image-invisible-image-watermark)</td>
-            <td className="px-6 py-4 whitespace-nowrap">image_invisible_image_watermark</td>
-          </tr>
-          <tr>
-            <td className="px-6 py-4 whitespace-nowrap">[Image Invisible Text Watermark](/docs/ai-image/editing/image-invisible-text-watermarking)</td>
-            <td className="px-6 py-4 whitespace-nowrap">image_invisible_text_watermark</td>
-          </tr>
-          <tr>
-            <td className="px-6 py-4 whitespace-nowrap">[Remove Objects](/docs/ai-image/editing/remove-objects)</td>
-            <td className="px-6 py-4 whitespace-nowrap">image_remove_objects</td>
-          </tr>
-          <tr>
-            <td className="px-6 py-4 whitespace-nowrap">[Remove Objects Advanced](/docs/ai-image/editing/remove-objects-advanced)</td>
-            <td className="px-6 py-4 whitespace-nowrap">image_remove_objects_advanced</td>
-          </tr>
-          <tr>
-            <td className="px-6 py-4 whitespace-nowrap">[Remove Objects Pro](/docs/ai-image/editing/remove-objects-pro)</td>
-            <td className="px-6 py-4 whitespace-nowrap">image_remove_objects_pro</td>
-          </tr>
-          <tr>
-            <td className="px-6 py-4 whitespace-nowrap">[AI Object Replacer](/docs/ai-image/editing/ai-object-replacer)</td>
-            <td className="px-6 py-4 whitespace-nowrap">image_ai_object_replacer</td>
-          </tr>
-          <tr>
-            <td className="px-6 py-4 whitespace-nowrap">[AI Image Extender](/docs/ai-image/editing/ai-image-extender)</td>
-            <td className="px-6 py-4 whitespace-nowrap">image_ai_image_extender</td>
-          </tr>
-          <tr>
-            <td className="px-6 py-4 whitespace-nowrap">[AI Nail Art](/docs/ai-image/editing/ai-nail-art)</td>
-            <td className="px-6 py-4 whitespace-nowrap">image_fingernails</td>
-          </tr>
-          <tr>
-            <td rowSpan={6} className="px-6 py-4 whitespace-nowrap align-middle">Image Enhancement</td>
-            <td className="px-6 py-4 whitespace-nowrap">[Image Dehaze](/docs/ai-image/enhance/image-defogging)</td>
-            <td className="px-6 py-4 whitespace-nowrap">image_dehazing</td>
-          </tr>
-          <tr>
-            <td className="px-6 py-4 whitespace-nowrap">[Image Upscaler](/docs/ai-image/enhance/image-lossless-enlargement)</td>
-            <td className="px-6 py-4 whitespace-nowrap">image_lossless_enlargement</td>
-          </tr>
-          <tr>
-            <td className="px-6 py-4 whitespace-nowrap">[Stretched Image Restoration](/docs/ai-image/enhance/stretch-image-recovery)</td>
-            <td className="px-6 py-4 whitespace-nowrap">image_distortion_correction</td>
-          </tr>
-          <tr>
-            <td className="px-6 py-4 whitespace-nowrap">[Image Sharpness Enhancement](/docs/ai-image/enhance/image-sharpness-enhancement)</td>
-            <td className="px-6 py-4 whitespace-nowrap">image_clarity_enhancement</td>
-          </tr>
-          <tr>
-            <td className="px-6 py-4 whitespace-nowrap">[Image Contrast Enhancement](/docs/ai-image/enhance/image-contrast-enhancement)</td>
-            <td className="px-6 py-4 whitespace-nowrap">image_contrast_enhancement</td>
-          </tr>
-          <tr>
-            <td className="px-6 py-4 whitespace-nowrap">[Image Color Enhancement](/docs/ai-image/enhance/image-color-enhancement)</td>
-            <td className="px-6 py-4 whitespace-nowrap">image_color_enhancement</td>
-          </tr>
-          <tr>
-            <td rowSpan={2} className="px-6 py-4 whitespace-nowrap align-middle">Image Scoring</td>
-            <td className="px-6 py-4 whitespace-nowrap">[Image Composition Aesthetics Score](/docs/ai-image/rating/image-composition-aesthetics-scoring)</td>
-            <td className="px-6 py-4 whitespace-nowrap">image_composition_aesthetics_rating</td>
-          </tr>
-          <tr>
-            <td className="px-6 py-4 whitespace-nowrap">[Image Exposure Score](/docs/ai-image/rating/image-exposure-score)</td>
-            <td className="px-6 py-4 whitespace-nowrap">image_exposure_rating</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+
+  <Tab title="AI IMAGE">
+    <table class="collapse w-full">
+      <thead class="border border-gray-300 p-2">
+      <tr>
+        <th class="border border-gray-300 p-2">Category</th>
+        <th class="border border-gray-300 p-2">Name</th>
+        <th class="border border-gray-300 p-2">Unique identification</th>
+      </tr>
+      </thead>
+      <tbody>
+      <QueryingCreditsTableRow rowSpan={6} category="Image Effects" href="/docs/ai-image/effects/ai-anime-generator" apiName="AI Cartoon Generator" sign="image_ai_cartoon_generator" />
+      <QueryingCreditsTableRow href="/docs/ai-image/effects/image-colorization" apiName="AI Photo Colorize" sign="image_coloring" />
+      <QueryingCreditsTableRow href="/docs/ai-image/effects/image-style-conversion" apiName="Photo to Painting" sign="image_style_transfer" />
+      <QueryingCreditsTableRow href="/docs/ai-image/effects/photo-to-line-art" apiName="Photo to Coloring Page" sign="image_line_art" />
+      <QueryingCreditsTableRow href="/docs/ai-image/effects/photo-to-emoji-grid" apiName="AI Emoji Generator" sign="image_generate_emoji" />
+      <QueryingCreditsTableRow href="/docs/ai-image/effects/ai-photography" apiName="AI Photography" sign="image_photography" />
+
+      <QueryingCreditsTableRow rowSpan={12} category="Image Editing" href="/docs/ai-image/editing/image-cropping" apiName="AI Image Cropping" sign="image_cropping" />
+      <QueryingCreditsTableRow href="/docs/ai-image/editing/intelligent-composition" apiName="Intelligent Composition" sign="image_intelligent_composition" />
+      <QueryingCreditsTableRow href="/docs/ai-image/editing/photo-retouching" apiName="Photo Retouch" sign="image_photo_editing" />
+      <QueryingCreditsTableRow href="/docs/ai-image/editing/image-invisible-image-watermark" apiName="Image Invisible Picture Watermark" sign="image_invisible_image_watermark" />
+      <QueryingCreditsTableRow href="/docs/ai-image/editing/image-invisible-text-watermarking" apiName="Image Invisible Text Watermark" sign="image_invisible_text_watermark" />
+      <QueryingCreditsTableRow href="/docs/ai-image/editing/remove-objects" apiName="Remove Objects" sign="image_remove_objects" />
+      <QueryingCreditsTableRow href="/docs/ai-image/editing/remove-objects-advanced" apiName="Remove Objects Advanced" sign="image_remove_objects_advanced" />
+      <QueryingCreditsTableRow href="/docs/ai-image/editing/remove-objects-pro" apiName="Remove Objects Pro" sign="image_remove_objects_pro" />
+      <QueryingCreditsTableRow href="/docs/ai-image/editing/ai-object-replacer" apiName="AI Object Replacer" sign="image_ai_object_replacer" />
+      <QueryingCreditsTableRow href="/docs/ai-image/editing/ai-image-extender" apiName="AI Image Extender" sign="image_ai_image_extender" />
+      <QueryingCreditsTableRow href="/docs/ai-image/editing/ai-nail-art" apiName="AI Nail Art" sign="image_fingernails" />
+      <QueryingCreditsTableRow href="/docs/ai-image/editing/ai-nail-art-pro" apiName="AI Nail Art Pro" sign="image_fingernails_pro" />
+
+      <QueryingCreditsTableRow rowSpan={6} category="Image Enhancement" href="/docs/ai-image/enhance/image-defogging" apiName="Image Dehaze" sign="image_dehazing" />
+      <QueryingCreditsTableRow href="/docs/ai-image/enhance/image-lossless-enlargement" apiName="Image Upscaler" sign="image_lossless_enlargement" />
+      <QueryingCreditsTableRow href="/docs/ai-image/enhance/stretch-image-recovery" apiName="Stretched Image Restoration" sign="image_distortion_correction" />
+      <QueryingCreditsTableRow href="/docs/ai-image/enhance/image-sharpness-enhancement" apiName="Image Sharpness Enhancement" sign="image_clarity_enhancement" />
+      <QueryingCreditsTableRow href="/docs/ai-image/enhance/image-contrast-enhancement" apiName="Image Contrast Enhancement" sign="image_contrast_enhancement" />
+      <QueryingCreditsTableRow href="/docs/ai-image/enhance/image-color-enhancement" apiName="Image Color Enhancement" sign="image_color_enhancement" />
+
+      <QueryingCreditsTableRow rowSpan={2} category="Image Scoring" href="/docs/ai-image/rating/image-composition-aesthetics-scoring" apiName="Image Composition Aesthetics Score" sign="image_composition_aesthetics_rating" />
+      <QueryingCreditsTableRow href="/docs/ai-image/rating/image-exposure-score" apiName="Image Exposure Score" sign="image_exposure_rating" />
+      </tbody>
+    </table>
   </Tab>
-  <Tab value="ai-background-removal" title="AI BACKGROUND REMOVAL">
-    <div className="overflow-x-auto">
-      <table className="min-w-full divide-y divide-gray-200">
-        <thead className="bg-gray-50">
-          <tr>
-            <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Category</th>
-            <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">API Name</th>
-            <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Unique identification</th>
-          </tr>
-        </thead>
-        <tbody className="bg-white divide-y divide-gray-200">
-          <tr>
-            <td rowSpan={4} className="px-6 py-4 whitespace-nowrap align-middle">General</td>
-            <td className="px-6 py-4 whitespace-nowrap">[Universal Background Removal](/docs/ai-cutout/general/universal-background-removal)</td>
-            <td className="px-6 py-4 whitespace-nowrap">cutout_general_background_removal</td>
-          </tr>
-          <tr>
-            <td className="px-6 py-4 whitespace-nowrap">[Food Background Removal](/docs/ai-cutout/general/food-background-removal)</td>
-            <td className="px-6 py-4 whitespace-nowrap">cutout_food_background_removal</td>
-          </tr>
-          <tr>
-            <td className="px-6 py-4 whitespace-nowrap">[Product Background Removal](/docs/ai-cutout/general/commodity-background-removal)</td>
-            <td className="px-6 py-4 whitespace-nowrap">cutout_product_background_removal</td>
-          </tr>
-          <tr>
-            <td className="px-6 py-4 whitespace-nowrap">[Costume Background Removal](/docs/ai-cutout/general/apparel-background-removal)</td>
-            <td className="px-6 py-4 whitespace-nowrap">cutout_clothing_background_removal</td>
-          </tr>
-          <tr>
-            <td rowSpan={4} className="px-6 py-4 whitespace-nowrap align-middle">Portrait</td>
-            <td className="px-6 py-4 whitespace-nowrap">[Human Background Removal](/docs/ai-cutout/portrait/portrait-background-removal)</td>
-            <td className="px-6 py-4 whitespace-nowrap">cutout_human_body_background_removal</td>
-          </tr>
-          <tr>
-            <td className="px-6 py-4 whitespace-nowrap">[HD Human Background Removal](/docs/ai-cutout/portrait/hd-portrait-background-removal)</td>
-            <td className="px-6 py-4 whitespace-nowrap">cutout_hd_human_body_background_removal</td>
-          </tr>
-          <tr>
-            <td className="px-6 py-4 whitespace-nowrap">[Head Extraction](/docs/ai-cutout/portrait/avatar-extraction)</td>
-            <td className="px-6 py-4 whitespace-nowrap">cutout_avatar_extraction</td>
-          </tr>
-          <tr>
-            <td className="px-6 py-4 whitespace-nowrap">[Hairstyle Extraction](/docs/ai-cutout/portrait/hairstyle-extraction)</td>
-            <td className="px-6 py-4 whitespace-nowrap">cutout_hair_extraction</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+
+  <Tab title="AI BACKGROUND REMOVAL">
+    <table class="collapse w-full">
+      <thead class="border border-gray-300 p-2">
+      <tr>
+        <th class="border border-gray-300 p-2">Category</th>
+        <th class="border border-gray-300 p-2">Name</th>
+        <th class="border border-gray-300 p-2">Unique identification</th>
+      </tr>
+      </thead>
+      <tbody>
+      <QueryingCreditsTableRow rowSpan={4} category="General" href="/docs/ai-cutout/general/universal-background-removal" apiName="Universal Background Removal" sign="cutout_general_background_removal" />
+      <QueryingCreditsTableRow href="/docs/ai-cutout/general/food-background-removal" apiName="Food Background Removal" sign="cutout_food_background_removal" />
+      <QueryingCreditsTableRow href="/docs/ai-cutout/general/commodity-background-removal" apiName="Product Background Removal" sign="cutout_product_background_removal" />
+      <QueryingCreditsTableRow href="/docs/ai-cutout/general/apparel-background-removal" apiName="Costume Background Removal" sign="cutout_clothing_background_removal" />
+
+      <QueryingCreditsTableRow rowSpan={4} category="Portrait" href="/docs/ai-cutout/portrait/portrait-background-removal" apiName="Human Background Removal" sign="cutout_human_body_background_removal" />
+      <QueryingCreditsTableRow href="/docs/ai-cutout/portrait/hd-portrait-background-removal" apiName="HD Human Background Removal" sign="cutout_hd_human_body_background_removal" />
+      <QueryingCreditsTableRow href="/docs/ai-cutout/portrait/avatar-extraction" apiName="Head Extraction" sign="cutout_avatar_extraction" />
+      <QueryingCreditsTableRow href="/docs/ai-cutout/portrait/hairstyle-extraction" apiName="Hairstyle Extraction" sign="cutout_hair_extraction" />
+      </tbody>
+    </table>
   </Tab>
 </Tabs>
-
 
 ### Response Example
 

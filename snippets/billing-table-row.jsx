@@ -25,11 +25,11 @@ const BillingTableRow = ({
           {category}
         </td>
       ) : null}
-      <td className="border border-gray-300 p-2">
+      <td className="border border-gray-300 p-2 align-middle">
         <a href={href}>{apiName}</a>
       </td>
-      <td className="border border-gray-300 p-2 text-right">{normalizedCredits}</td>
-      <td className="border border-gray-300 p-2 text-right">≈ {formatCurrency(costPerRequest)}</td>
+      <td className="border border-gray-300 p-2 text-right align-middle">{normalizedCredits}</td>
+      <td className="border border-gray-300 p-2 text-right align-middle">≈ {formatCurrency(costPerRequest)}</td>
     </tr>
   );
 };
