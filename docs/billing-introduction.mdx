@@ -12,7 +12,7 @@ import BillingTableRow from "/snippets/billing-table-row.jsx";
 |    $30.00 |    10,000 |       $0.0030 |
 |   $300.00 |   110,000 |       $0.0027 |
 | $1,500.00 |   550,000 |       $0.0027 |
-| $2,500.50 | 1,000,000 |       $0.0025 |
+| $2,500.00 | 1,000,000 |       $0.0025 |
 
 <Tip>
   **Purchase & Access**
@@ -122,12 +122,13 @@ import BillingTableRow from "/snippets/billing-table-row.jsx";
       </tr>
       </thead>
       <tbody>
-      <BillingTableRow rowSpan={4} category="General" href="/docs/ai-cutout/general/universal-background-removal" apiName="Universal Background Removal" credits={1} />
+      <BillingTableRow rowSpan={5} category="General" href="/docs/ai-cutout/general/universal-background-removal" apiName="Universal Background Removal" credits={1} />
+      <BillingTableRow href="/docs/ai-cutout/general/hd-universal-background-removal" apiName="HD Universal Background Removal" credits={2} />
       <BillingTableRow href="/docs/ai-cutout/general/food-background-removal" apiName="Food Background Removal" credits={1} />
       <BillingTableRow href="/docs/ai-cutout/general/commodity-background-removal" apiName="Product Background Removal" credits={1} />
       <BillingTableRow href="/docs/ai-cutout/general/apparel-background-removal" apiName="Costume Background Removal" credits={1} />
       <BillingTableRow rowSpan={4} category="Portrait" href="/docs/ai-cutout/portrait/portrait-background-removal" apiName="Human Background Removal" credits={1} />
-      <BillingTableRow href="/docs/ai-cutout/portrait/hd-portrait-background-removal" apiName="HD Human Background Removal" credits={5} />
+      <BillingTableRow href="/docs/ai-cutout/portrait/hd-portrait-background-removal" apiName="HD Human Background Removal" credits={2} />
       <BillingTableRow href="/docs/ai-cutout/portrait/avatar-extraction" apiName="Head Extraction" credits={1} />
       <BillingTableRow href="/docs/ai-cutout/portrait/hairstyle-extraction" apiName="Hairstyle Extraction" credits={1} />
       </tbody>

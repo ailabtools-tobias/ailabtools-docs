@@ -768,6 +768,14 @@
                     ]
                   },
                   {
+                    "group": "HD Universal Background Removal",
+                    "icon": "globe",
+                    "pages": [
+                      "docs/ai-cutout/general/hd-universal-background-removal",
+                      "docs/ai-cutout/general/hd-universal-background-removal/api"
+                    ]
+                  },
+                  {
                     "group": "Food Background Removal",
                     "icon": "utensils",
                     "pages": [
@@ -815,7 +823,7 @@
                   },
                   {
                     "group": "HD Human Background Removal",
-                    "icon": "box",
+                    "icon": "person",
                     "pages": [
                       "docs/ai-cutout/portrait/hd-portrait-background-removal",
                       "docs/ai-cutout/portrait/hd-portrait-background-removal/api"

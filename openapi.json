@@ -19,6 +19,55 @@
         "name": "ailabapi-api-key",
         "description": "API Key for authentication"
       }
+    },
+    "schemas": {
+      "ErrorDetail": {
+        "type": "object",
+        "required": [
+          "code",
+          "code_message",
+          "message"
+        ],
+        "properties": {
+          "code": {
+            "type": "string",
+            "description": "Error code. See [Error Codes](/docs/response-description)."
+          },
+          "code_message": {
+            "type": "string",
+            "description": "Error summary."
+          },
+          "message": {
+            "type": "string",
+            "description": "Detailed error message."
+          }
+        }
+      },
+      "PublicResponseFields": {
+        "type": "object",
+        "required": [
+          "request_id",
+          "log_id",
+          "error_detail"
+        ],
+        "properties": {
+          "request_id": {
+            "type": "string",
+            "description": "Request ID for debugging."
+          },
+          "log_id": {
+            "type": "string",
+            "description": "Log ID for debugging."
+          },
+          "error_detail": {
+            "$ref": "#/components/schemas/ErrorDetail"
+          }
+        }
+      },
+      "AsyncTaskId": {
+        "type": "string",
+        "description": "Task ID for querying [Querying Async Task Results](/docs/ai-common/async-task-results/api)."
+      }
     }
   },
   "security": [
@@ -90,14 +139,81 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "object"
+                  "allOf": [
+                    {
+                      "$ref": "#/components/schemas/PublicResponseFields"
+                    },
+                    {
+                      "type": "object",
+                      "required": [
+                        "data"
+                      ],
+                      "properties": {
+                        "data": {
+                          "type": "array",
+                          "description": "Credit entries grouped by API.",
+                          "items": {
+                            "type": "object",
+                            "required": [
+                              "unique_sign",
+                              "name",
+                              "balance",
+                              "total",
+                              "last_recharge_balance",
+                              "balance_warning",
+                              "first_buy_time",
+                              "last_update_time"
+                            ],
+                            "properties": {
+                              "unique_sign": {
+                                "type": "string",
+                                "description": "Unique Identification. See [Unique Identification](/docs/ai-common/querying-credits/api#api-identifier)."
+                              },
+                              "name": {
+                                "type": "string",
+                                "description": "Name."
+                              },
+                              "balance": {
+                                "type": "number",
+                                "format": "float",
+                                "description": "Current credit balance."
+                              },
+                              "total": {
+                                "type": "number",
+                                "format": "float",
+                                "description": "Total purchased credits."
+                              },
+                              "last_recharge_balance": {
+                                "type": "number",
+                                "format": "float",
+                                "description": "Credit balance after the last recharge."
+                              },
+                              "balance_warning": {
+                                "type": "number",
+                                "format": "float",
+                                "description": "Low-balance alert threshold."
+                              },
+                              "first_buy_time": {
+                                "type": "integer",
+                                "format": "int64",
+                                "description": "Unix timestamp of the first purchase."
+                              },
+                              "last_update_time": {
+                                "type": "integer",
+                                "format": "int64",
+                                "description": "Unix timestamp of the last balance update."
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
                 },
                 "example": {
-                  "error_code": 0,
-                  "error_code_str": "",
-                  "error_msg": "",
+                  "request_id": "",
+                  "log_id": "",
                   "error_detail": {
-                    "status_code": 200,
                     "code": "",
                     "code_message": "",
                     "message": ""
@@ -151,14 +267,37 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "object"
+                  "allOf": [
+                    {
+                      "$ref": "#/components/schemas/PublicResponseFields"
+                    },
+                    {
+                      "type": "object",
+                      "required": [
+                        "task_status"
+                      ],
+                      "properties": {
+                        "task_status": {
+                          "type": "integer",
+                          "enum": [
+                            0,
+                            1,
+                            2
+                          ],
+                          "description": "Task status. \n- `0`: queued. \n- `1`: processing. \n- `2`: completed."
+                        },
+                        "data": {
+                          "type": "object",
+                          "description": "Result payload. Available when `task_status` is `2`. Structure depends on the async API."
+                        }
+                      }
+                    }
+                  ]
                 },
                 "example": {
-                  "error_code": 0,
-                  "error_code_str": "",
-                  "error_msg": "",
+                  "request_id": "",
+                  "log_id": "",
                   "error_detail": {
-                    "status_code": 200,
                     "code": "",
                     "code_message": "",
                     "message": ""
@@ -7310,6 +7449,78 @@
                   "data": {
                     "image_url": ""
                   }
+                }
+              }
+            },
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/cutout/general/hd-universal-background-removal": {
+      "post": {
+        "tags": [
+          "AI BACKGROUND REMOVAL > General"
+        ],
+        "summary": "HD Universal Background Removal",
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "image"
+                ],
+                "properties": {
+                  "image": {
+                    "type": "string",
+                    "description": "- Image format: `JPEG` `JPG` `BMP` `PNG` \n- Image size: No more than 40 MB. \n- Image resolution: Larger than 32x32px, smaller than 10000x10000px.",
+                    "format": "binary"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "application/json"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "allOf": [
+                    {
+                      "$ref": "#/components/schemas/PublicResponseFields"
+                    },
+                    {
+                      "type": "object",
+                      "required": [
+                        "task_id"
+                      ],
+                      "properties": {
+                        "task_id": {
+                          "$ref": "#/components/schemas/AsyncTaskId"
+                        }
+                      }
+                    }
+                  ]
+                },
+                "example": {
+                  "request_id": "",
+                  "log_id": "",
+                  "error_detail": {
+                    "code": "",
+                    "code_message": "",
+                    "message": ""
+                  },
+                  "task_id": ""
                 }
               }
             },

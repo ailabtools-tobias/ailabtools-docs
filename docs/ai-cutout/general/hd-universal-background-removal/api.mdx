@@ -1,0 +1,29 @@
+---
+sidebarTitle: "API"
+title: "HD Universal Background Removal API"
+description: "HD Universal Background Removal API uses advanced AI to intelligently detect and isolate subjects, automatically erasing backgrounds. Suitable for people, animals, food, and objects in various scenes."
+openapi: "POST /api/cutout/general/hd-universal-background-removal"
+---
+
+import AsyncApiNotice from "/snippets/async-api-notice.mdx";
+
+<AsyncApiNotice />
+
+| Field       | Type     | Description                |
+|:------------|:---------|:---------------------------|
+| `data`       | `object` | Final result data.        |
+| +`image_url` | `string` | Result image URL address. |
+
+```json
+{
+  "data": {
+    "image_url": ""
+  }
+}
+```
+
+<Tip>
+  `image_url` is temporary and remains valid for 24 hours. If you need long-term storage, download the file to your own storage within that period.
+</Tip>
+
+## Submit Task

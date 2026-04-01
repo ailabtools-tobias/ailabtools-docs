@@ -1,54 +1,11 @@
 ---
-title: "Querying Credits API"
+title: "Querying Credits"
 openapi: 'GET /api/common/query-credits'
 ---
 
 import QueryingCreditsTableRow from "/snippets/querying-credits-table-row.jsx";
 
-## Request
-
-- **URL**: `https://www.ailabapi.com/api/common/query-credits`
-- **Method**: `GET`
-
-### Headers
-
-| Field              | Required | Type     | Description                                        |
-|:-------------------|:---------|:---------|:---------------------------------------------------|
-| `ailabapi-api-key` | YES      | `String` | Application API KEY. [Get API KEY](/docs/get-api-key) |
-
-## Response
-
-<Warning>
-**Response Field Handling Flow**
-
-1. **Handle `Public Response Fields`**
-
-   Parse and validate the `Public Response Fields`, checking the status code or response message to ensure the request is successful and error-free.
-
-2. **Handle `Business Response Fields`**
-
-   If the `Public Response Fields` are valid and error-free, proceed with processing the business logic in the `Business Response Fields`.
-</Warning>
-
-### Public Response Fields
-
-<a href="/docs/response-description" target="_blank">Viewing Public Response Fields and Error Codes</a>
-
-### Business Response Fields
-
-| Field                    | Type      | Scope                          | Description                         |
-|:-------------------------|:----------|:-------------------------------|:------------------------------------|
-| `data`                   | `array`   |                                |                                     |
-| +`unique_sign`           | `string`  | [View](#unique-identification) | Unique identification.              |
-| +`name`                  | `string`  |                                | Name.                               |
-| +`balance`               | `float`   |                                | Credit Balance.                     |
-| +`total`                 | `float`   |                                | Total Credits.                      |
-| +`last_recharge_balance` | `float`   |                                | Balance after last purchase.        |
-| +`balance_warning`       | `float`   |                                | Credit Balance Early Warning Value. |
-| +`first_buy_time`        | `integer` |                                | Time of first purchase.             |
-| +`last_update_time`      | `integer` |                                | Last update time.                   |
-
-#### Unique Identification
+## Unique Identification
 
 <Tabs>
   <Tab title="COMMON">
@@ -56,7 +13,7 @@ import QueryingCreditsTableRow from "/snippets/querying-credits-table-row.jsx";
       <thead class="border border-gray-300 p-2">
       <tr>
         <th class="border border-gray-300 p-2">Name</th>
-        <th class="border border-gray-300 p-2">Unique identification</th>
+        <th class="border border-gray-300 p-2">Unique Identification</th>
       </tr>
       </thead>
       <tbody>
@@ -71,7 +28,7 @@ import QueryingCreditsTableRow from "/snippets/querying-credits-table-row.jsx";
       <tr>
         <th class="border border-gray-300 p-2">Category</th>
         <th class="border border-gray-300 p-2">Name</th>
-        <th class="border border-gray-300 p-2">Unique identification</th>
+        <th class="border border-gray-300 p-2">Unique Identification</th>
       </tr>
       </thead>
       <tbody>
@@ -115,7 +72,7 @@ import QueryingCreditsTableRow from "/snippets/querying-credits-table-row.jsx";
       <tr>
         <th class="border border-gray-300 p-2">Category</th>
         <th class="border border-gray-300 p-2">Name</th>
-        <th class="border border-gray-300 p-2">Unique identification</th>
+        <th class="border border-gray-300 p-2">Unique Identification</th>
       </tr>
       </thead>
       <tbody>
@@ -158,11 +115,12 @@ import QueryingCreditsTableRow from "/snippets/querying-credits-table-row.jsx";
       <tr>
         <th class="border border-gray-300 p-2">Category</th>
         <th class="border border-gray-300 p-2">Name</th>
-        <th class="border border-gray-300 p-2">Unique identification</th>
+        <th class="border border-gray-300 p-2">Unique Identification</th>
       </tr>
       </thead>
       <tbody>
-      <QueryingCreditsTableRow rowSpan={4} category="General" href="/docs/ai-cutout/general/universal-background-removal" apiName="Universal Background Removal" sign="cutout_general_background_removal" />
+      <QueryingCreditsTableRow rowSpan={5} category="General" href="/docs/ai-cutout/general/universal-background-removal" apiName="Universal Background Removal" sign="cutout_general_background_removal" />
+      <QueryingCreditsTableRow href="/docs/ai-cutout/general/hd-universal-background-removal" apiName="HD Universal Background Removal" sign="cutout_hd_general_background_removal" />
       <QueryingCreditsTableRow href="/docs/ai-cutout/general/food-background-removal" apiName="Food Background Removal" sign="cutout_food_background_removal" />
       <QueryingCreditsTableRow href="/docs/ai-cutout/general/commodity-background-removal" apiName="Product Background Removal" sign="cutout_product_background_removal" />
       <QueryingCreditsTableRow href="/docs/ai-cutout/general/apparel-background-removal" apiName="Costume Background Removal" sign="cutout_clothing_background_removal" />
@@ -175,37 +133,3 @@ import QueryingCreditsTableRow from "/snippets/querying-credits-table-row.jsx";
     </table>
   </Tab>
 </Tabs>
-
-### Response Example
-
-```json
-{
-  "error_code":     0,
-  "error_msg":      "",
-  "error_detail":   {
-    "status_code":  200,
-    "code":         "",
-    "code_message": "",
-    "message":      ""
-  },
-  "data":           [
-    {
-      "unique_sign":           "",
-      "name":                  "",
-      "balance":               0,
-      "total":                 0,
-      "last_recharge_balance": 0,
-      "balance_warning":       0,
-      "first_buy_time":        0,
-      "last_update_time":      0
-    }
-  ]
-}
-```
-
-## Sample Code
-
-- [Introduction to Get Sample Code](/docs/get-sample-code)
-- [Sample Code][PostmanURL]
-
-[PostmanURL]: https://documenter.getpostman.com/view/26387069/2s93JxqgHE#c3791873-9427-47c3-9c87-4121181a9e23

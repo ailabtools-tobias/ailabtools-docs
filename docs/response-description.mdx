@@ -8,9 +8,7 @@ title: "Response Description"
 |:----------------|:---------|:----------|:--------------------------------------|:-----------------------------------------------------------------------------------------------------------|
 | `request_id`    | YES      | `string`  |                                       | `If there is a problem that cannot be located, this field can be sent to technology for problem location.` |
 | `log_id`        | YES      | `string`  |                                       | `If there is a problem that cannot be located, this field can be sent to technology for problem location.` |
-| `error_code`    | YES      | `integer` |                                       | `When HTTP Status is 200: error_code=0; otherwise exactly the same as HTTP Status.`                        |
 | `error_detail`  | YES      | `object`  |                                       | Error Details.                                                                                             |
-| +`status_code`  | YES      | `integer` |                                       | Status Code.                                                                                               |
 | +`code`         | YES      | `string`  | [View](#parsing-of-error-detail-code) | Error Code.                                                                                                |
 | +`code_message` | YES      | `string`  |                                       | The information represented by the Error Code(`code`).                                                     |
 | +`message`      | YES      | `string`  |                                       | Supplementary information for the `code_message` field.                                                    |
@@ -20,11 +18,9 @@ title: "Response Description"
 <Warning>
 
   - By using the HTTP Status Code:
-  - **200**: Success.
-  - **Other**: Failure.
-  - By using the `error_code` field:
-  - **0**: Success.
-  - **Other**: Failure.
+    - **200**: Success.
+    - **Other**: Failure.
+
 </Warning>
 
 ## Successful Response Example
@@ -33,9 +29,7 @@ title: "Response Description"
 {
   "request_id":   "Request ID",
   "log_id":       "Log ID",
-  "error_code":   0,
   "error_detail": {
-    "status_code":  200,
     "code":         "",
     "code_message": "",
     "message":      ""
@@ -49,9 +43,7 @@ title: "Response Description"
 {
   "request_id":   "Request ID",
   "log_id":       "Log ID",
-  "error_code":   422,
   "error_detail": {
-    "status_code":  422,
     "code":         "ERROR_NO_FACE_IN_FILE",
     "code_message": "No face detected in the file.",
     "message":      "pic not has face"
