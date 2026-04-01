@@ -4,24 +4,23 @@ title: "Response Description"
 
 ## Public Response Fields
 
-| Field           | Required | Type      | Scope                                 | Description                                                                                                |
-|:----------------|:---------|:----------|:--------------------------------------|:-----------------------------------------------------------------------------------------------------------|
-| `request_id`    | YES      | `string`  |                                       | `If there is a problem that cannot be located, this field can be sent to technology for problem location.` |
-| `log_id`        | YES      | `string`  |                                       | `If there is a problem that cannot be located, this field can be sent to technology for problem location.` |
-| `error_detail`  | YES      | `object`  |                                       | Error Details.                                                                                             |
-| +`code`         | YES      | `string`  | [View](#parsing-of-error-detail-code) | Error Code.                                                                                                |
-| +`code_message` | YES      | `string`  |                                       | The information represented by the Error Code(`code`).                                                     |
-| +`message`      | YES      | `string`  |                                       | Supplementary information for the `code_message` field.                                                    |
+| Field           | Type     | Description                                                   |
+|:----------------|:---------|:--------------------------------------------------------------|
+| `request_id`    | `string` | Request ID for debugging.                                     |
+| `log_id`        | `string` | Log ID for debugging.                                         |
+| `error_detail`  | `object` | Error code. See [Error Codes](#parsing-of-error_detail-code). |
+| +`code`         | `string` | Error Code.                                                   |
+| +`code_message` | `string` | Error summary.                                                |
+| +`message`      | `string` | Detailed error message.                                       |
 
 ## How to Verify if a Request is Successful?
 
-<Warning>
+<Tip>
+  **By using the HTTP Status Code**:
 
-  - By using the HTTP Status Code:
-    - **200**: Success.
-    - **Other**: Failure.
-
-</Warning>
+  - **200**: Success.
+  - **Other**: Failure.
+</Tip>
 
 ## Successful Response Example
 
