@@ -4,25 +4,24 @@ title: "Response Description"
 
 ## Public Response Fields
 
-| Field           | Type     | Description                                                   |
-|:----------------|:---------|:--------------------------------------------------------------|
-| `request_id`    | `string` | Request ID for debugging.                                     |
-| `log_id`        | `string` | Log ID for debugging.                                         |
-| `error_detail`  | `object` | Error Details.                                                |
-| +`code`         | `string` | Error Code. See [Error Codes](#parsing-of-error_detail-code). |
-| +`code_message` | `string` | Error summary.                                                |
-| +`message`      | `string` | Detailed error message.                                       |
+| Field           | Type     | Description                                  |
+|:----------------|:---------|:---------------------------------------------|
+| `request_id`    | `string` | Request ID for debugging.                    |
+| `log_id`        | `string` | Log ID for debugging.                        |
+| `error_detail`  | `object` | Error Details.                               |
+| +`code`         | `string` | Error Code. See [Error Codes](#error-codes). |
+| +`code_message` | `string` | Error summary.                               |
+| +`message`      | `string` | Detailed error message.                      |
 
-## How to Verify if a Request is Successful?
+## Success Criteria
 
 <Tip>
-  **By using the HTTP Status Code**:
+  A request succeeds when the HTTP status code is `200`.
 
-  - **200**: Success.
-  - **Other**: Failure.
+  Any other HTTP status code indicates failure.
 </Tip>
 
-## Successful Response Example
+## Success Example
 
 ```json
 {
@@ -36,7 +35,7 @@ title: "Response Description"
 }
 ```
 
-## Failed Response Example
+## Error Example
 
 ```json
 {
@@ -50,7 +49,7 @@ title: "Response Description"
 }
 ```
 
-## Parsing of `error_detail.code`
+## Error Codes
 
 | HTTP Status | Value                                       | Description                                                                                         |
 |:------------|:--------------------------------------------|:----------------------------------------------------------------------------------------------------|

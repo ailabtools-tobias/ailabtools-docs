@@ -31,7 +31,7 @@
         "properties": {
           "code": {
             "type": "string",
-            "description": "Error Code. See [Error Codes](/docs/response-description#parsing-of-error_detail-code)."
+            "description": "Error Code. See [Error Codes](/docs/response-description#error-codes)."
           },
           "code_message": {
             "type": "string",
