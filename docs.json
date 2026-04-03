@@ -182,7 +182,7 @@
           },
           {
             "group": "AI Common",
-            "icon": "brain",
+            "icon": "toolbox",
             "pages": [
               "docs/ai-common/querying-credits/api",
               "docs/ai-common/async-task-results/api"
@@ -198,7 +198,7 @@
                 "pages": [
                   {
                     "group": "Cartoon Yourself",
-                    "icon": "play",
+                    "icon": "wand-magic",
                     "pages": [
                       "docs/ai-portrait/effects/portrait-animation",
                       "docs/ai-portrait/effects/portrait-animation/api",
@@ -246,7 +246,7 @@
                   },
                   {
                     "group": "AI Skin Beauty",
-                    "icon": "hand-holding-heart",
+                    "icon": "hand-sparkles",
                     "pages": [
                       "docs/ai-portrait/effects/smart-skin",
                       "docs/ai-portrait/effects/smart-skin/api"
@@ -373,7 +373,7 @@
                 "pages": [
                   {
                     "group": "AI Breast Expansion",
-                    "icon": "sparkles",
+                    "icon": "expand",
                     "pages": [
                       "docs/ai-portrait/editing/ai-breast-expansion",
                       "docs/ai-portrait/editing/ai-breast-expansion/api"
@@ -397,7 +397,7 @@
                   },
                   {
                     "group": "Try-on Clothes Pro",
-                    "icon": "user-tie",
+                    "icon": "shirt",
                     "pages": [
                       "docs/ai-portrait/editing/try-on-clothes-pro",
                       "docs/ai-portrait/editing/try-on-clothes-pro/api"
@@ -405,10 +405,34 @@
                   },
                   {
                     "group": "Try-on Clothes Premium",
-                    "icon": "user-tie",
+                    "icon": "crown",
                     "pages": [
                       "docs/ai-portrait/editing/try-on-clothes-premium",
                       "docs/ai-portrait/editing/try-on-clothes-premium/api"
+                    ]
+                  },
+                  {
+                    "group": "AI Colored Contacts",
+                    "icon": "eye",
+                    "pages": [
+                      "docs/ai-portrait/editing/ai-colored-contacts",
+                      "docs/ai-portrait/editing/ai-colored-contacts/api"
+                    ]
+                  },
+                  {
+                    "group": "AI Eyelashes",
+                    "icon": "sparkles",
+                    "pages": [
+                      "docs/ai-portrait/editing/ai-eyelashes",
+                      "docs/ai-portrait/editing/ai-eyelashes/api"
+                    ]
+                  },
+                  {
+                    "group": "AI Eyebrows",
+                    "icon": "brush",
+                    "pages": [
+                      "docs/ai-portrait/editing/ai-eyebrows",
+                      "docs/ai-portrait/editing/ai-eyebrows/api"
                     ]
                   }
                 ]
@@ -445,7 +469,7 @@
                   },
                   {
                     "group": "Skin Analyze",
-                    "icon": "hand",
+                    "icon": "microscope",
                     "pages": [
                       "docs/ai-portrait/analysis/skin-analysis",
                       "docs/ai-portrait/analysis/skin-analysis/api"
@@ -453,7 +477,7 @@
                   },
                   {
                     "group": "Skin Analyze Advanced",
-                    "icon": "hand-sparkles",
+                    "icon": "flask",
                     "pages": [
                       "docs/ai-portrait/analysis/skin-analysis-advanced",
                       "docs/ai-portrait/analysis/skin-analysis-advanced/api"
@@ -488,7 +512,7 @@
                   },
                   {
                     "group": "Face Analyzer Advanced",
-                    "icon": "face-smile",
+                    "icon": "face-smile-beam",
                     "pages": [
                       "docs/ai-portrait/analysis/face-analyzer-advanced",
                       "docs/ai-portrait/analysis/face-analyzer-advanced/api"
@@ -508,7 +532,7 @@
                 "pages": [
                   {
                     "group": "AI Cartoon Generator",
-                    "icon": "dragon",
+                    "icon": "wand-magic-sparkles",
                     "pages": [
                       "docs/ai-image/effects/ai-anime-generator",
                       "docs/ai-image/effects/ai-anime-generator/api",
@@ -540,7 +564,7 @@
                   },
                   {
                     "group": "Photo to Coloring Page",
-                    "icon": "palette",
+                    "icon": "pencil",
                     "pages": [
                       "docs/ai-image/effects/photo-to-line-art",
                       "docs/ai-image/effects/photo-to-line-art/api"
@@ -586,7 +610,7 @@
                   },
                   {
                     "group": "Photo Retouching",
-                    "icon": "panorama",
+                    "icon": "sliders",
                     "pages": [
                       "docs/ai-image/editing/photo-retouching",
                       "docs/ai-image/editing/photo-retouching/api"
@@ -626,7 +650,7 @@
                   },
                   {
                     "group": "Remove Objects Pro",
-                    "icon": "dumpster-fire",
+                    "icon": "broom",
                     "pages": [
                       "docs/ai-image/editing/remove-objects-pro",
                       "docs/ai-image/editing/remove-objects-pro/api"
@@ -650,7 +674,7 @@
                   },
                   {
                     "group": "AI Nail Art",
-                    "icon": "hand-holding-heart",
+                    "icon": "hand-sparkles",
                     "pages": [
                       "docs/ai-image/editing/ai-nail-art",
                       "docs/ai-image/editing/ai-nail-art/api"
@@ -658,7 +682,7 @@
                   },
                   {
                     "group": "AI Nail Art Pro",
-                    "icon": "hand-holding-heart",
+                    "icon": "gem",
                     "pages": [
                       "docs/ai-image/editing/ai-nail-art-pro",
                       "docs/ai-image/editing/ai-nail-art-pro/api"
@@ -769,7 +793,7 @@
                   },
                   {
                     "group": "HD Universal Background Removal",
-                    "icon": "globe",
+                    "icon": "sparkles",
                     "pages": [
                       "docs/ai-cutout/general/hd-universal-background-removal",
                       "docs/ai-cutout/general/hd-universal-background-removal/api"
@@ -823,7 +847,7 @@
                   },
                   {
                     "group": "HD Human Background Removal",
-                    "icon": "person",
+                    "icon": "sparkles",
                     "pages": [
                       "docs/ai-cutout/portrait/hd-portrait-background-removal",
                       "docs/ai-cutout/portrait/hd-portrait-background-removal/api"
@@ -831,7 +855,7 @@
                   },
                   {
                     "group": "Head Extraction",
-                    "icon": "head-side-virus",
+                    "icon": "circle-user",
                     "pages": [
                       "docs/ai-cutout/portrait/avatar-extraction",
                       "docs/ai-cutout/portrait/avatar-extraction/api"

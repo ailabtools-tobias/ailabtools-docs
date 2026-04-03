@@ -1,0 +1,30 @@
+---
+sidebarTitle: "API"
+title: "AI Eyebrows API"
+description: "Generate high-quality, detailed images by applying eyebrow effects to a source image, guided by a reference image for precise and consistent results. Supports 1K and 2K output resolutions."
+openapi: "POST /api/portrait/editing/ai-eyebrows"
+---
+
+import AsyncApiNotice from "/snippets/async-api-notice.mdx";
+
+<AsyncApiNotice />
+
+| Field            | Type     | Description         |
+|:-----------------|:---------|:--------------------|
+| `data`           | `object` | Final result data.  |
+| +`result_urls`   | `array`  | Result image URLs.  |
+| ++`result_urls[]` | `string` | Result image URL.  |
+
+```json
+{
+  "data": {
+    "result_urls": [""]
+  }
+}
+```
+
+<Tip>
+  `result_urls` are temporary and remain valid for 24 hours. If you need long-term storage, download the files to your own storage within that period.
+</Tip>
+
+## Submit Task

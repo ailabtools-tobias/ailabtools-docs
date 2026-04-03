@@ -1,0 +1,30 @@
+---
+sidebarTitle: "API"
+title: "AI Eyelashes API"
+description: "Generate high-quality, natural-looking images by applying eyelash effects to a source image, guided by a text prompt to enhance eye definition and style."
+openapi: "POST /api/portrait/editing/ai-eyelashes"
+---
+
+import AsyncApiNotice from "/snippets/async-api-notice.mdx";
+
+<AsyncApiNotice />
+
+| Field            | Type     | Description         |
+|:-----------------|:---------|:--------------------|
+| `data`           | `object` | Final result data.  |
+| +`result_urls`   | `array`  | Result image URLs.  |
+| ++`result_urls[]` | `string` | Result image URL.  |
+
+```json
+{
+  "data": {
+    "result_urls": [""]
+  }
+}
+```
+
+<Tip>
+  `result_urls` are temporary and remain valid for 24 hours. If you need long-term storage, download the files to your own storage within that period.
+</Tip>
+
+## Submit Task

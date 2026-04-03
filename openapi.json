@@ -1807,6 +1807,257 @@
         }
       }
     },
+    "/api/portrait/editing/ai-colored-contacts": {
+      "post": {
+        "tags": [
+          "AI PORTRAIT > Portrait Editing"
+        ],
+        "summary": "AI Colored Contacts",
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "image"
+                ],
+                "properties": {
+                  "image": {
+                    "type": "string",
+                    "description": "- Image format: `JPEG` `JPG` `PNG` `WEBP` \n- Image size: No more than 10 MB. \n- Image resolution: Less than 4096x4096px.",
+                    "format": "binary"
+                  },
+                  "name": {
+                    "type": "string",
+                    "description": "Contact Lens Name (English only).",
+                    "maxLength": 500
+                  },
+                  "desc": {
+                    "type": "string",
+                    "description": "Contact Lens Description (English only).",
+                    "maxLength": 1000
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "application/json"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "allOf": [
+                    {
+                      "$ref": "#/components/schemas/PublicResponseFields"
+                    },
+                    {
+                      "type": "object",
+                      "required": [
+                        "task_id"
+                      ],
+                      "properties": {
+                        "task_id": {
+                          "$ref": "#/components/schemas/AsyncTaskId"
+                        }
+                      }
+                    }
+                  ]
+                },
+                "example": {
+                  "request_id": "",
+                  "log_id": "",
+                  "error_detail": {
+                    "code": "",
+                    "code_message": "",
+                    "message": ""
+                  },
+                  "task_id": ""
+                }
+              }
+            },
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/portrait/editing/ai-eyelashes": {
+      "post": {
+        "tags": [
+          "AI PORTRAIT > Portrait Editing"
+        ],
+        "summary": "AI Eyelashes",
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "image"
+                ],
+                "properties": {
+                  "image": {
+                    "type": "string",
+                    "description": "- Image format: `JPEG` `JPG` `PNG` `WEBP` \n- Image size: No more than 10 MB. \n- Image resolution: Less than 4096x4096px.",
+                    "format": "binary"
+                  },
+                  "name": {
+                    "type": "string",
+                    "description": "Eyelash Name (English only).",
+                    "maxLength": 500
+                  },
+                  "desc": {
+                    "type": "string",
+                    "description": "Eyelash Description (English only).",
+                    "maxLength": 1000
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "application/json"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "allOf": [
+                    {
+                      "$ref": "#/components/schemas/PublicResponseFields"
+                    },
+                    {
+                      "type": "object",
+                      "required": [
+                        "task_id"
+                      ],
+                      "properties": {
+                        "task_id": {
+                          "$ref": "#/components/schemas/AsyncTaskId"
+                        }
+                      }
+                    }
+                  ]
+                },
+                "example": {
+                  "request_id": "",
+                  "log_id": "",
+                  "error_detail": {
+                    "code": "",
+                    "code_message": "",
+                    "message": ""
+                  },
+                  "task_id": ""
+                }
+              }
+            },
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/portrait/editing/ai-eyebrows": {
+      "post": {
+        "tags": [
+          "AI PORTRAIT > Portrait Editing"
+        ],
+        "summary": "AI Eyebrows",
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "image",
+                  "reference_image"
+                ],
+                "properties": {
+                  "image": {
+                    "type": "string",
+                    "description": "Source image. \n- Image format: `JPEG` `JPG` `PNG` `WEBP` \n- Image size: No more than 10 MB. \n- Image resolution: Less than 4096x4096px.",
+                    "format": "binary"
+                  },
+                  "reference_image": {
+                    "type": "string",
+                    "description": "Reference Image. \n- Image format: `JPEG` `JPG` `PNG` `WEBP` \n- Image size: No more than 10 MB. \n- Image resolution: Less than 4096x4096px.",
+                    "format": "binary"
+                  },
+                  "resolution": {
+                    "type": "string",
+                    "description": "Resolution.",
+                    "enum": [
+                      "1K",
+                      "2K"
+                    ],
+                    "default": "1K"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "application/json"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "allOf": [
+                    {
+                      "$ref": "#/components/schemas/PublicResponseFields"
+                    },
+                    {
+                      "type": "object",
+                      "required": [
+                        "task_id"
+                      ],
+                      "properties": {
+                        "task_id": {
+                          "$ref": "#/components/schemas/AsyncTaskId"
+                        }
+                      }
+                    }
+                  ]
+                },
+                "example": {
+                  "request_id": "",
+                  "log_id": "",
+                  "error_detail": {
+                    "code": "",
+                    "code_message": "",
+                    "message": ""
+                  },
+                  "task_id": ""
+                }
+              }
+            },
+            "description": "Success"
+          }
+        }
+      }
+    },
 
     "/api/portrait/enhance/try-on-clothes-refiner": {
       "post": {
