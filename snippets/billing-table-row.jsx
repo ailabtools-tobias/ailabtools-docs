@@ -21,15 +21,15 @@ const BillingTableRow = ({
   return (
     <tr>
       {normalizedRowSpan > 0 ? (
-        <td rowSpan={normalizedRowSpan} className="border border-gray-300 p-2 align-middle">
+        <th rowSpan={normalizedRowSpan} className="border p-2 align-middle">
           {category}
-        </td>
+        </th>
       ) : null}
-      <td className="border border-gray-300 p-2 align-middle">
+      <td className="border p-2 align-middle">
         <a href={href}>{apiName}</a>
       </td>
-      <td className="border border-gray-300 p-2 text-right align-middle">{normalizedCredits}</td>
-      <td className="border border-gray-300 p-2 text-right align-middle">≈ {formatCurrency(costPerRequest)}</td>
+      <td className="border p-2 text-right align-middle">{normalizedCredits}</td>
+      <td className="border p-2 text-right align-middle">≈ {formatCurrency(costPerRequest)}</td>
     </tr>
   );
 };

@@ -334,6 +334,15 @@
                     ]
                   },
                   {
+                    "group": "Hairstyle Changer Premium",
+                    "icon": "scissors",
+                    "pages": [
+                      "docs/ai-portrait/effects/hairstyle-editor-premium",
+                      "docs/ai-portrait/effects/hairstyle-editor-premium/api",
+                      "docs/ai-portrait/effects/hairstyle-editor-premium/guide"
+                    ]
+                  },
+                  {
                     "group": "Face Blur",
                     "icon": "eye-slash",
                     "pages": [
