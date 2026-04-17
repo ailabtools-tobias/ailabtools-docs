@@ -2419,6 +2419,88 @@
         }
       }
     },
+    "/api/portrait/editing/ai-hair-color": {
+      "post": {
+        "tags": [
+          "AI PORTRAIT > Portrait Editing"
+        ],
+        "summary": "AI Hair Color",
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "image"
+                ],
+                "properties": {
+                  "image": {
+                    "type": "string",
+                    "description": "- Image format: `JPEG` `JPG` `PNG` `WEBP` \n- Image size: No more than 10 MB. \n- Image resolution: Less than 4096x4096px.",
+                    "format": "binary"
+                  },
+                  "name": {
+                    "type": "string",
+                    "description": "Hair Color Name (English only).",
+                    "maxLength": 500
+                  },
+                  "desc": {
+                    "type": "string",
+                    "description": "Hair Color Description (English only).",
+                    "maxLength": 1000
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "application/json"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "allOf": [
+                    {
+                      "$ref": "#/components/schemas/PublicResponseFields"
+                    },
+                    {
+                      "type": "object",
+                      "required": [
+                        "task_id"
+                      ],
+                      "properties": {
+                        "task_id": {
+                          "$ref": "#/components/schemas/AsyncTaskId"
+                        }
+                      }
+                    }
+                  ]
+                },
+                "example": {
+                  "request_id": "",
+                  "log_id": "",
+                  "error_detail": {
+                    "code": "",
+                    "code_message": "",
+                    "message": ""
+                  },
+                  "task_id": ""
+                }
+              }
+            },
+            "description": "Success"
+          }
+        }
+      }
+    },
 
     "/api/portrait/enhance/try-on-clothes-refiner": {
       "post": {

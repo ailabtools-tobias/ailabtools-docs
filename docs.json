@@ -443,6 +443,14 @@
                       "docs/ai-portrait/editing/ai-eyebrows",
                       "docs/ai-portrait/editing/ai-eyebrows/api"
                     ]
+                  },
+                  {
+                    "group": "AI Hair Color",
+                    "icon": "droplet",
+                    "pages": [
+                      "docs/ai-portrait/editing/ai-hair-color",
+                      "docs/ai-portrait/editing/ai-hair-color/api"
+                    ]
                   }
                 ]
               },
