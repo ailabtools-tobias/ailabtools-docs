@@ -1418,9 +1418,8 @@
                   },
                   "color": {
                     "type": "string",
-                    "description": "Hair color preset. `original` keeps the source image color. `reference` uses the hair color from `image_template`. See [Supported color values](/docs/ai-portrait/effects/hairstyle-editor-premium/api#color).",
+                    "description": "Hair color preset. `reference` uses the hair color from `image_template`. See [Supported color values](/docs/ai-portrait/effects/hairstyle-editor-premium/api#color).",
                     "enum": [
-                      "original",
                       "reference",
                       "blonde",
                       "platinumBlonde",
@@ -1444,7 +1443,7 @@
                       "burgundy",
                       "darkGreen"
                     ],
-                    "default": "original"
+                    "default": "reference"
                   }
                 }
               }
