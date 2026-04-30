@@ -12,1078 +12,433 @@ To ensure user-uploaded photos meet the Hairstyle Processing API requirements, w
 For detailed information, refer to the [Photo Validation Guide](ai-portrait/effects/hairstyle-editor-pro/guide).
 </Tip>
 
-## Request
+import AsyncApiNotice from "/snippets/async-api-notice.mdx";
 
-- **URL**: `https://www.ailabapi.com/api/portrait/effects/hairstyle-editor-pro`
-- **Method**: `POST`
-- **Content-Type**: `multipart/form-data`
+export const mensHairstyles = [
+  { value: "Afro", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/mens-hairstyles/Afro.webp" },
+  { value: "BluntBowlCut", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/mens-hairstyles/BluntBowlCut.webp" },
+  { value: "BuzzCut", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/mens-hairstyles/BuzzCut.webp" },
+  { value: "Chestnut", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/mens-hairstyles/Chestnut.webp" },
+  { value: "ChoppyBangs", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/mens-hairstyles/ChoppyBangs.webp" },
+  { value: "CombOver", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/mens-hairstyles/CombOver.webp" },
+  { value: "Comma_Hair", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/mens-hairstyles/Comma_Hair.webp" },
+  { value: "CornrowBraids", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/mens-hairstyles/CornrowBraids.webp" },
+  { value: "CurlyShag", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/mens-hairstyles/CurlyShag.webp" },
+  { value: "FauxHawk", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/mens-hairstyles/FauxHawk.webp" },
+  { value: "FluffyMiddlePart", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/mens-hairstyles/FluffyMiddlePart.webp" },
+  { value: "FreshSide-Parted", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/mens-hairstyles/FreshSide-Parted.webp" },
+  { value: "HighTightFade", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/mens-hairstyles/HighTightFade.webp" },
+  { value: "Korean_Wavy_Crop", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/mens-hairstyles/Korean_Wavy_Crop.webp" },
+  { value: "LongHairTiedUp", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/mens-hairstyles/LongHairTiedUp.webp" },
+  { value: "LongWavyCurtainBangs", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/mens-hairstyles/LongWavyCurtainBangs.webp" },
+  { value: "LowFade", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/mens-hairstyles/LowFade.webp" },
+  { value: "male_hairstyle_0001", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/mens-hairstyles/male_hairstyle_0001.webp" },
+  { value: "male_hairstyle_0002", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/mens-hairstyles/male_hairstyle_0002.webp" },
+  { value: "male_hairstyle_0003", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/mens-hairstyles/male_hairstyle_0003.webp" },
+  { value: "male_hairstyle_0004", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/mens-hairstyles/male_hairstyle_0004.webp" },
+  { value: "male_hairstyle_0005", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/mens-hairstyles/male_hairstyle_0005.webp" },
+  { value: "male_hairstyle_0006", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/mens-hairstyles/male_hairstyle_0006.webp" },
+  { value: "male_hairstyle_0007", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/mens-hairstyles/male_hairstyle_0007.webp" },
+  { value: "male_hairstyle_0008", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/mens-hairstyles/male_hairstyle_0008.webp" },
+  { value: "male_hairstyle_0009", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/mens-hairstyles/male_hairstyle_0009.webp" },
+  { value: "male_hairstyle_0010", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/mens-hairstyles/male_hairstyle_0010.webp" },
+  { value: "male_hairstyle_0011", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/mens-hairstyles/male_hairstyle_0011.webp" },
+  { value: "male_hairstyle_0012", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/mens-hairstyles/male_hairstyle_0012.webp" },
+  { value: "male_hairstyle_0013", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/mens-hairstyles/male_hairstyle_0013.webp" },
+  { value: "male_hairstyle_0014", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/mens-hairstyles/male_hairstyle_0014.webp" },
+  { value: "male_hairstyle_0015", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/mens-hairstyles/male_hairstyle_0015.webp" },
+  { value: "male_hairstyle_0016", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/mens-hairstyles/male_hairstyle_0016.webp" },
+  { value: "male_hairstyle_0017", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/mens-hairstyles/male_hairstyle_0017.webp" },
+  { value: "male_hairstyle_0018", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/mens-hairstyles/male_hairstyle_0018.webp" },
+  { value: "male_hairstyle_0019", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/mens-hairstyles/male_hairstyle_0019.webp" },
+  { value: "male_hairstyle_0020", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/mens-hairstyles/male_hairstyle_0020.webp" },
+  { value: "male_hairstyle_0021", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/mens-hairstyles/male_hairstyle_0021.webp" },
+  { value: "male_hairstyle_0022", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/mens-hairstyles/male_hairstyle_0022.webp" },
+  { value: "male_hairstyle_0023", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/mens-hairstyles/male_hairstyle_0023.webp" },
+  { value: "male_hairstyle_0024", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/mens-hairstyles/male_hairstyle_0024.webp" },
+  { value: "male_hairstyle_0025", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/mens-hairstyles/male_hairstyle_0025.webp" },
+  { value: "male_hairstyle_0026", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/mens-hairstyles/male_hairstyle_0026.webp" },
+  { value: "male_hairstyle_0027", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/mens-hairstyles/male_hairstyle_0027.webp" },
+  { value: "male_hairstyle_0028", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/mens-hairstyles/male_hairstyle_0028.webp" },
+  { value: "male_hairstyle_0029", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/mens-hairstyles/male_hairstyle_0029.webp" },
+  { value: "male_hairstyle_0030", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/mens-hairstyles/male_hairstyle_0030.webp" },
+  { value: "male_hairstyle_0031", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/mens-hairstyles/male_hairstyle_0031.webp" },
+  { value: "male_hairstyle_0032", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/mens-hairstyles/male_hairstyle_0032.webp" },
+  { value: "male_hairstyle_0033", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/mens-hairstyles/male_hairstyle_0033.webp" },
+  { value: "male_hairstyle_0034", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/mens-hairstyles/male_hairstyle_0034.webp" },
+  { value: "male_hairstyle_0035", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/mens-hairstyles/male_hairstyle_0035.webp" },
+  { value: "male_hairstyle_0036", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/mens-hairstyles/male_hairstyle_0036.webp" },
+  { value: "male_hairstyle_0037", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/mens-hairstyles/male_hairstyle_0037.webp" },
+  { value: "male_hairstyle_0038", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/mens-hairstyles/male_hairstyle_0038.webp" },
+  { value: "male_hairstyle_0039", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/mens-hairstyles/male_hairstyle_0039.webp" },
+  { value: "male_hairstyle_0040", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/mens-hairstyles/male_hairstyle_0040.webp" },
+  { value: "male_hairstyle_0041", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/mens-hairstyles/male_hairstyle_0041.webp" },
+  { value: "male_hairstyle_0042", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/mens-hairstyles/male_hairstyle_0042.webp" },
+  { value: "male_hairstyle_0043", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/mens-hairstyles/male_hairstyle_0043.webp" },
+  { value: "male_hairstyle_0044", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/mens-hairstyles/male_hairstyle_0044.webp" },
+  { value: "male_hairstyle_0045", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/mens-hairstyles/male_hairstyle_0045.webp" },
+  { value: "male_hairstyle_0046", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/mens-hairstyles/male_hairstyle_0046.webp" },
+  { value: "male_hairstyle_0047", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/mens-hairstyles/male_hairstyle_0047.webp" },
+  { value: "male_hairstyle_0048", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/mens-hairstyles/male_hairstyle_0048.webp" },
+  { value: "male_hairstyle_0049", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/mens-hairstyles/male_hairstyle_0049.webp" },
+  { value: "male_hairstyle_0050", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/mens-hairstyles/male_hairstyle_0050.webp" },
+  { value: "male_hairstyle_0051", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/mens-hairstyles/male_hairstyle_0051.webp" },
+  { value: "male_hairstyle_0052", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/mens-hairstyles/male_hairstyle_0052.webp" },
+  { value: "male_hairstyle_0053", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/mens-hairstyles/male_hairstyle_0053.webp" },
+  { value: "male_hairstyle_0054", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/mens-hairstyles/male_hairstyle_0054.webp" },
+  { value: "male_hairstyle_0055", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/mens-hairstyles/male_hairstyle_0055.webp" },
+  { value: "male_hairstyle_0056", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/mens-hairstyles/male_hairstyle_0056.webp" },
+  { value: "male_hairstyle_0057", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/mens-hairstyles/male_hairstyle_0057.webp" },
+  { value: "male_hairstyle_0058", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/mens-hairstyles/male_hairstyle_0058.webp" },
+  { value: "male_hairstyle_0059", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/mens-hairstyles/male_hairstyle_0059.webp" },
+  { value: "male_hairstyle_0060", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/mens-hairstyles/male_hairstyle_0060.webp" },
+  { value: "male_hairstyle_0061", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/mens-hairstyles/male_hairstyle_0061.webp" },
+  { value: "male_hairstyle_0062", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/mens-hairstyles/male_hairstyle_0062.webp" },
+  { value: "ManBun", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/mens-hairstyles/ManBun.webp" },
+  { value: "ManGreased", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/mens-hairstyles/ManGreased.webp" },
+  { value: "MessyTousled", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/mens-hairstyles/MessyTousled.webp" },
+  { value: "Middle-parted", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/mens-hairstyles/Middle-parted.webp" },
+  { value: "Natural_Middle_Part", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/mens-hairstyles/Natural_Middle_Part.webp" },
+  { value: "Natural_Side-Part", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/mens-hairstyles/Natural_Side-Part.webp" },
+  { value: "Pompadour", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/mens-hairstyles/Pompadour.webp" },
+  { value: "Side-Part_Crop", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/mens-hairstyles/Side-Part_Crop.webp" },
+  { value: "Side-Parted_Textured", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/mens-hairstyles/Side-Parted_Textured.webp" },
+  { value: "SlickBack", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/mens-hairstyles/SlickBack.webp" },
+  { value: "Smooth_Crop", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/mens-hairstyles/Smooth_Crop.webp" },
+  { value: "Spiky", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/mens-hairstyles/Spiky.webp" },
+  { value: "StructuredWavyShag", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/mens-hairstyles/StructuredWavyShag.webp" },
+  { value: "TexturedFringe", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/mens-hairstyles/TexturedFringe.webp" },
+  { value: "TinfoilPerm", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/mens-hairstyles/TinfoilPerm.webp" },
+  { value: "TwoBlockHaircut", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/mens-hairstyles/TwoBlockHaircut.webp" },
+  { value: "UnderCut", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/mens-hairstyles/UnderCut.webp" },
+  { value: "UndercutLongHair", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/mens-hairstyles/UndercutLongHair.webp" },
+  { value: "WavyMiddlePart", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/mens-hairstyles/WavyMiddlePart.webp" },
+  { value: "WavyShag", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/mens-hairstyles/WavyShag.webp" },
+  { value: "Wind-Tousled_Crop", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/mens-hairstyles/Wind-Tousled_Crop.webp" },
+  { value: "Wolf_Crop", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/mens-hairstyles/Wolf_Crop.webp" },
+];
 
-### Image requirements
+export const womensHairstyles = [
+  { value: "Airy_Short_Curls", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/womens-hairstyles/Airy_Short_Curls.webp" },
+  { value: "BobCut", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/womens-hairstyles/BobCut.webp" },
+  { value: "bowlCut", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/womens-hairstyles/bowlCut.webp" },
+  { value: "BoxBraids", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/womens-hairstyles/BoxBraids.webp" },
+  { value: "Chic_Tapered_Bob", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/womens-hairstyles/Chic_Tapered_Bob.webp" },
+  { value: "Chic_Wavy_Pixie", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/womens-hairstyles/Chic_Wavy_Pixie.webp" },
+  { value: "Chignon", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/womens-hairstyles/Chignon.webp" },
+  { value: "ClassicWavyBob", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/womens-hairstyles/ClassicWavyBob.webp" },
+  { value: "Cornrows", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/womens-hairstyles/Cornrows.webp" },
+  { value: "CurlyBob", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/womens-hairstyles/CurlyBob.webp" },
+  { value: "Curved_Chic_Bob", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/womens-hairstyles/Curved_Chic_Bob.webp" },
+  { value: "DoubleBun", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/womens-hairstyles/DoubleBun.webp" },
+  { value: "Dreadlocks", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/womens-hairstyles/Dreadlocks.webp" },
+  { value: "Edgy_Textured_Pixie", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/womens-hairstyles/Edgy_Textured_Pixie.webp" },
+  { value: "Elegant_Side_Flow", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/womens-hairstyles/Elegant_Side_Flow.webp" },
+  { value: "Elegant_Side_Wave", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/womens-hairstyles/Elegant_Side_Wave.webp" },
+  { value: "Elegant_Smooth_Bob", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/womens-hairstyles/Elegant_Smooth_Bob.webp" },
+  { value: "Elegant_Soft_Curl", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/womens-hairstyles/Elegant_Soft_Curl.webp" },
+  { value: "Elegant_Volumized_Bob", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/womens-hairstyles/Elegant_Volumized_Bob.webp" },
+  { value: "Elegant_Wavy_Crop", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/womens-hairstyles/Elegant_Wavy_Crop.webp" },
+  { value: "Executive_Pixie", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/womens-hairstyles/Executive_Pixie.webp" },
+  { value: "female_hairstyle_0001", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/womens-hairstyles/female_hairstyle_0001.webp" },
+  { value: "female_hairstyle_0002", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/womens-hairstyles/female_hairstyle_0002.webp" },
+  { value: "female_hairstyle_0003", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/womens-hairstyles/female_hairstyle_0003.webp" },
+  { value: "female_hairstyle_0004", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/womens-hairstyles/female_hairstyle_0004.webp" },
+  { value: "female_hairstyle_0005", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/womens-hairstyles/female_hairstyle_0005.webp" },
+  { value: "female_hairstyle_0006", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/womens-hairstyles/female_hairstyle_0006.webp" },
+  { value: "female_hairstyle_0007", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/womens-hairstyles/female_hairstyle_0007.webp" },
+  { value: "female_hairstyle_0008", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/womens-hairstyles/female_hairstyle_0008.webp" },
+  { value: "female_hairstyle_0009", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/womens-hairstyles/female_hairstyle_0009.webp" },
+  { value: "female_hairstyle_0010", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/womens-hairstyles/female_hairstyle_0010.webp" },
+  { value: "female_hairstyle_0011", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/womens-hairstyles/female_hairstyle_0011.webp" },
+  { value: "female_hairstyle_0012", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/womens-hairstyles/female_hairstyle_0012.webp" },
+  { value: "female_hairstyle_0013", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/womens-hairstyles/female_hairstyle_0013.webp" },
+  { value: "female_hairstyle_0014", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/womens-hairstyles/female_hairstyle_0014.webp" },
+  { value: "female_hairstyle_0015", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/womens-hairstyles/female_hairstyle_0015.webp" },
+  { value: "female_hairstyle_0016", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/womens-hairstyles/female_hairstyle_0016.webp" },
+  { value: "female_hairstyle_0017", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/womens-hairstyles/female_hairstyle_0017.webp" },
+  { value: "female_hairstyle_0018", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/womens-hairstyles/female_hairstyle_0018.webp" },
+  { value: "female_hairstyle_0019", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/womens-hairstyles/female_hairstyle_0019.webp" },
+  { value: "female_hairstyle_0020", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/womens-hairstyles/female_hairstyle_0020.webp" },
+  { value: "female_hairstyle_0021", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/womens-hairstyles/female_hairstyle_0021.webp" },
+  { value: "female_hairstyle_0022", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/womens-hairstyles/female_hairstyle_0022.webp" },
+  { value: "female_hairstyle_0023", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/womens-hairstyles/female_hairstyle_0023.webp" },
+  { value: "female_hairstyle_0024", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/womens-hairstyles/female_hairstyle_0024.webp" },
+  { value: "female_hairstyle_0025", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/womens-hairstyles/female_hairstyle_0025.webp" },
+  { value: "female_hairstyle_0026", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/womens-hairstyles/female_hairstyle_0026.webp" },
+  { value: "female_hairstyle_0027", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/womens-hairstyles/female_hairstyle_0027.webp" },
+  { value: "female_hairstyle_0028", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/womens-hairstyles/female_hairstyle_0028.webp" },
+  { value: "female_hairstyle_0029", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/womens-hairstyles/female_hairstyle_0029.webp" },
+  { value: "female_hairstyle_0030", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/womens-hairstyles/female_hairstyle_0030.webp" },
+  { value: "female_hairstyle_0031", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/womens-hairstyles/female_hairstyle_0031.webp" },
+  { value: "female_hairstyle_0032", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/womens-hairstyles/female_hairstyle_0032.webp" },
+  { value: "female_hairstyle_0033", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/womens-hairstyles/female_hairstyle_0033.webp" },
+  { value: "female_hairstyle_0034", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/womens-hairstyles/female_hairstyle_0034.webp" },
+  { value: "female_hairstyle_0035", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/womens-hairstyles/female_hairstyle_0035.webp" },
+  { value: "female_hairstyle_0036", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/womens-hairstyles/female_hairstyle_0036.webp" },
+  { value: "female_hairstyle_0037", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/womens-hairstyles/female_hairstyle_0037.webp" },
+  { value: "female_hairstyle_0038", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/womens-hairstyles/female_hairstyle_0038.webp" },
+  { value: "female_hairstyle_0039", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/womens-hairstyles/female_hairstyle_0039.webp" },
+  { value: "female_hairstyle_0040", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/womens-hairstyles/female_hairstyle_0040.webp" },
+  { value: "female_hairstyle_0041", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/womens-hairstyles/female_hairstyle_0041.webp" },
+  { value: "female_hairstyle_0042", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/womens-hairstyles/female_hairstyle_0042.webp" },
+  { value: "female_hairstyle_0043", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/womens-hairstyles/female_hairstyle_0043.webp" },
+  { value: "female_hairstyle_0044", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/womens-hairstyles/female_hairstyle_0044.webp" },
+  { value: "female_hairstyle_0045", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/womens-hairstyles/female_hairstyle_0045.webp" },
+  { value: "female_hairstyle_0046", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/womens-hairstyles/female_hairstyle_0046.webp" },
+  { value: "female_hairstyle_0047", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/womens-hairstyles/female_hairstyle_0047.webp" },
+  { value: "female_hairstyle_0048", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/womens-hairstyles/female_hairstyle_0048.webp" },
+  { value: "female_hairstyle_0049", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/womens-hairstyles/female_hairstyle_0049.webp" },
+  { value: "female_hairstyle_0050", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/womens-hairstyles/female_hairstyle_0050.webp" },
+  { value: "female_hairstyle_0051", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/womens-hairstyles/female_hairstyle_0051.webp" },
+  { value: "female_hairstyle_0052", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/womens-hairstyles/female_hairstyle_0052.webp" },
+  { value: "female_hairstyle_0053", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/womens-hairstyles/female_hairstyle_0053.webp" },
+  { value: "female_hairstyle_0054", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/womens-hairstyles/female_hairstyle_0054.webp" },
+  { value: "female_hairstyle_0055", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/womens-hairstyles/female_hairstyle_0055.webp" },
+  { value: "female_hairstyle_0056", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/womens-hairstyles/female_hairstyle_0056.webp" },
+  { value: "female_hairstyle_0057", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/womens-hairstyles/female_hairstyle_0057.webp" },
+  { value: "female_hairstyle_0058", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/womens-hairstyles/female_hairstyle_0058.webp" },
+  { value: "female_hairstyle_0059", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/womens-hairstyles/female_hairstyle_0059.webp" },
+  { value: "female_hairstyle_0060", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/womens-hairstyles/female_hairstyle_0060.webp" },
+  { value: "female_hairstyle_0061", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/womens-hairstyles/female_hairstyle_0061.webp" },
+  { value: "female_hairstyle_0062", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/womens-hairstyles/female_hairstyle_0062.webp" },
+  { value: "female_hairstyle_0063", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/womens-hairstyles/female_hairstyle_0063.webp" },
+  { value: "female_hairstyle_0064", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/womens-hairstyles/female_hairstyle_0064.webp" },
+  { value: "female_hairstyle_0065", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/womens-hairstyles/female_hairstyle_0065.webp" },
+  { value: "female_hairstyle_0066", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/womens-hairstyles/female_hairstyle_0066.webp" },
+  { value: "female_hairstyle_0067", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/womens-hairstyles/female_hairstyle_0067.webp" },
+  { value: "female_hairstyle_0068", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/womens-hairstyles/female_hairstyle_0068.webp" },
+  { value: "female_hairstyle_0069", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/womens-hairstyles/female_hairstyle_0069.webp" },
+  { value: "female_hairstyle_0070", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/womens-hairstyles/female_hairstyle_0070.webp" },
+  { value: "female_hairstyle_0071", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/womens-hairstyles/female_hairstyle_0071.webp" },
+  { value: "female_hairstyle_0072", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/womens-hairstyles/female_hairstyle_0072.webp" },
+  { value: "female_hairstyle_0073", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/womens-hairstyles/female_hairstyle_0073.webp" },
+  { value: "FishtailBraid", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/womens-hairstyles/FishtailBraid.webp" },
+  { value: "Fluffy_Pixie_Cut", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/womens-hairstyles/Fluffy_Pixie_Cut.webp" },
+  { value: "Fluffy_Short", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/womens-hairstyles/Fluffy_Short.webp" },
+  { value: "FrenchBangs", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/womens-hairstyles/FrenchBangs.webp" },
+  { value: "JapaneseShort", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/womens-hairstyles/JapaneseShort.webp" },
+  { value: "Layered_Waves", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/womens-hairstyles/Layered_Waves.webp" },
+  { value: "Light_Inward_Bob", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/womens-hairstyles/Light_Inward_Bob.webp" },
+  { value: "LongCurly", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/womens-hairstyles/LongCurly.webp" },
+  { value: "LongHimeCut", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/womens-hairstyles/LongHimeCut.webp" },
+  { value: "LongStraight", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/womens-hairstyles/LongStraight.webp" },
+  { value: "LongTwintails", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/womens-hairstyles/LongTwintails.webp" },
+  { value: "LongWavy", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/womens-hairstyles/LongWavy.webp" },
+  { value: "LooseCurlyAfro", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/womens-hairstyles/LooseCurlyAfro.webp" },
+  { value: "Magic_Perm", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/womens-hairstyles/Magic_Perm.webp" },
+  { value: "MediumLongLayered", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/womens-hairstyles/MediumLongLayered.webp" },
+  { value: "Mocha_Volume_Pixie", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/womens-hairstyles/Mocha_Volume_Pixie.webp" },
+  { value: "Modern_Curls_Chic", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/womens-hairstyles/Modern_Curls_Chic.webp" },
+  { value: "Mushroom_Curl", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/womens-hairstyles/Mushroom_Curl.webp" },
+  { value: "Natural_Short", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/womens-hairstyles/Natural_Short.webp" },
+  { value: "Neat_Curly_Crop_Cut", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/womens-hairstyles/Neat_Curly_Crop_Cut.webp" },
+  { value: "Neat_Short", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/womens-hairstyles/Neat_Short.webp" },
+  { value: "PixieCut", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/womens-hairstyles/PixieCut.webp" },
+  { value: "Playful_Curly_Bob", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/womens-hairstyles/Playful_Curly_Bob.webp" },
+  { value: "Playful_Wavy_Bob", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/womens-hairstyles/Playful_Wavy_Bob.webp" },
+  { value: "Ponytail", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/womens-hairstyles/Ponytail.webp" },
+  { value: "Retro_Airy_Curl", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/womens-hairstyles/Retro_Airy_Curl.webp" },
+  { value: "ShortCurlyPixie", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/womens-hairstyles/ShortCurlyPixie.webp" },
+  { value: "ShortNeatBob", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/womens-hairstyles/ShortNeatBob.webp" },
+  { value: "ShortPixieWithShavedSides", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/womens-hairstyles/ShortPixieWithShavedSides.webp" },
+  { value: "ShortTwintails", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/womens-hairstyles/ShortTwintails.webp" },
+  { value: "ShoulderLengthHair", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/womens-hairstyles/ShoulderLengthHair.webp" },
+  { value: "Side_Flip_Perm", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/womens-hairstyles/Side_Flip_Perm.webp" },
+  { value: "Side-Parted_Waves", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/womens-hairstyles/Side-Parted_Waves.webp" },
+  { value: "SidePartCombOverHairstyleWithHighFade", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/womens-hairstyles/SidePartCombOverHairstyleWithHighFade.webp" },
+  { value: "SlickedBack", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/womens-hairstyles/SlickedBack.webp" },
+  { value: "Smooth_Inward_Bob", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/womens-hairstyles/Smooth_Inward_Bob.webp" },
+  { value: "Soft_Layered_Curl", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/womens-hairstyles/Soft_Layered_Curl.webp" },
+  { value: "Soft_Wavy_Bob", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/womens-hairstyles/Soft_Wavy_Bob.webp" },
+  { value: "Spiked", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/womens-hairstyles/Spiked.webp" },
+  { value: "StackedCurlsInShortBob", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/womens-hairstyles/StackedCurlsInShortBob.webp" },
+  { value: "Textured_Crop", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/womens-hairstyles/Textured_Crop.webp" },
+  { value: "TwinBraids", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/womens-hairstyles/TwinBraids.webp" },
+  { value: "Updo", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/womens-hairstyles/Updo.webp" },
+  { value: "Vintage_Curls", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/womens-hairstyles/Vintage_Curls.webp" },
+  { value: "WavyFrenchBobVibesfrom1920", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/womens-hairstyles/WavyFrenchBobVibesfrom1920.webp" },
+];
 
-- **Image format**: `PNG` `JPG` `JPEG`
-- **Image size**: No more than 5 MB.
-- **Image resolution**: Larger than 200x200px, smaller than 4090x4090px.
-- **Minimum Face Proportion**: To ensure effectiveness, the proportion of the face in the image cannot be less than 10%.
-- **Facial Integrity**: To ensure effectiveness, the face in the image should ideally not be obscured.
-- **Facial Angle**: To ensure effectiveness, the face in the image should ideally be front-facing, with no more than a 30-degree rotation to the left or right.
+export const colors = [
+  { value: "black", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/colors/black.webp" },
+  { value: "blonde", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/colors/blonde.webp" },
+  { value: "blue", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/colors/blue.webp" },
+  { value: "brown", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/colors/brown.webp" },
+  { value: "burgundy", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/colors/burgundy.webp" },
+  { value: "darkBlue", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/colors/darkBlue.webp" },
+  { value: "darkGreen", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/colors/darkGreen.webp" },
+  { value: "gradient", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/colors/gradient.webp" },
+  { value: "green", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/colors/green.webp" },
+  { value: "grey", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/colors/grey.webp" },
+  { value: "lightBlue", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/colors/lightBlue.webp" },
+  { value: "lightBrown", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/colors/lightBrown.webp" },
+  { value: "lightPurple", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/colors/lightPurple.webp" },
+  { value: "multicolored", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/colors/multicolored.webp" },
+  { value: "orange", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/colors/orange.webp" },
+  { value: "pink", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/colors/pink.webp" },
+  { value: "platinumBlonde", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/colors/platinumBlonde.webp" },
+  { value: "purple", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/colors/purple.webp" },
+  { value: "red", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/colors/red.webp" },
+  { value: "silver", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/colors/silver.webp" },
+  { value: "white", image: "https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/colors/white.webp" },
+];
 
-<table className="border border-collapse border-gray-300">
-  <tr>
-    <th style={{'text-align':'center'}} className="border border-gray-300">Image Validity</th>
-    <th style={{'text-align':'center'}} className="border border-gray-300"></th>
-    <th style={{'text-align':'center'}} className="border border-gray-300">Reason for Invalidity</th>
-  </tr>
-  <tr className="odd:bg-gray-50">
-    <td style={{'text-align':'center'}} className="border border-gray-300">✅</td>
-    <td className="border border-gray-300">
-      <div style={{'display':'flex','flex-wrap':'wrap','justify-content':'space-around'}}>
-        <div style={{'max-width':'100px','margin':'5px'}}>
-          <img alt="Hairstyle Changer Pro" src="https://ai-resource.ailabtools.com/hairstyle-changer-pro/valid-invalid-examples/valid-1.webp" />
-        </div>
-        <div style={{'max-width':'100px','margin':'5px'}}>
-          <img alt="Hairstyle Changer Pro" src="https://ai-resource.ailabtools.com/hairstyle-changer-pro/valid-invalid-examples/valid-2.webp" />
-        </div>
-        <div style={{'max-width':'100px','margin':'5px'}}>
-          <img alt="Hairstyle Changer Pro" src="https://ai-resource.ailabtools.com/hairstyle-changer-pro/valid-invalid-examples/valid-3.webp" />
-        </div>
-        <div style={{'max-width':'100px','margin':'5px'}}>
-          <img alt="Hairstyle Changer Pro" src="https://ai-resource.ailabtools.com/hairstyle-changer-pro/valid-invalid-examples/valid-4.webp" />
-        </div>
-      </div>
-    </td>
-    <td style={{'text-align':'center'}} className="border border-gray-300"></td>
-  </tr>
-  <tr className="odd:bg-gray-50">
-    <td style={{'text-align':'center'}} rowSpan="5" className="border border-gray-300">❌</td>
-    <td className="border border-gray-300">
-      <div style={{'display':'flex','flex-wrap':'wrap','justify-content':'space-around'}}>
-        <div style={{'max-width':'100px','margin':'5px'}}>
-          <img alt="Hairstyle Changer Pro" src="https://ai-resource.ailabtools.com/hairstyle-changer-pro/valid-invalid-examples/no-face-1.webp" />
-        </div>
-        <div style={{'max-width':'100px','margin':'5px'}}>
-          <img alt="Hairstyle Changer Pro" src="https://ai-resource.ailabtools.com/hairstyle-changer-pro/valid-invalid-examples/no-face-2.webp" />
-        </div>
-      </div>
-    </td>
-    <td style={{'text-align':'center'}} className="border border-gray-300">No face</td>
-  </tr>
-  <tr className="odd:bg-gray-50">
-    <td className="border border-gray-300">
-      <div style={{'display':'flex','flex-wrap':'wrap','justify-content':'space-around'}}>
-        <div style={{'max-width':'100px','margin':'5px'}}>
-          <img alt="Hairstyle Changer Pro" src="https://ai-resource.ailabtools.com/hairstyle-changer-pro/valid-invalid-examples/face-incomplete-1.webp" />
-        </div>
-        <div style={{'max-width':'100px','margin':'5px'}}>
-          <img alt="Hairstyle Changer Pro" src="https://ai-resource.ailabtools.com/hairstyle-changer-pro/valid-invalid-examples/face-incomplete-2.webp" />
-        </div>
-      </div>
-    </td>
-    <td style={{'text-align':'center'}} className="border border-gray-300">Incomplete face</td>
-  </tr>
-  <tr className="odd:bg-gray-50">
-    <td className="border border-gray-300">
-      <div style={{'display':'flex','flex-wrap':'wrap','justify-content':'space-around'}}>
-        <div style={{'max-width':'100px','margin':'5px'}}>
-          <img alt="Hairstyle Changer Pro" src="https://ai-resource.ailabtools.com/hairstyle-changer-pro/valid-invalid-examples/face-blocked-1.webp" />
-        </div>
-        <div style={{'max-width':'100px','margin':'5px'}}>
-          <img alt="Hairstyle Changer Pro" src="https://ai-resource.ailabtools.com/hairstyle-changer-pro/valid-invalid-examples/face-blocked-2.webp" />
-        </div>
-      </div>
-    </td>
-    <td style={{'text-align':'center'}} className="border border-gray-300">Face obscured</td>
-  </tr>
-  <tr className="odd:bg-gray-50">
-    <td className="border border-gray-300">
-      <div style={{'display':'flex','flex-wrap':'wrap','justify-content':'space-around'}}>
-        <div style={{'max-width':'100px','margin':'5px'}}>
-          <img alt="Hairstyle Changer Pro" src="https://ai-resource.ailabtools.com/hairstyle-changer-pro/valid-invalid-examples/face-small-1.webp" />
-        </div>
-        <div style={{'max-width':'100px','margin':'5px'}}>
-          <img alt="Hairstyle Changer Pro" src="https://ai-resource.ailabtools.com/hairstyle-changer-pro/valid-invalid-examples/face-small-2.webp" />
-        </div>
-      </div>
-    </td>
-    <td style={{'text-align':'center'}} className="border border-gray-300">Face proportion too small</td>
-  </tr>
-  <tr className="odd:bg-gray-50">
-    <td className="border border-gray-300">
-      <div style={{'display':'flex','flex-wrap':'wrap','justify-content':'space-around'}}>
-        <div style={{'max-width':'100px','margin':'5px'}}>
-          <img alt="Hairstyle Changer Pro" src="https://ai-resource.ailabtools.com/hairstyle-changer-pro/valid-invalid-examples/face-big-1.webp" />
-        </div>
-        <div style={{'max-width':'100px','margin':'5px'}}>
-          <img alt="Hairstyle Changer Pro" src="https://ai-resource.ailabtools.com/hairstyle-changer-pro/valid-invalid-examples/face-big-2.webp" />
-        </div>
-      </div>
-    </td>
-    <td style={{'text-align':'center'}} className="border border-gray-300">The face is too large to edit the hairstyle</td>
-  </tr>
-</table>
+export const validImageExamples = [
+  "https://ai-resource.ailabtools.com/hairstyle-changer-pro/valid-invalid-examples/valid-1.webp",
+  "https://ai-resource.ailabtools.com/hairstyle-changer-pro/valid-invalid-examples/valid-3.webp",
+];
 
-### Headers
+export const invalidImageExamples = [
+  {
+    reason: "No face",
+    images: [
+      "https://ai-resource.ailabtools.com/hairstyle-changer-pro/valid-invalid-examples/no-face-1.webp",
+      "https://ai-resource.ailabtools.com/hairstyle-changer-pro/valid-invalid-examples/no-face-2.webp",
+    ],
+  },
+  {
+    reason: "Incomplete face",
+    images: [
+      "https://ai-resource.ailabtools.com/hairstyle-changer-pro/valid-invalid-examples/face-incomplete-1.webp",
+      "https://ai-resource.ailabtools.com/hairstyle-changer-pro/valid-invalid-examples/face-incomplete-2.webp",
+    ],
+  },
+  {
+    reason: "Face obscured",
+    images: [
+      "https://ai-resource.ailabtools.com/hairstyle-changer-pro/valid-invalid-examples/face-blocked-1.webp",
+      "https://ai-resource.ailabtools.com/hairstyle-changer-pro/valid-invalid-examples/face-blocked-2.webp",
+    ],
+  },
+  {
+    reason: "Face proportion too small",
+    images: [
+      "https://ai-resource.ailabtools.com/hairstyle-changer-pro/valid-invalid-examples/face-small-1.webp",
+      "https://ai-resource.ailabtools.com/hairstyle-changer-pro/valid-invalid-examples/face-small-2.webp",
+    ],
+  },
+  {
+    reason: "Face too large for hairstyle editing",
+    images: [
+      "https://ai-resource.ailabtools.com/hairstyle-changer-pro/valid-invalid-examples/face-big-1.webp",
+      "https://ai-resource.ailabtools.com/hairstyle-changer-pro/valid-invalid-examples/face-big-2.webp",
+    ],
+  },
+];
 
-| Field              | Required | Type     | Description                                        |
-|:-------------------|:---------|:---------|:---------------------------------------------------|
-| `ailabapi-api-key` | YES      | `string` | Application API KEY. [Get API KEY](/docs/get-api-key) |
+<AsyncApiNotice/>
 
-### Body
-
-#### Fixed Fields
-
-| Field        | Required | Type      | Scope                                               | Default | Description                                      |
-|:-------------|:---------|:----------|:----------------------------------------------------|:--------|:-------------------------------------------------|
-| `task_type`  | YES      | `string`  | ``async`` |         | ``async`: Asynchronous tasks.` |
-| `auto`       | YES      | `integer` | ``1`` | `1`     | ``1`: Automatic mode.` |
-| `image`      | YES      | `file`    |                                                     |         | Main image.                                      |
-| `hair_style` | YES      | `string`  | [Scope](#hair_style)                                |         | Hairstyle. [More Details](#hair_style)           |
-| `color`      | NO       | `string`  | [Scope](#color)                                     |         | Color. [More Details](#color)                    |
-| `image_size` | NO       | `integer` | ``1``, ``2``, ``3``, ``4`` | `1`     | Returns the number of images.                    |
-
-#### `hair_style`
-
-<table className="border border-collapse border-gray-300">
-	<tr>
-		<th className="border border-gray-300">Category: Gender</th>
-		<th className="border border-gray-300">hair_style</th>
-		<th className="border border-gray-300">Description</th>
-	</tr>
-
-	{/* --- Male --- */}
-	<tr className="odd:bg-gray-50">
-		<td rowSpan="35" style={{ 'text-align': 'center' }} className="border border-gray-300">
-			Male
-		</td>
-		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
-			BuzzCut
-		</td>
-		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
-			Buzz Cut hair
-		</td>
-	</tr>
-	<tr className="odd:bg-gray-50">
-		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
-			UnderCut
-		</td>
-		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
-			UnderCut hair
-		</td>
-	</tr>
-	<tr className="odd:bg-gray-50">
-		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
-			Pompadour
-		</td>
-		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
-			Pompadour hair
-		</td>
-	</tr>
-	<tr className="odd:bg-gray-50">
-		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
-			SlickBack
-		</td>
-		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
-			Slick Back hair
-		</td>
-	</tr>
-	<tr className="odd:bg-gray-50">
-		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
-			CurlyShag
-		</td>
-		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
-			Curly Shag hair
-		</td>
-	</tr>
-	<tr className="odd:bg-gray-50">
-		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
-			WavyShag
-		</td>
-		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
-			Wavy Shag hair
-		</td>
-	</tr>
-	<tr className="odd:bg-gray-50">
-		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
-			FauxHawk
-		</td>
-		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
-			Faux Hawk hair
-		</td>
-	</tr>
-	<tr className="odd:bg-gray-50">
-		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
-			Spiky
-		</td>
-		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
-			Spiky hair
-		</td>
-	</tr>
-	<tr className="odd:bg-gray-50">
-		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
-			CombOver
-		</td>
-		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
-			Comb-over hair
-		</td>
-	</tr>
-	<tr className="odd:bg-gray-50">
-		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
-			HighTightFade
-		</td>
-		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
-			High and Tight Fade hair
-		</td>
-	</tr>
-	<tr className="odd:bg-gray-50">
-		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
-			ManBun
-		</td>
-		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
-			Man Bun hair
-		</td>
-	</tr>
-	<tr className="odd:bg-gray-50">
-		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
-			Afro
-		</td>
-		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
-			Afro hair
-		</td>
-	</tr>
-	<tr className="odd:bg-gray-50">
-		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
-			LowFade
-		</td>
-		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
-			Low Fade hair
-		</td>
-	</tr>
-	<tr className="odd:bg-gray-50">
-		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
-			UndercutLongHair
-		</td>
-		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
-			Undercut With Long Hair
-		</td>
-	</tr>
-	<tr className="odd:bg-gray-50">
-		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
-			TwoBlockHaircut
-		</td>
-		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
-			Two Block Haircut
-		</td>
-	</tr>
-	<tr className="odd:bg-gray-50">
-		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
-			TexturedFringe
-		</td>
-		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
-			Textured Fringe Hair
-		</td>
-	</tr>
-	<tr className="odd:bg-gray-50">
-		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
-			BluntBowlCut
-		</td>
-		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
-			Blunt Bowl Cut
-		</td>
-	</tr>
-	<tr className="odd:bg-gray-50">
-		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
-			LongWavyCurtainBangs
-		</td>
-		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
-			Long Wavy Curtain Bangs Hair
-		</td>
-	</tr>
-	<tr className="odd:bg-gray-50">
-		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
-			MessyTousled
-		</td>
-		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
-			Messy Tousled hair
-		</td>
-	</tr>
-	<tr className="odd:bg-gray-50">
-		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
-			CornrowBraids
-		</td>
-		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
-			Cornrow Braids hair
-		</td>
-	</tr>
-	<tr className="odd:bg-gray-50">
-		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
-			LongHairTiedUp
-		</td>
-		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
-			Long Hair Tied Up Hair
-		</td>
-	</tr>
-	<tr className="odd:bg-gray-50">
-		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
-			Middle-parted
-		</td>
-		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
-			Middle-parted Hair
-		</td>
-	</tr>
-
-	{/* extra from MALE_HAIRSTYLES */}
-	<tr className="odd:bg-gray-50">
-		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
-			ManGreased
-		</td>
-		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
-			Man greased slick-back hair
-		</td>
-	</tr>
-	<tr className="odd:bg-gray-50">
-		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
-			WavyMiddlePart
-		</td>
-		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
-			Wavy middle-part hair
-		</td>
-	</tr>
-	<tr className="odd:bg-gray-50">
-		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
-			Natural_Side-Part
-		</td>
-		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
-			Natural side-part hair
-		</td>
-	</tr>
-	<tr className="odd:bg-gray-50">
-		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
-			Wolf_Crop
-		</td>
-		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
-			Wolf crop hair
-		</td>
-	</tr>
-	<tr className="odd:bg-gray-50">
-		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
-			Wind-Tousled_Crop
-		</td>
-		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
-			Wind-tousled crop hair
-		</td>
-	</tr>
-	<tr className="odd:bg-gray-50">
-		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
-			Side-Parted_Textured
-		</td>
-		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
-			Side-parted textured hair
-		</td>
-	</tr>
-	<tr className="odd:bg-gray-50">
-		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
-			FluffyMiddlePart
-		</td>
-		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
-			Fluffy middle-part hair
-		</td>
-	</tr>
-	<tr className="odd:bg-gray-50">
-		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
-			FreshSide-Parted
-		</td>
-		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
-			Fresh side-parted hair
-		</td>
-	</tr>
-	<tr className="odd:bg-gray-50">
-		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
-			Smooth_Crop
-		</td>
-		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
-			Smooth crop hair
-		</td>
-	</tr>
-	<tr className="odd:bg-gray-50">
-		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
-			Korean_Wavy_Crop
-		</td>
-		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
-			Korean wavy crop hair
-		</td>
-	</tr>
-	<tr className="odd:bg-gray-50">
-		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
-			Comma_Hair
-		</td>
-		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
-			Comma hair
-		</td>
-	</tr>
-	<tr className="odd:bg-gray-50">
-		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
-			Side-Part_Crop
-		</td>
-		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
-			Side-part crop hair
-		</td>
-	</tr>
-	<tr className="odd:bg-gray-50">
-		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
-			Natural_Middle_Part
-		</td>
-		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
-			Natural middle-part hair
-		</td>
-	</tr>
-
-	{/* --- Female --- */}
-	<tr>
-		<td rowSpan="62" style={{ 'text-align': 'center' }} className="border border-gray-300">
-			Female
-		</td>
-		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
-			ShortPixieWithShavedSides
-		</td>
-		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
-			Short Pixie With Shaved Sides
-		</td>
-	</tr>
-	<tr className="odd:bg-gray-50">
-		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
-			ShortNeatBob
-		</td>
-		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
-			Short neat bob hair
-		</td>
-	</tr>
-	<tr className="odd:bg-gray-50">
-		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
-			DoubleBun
-		</td>
-		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
-			Double bun hair
-		</td>
-	</tr>
-	<tr className="odd:bg-gray-50">
-		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
-			Updo
-		</td>
-		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
-			Updo hair
-		</td>
-	</tr>
-	<tr className="odd:bg-gray-50">
-		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
-			Spiked
-		</td>
-		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
-			Spiked hair
-		</td>
-	</tr>
-	<tr className="odd:bg-gray-50">
-		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
-			bowlCut
-		</td>
-		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
-			Bowl cut hair
-		</td>
-	</tr>
-	<tr className="odd:bg-gray-50">
-		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
-			Chignon
-		</td>
-		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
-			Chignon hair
-		</td>
-	</tr>
-	<tr className="odd:bg-gray-50">
-		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
-			PixieCut
-		</td>
-		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
-			Pixie Cut hair
-		</td>
-	</tr>
-	<tr className="odd:bg-gray-50">
-		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
-			SlickedBack
-		</td>
-		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
-			Slicked back hair
-		</td>
-	</tr>
-	<tr className="odd:bg-gray-50">
-		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
-			LongCurly
-		</td>
-		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
-			Long curly hair
-		</td>
-	</tr>
-	<tr className="odd:bg-gray-50">
-		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
-			CurlyBob
-		</td>
-		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
-			Curly bob hair
-		</td>
-	</tr>
-	<tr className="odd:bg-gray-50">
-		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
-			StackedCurlsInShortBob
-		</td>
-		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
-			Stacked curls in short bob hair
-		</td>
-	</tr>
-	<tr className="odd:bg-gray-50">
-		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
-			SidePartCombOverHairstyleWithHighFade
-		</td>
-		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
-			Side Part Comb-Over Hairstyle With High Fade hair
-		</td>
-	</tr>
-	<tr className="odd:bg-gray-50">
-		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
-			WavyFrenchBobVibesfrom1920
-		</td>
-		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
-			Wavy French Bob Vibes from 1920
-		</td>
-	</tr>
-	<tr className="odd:bg-gray-50">
-		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
-			BobCut
-		</td>
-		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
-			Bob haircut hair
-		</td>
-	</tr>
-	<tr className="odd:bg-gray-50">
-		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
-			ShortTwintails
-		</td>
-		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
-			Short twintails hair
-		</td>
-	</tr>
-	<tr className="odd:bg-gray-50">
-		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
-			ShortCurlyPixie
-		</td>
-		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
-			Short curly pixie
-		</td>
-	</tr>
-	<tr className="odd:bg-gray-50">
-		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
-			LongStraight
-		</td>
-		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
-			Long straight hair
-		</td>
-	</tr>
-	<tr className="odd:bg-gray-50">
-		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
-			LongWavy
-		</td>
-		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
-			Long wavy hair
-		</td>
-	</tr>
-	<tr className="odd:bg-gray-50">
-		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
-			FishtailBraid
-		</td>
-		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
-			Fishtail braid hair
-		</td>
-	</tr>
-	<tr className="odd:bg-gray-50">
-		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
-			TwinBraids
-		</td>
-		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
-			Twin braids hair
-		</td>
-	</tr>
-	<tr className="odd:bg-gray-50">
-		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
-			Ponytail
-		</td>
-		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
-			Ponytail hair
-		</td>
-	</tr>
-	<tr className="odd:bg-gray-50">
-		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
-			Dreadlocks
-		</td>
-		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
-			Dreadlocks hair
-		</td>
-	</tr>
-	<tr className="odd:bg-gray-50">
-		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
-			Cornrows
-		</td>
-		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
-			Cornrows hair
-		</td>
-	</tr>
-	<tr className="odd:bg-gray-50">
-		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
-			ShoulderLengthHair
-		</td>
-		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
-			Shoulder length straight hair
-		</td>
-	</tr>
-	<tr className="odd:bg-gray-50">
-		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
-			LooseCurlyAfro
-		</td>
-		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
-			Loose curly afro hair
-		</td>
-	</tr>
-	<tr className="odd:bg-gray-50">
-		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
-			LongTwintails
-		</td>
-		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
-			Long twintails hair
-		</td>
-	</tr>
-	<tr className="odd:bg-gray-50">
-		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
-			LongHimeCut
-		</td>
-		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
-			Long Hime cut hair
-		</td>
-	</tr>
-	<tr className="odd:bg-gray-50">
-		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
-			BoxBraids
-		</td>
-		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
-			Box braids hair
-		</td>
-	</tr>
-
-	{/* extra from FEMALE_HAIRSTYLES */}
-	<tr className="odd:bg-gray-50">
-		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
-			Layered_Waves
-		</td>
-		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
-			Layered waves hair
-		</td>
-	</tr>
-	<tr className="odd:bg-gray-50">
-		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
-			Side_Flip_Perm
-		</td>
-		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
-			Side flip perm hair
-		</td>
-	</tr>
-	<tr className="odd:bg-gray-50">
-		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
-			Textured_Crop
-		</td>
-		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
-			Textured crop short hair
-		</td>
-	</tr>
-	<tr className="odd:bg-gray-50">
-		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
-			Mushroom_Curl
-		</td>
-		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
-			Mushroom curl hair
-		</td>
-	</tr>
-	<tr className="odd:bg-gray-50">
-		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
-			Vintage_Curls
-		</td>
-		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
-			Vintage short curls hair
-		</td>
-	</tr>
-	<tr className="odd:bg-gray-50">
-		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
-			Magic_Perm
-		</td>
-		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
-			Magic perm hair
-		</td>
-	</tr>
-	<tr className="odd:bg-gray-50">
-		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
-			Side-Parted_Waves
-		</td>
-		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
-			Side-parted waves hair
-		</td>
-	</tr>
-	<tr className="odd:bg-gray-50">
-		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
-			Fluffy_Short
-		</td>
-		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
-			Fluffy short hair
-		</td>
-	</tr>
-	<tr className="odd:bg-gray-50">
-		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
-			Smooth_Inward_Bob
-		</td>
-		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
-			Smooth inward bob hair
-		</td>
-	</tr>
-	<tr className="odd:bg-gray-50">
-		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
-			Neat_Short
-		</td>
-		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
-			Neat short hair
-		</td>
-	</tr>
-	<tr className="odd:bg-gray-50">
-		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
-			Natural_Short
-		</td>
-		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
-			Natural airy short hair
-		</td>
-	</tr>
-	<tr className="odd:bg-gray-50">
-		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
-			Chic_Tapered_Bob
-		</td>
-		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
-			Chic layered bob hair
-		</td>
-	</tr>
-	<tr className="odd:bg-gray-50">
-		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
-			Edgy_Textured_Pixie
-		</td>
-		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
-			Edgy textured pixie cut
-		</td>
-	</tr>
-	<tr className="odd:bg-gray-50">
-		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
-			Elegant_Wavy_Crop
-		</td>
-		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
-			Elegant wavy short crop
-		</td>
-	</tr>
-	<tr className="odd:bg-gray-50">
-		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
-			Chic_Wavy_Pixie
-		</td>
-		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
-			Chic wavy pixie cut
-		</td>
-	</tr>
-	<tr className="odd:bg-gray-50">
-		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
-			Elegant_Side_Wave
-		</td>
-		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
-			Elegant side-part wave hair
-		</td>
-	</tr>
-	<tr className="odd:bg-gray-50">
-		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
-			Soft_Layered_Curl
-		</td>
-		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
-			Soft layered curl hair
-		</td>
-	</tr>
-	<tr className="odd:bg-gray-50">
-		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
-			Executive_Pixie
-		</td>
-		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
-			Executive neat pixie cut
-		</td>
-	</tr>
-	<tr className="odd:bg-gray-50">
-		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
-			Curved_Chic_Bob
-		</td>
-		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
-			Curved chic bob hair
-		</td>
-	</tr>
-	<tr className="odd:bg-gray-50">
-		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
-			Airy_Short_Curls
-		</td>
-		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
-			Airy short curls hair
-		</td>
-	</tr>
-	<tr className="odd:bg-gray-50">
-		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
-			Playful_Curly_Bob
-		</td>
-		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
-			Playful curly bob hair
-		</td>
-	</tr>
-	<tr className="odd:bg-gray-50">
-		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
-			Playful_Wavy_Bob
-		</td>
-		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
-			Playful wavy bob hair
-		</td>
-	</tr>
-	<tr className="odd:bg-gray-50">
-		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
-			Elegant_Soft_Curl
-		</td>
-		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
-			Elegant soft large curls
-		</td>
-	</tr>
-	<tr className="odd:bg-gray-50">
-		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
-			Elegant_Smooth_Bob
-		</td>
-		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
-			Elegant smooth short bob
-		</td>
-	</tr>
-	<tr className="odd:bg-gray-50">
-		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
-			Retro_Airy_Curl
-		</td>
-		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
-			Retro airy curl hair
-		</td>
-	</tr>
-	<tr className="odd:bg-gray-50">
-		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
-			Soft_Wavy_Bob
-		</td>
-		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
-			Soft wavy bob hair
-		</td>
-	</tr>
-	<tr className="odd:bg-gray-50">
-		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
-			Light_Inward_Bob
-		</td>
-		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
-			Light inward short bob hair
-		</td>
-	</tr>
-	<tr className="odd:bg-gray-50">
-		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
-			Neat_Curly_Crop_Cut
-		</td>
-		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
-			Neat curly crop short hair
-		</td>
-	</tr>
-	<tr className="odd:bg-gray-50">
-		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
-			Elegant_Volumized_Bob
-		</td>
-		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
-			Elegant volumized bob hair
-		</td>
-	</tr>
-	<tr className="odd:bg-gray-50">
-		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
-			Modern_Curls_Chic
-		</td>
-		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
-			Modern chic large curl hair
-		</td>
-	</tr>
-	<tr className="odd:bg-gray-50">
-		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
-			Mocha_Volume_Pixie
-		</td>
-		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
-			Mocha-toned volumized pixie cut
-		</td>
-	</tr>
-	<tr className="odd:bg-gray-50">
-		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
-			Elegant_Side_Flow
-		</td>
-		<td style={{ 'text-align': 'center' }} className="border border-gray-300">
-			Elegant side-flowing short hair
-		</td>
-	</tr>
-</table>
-
-
-#### `color`
-
-| `color`          | Description          |
-|:-----------------|:---------------------|
-| `blonde`         | blonde hair          |
-| `platinumBlonde` | platinum blonde hair |
-| `brown`          | brown hair           |
-| `lightBrown`     | light brown hair     |
-| `blue`           | blue hair            |
-| `lightBlue`      | light blue hair      |
-| `purple`         | purple hair          |
-| `lightPurple`    | light purple hair    |
-| `pink`           | pink hair            |
-| `black`          | black hair           |
-| `white`          | white hair           |
-| `grey`           | grey hair            |
-| `silver`         | silver hair          |
-| `red`            | red hair             |
-| `orange`         | orange hair          |
-| `green`          | green hair           |
-| `gradient`       | gradient hair        |
-| `multicolored`   | multicolored hair    |
-| `darkBlue`       | dark blue hair       |
-| `burgundy`       | burgundy hair        |
-| `darkGreen`      | dark green hair      |
-
-## Response
-<Warning>
-**Response Field Handling Flow**
-
-1. **Handle `Public Response Fields`**
-
-   Parse and validate the `Public Response Fields`, checking the status code or response message to ensure the request is successful and error-free.
-
-2. **Handle `Business Response Fields`**
-
-   If the `Public Response Fields` are valid and error-free, proceed with processing the business logic in the `Business Response Fields`.
-</Warning>
-
-### Public Response Fields
-
-<a href="/docs/response-description" target="_blank">Viewing Public Response Fields and Error Codes</a>
-
-### Business Response Fields
-
-| Field       | Type     | Scope            | Description                                                                                                                                   |
-|:------------|:---------|:-----------------|:----------------------------------------------------------------------------------------------------------------------------------------------|
-| `task_type` | `string` | ``async`` | Task Type. ``async`: Asynchronous tasks.`                                                                                              |
-| `task_id`   | `string` |                  | Asynchronous task ID. <br/>**Please use this field when calling the [Querying Async Task Results](/docs/ai-common/async-task-results/api) API.** |
-
-### Response Example
+| Field        | Type     | Description        |
+|:-------------|:---------|:-------------------|
+| `data`       | `object` | Final result data. |
+| +`images`    | `array`  | Result image URLs. |
+| ++`images[]` | `string` | Result image URL.  |
 
 ```json
 {
-  "request_id":     "",
-  "log_id":         "",
-  "error_code":     0,
-  "error_msg":      "",
-  "error_detail":   {
-    "status_code":  200,
-    "code":         "",
-    "code_message": "",
-    "message":      ""
-  },
-  "task_type":      "",
-  "task_id":        ""
-}
-```
-<Tip>
-This API is asynchronous, please keep `task_id` and call [`Querying Async Task Results`](/docs/ai-common/async-task-results/api) to get the final results.
-
-Asynchronous task results are valid for 24 hours. It is recommended that asynchronous task results be queried every 5 seconds.
-</Tip>
-## `Querying Async Task Results` Response
-<Warning>
-**Response Field Handling Flow**
-
-1. **Handle `Public Response Fields`**
-
-   Parse and validate the `Public Response Fields`, checking the status code or response message to ensure the request is successful and error-free.
-
-2. **Handle `Business Response Fields`**
-
-   If the `Public Response Fields` are valid and error-free, proceed with processing the business logic in the `Business Response Fields`.
-</Warning>
-### Public Response Fields
-
-<a href="/docs/response-description" target="_blank">Viewing Public Response Fields and Error Codes</a>
-
-### Business Response Fields
-
-| Field         | Type      | Scope                                  | Description                                                                                                                                 |
-|:--------------|:----------|:---------------------------------------|:--------------------------------------------------------------------------------------------------------------------------------------------|
-| `task_status` | `integer` | ``0``, ``1``, ``2`` | Asynchronous task status. ``0`: The task is queued.` ``1`: Asynchronous processing.` ``2`: Processing was successful.` |
-| `data`        | `object`  |                                        | The content of the result data returned.                                                                                                    |
-| +`images`     | `array`   |                                        | Array of resultant image addresses.                                                                                                         |
-<Tip>
-The URL address is a temporary address, valid for 24 hours, and will not be accessible after it expires. If you need to save the file for a long time or permanently, please visit the URL address within 24 hours and download the file to your own storage space.
-</Tip>
-### Response Example
-
-```json
-{
-  "error_code":     0,
-  "error_msg":      "",
-  "error_detail":   {
-    "status_code":  200,
-    "code":         "",
-    "code_message": "",
-    "message":      ""
-  },
-  "task_status":    0,
-  "data":           {
-    "images": [
-      "Image URL",
-      "Image URL"
-    ]
+  "data": {
+    "image": ""
   }
 }
 ```
 
-## Sample Code
 <Tip>
-  [👉 Online Experience 👈](https://www.ailabtools.com/portrait-hairstyle-editing-pro-example)
-
-  If you'd like to see the actual effects, please visit the experience page for a trial.
-
-  - [Introduction to Get Sample Code](get-sample-code)
-  - [Sample Code][PostmanURL]
+  `images` are temporary and remain valid for 24 hours. If you need long-term storage, download the files to your own storage within that period.
 </Tip>
 
-[PostmanURL]: https://documenter.getpostman.com/view/26387069/2s93JxqgHE#1165e9fd-450b-491d-a08b-757a89f4fb9e
+## Submit Task
 
-[OriginalImage-comparison-bangs-1]: https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/OriginalImage-comparison-bangs-1.webp
+### Input Image Examples
 
-[ResultImage-comparison-bangs-1-valid-0]: https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/ResultImage-comparison-bangs-1-valid-0.webp
+Use a clear portrait with a complete, unobstructed face at an appropriate size. The examples below show valid inputs and common invalid cases.
 
-[ResultImage-comparison-bangs-1-valid-1]: https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/ResultImage-comparison-bangs-1-valid-1.webp
+<Expandable title="Examples">
+  <table>
+    <thead>
+    <tr>
+      <th className="border p-2">Reason</th>
+      <th className="border p-2">Examples</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <th className="border p-2 align-middle">
+        ✅ Valid
+      </th>
+      <td className="border p-2">
+        <div className="grid grid-cols-2 gap-2">
+          {validImageExamples.map((image, index) => (
+            <img
+              className="w-full my-0 aspect-square object-contain rounded"
+              alt={`Valid example ${index + 1}`}
+              src={image}
+              key={image}
+            />
+          ))}
+        </div>
+      </td>
+    </tr>
+    {invalidImageExamples.map(item => (
+      <tr key={item.reason}>
+        <th className="border p-2 align-middle">
+          ❌ {item.reason}
+        </th>
+        <td className="border p-2">
+          <div className="grid mint-grid-cols-2 gap-2">
+            {item.images.map((image, index) => (
+              <img
+                className="w-full my-0 aspect-square object-contain rounded"
+                alt={`${item.reason} example ${index + 1}`}
+                src={image}
+                key={image}
+              />
+            ))}
+          </div>
+        </td>
+      </tr>
+    ))}
+    </tbody>
+  </table>
+</Expandable>
 
-[ResultImage-comparison-bangs-1-invalid-0]: https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/ResultImage-comparison-bangs-1-invalid-0.webp
+### `hair_style`
 
-[ResultImage-comparison-bangs-1-invalid-1]: https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/ResultImage-comparison-bangs-1-invalid-1.webp
+The following enum values are supported for `hair_style`.
 
-[OriginalImage-comparison-mode-1]: https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/OriginalImage-comparison-mode-1.webp
+<Expandable title="Men's Hairstyles">
+  <div className="mt-2 grid grid-cols-2 lg:grid-cols-4 align-center gap-2">
+    {mensHairstyles.map((item) => (
+      <div key={item.value} className="rounded-xl">
+        <img className="w-full mt-0 mb-2 aspect-square object-contain rounded-xl" src={item.image} alt={item.value} />
+        <code className="block break-all text-center text-xs">{item.value}</code>
+      </div>
+    ))}
+  </div>
+</Expandable>
 
-[ResultImage-comparison-mode-1-1]: https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/ResultImage-comparison-mode-1-1.webp
+<Expandable title="Women's Hairstyles">
+  <div className="mt-2 grid grid-cols-2 lg:grid-cols-4 align-center gap-2">
+    {womensHairstyles.map((item) => (
+      <div key={item.value} className="rounded-xl">
+        <img className="w-full mt-0 mb-2 aspect-square object-contain rounded-xl" src={item.image} alt={item.value} />
+        <code className="block break-all text-center text-xs">{item.value}</code>
+      </div>
+    ))}
+  </div>
+</Expandable>
 
-[ResultImage-comparison-mode-1-2]: https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/ResultImage-comparison-mode-1-2.webp
+### `color`
 
-[OriginalImage-comparison-reference-1]: https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/OriginalImage-comparison-reference-1.webp
+The following enum values are supported for `color`.
 
-[ResultImage-comparison-reference-1-0]: https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/ResultImage-comparison-reference-1-0.webp
-
-[ResultImage-comparison-reference-1-1]: https://ai-resource.ailabtools.com/hairstyle-changer-pro/doc/ResultImage-comparison-reference-1-1.webp
+<Expandable title="Available Hair Colors">
+  <div className="mt-2 grid grid-cols-2 lg:grid-cols-4 align-center gap-2">
+    {colors.map((item) => (
+      <div key={item.value} className="rounded-xl">
+        <img className="w-full mt-0 mb-2 aspect-square object-contain rounded-xl" src={item.image} alt={item.value} />
+        <code className="block break-all text-center text-xs">{item.value}</code>
+      </div>
+    ))}
+  </div>
+</Expandable>

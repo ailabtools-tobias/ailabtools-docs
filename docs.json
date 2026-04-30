@@ -322,15 +322,7 @@
                     "pages": [
                       "docs/ai-portrait/effects/hairstyle-editor-pro",
                       "docs/ai-portrait/effects/hairstyle-editor-pro/api",
-                      "docs/ai-portrait/effects/hairstyle-editor-pro/guide",
-                      {
-                        "group": "Version Logs",
-                        "icon": "clock-rotate-left",
-                        "pages": [
-                          "docs/ai-portrait/effects/hairstyle-editor-pro/api-v200",
-                          "docs/ai-portrait/effects/hairstyle-editor-pro/api-v100"
-                        ]
-                      }
+                      "docs/ai-portrait/effects/hairstyle-editor-pro/guide"
                     ]
                   },
                   {

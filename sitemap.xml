@@ -1,5 +1,5 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
-    
+
   <url>
     <loc>https://www.ailabtools.com/api-reference/ai-background-removal-&gt;-general/costume-background-removal</loc>
     <lastmod>2025-09-29T08:45:28.256Z</lastmod>
@@ -692,7 +692,7 @@
 
   <url>
     <loc>https://www.ailabtools.com/docs/ai-portrait/analysis/face-analyzer-advanced</loc>
-    
+
   </url>
 
   <url>
@@ -802,7 +802,7 @@
 
   <url>
     <loc>https://www.ailabtools.com/docs/ai-portrait/analysis/skin-analysis-pro/degree-score</loc>
-    
+
   </url>
 
   <url>
@@ -976,18 +976,8 @@
   </url>
 
   <url>
-    <loc>https://www.ailabtools.com/docs/ai-portrait/effects/hairstyle-editor-pro/api-v100</loc>
-    <lastmod>2025-10-09T09:58:43.355Z</lastmod>
-  </url>
-
-  <url>
-    <loc>https://www.ailabtools.com/docs/ai-portrait/effects/hairstyle-editor-pro/api-v200</loc>
-    <lastmod>2025-10-09T09:58:45.002Z</lastmod>
-  </url>
-
-  <url>
     <loc>https://www.ailabtools.com/docs/ai-portrait/effects/hairstyle-editor-pro/guide</loc>
-    
+
   </url>
 
   <url>
@@ -1117,17 +1107,17 @@
 
   <url>
     <loc>https://www.ailabtools.com/docs/file-storage-policy</loc>
-    
+
   </url>
 
   <url>
     <loc>https://www.ailabtools.com/docs/get-api-key</loc>
-    
+
   </url>
 
   <url>
     <loc>https://www.ailabtools.com/docs/get-sample-code</loc>
-    
+
   </url>
 
   <url>
