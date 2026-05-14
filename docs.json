@@ -443,6 +443,38 @@
                       "docs/ai-portrait/editing/ai-hair-color",
                       "docs/ai-portrait/editing/ai-hair-color/api"
                     ]
+                  },
+                  {
+                    "group": "AI Beard Removal",
+                    "icon": "eraser",
+                    "pages": [
+                      "docs/ai-portrait/editing/ai-beard-removal",
+                      "docs/ai-portrait/editing/ai-beard-removal/api"
+                    ]
+                  },
+                  {
+                    "group": "AI Hair Loss Simulation",
+                    "icon": "user-minus",
+                    "pages": [
+                      "docs/ai-portrait/editing/ai-hair-loss-simulation",
+                      "docs/ai-portrait/editing/ai-hair-loss-simulation/api"
+                    ]
+                  },
+                  {
+                    "group": "AI Beard Styling",
+                    "icon": "scissors",
+                    "pages": [
+                      "docs/ai-portrait/editing/ai-beard-styling",
+                      "docs/ai-portrait/editing/ai-beard-styling/api"
+                    ]
+                  },
+                  {
+                    "group": "AI Bald",
+                    "icon": "circle-user",
+                    "pages": [
+                      "docs/ai-portrait/editing/ai-bald",
+                      "docs/ai-portrait/editing/ai-bald/api"
+                    ]
                   }
                 ]
               },
@@ -535,6 +567,20 @@
             "group": "AI Image",
             "icon": "image",
             "pages": [
+              {
+                "group": "Image Generation",
+                "icon": "wand-magic-sparkles",
+                "pages": [
+                  {
+                    "group": "AI Flower Wallpaper",
+                    "icon": "spa",
+                    "pages": [
+                      "docs/ai-image/generation/ai-flower-wallpaper",
+                      "docs/ai-image/generation/ai-flower-wallpaper/api"
+                    ]
+                  }
+                ]
+              },
               {
                 "group": "Image Effects",
                 "icon": "wand-magic",

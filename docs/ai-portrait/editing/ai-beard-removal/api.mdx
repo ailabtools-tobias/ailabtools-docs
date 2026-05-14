@@ -1,0 +1,30 @@
+---
+sidebarTitle: "API"
+title: "AI Beard Removal API"
+description: "AI Beard Removal API that removes beards, mustaches, and facial hair from photos using advanced AI technology. Generate realistic clean-shaven portraits, beard-free profile photos, and natural facial edits for apps, websites, and creative projects."
+openapi: "POST /api/portrait/editing/ai-beard-removal"
+---
+
+import AsyncApiNotice from "/snippets/async-api-notice.mdx";
+
+<AsyncApiNotice />
+
+| Field            | Type     | Description         |
+|:-----------------|:---------|:--------------------|
+| `data`           | `object` | Final result data.  |
+| +`result_urls`   | `array`  | Result image URLs.  |
+| ++`result_urls[]` | `string` | Result image URL.  |
+
+```json
+{
+  "data": {
+    "result_urls": [""]
+  }
+}
+```
+
+<Tip>
+  `result_urls` are temporary and remain valid for 24 hours. If you need long-term storage, download the files to your own storage within that period.
+</Tip>
+
+## Submit Task

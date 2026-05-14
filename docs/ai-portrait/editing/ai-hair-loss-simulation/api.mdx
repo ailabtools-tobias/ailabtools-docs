@@ -1,0 +1,76 @@
+---
+sidebarTitle: "API"
+title: "AI Hair Loss Simulation API"
+description: "AI Hair Loss Simulation API that creates realistic hair thinning and balding effects from photos using advanced AI technology. Generate natural hair loss previews, receding hairline simulations, and baldness transformations for apps, websites, hair clinics, and virtual hairstyle experiences."
+openapi: "POST /api/portrait/editing/ai-hair-loss-simulation"
+---
+
+import AsyncApiNotice from "/snippets/async-api-notice.mdx";
+
+export const manLevel = [
+  { value: "man_1", image: "https://ai-resource.ailabtools.com/ai-hair-loss-simulation/doc/man-level/man_1.webp" },
+  { value: "man_2", image: "https://ai-resource.ailabtools.com/ai-hair-loss-simulation/doc/man-level/man_2.webp" },
+  { value: "man_3", image: "https://ai-resource.ailabtools.com/ai-hair-loss-simulation/doc/man-level/man_3.webp" },
+  { value: "man_4", image: "https://ai-resource.ailabtools.com/ai-hair-loss-simulation/doc/man-level/man_4.webp" },
+  { value: "man_5", image: "https://ai-resource.ailabtools.com/ai-hair-loss-simulation/doc/man-level/man_5.webp" },
+  { value: "man_6", image: "https://ai-resource.ailabtools.com/ai-hair-loss-simulation/doc/man-level/man_6.webp" },
+  { value: "man_7", image: "https://ai-resource.ailabtools.com/ai-hair-loss-simulation/doc/man-level/man_7.webp" },
+];
+
+export const womanLevel = [
+  { value: "woman_1", image: "https://ai-resource.ailabtools.com/ai-hair-loss-simulation/doc/woman-level/woman_1.webp" },
+  { value: "woman_2", image: "https://ai-resource.ailabtools.com/ai-hair-loss-simulation/doc/woman-level/woman_2.webp" },
+  { value: "woman_3", image: "https://ai-resource.ailabtools.com/ai-hair-loss-simulation/doc/woman-level/woman_3.webp" },
+  { value: "woman_4", image: "https://ai-resource.ailabtools.com/ai-hair-loss-simulation/doc/woman-level/woman_4.webp" },
+  { value: "woman_5", image: "https://ai-resource.ailabtools.com/ai-hair-loss-simulation/doc/woman-level/woman_5.webp" },
+  { value: "woman_6", image: "https://ai-resource.ailabtools.com/ai-hair-loss-simulation/doc/woman-level/woman_6.webp" },
+  { value: "woman_7", image: "https://ai-resource.ailabtools.com/ai-hair-loss-simulation/doc/woman-level/woman_7.webp" },
+];
+
+<AsyncApiNotice/>
+
+| Field            | Type     | Description         |
+|:-----------------|:---------|:--------------------|
+| `data`           | `object` | Final result data.  |
+| +`result_urls`   | `array`  | Result image URLs.  |
+| ++`result_urls[]` | `string` | Result image URL.  |
+
+```json
+{
+  "data": {
+    "result_urls": [""]
+  }
+}
+```
+
+<Tip>
+  `result_urls` are temporary and remain valid for 24 hours. If you need long-term storage, download the files to your own storage within that period.
+</Tip>
+
+## Submit Task
+
+### `level`
+
+The following enum values are supported for `level`.
+
+<Expandable title="Men's Level">
+  <div className="mt-2 grid grid-cols-2 lg:grid-cols-4 align-center gap-2">
+    {manLevel.map((item) => (
+      <div key={item.value} className="rounded-xl">
+        <img className="w-full mt-0 mb-2 aspect-square object-contain rounded-xl" src={item.image} alt={item.value} />
+        <code className="block break-all text-center text-xs">{item.value}</code>
+      </div>
+    ))}
+  </div>
+</Expandable>
+
+<Expandable title="Women's Level">
+  <div className="mt-2 grid grid-cols-2 lg:grid-cols-4 align-center gap-2">
+    {womanLevel.map((item) => (
+      <div key={item.value} className="rounded-xl">
+        <img className="w-full mt-0 mb-2 aspect-square object-contain rounded-xl" src={item.image} alt={item.value} />
+        <code className="block break-all text-center text-xs">{item.value}</code>
+      </div>
+    ))}
+  </div>
+</Expandable>

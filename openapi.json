@@ -2776,6 +2776,357 @@
         }
       }
     },
+    "/api/portrait/editing/ai-beard-removal": {
+      "post": {
+        "tags": [
+          "AI PORTRAIT > Portrait Editing"
+        ],
+        "summary": "AI Beard Removal",
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "image"
+                ],
+                "properties": {
+                  "image": {
+                    "type": "string",
+                    "description": "- Image format: `JPEG` `JPG` `PNG` `WEBP` \n- Image size: No more than 10 MB. \n- Image resolution: Less than 4096x4096px.",
+                    "format": "binary"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "application/json"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "allOf": [
+                    {
+                      "$ref": "#/components/schemas/PublicResponseFields"
+                    },
+                    {
+                      "type": "object",
+                      "required": [
+                        "task_id"
+                      ],
+                      "properties": {
+                        "task_id": {
+                          "$ref": "#/components/schemas/AsyncTaskId"
+                        }
+                      }
+                    }
+                  ]
+                },
+                "example": {
+                  "request_id": "",
+                  "log_id": "",
+                  "error_detail": {
+                    "code": "",
+                    "code_message": "",
+                    "message": ""
+                  },
+                  "task_id": ""
+                }
+              }
+            },
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/portrait/editing/ai-hair-loss-simulation": {
+      "post": {
+        "tags": [
+          "AI PORTRAIT > Portrait Editing"
+        ],
+        "summary": "AI Hair Loss Simulation",
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "image",
+                  "level"
+                ],
+                "properties": {
+                  "image": {
+                    "type": "string",
+                    "description": "- Image format: `JPEG` `JPG` `PNG` `WEBP` \n- Image size: No more than 10 MB. \n- Image resolution: Less than 4096x4096px.",
+                    "format": "binary"
+                  },
+                  "level": {
+                    "type": "string",
+                    "description": "Hair loss level. See [Supported level values](/docs/ai-portrait/editing/ai-hair-loss-simulation/api#level).",
+                    "enum": [
+                      "man_1",
+                      "man_2",
+                      "man_3",
+                      "man_4",
+                      "man_5",
+                      "man_6",
+                      "man_7",
+                      "woman_1",
+                      "woman_2",
+                      "woman_3",
+                      "woman_4",
+                      "woman_5",
+                      "woman_6",
+                      "woman_7"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "application/json"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "allOf": [
+                    {
+                      "$ref": "#/components/schemas/PublicResponseFields"
+                    },
+                    {
+                      "type": "object",
+                      "required": [
+                        "task_id"
+                      ],
+                      "properties": {
+                        "task_id": {
+                          "$ref": "#/components/schemas/AsyncTaskId"
+                        }
+                      }
+                    }
+                  ]
+                },
+                "example": {
+                  "request_id": "",
+                  "log_id": "",
+                  "error_detail": {
+                    "code": "",
+                    "code_message": "",
+                    "message": ""
+                  },
+                  "task_id": ""
+                }
+              }
+            },
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/portrait/editing/ai-beard-styling": {
+      "post": {
+        "tags": [
+          "AI PORTRAIT > Portrait Editing"
+        ],
+        "summary": "AI Beard Styling",
+        "requestBody": {
+          "description": "Provide `beard` or `image_template`. If both are provided, `beard` takes precedence.",
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "required": ["image"],
+                "anyOf": [
+                  {
+                    "required": ["beard"]
+                  },
+                  {
+                    "required": ["image_template"]
+                  }
+                ],
+                "properties": {
+                  "image": {
+                    "type": "string",
+                    "description": "- Image format: `JPEG` `JPG` `PNG` `WEBP` \n- Image size: No more than 10 MB. \n- Image resolution: Less than 4096x4096px.",
+                    "format": "binary"
+                  },
+                  "beard": {
+                    "type": "string",
+                    "description": "Built-in beard preset. Provide this field or `image_template`. If both are provided, `beard` takes precedence. See [Supported beard values](/docs/ai-portrait/editing/ai-beard-styling/api#beard).",
+                    "enum": [
+                      "FullBeardClassic",
+                      "CorporateBeard",
+                      "Garibaldi",
+                      "Verdi",
+                      "FullBeardTapered",
+                      "VanDyke",
+                      "Bandholz",
+                      "VanDykeRefined",
+                      "Goatee",
+                      "ExtendedGoatee",
+                      "Balbo",
+                      "AnchorBeardClean",
+                      "DucktailBeardPointed",
+                      "AnchorBeardFull",
+                      "DucktailBeardFull",
+                      "HeavyStubble",
+                      "ChevronMoustache",
+                      "HandlebarMoustache",
+                      "ImperialMoustache",
+                      "CircleBeard",
+                      "ChinStrap",
+                      "MuttonChops",
+                      "SoulPatch",
+                      "PetiteGoatee"
+                    ]
+                  },
+                  "image_template": {
+                    "type": "string",
+                    "description": "Reference image for beard transfer. Provide this field or `beard`. If both are provided, `image_template` is ignored. \n- Image format: `JPEG` `JPG` `PNG` `WEBP` \n- Image size: No more than 10 MB. \n- Image resolution: Less than 4096x4096px.",
+                    "format": "binary"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "application/json"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "allOf": [
+                    {
+                      "$ref": "#/components/schemas/PublicResponseFields"
+                    },
+                    {
+                      "type": "object",
+                      "required": [
+                        "task_id"
+                      ],
+                      "properties": {
+                        "task_id": {
+                          "$ref": "#/components/schemas/AsyncTaskId"
+                        }
+                      }
+                    }
+                  ]
+                },
+                "example": {
+                  "request_id": "",
+                  "log_id": "",
+                  "error_detail": {
+                    "code": "",
+                    "code_message": "",
+                    "message": ""
+                  },
+                  "task_id": ""
+                }
+              }
+            },
+            "description": "Success"
+          }
+        }
+      }
+    },
+    "/api/portrait/editing/ai-bald": {
+      "post": {
+        "tags": [
+          "AI PORTRAIT > Portrait Editing"
+        ],
+        "summary": "AI Bald",
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "image"
+                ],
+                "properties": {
+                  "image": {
+                    "type": "string",
+                    "description": "- Image format: `JPEG` `JPG` `PNG` `WEBP` \n- Image size: No more than 10 MB. \n- Image resolution: Less than 4096x4096px.",
+                    "format": "binary"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "application/json"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "allOf": [
+                    {
+                      "$ref": "#/components/schemas/PublicResponseFields"
+                    },
+                    {
+                      "type": "object",
+                      "required": [
+                        "task_id"
+                      ],
+                      "properties": {
+                        "task_id": {
+                          "$ref": "#/components/schemas/AsyncTaskId"
+                        }
+                      }
+                    }
+                  ]
+                },
+                "example": {
+                  "request_id": "",
+                  "log_id": "",
+                  "error_detail": {
+                    "code": "",
+                    "code_message": "",
+                    "message": ""
+                  },
+                  "task_id": ""
+                }
+              }
+            },
+            "description": "Success"
+          }
+        }
+      }
+    },
 
     "/api/portrait/enhance/try-on-clothes-refiner": {
       "post": {
@@ -6344,6 +6695,98 @@
                       }
                     }
                   ]
+                }
+              }
+            },
+            "description": "Success"
+          }
+        }
+      }
+    },
+
+    "/api/image/generation/ai-flower-wallpaper": {
+      "post": {
+        "tags": [
+          "AI IMAGE > Image Generation"
+        ],
+        "summary": "AI Flower Wallpaper",
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string",
+                    "description": "User name to display in the wallpaper (English only).",
+                    "maxLength": 500,
+                    "default": "AUTO"
+                  },
+                  "flower_elements": {
+                    "type": "string",
+                    "description": "Flower elements and bouquet composition description (English only).",
+                    "maxLength": 4000,
+                    "default": "AUTO"
+                  },
+                  "style": {
+                    "type": "string",
+                    "description": "Artwork style for the generated wallpaper (English only).",
+                    "maxLength": 4000,
+                    "default": "soft watercolor floral illustration"
+                  },
+                  "background": {
+                    "type": "string",
+                    "description": "Background style or color theme for the wallpaper (English only).",
+                    "maxLength": 4000,
+                    "default": "pastel gradient background"
+                  },
+                  "aspect_ratio": {
+                    "type": "string",
+                    "description": "Output Image Aspect Ratio.",
+                    "enum": [
+                      "auto",
+                      "1:1",
+                      "3:4",
+                      "4:3",
+                      "9:16",
+                      "16:9"
+                    ],
+                    "default": "auto"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "application/json"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                },
+                "example": {
+                  "request_id": "",
+                  "log_id": "",
+                  "error_code": 0,
+                  "error_code_str": "",
+                  "error_msg": "",
+                  "error_detail": {
+                    "status_code": 200,
+                    "code": "",
+                    "code_message": "",
+                    "message": ""
+                  },
+                  "task_type": "async",
+                  "task_id": ""
                 }
               }
             },

@@ -1,0 +1,30 @@
+---
+sidebarTitle: "API"
+title: "AI Flower Wallpaper API"
+description: "AI Flower Wallpaper API that transforms names into personalized floral art using flower language and AI image generation. Generate bouquet wallpapers, floral backgrounds, and flower name designs for apps, websites, and creative projects."
+openapi: "POST /api/image/generation/ai-flower-wallpaper"
+---
+
+import AsyncApiNotice from "/snippets/async-api-notice.mdx";
+
+<AsyncApiNotice />
+
+| Field            | Type     | Description         |
+|:-----------------|:---------|:--------------------|
+| `data`           | `object` | Final result data.  |
+| +`result_urls`   | `array`  | Result image URLs.  |
+| ++`result_urls[]` | `string` | Result image URL.  |
+
+```json
+{
+  "data": {
+    "result_urls": [""]
+  }
+}
+```
+
+<Tip>
+  `result_urls` are temporary and remain valid for 24 hours. If you need long-term storage, download the files to your own storage within that period.
+</Tip>
+
+## Submit Task

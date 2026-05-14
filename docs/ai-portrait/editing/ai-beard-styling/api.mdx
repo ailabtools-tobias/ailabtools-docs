@@ -1,0 +1,76 @@
+---
+sidebarTitle: "API"
+title: "AI Beard Styling API"
+description: "AI Beard Styling API that generates realistic beard styles, mustaches, and facial hair transformations from photos using advanced AI technology. Create natural beard simulations, trendy facial hair looks, and personalized beard edits for apps, websites, barbershop tools, and virtual grooming experiences."
+openapi: "POST /api/portrait/editing/ai-beard-styling"
+---
+
+import AsyncApiNotice from "/snippets/async-api-notice.mdx";
+
+export const beards = [
+  { value: "AnchorBeardClean", image: "https://ai-resource.ailabtools.com/ai-beard-styling/beards/AnchorBeardClean.jpg" },
+  { value: "AnchorBeardFull", image: "https://ai-resource.ailabtools.com/ai-beard-styling/beards/AnchorBeardFull.jpg" },
+  { value: "Balbo", image: "https://ai-resource.ailabtools.com/ai-beard-styling/beards/Balbo.jpg" },
+  { value: "Bandholz", image: "https://ai-resource.ailabtools.com/ai-beard-styling/beards/Bandholz.jpg" },
+  { value: "ChevronMoustache", image: "https://ai-resource.ailabtools.com/ai-beard-styling/beards/ChevronMoustache.jpg" },
+  { value: "ChinStrap", image: "https://ai-resource.ailabtools.com/ai-beard-styling/beards/ChinStrap.jpg" },
+  { value: "CircleBeard", image: "https://ai-resource.ailabtools.com/ai-beard-styling/beards/CircleBeard.jpg" },
+  { value: "CorporateBeard", image: "https://ai-resource.ailabtools.com/ai-beard-styling/beards/CorporateBeard.jpg" },
+  { value: "DucktailBeardFull", image: "https://ai-resource.ailabtools.com/ai-beard-styling/beards/DucktailBeardFull.jpg" },
+  { value: "DucktailBeardPointed", image: "https://ai-resource.ailabtools.com/ai-beard-styling/beards/DucktailBeardPointed.jpg" },
+  { value: "ExtendedGoatee", image: "https://ai-resource.ailabtools.com/ai-beard-styling/beards/ExtendedGoatee.jpg" },
+  { value: "FullBeardClassic", image: "https://ai-resource.ailabtools.com/ai-beard-styling/beards/FullBeardClassic.jpg" },
+  { value: "FullBeardTapered", image: "https://ai-resource.ailabtools.com/ai-beard-styling/beards/FullBeardTapered.jpg" },
+  { value: "Garibaldi", image: "https://ai-resource.ailabtools.com/ai-beard-styling/beards/Garibaldi.jpg" },
+  { value: "Goatee", image: "https://ai-resource.ailabtools.com/ai-beard-styling/beards/Goatee.jpg" },
+  { value: "HandlebarMoustache", image: "https://ai-resource.ailabtools.com/ai-beard-styling/beards/HandlebarMoustache.jpg" },
+  { value: "HeavyStubble", image: "https://ai-resource.ailabtools.com/ai-beard-styling/beards/HeavyStubble.jpg" },
+  { value: "ImperialMoustache", image: "https://ai-resource.ailabtools.com/ai-beard-styling/beards/ImperialMoustache.jpg" },
+  { value: "MuttonChops", image: "https://ai-resource.ailabtools.com/ai-beard-styling/beards/MuttonChops.jpg" },
+  { value: "PetiteGoatee", image: "https://ai-resource.ailabtools.com/ai-beard-styling/beards/PetiteGoatee.jpg" },
+  { value: "SoulPatch", image: "https://ai-resource.ailabtools.com/ai-beard-styling/beards/SoulPatch.jpg" },
+  { value: "VanDyke", image: "https://ai-resource.ailabtools.com/ai-beard-styling/beards/VanDyke.jpg" },
+  { value: "VanDykeRefined", image: "https://ai-resource.ailabtools.com/ai-beard-styling/beards/VanDykeRefined.jpg" },
+  { value: "Verdi", image: "https://ai-resource.ailabtools.com/ai-beard-styling/beards/Verdi.jpg" },
+];
+
+<AsyncApiNotice/>
+
+| Field            | Type     | Description         |
+|:-----------------|:---------|:--------------------|
+| `data`           | `object` | Final result data.  |
+| +`result_urls`   | `array`  | Result image URLs.  |
+| ++`result_urls[]` | `string` | Result image URL.  |
+
+```json
+{
+  "data": {
+    "result_urls": [""]
+  }
+}
+```
+
+<Tip>
+  `result_urls` are temporary and remain valid for 24 hours. If you need long-term storage, download the files to your own storage within that period.
+</Tip>
+
+## Submit Task
+
+### Input Image Examples
+
+Use a clear portrait with a complete, unobstructed face at an appropriate size. The examples below show valid inputs and common invalid cases.
+
+### `beard`
+
+The following enum values are supported for `beard`.
+
+<Expandable title="Available Beards">
+  <div className="mt-2 grid grid-cols-2 lg:grid-cols-4 align-center gap-2">
+    {beards.map((item) => (
+      <div key={item.value} className="rounded-xl">
+        <img className="w-full mt-0 mb-2 aspect-square object-contain rounded-xl" src={item.image} alt={item.value} />
+        <code className="block break-all text-center text-xs">{item.value}</code>
+      </div>
+    ))}
+  </div>
+</Expandable>
