@@ -1,86 +1,34 @@
 ---
 sidebarTitle: "API"
 title: "Change Facial Expressions API"
-description: "Introducing Change facial expressions! With our advanced image processing technology, you can now edit facial expressions in images, including laughing, pouting, unhappy and smiling. Our technology allows you to quickly and easily transform your photos and videos into amazing works of art with enhanced facial expressions. Our powerful image processing technology helps you bring your images to life, with stunning results. Show your emotions and let your images speak for themselves. Try Change facial expressions now and enjoy the power of advanced image processing technology."
+description: "Transform portrait photos with realistic AI facial expression editing. Instantly generate natural smiles, grins, cool looks, sad expressions, forced smiles, open-eye corrections, and more while preserving facial identity and image quality. Perfect for avatars, profile photos, social media content, AI photo apps, and creative portrait editing workflows."
 openapi: "POST /api/portrait/effects/emotion-editor"
 ---
 
-## Request
+export const expressions = [
+  { value: "10", image: "https://ai-resource.ailabtools.com/change-facial-expressions/expressions/10.webp" },
+  { value: "11", image: "https://ai-resource.ailabtools.com/change-facial-expressions/expressions/11.webp" },
+  { value: "12", image: "https://ai-resource.ailabtools.com/change-facial-expressions/expressions/12.webp" },
+  { value: "13", image: "https://ai-resource.ailabtools.com/change-facial-expressions/expressions/13.webp" },
+  { value: "14", image: "https://ai-resource.ailabtools.com/change-facial-expressions/expressions/14.webp" },
+  { value: "15", image: "https://ai-resource.ailabtools.com/change-facial-expressions/expressions/15.webp" },
+  { value: "16", image: "https://ai-resource.ailabtools.com/change-facial-expressions/expressions/16.webp" },
+  { value: "100", image: "https://ai-resource.ailabtools.com/change-facial-expressions/expressions/100.webp" },
+];
 
-- **URL**: `https://www.ailabapi.com/api/portrait/effects/emotion-editor`
-- **Method**: `POST`
-- **Content-Type**: `multipart/form-data`
+## Submit Task
 
-### Image requirements
+### `expression`
 
-- **Image format**: `JPEG` `JPG` `PNG`
-- **Image size**: No more than 5 MB.
-- **Image resolution**: Less than 4096x4096px.
+The following enum values are supported for `expression`.
 
-### Headers
-
-| Field              | Required | Type     | Description                                        |
-|:-------------------|:---------|:---------|:---------------------------------------------------|
-| `ailabapi-api-key` | YES      | `string` | Application API KEY. [Get API KEY](/docs/get-api-key) |
-
-### Body
-
-| Field            | Required | Type      | Scope                                                                                                            | Description                                                                                                                                                                                                                                     |
-|:-----------------|:---------|:----------|:-----------------------------------------------------------------------------------------------------------------|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `image_target`   | YES      | `file`    |                                                                                                                  |                                                                                                                                                                                                                                                 |
-| `service_choice` | YES      | `integer` | ``10``, ``11``, ``12``, ``13``, ``14``, ``15``, ``16``, ``100`` | Expression type. ``10`: Dimple Smile.` ``11`: Pear Dimple Smile.` ``12`: Big Grin.` ``13`: Standard Grin.` ``14`: Cool Pose.` ``15`: Sad.` ``16`: Forced Smile.` ``100`: Opening eyes.` |
-
-## Response
-<Warning>
-**Response Field Handling Flow**
-
-1. **Handle `Public Response Fields`**
-
-   Parse and validate the `Public Response Fields`, checking the status code or response message to ensure the request is successful and error-free.
-
-2. **Handle `Business Response Fields`**
-
-   If the `Public Response Fields` are valid and error-free, proceed with processing the business logic in the `Business Response Fields`.
-</Warning>
-### Public Response Fields
-
-<a href="/docs/response-description" target="_blank">Viewing Public Response Fields and Error Codes</a>
-
-### Business Response Fields
-
-| Field    | Type     | Description                                                   |
-|:---------|:---------|:--------------------------------------------------------------|
-| `data`   | `object` | The content of the result data returned.                      |
-| +`image` | `string` | The result image, returning the Base64 encoding of the image. |
-
-### Response Example
-
-```json
-{
-  "request_id":   "",
-  "log_id":       "",
-  "error_code":   0,
-  "error_msg":    "",
-  "error_detail": {
-    "status_code":  200,
-    "code":         "",
-    "code_message": "",
-    "message":      ""
-  },
-  "data":         {
-    "image": ""
-  }
-}
-```
-
-## Sample Code
-<Tip>
-  [👉 Online Experience 👈](https://www.ailabtools.com/portrait-expression-editing-example)
-
-  If you'd like to see the actual effects, please visit the experience page for a trial.
-
-  - [Introduction to Get Sample Code](get-sample-code)
-  - [Sample Code][PostmanURL]
-</Tip>
-
-[PostmanURL]: https://documenter.getpostman.com/view/26387069/2s93JxqgHE#9af8fc3f-9a28-46e3-a52d-c638534b5f1c
+<Expandable title="Expressions">
+  <div className="mt-2 grid grid-cols-2 lg:grid-cols-4 align-center gap-2">
+    {expressions.map((item) => (
+      <div key={item.value} className="rounded-xl">
+        <img className="w-full mt-0 mb-2 aspect-square object-contain rounded-xl" src={item.image} alt={item.value} />
+        <code className="block break-all text-center text-xs">{item.value}</code>
+      </div>
+    ))}
+  </div>
+</Expandable>

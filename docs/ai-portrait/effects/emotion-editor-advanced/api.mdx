@@ -1,0 +1,165 @@
+---
+sidebarTitle: "API"
+title: "Change Facial Expressions Advanced API"
+description: "Transform portrait images with 100+ AI-powered facial expressions. From natural smiles and cute reactions to confident, funny, angry, surprised, charming, and emotional looks, the Change Facial Expressions API generates realistic expression edits while preserving facial identity and image quality. Perfect for avatar apps, AI photo editors, social platforms, games, creative tools, and interactive experiences."
+openapi: "POST /api/portrait/effects/emotion-editor-advanced"
+---
+
+import AsyncApiNotice from "/snippets/async-api-notice.mdx";
+
+export const expressions = [
+  { value: "clingy_cute_pout", image: "https://ai-resource.ailabtools.com/change-facial-expressions-advanced/expressions/AffectionateIntimate/clingy_cute_pout.webp" },
+  { value: "deep_affectionate_gaze", image: "https://ai-resource.ailabtools.com/change-facial-expressions-advanced/expressions/AffectionateIntimate/deep_affectionate_gaze.webp" },
+  { value: "fond_smile", image: "https://ai-resource.ailabtools.com/change-facial-expressions-advanced/expressions/AffectionateIntimate/fond_smile.webp" },
+  { value: "gentle_gaze", image: "https://ai-resource.ailabtools.com/change-facial-expressions-advanced/expressions/AffectionateIntimate/gentle_gaze.webp" },
+  { value: "heart_eyes_expression", image: "https://ai-resource.ailabtools.com/change-facial-expressions-advanced/expressions/AffectionateIntimate/heart_eyes_expression.webp" },
+  { value: "overly_sweet_affection", image: "https://ai-resource.ailabtools.com/change-facial-expressions-advanced/expressions/AffectionateIntimate/overly_sweet_affection.webp" },
+  { value: "sweet_pouting_affection", image: "https://ai-resource.ailabtools.com/change-facial-expressions-advanced/expressions/AffectionateIntimate/sweet_pouting_affection.webp" },
+  { value: "angry_puffed_cheeks", image: "https://ai-resource.ailabtools.com/change-facial-expressions-advanced/expressions/Angry/angry_puffed_cheeks.webp" },
+  { value: "angry_stare", image: "https://ai-resource.ailabtools.com/change-facial-expressions-advanced/expressions/Angry/angry_stare.webp" },
+  { value: "cartoon_rage_face", image: "https://ai-resource.ailabtools.com/change-facial-expressions-advanced/expressions/Angry/cartoon_rage_face.webp" },
+  { value: "cold_glare", image: "https://ai-resource.ailabtools.com/change-facial-expressions-advanced/expressions/Angry/cold_glare.webp" },
+  { value: "furious_shout", image: "https://ai-resource.ailabtools.com/change-facial-expressions-advanced/expressions/Angry/furious_shout.webp" },
+  { value: "gritted_teeth_anger", image: "https://ai-resource.ailabtools.com/change-facial-expressions-advanced/expressions/Angry/gritted_teeth_anger.webp" },
+  { value: "slight_annoyance", image: "https://ai-resource.ailabtools.com/change-facial-expressions-advanced/expressions/Angry/slight_annoyance.webp" },
+  { value: "villain_angry_smirk", image: "https://ai-resource.ailabtools.com/change-facial-expressions-advanced/expressions/Angry/villain_angry_smirk.webp" },
+  { value: "cold_contempt", image: "https://ai-resource.ailabtools.com/change-facial-expressions-advanced/expressions/ArrogantContemptuous/cold_contempt.webp" },
+  { value: "dismissive_pout", image: "https://ai-resource.ailabtools.com/change-facial-expressions-advanced/expressions/ArrogantContemptuous/dismissive_pout.webp" },
+  { value: "extreme_smug_face", image: "https://ai-resource.ailabtools.com/change-facial-expressions-advanced/expressions/ArrogantContemptuous/extreme_smug_face.webp" },
+  { value: "in_control_expression", image: "https://ai-resource.ailabtools.com/change-facial-expressions-advanced/expressions/ArrogantContemptuous/in_control_expression.webp" },
+  { value: "looking_down_contempt", image: "https://ai-resource.ailabtools.com/change-facial-expressions-advanced/expressions/ArrogantContemptuous/looking_down_contempt.webp" },
+  { value: "mocking_laugh_face", image: "https://ai-resource.ailabtools.com/change-facial-expressions-advanced/expressions/ArrogantContemptuous/mocking_laugh_face.webp" },
+  { value: "sarcastic_sneer", image: "https://ai-resource.ailabtools.com/change-facial-expressions-advanced/expressions/ArrogantContemptuous/sarcastic_sneer.webp" },
+  { value: "charming_smile", image: "https://ai-resource.ailabtools.com/change-facial-expressions-advanced/expressions/Charming/charming_smile.webp" },
+  { value: "dramatic_lip_bite", image: "https://ai-resource.ailabtools.com/change-facial-expressions-advanced/expressions/Charming/dramatic_lip_bite.webp" },
+  { value: "dreamy_gaze", image: "https://ai-resource.ailabtools.com/change-facial-expressions-advanced/expressions/Charming/dreamy_gaze.webp" },
+  { value: "flirty_eyebrow_raise", image: "https://ai-resource.ailabtools.com/change-facial-expressions-advanced/expressions/Charming/flirty_eyebrow_raise.webp" },
+  { value: "playful_seductive_smirk", image: "https://ai-resource.ailabtools.com/change-facial-expressions-advanced/expressions/Charming/playful_seductive_smirk.webp" },
+  { value: "soft_lip_bite", image: "https://ai-resource.ailabtools.com/change-facial-expressions-advanced/expressions/Charming/soft_lip_bite.webp" },
+  { value: "wink_flirty_face", image: "https://ai-resource.ailabtools.com/change-facial-expressions-advanced/expressions/Charming/wink_flirty_face.webp" },
+  { value: "bossy_cool_face", image: "https://ai-resource.ailabtools.com/change-facial-expressions-advanced/expressions/ConfidentCool/bossy_cool_face.webp" },
+  { value: "cold_cool_expression", image: "https://ai-resource.ailabtools.com/change-facial-expressions-advanced/expressions/ConfidentCool/cold_cool_expression.webp" },
+  { value: "confident_smile", image: "https://ai-resource.ailabtools.com/change-facial-expressions-advanced/expressions/ConfidentCool/confident_smile.webp" },
+  { value: "dominant_gaze", image: "https://ai-resource.ailabtools.com/change-facial-expressions-advanced/expressions/ConfidentCool/dominant_gaze.webp" },
+  { value: "super_confident_smirk", image: "https://ai-resource.ailabtools.com/change-facial-expressions-advanced/expressions/ConfidentCool/super_confident_smirk.webp" },
+  { value: "victorious_pride", image: "https://ai-resource.ailabtools.com/change-facial-expressions-advanced/expressions/ConfidentCool/victorious_pride.webp" },
+  { value: "winning_smug_face", image: "https://ai-resource.ailabtools.com/change-facial-expressions-advanced/expressions/ConfidentCool/winning_smug_face.webp" },
+  { value: "brain_loading_face", image: "https://ai-resource.ailabtools.com/change-facial-expressions-advanced/expressions/ConfusedThinking/brain_loading_face.webp" },
+  { value: "confused_tilted_face", image: "https://ai-resource.ailabtools.com/change-facial-expressions-advanced/expressions/ConfusedThinking/confused_tilted_face.webp" },
+  { value: "frowning_thought", image: "https://ai-resource.ailabtools.com/change-facial-expressions-advanced/expressions/ConfusedThinking/frowning_thought.webp" },
+  { value: "not_understanding", image: "https://ai-resource.ailabtools.com/change-facial-expressions-advanced/expressions/ConfusedThinking/not_understanding.webp" },
+  { value: "slight_confusion", image: "https://ai-resource.ailabtools.com/change-facial-expressions-advanced/expressions/ConfusedThinking/slight_confusion.webp" },
+  { value: "suspicious_look", image: "https://ai-resource.ailabtools.com/change-facial-expressions-advanced/expressions/ConfusedThinking/suspicious_look.webp" },
+  { value: "what_are_you_doing_face", image: "https://ai-resource.ailabtools.com/change-facial-expressions-advanced/expressions/ConfusedThinking/what_are_you_doing_face.webp" },
+  { value: "baby_like_innocent_face", image: "https://ai-resource.ailabtools.com/change-facial-expressions-advanced/expressions/Cute/baby_like_innocent_face.webp" },
+  { value: "cute_pout", image: "https://ai-resource.ailabtools.com/change-facial-expressions-advanced/expressions/Cute/cute_pout.webp" },
+  { value: "expectant_sparkling_eyes", image: "https://ai-resource.ailabtools.com/change-facial-expressions-advanced/expressions/Cute/expectant_sparkling_eyes.webp" },
+  { value: "innocent_big_eyes", image: "https://ai-resource.ailabtools.com/change-facial-expressions-advanced/expressions/Cute/innocent_big_eyes.webp" },
+  { value: "soft_cute_smile", image: "https://ai-resource.ailabtools.com/change-facial-expressions-advanced/expressions/Cute/soft_cute_smile.webp" },
+  { value: "sparkling_eyes_cute", image: "https://ai-resource.ailabtools.com/change-facial-expressions-advanced/expressions/Cute/sparkling_eyes_cute.webp" },
+  { value: "super_cute_pouting_face", image: "https://ai-resource.ailabtools.com/change-facial-expressions-advanced/expressions/Cute/super_cute_pouting_face.webp" },
+  { value: "dramatic_eye_roll", image: "https://ai-resource.ailabtools.com/change-facial-expressions-advanced/expressions/Disgusted/dramatic_eye_roll.webp" },
+  { value: "extreme_disgust_face", image: "https://ai-resource.ailabtools.com/change-facial-expressions-advanced/expressions/Disgusted/extreme_disgust_face.webp" },
+  { value: "eye_roll_disgust", image: "https://ai-resource.ailabtools.com/change-facial-expressions-advanced/expressions/Disgusted/eye_roll_disgust.webp" },
+  { value: "grossed_out_face", image: "https://ai-resource.ailabtools.com/change-facial-expressions-advanced/expressions/Disgusted/grossed_out_face.webp" },
+  { value: "mild_dislike", image: "https://ai-resource.ailabtools.com/change-facial-expressions-advanced/expressions/Disgusted/mild_dislike.webp" },
+  { value: "nauseated_disgust", image: "https://ai-resource.ailabtools.com/change-facial-expressions-advanced/expressions/Disgusted/nauseated_disgust.webp" },
+  { value: "strong_aversion", image: "https://ai-resource.ailabtools.com/change-facial-expressions-advanced/expressions/Disgusted/strong_aversion.webp" },
+  { value: "frozen_in_fear", image: "https://ai-resource.ailabtools.com/change-facial-expressions-advanced/expressions/Fearful/frozen_in_fear.webp" },
+  { value: "nervous_fear", image: "https://ai-resource.ailabtools.com/change-facial-expressions-advanced/expressions/Fearful/nervous_fear.webp" },
+  { value: "panic_breakdown", image: "https://ai-resource.ailabtools.com/change-facial-expressions-advanced/expressions/Fearful/panic_breakdown.webp" },
+  { value: "panic_wide_eyes", image: "https://ai-resource.ailabtools.com/change-facial-expressions-advanced/expressions/Fearful/panic_wide_eyes.webp" },
+  { value: "screaming_fear_face", image: "https://ai-resource.ailabtools.com/change-facial-expressions-advanced/expressions/Fearful/screaming_fear_face.webp" },
+  { value: "terrified_expression", image: "https://ai-resource.ailabtools.com/change-facial-expressions-advanced/expressions/Fearful/terrified_expression.webp" },
+  { value: "timid_withdrawal", image: "https://ai-resource.ailabtools.com/change-facial-expressions-advanced/expressions/Fearful/timid_withdrawal.webp" },
+  { value: "crazy_tongue_face", image: "https://ai-resource.ailabtools.com/change-facial-expressions-advanced/expressions/Funny/crazy_tongue_face.webp" },
+  { value: "cross_eyed_silly_face", image: "https://ai-resource.ailabtools.com/change-facial-expressions-advanced/expressions/Funny/cross_eyed_silly_face.webp" },
+  { value: "duck_face_funny", image: "https://ai-resource.ailabtools.com/change-facial-expressions-advanced/expressions/Funny/duck_face_funny.webp" },
+  { value: "exaggerated_surprised_face", image: "https://ai-resource.ailabtools.com/change-facial-expressions-advanced/expressions/Funny/exaggerated_surprised_face.webp" },
+  { value: "mischievous_smirk", image: "https://ai-resource.ailabtools.com/change-facial-expressions-advanced/expressions/Funny/mischievous_smirk.webp" },
+  { value: "one_eye_squint_funny", image: "https://ai-resource.ailabtools.com/change-facial-expressions-advanced/expressions/Funny/one_eye_squint_funny.webp" },
+  { value: "silly_face", image: "https://ai-resource.ailabtools.com/change-facial-expressions-advanced/expressions/Funny/silly_face.webp" },
+  { value: "tongue_out_playful", image: "https://ai-resource.ailabtools.com/change-facial-expressions-advanced/expressions/Funny/tongue_out_playful.webp" },
+  { value: "wink_cute", image: "https://ai-resource.ailabtools.com/change-facial-expressions-advanced/expressions/Funny/wink_cute.webp" },
+  { value: "bright_laugh", image: "https://ai-resource.ailabtools.com/change-facial-expressions-advanced/expressions/Happy/bright_laugh.webp" },
+  { value: "crazy_happy_face", image: "https://ai-resource.ailabtools.com/change-facial-expressions-advanced/expressions/Happy/crazy_happy_face.webp" },
+  { value: "happy_surprise", image: "https://ai-resource.ailabtools.com/change-facial-expressions-advanced/expressions/Happy/happy_surprise.webp" },
+  { value: "laughing_with_tears", image: "https://ai-resource.ailabtools.com/change-facial-expressions-advanced/expressions/Happy/laughing_with_tears.webp" },
+  { value: "natural_smile", image: "https://ai-resource.ailabtools.com/change-facial-expressions-advanced/expressions/Happy/natural_smile.webp" },
+  { value: "overjoyed_screaming_laugh", image: "https://ai-resource.ailabtools.com/change-facial-expressions-advanced/expressions/Happy/overjoyed_screaming_laugh.webp" },
+  { value: "proud_smirk", image: "https://ai-resource.ailabtools.com/change-facial-expressions-advanced/expressions/Happy/proud_smirk.webp" },
+  { value: "sweet_smile", image: "https://ai-resource.ailabtools.com/change-facial-expressions-advanced/expressions/Happy/sweet_smile.webp" },
+  { value: "crying_breakdown", image: "https://ai-resource.ailabtools.com/change-facial-expressions-advanced/expressions/PainfulEnduring/crying_breakdown.webp" },
+  { value: "dramatic_pain_face", image: "https://ai-resource.ailabtools.com/change-facial-expressions-advanced/expressions/PainfulEnduring/dramatic_pain_face.webp" },
+  { value: "frowning_in_pain", image: "https://ai-resource.ailabtools.com/change-facial-expressions-advanced/expressions/PainfulEnduring/frowning_in_pain.webp" },
+  { value: "holding_back_scream", image: "https://ai-resource.ailabtools.com/change-facial-expressions-advanced/expressions/PainfulEnduring/holding_back_scream.webp" },
+  { value: "holding_back_tears", image: "https://ai-resource.ailabtools.com/change-facial-expressions-advanced/expressions/PainfulEnduring/holding_back_tears.webp" },
+  { value: "overwhelmed_breakdown_face", image: "https://ai-resource.ailabtools.com/change-facial-expressions-advanced/expressions/PainfulEnduring/overwhelmed_breakdown_face.webp" },
+  { value: "repressed_exhaustion", image: "https://ai-resource.ailabtools.com/change-facial-expressions-advanced/expressions/PainfulEnduring/repressed_exhaustion.webp" },
+  { value: "big_crying_face", image: "https://ai-resource.ailabtools.com/change-facial-expressions-advanced/expressions/Sad/big_crying_face.webp" },
+  { value: "downcast_sadness", image: "https://ai-resource.ailabtools.com/change-facial-expressions-advanced/expressions/Sad/downcast_sadness.webp" },
+  { value: "fake_crying_funny", image: "https://ai-resource.ailabtools.com/change-facial-expressions-advanced/expressions/Sad/fake_crying_funny.webp" },
+  { value: "heartbroken_breakdown", image: "https://ai-resource.ailabtools.com/change-facial-expressions-advanced/expressions/Sad/heartbroken_breakdown.webp" },
+  { value: "puppy_eyes_sad", image: "https://ai-resource.ailabtools.com/change-facial-expressions-advanced/expressions/Sad/puppy_eyes_sad.webp" },
+  { value: "silent_grief", image: "https://ai-resource.ailabtools.com/change-facial-expressions-advanced/expressions/Sad/silent_grief.webp" },
+  { value: "tearful_sadness", image: "https://ai-resource.ailabtools.com/change-facial-expressions-advanced/expressions/Sad/tearful_sadness.webp" },
+  { value: "wronged_near_tears", image: "https://ai-resource.ailabtools.com/change-facial-expressions-advanced/expressions/Sad/wronged_near_tears.webp" },
+  { value: "awkward_forced_smile", image: "https://ai-resource.ailabtools.com/change-facial-expressions-advanced/expressions/ShyEmbarrassed/awkward_forced_smile.webp" },
+  { value: "awkward_sweat_smile", image: "https://ai-resource.ailabtools.com/change-facial-expressions-advanced/expressions/ShyEmbarrassed/awkward_sweat_smile.webp" },
+  { value: "blushing_shyness", image: "https://ai-resource.ailabtools.com/change-facial-expressions-advanced/expressions/ShyEmbarrassed/blushing_shyness.webp" },
+  { value: "embarrassed_cover_mouth", image: "https://ai-resource.ailabtools.com/change-facial-expressions-advanced/expressions/ShyEmbarrassed/embarrassed_cover_mouth.webp" },
+  { value: "over_shy_blushing_face", image: "https://ai-resource.ailabtools.com/change-facial-expressions-advanced/expressions/ShyEmbarrassed/over_shy_blushing_face.webp" },
+  { value: "shy_smile", image: "https://ai-resource.ailabtools.com/change-facial-expressions-advanced/expressions/ShyEmbarrassed/shy_smile.webp" },
+  { value: "socially_embarrassed", image: "https://ai-resource.ailabtools.com/change-facial-expressions-advanced/expressions/ShyEmbarrassed/socially_embarrassed.webp" },
+  { value: "cartoon_shocked_face", image: "https://ai-resource.ailabtools.com/change-facial-expressions-advanced/expressions/Surprised/cartoon_shocked_face.webp" },
+  { value: "disbelief", image: "https://ai-resource.ailabtools.com/change-facial-expressions-advanced/expressions/Surprised/disbelief.webp" },
+  { value: "fearful_surprise", image: "https://ai-resource.ailabtools.com/change-facial-expressions-advanced/expressions/Surprised/fearful_surprise.webp" },
+  { value: "jaw_drop_surprise", image: "https://ai-resource.ailabtools.com/change-facial-expressions-advanced/expressions/Surprised/jaw_drop_surprise.webp" },
+  { value: "shocked_open_mouth", image: "https://ai-resource.ailabtools.com/change-facial-expressions-advanced/expressions/Surprised/shocked_open_mouth.webp" },
+  { value: "slight_surprise", image: "https://ai-resource.ailabtools.com/change-facial-expressions-advanced/expressions/Surprised/slight_surprise.webp" },
+  { value: "speechless_shock", image: "https://ai-resource.ailabtools.com/change-facial-expressions-advanced/expressions/Surprised/speechless_shock.webp" },
+  { value: "awkward_silence", image: "https://ai-resource.ailabtools.com/change-facial-expressions-advanced/expressions/TiredSpeechless/awkward_silence.webp" },
+  { value: "dead_inside_face", image: "https://ai-resource.ailabtools.com/change-facial-expressions-advanced/expressions/TiredSpeechless/dead_inside_face.webp" },
+  { value: "exhausted_melting_face", image: "https://ai-resource.ailabtools.com/change-facial-expressions-advanced/expressions/TiredSpeechless/exhausted_melting_face.webp" },
+  { value: "helpless_expression", image: "https://ai-resource.ailabtools.com/change-facial-expressions-advanced/expressions/TiredSpeechless/helpless_expression.webp" },
+  { value: "sleepy_yawn", image: "https://ai-resource.ailabtools.com/change-facial-expressions-advanced/expressions/TiredSpeechless/sleepy_yawn.webp" },
+  { value: "speechless_blank_stare", image: "https://ai-resource.ailabtools.com/change-facial-expressions-advanced/expressions/TiredSpeechless/speechless_blank_stare.webp" },
+  { value: "tired_blank_eyes", image: "https://ai-resource.ailabtools.com/change-facial-expressions-advanced/expressions/TiredSpeechless/tired_blank_eyes.webp" },
+];
+
+<AsyncApiNotice/>
+
+| Field            | Type     | Description         |
+|:-----------------|:---------|:--------------------|
+| `data`           | `object` | Final result data.  |
+| +`result_urls`   | `array`  | Result image URLs.  |
+| ++`result_urls[]` | `string` | Result image URL.  |
+
+```json
+{
+  "data": {
+    "result_urls": [""]
+  }
+}
+```
+
+<Tip>
+  `result_urls` are temporary and remain valid for 24 hours. If you need long-term storage, download the files to your own storage within that period.
+</Tip>
+
+## Submit Task
+
+### `expression`
+
+The following enum values are supported for `expression`.
+
+<Expandable title="Expressions">
+  <div className="mt-2 grid grid-cols-2 lg:grid-cols-4 align-center gap-2">
+    {expressions.map((item) => (
+      <div key={item.value} className="rounded-xl">
+        <img className="w-full mt-0 mb-2 aspect-square object-contain rounded-xl" src={item.image} alt={item.value} />
+        <code className="block break-all text-center text-xs">{item.value}</code>
+      </div>
+    ))}
+  </div>
+</Expandable>

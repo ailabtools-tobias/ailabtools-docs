@@ -305,15 +305,15 @@
                     "icon": "face-laugh",
                     "pages": [
                       "docs/ai-portrait/effects/emotion-editor",
-                      "docs/ai-portrait/effects/emotion-editor/api",
-                      {
-                        "group": "Version Logs",
-                        "icon": "clock-rotate-left",
-                        "pages": [
-                          "docs/ai-portrait/effects/emotion-editor/api-v101",
-                          "docs/ai-portrait/effects/emotion-editor/api-v100"
-                        ]
-                      }
+                      "docs/ai-portrait/effects/emotion-editor/api"
+                    ]
+                  },
+                  {
+                    "group": "Change Facial Expressions Advanced",
+                    "icon": "wand-magic",
+                    "pages": [
+                      "docs/ai-portrait/effects/emotion-editor-advanced",
+                      "docs/ai-portrait/effects/emotion-editor-advanced/api"
                     ]
                   },
                   {
