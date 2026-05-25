@@ -51,7 +51,7 @@
       },
       {
         "label": "API Keys",
-        "href": "https://www.ailabtools.com/developer-platform"
+        "href": "https://www.ailabtools.com/developer"
       },
       {
         "label": "Pricing",
@@ -155,7 +155,7 @@
   },
   "topbarCtaButton": {
     "name": "Developer Platform",
-    "url": "https://www.ailabtools.com/developer-platform"
+    "url": "https://www.ailabtools.com/developer"
   },
   "navigation": {
     "dropdowns": [

@@ -77,7 +77,7 @@ const BillingInstructions = ({ creditsPerRequest = 1 }) => {
             </a>
           </li>
           <li>
-            <a href="https://www.ailabtools.com/developer-platform" target="_blank">
+            <a href="https://www.ailabtools.com/developer" target="_blank">
               Developer Platform
             </a>
           </li>
