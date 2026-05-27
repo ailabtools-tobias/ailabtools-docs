@@ -543,7 +543,7 @@
         "tags": [
           "AI PORTRAIT > Portrait Effects"
         ],
-        "summary": "AI Skin Beauty",
+        "summary": "AI Skin Enhancement",
         "requestBody": {
           "content": {
             "multipart/form-data": {
