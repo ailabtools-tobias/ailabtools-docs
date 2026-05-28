@@ -605,6 +605,132 @@
         }
       }
     },
+    "/api/portrait/effects/smart-skin-advanced": {
+      "post": {
+        "tags": [
+          "AI PORTRAIT > Portrait Effects"
+        ],
+        "summary": "AI Skin Enhancement Advanced",
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "image"
+                ],
+                "properties": {
+                  "image": {
+                    "type": "string",
+                    "description": "- Image format: `JPEG` `JPG` `PNG` `WEBP` \n- Image size: No more than 10 MB. \n- Image resolution: Less than 4096x4096px.",
+                    "format": "binary"
+                  },
+                  "smart_skin": {
+                    "type": "string",
+                    "description": "Smart all-in-one skin beautification. \n- `0`: No. \n- `1`: Yes.",
+                    "enum": [0, 1],
+                    "default": 0
+                  },
+                  "acne_removal": {
+                    "type": "string",
+                    "description": "Acne and blemish removal. \n- `0`: No. \n- `1`: Yes.",
+                    "enum": [0, 1],
+                    "default": 0
+                  },
+                  "spot_correction": {
+                    "type": "string",
+                    "description": "Spot and pigmentation correction. \n- `0`: No. \n- `1`: Yes.",
+                    "enum": [0, 1],
+                    "default": 0
+                  },
+                  "skin_brightening": {
+                    "type": "string",
+                    "description": "Skin brightening and tone enhancement. \n- `0`: No. \n- `1`: Yes.",
+                    "enum": [0, 1],
+                    "default": 0
+                  },
+                  "skin_smoothing": {
+                    "type": "string",
+                    "description": "Skin smoothing and refinement. \n- `0`: No. \n- `1`: Yes.",
+                    "enum": [0, 1],
+                    "default": 0
+                  },
+                  "pore_control": {
+                    "type": "string",
+                    "description": "Pore and oil control. \n- `0`: No. \n- `1`: Yes.",
+                    "enum": [0, 1],
+                    "default": 0
+                  },
+                  "wrinkle_reduction": {
+                    "type": "string",
+                    "description": "Wrinkle and fine-line reduction. \n- `0`: No. \n- `1`: Yes.",
+                    "enum": [0, 1],
+                    "default": 0
+                  },
+                  "under_eye_correction": {
+                    "type": "string",
+                    "description": "Under-eye correction. \n- `0`: No. \n- `1`: Yes.",
+                    "enum": [0, 1],
+                    "default": 0
+                  },
+                  "scar_reduction": {
+                    "type": "string",
+                    "description": "Scar and skin damage reduction. \n- `0`: No. \n- `1`: Yes.",
+                    "enum": [0, 1],
+                    "default": 0
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "headers": {
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "application/json"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "allOf": [
+                    {
+                      "$ref": "#/components/schemas/PublicResponseFields"
+                    },
+                    {
+                      "type": "object",
+                      "required": [
+                        "task_id"
+                      ],
+                      "properties": {
+                        "task_id": {
+                          "$ref": "#/components/schemas/AsyncTaskId"
+                        }
+                      }
+                    }
+                  ]
+                },
+                "example": {
+                  "request_id": "",
+                  "log_id": "",
+                  "error_detail": {
+                    "code": "",
+                    "code_message": "",
+                    "message": ""
+                  },
+                  "task_id": ""
+                }
+              }
+            },
+            "description": "Success"
+          }
+        }
+      }
+    },
     "/api/portrait/effects/smart-face-slimming": {
       "post": {
         "tags": [

@@ -1,0 +1,30 @@
+---
+sidebarTitle: "API"
+title: "AI Skin Enhancement Advanced API"
+description: "AI Skin Enhancement Advanced API delivers professional AI-powered skin retouching with natural and realistic results. Instantly remove acne, blemishes, dark spots, wrinkles, pores, eye bags, scars, and uneven skin tone while preserving facial identity and real skin texture. Create cleaner, smoother, brighter, and healthier-looking portraits with just one API call — perfect for beauty apps, AI photo editors, portrait enhancement platforms, and next-generation camera experiences."
+openapi: "POST /api/portrait/effects/smart-skin-advanced"
+---
+
+import AsyncApiNotice from "/snippets/async-api-notice.mdx";
+
+<AsyncApiNotice />
+
+| Field            | Type     | Description         |
+|:-----------------|:---------|:--------------------|
+| `data`           | `object` | Final result data.  |
+| +`result_urls`   | `array`  | Result image URLs.  |
+| ++`result_urls[]` | `string` | Result image URL.  |
+
+```json
+{
+  "data": {
+    "result_urls": [""]
+  }
+}
+```
+
+<Tip>
+  `result_urls` are temporary and remain valid for 24 hours. If you need long-term storage, download the files to your own storage within that period.
+</Tip>
+
+## Submit Task

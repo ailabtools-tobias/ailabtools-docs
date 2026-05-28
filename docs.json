@@ -55,7 +55,7 @@
       },
       {
         "label": "Pricing",
-        "href": "https://www.ailabtools.com/price?tab=developer"
+        "href": "https://www.ailabtools.com/price?tab=api"
       },
       {
         "label": "Contact",
@@ -107,7 +107,7 @@
         },
         {
           "label": "Pricing",
-          "href": "https://www.ailabtools.com/price?tab=developer"
+          "href": "https://www.ailabtools.com/price?tab=api"
         },
         {
           "label": "Contact Us",
@@ -250,6 +250,14 @@
                     "pages": [
                       "docs/ai-portrait/effects/smart-skin",
                       "docs/ai-portrait/effects/smart-skin/api"
+                    ]
+                  },
+                  {
+                    "group": "AI Skin Enhancement Advanced",
+                    "icon": "sparkles",
+                    "pages": [
+                      "docs/ai-portrait/effects/smart-skin-advanced",
+                      "docs/ai-portrait/effects/smart-skin-advanced/api"
                     ]
                   },
                   {

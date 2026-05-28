@@ -72,12 +72,12 @@ const BillingInstructions = ({ creditsPerRequest = 1 }) => {
 
         <ul>
           <li>
-            <a href="https://www.ailabtools.com/price?tab=developer" target="_blank">
+            <a href="https://www.ailabtools.com/price?tab=api" target="_blank">
               View Pricing
             </a>
           </li>
           <li>
-            <a href="https://www.ailabtools.com/developer" target="_blank">
+            <a href="https://www.ailabtools.com/developer/billing" target="_blank">
               Developer Platform
             </a>
           </li>
