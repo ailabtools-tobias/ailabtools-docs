@@ -1418,13 +1418,8 @@
             "multipart/form-data": {
               "schema": {
                 "type": "object",
-                "required": ["version", "image", "hair_style"],
+                "required": ["image", "hair_style"],
                 "properties": {
-                  "version": {
-                    "type": "string",
-                    "description": "Version. **Note:** Only V3 uses the latest logic. All requests will be forced to V3 in the future. Response fields remain backward compatible.",
-                    "enum": ["V3"]
-                  },
                   "image": {
                     "type": "string",
                     "description": "Source image. \n- Image format: `JPEG` `JPG` `PNG` \n- Image size: No more than 5 MB. \n- Image resolution: Larger than 200x200px, smaller than 4090x4090px. \n- Minimum Face Proportion: To ensure effectiveness, the proportion of the face in the image cannot be less than 10%. \n- Facial Integrity: To ensure effectiveness, the face in the image should ideally not be obscured. \n- Facial Angle: To ensure effectiveness, the face in the image should ideally be front-facing, with no more than a 30-degree rotation to the left or right.",
