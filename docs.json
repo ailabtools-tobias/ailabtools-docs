@@ -201,15 +201,7 @@
                     "icon": "wand-magic",
                     "pages": [
                       "docs/ai-portrait/effects/portrait-animation",
-                      "docs/ai-portrait/effects/portrait-animation/api",
-                      {
-                        "group": "Version Logs",
-                        "icon": "clock-rotate-left",
-                        "pages": [
-                          "docs/ai-portrait/effects/portrait-animation/api-v101",
-                          "docs/ai-portrait/effects/portrait-animation/api-v100"
-                        ]
-                      }
+                      "docs/ai-portrait/effects/portrait-animation/api"
                     ]
                   },
                   {
@@ -217,15 +209,7 @@
                     "icon": "object-group",
                     "pages": [
                       "docs/ai-portrait/effects/face-fusion",
-                      "docs/ai-portrait/effects/face-fusion/api",
-                      {
-                        "group": "Version Logs",
-                        "icon": "clock-rotate-left",
-                        "pages": [
-                          "docs/ai-portrait/effects/face-fusion/api-v101",
-                          "docs/ai-portrait/effects/face-fusion/api-v100"
-                        ]
-                      }
+                      "docs/ai-portrait/effects/face-fusion/api"
                     ]
                   },
                   {
@@ -234,14 +218,7 @@
                     "pages": [
                       "docs/ai-portrait/effects/smart-beauty",
                       "docs/ai-portrait/effects/smart-beauty/api",
-                      "docs/ai-portrait/effects/smart-beauty/async-api",
-                      {
-                        "group": "Version Logs",
-                        "icon": "clock-rotate-left",
-                        "pages": [
-                          "docs/ai-portrait/effects/smart-beauty/api-v100"
-                        ]
-                      }
+                      "docs/ai-portrait/effects/smart-beauty/async-api"
                     ]
                   },
                   {
@@ -298,14 +275,7 @@
                     "icon": "filter",
                     "pages": [
                       "docs/ai-portrait/effects/face-filter",
-                      "docs/ai-portrait/effects/face-filter/api",
-                      {
-                        "group": "Version Logs",
-                        "icon": "clock-rotate-left",
-                        "pages": [
-                          "docs/ai-portrait/effects/face-filter/api-v100"
-                        ]
-                      }
+                      "docs/ai-portrait/effects/face-filter/api"
                     ]
                   },
                   {
@@ -598,15 +568,7 @@
                     "icon": "wand-magic-sparkles",
                     "pages": [
                       "docs/ai-image/effects/ai-anime-generator",
-                      "docs/ai-image/effects/ai-anime-generator/api",
-                      {
-                        "group": "Version Logs",
-                        "icon": "clock-rotate-left",
-                        "pages": [
-                          "docs/ai-image/effects/ai-anime-generator/api-v110",
-                          "docs/ai-image/effects/ai-anime-generator/api-v100"
-                        ]
-                      }
+                      "docs/ai-image/effects/ai-anime-generator/api"
                     ]
                   },
                   {
@@ -770,14 +732,7 @@
                     "icon": "expand",
                     "pages": [
                       "docs/ai-image/enhance/image-lossless-enlargement",
-                      "docs/ai-image/enhance/image-lossless-enlargement/api",
-                      {
-                        "group": "Version Logs",
-                        "icon": "clock-rotate-left",
-                        "pages": [
-                          "docs/ai-image/enhance/image-lossless-enlargement/api-v100"
-                        ]
-                      }
+                      "docs/ai-image/enhance/image-lossless-enlargement/api"
                     ]
                   },
                   {
@@ -883,15 +838,7 @@
                     "icon": "images",
                     "pages": [
                       "docs/ai-cutout/general/apparel-background-removal",
-                      "docs/ai-cutout/general/apparel-background-removal/api",
-                      {
-                        "group": "Version Logs",
-                        "icon": "clock-rotate-left",
-                        "pages": [
-                          "docs/ai-cutout/general/apparel-background-removal/api-v110",
-                          "docs/ai-cutout/general/apparel-background-removal/api-v100"
-                        ]
-                      }
+                      "docs/ai-cutout/general/apparel-background-removal/api"
                     ]
                   }
                 ]
