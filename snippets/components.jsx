@@ -53,7 +53,7 @@ const QueryingCreditsTableRow = ({ rowSpan = 0, category = "", href = "", apiNam
 const ExperienceLinks = ({ onlineUrl, apiUrl }) => {
   return (
     <Tip>
-      Explore this API through the{" "}<a href={onlineUrl} target="_blank">👉 Online Experience 👈</a>{" "}or integrate it using the{" "}<a href={apiUrl}>👉 Run with API 👈</a>.
+      Explore this API through the{" "}<a href={`https://www.ailabtools.com${onlineUrl}`} target="_blank">👉 Online Experience 👈</a>{" "}or integrate it using the{" "}<a href={apiUrl}>👉 Run with API 👈</a>.
     </Tip>
   );
 };
@@ -116,7 +116,7 @@ const BillingInstructions = ({ creditsPerRequest = 1 }) => {
 
         <ul>
           <li>
-            View pricing on the{" "}<a href="/price?tab=api" target="_blank">pricing page</a>{" "}or manage credits in the{" "}<a href="/developer/billing" target="_blank">developer platform</a>.
+            View pricing on the{" "}<a href="https://www.ailabtools.com/price?tab=api" target="_blank">pricing page</a>{" "}or manage credits in the{" "}<a href="https://www.ailabtools.com/developer/billing" target="_blank">developer platform</a>.
           </li>
           <li>
             Need more credits or an enterprise plan? Contact{" "}<a href="mailto:business@ailabtools.com">business@ailabtools.com</a>.
@@ -178,7 +178,7 @@ const FileStoragePolicy = ({ uploadedFiles, responseType }) => {
       </table>
 
       <Tip>
-        For more information, see the{" "}<a href="/docs/file-storage-policy">File Storage Policy</a> and{" "}<a href="/privacy-policy" target="_blank">Privacy Policy</a>.
+        For more information, see the{" "}<a href="/docs/file-storage-policy">File Storage Policy</a> and{" "}<a href="https://www.ailabtools.com/privacy-policy" target="_blank">Privacy Policy</a>.
       </Tip>
     </div>
   );
