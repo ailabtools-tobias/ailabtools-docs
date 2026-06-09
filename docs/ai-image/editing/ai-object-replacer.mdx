@@ -4,7 +4,7 @@ title: "AI Object Replacer"
 description: "Leveraging advanced AI technology, this API intelligently removes unwanted elements such as text and people from images based on a mask image and fills the empty space with appropriate content generated from user prompts."
 ---
 
-import BillingInstructions from "/snippets/billing-instructions.jsx";
+import { ExperienceLinks, BillingInstructions, FileStoragePolicy } from "/snippets/components.jsx";
 
 ## Renderings show
 
@@ -12,18 +12,15 @@ import BillingInstructions from "/snippets/billing-instructions.jsx";
 |:--------------------------------------------------------------------------------------------------|:------------------------------------------------------------------------------------------------------|:--------------------------------------------------------------------------------------------|:------------------------------------------------------------------------------------------------|
 | ![Original Image](https://ai-resource.ailabtools.com/ai-object-replacer/doc/OriginalImage-1.webp) | `A country road winds through a field of dry, yellow grass, bordered by wooden fences on both sides.` | ![Mask Image](https://ai-resource.ailabtools.com/ai-object-replacer/doc/MaskImage-1-1.webp) | ![Result Image](https://ai-resource.ailabtools.com/ai-object-replacer/doc/ResultImage-1-1.webp) |
 
+<ExperienceLinks onlineUrl="/ai-object-replacer" apiUrl="/docs/ai-image/editing/ai-object-replacer/api" />
+
 ## Billing Instructions
 
 <BillingInstructions creditsPerRequest={25}/>
 
 ## File Storage Policy
 
-<Tip>
-  **TIP**
-
-  - **Uploaded Files**: Not stored.
-  - **Response Files**: Not stored.
-</Tip>
+<FileStoragePolicy uploadedFiles responseType="BASE64" />
 
 ## Application Scenarios
 

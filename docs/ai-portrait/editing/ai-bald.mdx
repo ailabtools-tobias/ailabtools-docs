@@ -4,7 +4,7 @@ title: "AI Bald"
 description: "AI Bald API that generates realistic bald head simulations and hair loss previews from a single photo using advanced AI technology. Create natural bald filters, shaved head effects, and balding transformations for apps, websites, and virtual hairstyle experiences."
 ---
 
-import BillingInstructions from "/snippets/billing-instructions.jsx";
+import { ExperienceLinks, BillingInstructions, FileStoragePolicy } from "/snippets/components.jsx";
 
 ## Renderings show
 
@@ -12,20 +12,15 @@ import BillingInstructions from "/snippets/billing-instructions.jsx";
 |:----------------------------------:|:------------------------------:|
 | ![ORIGINAL IMAGE][OriginalImage-1] | ![RESULT IMAGE][ResultImage-1] |
 
+<ExperienceLinks onlineUrl="/bald-filter" apiUrl="/docs/ai-portrait/editing/ai-bald/api" />
+
 ## Billing Instructions
 
 <BillingInstructions creditsPerRequest={15}/>
 
 ## File Storage Policy
 
-<Tip>
-  **TIP**
-
-  - **Uploaded Files**: Not stored.
-  - **Response Files**:
-    - **Storage Duration**: 24 hours.
-    - **Deletion Method**: Automatic Deletion upon Timeout.
-</Tip>
+<FileStoragePolicy uploadedFiles responseType="URL" />
 
 [OriginalImage-1]: https://ai-resource.ailabtools.com/ai-bald/doc/OriginalImage-1.webp
 

@@ -4,7 +4,7 @@ title: "Try on Clothes Refiner"
 description: "Elevate your Try on Clothes experience with advanced AI that refines virtual try-on images, producing ultra-realistic visuals with precise details and vibrant colors for a truly immersive, lifelike fitting experience."
 ---
 
-import BillingInstructions from "/snippets/billing-instructions.jsx";
+import { ExperienceLinks, BillingInstructions, FileStoragePolicy } from "/snippets/components.jsx";
 
 ## Renderings show
 
@@ -12,17 +12,12 @@ import BillingInstructions from "/snippets/billing-instructions.jsx";
 |:------------------------------------------------------------------------------------------------------|:---------------------------------------------------------------------------------------------|:------------------------------------------------------------------------------------------------------------------------|:--------------------------------------------------------------------------------------------------|
 | ![ORIGINAL IMAGE](https://ai-resource.ailabtools.com/try-on-clothes-refiner/doc/OriginalImage-1.webp) | ![CLOTHING IMAGE](https://ai-resource.ailabtools.com/try-on-clothes-refiner/doc/suit-1.webp) | ![TRY ON CLOTHINGS IMAGE](https://ai-resource.ailabtools.com/try-on-clothes-refiner/doc/TryOnClothesResultImage-1.webp) | ![RESULT IMAGE](https://ai-resource.ailabtools.com/try-on-clothes-refiner/doc/ResultImage-1.webp) |
 
+<ExperienceLinks onlineUrl="/tryon-clothes-refiner" apiUrl="/docs/ai-portrait/enhance/try-on-clothes-refiner/api" />
+
 ## Billing Instructions
 
 <BillingInstructions creditsPerRequest={25}/>
 
 ## File Storage Policy
 
-<Tip>
-  **TIP**
-
-  - **Uploaded Files**: Not stored.
-  - **Response Files**:
-    - **Storage Duration**: 24 hours.
-    - **Deletion Method**: Automatic Deletion upon Timeout.
-</Tip>
+<FileStoragePolicy uploadedFiles responseType="URL" />

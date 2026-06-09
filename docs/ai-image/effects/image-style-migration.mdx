@@ -4,7 +4,7 @@ title: "Style Transfer"
 description: "Converting the style of the input image makes the visual style of the image such as color and brushstroke transformed."
 ---
 
-import BillingInstructions from "/snippets/billing-instructions.jsx";
+import { BillingInstructions, FileStoragePolicy } from "/snippets/components.jsx";
 import ApiOfflineNotice from "/snippets/api-offline-notice.mdx";
 
 <ApiOfflineNotice />
@@ -15,23 +15,10 @@ import ApiOfflineNotice from "/snippets/api-offline-notice.mdx";
 |:-------------------------------------------------------------------------------|:-------------------------------------------------------------------------------|:---------------------------------------------------------------------------|
 | ![`style`](https://img.ailabtools.com/rapidapi/StyleMigration/style-2-min.jpg) | ![`major`](https://img.ailabtools.com/rapidapi/StyleMigration/major-1-min.jpg) | ![`url`](https://img.ailabtools.com/rapidapi/StyleMigration/url-2-min.jpg) |
 
-<Tip>
-  [👉 Online Experience 👈](https://www.ailabtools.com/image-style-migration-example)
-
-  If you'd like to see the actual effects, please visit the experience page for a trial.
-</Tip>
-
 ## Billing Instructions
 
 <BillingInstructions creditsPerRequest={3}/>
 
 ## File Storage Policy
 
-<Tip>
-  **TIP**
-
-  - **Uploaded Files**: Not stored.
-  - **Response Files**:
-    - **Storage Duration**: 24 hours.
-    - **Deletion Method**: Automatic Deletion upon Timeout.
-</Tip>
+<FileStoragePolicy uploadedFiles responseType="URL" />

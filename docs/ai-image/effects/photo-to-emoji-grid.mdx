@@ -4,7 +4,7 @@ title: "AI Emoji Generator"
 description: "Generate a clean emoji grid from a single portrait or pet photo, keeping the face consistent across multiple expressions and styles."
 ---
 
-import BillingInstructions from "/snippets/billing-instructions.jsx";
+import { ExperienceLinks, BillingInstructions, FileStoragePolicy } from "/snippets/components.jsx";
 
 ## Renderings show
 
@@ -12,20 +12,15 @@ import BillingInstructions from "/snippets/billing-instructions.jsx";
 |:---------------------------------------------------------------------------------------------------|:-------------------------------------------------------------------------------------------------|
 | ![Original Image](https://ai-resource.ailabtools.com/photo-to-emoji-grid/doc/OriginalImage-1.webp) | ![Result Image](https://ai-resource.ailabtools.com/photo-to-emoji-grid/doc/ResultImage-1-1.webp) |
 
+<ExperienceLinks onlineUrl="/photo-to-emoji-grid" apiUrl="/docs/ai-image/effects/photo-to-emoji-grid/api" />
+
 ## Billing Instructions
 
 <BillingInstructions creditsPerRequest={15}/>
 
 ## File Storage Policy
 
-<Tip>
-  **TIP**
-
-  - **Uploaded Files**: Not stored.
-  - **Response Files**:
-    - **Storage Duration**: 24 hours.
-    - **Deletion Method**: Automatic Deletion upon Timeout.
-</Tip>
+<FileStoragePolicy uploadedFiles responseType="URL" />
 
 ## Application Scenarios
 

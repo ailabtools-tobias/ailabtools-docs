@@ -4,7 +4,7 @@ title: "Change Facial Expressions Advanced"
 description: "Transform portrait images with 100+ AI-powered facial expressions. From natural smiles and cute reactions to confident, funny, angry, surprised, charming, and emotional looks, the Change Facial Expressions API generates realistic expression edits while preserving facial identity and image quality. Perfect for avatar apps, AI photo editors, social platforms, games, creative tools, and interactive experiences."
 ---
 
-import BillingInstructions from "/snippets/billing-instructions.jsx";
+import { ExperienceLinks, BillingInstructions, FileStoragePolicy } from "/snippets/components.jsx";
 
 ## Renderings show
 
@@ -12,20 +12,15 @@ import BillingInstructions from "/snippets/billing-instructions.jsx";
 |:----------------------------------:|:------------------------------:|
 | ![ORIGINAL IMAGE][OriginalImage-1] | ![RESULT IMAGE][ResultImage-1] |
 
+<ExperienceLinks onlineUrl="/change-facial-expressions" apiUrl="/docs/ai-portrait/effects/emotion-editor-advanced/api" />
+
 ## Billing Instructions
 
 <BillingInstructions creditsPerRequest={15}/>
 
 ## File Storage Policy
 
-<Tip>
-  **TIP**
-
-  - **Uploaded Files**: Not stored.
-  - **Response Files**:
-    - **Storage Duration**: 24 hours.
-    - **Deletion Method**: Automatic Deletion upon Timeout.
-</Tip>
+<FileStoragePolicy uploadedFiles responseType="URL" />
 
 [OriginalImage-1]: https://ai-resource.ailabtools.com/change-facial-expressions-advanced/doc/OriginalImage-1.webp
 

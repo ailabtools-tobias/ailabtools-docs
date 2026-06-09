@@ -3,6 +3,8 @@ title: "Querying Async Task Results"
 openapi: 'GET /api/common/query-async-task-result'
 ---
 
+import { FileStoragePolicy } from "/snippets/components.jsx";
+
 <Tip>
 Use this endpoint to query asynchronous task status and retrieve final results with the returned `task_id`.
 
@@ -11,6 +13,4 @@ Async task results remain available for 24 hours. Query every 5 seconds.
 
 ## File Storage Policy
 
-- **Response Files**:
-  - **Storage Duration**: 24 hours.
-  - **Deletion Method**: Automatic Deletion upon Timeout.
+<FileStoragePolicy responseType="URL" />

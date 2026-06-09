@@ -4,7 +4,7 @@ title: "Merge Portraits"
 description: "Based on computer vision technologies such as 3D face/GAN, the image fusion operation is performed on the portraits in the stencil and fusion maps, and the fused image is returned."
 ---
 
-import BillingInstructions from "/snippets/billing-instructions.jsx";
+import { ExperienceLinks, BillingInstructions, FileStoragePolicy } from "/snippets/components.jsx";
 
 ## Renderings show
 
@@ -12,23 +12,15 @@ import BillingInstructions from "/snippets/billing-instructions.jsx";
 |:-------------------------------------|:-------------------------------|:-------------------------------|
 | ![TEMPLATE IMAGES][TemplateImages-1] | ![TARGET IMAGE][TargetImage-1] | ![RESULT IMAGE][ResultImage-1] |
 
-<Tip>
-  [👉 Online Experience 👈](https://www.ailabtools.com/portrait-face-fusion-example)
-
-  If you'd like to see the actual effects, please visit the experience page for a trial.
-</Tip>
+<ExperienceLinks onlineUrl="/portrait-face-fusion-example" apiUrl="/docs/ai-portrait/effects/face-fusion/api" />
 
 ## Billing Instructions
 
 <BillingInstructions creditsPerRequest={8}/>
 
 ## File Storage Policy
-<Tip>
-  **TIP**
 
-  - **Uploaded Files**: Not stored.
-  - **Response Files**: Not stored.
-</Tip>
+<FileStoragePolicy uploadedFiles responseType="BASE64" />
 
 ## Application Scenarios
 

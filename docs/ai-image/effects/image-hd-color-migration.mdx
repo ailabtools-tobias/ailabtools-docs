@@ -4,7 +4,7 @@ title: "HD Color Migration"
 description: "Color topping of HD images and the ability to ensure that the color of the portrait portion does not change. This interface compares with [Color Migration](/docs/ai-image/effects/image-color-migration)."
 ---
 
-import BillingInstructions from "/snippets/billing-instructions.jsx";
+import { BillingInstructions, FileStoragePolicy } from "/snippets/components.jsx";
 import ApiOfflineNotice from "/snippets/api-offline-notice.mdx";
 
 <ApiOfflineNotice />
@@ -41,23 +41,10 @@ import ApiOfflineNotice from "/snippets/api-offline-notice.mdx";
 |:--------------------------------------------------------------------------------------------|:----------------------------------------------------------------------------------------------------|:---------------------------------------------------------------------------------------------------|
 | ![Before processing](https://img.ailabtools.com/rapidapi/HDColourMigration/untreated-3.jpg) | ![Reference map](https://img.ailabtools.com/rapidapi/HDColourMigration/processed-ref_pic-ref-1.jpg) | ![After processing](https://img.ailabtools.com/rapidapi/HDColourMigration/processed-ref_pic-1.jpg) |
 
-<Tip>
-  [👉 Online Experience 👈](https://www.ailabtools.com/image-hd-color-migration-example)
-
-  If you'd like to see the actual effects, please visit the experience page for a trial.
-</Tip>
-
 ## Billing Instructions
 
 <BillingInstructions creditsPerRequest={4}/>
 
 ## File Storage Policy
 
-<Tip>
-  **TIP**
-
-  - **Uploaded Files**: Not stored.
-  - **Response Files**:
-    - **Storage Duration**: 24 hours.
-    - **Deletion Method**: Automatic Deletion upon Timeout.
-</Tip>
+<FileStoragePolicy uploadedFiles responseType="URL" />

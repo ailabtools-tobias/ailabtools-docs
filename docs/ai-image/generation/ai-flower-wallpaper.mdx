@@ -4,7 +4,7 @@ title: "AI Flower Wallpaper"
 description: "AI Flower Wallpaper API that transforms names into personalized floral art using flower language and AI image generation. Generate bouquet wallpapers, floral backgrounds, and flower name designs for apps, websites, and creative projects."
 ---
 
-import BillingInstructions from "/snippets/billing-instructions.jsx";
+import { ExperienceLinks, BillingInstructions, FileStoragePolicy } from "/snippets/components.jsx";
 
 ## Renderings show
 
@@ -16,17 +16,12 @@ import BillingInstructions from "/snippets/billing-instructions.jsx";
 
 ![Result Image](https://ai-resource.ailabtools.com/ai-flower-wallpaper/doc/ResultImage-1.webp)
 
+<ExperienceLinks onlineUrl="/name-into-flowers" apiUrl="/docs/ai-image/generation/ai-flower-wallpaper/api" />
+
 ## Billing Instructions
 
 <BillingInstructions creditsPerRequest={15}/>
 
 ## File Storage Policy
 
-<Tip>
-  **TIP**
-
-  - **Uploaded Files**: Not stored.
-  - **Response Files**:
-    - **Storage Duration**: 24 hours.
-    - **Deletion Method**: Automatic Deletion upon Timeout.
-</Tip>
+<FileStoragePolicy responseType="URL" />

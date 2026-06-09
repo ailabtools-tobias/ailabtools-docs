@@ -4,7 +4,7 @@ title: "Portrait Background Removal"
 description: "Utilizing advanced AI technology, it intelligently detects the human subject in an image, removes the background automatically, and highlights the subject details effortlessly, ideal for photography, design, and e-commerce applications."
 ---
 
-import BillingInstructions from "/snippets/billing-instructions.jsx";
+import { ExperienceLinks, BillingInstructions, FileStoragePolicy } from "/snippets/components.jsx";
 
 ## Renderings show
 
@@ -15,11 +15,7 @@ import BillingInstructions from "/snippets/billing-instructions.jsx";
 | `whiteBK`     | ![ORIGINAL IMAGE][OriginalImage-1] | ![RESULT IMAGE][ResultImage-whiteBK-1] |
 | `crop`        | ![ORIGINAL IMAGE][OriginalImage-1] | ![RESULT IMAGE][ResultImage-crop-1]    |
 
-<Tip>
-  [👉 Online Experience 👈](https://www.ailabtools.com/cutout-human-body-background-removal-example)
-
-  If you'd like to see the actual effects, please visit the experience page for a trial.
-</Tip>
+<ExperienceLinks onlineUrl="/background-removal" apiUrl="/docs/ai-cutout/portrait/portrait-background-removal/api" />
 
 ## Billing Instructions
 
@@ -27,14 +23,7 @@ import BillingInstructions from "/snippets/billing-instructions.jsx";
 
 ## File Storage Policy
 
-<Tip>
-  **TIP**
-
-  - **Uploaded Files**: Not stored.
-  - **Response Files**:
-    - **Storage Duration**: 24 hours.
-    - **Deletion Method**: Automatic Deletion upon Timeout.
-</Tip>
+<FileStoragePolicy uploadedFiles responseType="URL" />
 
 ## Application Scenarios
 

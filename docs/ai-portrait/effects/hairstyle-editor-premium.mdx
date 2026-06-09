@@ -4,7 +4,7 @@ title: "Hairstyle Changer Premium"
 description: "Supports hundreds of preset hairstyles for men and women, as well as reference-based hairstyle transfer. Customize hair color using the original image, reference image, or preset options, with each result uniquely generated."
 ---
 
-import BillingInstructions from "/snippets/billing-instructions.jsx";
+import { BillingInstructions, FileStoragePolicy } from "/snippets/components.jsx";
 import HairstyleEditorContrast from "/snippets/hairstyle-editor-contrast.mdx";
 
 <HairstyleEditorContrast />
@@ -31,14 +31,7 @@ import HairstyleEditorContrast from "/snippets/hairstyle-editor-contrast.mdx";
 
 ## File Storage Policy
 
-<Tip>
-  **TIP**
-
-  - **Uploaded Files**: Not stored.
-  - **Response Files**:
-    - **Storage Duration**: 24 hours.
-    - **Deletion Method**: Automatic Deletion upon Timeout.
-</Tip>
+<FileStoragePolicy uploadedFiles responseType="URL" />
 
 ## Application Scenarios
 

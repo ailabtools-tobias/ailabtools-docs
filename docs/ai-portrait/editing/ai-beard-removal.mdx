@@ -4,7 +4,7 @@ title: "AI Beard Removal"
 description: "AI Beard Removal API that removes beards, mustaches, and facial hair from photos using advanced AI technology. Generate realistic clean-shaven portraits, beard-free profile photos, and natural facial edits for apps, websites, and creative projects."
 ---
 
-import BillingInstructions from "/snippets/billing-instructions.jsx";
+import { ExperienceLinks, BillingInstructions, FileStoragePolicy } from "/snippets/components.jsx";
 
 ## Renderings show
 
@@ -12,20 +12,15 @@ import BillingInstructions from "/snippets/billing-instructions.jsx";
 |:----------------------------------:|:------------------------------:|
 | ![ORIGINAL IMAGE][OriginalImage-1] | ![RESULT IMAGE][ResultImage-1] |
 
+<ExperienceLinks onlineUrl="/no-beard-filter" apiUrl="/docs/ai-portrait/editing/ai-beard-removal/api" />
+
 ## Billing Instructions
 
 <BillingInstructions creditsPerRequest={15}/>
 
 ## File Storage Policy
 
-<Tip>
-  **TIP**
-
-  - **Uploaded Files**: Not stored.
-  - **Response Files**:
-    - **Storage Duration**: 24 hours.
-    - **Deletion Method**: Automatic Deletion upon Timeout.
-</Tip>
+<FileStoragePolicy uploadedFiles responseType="URL" />
 
 [OriginalImage-1]: https://ai-resource.ailabtools.com/ai-beard-removal/doc/OriginalImage-1.webp
 

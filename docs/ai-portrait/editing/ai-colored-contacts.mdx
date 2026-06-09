@@ -4,7 +4,7 @@ title: "AI Colored Contacts"
 description: "Generate high-quality, realistic images by applying colored contact lens effects to a source image, guided by a text prompt for flexible and creative customization."
 ---
 
-import BillingInstructions from "/snippets/billing-instructions.jsx";
+import { ExperienceLinks, BillingInstructions, FileStoragePolicy } from "/snippets/components.jsx";
 
 ## Renderings show
 
@@ -12,20 +12,15 @@ import BillingInstructions from "/snippets/billing-instructions.jsx";
 |:----------------------------------:|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:------------------------------:|
 | ![ORIGINAL IMAGE][OriginalImage-1] | <li>`name`: Colored Contacts Plum Violet</li> <li>`desc`: Apply plum-violet eyes color with luminous inner ring and smooth iris gradient, balancing fantasy style and realistic eye anatomy detail.</li> | ![RESULT IMAGE][ResultImage-1] |
 
+<ExperienceLinks onlineUrl="/colored-contacts" apiUrl="/docs/ai-portrait/editing/ai-colored-contacts/api" />
+
 ## Billing Instructions
 
 <BillingInstructions creditsPerRequest={15}/>
 
 ## File Storage Policy
 
-<Tip>
-  **TIP**
-
-  - **Uploaded Files**: Not stored.
-  - **Response Files**:
-    - **Storage Duration**: 24 hours.
-    - **Deletion Method**: Automatic Deletion upon Timeout.
-</Tip>
+<FileStoragePolicy uploadedFiles responseType="URL" />
 
 [OriginalImage-1]: https://ai-resource.ailabtools.com/ai-colored-contacts/doc/OriginalImage-1.webp
 

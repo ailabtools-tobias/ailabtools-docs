@@ -4,7 +4,7 @@ title: "AI Nail Art"
 description: "This API applies AI-generated nail art designs to existing nail photos based on a text prompt, preserving hand details, lighting, and skin tone while rendering realistic polish, patterns, and finishes."
 ---
 
-import BillingInstructions from "/snippets/billing-instructions.jsx";
+import { ExperienceLinks, BillingInstructions, FileStoragePolicy } from "/snippets/components.jsx";
 
 ## Renderings show
 
@@ -12,20 +12,15 @@ import BillingInstructions from "/snippets/billing-instructions.jsx";
 |:-------------------------------------------------------------------------------------------|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:-----------------------------------------------------------------------------------------|
 | ![Original Image](https://ai-resource.ailabtools.com/ai-nail-art/doc/OriginalImage-1.webp) | `"Cow Print Nails-Short squoval nails with a glossy cream/ivory base. Features an all-over cow print pattern made of irregular organic blobs in chocolate brown and deep espresso/black accents, with slightly softened edges for a natural hide-like look. High-contrast, minimal, and trendy."` | ![Result Image](https://ai-resource.ailabtools.com/ai-nail-art/doc/ResultImage-1-1.webp) |
 
+<ExperienceLinks onlineUrl="/ai-nail-art" apiUrl="/docs/ai-image/editing/ai-nail-art/api" />
+
 ## Billing Instructions
 
 <BillingInstructions creditsPerRequest={15}/>
 
 ## File Storage Policy
 
-<Tip>
-  **TIP**
-
-  - **Uploaded Files**: Not stored.
-  - **Response Files**:
-    - **Storage Duration**: 24 hours.
-    - **Deletion Method**: Automatic Deletion upon Timeout.
-</Tip>
+<FileStoragePolicy uploadedFiles responseType="URL" />
 
 ## Application Scenarios
 

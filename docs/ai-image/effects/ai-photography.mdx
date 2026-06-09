@@ -4,7 +4,7 @@ title: "AI Photography"
 description: "AI Photography transforms portraits and photos into stylized artificial intelligence photoshoot outputs with controllable style scenes for creative and commercial use."
 ---
 
-import BillingInstructions from "/snippets/billing-instructions.jsx";
+import { ExperienceLinks, BillingInstructions, FileStoragePolicy } from "/snippets/components.jsx";
 
 ## Renderings show
 
@@ -12,20 +12,15 @@ import BillingInstructions from "/snippets/billing-instructions.jsx";
 |:------------------------------------------------------------------------------------------------|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:----------------------------------------------------------------------------------------------|
 | ![Original Image](https://ai-resource.ailabtools.com/ai-photography/doc/OriginalImage-1.webp) | `"Style Title: Romantic Kiss. Style Description: A candid romantic photograph of [Reference Couple] sharing a gentle kiss in an elegant, intimate setting. They stand close together with soft natural body language, surrounded by warm ambient lighting and a dreamy cinematic atmosphere. Their expressions are tender and emotional, capturing a genuine moment of love and connection. Shallow depth of field, soft bokeh, natural skin texture, cinematic composition, shot on Kodak Portra 400 film, subtle grain, premium editorial photography style."` | ![Result Image](https://ai-resource.ailabtools.com/ai-photography/doc/ResultImage-1.webp) |
 
+<ExperienceLinks onlineUrl="/ai-photoshoot" apiUrl="/docs/ai-image/effects/ai-photography/api" />
+
 ## Billing Instructions
 
 <BillingInstructions creditsPerRequest={15}/>
 
 ## File Storage Policy
 
-<Tip>
-  **TIP**
-
-  - **Uploaded Files**: Not stored.
-  - **Response Files**:
-    - **Storage Duration**: 24 hours.
-    - **Deletion Method**: Automatic Deletion upon Timeout.
-</Tip>
+<FileStoragePolicy uploadedFiles responseType="URL" />
 
 ## Application Scenarios
 

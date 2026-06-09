@@ -4,7 +4,7 @@ title: "Color Migration"
 description: "Convert input maps to color automatically or according to a specified color palette, while avoiding abnormal color topography in visual hotspot areas."
 ---
 
-import BillingInstructions from "/snippets/billing-instructions.jsx";
+import { BillingInstructions, FileStoragePolicy } from "/snippets/components.jsx";
 import ApiOfflineNotice from "/snippets/api-offline-notice.mdx";
 
 <ApiOfflineNotice />
@@ -37,23 +37,10 @@ import ApiOfflineNotice from "/snippets/api-offline-notice.mdx";
 |:------------------------------------------------------------------------------------------|:--------------------------------------------------------------------------------------------------|:-------------------------------------------------------------------------------------------------|
 | ![Before processing](https://img.ailabtools.com/rapidapi/ColourMigration/untreated-3.jpg) | ![Reference map](https://img.ailabtools.com/rapidapi/ColourMigration/processed-ref_pic-ref-1.jpg) | ![After processing](https://img.ailabtools.com/rapidapi/ColourMigration/processed-ref_pic-1.jpg) |
 
-<Tip>
-  [👉 Online Experience 👈](https://www.ailabtools.com/image-color-migration-example)
-
-  If you'd like to see the actual effects, please visit the experience page for a trial.
-</Tip>
-
 ## Billing Instructions
 
 <BillingInstructions creditsPerRequest={3}/>
 
 ## File Storage Policy
 
-<Tip>
-  **TIP**
-
-  - **Uploaded Files**: Not stored.
-  - **Response Files**:
-    - **Storage Duration**: 24 hours.
-    - **Deletion Method**: Automatic Deletion upon Timeout.
-</Tip>
+<FileStoragePolicy uploadedFiles responseType="URL" />

@@ -4,7 +4,7 @@ title: "AI Hair Loss Simulation"
 description: "AI Hair Loss Simulation API that creates realistic hair thinning and balding effects from photos using advanced AI technology. Generate natural hair loss previews, receding hairline simulations, and baldness transformations for apps, websites, hair clinics, and virtual hairstyle experiences."
 ---
 
-import BillingInstructions from "/snippets/billing-instructions.jsx";
+import { ExperienceLinks, BillingInstructions, FileStoragePolicy } from "/snippets/components.jsx";
 
 ## Renderings show
 
@@ -13,20 +13,15 @@ import BillingInstructions from "/snippets/billing-instructions.jsx";
 | ![ORIGINAL IMAGE][OriginalImage-1] |  `man_5`  |  ![RESULT IMAGE][ResultImage-OriginalImage-1-man_5-1]  |
 | ![ORIGINAL IMAGE][OriginalImage-2] | `woman_5` | ![RESULT IMAGE][ResultImage-OriginalImage-2-woman_5-1] |
 
+<ExperienceLinks onlineUrl="/hair-loss-filter" apiUrl="/docs/ai-portrait/editing/ai-hair-loss-simulation/api" />
+
 ## Billing Instructions
 
 <BillingInstructions creditsPerRequest={15}/>
 
 ## File Storage Policy
 
-<Tip>
-  **TIP**
-
-  - **Uploaded Files**: Not stored.
-  - **Response Files**:
-    - **Storage Duration**: 24 hours.
-    - **Deletion Method**: Automatic Deletion upon Timeout.
-</Tip>
+<FileStoragePolicy uploadedFiles responseType="URL" />
 
 [OriginalImage-1]: https://ai-resource.ailabtools.com/ai-hair-loss-simulation/doc/OriginalImage-1.webp
 

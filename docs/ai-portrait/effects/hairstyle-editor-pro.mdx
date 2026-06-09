@@ -4,7 +4,7 @@ title: "Hairstyle Changer Pro"
 description: "Based on the stable diffusion model, it supports dozens of different hairstyles and colors, with each generated result being unique. It can simultaneously produce up to four result images for easy comparison and selection of the most suitable hairstyle."
 ---
 
-import BillingInstructions from "/snippets/billing-instructions.jsx";
+import { ExperienceLinks, BillingInstructions, FileStoragePolicy } from "/snippets/components.jsx";
 import HairstyleEditorContrast from "/snippets/hairstyle-editor-contrast.mdx";
 
 <HairstyleEditorContrast />
@@ -16,11 +16,7 @@ import HairstyleEditorContrast from "/snippets/hairstyle-editor-contrast.mdx";
 | ![ORIGINAL IMAGE][OriginalImage-1] | `LongHairTiedUp` | ![RESULT IMAGE][ResultImage-OriginalImage-1-LongHairTiedUp-1] |
 | ![ORIGINAL IMAGE][OriginalImage-2] | `ClassicWavyBob` | ![RESULT IMAGE][ResultImage-OriginalImage-2-ClassicWavyBob-1] |
 
-<Tip>
-  [👉 Online Experience 👈](https://www.ailabtools.com/portrait-hairstyle-editing-pro-example)
-
-  If you'd like to see the actual effects, please visit the experience page for a trial.
-</Tip>
+<ExperienceLinks onlineUrl="/hairstyle-changer" apiUrl="/docs/ai-portrait/effects/hairstyle-editor-pro/api" />
 
 ## Billing Instructions
 
@@ -28,14 +24,7 @@ import HairstyleEditorContrast from "/snippets/hairstyle-editor-contrast.mdx";
 
 ## File Storage Policy
 
-<Tip>
-  **TIP**
-
-  - **Uploaded Files**: Not stored.
-  - **Response Files**:
-    - **Storage Duration**: 24 hours.
-    - **Deletion Method**: Automatic Deletion upon Timeout.
-</Tip>
+<FileStoragePolicy uploadedFiles responseType="URL" />
 
 ## Application Scenarios
 

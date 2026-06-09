@@ -4,7 +4,7 @@ title: "Image Invisible Picture Watermark"
 description: "Image blind watermarking algorithm, add/resolve watermark, add content including image or logo. algorithm service body is divided into two：`encode_pic`, `decode_pic`."
 ---
 
-import BillingInstructions from "/snippets/billing-instructions.jsx";
+import { BillingInstructions, FileStoragePolicy } from "/snippets/components.jsx";
 
 ## Renderings show
 
@@ -17,26 +17,13 @@ import BillingInstructions from "/snippets/billing-instructions.jsx";
 | `decode_pic_plus` | -               | -                               | ![watermark image][watermark_image_url-encode_pic_plus-1] | -                  | -                                                             | ![logo url][logo_url-1] |
 | `decode_pic_bold` | -               | -                               | ![watermark image][watermark_image_url-encode_pic_bold-1] | -                  | -                                                             | ![logo url][logo_url-1] |
 
-<Tip>
-  [👉 Online Experience 👈](https://www.ailabtools.com/image-invisible-image-watermark-example)
-
-  If you'd like to see the actual effects, please visit the experience page for a trial.
-</Tip>
-
 ## Billing Instructions
 
 <BillingInstructions creditsPerRequest={3}/>
 
 ## File Storage Policy
 
-<Tip>
-  **TIP**
-
-  - **Uploaded Files**: Not stored.
-  - **Response Files**:
-    - **Storage Duration**: 24 hours.
-    - **Deletion Method**: Automatic Deletion upon Timeout.
-</Tip>
+<FileStoragePolicy uploadedFiles responseType="URL" />
 
 ## Application Scenarios
 

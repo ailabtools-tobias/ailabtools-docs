@@ -4,7 +4,7 @@ title: "Try on Clothes"
 description: "Experience ultra-realistic Try on Clothes results with advanced AI, transforming flat clothing images and full-body portraits into accurate try-on visuals that showcase garment fit and style for a life-like preview."
 ---
 
-import BillingInstructions from "/snippets/billing-instructions.jsx";
+import { ExperienceLinks, BillingInstructions, FileStoragePolicy } from "/snippets/components.jsx";
 
 ## Renderings show
 
@@ -14,20 +14,15 @@ import BillingInstructions from "/snippets/billing-instructions.jsx";
 | Lower Body Clothing | ![ORIGINAL IMAGE](https://ai-resource.ailabtools.com/try-on-clothes/doc/OriginalImage-1.webp) | ![CLOTHING IMAGE](https://ai-resource.ailabtools.com/try-on-clothes/doc/bottom-1.webp) | ![RESULT IMAGE](https://ai-resource.ailabtools.com/try-on-clothes/doc/ResultImage-2.webp) |
 | Full Body Clothing  | ![ORIGINAL IMAGE](https://ai-resource.ailabtools.com/try-on-clothes/doc/OriginalImage-1.webp) | ![CLOTHING IMAGE](https://ai-resource.ailabtools.com/try-on-clothes/doc/full-1.webp)   | ![RESULT IMAGE](https://ai-resource.ailabtools.com/try-on-clothes/doc/ResultImage-3.webp) |
 
+<ExperienceLinks onlineUrl="/virtual-try-on-clothes" apiUrl="/docs/ai-portrait/editing/try-on-clothes/api" />
+
 ## Billing Instructions
 
 <BillingInstructions creditsPerRequest={10}/>
 
 ## File Storage Policy
 
-<Tip>
-  **TIP**
-
-  - **Uploaded Files**: Not stored.
-  - **Response Files**:
-    - **Storage Duration**: 24 hours.
-    - **Deletion Method**: Automatic Deletion upon Timeout.
-</Tip>
+<FileStoragePolicy uploadedFiles responseType="URL" />
 
 ## Application Scenarios
 

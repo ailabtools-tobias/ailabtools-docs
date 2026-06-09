@@ -8,7 +8,7 @@ import ApiOfflineNotice from "/snippets/api-offline-notice.mdx";
 
 <ApiOfflineNotice />
 
-import BillingInstructions from "/snippets/billing-instructions.jsx";
+import { BillingInstructions, FileStoragePolicy } from "/snippets/components.jsx";
 
 ## Renderings show
 
@@ -83,24 +83,13 @@ import BillingInstructions from "/snippets/billing-instructions.jsx";
   </div>
 </div>
 
-<Tip>
-  [👉 Online Experience 👈](https://www.ailabtools.com/portrait-hairstyle-editing-example)
-
-  If you'd like to see the actual effects, please visit the experience page for a trial.
-</Tip>
-
 ## Billing Instructions
 
 <BillingInstructions creditsPerRequest={12}/>
 
 ## File Storage Policy
 
-<Tip>
-  **TIP**
-
-  - **Uploaded Files**: Not stored.
-  - **Response Files**: Not stored.
-</Tip>
+<FileStoragePolicy uploadedFiles responseType="BASE64" />
 
 ## Basic Edition vs. Professional Edition Comparison.
 
