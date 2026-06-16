@@ -9562,7 +9562,7 @@
         "tags": [
           "AI BACKGROUND REMOVAL > General"
         ],
-        "summary": "Costume Background Removal",
+        "summary": "HD Portrait Background Removal",
         "requestBody": {
           "content": {
             "multipart/form-data": {

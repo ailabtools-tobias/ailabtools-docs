@@ -1,6 +1,6 @@
 {
   "$schema": "https://mintlify.com/schema.json",
-  "name": "AILabTools Docs",
+  "name": "AILabTools API Docs",
   "theme": "aspen",
   "layout": "sidenav",
   "description": "AILabTools is an advanced tool that offers a vast array of simple and flexible API endpoints to suit your specific needs. With just one API KEY, you can easily call any of the endpoints and integrate them quickly into your application or workflow, allowing for smooth and efficient operations.",
