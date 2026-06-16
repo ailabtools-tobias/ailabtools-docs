@@ -9560,7 +9560,7 @@
     "/api/cutout/portrait/hd-portrait-background-removal": {
       "post": {
         "tags": [
-          "AI BACKGROUND REMOVAL > General"
+          "AI BACKGROUND REMOVAL > Portrait"
         ],
         "summary": "HD Portrait Background Removal",
         "requestBody": {

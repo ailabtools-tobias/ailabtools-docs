@@ -1,171 +1,182 @@
 {
-  "$schema": "https://mintlify.com/schema.json",
-  "name": "AILabTools API Docs",
-  "theme": "aspen",
-  "layout": "sidenav",
-  "description": "AILabTools is an advanced tool that offers a vast array of simple and flexible API endpoints to suit your specific needs. With just one API KEY, you can easily call any of the endpoints and integrate them quickly into your application or workflow, allowing for smooth and efficient operations.",
-  "sidebar": {
+  "$schema":         "https://mintlify.com/schema.json",
+  "name":            "AILabTools API Docs",
+  "theme":           "aspen",
+  "layout":          "sidenav",
+  "description":     "Explore AILabTools APIs for image editing, enhancement, generation, and analysis. Integrate powerful AI features with ease.",
+  "sidebar":         {
     "items": "card",
     "width": 280
   },
-  "topbar": {
+  "topbar":          {
     "style": "gradient"
   },
-  "search": {
+  "search":          {
     "location": "top"
   },
-  "integrations": {
+  "integrations":    {
     "ga4": {
       "measurementId": "G-LR7Q61Y8PJ"
     }
   },
-  "appearance": {
+  "appearance":      {
     "default": "light",
-    "strict": true
+    "strict":  true
   },
-  "api": {
+  "api":             {
     "playground": {
       "proxy": false
     }
   },
-  "seo": {
+  "seo":             {
     "metatags": {
-      "description": "AILabTools is an advanced tool that offers a vast array of simple and flexible API endpoints to suit your specific needs.",
-      "keywords": "AILabTools, API, AI, Machine Learning, Computer Vision, Natural Language Processing",
-      "author": "AILabTools",
-      "theme-color": "#000000",
-      "canonical": "https://www.ailabtools.com",
-      "og:type": "website",
-      "og:url": "https://www.ailabtools.com",
-      "og:image": "https://www.ailabtools.com/docs/images/AILab-Tools-Making-the-world-enjoy-AI-and-making-AI-empowerment-easier.png",
-      "og:description": "AILabTools is an advanced tool that offers a vast array of simple and flexible API endpoints to suit your specific needs.",
-      "og:site_name": "AILabTools",
-      "og:locale": "en"
+      "description":    "Explore AILabTools APIs for image editing, enhancement, generation, and analysis. Integrate powerful AI features with ease.",
+      "keywords":       "AILabTools API, AI API, Image API, Image Editing API, Image Enhancement API, Background Removal API, Portrait Enhancement API, AI Generation API, Face Editing API, REST API",
+      "author":         "AILabTools",
+      "theme-color":    "#000000",
+      "canonical":      "https://www.ailabtools.com",
+      "og:type":        "website",
+      "og:url":         "https://www.ailabtools.com",
+      "og:image":       "https://ai-resource.ailabtools.com/web/static/svg/ailabToolsLogo.svg",
+      "og:description": "Explore AILabTools APIs for image editing, enhancement, generation, and analysis. Integrate powerful AI features with ease.",
+      "og:site_name":   "AILabTools",
+      "og:locale":      "en"
     }
   },
-  "navbar": {
+  "navbar":          {
     "links": [
       {
-        "label": "Explore",
-        "href": "https://www.ailabtools.com"
+        "label": "Home",
+        "href":  "https://www.ailabtools.com"
       },
       {
-        "label": "API Keys",
-        "href": "https://www.ailabtools.com/developer"
+        "label": "API KEY",
+        "href":  "https://www.ailabtools.com/developer/keys"
       },
       {
         "label": "Pricing",
-        "href": "https://www.ailabtools.com/price?tab=api"
+        "href":  "https://www.ailabtools.com/price?tab=api"
       },
       {
         "label": "Contact",
-        "href": "https://www.ailabtools.com/support"
+        "href":  "https://www.ailabtools.com/support"
       }
     ]
   },
-  "footer": {
-  "links": [
-    {
-      "header": "Popular Recommendations",
-      "items": [
-        {
-          "label": "Cartoon Yourself",
-          "href": "https://www.ailabtools.com/docs/ai-portrait/effects/portrait-animation"
-        },
-        {
-          "label": "Hairstyle Changer",
-          "href": "https://www.ailabtools.com/docs/ai-portrait/effects/hairstyle-editor-pro"
-        },
-        {
-          "label": "Age & Gender Swap",
-          "href": "https://www.ailabtools.com/docs/ai-portrait/effects/face-attribute-editing"
-        },
-        {
-          "label": "Skin Analysis",
-          "href": "https://www.ailabtools.com/docs/ai-portrait/analysis/skin-analysis-pro"
-        },
-        {
-          "label": "Object Removal",
-          "href": "https://www.ailabtools.com/docs/ai-image/editing/remove-objects-pro"
-        },
-        {
-          "label": "Image Extender",
-          "href": "https://www.ailabtools.com/docs/ai-image/editing/ai-image-extender"
-        },
-        {
-          "label": "Background Removal",
-          "href": "https://www.ailabtools.com/docs/ai-cutout/general/universal-background-removal"
-        }
-      ]
-    },
-    {
-      "header": "Support",
-      "items": [
-        {
-          "label": "Documentation",
-          "href": "https://www.ailabtools.com/docs"
-        },
-        {
-          "label": "Pricing",
-          "href": "https://www.ailabtools.com/price?tab=api"
-        },
-        {
-          "label": "Contact Us",
-          "href": "https://www.ailabtools.com/support"
-        }
-      ]
-    },
-    {
-      "header": "More",
-      "items": [
-        {
-          "label": "About Us",
-          "href": "https://www.ailabtools.com/about-us"
-        },
-        {
-          "label": "Blog",
-          "href": "https://www.ailabtools.com/blog/"
-        },
-        {
-          "label": "Terms of Service",
-          "href": "https://www.ailabtools.com/term-of-use"
-        },
-        {
-          "label": "Privacy Policy",
-          "href": "https://www.ailabtools.com/privacy-policy"
-        }
-      ]
-    }
-  ]
-},
-  "rounded": "default",
-  "breadcrumbs": true,
-  "mobileOptimized": true,
-  "customCSS": [
-  ],
-  "logo": {
-    "light": "/images/logo-black.png",
-    "dark": "/images/logo-white.png"
+  "footer":          {
+    "links": [
+      {
+        "header": "Popular Recommendations",
+        "items":  [
+          {
+            "label": "AI Breast Expansion",
+            "href":  "https://www.ailabtools.com/docs/ai-portrait/editing/ai-breast-expansion"
+          },
+          {
+            "label": "AI Face Swap",
+            "href":  "https://www.ailabtools.com/docs/ai-portrait/editing/ai-face-swap"
+          },
+          {
+            "label": "Change Facial Expressions",
+            "href":  "https://www.ailabtools.com/docs/ai-portrait/effects/emotion-editor-advanced"
+          },
+          {
+            "label": "Hairstyle Changer",
+            "href":  "https://www.ailabtools.com/docs/ai-portrait/effects/hairstyle-editor-pro"
+          },
+          {
+            "label": "Try on Clothes",
+            "href":  "https://www.ailabtools.com/docs/ai-portrait/editing/try-on-clothes"
+          },
+          {
+            "label": "AI Beard Styling",
+            "href":  "https://www.ailabtools.com/docs/ai-portrait/editing/ai-beard-styling"
+          },
+          {
+            "label": "Skin Analyze",
+            "href":  "https://www.ailabtools.com/docs/ai-portrait/analysis/skin-analysis-pro"
+          },
+          {
+            "label": "AI Nail Art",
+            "href":  "https://www.ailabtools.com/docs/ai-image/editing/ai-nail-art-pro"
+          },
+          {
+            "label": "Cartoon Yourself",
+            "href":  "https://www.ailabtools.com/docs/ai-portrait/effects/portrait-animation"
+          },
+          {
+            "label": "Background Removal",
+            "href":  "https://www.ailabtools.com/docs/ai-cutout/general/universal-background-removal"
+          }
+        ]
+      },
+      {
+        "header": "Support",
+        "items":  [
+          {
+            "label": "Pricing",
+            "href":  "https://www.ailabtools.com/price?tab=api"
+          },
+          {
+            "label": "Developer",
+            "href":  "https://www.ailabtools.com/developer"
+          },
+          {
+            "label": "Contact Us",
+            "href":  "https://www.ailabtools.com/support"
+          }
+        ]
+      },
+      {
+        "header": "More",
+        "items":  [
+          {
+            "label": "About Us",
+            "href":  "https://www.ailabtools.com/about-us"
+          },
+          {
+            "label": "Terms of Service",
+            "href":  "https://www.ailabtools.com/term-of-use"
+          },
+          {
+            "label": "Privacy Policy",
+            "href":  "https://www.ailabtools.com/privacy-policy"
+          },
+          {
+            "label": "User Agreement",
+            "href":  "https://www.ailabtools.com/user-agreement"
+          }
+        ]
+      }
+    ]
   },
-  "favicon": "/images/logo-bg.webp",
-  "colors": {
+  "rounded":         "default",
+  "breadcrumbs":     true,
+  "mobileOptimized": true,
+  "customCSS":       [],
+  "logo":            {
+    "light": "/images/logo-black.png",
+    "dark":  "/images/logo-white.png"
+  },
+  "favicon":         "/images/logo-bg.webp",
+  "colors":          {
     "primary": "#f61b5b",
-    "light": "#f61b5b",
-    "dark": "#f61b5b"
+    "light":   "#f61b5b",
+    "dark":    "#f61b5b"
   },
   "topbarCtaButton": {
     "name": "Developer Platform",
-    "url": "https://www.ailabtools.com/developer"
+    "url":  "https://www.ailabtools.com/developer"
   },
-  "navigation": {
+  "navigation":      {
     "dropdowns": [
       {
         "dropdown": "Documentation",
-        "icon": "book",
-        "groups": [
+        "icon":     "book",
+        "groups":   [
           {
             "group": "Preface",
-            "icon": "info",
+            "icon":  "info",
             "pages": [
               "docs/introduction",
               "docs/billing-introduction",
@@ -174,7 +185,7 @@
           },
           {
             "group": "Quick Start",
-            "icon": "rocket",
+            "icon":  "rocket",
             "pages": [
               "docs/get-api-key",
               "docs/response-description"
@@ -182,7 +193,7 @@
           },
           {
             "group": "AI Common",
-            "icon": "toolbox",
+            "icon":  "toolbox",
             "pages": [
               "docs/ai-common/querying-credits/api",
               "docs/ai-common/async-task-results/api"
@@ -190,15 +201,15 @@
           },
           {
             "group": "AI Portrait",
-            "icon": "user",
+            "icon":  "user",
             "pages": [
               {
                 "group": "Portrait Effects",
-                "icon": "wand-magic-sparkles",
+                "icon":  "wand-magic-sparkles",
                 "pages": [
                   {
                     "group": "Cartoon Yourself",
-                    "icon": "wand-magic",
+                    "icon":  "wand-magic",
                     "pages": [
                       "docs/ai-portrait/effects/portrait-animation",
                       "docs/ai-portrait/effects/portrait-animation/api"
@@ -206,7 +217,7 @@
                   },
                   {
                     "group": "Merge Portraits",
-                    "icon": "object-group",
+                    "icon":  "object-group",
                     "pages": [
                       "docs/ai-portrait/effects/face-fusion",
                       "docs/ai-portrait/effects/face-fusion/api"
@@ -214,7 +225,7 @@
                   },
                   {
                     "group": "Smart Beauty",
-                    "icon": "sparkles",
+                    "icon":  "sparkles",
                     "pages": [
                       "docs/ai-portrait/effects/smart-beauty",
                       "docs/ai-portrait/effects/smart-beauty/api",
@@ -223,7 +234,7 @@
                   },
                   {
                     "group": "AI Skin Enhancement",
-                    "icon": "hand-sparkles",
+                    "icon":  "hand-sparkles",
                     "pages": [
                       "docs/ai-portrait/effects/smart-skin",
                       "docs/ai-portrait/effects/smart-skin/api"
@@ -231,7 +242,7 @@
                   },
                   {
                     "group": "AI Skin Enhancement Advanced",
-                    "icon": "sparkles",
+                    "icon":  "sparkles",
                     "pages": [
                       "docs/ai-portrait/effects/smart-skin-advanced",
                       "docs/ai-portrait/effects/smart-skin-advanced/api"
@@ -239,7 +250,7 @@
                   },
                   {
                     "group": "AI Face Slimming",
-                    "icon": "compress",
+                    "icon":  "compress",
                     "pages": [
                       "docs/ai-portrait/effects/smart-face-slimming",
                       "docs/ai-portrait/effects/smart-face-slimming/api"
@@ -247,7 +258,7 @@
                   },
                   {
                     "group": "Face Beauty",
-                    "icon": "face-grin-hearts",
+                    "icon":  "face-grin-hearts",
                     "pages": [
                       "docs/ai-portrait/effects/face-beauty",
                       "docs/ai-portrait/effects/face-beauty/api"
@@ -255,7 +266,7 @@
                   },
                   {
                     "group": "Face Beauty Advanced",
-                    "icon": "face-grin-stars",
+                    "icon":  "face-grin-stars",
                     "pages": [
                       "docs/ai-portrait/effects/face-beauty-advanced",
                       "docs/ai-portrait/effects/face-beauty-advanced/api"
@@ -263,7 +274,7 @@
                   },
                   {
                     "group": "Face Beauty Pro",
-                    "icon": "crown",
+                    "icon":  "crown",
                     "pages": [
                       "docs/ai-portrait/effects/face-beauty-pro",
                       "docs/ai-portrait/effects/face-beauty-pro/api",
@@ -272,7 +283,7 @@
                   },
                   {
                     "group": "Face Filter",
-                    "icon": "filter",
+                    "icon":  "filter",
                     "pages": [
                       "docs/ai-portrait/effects/face-filter",
                       "docs/ai-portrait/effects/face-filter/api"
@@ -280,7 +291,7 @@
                   },
                   {
                     "group": "Change Facial Expressions",
-                    "icon": "face-laugh",
+                    "icon":  "face-laugh",
                     "pages": [
                       "docs/ai-portrait/effects/emotion-editor",
                       "docs/ai-portrait/effects/emotion-editor/api"
@@ -288,7 +299,7 @@
                   },
                   {
                     "group": "Change Facial Expressions Advanced",
-                    "icon": "wand-magic",
+                    "icon":  "wand-magic",
                     "pages": [
                       "docs/ai-portrait/effects/emotion-editor-advanced",
                       "docs/ai-portrait/effects/emotion-editor-advanced/api"
@@ -296,7 +307,7 @@
                   },
                   {
                     "group": "Hairstyle Changer Pro",
-                    "icon": "scissors",
+                    "icon":  "scissors",
                     "pages": [
                       "docs/ai-portrait/effects/hairstyle-editor-pro",
                       "docs/ai-portrait/effects/hairstyle-editor-pro/api",
@@ -305,7 +316,7 @@
                   },
                   {
                     "group": "Hairstyle Changer Premium",
-                    "icon": "scissors",
+                    "icon":  "scissors",
                     "pages": [
                       "docs/ai-portrait/effects/hairstyle-editor-premium",
                       "docs/ai-portrait/effects/hairstyle-editor-premium/api",
@@ -314,7 +325,7 @@
                   },
                   {
                     "group": "Face Blur",
-                    "icon": "eye-slash",
+                    "icon":  "eye-slash",
                     "pages": [
                       "docs/ai-portrait/effects/blurred-faces",
                       "docs/ai-portrait/effects/blurred-faces/api"
@@ -322,7 +333,7 @@
                   },
                   {
                     "group": "Age & Gender Swap",
-                    "icon": "arrows-rotate",
+                    "icon":  "arrows-rotate",
                     "pages": [
                       "docs/ai-portrait/effects/face-attribute-editing",
                       "docs/ai-portrait/effects/face-attribute-editing/api"
@@ -330,7 +341,7 @@
                   },
                   {
                     "group": "AI Face Enhancer",
-                    "icon": "face-smile-beam",
+                    "icon":  "face-smile-beam",
                     "pages": [
                       "docs/ai-portrait/effects/ai-face-enhancer",
                       "docs/ai-portrait/effects/ai-face-enhancer/api"
@@ -338,7 +349,7 @@
                   },
                   {
                     "group": "Lips Color Changer",
-                    "icon": "palette",
+                    "icon":  "palette",
                     "pages": [
                       "docs/ai-portrait/effects/lips-color-changer",
                       "docs/ai-portrait/effects/lips-color-changer/api"
@@ -348,11 +359,11 @@
               },
               {
                 "group": "Portrait Editing",
-                "icon": "pen-to-square",
+                "icon":  "pen-to-square",
                 "pages": [
                   {
                     "group": "AI Breast Expansion",
-                    "icon": "expand",
+                    "icon":  "expand",
                     "pages": [
                       "docs/ai-portrait/editing/ai-breast-expansion",
                       "docs/ai-portrait/editing/ai-breast-expansion/api"
@@ -360,7 +371,7 @@
                   },
                   {
                     "group": "AI Face Swap",
-                    "icon": "arrows-rotate",
+                    "icon":  "arrows-rotate",
                     "pages": [
                       "docs/ai-portrait/editing/ai-face-swap",
                       "docs/ai-portrait/editing/ai-face-swap/api"
@@ -368,7 +379,7 @@
                   },
                   {
                     "group": "Try-on Clothes",
-                    "icon": "shirt",
+                    "icon":  "shirt",
                     "pages": [
                       "docs/ai-portrait/editing/try-on-clothes",
                       "docs/ai-portrait/editing/try-on-clothes/api"
@@ -376,7 +387,7 @@
                   },
                   {
                     "group": "Try-on Clothes Pro",
-                    "icon": "shirt",
+                    "icon":  "shirt",
                     "pages": [
                       "docs/ai-portrait/editing/try-on-clothes-pro",
                       "docs/ai-portrait/editing/try-on-clothes-pro/api"
@@ -384,7 +395,7 @@
                   },
                   {
                     "group": "Try-on Clothes Premium",
-                    "icon": "crown",
+                    "icon":  "crown",
                     "pages": [
                       "docs/ai-portrait/editing/try-on-clothes-premium",
                       "docs/ai-portrait/editing/try-on-clothes-premium/api"
@@ -392,7 +403,7 @@
                   },
                   {
                     "group": "AI Colored Contacts",
-                    "icon": "eye",
+                    "icon":  "eye",
                     "pages": [
                       "docs/ai-portrait/editing/ai-colored-contacts",
                       "docs/ai-portrait/editing/ai-colored-contacts/api"
@@ -400,7 +411,7 @@
                   },
                   {
                     "group": "AI Eyelashes",
-                    "icon": "sparkles",
+                    "icon":  "sparkles",
                     "pages": [
                       "docs/ai-portrait/editing/ai-eyelashes",
                       "docs/ai-portrait/editing/ai-eyelashes/api"
@@ -408,7 +419,7 @@
                   },
                   {
                     "group": "AI Eyebrows",
-                    "icon": "brush",
+                    "icon":  "brush",
                     "pages": [
                       "docs/ai-portrait/editing/ai-eyebrows",
                       "docs/ai-portrait/editing/ai-eyebrows/api"
@@ -416,7 +427,7 @@
                   },
                   {
                     "group": "AI Hair Color",
-                    "icon": "droplet",
+                    "icon":  "droplet",
                     "pages": [
                       "docs/ai-portrait/editing/ai-hair-color",
                       "docs/ai-portrait/editing/ai-hair-color/api"
@@ -424,7 +435,7 @@
                   },
                   {
                     "group": "AI Beard Removal",
-                    "icon": "eraser",
+                    "icon":  "eraser",
                     "pages": [
                       "docs/ai-portrait/editing/ai-beard-removal",
                       "docs/ai-portrait/editing/ai-beard-removal/api"
@@ -432,7 +443,7 @@
                   },
                   {
                     "group": "AI Hair Loss Simulation",
-                    "icon": "user-minus",
+                    "icon":  "user-minus",
                     "pages": [
                       "docs/ai-portrait/editing/ai-hair-loss-simulation",
                       "docs/ai-portrait/editing/ai-hair-loss-simulation/api"
@@ -440,7 +451,7 @@
                   },
                   {
                     "group": "AI Beard Styling",
-                    "icon": "scissors",
+                    "icon":  "scissors",
                     "pages": [
                       "docs/ai-portrait/editing/ai-beard-styling",
                       "docs/ai-portrait/editing/ai-beard-styling/api"
@@ -448,7 +459,7 @@
                   },
                   {
                     "group": "AI Bald",
-                    "icon": "circle-user",
+                    "icon":  "circle-user",
                     "pages": [
                       "docs/ai-portrait/editing/ai-bald",
                       "docs/ai-portrait/editing/ai-bald/api"
@@ -458,11 +469,11 @@
               },
               {
                 "group": "Portrait Enhancement",
-                "icon": "arrow-trend-up",
+                "icon":  "arrow-trend-up",
                 "pages": [
                   {
                     "group": "Try-on Clothes Refiner",
-                    "icon": "wand-magic",
+                    "icon":  "wand-magic",
                     "pages": [
                       "docs/ai-portrait/enhance/try-on-clothes-refiner",
                       "docs/ai-portrait/enhance/try-on-clothes-refiner/api"
@@ -472,11 +483,11 @@
               },
               {
                 "group": "Portrait Analysis",
-                "icon": "magnifying-glass",
+                "icon":  "magnifying-glass",
                 "pages": [
                   {
                     "group": "Facial Landmarks",
-                    "icon": "crosshairs",
+                    "icon":  "crosshairs",
                     "pages": [
                       "docs/ai-portrait/analysis/face-key-points",
                       "docs/ai-portrait/analysis/face-key-points/api",
@@ -488,7 +499,7 @@
                   },
                   {
                     "group": "Skin Analyze",
-                    "icon": "microscope",
+                    "icon":  "microscope",
                     "pages": [
                       "docs/ai-portrait/analysis/skin-analysis",
                       "docs/ai-portrait/analysis/skin-analysis/api"
@@ -496,7 +507,7 @@
                   },
                   {
                     "group": "Skin Analyze Advanced",
-                    "icon": "flask",
+                    "icon":  "flask",
                     "pages": [
                       "docs/ai-portrait/analysis/skin-analysis-advanced",
                       "docs/ai-portrait/analysis/skin-analysis-advanced/api"
@@ -504,14 +515,14 @@
                   },
                   {
                     "group": "Skin Analyze Pro",
-                    "icon": "gem",
+                    "icon":  "gem",
                     "pages": [
                       "docs/ai-portrait/analysis/skin-analysis-pro",
                       "docs/ai-portrait/analysis/skin-analysis-pro/api",
                       "docs/ai-portrait/analysis/skin-analysis-pro/degree-score",
                       {
                         "group": "Version Logs",
-                        "icon": "clock-rotate-left",
+                        "icon":  "clock-rotate-left",
                         "pages": [
                           "docs/ai-portrait/analysis/skin-analysis-pro/api-v171",
                           "docs/ai-portrait/analysis/skin-analysis-pro/api-v166",
@@ -523,7 +534,7 @@
                   },
                   {
                     "group": "Face Analyzer",
-                    "icon": "face-smile",
+                    "icon":  "face-smile",
                     "pages": [
                       "docs/ai-portrait/analysis/face-analyzer",
                       "docs/ai-portrait/analysis/face-analyzer/api"
@@ -531,7 +542,7 @@
                   },
                   {
                     "group": "Face Analyzer Advanced",
-                    "icon": "face-smile-beam",
+                    "icon":  "face-smile-beam",
                     "pages": [
                       "docs/ai-portrait/analysis/face-analyzer-advanced",
                       "docs/ai-portrait/analysis/face-analyzer-advanced/api"
@@ -543,15 +554,15 @@
           },
           {
             "group": "AI Image",
-            "icon": "image",
+            "icon":  "image",
             "pages": [
               {
                 "group": "Image Generation",
-                "icon": "wand-magic-sparkles",
+                "icon":  "wand-magic-sparkles",
                 "pages": [
                   {
                     "group": "AI Flower Wallpaper",
-                    "icon": "spa",
+                    "icon":  "spa",
                     "pages": [
                       "docs/ai-image/generation/ai-flower-wallpaper",
                       "docs/ai-image/generation/ai-flower-wallpaper/api"
@@ -561,11 +572,11 @@
               },
               {
                 "group": "Image Effects",
-                "icon": "wand-magic",
+                "icon":  "wand-magic",
                 "pages": [
                   {
                     "group": "AI Cartoon Generator",
-                    "icon": "wand-magic-sparkles",
+                    "icon":  "wand-magic-sparkles",
                     "pages": [
                       "docs/ai-image/effects/ai-anime-generator",
                       "docs/ai-image/effects/ai-anime-generator/api"
@@ -573,7 +584,7 @@
                   },
                   {
                     "group": "AI Photo Colorize",
-                    "icon": "fill-drip",
+                    "icon":  "fill-drip",
                     "pages": [
                       "docs/ai-image/effects/image-colorization",
                       "docs/ai-image/effects/image-colorization/api"
@@ -581,7 +592,7 @@
                   },
                   {
                     "group": "Photo to Painting",
-                    "icon": "brush",
+                    "icon":  "brush",
                     "pages": [
                       "docs/ai-image/effects/image-style-conversion",
                       "docs/ai-image/effects/image-style-conversion/api"
@@ -589,7 +600,7 @@
                   },
                   {
                     "group": "Photo to Coloring Page",
-                    "icon": "pencil",
+                    "icon":  "pencil",
                     "pages": [
                       "docs/ai-image/effects/photo-to-line-art",
                       "docs/ai-image/effects/photo-to-line-art/api"
@@ -597,7 +608,7 @@
                   },
                   {
                     "group": "AI Emoji Generator",
-                    "icon": "face-smile",
+                    "icon":  "face-smile",
                     "pages": [
                       "docs/ai-image/effects/photo-to-emoji-grid",
                       "docs/ai-image/effects/photo-to-emoji-grid/api"
@@ -605,7 +616,7 @@
                   },
                   {
                     "group": "AI Photography",
-                    "icon": "camera",
+                    "icon":  "camera",
                     "pages": [
                       "docs/ai-image/effects/ai-photography",
                       "docs/ai-image/effects/ai-photography/api"
@@ -615,11 +626,11 @@
               },
               {
                 "group": "Image Editing",
-                "icon": "scissors",
+                "icon":  "scissors",
                 "pages": [
                   {
                     "group": "AI Image Cropping",
-                    "icon": "crop",
+                    "icon":  "crop",
                     "pages": [
                       "docs/ai-image/editing/image-cropping",
                       "docs/ai-image/editing/image-cropping/api"
@@ -627,7 +638,7 @@
                   },
                   {
                     "group": "Intelligent Composition",
-                    "icon": "layer-group",
+                    "icon":  "layer-group",
                     "pages": [
                       "docs/ai-image/editing/intelligent-composition",
                       "docs/ai-image/editing/intelligent-composition/api"
@@ -635,7 +646,7 @@
                   },
                   {
                     "group": "Photo Retouching",
-                    "icon": "sliders",
+                    "icon":  "sliders",
                     "pages": [
                       "docs/ai-image/editing/photo-retouching",
                       "docs/ai-image/editing/photo-retouching/api"
@@ -643,7 +654,7 @@
                   },
                   {
                     "group": "Image Invisible Picture Watermark",
-                    "icon": "eye-slash",
+                    "icon":  "eye-slash",
                     "pages": [
                       "docs/ai-image/editing/image-invisible-image-watermark",
                       "docs/ai-image/editing/image-invisible-image-watermark/api"
@@ -651,7 +662,7 @@
                   },
                   {
                     "group": "Image Invisible Text Watermarking",
-                    "icon": "font",
+                    "icon":  "font",
                     "pages": [
                       "docs/ai-image/editing/image-invisible-text-watermarking",
                       "docs/ai-image/editing/image-invisible-text-watermarking/api"
@@ -659,7 +670,7 @@
                   },
                   {
                     "group": "Remove Objects",
-                    "icon": "trash",
+                    "icon":  "trash",
                     "pages": [
                       "docs/ai-image/editing/remove-objects",
                       "docs/ai-image/editing/remove-objects/api"
@@ -667,7 +678,7 @@
                   },
                   {
                     "group": "Remove Objects Advanced",
-                    "icon": "eraser",
+                    "icon":  "eraser",
                     "pages": [
                       "docs/ai-image/editing/remove-objects-advanced",
                       "docs/ai-image/editing/remove-objects-advanced/api"
@@ -675,7 +686,7 @@
                   },
                   {
                     "group": "Remove Objects Pro",
-                    "icon": "broom",
+                    "icon":  "broom",
                     "pages": [
                       "docs/ai-image/editing/remove-objects-pro",
                       "docs/ai-image/editing/remove-objects-pro/api"
@@ -683,7 +694,7 @@
                   },
                   {
                     "group": "AI Object Replacer",
-                    "icon": "object-group",
+                    "icon":  "object-group",
                     "pages": [
                       "docs/ai-image/editing/ai-object-replacer",
                       "docs/ai-image/editing/ai-object-replacer/api"
@@ -691,7 +702,7 @@
                   },
                   {
                     "group": "AI Image Extender",
-                    "icon": "up-right-and-down-left-from-center",
+                    "icon":  "up-right-and-down-left-from-center",
                     "pages": [
                       "docs/ai-image/editing/ai-image-extender",
                       "docs/ai-image/editing/ai-image-extender/api"
@@ -699,7 +710,7 @@
                   },
                   {
                     "group": "AI Nail Art",
-                    "icon": "hand-sparkles",
+                    "icon":  "hand-sparkles",
                     "pages": [
                       "docs/ai-image/editing/ai-nail-art",
                       "docs/ai-image/editing/ai-nail-art/api"
@@ -707,7 +718,7 @@
                   },
                   {
                     "group": "AI Nail Art Pro",
-                    "icon": "gem",
+                    "icon":  "gem",
                     "pages": [
                       "docs/ai-image/editing/ai-nail-art-pro",
                       "docs/ai-image/editing/ai-nail-art-pro/api"
@@ -717,11 +728,11 @@
               },
               {
                 "group": "Image Enhancement",
-                "icon": "arrow-up",
+                "icon":  "arrow-up",
                 "pages": [
                   {
                     "group": "Image Dehaze",
-                    "icon": "cloud",
+                    "icon":  "cloud",
                     "pages": [
                       "docs/ai-image/enhance/image-defogging",
                       "docs/ai-image/enhance/image-defogging/api"
@@ -729,7 +740,7 @@
                   },
                   {
                     "group": "Image Upscaler",
-                    "icon": "expand",
+                    "icon":  "expand",
                     "pages": [
                       "docs/ai-image/enhance/image-lossless-enlargement",
                       "docs/ai-image/enhance/image-lossless-enlargement/api"
@@ -737,7 +748,7 @@
                   },
                   {
                     "group": "Stretched Image Restoration",
-                    "icon": "down-left-and-up-right-to-center",
+                    "icon":  "down-left-and-up-right-to-center",
                     "pages": [
                       "docs/ai-image/enhance/stretch-image-recovery",
                       "docs/ai-image/enhance/stretch-image-recovery/api"
@@ -745,7 +756,7 @@
                   },
                   {
                     "group": "Image Sharpness Enhancement",
-                    "icon": "crosshairs",
+                    "icon":  "crosshairs",
                     "pages": [
                       "docs/ai-image/enhance/image-sharpness-enhancement",
                       "docs/ai-image/enhance/image-sharpness-enhancement/api"
@@ -753,7 +764,7 @@
                   },
                   {
                     "group": "Image Contrast Enhancement",
-                    "icon": "circle-half-stroke",
+                    "icon":  "circle-half-stroke",
                     "pages": [
                       "docs/ai-image/enhance/image-contrast-enhancement",
                       "docs/ai-image/enhance/image-contrast-enhancement/api"
@@ -761,7 +772,7 @@
                   },
                   {
                     "group": "Image Color Enhancement",
-                    "icon": "palette",
+                    "icon":  "palette",
                     "pages": [
                       "docs/ai-image/enhance/image-color-enhancement",
                       "docs/ai-image/enhance/image-color-enhancement/api"
@@ -771,11 +782,11 @@
               },
               {
                 "group": "Image Rating",
-                "icon": "star",
+                "icon":  "star",
                 "pages": [
                   {
                     "group": "Image Composition Aesthetics Scoring",
-                    "icon": "award",
+                    "icon":  "award",
                     "pages": [
                       "docs/ai-image/rating/image-composition-aesthetics-scoring",
                       "docs/ai-image/rating/image-composition-aesthetics-scoring/api"
@@ -783,7 +794,7 @@
                   },
                   {
                     "group": "Image Exposure Score",
-                    "icon": "sun",
+                    "icon":  "sun",
                     "pages": [
                       "docs/ai-image/rating/image-exposure-score",
                       "docs/ai-image/rating/image-exposure-score/api"
@@ -795,15 +806,15 @@
           },
           {
             "group": "AI Background Removal",
-            "icon": "eraser",
+            "icon":  "eraser",
             "pages": [
               {
                 "group": "General Background Removal",
-                "icon": "crop",
+                "icon":  "crop",
                 "pages": [
                   {
                     "group": "Universal Background Removal",
-                    "icon": "globe",
+                    "icon":  "globe",
                     "pages": [
                       "docs/ai-cutout/general/universal-background-removal",
                       "docs/ai-cutout/general/universal-background-removal/api"
@@ -811,7 +822,7 @@
                   },
                   {
                     "group": "HD Universal Background Removal",
-                    "icon": "sparkles",
+                    "icon":  "sparkles",
                     "pages": [
                       "docs/ai-cutout/general/hd-universal-background-removal",
                       "docs/ai-cutout/general/hd-universal-background-removal/api"
@@ -819,7 +830,7 @@
                   },
                   {
                     "group": "Food Background Removal",
-                    "icon": "utensils",
+                    "icon":  "utensils",
                     "pages": [
                       "docs/ai-cutout/general/food-background-removal",
                       "docs/ai-cutout/general/food-background-removal/api"
@@ -827,7 +838,7 @@
                   },
                   {
                     "group": "Product Background Removal",
-                    "icon": "box",
+                    "icon":  "box",
                     "pages": [
                       "docs/ai-cutout/general/commodity-background-removal",
                       "docs/ai-cutout/general/commodity-background-removal/api"
@@ -835,7 +846,7 @@
                   },
                   {
                     "group": "Costume Background Removal",
-                    "icon": "images",
+                    "icon":  "images",
                     "pages": [
                       "docs/ai-cutout/general/apparel-background-removal",
                       "docs/ai-cutout/general/apparel-background-removal/api"
@@ -845,11 +856,11 @@
               },
               {
                 "group": "Portrait Background Removal",
-                "icon": "user-minus",
+                "icon":  "user-minus",
                 "pages": [
                   {
                     "group": "Human Background Removal",
-                    "icon": "person",
+                    "icon":  "person",
                     "pages": [
                       "docs/ai-cutout/portrait/portrait-background-removal",
                       "docs/ai-cutout/portrait/portrait-background-removal/api"
@@ -857,7 +868,7 @@
                   },
                   {
                     "group": "HD Human Background Removal",
-                    "icon": "sparkles",
+                    "icon":  "sparkles",
                     "pages": [
                       "docs/ai-cutout/portrait/hd-portrait-background-removal",
                       "docs/ai-cutout/portrait/hd-portrait-background-removal/api"
@@ -865,7 +876,7 @@
                   },
                   {
                     "group": "Head Extraction",
-                    "icon": "circle-user",
+                    "icon":  "circle-user",
                     "pages": [
                       "docs/ai-cutout/portrait/avatar-extraction",
                       "docs/ai-cutout/portrait/avatar-extraction/api"
@@ -873,7 +884,7 @@
                   },
                   {
                     "group": "Hairstyle Extraction",
-                    "icon": "scissors",
+                    "icon":  "scissors",
                     "pages": [
                       "docs/ai-cutout/portrait/hairstyle-extraction",
                       "docs/ai-cutout/portrait/hairstyle-extraction/api"
@@ -884,9 +895,9 @@
             ]
           },
           {
-            "group": "Report Json",
+            "group":  "Report Json",
             "hidden": true,
-            "pages": [
+            "pages":  [
               "docs/ai-portrait/analysis/skin-analysis-pro/case1/result",
               "docs/ai-portrait/analysis/skin-analysis-pro/case2/result",
               "docs/ai-portrait/analysis/skin-analysis-pro/case3/result",
@@ -896,9 +907,9 @@
         ]
       },
       {
-        "dropdown": "API reference",
-        "icon": "code",
-        "openapi": "openapi.json"
+        "dropdown": "API Reference",
+        "icon":     "code",
+        "openapi":  "openapi.json"
       }
     ]
   }
