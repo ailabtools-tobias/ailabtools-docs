@@ -1,1013 +1,1145 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset
-        xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
   <url>
     <loc>https://www.ailabtools.com/docs/introduction</loc>
-    <lastmod>2026-06-09</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.ailabtools.com/docs/billing-introduction</loc>
-    <lastmod>2026-06-09</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.ailabtools.com/docs/file-storage-policy</loc>
-    <lastmod>2026-06-09</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.ailabtools.com/docs/get-api-key</loc>
-    <lastmod>2026-06-09</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.ailabtools.com/docs/response-description</loc>
-    <lastmod>2026-06-09</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.ailabtools.com/docs/ai-common/querying-credits/api</loc>
-    <lastmod>2026-06-09</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.ailabtools.com/docs/ai-common/async-task-results/api</loc>
-    <lastmod>2026-06-09</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.ailabtools.com/docs/ai-portrait/effects/portrait-animation</loc>
-    <lastmod>2026-06-09</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.ailabtools.com/docs/ai-portrait/effects/portrait-animation/api</loc>
-    <lastmod>2026-06-09</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.ailabtools.com/docs/ai-portrait/effects/face-fusion</loc>
-    <lastmod>2026-06-09</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.ailabtools.com/docs/ai-portrait/effects/face-fusion/api</loc>
-    <lastmod>2026-06-09</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.ailabtools.com/docs/ai-portrait/effects/smart-beauty</loc>
-    <lastmod>2026-06-09</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.ailabtools.com/docs/ai-portrait/effects/smart-beauty/api</loc>
-    <lastmod>2026-06-09</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.ailabtools.com/docs/ai-portrait/effects/smart-beauty/async-api</loc>
-    <lastmod>2026-06-09</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.ailabtools.com/docs/ai-portrait/effects/smart-skin</loc>
-    <lastmod>2026-06-09</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.ailabtools.com/docs/ai-portrait/effects/smart-skin/api</loc>
-    <lastmod>2026-06-09</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.ailabtools.com/docs/ai-portrait/effects/smart-skin-advanced</loc>
-    <lastmod>2026-06-09</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.ailabtools.com/docs/ai-portrait/effects/smart-skin-advanced/api</loc>
-    <lastmod>2026-06-09</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.ailabtools.com/docs/ai-portrait/effects/smart-face-slimming</loc>
-    <lastmod>2026-06-09</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.ailabtools.com/docs/ai-portrait/effects/smart-face-slimming/api</loc>
-    <lastmod>2026-06-09</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.ailabtools.com/docs/ai-portrait/effects/face-beauty</loc>
-    <lastmod>2026-06-09</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.ailabtools.com/docs/ai-portrait/effects/face-beauty/api</loc>
-    <lastmod>2026-06-09</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.ailabtools.com/docs/ai-portrait/effects/face-beauty-advanced</loc>
-    <lastmod>2026-06-09</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.ailabtools.com/docs/ai-portrait/effects/face-beauty-advanced/api</loc>
-    <lastmod>2026-06-09</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.ailabtools.com/docs/ai-portrait/effects/face-beauty-pro</loc>
-    <lastmod>2026-06-09</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.ailabtools.com/docs/ai-portrait/effects/face-beauty-pro/api</loc>
-    <lastmod>2026-06-09</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.ailabtools.com/docs/ai-portrait/effects/face-beauty-pro/async-api</loc>
-    <lastmod>2026-06-09</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.ailabtools.com/docs/ai-portrait/effects/face-filter</loc>
-    <lastmod>2026-06-09</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.ailabtools.com/docs/ai-portrait/effects/face-filter/api</loc>
-    <lastmod>2026-06-09</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.ailabtools.com/docs/ai-portrait/effects/emotion-editor</loc>
-    <lastmod>2026-06-09</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.ailabtools.com/docs/ai-portrait/effects/emotion-editor/api</loc>
-    <lastmod>2026-06-09</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.ailabtools.com/docs/ai-portrait/effects/emotion-editor-advanced</loc>
-    <lastmod>2026-06-09</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.ailabtools.com/docs/ai-portrait/effects/emotion-editor-advanced/api</loc>
-    <lastmod>2026-06-09</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.ailabtools.com/docs/ai-portrait/effects/hairstyle-editor-pro</loc>
-    <lastmod>2026-06-09</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.ailabtools.com/docs/ai-portrait/effects/hairstyle-editor-pro/api</loc>
-    <lastmod>2026-06-09</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.ailabtools.com/docs/ai-portrait/effects/hairstyle-editor-pro/guide</loc>
-    <lastmod>2026-06-09</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.ailabtools.com/docs/ai-portrait/effects/hairstyle-editor-premium</loc>
-    <lastmod>2026-06-09</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.ailabtools.com/docs/ai-portrait/effects/hairstyle-editor-premium/api</loc>
-    <lastmod>2026-06-09</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.ailabtools.com/docs/ai-portrait/effects/hairstyle-editor-premium/guide</loc>
-    <lastmod>2026-06-09</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.ailabtools.com/docs/ai-portrait/effects/blurred-faces</loc>
-    <lastmod>2026-06-09</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.ailabtools.com/docs/ai-portrait/effects/blurred-faces/api</loc>
-    <lastmod>2026-06-09</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.ailabtools.com/docs/ai-portrait/effects/face-attribute-editing</loc>
-    <lastmod>2026-06-09</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.ailabtools.com/docs/ai-portrait/effects/face-attribute-editing/api</loc>
-    <lastmod>2026-06-09</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.ailabtools.com/docs/ai-portrait/effects/ai-face-enhancer</loc>
-    <lastmod>2026-06-09</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.ailabtools.com/docs/ai-portrait/effects/ai-face-enhancer/api</loc>
-    <lastmod>2026-06-09</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.ailabtools.com/docs/ai-portrait/effects/lips-color-changer</loc>
-    <lastmod>2026-06-09</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.ailabtools.com/docs/ai-portrait/effects/lips-color-changer/api</loc>
-    <lastmod>2026-06-09</lastmod>
+    <lastmod>2026-06-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://www.ailabtools.com/docs/ai-portrait/effects/ai-square-face-filter</loc>
+    <lastmod>2026-06-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://www.ailabtools.com/docs/ai-portrait/effects/ai-square-face-filter/api</loc>
+    <lastmod>2026-06-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://www.ailabtools.com/docs/ai-portrait/effects/ai-big-head-effect</loc>
+    <lastmod>2026-06-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://www.ailabtools.com/docs/ai-portrait/effects/ai-big-head-effect/api</loc>
+    <lastmod>2026-06-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://www.ailabtools.com/docs/ai-portrait/effects/ai-red-lip-gloss</loc>
+    <lastmod>2026-06-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://www.ailabtools.com/docs/ai-portrait/effects/ai-red-lip-gloss/api</loc>
+    <lastmod>2026-06-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://www.ailabtools.com/docs/ai-portrait/effects/ai-lip-bite-expressions</loc>
+    <lastmod>2026-06-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://www.ailabtools.com/docs/ai-portrait/effects/ai-lip-bite-expressions/api</loc>
+    <lastmod>2026-06-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://www.ailabtools.com/docs/ai-portrait/effects/ai-halloween-mask</loc>
+    <lastmod>2026-06-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://www.ailabtools.com/docs/ai-portrait/effects/ai-halloween-mask/api</loc>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.ailabtools.com/docs/ai-portrait/editing/ai-breast-expansion</loc>
-    <lastmod>2026-06-09</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.ailabtools.com/docs/ai-portrait/editing/ai-breast-expansion/api</loc>
-    <lastmod>2026-06-09</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.ailabtools.com/docs/ai-portrait/editing/ai-face-swap</loc>
-    <lastmod>2026-06-09</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.ailabtools.com/docs/ai-portrait/editing/ai-face-swap/api</loc>
-    <lastmod>2026-06-09</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.ailabtools.com/docs/ai-portrait/editing/try-on-clothes</loc>
-    <lastmod>2026-06-09</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.ailabtools.com/docs/ai-portrait/editing/try-on-clothes/api</loc>
-    <lastmod>2026-06-09</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.ailabtools.com/docs/ai-portrait/editing/try-on-clothes-pro</loc>
-    <lastmod>2026-06-09</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.ailabtools.com/docs/ai-portrait/editing/try-on-clothes-pro/api</loc>
-    <lastmod>2026-06-09</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.ailabtools.com/docs/ai-portrait/editing/try-on-clothes-premium</loc>
-    <lastmod>2026-06-09</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.ailabtools.com/docs/ai-portrait/editing/try-on-clothes-premium/api</loc>
-    <lastmod>2026-06-09</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.ailabtools.com/docs/ai-portrait/editing/ai-colored-contacts</loc>
-    <lastmod>2026-06-09</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.ailabtools.com/docs/ai-portrait/editing/ai-colored-contacts/api</loc>
-    <lastmod>2026-06-09</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.ailabtools.com/docs/ai-portrait/editing/ai-eyelashes</loc>
-    <lastmod>2026-06-09</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.ailabtools.com/docs/ai-portrait/editing/ai-eyelashes/api</loc>
-    <lastmod>2026-06-09</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.ailabtools.com/docs/ai-portrait/editing/ai-eyebrows</loc>
-    <lastmod>2026-06-09</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.ailabtools.com/docs/ai-portrait/editing/ai-eyebrows/api</loc>
-    <lastmod>2026-06-09</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.ailabtools.com/docs/ai-portrait/editing/ai-hair-color</loc>
-    <lastmod>2026-06-09</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.ailabtools.com/docs/ai-portrait/editing/ai-hair-color/api</loc>
-    <lastmod>2026-06-09</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.ailabtools.com/docs/ai-portrait/editing/ai-beard-removal</loc>
-    <lastmod>2026-06-09</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.ailabtools.com/docs/ai-portrait/editing/ai-beard-removal/api</loc>
-    <lastmod>2026-06-09</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.ailabtools.com/docs/ai-portrait/editing/ai-hair-loss-simulation</loc>
-    <lastmod>2026-06-09</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.ailabtools.com/docs/ai-portrait/editing/ai-hair-loss-simulation/api</loc>
-    <lastmod>2026-06-09</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.ailabtools.com/docs/ai-portrait/editing/ai-beard-styling</loc>
-    <lastmod>2026-06-09</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.ailabtools.com/docs/ai-portrait/editing/ai-beard-styling/api</loc>
-    <lastmod>2026-06-09</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.ailabtools.com/docs/ai-portrait/editing/ai-bald</loc>
-    <lastmod>2026-06-09</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.ailabtools.com/docs/ai-portrait/editing/ai-bald/api</loc>
-    <lastmod>2026-06-09</lastmod>
+    <lastmod>2026-06-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://www.ailabtools.com/docs/ai-portrait/editing/ai-butt-enhancement</loc>
+    <lastmod>2026-06-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://www.ailabtools.com/docs/ai-portrait/editing/ai-butt-enhancement/api</loc>
+    <lastmod>2026-06-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://www.ailabtools.com/docs/ai-portrait/editing/ai-waist-slimming</loc>
+    <lastmod>2026-06-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://www.ailabtools.com/docs/ai-portrait/editing/ai-waist-slimming/api</loc>
+    <lastmod>2026-06-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://www.ailabtools.com/docs/ai-portrait/editing/ai-lip-enhancement</loc>
+    <lastmod>2026-06-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://www.ailabtools.com/docs/ai-portrait/editing/ai-lip-enhancement/api</loc>
+    <lastmod>2026-06-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://www.ailabtools.com/docs/ai-portrait/editing/ai-fat-filter</loc>
+    <lastmod>2026-06-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://www.ailabtools.com/docs/ai-portrait/editing/ai-fat-filter/api</loc>
+    <lastmod>2026-06-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://www.ailabtools.com/docs/ai-portrait/editing/ai-eyeshadow</loc>
+    <lastmod>2026-06-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://www.ailabtools.com/docs/ai-portrait/editing/ai-eyeshadow/api</loc>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.ailabtools.com/docs/ai-portrait/enhance/try-on-clothes-refiner</loc>
-    <lastmod>2026-06-09</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.ailabtools.com/docs/ai-portrait/enhance/try-on-clothes-refiner/api</loc>
-    <lastmod>2026-06-09</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.ailabtools.com/docs/ai-portrait/analysis/face-key-points</loc>
-    <lastmod>2026-06-09</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.ailabtools.com/docs/ai-portrait/analysis/face-key-points/api</loc>
-    <lastmod>2026-06-09</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.ailabtools.com/docs/ai-portrait/analysis/face-key-points/face-spatial-pose-angle-reference</loc>
-    <lastmod>2026-06-09</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.ailabtools.com/docs/ai-portrait/analysis/face-key-points/feature-points-72</loc>
-    <lastmod>2026-06-09</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.ailabtools.com/docs/ai-portrait/analysis/face-key-points/feature-points-150</loc>
-    <lastmod>2026-06-09</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.ailabtools.com/docs/ai-portrait/analysis/face-key-points/feature-points-201</loc>
-    <lastmod>2026-06-09</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.ailabtools.com/docs/ai-portrait/analysis/skin-analysis</loc>
-    <lastmod>2026-06-09</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.ailabtools.com/docs/ai-portrait/analysis/skin-analysis/api</loc>
-    <lastmod>2026-06-09</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.ailabtools.com/docs/ai-portrait/analysis/skin-analysis-advanced</loc>
-    <lastmod>2026-06-09</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.ailabtools.com/docs/ai-portrait/analysis/skin-analysis-advanced/api</loc>
-    <lastmod>2026-06-09</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.ailabtools.com/docs/ai-portrait/analysis/skin-analysis-pro</loc>
-    <lastmod>2026-06-09</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.ailabtools.com/docs/ai-portrait/analysis/skin-analysis-pro/api</loc>
-    <lastmod>2026-06-09</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.ailabtools.com/docs/ai-portrait/analysis/skin-analysis-pro/degree-score</loc>
-    <lastmod>2026-06-09</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.ailabtools.com/docs/ai-portrait/analysis/skin-analysis-pro/api-v171</loc>
-    <lastmod>2026-06-09</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.ailabtools.com/docs/ai-portrait/analysis/skin-analysis-pro/api-v166</loc>
-    <lastmod>2026-06-09</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.ailabtools.com/docs/ai-portrait/analysis/skin-analysis-pro/api-v162</loc>
-    <lastmod>2026-06-09</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.ailabtools.com/docs/ai-portrait/analysis/skin-analysis-pro/api-v151</loc>
-    <lastmod>2026-06-09</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.ailabtools.com/docs/ai-portrait/analysis/face-analyzer</loc>
-    <lastmod>2026-06-09</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.ailabtools.com/docs/ai-portrait/analysis/face-analyzer/api</loc>
-    <lastmod>2026-06-09</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.ailabtools.com/docs/ai-portrait/analysis/face-analyzer-advanced</loc>
-    <lastmod>2026-06-09</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.ailabtools.com/docs/ai-portrait/analysis/face-analyzer-advanced/api</loc>
-    <lastmod>2026-06-09</lastmod>
+    <lastmod>2026-06-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://www.ailabtools.com/docs/ai-portrait/analysis/ai-face-rating</loc>
+    <lastmod>2026-06-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://www.ailabtools.com/docs/ai-portrait/analysis/ai-face-rating/api</loc>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.ailabtools.com/docs/ai-image/generation/ai-flower-wallpaper</loc>
-    <lastmod>2026-06-09</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.ailabtools.com/docs/ai-image/generation/ai-flower-wallpaper/api</loc>
-    <lastmod>2026-06-09</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.ailabtools.com/docs/ai-image/effects/ai-anime-generator</loc>
-    <lastmod>2026-06-09</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.ailabtools.com/docs/ai-image/effects/ai-anime-generator/api</loc>
-    <lastmod>2026-06-09</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.ailabtools.com/docs/ai-image/effects/image-colorization</loc>
-    <lastmod>2026-06-09</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.ailabtools.com/docs/ai-image/effects/image-colorization/api</loc>
-    <lastmod>2026-06-09</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.ailabtools.com/docs/ai-image/effects/image-style-conversion</loc>
-    <lastmod>2026-06-09</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.ailabtools.com/docs/ai-image/effects/image-style-conversion/api</loc>
-    <lastmod>2026-06-09</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.ailabtools.com/docs/ai-image/effects/photo-to-line-art</loc>
-    <lastmod>2026-06-09</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.ailabtools.com/docs/ai-image/effects/photo-to-line-art/api</loc>
-    <lastmod>2026-06-09</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.ailabtools.com/docs/ai-image/effects/photo-to-emoji-grid</loc>
-    <lastmod>2026-06-09</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.ailabtools.com/docs/ai-image/effects/photo-to-emoji-grid/api</loc>
-    <lastmod>2026-06-09</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.ailabtools.com/docs/ai-image/effects/ai-photography</loc>
-    <lastmod>2026-06-09</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.ailabtools.com/docs/ai-image/effects/ai-photography/api</loc>
-    <lastmod>2026-06-09</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.ailabtools.com/docs/ai-image/editing/image-cropping</loc>
-    <lastmod>2026-06-09</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.ailabtools.com/docs/ai-image/editing/image-cropping/api</loc>
-    <lastmod>2026-06-09</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.ailabtools.com/docs/ai-image/editing/intelligent-composition</loc>
-    <lastmod>2026-06-09</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.ailabtools.com/docs/ai-image/editing/intelligent-composition/api</loc>
-    <lastmod>2026-06-09</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.ailabtools.com/docs/ai-image/editing/photo-retouching</loc>
-    <lastmod>2026-06-09</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.ailabtools.com/docs/ai-image/editing/photo-retouching/api</loc>
-    <lastmod>2026-06-09</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.ailabtools.com/docs/ai-image/editing/image-invisible-image-watermark</loc>
-    <lastmod>2026-06-09</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.ailabtools.com/docs/ai-image/editing/image-invisible-image-watermark/api</loc>
-    <lastmod>2026-06-09</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.ailabtools.com/docs/ai-image/editing/image-invisible-text-watermarking</loc>
-    <lastmod>2026-06-09</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.ailabtools.com/docs/ai-image/editing/image-invisible-text-watermarking/api</loc>
-    <lastmod>2026-06-09</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.ailabtools.com/docs/ai-image/editing/remove-objects</loc>
-    <lastmod>2026-06-09</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.ailabtools.com/docs/ai-image/editing/remove-objects/api</loc>
-    <lastmod>2026-06-09</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.ailabtools.com/docs/ai-image/editing/remove-objects-advanced</loc>
-    <lastmod>2026-06-09</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.ailabtools.com/docs/ai-image/editing/remove-objects-advanced/api</loc>
-    <lastmod>2026-06-09</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.ailabtools.com/docs/ai-image/editing/remove-objects-pro</loc>
-    <lastmod>2026-06-09</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.ailabtools.com/docs/ai-image/editing/remove-objects-pro/api</loc>
-    <lastmod>2026-06-09</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.ailabtools.com/docs/ai-image/editing/ai-object-replacer</loc>
-    <lastmod>2026-06-09</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.ailabtools.com/docs/ai-image/editing/ai-object-replacer/api</loc>
-    <lastmod>2026-06-09</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.ailabtools.com/docs/ai-image/editing/ai-image-extender</loc>
-    <lastmod>2026-06-09</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.ailabtools.com/docs/ai-image/editing/ai-image-extender/api</loc>
-    <lastmod>2026-06-09</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.ailabtools.com/docs/ai-image/editing/ai-nail-art</loc>
-    <lastmod>2026-06-09</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.ailabtools.com/docs/ai-image/editing/ai-nail-art/api</loc>
-    <lastmod>2026-06-09</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.ailabtools.com/docs/ai-image/editing/ai-nail-art-pro</loc>
-    <lastmod>2026-06-09</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.ailabtools.com/docs/ai-image/editing/ai-nail-art-pro/api</loc>
-    <lastmod>2026-06-09</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.ailabtools.com/docs/ai-image/enhance/image-defogging</loc>
-    <lastmod>2026-06-09</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.ailabtools.com/docs/ai-image/enhance/image-defogging/api</loc>
-    <lastmod>2026-06-09</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.ailabtools.com/docs/ai-image/enhance/image-lossless-enlargement</loc>
-    <lastmod>2026-06-09</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.ailabtools.com/docs/ai-image/enhance/image-lossless-enlargement/api</loc>
-    <lastmod>2026-06-09</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.ailabtools.com/docs/ai-image/enhance/stretch-image-recovery</loc>
-    <lastmod>2026-06-09</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.ailabtools.com/docs/ai-image/enhance/stretch-image-recovery/api</loc>
-    <lastmod>2026-06-09</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.ailabtools.com/docs/ai-image/enhance/image-sharpness-enhancement</loc>
-    <lastmod>2026-06-09</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.ailabtools.com/docs/ai-image/enhance/image-sharpness-enhancement/api</loc>
-    <lastmod>2026-06-09</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.ailabtools.com/docs/ai-image/enhance/image-contrast-enhancement</loc>
-    <lastmod>2026-06-09</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.ailabtools.com/docs/ai-image/enhance/image-contrast-enhancement/api</loc>
-    <lastmod>2026-06-09</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.ailabtools.com/docs/ai-image/enhance/image-color-enhancement</loc>
-    <lastmod>2026-06-09</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.ailabtools.com/docs/ai-image/enhance/image-color-enhancement/api</loc>
-    <lastmod>2026-06-09</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.ailabtools.com/docs/ai-image/rating/image-composition-aesthetics-scoring</loc>
-    <lastmod>2026-06-09</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.ailabtools.com/docs/ai-image/rating/image-composition-aesthetics-scoring/api</loc>
-    <lastmod>2026-06-09</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.ailabtools.com/docs/ai-image/rating/image-exposure-score</loc>
-    <lastmod>2026-06-09</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.ailabtools.com/docs/ai-image/rating/image-exposure-score/api</loc>
-    <lastmod>2026-06-09</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.ailabtools.com/docs/ai-cutout/general/universal-background-removal</loc>
-    <lastmod>2026-06-09</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.ailabtools.com/docs/ai-cutout/general/universal-background-removal/api</loc>
-    <lastmod>2026-06-09</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.ailabtools.com/docs/ai-cutout/general/hd-universal-background-removal</loc>
-    <lastmod>2026-06-09</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.ailabtools.com/docs/ai-cutout/general/hd-universal-background-removal/api</loc>
-    <lastmod>2026-06-09</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.ailabtools.com/docs/ai-cutout/general/food-background-removal</loc>
-    <lastmod>2026-06-09</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.ailabtools.com/docs/ai-cutout/general/food-background-removal/api</loc>
-    <lastmod>2026-06-09</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.ailabtools.com/docs/ai-cutout/general/commodity-background-removal</loc>
-    <lastmod>2026-06-09</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.ailabtools.com/docs/ai-cutout/general/commodity-background-removal/api</loc>
-    <lastmod>2026-06-09</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.ailabtools.com/docs/ai-cutout/general/apparel-background-removal</loc>
-    <lastmod>2026-06-09</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.ailabtools.com/docs/ai-cutout/general/apparel-background-removal/api</loc>
-    <lastmod>2026-06-09</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.ailabtools.com/docs/ai-cutout/portrait/portrait-background-removal</loc>
-    <lastmod>2026-06-09</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.ailabtools.com/docs/ai-cutout/portrait/portrait-background-removal/api</loc>
-    <lastmod>2026-06-09</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.ailabtools.com/docs/ai-cutout/portrait/hd-portrait-background-removal</loc>
-    <lastmod>2026-06-09</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.ailabtools.com/docs/ai-cutout/portrait/hd-portrait-background-removal/api</loc>
-    <lastmod>2026-06-09</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.ailabtools.com/docs/ai-cutout/portrait/avatar-extraction</loc>
-    <lastmod>2026-06-09</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.ailabtools.com/docs/ai-cutout/portrait/avatar-extraction/api</loc>
-    <lastmod>2026-06-09</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.ailabtools.com/docs/ai-cutout/portrait/hairstyle-extraction</loc>
-    <lastmod>2026-06-09</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.ailabtools.com/docs/ai-cutout/portrait/hairstyle-extraction/api</loc>
-    <lastmod>2026-06-09</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>

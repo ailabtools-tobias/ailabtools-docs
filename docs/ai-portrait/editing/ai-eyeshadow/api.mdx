@@ -1,0 +1,84 @@
+---
+sidebarTitle: "API"
+title: "AI Eyeshadow Try-On API"
+description: "AI Eyeshadow Try-On API applies realistic eyeshadow styles while preserving facial features, skin tone, expression, and lighting."
+openapi: "POST /api/portrait/editing/ai-eyeshadow"
+---
+
+import AsyncApiNotice from "/snippets/async-api-notice.mdx";
+
+export const eyeshadowStyles = [
+  { value: 1, image: "https://ai-resource.ailabtools.com/ai-eyeshadow/eyeshadows/1.jpg" },
+  { value: 2, image: "https://ai-resource.ailabtools.com/ai-eyeshadow/eyeshadows/2.jpg" },
+  { value: 3, image: "https://ai-resource.ailabtools.com/ai-eyeshadow/eyeshadows/3.jpg" },
+  { value: 4, image: "https://ai-resource.ailabtools.com/ai-eyeshadow/eyeshadows/4.jpg" },
+  { value: 5, image: "https://ai-resource.ailabtools.com/ai-eyeshadow/eyeshadows/5.jpg" },
+  { value: 6, image: "https://ai-resource.ailabtools.com/ai-eyeshadow/eyeshadows/6.jpg" },
+  { value: 7, image: "https://ai-resource.ailabtools.com/ai-eyeshadow/eyeshadows/7.jpg" },
+  { value: 8, image: "https://ai-resource.ailabtools.com/ai-eyeshadow/eyeshadows/8.jpg" },
+  { value: 9, image: "https://ai-resource.ailabtools.com/ai-eyeshadow/eyeshadows/9.jpg" },
+  { value: 10, image: "https://ai-resource.ailabtools.com/ai-eyeshadow/eyeshadows/10.jpg" },
+  { value: 11, image: "https://ai-resource.ailabtools.com/ai-eyeshadow/eyeshadows/11.jpg" },
+  { value: 12, image: "https://ai-resource.ailabtools.com/ai-eyeshadow/eyeshadows/12.jpg" },
+  { value: 13, image: "https://ai-resource.ailabtools.com/ai-eyeshadow/eyeshadows/13.jpg" },
+  { value: 14, image: "https://ai-resource.ailabtools.com/ai-eyeshadow/eyeshadows/14.jpg" },
+  { value: 15, image: "https://ai-resource.ailabtools.com/ai-eyeshadow/eyeshadows/15.jpg" },
+  { value: 16, image: "https://ai-resource.ailabtools.com/ai-eyeshadow/eyeshadows/16.jpg" },
+  { value: 17, image: "https://ai-resource.ailabtools.com/ai-eyeshadow/eyeshadows/17.jpg" },
+  { value: 18, image: "https://ai-resource.ailabtools.com/ai-eyeshadow/eyeshadows/18.jpg" },
+  { value: 19, image: "https://ai-resource.ailabtools.com/ai-eyeshadow/eyeshadows/19.jpg" },
+  { value: 20, image: "https://ai-resource.ailabtools.com/ai-eyeshadow/eyeshadows/20.jpg" },
+  { value: 21, image: "https://ai-resource.ailabtools.com/ai-eyeshadow/eyeshadows/21.jpg" },
+  { value: 22, image: "https://ai-resource.ailabtools.com/ai-eyeshadow/eyeshadows/22.jpg" },
+  { value: 23, image: "https://ai-resource.ailabtools.com/ai-eyeshadow/eyeshadows/23.jpg" },
+  { value: 24, image: "https://ai-resource.ailabtools.com/ai-eyeshadow/eyeshadows/24.jpg" },
+  { value: 25, image: "https://ai-resource.ailabtools.com/ai-eyeshadow/eyeshadows/25.jpg" },
+  { value: 26, image: "https://ai-resource.ailabtools.com/ai-eyeshadow/eyeshadows/26.jpg" },
+  { value: 27, image: "https://ai-resource.ailabtools.com/ai-eyeshadow/eyeshadows/27.jpg" },
+  { value: 28, image: "https://ai-resource.ailabtools.com/ai-eyeshadow/eyeshadows/28.jpg" },
+  { value: 29, image: "https://ai-resource.ailabtools.com/ai-eyeshadow/eyeshadows/29.jpg" },
+  { value: 30, image: "https://ai-resource.ailabtools.com/ai-eyeshadow/eyeshadows/30.jpg" },
+  { value: 31, image: "https://ai-resource.ailabtools.com/ai-eyeshadow/eyeshadows/31.jpg" },
+  { value: 32, image: "https://ai-resource.ailabtools.com/ai-eyeshadow/eyeshadows/32.jpg" },
+  { value: 33, image: "https://ai-resource.ailabtools.com/ai-eyeshadow/eyeshadows/33.jpg" },
+  { value: 34, image: "https://ai-resource.ailabtools.com/ai-eyeshadow/eyeshadows/34.jpg" },
+  { value: 35, image: "https://ai-resource.ailabtools.com/ai-eyeshadow/eyeshadows/35.jpg" },
+  { value: 36, image: "https://ai-resource.ailabtools.com/ai-eyeshadow/eyeshadows/36.jpg" },
+];
+
+<AsyncApiNotice/>
+
+| Field            | Type     | Description         |
+|:-----------------|:---------|:--------------------|
+| `data`           | `object` | Final result data.  |
+| +`result_urls`   | `array`  | Result image URLs.  |
+| ++`result_urls[]` | `string` | Result image URL.  |
+
+```json
+{
+  "data": {
+    "result_urls": [""]
+  }
+}
+```
+
+<Tip>
+  `result_urls` are temporary and remain valid for 24 hours. Download the files to your own storage before the URLs expire if you need long-term storage.
+</Tip>
+
+## Submit Task
+
+### `eyeshadow_style`
+
+The following enum values are supported for `eyeshadow_style`.
+
+<Expandable title="Available Eyeshadows">
+  <div className="mt-2 grid grid-cols-2 lg:grid-cols-4 align-center gap-2">
+    {eyeshadowStyles.map((item) => (
+      <div key={item.value} className="rounded-xl">
+        <img className="w-full mt-0 mb-2 aspect-square object-contain rounded-xl" src={item.image} alt={item.value} />
+        <code className="block break-all text-center text-xs">{item.value}</code>
+      </div>
+    ))}
+  </div>
+</Expandable>

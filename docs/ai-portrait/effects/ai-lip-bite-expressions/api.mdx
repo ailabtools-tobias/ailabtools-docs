@@ -1,0 +1,30 @@
+---
+sidebarTitle: "API"
+title: "AI Lip Bite Expressions API"
+description: "AI Lip Bite Expressions API turns portraits into consistent lip bite emoji packs with 1, 4, 6, or 9 panels."
+openapi: "POST /api/portrait/effects/ai-lip-bite-expressions"
+---
+
+import AsyncApiNotice from "/snippets/async-api-notice.mdx";
+
+<AsyncApiNotice />
+
+| Field            | Type     | Description         |
+|:-----------------|:---------|:--------------------|
+| `data`           | `object` | Final result data.  |
+| +`result_urls`   | `array`  | Result image URLs.  |
+| ++`result_urls[]` | `string` | Result image URL.  |
+
+```json
+{
+  "data": {
+    "result_urls": [""]
+  }
+}
+```
+
+<Tip>
+  `result_urls` are temporary and remain valid for 24 hours. Download the files to your own storage before the URLs expire if you need long-term storage.
+</Tip>
+
+## Submit Task

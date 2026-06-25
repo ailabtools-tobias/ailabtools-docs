@@ -1,0 +1,29 @@
+---
+sidebarTitle: "API"
+title: "AI Big Head Effect API"
+description: "AI Big Head Effect API creates big-head portrait effects while preserving identity, hairstyle, outfit, background, and lighting."
+openapi: "POST /api/portrait/effects/ai-big-head-effect"
+---
+
+import AsyncApiNotice from "/snippets/async-api-notice.mdx";
+
+<AsyncApiNotice />
+
+| Field    | Type     | Description        |
+|:---------|:---------|:-------------------|
+| `data`   | `object` | Final result data. |
+| +`image` | `string` | Result image URL.  |
+
+```json
+{
+  "data": {
+    "image": ""
+  }
+}
+```
+
+<Tip>
+  `image` is temporary and remains valid for 24 hours. Download the file to your own storage before the URL expires if you need long-term storage.
+</Tip>
+
+## Submit Task

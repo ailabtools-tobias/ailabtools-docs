@@ -1,5 +1,6 @@
 ---
 title: "Querying Credits"
+description: "Query API credit balances, purchased credits, warning thresholds, and update times for each API identifier."
 openapi: 'GET /api/common/query-credits'
 ---
 
@@ -32,7 +33,7 @@ import { QueryingCreditsTableRow } from "/snippets/components.jsx";
       </tr>
       </thead>
       <tbody>
-      <QueryingCreditsTableRow rowSpan={18} category="Portrait Effects" href="/docs/ai-portrait/effects/portrait-animation" apiName="Cartoon Yourself" sign="portrait_cartoonization" />
+      <QueryingCreditsTableRow rowSpan={23} category="Portrait Effects" href="/docs/ai-portrait/effects/portrait-animation" apiName="Cartoon Yourself" sign="portrait_cartoonization" />
       <QueryingCreditsTableRow href="/docs/ai-portrait/effects/face-fusion" apiName="Merge Portraits" sign="portrait_face_fusion" />
       <QueryingCreditsTableRow href="/docs/ai-portrait/effects/smart-beauty" apiName="Smart Beauty" sign="portrait_intelligent_beautification" />
       <QueryingCreditsTableRow href="/docs/ai-portrait/effects/smart-skin" apiName="AI Skin Enhancement" sign="portrait_intelligent_skin_retouching" />
@@ -50,8 +51,13 @@ import { QueryingCreditsTableRow } from "/snippets/components.jsx";
       <QueryingCreditsTableRow href="/docs/ai-portrait/effects/face-attribute-editing" apiName="Age & Gender swap" sign="portrait_face_attribute_editing" />
       <QueryingCreditsTableRow href="/docs/ai-portrait/effects/ai-face-enhancer" apiName="AI Face Enhancer" sign="portrait_face_restoration_enhancement" />
       <QueryingCreditsTableRow href="/docs/ai-portrait/effects/lips-color-changer" apiName="Lips Color Changer" sign="portrait_lips_color_changer" />
+      <QueryingCreditsTableRow href="/docs/ai-portrait/effects/ai-square-face-filter" apiName="AI Square Face Filter" sign="portrait_ai_square_face_maker" />
+      <QueryingCreditsTableRow href="/docs/ai-portrait/effects/ai-big-head-effect" apiName="AI Big Head Effect" sign="portrait_ai_big_head_characters" />
+      <QueryingCreditsTableRow href="/docs/ai-portrait/effects/ai-red-lip-gloss" apiName="AI Red Lip Gloss" sign="portrait_ai_sexy_red_lip_gloss" />
+      <QueryingCreditsTableRow href="/docs/ai-portrait/effects/ai-lip-bite-expressions" apiName="AI Lip Bite Expressions" sign="portrait_ai_lip_bite_emoji" />
+      <QueryingCreditsTableRow href="/docs/ai-portrait/effects/ai-halloween-mask" apiName="AI Halloween Mask" sign="portrait_ai_halloween_masks" />
 
-      <QueryingCreditsTableRow rowSpan={13} category="Portrait Editing" href="/docs/ai-portrait/editing/ai-breast-expansion" apiName="AI Breast Expansion" sign="portrait_ai_big_tits" />
+      <QueryingCreditsTableRow rowSpan={18} category="Portrait Editing" href="/docs/ai-portrait/editing/ai-breast-expansion" apiName="AI Breast Expansion" sign="portrait_ai_big_tits" />
       <QueryingCreditsTableRow href="/docs/ai-portrait/editing/ai-face-swap" apiName="AI Face Swap" sign="portrait_ai_face_swap" />
       <QueryingCreditsTableRow href="/docs/ai-portrait/editing/try-on-clothes" apiName="Try on Clothes" sign="portrait_try_on_clothes" />
       <QueryingCreditsTableRow href="/docs/ai-portrait/editing/try-on-clothes-pro" apiName="Try on Clothes Pro" sign="portrait_try_on_clothes_pro" />
@@ -64,15 +70,21 @@ import { QueryingCreditsTableRow } from "/snippets/components.jsx";
       <QueryingCreditsTableRow href="/docs/ai-portrait/editing/ai-hair-loss-simulation" apiName="AI Hair Loss Simulation" sign="portrait_ai_hair_loss_simulation" />
       <QueryingCreditsTableRow href="/docs/ai-portrait/editing/ai-beard-styling" apiName="AI Beard Styling" sign="portrait_ai_beard_styling" />
       <QueryingCreditsTableRow href="/docs/ai-portrait/editing/ai-bald" apiName="AI Bald" sign="portrait_ai_bald" />
+      <QueryingCreditsTableRow href="/docs/ai-portrait/editing/ai-butt-enhancement" apiName="AI Butt Enhancement" sign="portrait_ai_big_butt" />
+      <QueryingCreditsTableRow href="/docs/ai-portrait/editing/ai-waist-slimming" apiName="AI Waist Slimming" sign="portrait_ai_snatched_waist" />
+      <QueryingCreditsTableRow href="/docs/ai-portrait/editing/ai-lip-enhancement" apiName="AI Lip Enhancement" sign="portrait_ai_lip_flip" />
+      <QueryingCreditsTableRow href="/docs/ai-portrait/editing/ai-fat-filter" apiName="AI Fat Filter" sign="portrait_ai_fat" />
+      <QueryingCreditsTableRow href="/docs/ai-portrait/editing/ai-eyeshadow" apiName="AI Eyeshadow Try-On" sign="portrait_ai_eyeshadow" />
 
       <QueryingCreditsTableRow rowSpan={1} category="Portrait Enhance" href="/docs/ai-portrait/enhance/try-on-clothes-refiner" apiName="Try on Clothes Refiner" sign="portrait_try_on_clothes_refiner" />
 
-      <QueryingCreditsTableRow rowSpan={6} category="Portrait Analysis" href="/docs/ai-portrait/analysis/face-key-points" apiName="Facial Landmarks" sign="portrait_facial_keypoints" />
+      <QueryingCreditsTableRow rowSpan={7} category="Portrait Analysis" href="/docs/ai-portrait/analysis/face-key-points" apiName="Facial Landmarks" sign="portrait_facial_keypoints" />
       <QueryingCreditsTableRow href="/docs/ai-portrait/analysis/skin-analysis" apiName="Skin Analyze" sign="portrait_skin_analysis_basic" />
       <QueryingCreditsTableRow href="/docs/ai-portrait/analysis/skin-analysis-advanced" apiName="Skin Analyze Advanced" sign="portrait_skin_analysis_advanced" />
       <QueryingCreditsTableRow href="/docs/ai-portrait/analysis/skin-analysis-pro" apiName="Skin Analyze Pro" sign="portrait_skin_analysis_professional" />
       <QueryingCreditsTableRow href="/docs/ai-portrait/analysis/face-analyzer" apiName="Face Analyzer" sign="portrait_face_analyzer" />
       <QueryingCreditsTableRow href="/docs/ai-portrait/analysis/face-analyzer-advanced" apiName="Face Analyzer Advanced" sign="portrait_face_analyzer_advanced" />
+      <QueryingCreditsTableRow href="/docs/ai-portrait/analysis/ai-face-rating" apiName="AI Face Rating" sign="portrait_ai_face_rater" />
       </tbody>
     </table>
   </Tab>

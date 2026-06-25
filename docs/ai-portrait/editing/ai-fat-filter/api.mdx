@@ -1,0 +1,29 @@
+---
+sidebarTitle: "API"
+title: "AI Fat Filter API"
+description: "AI Fat Filter API makes people look naturally heavier while preserving identity, facial features, clothing, pose, and background."
+openapi: "POST /api/portrait/editing/ai-fat-filter"
+---
+
+import AsyncApiNotice from "/snippets/async-api-notice.mdx";
+
+<AsyncApiNotice />
+
+| Field    | Type     | Description        |
+|:---------|:---------|:-------------------|
+| `data`   | `object` | Final result data. |
+| +`image` | `string` | Result image URL.  |
+
+```json
+{
+  "data": {
+    "image": ""
+  }
+}
+```
+
+<Tip>
+  `image` is temporary and remains valid for 24 hours. Download the file to your own storage before the URL expires if you need long-term storage.
+</Tip>
+
+## Submit Task

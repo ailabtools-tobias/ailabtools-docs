@@ -1,0 +1,29 @@
+---
+sidebarTitle: "API"
+title: "AI Lip Enhancement API"
+description: "AI Lip Enhancement API creates fuller, natural-looking lips while preserving facial features, expression, skin tone, and image quality."
+openapi: "POST /api/portrait/editing/ai-lip-enhancement"
+---
+
+import AsyncApiNotice from "/snippets/async-api-notice.mdx";
+
+<AsyncApiNotice />
+
+| Field    | Type     | Description        |
+|:---------|:---------|:-------------------|
+| `data`   | `object` | Final result data. |
+| +`image` | `string` | Result image URL.  |
+
+```json
+{
+  "data": {
+    "image": ""
+  }
+}
+```
+
+<Tip>
+  `image` is temporary and remains valid for 24 hours. Download the file to your own storage before the URL expires if you need long-term storage.
+</Tip>
+
+## Submit Task

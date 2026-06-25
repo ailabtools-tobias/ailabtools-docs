@@ -1,0 +1,133 @@
+---
+sidebarTitle: "API"
+title: "AI Halloween Mask API"
+description: "AI Halloween Mask API adds spooky Halloween masks to portraits while preserving identity, lighting, background, and facial structure."
+openapi: "POST /api/portrait/effects/ai-halloween-mask"
+---
+
+import AsyncApiNotice from "/snippets/async-api-notice.mdx";
+
+export const maskStyles = [
+  { value: 1, image: "https://ai-resource.ailabtools.com/ai-halloween-masks/masks/1.jpg" },
+  { value: 2, image: "https://ai-resource.ailabtools.com/ai-halloween-masks/masks/2.jpg" },
+  { value: 3, image: "https://ai-resource.ailabtools.com/ai-halloween-masks/masks/3.jpg" },
+  { value: 4, image: "https://ai-resource.ailabtools.com/ai-halloween-masks/masks/4.jpg" },
+  { value: 5, image: "https://ai-resource.ailabtools.com/ai-halloween-masks/masks/5.jpg" },
+  { value: 6, image: "https://ai-resource.ailabtools.com/ai-halloween-masks/masks/6.jpg" },
+  { value: 7, image: "https://ai-resource.ailabtools.com/ai-halloween-masks/masks/7.jpg" },
+  { value: 8, image: "https://ai-resource.ailabtools.com/ai-halloween-masks/masks/8.jpg" },
+  { value: 9, image: "https://ai-resource.ailabtools.com/ai-halloween-masks/masks/9.jpg" },
+  { value: 10, image: "https://ai-resource.ailabtools.com/ai-halloween-masks/masks/10.jpg" },
+  { value: 11, image: "https://ai-resource.ailabtools.com/ai-halloween-masks/masks/11.jpg" },
+  { value: 12, image: "https://ai-resource.ailabtools.com/ai-halloween-masks/masks/12.jpg" },
+  { value: 13, image: "https://ai-resource.ailabtools.com/ai-halloween-masks/masks/13.jpg" },
+  { value: 14, image: "https://ai-resource.ailabtools.com/ai-halloween-masks/masks/14.jpg" },
+  { value: 15, image: "https://ai-resource.ailabtools.com/ai-halloween-masks/masks/15.jpg" },
+  { value: 16, image: "https://ai-resource.ailabtools.com/ai-halloween-masks/masks/16.jpg" },
+  { value: 17, image: "https://ai-resource.ailabtools.com/ai-halloween-masks/masks/17.jpg" },
+  { value: 18, image: "https://ai-resource.ailabtools.com/ai-halloween-masks/masks/18.jpg" },
+  { value: 19, image: "https://ai-resource.ailabtools.com/ai-halloween-masks/masks/19.jpg" },
+  { value: 20, image: "https://ai-resource.ailabtools.com/ai-halloween-masks/masks/20.jpg" },
+  { value: 21, image: "https://ai-resource.ailabtools.com/ai-halloween-masks/masks/21.jpg" },
+  { value: 22, image: "https://ai-resource.ailabtools.com/ai-halloween-masks/masks/22.jpg" },
+  { value: 23, image: "https://ai-resource.ailabtools.com/ai-halloween-masks/masks/23.jpg" },
+  { value: 24, image: "https://ai-resource.ailabtools.com/ai-halloween-masks/masks/24.jpg" },
+  { value: 25, image: "https://ai-resource.ailabtools.com/ai-halloween-masks/masks/25.jpg" },
+  { value: 26, image: "https://ai-resource.ailabtools.com/ai-halloween-masks/masks/26.jpg" },
+  { value: 27, image: "https://ai-resource.ailabtools.com/ai-halloween-masks/masks/27.jpg" },
+  { value: 28, image: "https://ai-resource.ailabtools.com/ai-halloween-masks/masks/28.jpg" },
+  { value: 29, image: "https://ai-resource.ailabtools.com/ai-halloween-masks/masks/29.jpg" },
+  { value: 30, image: "https://ai-resource.ailabtools.com/ai-halloween-masks/masks/30.jpg" },
+  { value: 31, image: "https://ai-resource.ailabtools.com/ai-halloween-masks/masks/31.jpg" },
+  { value: 32, image: "https://ai-resource.ailabtools.com/ai-halloween-masks/masks/32.jpg" },
+  { value: 33, image: "https://ai-resource.ailabtools.com/ai-halloween-masks/masks/33.jpg" },
+  { value: 34, image: "https://ai-resource.ailabtools.com/ai-halloween-masks/masks/34.jpg" },
+  { value: 35, image: "https://ai-resource.ailabtools.com/ai-halloween-masks/masks/35.jpg" },
+  { value: 36, image: "https://ai-resource.ailabtools.com/ai-halloween-masks/masks/36.jpg" },
+  { value: 37, image: "https://ai-resource.ailabtools.com/ai-halloween-masks/masks/37.jpg" },
+  { value: 38, image: "https://ai-resource.ailabtools.com/ai-halloween-masks/masks/38.jpg" },
+  { value: 39, image: "https://ai-resource.ailabtools.com/ai-halloween-masks/masks/39.jpg" },
+  { value: 40, image: "https://ai-resource.ailabtools.com/ai-halloween-masks/masks/40.jpg" },
+  { value: 41, image: "https://ai-resource.ailabtools.com/ai-halloween-masks/masks/41.jpg" },
+  { value: 42, image: "https://ai-resource.ailabtools.com/ai-halloween-masks/masks/42.jpg" },
+  { value: 43, image: "https://ai-resource.ailabtools.com/ai-halloween-masks/masks/43.jpg" },
+  { value: 44, image: "https://ai-resource.ailabtools.com/ai-halloween-masks/masks/44.jpg" },
+  { value: 45, image: "https://ai-resource.ailabtools.com/ai-halloween-masks/masks/45.jpg" },
+  { value: 46, image: "https://ai-resource.ailabtools.com/ai-halloween-masks/masks/46.jpg" },
+  { value: 47, image: "https://ai-resource.ailabtools.com/ai-halloween-masks/masks/47.jpg" },
+  { value: 48, image: "https://ai-resource.ailabtools.com/ai-halloween-masks/masks/48.jpg" },
+  { value: 49, image: "https://ai-resource.ailabtools.com/ai-halloween-masks/masks/49.jpg" },
+  { value: 50, image: "https://ai-resource.ailabtools.com/ai-halloween-masks/masks/50.jpg" },
+  { value: 51, image: "https://ai-resource.ailabtools.com/ai-halloween-masks/masks/51.jpg" },
+  { value: 52, image: "https://ai-resource.ailabtools.com/ai-halloween-masks/masks/52.jpg" },
+  { value: 53, image: "https://ai-resource.ailabtools.com/ai-halloween-masks/masks/53.jpg" },
+  { value: 54, image: "https://ai-resource.ailabtools.com/ai-halloween-masks/masks/54.jpg" },
+  { value: 55, image: "https://ai-resource.ailabtools.com/ai-halloween-masks/masks/55.jpg" },
+  { value: 56, image: "https://ai-resource.ailabtools.com/ai-halloween-masks/masks/56.jpg" },
+  { value: 57, image: "https://ai-resource.ailabtools.com/ai-halloween-masks/masks/57.jpg" },
+  { value: 58, image: "https://ai-resource.ailabtools.com/ai-halloween-masks/masks/58.jpg" },
+  { value: 59, image: "https://ai-resource.ailabtools.com/ai-halloween-masks/masks/59.jpg" },
+  { value: 60, image: "https://ai-resource.ailabtools.com/ai-halloween-masks/masks/60.jpg" },
+  { value: 61, image: "https://ai-resource.ailabtools.com/ai-halloween-masks/masks/61.jpg" },
+  { value: 62, image: "https://ai-resource.ailabtools.com/ai-halloween-masks/masks/62.jpg" },
+  { value: 63, image: "https://ai-resource.ailabtools.com/ai-halloween-masks/masks/63.jpg" },
+  { value: 64, image: "https://ai-resource.ailabtools.com/ai-halloween-masks/masks/64.jpg" },
+  { value: 65, image: "https://ai-resource.ailabtools.com/ai-halloween-masks/masks/65.jpg" },
+  { value: 66, image: "https://ai-resource.ailabtools.com/ai-halloween-masks/masks/66.jpg" },
+  { value: 67, image: "https://ai-resource.ailabtools.com/ai-halloween-masks/masks/67.jpg" },
+  { value: 68, image: "https://ai-resource.ailabtools.com/ai-halloween-masks/masks/68.jpg" },
+  { value: 69, image: "https://ai-resource.ailabtools.com/ai-halloween-masks/masks/69.jpg" },
+  { value: 70, image: "https://ai-resource.ailabtools.com/ai-halloween-masks/masks/70.jpg" },
+  { value: 71, image: "https://ai-resource.ailabtools.com/ai-halloween-masks/masks/71.jpg" },
+  { value: 72, image: "https://ai-resource.ailabtools.com/ai-halloween-masks/masks/72.jpg" },
+  { value: 73, image: "https://ai-resource.ailabtools.com/ai-halloween-masks/masks/73.jpg" },
+  { value: 74, image: "https://ai-resource.ailabtools.com/ai-halloween-masks/masks/74.jpg" },
+  { value: 75, image: "https://ai-resource.ailabtools.com/ai-halloween-masks/masks/75.jpg" },
+  { value: 76, image: "https://ai-resource.ailabtools.com/ai-halloween-masks/masks/76.jpg" },
+  { value: 77, image: "https://ai-resource.ailabtools.com/ai-halloween-masks/masks/77.jpg" },
+  { value: 78, image: "https://ai-resource.ailabtools.com/ai-halloween-masks/masks/78.jpg" },
+  { value: 79, image: "https://ai-resource.ailabtools.com/ai-halloween-masks/masks/79.jpg" },
+  { value: 80, image: "https://ai-resource.ailabtools.com/ai-halloween-masks/masks/80.jpg" },
+  { value: 81, image: "https://ai-resource.ailabtools.com/ai-halloween-masks/masks/81.jpg" },
+  { value: 82, image: "https://ai-resource.ailabtools.com/ai-halloween-masks/masks/82.jpg" },
+  { value: 83, image: "https://ai-resource.ailabtools.com/ai-halloween-masks/masks/83.jpg" },
+  { value: 84, image: "https://ai-resource.ailabtools.com/ai-halloween-masks/masks/84.jpg" },
+  { value: 85, image: "https://ai-resource.ailabtools.com/ai-halloween-masks/masks/85.jpg" },
+];
+
+<AsyncApiNotice/>
+
+| Field            | Type     | Description         |
+|:-----------------|:---------|:--------------------|
+| `data`           | `object` | Final result data.  |
+| +`result_urls`   | `array`  | Result image URLs.  |
+| ++`result_urls[]` | `string` | Result image URL.  |
+
+```json
+{
+  "data": {
+    "result_urls": [""]
+  }
+}
+```
+
+<Tip>
+  `result_urls` are temporary and remain valid for 24 hours. Download the files to your own storage before the URLs expire if you need long-term storage.
+</Tip>
+
+## Submit Task
+
+### `mask_style`
+
+The following enum values are supported for `mask_style`.
+
+<Expandable title="Available Masks">
+  <div className="mt-2 grid grid-cols-2 lg:grid-cols-4 align-center gap-2">
+    {maskStyles.map((item) => (
+      <div key={item.value} className="rounded-xl">
+        <img className="w-full mt-0 mb-2 aspect-square object-contain rounded-xl" src={item.image} alt={item.value} />
+        <code className="block break-all text-center text-xs">{item.value}</code>
+      </div>
+    ))}
+  </div>
+</Expandable>

@@ -1,7 +1,7 @@
 ---
 sidebarTitle: "API"
 title: "AI Beard Styling API"
-description: "AI Beard Styling API that generates realistic beard styles, mustaches, and facial hair transformations from photos using advanced AI technology. Create natural beard simulations, trendy facial hair looks, and personalized beard edits for apps, websites, barbershop tools, and virtual grooming experiences."
+description: "AI Beard Styling API adds realistic beard and mustache styles to portraits for grooming apps, barbershop tools, and virtual try-ons."
 openapi: "POST /api/portrait/editing/ai-beard-styling"
 ---
 
@@ -51,14 +51,10 @@ export const beards = [
 ```
 
 <Tip>
-  `result_urls` are temporary and remain valid for 24 hours. If you need long-term storage, download the files to your own storage within that period.
+  `result_urls` are temporary and remain valid for 24 hours. Download the files to your own storage before the URLs expire if you need long-term storage.
 </Tip>
 
 ## Submit Task
-
-### Input Image Examples
-
-Use a clear portrait with a complete, unobstructed face at an appropriate size. The examples below show valid inputs and common invalid cases.
 
 ### `beard`
 

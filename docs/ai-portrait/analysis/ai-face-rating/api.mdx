@@ -1,0 +1,30 @@
+---
+sidebarTitle: "API"
+title: "AI Face Rating API"
+description: "AI Face Rating API analyzes portraits for beauty score, symmetry, facial proportions, skin impression, and improvement tips."
+openapi: "POST /api/portrait/analysis/ai-face-rating"
+---
+
+import AsyncApiNotice from "/snippets/async-api-notice.mdx";
+
+<AsyncApiNotice />
+
+| Field            | Type     | Description         |
+|:-----------------|:---------|:--------------------|
+| `data`           | `object` | Final result data.  |
+| +`result_urls`   | `array`  | Result image URLs.  |
+| ++`result_urls[]` | `string` | Result image URL.  |
+
+```json
+{
+  "data": {
+    "result_urls": [""]
+  }
+}
+```
+
+<Tip>
+  `result_urls` are temporary and remain valid for 24 hours. Download the files to your own storage before the URLs expire if you need long-term storage.
+</Tip>
+
+## Submit Task

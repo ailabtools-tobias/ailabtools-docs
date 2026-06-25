@@ -1,0 +1,29 @@
+---
+sidebarTitle: "API"
+title: "AI Square Face Filter API"
+description: "AI Square Face Filter API turns portraits into rounded-square cartoon avatars while preserving identity and facial features."
+openapi: "POST /api/portrait/effects/ai-square-face-filter"
+---
+
+import AsyncApiNotice from "/snippets/async-api-notice.mdx";
+
+<AsyncApiNotice />
+
+| Field    | Type     | Description        |
+|:---------|:---------|:-------------------|
+| `data`   | `object` | Final result data. |
+| +`image` | `string` | Result image URL.  |
+
+```json
+{
+  "data": {
+    "image": ""
+  }
+}
+```
+
+<Tip>
+  `image` is temporary and remains valid for 24 hours. Download the file to your own storage before the URL expires if you need long-term storage.
+</Tip>
+
+## Submit Task
