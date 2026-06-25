@@ -4382,7 +4382,7 @@
                     "description": "Source image. \n- Image format: `JPEG` `JPG` `PNG` `WEBP` \n- Image size: No more than 10 MB. \n- Image resolution: Less than 4096x4096px.",
                     "format": "binary"
                   },
-                  "beard": {
+                  "eyeshadow_style": {
                     "type": "string",
                     "description": "Built-in eyeshadow preset. Provide this field or `image_template`. If both are provided, `eyeshadow_style` takes precedence. See [Supported eyeshadow styles](/docs/ai-portrait/editing/ai-eyeshadow/api#eyeshadow_style).",
                     "enum": [
