@@ -188,6 +188,7 @@
             "icon":  "rocket",
             "pages": [
               "docs/get-api-key",
+              "docs/official-sdks",
               "docs/response-description"
             ]
           },
