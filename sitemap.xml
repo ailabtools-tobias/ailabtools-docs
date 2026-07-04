@@ -34,6 +34,12 @@
     <priority>1.0</priority>
   </url>
   <url>
+    <loc>https://www.ailabtools.com/docs/openapi.json</loc>
+    <lastmod>2026-07-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://www.ailabtools.com/docs/response-description</loc>
     <lastmod>2026-07-03</lastmod>
     <changefreq>weekly</changefreq>

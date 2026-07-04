@@ -11,119 +11,96 @@ description: "Install official AILabTools SDKs or use direct HTTP to integrate A
 
 ## Integration Options
 
-| Option | Best for | Start here |
-|:-------|:---------|:-----------|
-| Official SDK | Supported runtimes that benefit from typed clients, file helpers, SDK method names, and async polling helpers. | Install the package below, then open the [SDK API index](https://github.com/ailabtools/ailabtools-sdk/blob/main/docs/README.md#api-index). |
-| Direct HTTP | Unsupported runtimes, custom HTTP clients, or integrations that need full request control. | Open the API reference page for the endpoint, such as [Universal Background Removal](/docs/ai-cutout/general/universal-background-removal/api). |
+| Integration | Guidance |
+|:------------|:---------|
+| [AILabTools Multi-language SDKs](https://github.com/ailabtools/ailabtools-sdk) | Use an official SDK for supported runtimes. |
+| [AILabTools PHP SDK](https://github.com/ailabtools/ailabtools-php) | Use the Composer package for PHP applications. |
+| **Direct HTTP** | Call the API endpoints directly from your own HTTP client. |
 
 <Info>
 SDKs wrap the same public HTTP APIs documented on this site. Direct HTTP and SDK integrations use the same API key and the same underlying endpoints.
 </Info>
 
-<Tip>
-SDK methods may use language-native field names. The API reference remains the source of truth for field meaning, valid values, billing, and response structure.
-</Tip>
-
-## Available SDKs
-
-Installable SDK packages and documentation links:
-
-<Info>
-Only published SDKs are listed. For other languages or runtimes, use the direct HTTP API.
-</Info>
-
-| Platform | Package | Notes | Docs |
-|:---------|:--------|:------|:------------------|
-| Node.js / TypeScript | [npm](https://www.npmjs.com/package/ailabtools): `ailabtools` | Requires Node.js 18 or later. | [Examples](https://github.com/ailabtools/ailabtools-sdk/tree/main/examples/node) · [SDK README](https://github.com/ailabtools/ailabtools-sdk/tree/main/packages/node) |
-| Python (async) | [PyPI](https://pypi.org/project/ailabtools-sdk/): `ailabtools-sdk` | Requires Python 3.8 or later. Import as `ailabtools`. | [Examples](https://github.com/ailabtools/ailabtools-sdk/tree/main/examples/python) · [SDK README](https://github.com/ailabtools/ailabtools-sdk/tree/main/packages/python) |
-| Go | [pkg.go.dev](https://pkg.go.dev/github.com/ailabtools/ailabtools-sdk/packages/go): `github.com/ailabtools/ailabtools-sdk/packages/go` | Use package docs for Go type names. | [Examples](https://github.com/ailabtools/ailabtools-sdk/tree/main/examples/go) · [Package docs](https://pkg.go.dev/github.com/ailabtools/ailabtools-sdk/packages/go) |
-| Dart / Flutter | [pub.dev](https://pub.dev/packages/ailabtools): `ailabtools` | Pure Dart package. Use `dart pub` or `flutter pub`. | [Examples](https://github.com/ailabtools/ailabtools-sdk/tree/main/examples/dart) · [SDK README](https://github.com/ailabtools/ailabtools-sdk/tree/main/packages/dart) |
-| PHP | [Packagist](https://packagist.org/packages/ailabtools/ailabtools): `ailabtools/ailabtools` | Requires PHP 8.1 or later and Composer. | [Examples](https://github.com/ailabtools/ailabtools-php/tree/main/examples) · [SDK README](https://github.com/ailabtools/ailabtools-php) |
-| Ruby | [RubyGems](https://rubygems.org/gems/ailabtools): `ailabtools` | Requires Ruby 2.6 or later. | [Examples](https://github.com/ailabtools/ailabtools-sdk/tree/main/examples/ruby) · [SDK README](https://github.com/ailabtools/ailabtools-sdk/tree/main/packages/ruby) |
-| Rust | [crates.io](https://crates.io/crates/ailabtools): `ailabtools` | Requires Rust 1.70 or later. | [Examples](https://github.com/ailabtools/ailabtools-sdk/tree/main/examples/rust) · [SDK README](https://github.com/ailabtools/ailabtools-sdk/tree/main/packages/rust) |
-| Java | [Maven Central](https://central.sonatype.com/artifact/com.ailabtools/ailabtools-sdk): `com.ailabtools:ailabtools-sdk` | Requires Java 11 or later. | [Examples](https://github.com/ailabtools/ailabtools-sdk/tree/main/examples/java) · [SDK README](https://github.com/ailabtools/ailabtools-sdk/tree/main/packages/java) |
-| Swift | Swift Package Manager / [CocoaPods](https://cocoapods.org/pods/AILabTools): `AILabTools` | Use SwiftPM or CocoaPods. | [Examples](https://github.com/ailabtools/ailabtools-sdk/tree/main/examples/swift) · [SDK README](https://github.com/ailabtools/ailabtools-sdk/tree/main/packages/swift) |
-
 ## Install
 
-Choose the package manager used by your project.
-
-<Info>
-Multiple commands in the same tab install the same SDK package. They are package-manager alternatives, not separate SDKs.
-</Info>
+Select your runtime, then use the package manager already used by your project.
 
 <Tip>
-Unversioned commands install the latest release available at install time. Versioned snippets show a verified release; check the linked registry page before pinning or upgrading in production.
+Unversioned commands install the latest published release. Versioned snippets are pinning examples; check the linked registry before copying a fixed version into production.
 </Tip>
 
 <Tabs>
   <Tab title="Node.js">
 
-The SDK runtime requirement is Node.js 18 or later.
+Requires Node.js 18 or later.
 
-<Warning>
-`bun add` is listed as a package installation command. Test separately before treating the Bun runtime itself as a supported production runtime.
-</Warning>
+The package is published on npm. npm, pnpm, Yarn, and Bun install the same `ailabtools` package.
 
-### npm
+#### <Icon icon="npm" iconType="brands" /> npm: [`ailabtools`](https://www.npmjs.com/package/ailabtools)
 
 ```bash
 npm install ailabtools
 ```
 
-### pnpm
+#### <Icon icon="boxes-stacked" /> pnpm: [`ailabtools`](https://www.npmjs.com/package/ailabtools)
 
 ```bash
 pnpm add ailabtools
 ```
 
-### Yarn
+#### <Icon icon="yarn" iconType="brands" /> Yarn: [`ailabtools`](https://yarnpkg.com/package?name=ailabtools)
 
 ```bash
 yarn add ailabtools
 ```
 
-### Bun
+#### <Icon icon="bolt" /> Bun: [`ailabtools`](https://www.npmjs.com/package/ailabtools)
 
 ```bash
 bun add ailabtools
 ```
 
+<Warning>
+`bun add` only covers dependency installation. Validate your application before using Bun as the production runtime for the Node.js SDK.
+</Warning>
+
   </Tab>
   <Tab title="Python">
 
-Use environment-level or project-level commands according to how your Python project is managed.
+Requires Python 3.8 or later. Install `ailabtools-sdk`, then import it as `ailabtools`.
 
-### pip
+Use `pip` or `uv pip` for environment-level installs. Use `uv add` or `poetry add` for project dependencies.
+
+#### <Icon icon="python" iconType="brands" /> pip: [`ailabtools-sdk`](https://pypi.org/project/ailabtools-sdk/)
 
 ```bash
 pip install ailabtools-sdk
 ```
 
-### uv environment
+#### <Icon icon="terminal" /> uv environment: [`ailabtools-sdk`](https://pypi.org/project/ailabtools-sdk/)
 
 ```bash
 uv pip install ailabtools-sdk
 ```
 
-### uv project
+#### <Icon icon="folder-tree" /> uv project: [`ailabtools-sdk`](https://pypi.org/project/ailabtools-sdk/)
 
 ```bash
 uv add ailabtools-sdk
 ```
 
-### Poetry
+#### <Icon icon="feather" /> Poetry: [`ailabtools-sdk`](https://pypi.org/project/ailabtools-sdk/)
 
 ```bash
 poetry add ailabtools-sdk
 ```
 
-<Info>
-The PyPI package name is `ailabtools-sdk`, while the Python import package name is `ailabtools`.
-</Info>
-
   </Tab>
   <Tab title="Go">
+
+Use the module path shown on pkg.go.dev for the current Go package and exported type names.
+
+#### <Icon icon="code" /> go get: [`github.com/ailabtools/ailabtools-sdk/packages/go`](https://pkg.go.dev/github.com/ailabtools/ailabtools-sdk/packages/go)
 
 ```bash
 go get github.com/ailabtools/ailabtools-sdk/packages/go
@@ -132,13 +109,15 @@ go get github.com/ailabtools/ailabtools-sdk/packages/go
   </Tab>
   <Tab title="Dart / Flutter">
 
-### Flutter
+Requires Dart SDK `>=3.0.0 <4.0.0`. This is a pure Dart package. Use `flutter pub` for Flutter apps or `dart pub` for Dart packages and CLIs.
+
+#### <Icon icon="mobile-screen-button" /> Flutter: [`ailabtools`](https://pub.dev/packages/ailabtools)
 
 ```bash
 flutter pub add ailabtools
 ```
 
-### Dart
+#### <Icon icon="code" /> Dart: [`ailabtools`](https://pub.dev/packages/ailabtools)
 
 ```bash
 dart pub add ailabtools
@@ -147,7 +126,9 @@ dart pub add ailabtools
   </Tab>
   <Tab title="PHP">
 
-### Composer
+Requires PHP 8.1 or later and Composer.
+
+#### <Icon icon="php" iconType="brands" /> Composer: [`ailabtools/ailabtools`](https://packagist.org/packages/ailabtools/ailabtools)
 
 ```bash
 composer require ailabtools/ailabtools
@@ -166,22 +147,26 @@ Or add the package to `composer.json`:
   </Tab>
   <Tab title="Ruby">
 
-### RubyGems
+Requires Ruby 2.6 or later. Use Bundler for applications, or RubyGems for direct installation.
 
-```bash
-gem install ailabtools
-```
-
-### Bundler
+#### <Icon icon="gem" /> Bundler: [`ailabtools`](https://rubygems.org/gems/ailabtools)
 
 ```ruby
 gem "ailabtools", "~> 0.5.4"
 ```
 
+#### <Icon icon="gem" /> RubyGems: [`ailabtools`](https://rubygems.org/gems/ailabtools)
+
+```bash
+gem install ailabtools
+```
+
   </Tab>
   <Tab title="Rust">
 
-### Cargo
+Requires Rust 1.70 or later. Use Cargo to add the crate to your project.
+
+#### <Icon icon="rust" iconType="brands" /> Cargo: [`ailabtools`](https://docs.rs/crate/ailabtools/latest)
 
 ```bash
 cargo add ailabtools
@@ -197,9 +182,9 @@ ailabtools = "0.5.4"
   </Tab>
   <Tab title="Java">
 
-Use the latest version shown on [Maven Central](https://central.sonatype.com/artifact/com.ailabtools/ailabtools-sdk). Maven and Gradle both consume the same artifact.
+Requires Java 11 or later. Choose Maven or Gradle according to your build system.
 
-### Maven
+#### <Icon icon="java" iconType="brands" /> Maven: [`com.ailabtools:ailabtools-sdk`](https://central.sonatype.com/artifact/com.ailabtools/ailabtools-sdk)
 
 ```xml
 <dependency>
@@ -209,7 +194,7 @@ Use the latest version shown on [Maven Central](https://central.sonatype.com/art
 </dependency>
 ```
 
-### Gradle
+#### <Icon icon="diagram-project" /> Gradle: [`com.ailabtools:ailabtools-sdk`](https://central.sonatype.com/artifact/com.ailabtools/ailabtools-sdk)
 
 Groovy DSL:
 
@@ -226,9 +211,9 @@ implementation("com.ailabtools:ailabtools-sdk:0.5.4")
   </Tab>
   <Tab title="Swift">
 
-Use the latest Git tag for Swift Package Manager or the latest version shown on [CocoaPods](https://cocoapods.org/pods/AILabTools).
+Requires iOS 13.0, macOS 10.15, tvOS 13.0, or watchOS 6.0 or later. Use Swift Package Manager or CocoaPods according to your Apple platform project setup.
 
-Swift Package Manager:
+#### <Icon icon="swift" iconType="brands" /> Swift Package Manager: [`ailabtools/ailabtools-sdk`](https://github.com/ailabtools/ailabtools-sdk)
 
 ```swift
 .package(
@@ -237,7 +222,7 @@ Swift Package Manager:
 )
 ```
 
-CocoaPods:
+#### <Icon icon="seedling" /> CocoaPods: [`AILabTools`](https://cocoapods.org/pods/AILabTools)
 
 ```ruby
 pod 'AILabTools', '~> 0.5.4'
@@ -272,11 +257,12 @@ For public browser, desktop, or mobile applications, do not ship your AILabTools
 | File uploads | Use SDK-supported file helpers such as file paths, bytes, buffers, streams, or language-specific file wrappers. |
 | Async tasks | If a response contains `task_id`, use the SDK polling helper where available or call [Querying Async Task Results](/docs/ai-common/async-task-results/api). |
 | Result URLs | Result image URLs may be temporary. Download and store files promptly if your application needs long-term access. |
-| Errors | Log `request_id` and `log_id` when handling API errors. These IDs help support locate failed requests. |
+| Errors | Log `request_id` and `log_id` when handling API errors. These IDs help the support team locate failed requests. |
 
 ## Related Resources
 
 - [Get API Key](/docs/get-api-key)
+- [OpenAPI JSON](/docs/openapi.json)
 - [Response Description](/docs/response-description)
 - [File Storage Policy](/docs/file-storage-policy)
 - [Billing Introduction](/docs/billing-introduction)

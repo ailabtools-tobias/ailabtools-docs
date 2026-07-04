@@ -998,7 +998,7 @@
       {
         "dropdown": "API Reference",
         "icon":     "code",
-        "openapi":  "openapi.json"
+        "openapi":  "docs/openapi.json"
       }
     ]
   }
