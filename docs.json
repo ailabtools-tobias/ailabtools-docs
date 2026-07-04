@@ -155,10 +155,10 @@
   "mobileOptimized": true,
   "customCSS":       [],
   "logo":            {
-    "light": "/images/logo-black.png",
-    "dark":  "/images/logo-white.png"
+    "light": "/assets/images/light.webp",
+    "dark":  "/assets/images/dark.webp"
   },
-  "favicon":         "/images/logo-bg.webp",
+  "favicon":         "/favicon.ico",
   "colors":          {
     "primary": "#f61b5b",
     "light":   "#f61b5b",
