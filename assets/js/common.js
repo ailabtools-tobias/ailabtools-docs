@@ -1,54 +1,22 @@
-document.addEventListener('DOMContentLoaded', function () {
+function publicRunWhenReady(callback) {
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', callback, {once: true});
+    return;
+  }
+
+  callback();
+}
+
+function publicRemoveBaseTag() {
   const baseTag = document.querySelector('base');
   if (baseTag) {
     baseTag.remove();
   }
-
-  publicRemoveMintlifyLinks(document);
-
-  const observer = new MutationObserver(function (mutations) {
-    mutations.forEach(function (mutation) {
-      mutation.addedNodes.forEach(function (node) {
-        if (node.nodeType !== Node.ELEMENT_NODE) {
-          return;
-        }
-
-        if (node.matches && node.matches('a[href]')) {
-          const rawHref = node.getAttribute('href') || '';
-          const resolvedHref = node.href || '';
-
-          if (!rawHref.includes('mintlify.com') && !resolvedHref.includes('mintlify.com')) {
-            return;
-          }
-
-          node.remove();
-          return;
-        }
-
-        publicRemoveMintlifyLinks(node);
-      });
-    });
-  });
-
-  observer.observe(document.documentElement, {
-    childList: true,
-    subtree:    true
-  });
-});
-
-function publicRemoveMintlifyLinks(root) {
-  const searchRoot = root && root.querySelectorAll ? root : document;
-  const links = searchRoot.querySelectorAll('a[href]');
-
-  links.forEach(function (link) {
-    const rawHref = link.getAttribute('href') || '';
-    const resolvedHref = link.href || '';
-
-    if (rawHref.includes('mintlify.com') || resolvedHref.includes('mintlify.com')) {
-      link.remove();
-    }
-  });
 }
+
+publicRunWhenReady(function () {
+  publicRemoveBaseTag();
+});
 
 function publicGetCookie(name) {
   var reg = new RegExp("(^| )" + name + "=([^;]*)(;|$)");

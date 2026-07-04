@@ -54,6 +54,10 @@
     grid-gap: .5rem;
 }
 
+#footer div:has(> div > a[href*="mintlify.com"]) {
+    display: none !important;
+}
+
 @media screen and (max-width: 1680px) {
     .cm-word-break-break-all {
         word-break: break-all;
