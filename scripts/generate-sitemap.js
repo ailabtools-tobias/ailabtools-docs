@@ -31,6 +31,24 @@ function collectPages(node) {
   return [];
 }
 
+function collectOpenApiSpecs(node) {
+  if (!node || typeof node !== "object") {
+    return [];
+  }
+
+  if (Array.isArray(node)) {
+    return node.flatMap(collectOpenApiSpecs);
+  }
+
+  const specs = [];
+
+  if (typeof node.openapi === "string") {
+    specs.push(node.openapi);
+  }
+
+  return specs.concat(Object.values(node).flatMap(collectOpenApiSpecs));
+}
+
 function escapeXml(value) {
   return String(value)
     .replace(/&/g, "&amp;")
@@ -48,6 +66,14 @@ function getBaseUrl(docs) {
   }
 
   return baseUrl.replace(/\/$/, "");
+}
+
+function toAbsoluteUrl(baseUrl, path) {
+  if (/^https?:\/\//.test(path)) {
+    return path;
+  }
+
+  return `${baseUrl}/${path.replace(/^\/+/, "")}`;
 }
 
 function buildSitemap(urls) {
@@ -80,8 +106,9 @@ function main() {
   }
 
   const pages = collectPages(dropdown.groups || []);
-  const uniquePages = [...new Set(pages)];
-  const urls = uniquePages.map((page) => `${baseUrl}/${page.replace(/^\/+/, "")}`);
+  const openApiSpecs = collectOpenApiSpecs(docs.navigation?.dropdowns || []);
+  const urls = [...new Set([...pages, ...openApiSpecs])]
+    .map((path) => toAbsoluteUrl(baseUrl, path));
 
   fs.writeFileSync(OUTPUT_PATH, buildSitemap(urls));
   console.log(`Generated ${OUTPUT_PATH} with ${urls.length} URLs.`);
