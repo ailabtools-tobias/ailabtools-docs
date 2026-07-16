@@ -69,14 +69,6 @@
         "header": "Popular Recommendations",
         "items":  [
           {
-            "label": "AI Breast Expansion",
-            "href":  "https://www.ailabtools.com/docs/ai-portrait/editing/ai-breast-expansion"
-          },
-          {
-            "label": "AI Face Swap",
-            "href":  "https://www.ailabtools.com/docs/ai-portrait/editing/ai-face-swap"
-          },
-          {
             "label": "Change Facial Expressions",
             "href":  "https://www.ailabtools.com/docs/ai-portrait/effects/emotion-editor-advanced"
           },
@@ -403,22 +395,6 @@
                 "icon":  "pen-to-square",
                 "pages": [
                   {
-                    "group": "AI Breast Expansion",
-                    "icon":  "expand",
-                    "pages": [
-                      "docs/ai-portrait/editing/ai-breast-expansion",
-                      "docs/ai-portrait/editing/ai-breast-expansion/api"
-                    ]
-                  },
-                  {
-                    "group": "AI Face Swap",
-                    "icon":  "arrows-rotate",
-                    "pages": [
-                      "docs/ai-portrait/editing/ai-face-swap",
-                      "docs/ai-portrait/editing/ai-face-swap/api"
-                    ]
-                  },
-                  {
                     "group": "Try-on Clothes",
                     "icon":  "shirt",
                     "pages": [
@@ -507,14 +483,6 @@
                     ]
                   },
                   {
-                    "group": "AI Butt Enhancement",
-                    "icon":  "up-right-and-down-left-from-center",
-                    "pages": [
-                      "docs/ai-portrait/editing/ai-butt-enhancement",
-                      "docs/ai-portrait/editing/ai-butt-enhancement/api"
-                    ]
-                  },
-                  {
                     "group": "AI Waist Slimming",
                     "icon":  "down-left-and-up-right-to-center",
                     "pages": [
@@ -528,14 +496,6 @@
                     "pages": [
                       "docs/ai-portrait/editing/ai-lip-enhancement",
                       "docs/ai-portrait/editing/ai-lip-enhancement/api"
-                    ]
-                  },
-                  {
-                    "group": "AI Fat Filter",
-                    "icon":  "weight-scale",
-                    "pages": [
-                      "docs/ai-portrait/editing/ai-fat-filter",
-                      "docs/ai-portrait/editing/ai-fat-filter/api"
                     ]
                   },
                   {
