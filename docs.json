@@ -283,14 +283,6 @@
                     ]
                   },
                   {
-                    "group": "Change Facial Expressions",
-                    "icon":  "face-laugh",
-                    "pages": [
-                      "docs/ai-portrait/effects/emotion-editor",
-                      "docs/ai-portrait/effects/emotion-editor/api"
-                    ]
-                  },
-                  {
                     "group": "Change Facial Expressions Advanced",
                     "icon":  "face-laugh-beam",
                     "pages": [
@@ -723,14 +715,6 @@
                     "pages": [
                       "docs/ai-image/editing/remove-objects",
                       "docs/ai-image/editing/remove-objects/api"
-                    ]
-                  },
-                  {
-                    "group": "Remove Objects Advanced",
-                    "icon":  "eraser",
-                    "pages": [
-                      "docs/ai-image/editing/remove-objects-advanced",
-                      "docs/ai-image/editing/remove-objects-advanced/api"
                     ]
                   },
                   {

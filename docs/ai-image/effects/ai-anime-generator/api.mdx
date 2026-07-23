@@ -5,119 +5,93 @@ description: "AI Cartoon Generator API turns photos into cartoon, anime, and sty
 openapi: "POST /api/image/effects/ai-anime-generator"
 ---
 
-## Request
+import AsyncApiNotice from "/snippets/async-api-notice.mdx";
 
-- **URL**: `https://www.ailabapi.com/api/image/effects/ai-anime-generator`
-- **Method**: `POST`
-- **Content-Type**: `multipart/form-data`
+export const effects = [
+  { value: "3d_fairytale", image: "https://ai-resource.ailabtools.com/ai-anime-generator/effects/3d_fairytale.webp" },
+  { value: "ancient_chinese", image: "https://ai-resource.ailabtools.com/ai-anime-generator/effects/ancient_chinese.webp" },
+  { value: "anime_genz", image: "https://ai-resource.ailabtools.com/ai-anime-generator/effects/anime_genz.webp" },
+  { value: "apocalyptic_comic", image: "https://ai-resource.ailabtools.com/ai-anime-generator/effects/apocalyptic_comic.webp" },
+  { value: "clay_cartoon", image: "https://ai-resource.ailabtools.com/ai-anime-generator/effects/clay_cartoon.webp" },
+  { value: "colored_pencil", image: "https://ai-resource.ailabtools.com/ai-anime-generator/effects/colored_pencil.webp" },
+  { value: "colorful_cartoon", image: "https://ai-resource.ailabtools.com/ai-anime-generator/effects/colorful_cartoon.webp" },
+  { value: "cyberpunk_anime", image: "https://ai-resource.ailabtools.com/ai-anime-generator/effects/cyberpunk_anime.webp" },
+  { value: "dark_fantasy", image: "https://ai-resource.ailabtools.com/ai-anime-generator/effects/dark_fantasy.webp" },
+  { value: "dunhuang_comic", image: "https://ai-resource.ailabtools.com/ai-anime-generator/effects/dunhuang_comic.webp" },
+  { value: "elegant_chinese", image: "https://ai-resource.ailabtools.com/ai-anime-generator/effects/elegant_chinese.webp" },
+  { value: "elf_fantasy", image: "https://ai-resource.ailabtools.com/ai-anime-generator/effects/elf_fantasy.webp" },
+  { value: "epic_battle_comic", image: "https://ai-resource.ailabtools.com/ai-anime-generator/effects/epic_battle_comic.webp" },
+  { value: "fairy_tale_princess", image: "https://ai-resource.ailabtools.com/ai-anime-generator/effects/fairy_tale_princess.webp" },
+  { value: "fashion_illustration", image: "https://ai-resource.ailabtools.com/ai-anime-generator/effects/fashion_illustration.webp" },
+  { value: "fantasy_anime", image: "https://ai-resource.ailabtools.com/ai-anime-generator/effects/fantasy_anime.webp" },
+  { value: "felt_cartoon", image: "https://ai-resource.ailabtools.com/ai-anime-generator/effects/felt_cartoon.webp" },
+  { value: "fresh_illustration", image: "https://ai-resource.ailabtools.com/ai-anime-generator/effects/fresh_illustration.webp" },
+  { value: "future_technology", image: "https://ai-resource.ailabtools.com/ai-anime-generator/effects/future_technology.webp" },
+  { value: "gongbi_comic", image: "https://ai-resource.ailabtools.com/ai-anime-generator/effects/gongbi_comic.webp" },
+  { value: "graffiti_comic", image: "https://ai-resource.ailabtools.com/ai-anime-generator/effects/graffiti_comic.webp" },
+  { value: "idol_anime", image: "https://ai-resource.ailabtools.com/ai-anime-generator/effects/idol_anime.webp" },
+  { value: "ink_comic", image: "https://ai-resource.ailabtools.com/ai-anime-generator/effects/ink_comic.webp" },
+  { value: "ink_line_art", image: "https://ai-resource.ailabtools.com/ai-anime-generator/effects/ink_line_art.webp" },
+  { value: "korean_webtoon", image: "https://ai-resource.ailabtools.com/ai-anime-generator/effects/korean_webtoon.webp" },
+  { value: "low_poly_cartoon", image: "https://ai-resource.ailabtools.com/ai-anime-generator/effects/low_poly_cartoon.webp" },
+  { value: "magical_girl", image: "https://ai-resource.ailabtools.com/ai-anime-generator/effects/magical_girl.webp" },
+  { value: "mecha_anime", image: "https://ai-resource.ailabtools.com/ai-anime-generator/effects/mecha_anime.webp" },
+  { value: "noir_comic", image: "https://ai-resource.ailabtools.com/ai-anime-generator/effects/noir_comic.webp" },
+  { value: "oil_paint_comic", image: "https://ai-resource.ailabtools.com/ai-anime-generator/effects/oil_paint_comic.webp" },
+  { value: "paper_cut_cartoon", image: "https://ai-resource.ailabtools.com/ai-anime-generator/effects/paper_cut_cartoon.webp" },
+  { value: "paper_cut_comic", image: "https://ai-resource.ailabtools.com/ai-anime-generator/effects/paper_cut_comic.webp" },
+  { value: "pastel_comic", image: "https://ai-resource.ailabtools.com/ai-anime-generator/effects/pastel_comic.webp" },
+  { value: "pixel_art", image: "https://ai-resource.ailabtools.com/ai-anime-generator/effects/pixel_art.webp" },
+  { value: "pop_art", image: "https://ai-resource.ailabtools.com/ai-anime-generator/effects/pop_art.webp" },
+  { value: "retro_anime_90s", image: "https://ai-resource.ailabtools.com/ai-anime-generator/effects/retro_anime_90s.webp" },
+  { value: "retro_comic", image: "https://ai-resource.ailabtools.com/ai-anime-generator/effects/retro_comic.webp" },
+  { value: "romantic_webtoon", image: "https://ai-resource.ailabtools.com/ai-anime-generator/effects/romantic_webtoon.webp" },
+  { value: "rubber_hose", image: "https://ai-resource.ailabtools.com/ai-anime-generator/effects/rubber_hose.webp" },
+  { value: "seinen_manga", image: "https://ai-resource.ailabtools.com/ai-anime-generator/effects/seinen_manga.webp" },
+  { value: "shojo_manga", image: "https://ai-resource.ailabtools.com/ai-anime-generator/effects/shojo_manga.webp" },
+  { value: "shonen_manga", image: "https://ai-resource.ailabtools.com/ai-anime-generator/effects/shonen_manga.webp" },
+  { value: "space_opera", image: "https://ai-resource.ailabtools.com/ai-anime-generator/effects/space_opera.webp" },
+  { value: "sports_manga", image: "https://ai-resource.ailabtools.com/ai-anime-generator/effects/sports_manga.webp" },
+  { value: "steampunk_comic", image: "https://ai-resource.ailabtools.com/ai-anime-generator/effects/steampunk_comic.webp" },
+  { value: "sticker_cartoon", image: "https://ai-resource.ailabtools.com/ai-anime-generator/effects/sticker_cartoon.webp" },
+  { value: "storybook", image: "https://ai-resource.ailabtools.com/ai-anime-generator/effects/storybook.webp" },
+  { value: "superhero_comic", image: "https://ai-resource.ailabtools.com/ai-anime-generator/effects/superhero_comic.webp" },
+  { value: "vampire_comic", image: "https://ai-resource.ailabtools.com/ai-anime-generator/effects/vampire_comic.webp" },
+  { value: "watercolor_anime", image: "https://ai-resource.ailabtools.com/ai-anime-generator/effects/watercolor_anime.webp" },
+];
 
-### Image requirements
+<AsyncApiNotice/>
 
-- **Image format**: `JPEG` `PNG` `JPG` `BMP` `WEBP`
-- **Image size**: No more than 10 MB.
-- The input image dimensions should be greater than or equal to 256x256 pixels and less than or equal to 5760x3240 pixels. The short side of the output image will be 1536 pixels. If the ratio of the long side to the short side of the input image is less than or equal to 1.5:1, the original aspect ratio will be maintained. If this ratio is greater than 1.5:1, adaptive cropping will be applied to achieve an output aspect ratio of 1.5:1.
-
-### Headers
-
-| Field              | Required | Type     | Description                                        |
-|:-------------------|:---------|:---------|:---------------------------------------------------|
-| `ailabapi-api-key` | YES      | `string` | Application API KEY. [Get API KEY](/docs/get-api-key) |
-
-### Body
-
-| Field       | Required | Type      | Scope                                                                                                                | Default      | Description                                                                                                                                                                                                                                                                                                                                              |
-|:------------|:---------|:----------|:---------------------------------------------------------------------------------------------------------------------|:-------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `task_type` | YES      | `string`  | ``async`` | `async`      | ``async`: Asynchronous tasks.` |
-| `image`     | YES      | `file`    |                                                                                                                      |              |                                                                                                                                                                                                                                                                                                                                                          |
-| `index`     | YES      | `integer` | ``0``, ``1``, ``2``, ``3``, ``4``, ``5``, ``6``, ``7``, ``8`` | ``0`` | ``0`: Vintage Comic.`, ``1`: 3D Fairy Tale.`, ``2`: Two-dimensional (2D).`, ``3`: Refreshing and Elegant.`, ``4`: Future Technology.`, ``5`: Traditional Chinese Painting Style.`, ``6`: General in a Hundred Battles.`, ``7`: Colorful Cartoon.`, ``8`: Graceful Chinese Style.` |
-
-## Response
-<Warning>
-**Response Field Handling Flow**
-
-1. **Handle `Public Response Fields`**
-
-   Parse and validate the `Public Response Fields`, checking the status code or response message to ensure the request is successful and error-free.
-
-2. **Handle `Business Response Fields`**
-
-   If the `Public Response Fields` are valid and error-free, proceed with processing the business logic in the `Business Response Fields`.
-</Warning>
-### Public Response Fields
-
-<a href="/docs/response-description" target="_blank">Viewing Public Response Fields and Error Codes</a>
-
-### Business Response Fields
-
-| Field       | Type     | Scope            | Description                                                                                                                                   |
-|:------------|:---------|:-----------------|:----------------------------------------------------------------------------------------------------------------------------------------------|
-| `task_type` | `string` | ``async`` | Task Type. ``async`: Asynchronous tasks.`                                                                                              |
-| `task_id`   | `string` |                  | Asynchronous task ID. <br/>**Please use this field when calling the [Querying Async Task Results](/docs/ai-common/async-task-results/api) API.** |
-
-### Response Example
-
-```json
-{
-  "request_id":     "",
-  "log_id":         "",
-  "error_code":     0,
-  "error_msg":      "",
-  "error_detail":   {
-    "status_code":  200,
-    "code":         "",
-    "code_message": "",
-    "message":      ""
-  },
-  "task_type":      "",
-  "task_id":        ""
-}
-```
-<Tip>
-This API is asynchronous, please keep `task_id` and call [`Querying Async Task Results`](ai-common/async-task-results/api) to get the final results.
-
-Asynchronous task results are valid for 24 hours. It is recommended that asynchronous task results be queried every 5 seconds.
-</Tip>
-## `Querying Async Task Results` Response
-<Warning>
-**Response Field Handling Flow**
-
-1. **Handle `Public Response Fields`**
-
-   Parse and validate the `Public Response Fields`, checking the status code or response message to ensure the request is successful and error-free.
-
-2. **Handle `Business Response Fields`**
-
-   If the `Public Response Fields` are valid and error-free, proceed with processing the business logic in the `Business Response Fields`.
-</Warning>
-### Public Response Fields
-
-<a href="/docs/response-description" target="_blank">Viewing Public Response Fields and Error Codes</a>
-
-### Business Response Fields
-
-| Field         | Type      | Scope                                  | Description                                                                                                                                 |
-|:--------------|:----------|:---------------------------------------|:--------------------------------------------------------------------------------------------------------------------------------------------|
-| `task_status` | `integer` | ``0``, ``1``, ``2`` | Asynchronous task status. ``0`: The task is queued.` ``1`: Asynchronous processing.` ``2`: Processing was successful.` |
-| `data`        | `object`  |                                        | The content of the result data returned.                                                                                                    |
-| +`result_url` | `string`  |                                        | Result URL address.                                                                                                                         |
-<Tip>
-The URL address is a temporary address, valid for 24 hours, and will not be accessible after it expires. If you need to save the file for a long time or permanently, please visit the URL address within 24 hours and download the file to your own storage space.
-</Tip>
-### Response Example
+| Field         | Type     | Description        |
+|:--------------|:---------|:-------------------|
+| `data`        | `object` | Final result data. |
+| +`result_url` | `array`  | Result image URL.  |
 
 ```json
 {
-  "error_code":     0,
-  "error_msg":      "",
-  "error_detail":   {
-    "status_code":  200,
-    "code":         "",
-    "code_message": "",
-    "message":      ""
-  },
-  "task_status":    0,
-  "data":           {
+  "data": {
     "result_url": ""
   }
 }
 ```
+
+<Tip>
+  All result URLs are temporarily available and will expire after 24 hours.
+</Tip>
+
+## Submit Task
+
+### `effect`
+
+The following enum values are supported for `effect`.
+
+<Expandable title="Expressions">
+  <div className="mt-2 grid grid-cols-2 lg:grid-cols-4 align-center gap-2">
+    {effects.map((item) => (
+      <div key={item.value} className="rounded-xl">
+        <img className="w-full mt-0 mb-2 aspect-square object-contain rounded-xl" src={item.image} alt={item.value} />
+        <code className="block break-all text-center text-xs">{item.value}</code>
+      </div>
+    ))}
+  </div>
+</Expandable>
