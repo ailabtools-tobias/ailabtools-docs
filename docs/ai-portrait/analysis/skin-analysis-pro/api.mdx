@@ -1072,29 +1072,29 @@ For drawing on areas such as dark circles and eye bags, use the following fields
 
 It includes a total score and 12 parameters. You can directly assess the level of each dimension based on these parameters.
 
-| Field                        | Type      | Scope    | Description                                                                     |
-|:-----------------------------|:----------|:---------|:--------------------------------------------------------------------------------|
-| +`score_info`                | `object`  |          | Score. [Degree & Score](ai-portrait/analysis/skin-analysis-pro/degree-score) |
-| ++`dark_circle_score`        | `integer` | [0, 100] | Dark Circles Total Score                                                        |
-| ++`skin_type_score`          | `integer` | [0, 100] | Skin Quality Score                                                              |
-| ++`wrinkle_score`            | `integer` | [0, 100] | Wrinkle Score                                                                   |
-| ++`oily_intensity_score`     | `integer` | [0, 100] | Oily Score                                                                      |
-| ++`pores_score`              | `integer` | [0, 100] | Total Pore Score                                                                |
-| ++`blackhead_score`          | `integer` | [0, 100] | Blackheads Score                                                                |
-| ++`acne_score`               | `integer` | [0, 100] | Acne Score                                                                      |
-| ++`sensitivity_score`        | `integer` | [0, 100] | Sensitivity Score                                                               |
-| ++`melanin_score`            | `integer` | [0, 100] | Melanin Score                                                                   |
-| ++`water_score`              | `integer` | [0, 100] | Skin Moisture Score                                                             |
-| ++`rough_score`              | `integer` | [0, 100] | Skin Roughness Score                                                            |
-| ++`total_score`              | `integer` | [0, 100] | Total Score                                                                     |
-| ++`pores_type_score`         | `object`  |          | Pore Score                                                                      |
-| +++`pores_forehead_score`    | `integer` | [0, 100] | Forehead Pore Score                                                             |
-| +++`pores_leftcheek_score`   | `integer` | [0, 100] | Left Cheek Pore Score                                                           |
-| +++`pores_rightcheek_score`  | `integer` | [0, 100] | Right Cheek Pore Score                                                          |
-| +++`pores_jaw_score`         | `integer` | [0, 100] | Jaw Pore Score                                                                  |
-| ++`dark_circle_type_score`   | `object`  |          | Dark Circles Score                                                              |
-| +++`left_dark_circle_score`  | `integer` | [0, 100] | Left Eye Dark Circle Score                                                      |
-| +++`right_dark_circle_score` | `integer` | [0, 100] | Right Eye Dark Circle Score                                                     |
+| Field                        | Type      | Scope     | Description                                                                  |
+|:-----------------------------|:----------|:----------|:-----------------------------------------------------------------------------|
+| +`score_info`                | `object`  |           | Score. [Degree & Score](ai-portrait/analysis/skin-analysis-pro/degree-score) |
+| ++`dark_circle_score`        | `integer` | [30, 100] | Dark Circles Total Score                                                     |
+| ++`skin_type_score`          | `integer` | [1, 100]  | Skin Quality Score                                                           |
+| ++`wrinkle_score`            | `integer` | [30, 100] | Wrinkle Score                                                                |
+| ++`oily_intensity_score`     | `integer` | [30, 100] | Oily Score                                                                   |
+| ++`pores_score`              | `integer` | [30, 100] | Total Pore Score                                                             |
+| ++`blackhead_score`          | `integer` | [30, 100] | Blackheads Score                                                             |
+| ++`acne_score`               | `integer` | [30, 100] | Acne Score                                                                   |
+| ++`sensitivity_score`        | `integer` | [30, 100] | Sensitivity Score                                                            |
+| ++`melanin_score`            | `integer` | [30, 100] | Melanin Score                                                                |
+| ++`water_score`              | `integer` | [30, 100] | Skin Moisture Score                                                          |
+| ++`rough_score`              | `integer` | [30, 100] | Skin Roughness Score                                                         |
+| ++`total_score`              | `integer` | [70, 100] | Total Score                                                                  |
+| ++`pores_type_score`         | `object`  |           | Pore Score                                                                   |
+| +++`pores_forehead_score`    | `integer` | [30, 100] | Forehead Pore Score                                                          |
+| +++`pores_leftcheek_score`   | `integer` | [30, 100] | Left Cheek Pore Score                                                        |
+| +++`pores_rightcheek_score`  | `integer` | [30, 100] | Right Cheek Pore Score                                                       |
+| +++`pores_jaw_score`         | `integer` | [30, 100] | Jaw Pore Score                                                               |
+| ++`dark_circle_type_score`   | `object`  |           | Dark Circles Score                                                           |
+| +++`left_dark_circle_score`  | `integer` | [30, 100] | Left Eye Dark Circle Score                                                   |
+| +++`right_dark_circle_score` | `integer` | [30, 100] | Right Eye Dark Circle Score                                                  |
 
 ##### Custom Module
 
