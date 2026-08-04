@@ -6484,37 +6484,44 @@
             "multipart/form-data": {
               "schema": {
                 "type": "object",
+                "required": [
+                  "image"
+                ],
                 "properties": {
                   "image": {
                     "type": "string",
                     "format": "binary",
-                    "description": "Main Image."
+                    "description": "Main Image. \n- Image format: `JPEG` `JPG` \n- Image size: No more than 8 MB. \n- Image resolution: Larger than 200x200px, smaller than 4096x4096px. \n- Minimum face pixel size: To ensure the effect, the minimum value of the face box (square) side length in the image should preferably be higher than 400px. \n- Face quality: The higher the face quality, the more accurate the skin analysis. Factors affecting face quality include: occlusion of facial features, blurred images, improper lighting (bright, dark, backlight), excessive face angle (yaw ≤ ±30°, pitch ≤ ±40° recommended), etc."
                   },
                   "left_side_image": {
                     "type": "string",
                     "format": "binary",
-                    "description": "Side face picture.(Left)"
+                    "description": "Side face picture.(Left) \n- Image format: `JPEG` `JPG` \n- Image size: No more than 8 MB. \n- Image resolution: Larger than 200x200px, smaller than 4096x4096px. \n- Minimum face pixel size: To ensure the effect, the minimum value of the face box (square) side length in the image should preferably be higher than 400px. \n- Face quality: The higher the face quality, the more accurate the skin analysis. Factors affecting face quality include: occlusion of facial features, blurred images, improper lighting (bright, dark, backlight), excessive face angle (yaw = 45°, pitch ≤ ±40° recommended), etc."
                   },
                   "right_side_image": {
                     "type": "string",
                     "format": "binary",
-                    "description": "Side face picture.(Right)"
+                    "description": "Side face picture.(Right) \n- Image format: `JPEG` `JPG` \n- Image size: No more than 8 MB. \n- Image resolution: Larger than 200x200px, smaller than 4096x4096px. \n- Minimum face pixel size: To ensure the effect, the minimum value of the face box (square) side length in the image should preferably be higher than 400px. \n- Face quality: The higher the face quality, the more accurate the skin analysis. Factors affecting face quality include: occlusion of facial features, blurred images, improper lighting (bright, dark, backlight), excessive face angle (yaw = 45°, pitch ≤ ±40° recommended), etc."
                   },
                   "return_maps": {
                     "type": "string",
-                    "description": "The type of skin problem detection mapping image to be returned. If the corresponding element parameter is passed in, the interface will return an image of the original size, which you can subsequently overlay with the original image to see the results. Use commas to separate multiple types."
+                    "example": "red_area,brown_area,texture_enhanced_pores,texture_enhanced_blackheads,texture_enhanced_oily_area,texture_enhanced_lines,water_area,rough_area,roi_outline_map,texture_enhanced_bw,right_roi_outline_map,left_roi_outline_map",
+                    "description": "Specifies the skin analysis map types to return. Multiple values can be provided as a comma-separated list. See [`return_maps`](/docs/ai-portrait/analysis/skin-analysis-pro/request#return_maps)."
                   },
                   "return_marks": {
                     "type": "string",
-                    "description": "The type of skin problem detection mapping image to be returned. Use commas to separate multiple types."
+                    "example": "wrinkle_mark,right_nasolabial_list,right_mouth_list,right_eye_wrinkle_list,right_crowsfeet_list,right_cheek_list,left_nasolabial_list,left_mouth_list,left_eye_wrinkle_list,left_crowsfeet_list,left_cheek_list,glabella_wrinkle_list,forehead_wrinkle_list,dark_circle_outline,sensitivity_mark,melanin_mark,dark_circle_outline,cheekbone_mark",
+                    "description": "Specifies the problem area marks to return, including coordinates and related information. Multiple values can be provided as a comma-separated list. See [`return_marks`](/docs/ai-portrait/analysis/skin-analysis-pro/request#return_marks)."
                   },
                   "roi_outline_color": {
                     "type": "string",
-                    "description": "Customize the color."
+                    "default": "{\"pores_color\":\"0000FF\",\"blackhead_color\":\"FF0000\",\"wrinkle_color\":\"6E9900\",\"fine_line_color\":\"8DFE2A\",\"closed_comedones_color\":\"00FF00\",\"acne_pustule_color\":\"9F21F6\",\"acne_nodule_color\":\"FF00FD\",\"acne_color\":\"FE0100\",\"brown_spot_color\":\"7E2A28\"}",
+                    "description": "Specifies the colors used to highlight problem areas in the image returned by `return_maps`. See [`roi_outline_color`](/docs/ai-portrait/analysis/skin-analysis-pro/request#roi_outline_color)."
                   },
                   "return_side_results": {
                     "type": "string",
-                    "description": "The side face information that needs to be returned. Use commas to separate multiple types."
+                    "example": "jawline_info",
+                    "description": "Specifies the side profile analysis results to return. A side profile image must be provided in the request. Multiple values can be provided as a comma-separated list. See [`return_side_results`](/docs/ai-portrait/analysis/skin-analysis-pro/request#return_side_results)."
                   }
                 }
               }
@@ -6534,7 +6541,54 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "object"
+                  "allOf": [
+                    {
+                      "$ref": "#/components/schemas/PublicResponseFields"
+                    },
+                    {
+                      "type": "object",
+                      "properties": {
+                        "face_rectangle": {
+                          "type": "object",
+                          "description": "Position of the face rectangle box.",
+                          "properties": {
+                            "top": {
+                              "type": "number",
+                              "format": "float",
+                              "description": "Vertical coordinate of the top-left pixel of the rectangle."
+                            },
+                            "left": {
+                              "type": "number",
+                              "format": "float",
+                              "description": "Horizontal coordinate of the top-left pixel of the rectangle."
+                            },
+                            "width": {
+                              "type": "number",
+                              "format": "float",
+                              "description": "Width of the rectangle."
+                            },
+                            "height": {
+                              "type": "number",
+                              "format": "float",
+                              "description": "Height of the rectangle."
+                            }
+                          }
+                        },
+                        "left_side_result": {
+                          "type": "object",
+                          "description": "Results of the left side-profile analysis. See [details](/docs/ai-portrait/analysis/skin-analysis-pro/response#left_side_result)."
+                        },
+                        "right_side_result": {
+                          "type": "object",
+                          "description": "Results of the right side-profile analysis. See [details](/docs/ai-portrait/analysis/skin-analysis-pro/response#right_side_result)."
+                        },
+                        "result": {
+                          "type": "object",
+                          "description": "Results of the facial skin analysis. See [details](/docs/ai-portrait/analysis/skin-analysis-pro/response#result)."
+                        }
+                      }
+                    }
+                  ]
                 },
                 "example": {
                   "request_id": "",

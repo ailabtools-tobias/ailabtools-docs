@@ -1,0 +1,85 @@
+---
+sidebarTitle: "Request Reference"
+title: "Skin Analyze Pro Request Reference"
+description: "Reference for the optional skin analysis maps, marks, annotation colors, and side-profile results."
+---
+
+## `return_maps`
+
+Available skin analysis map types in the response.
+
+| Field                         | Description                                                                                                             | Return image information                                                                                                                                                     |
+|:------------------------------|:------------------------------------------------------------------------------------------------------------------------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `red_area`                    | The red area image displays regions of facial redness caused by sensitivity or inflammation.                            | White background red area image, where the depth of the red color indicates the level of sensitivity.                                                                        |
+| `brown_area`                  | The brown area image displays regions of facial pigmentation.                                                           | White background brown area image, where the depth of the brown color indicates the level of pigmentation.                                                                   |
+| `texture_enhanced_pores`      | The enlarged pores area image of the face.                                                                              | Transparent background PNG, annotating enlarged pore areas. The image size is the same as the original, allowing for overlay and comparison with the original image.         |
+| `texture_enhanced_blackheads` | The blackhead area image of the face.                                                                                   | Transparent background PNG, annotating blackhead areas. The image size is the same as the original, allowing for overlay and comparison with the original image.             |
+| `texture_enhanced_oily_area`  | The oily areas image of the face.                                                                                       | Transparent background PNG, annotating facial oily areas. The image size is the same as the original, allowing for overlay and comparison with the original image.           |
+| `texture_enhanced_lines`      | The facial texture image highlights prominent deep and shallow wrinkles on the face.                                    | Transparent background PNG, annotating facial wrinkles. The image size is the same as the original, allowing for overlay and comparison with the original image.             |
+| `water_area`                  | The facial moisture image shows areas of dryness on the face. Darker blue indicates greater levels of skin dehydration. | White background PNG, annotating facial dryness areas. The image size is the same as the original.                                                                           |
+| `rough_area`                  | The facial roughness image displays areas of roughness on the face.                                                     | White background PNG, annotating facial roughness areas. The image size is the same as the original.                                                                         |
+| `roi_outline_map`             | The image for plotting coordinates of facial spots and acne.                                                            | Transparent background PNG, annotating facial spots and acne areas. The image size is the same as the original, allowing for overlay and comparison with the original image. |
+| `texture_enhanced_bw`         | The black-and-white enhanced image for facial blackheads and enlarged pores.                                            | JPG, with cropping. The API returns coordinates and cropping ratios, which can be mapped to pixel coordinates in the original image.                                         |
+| `right_roi_outline_map`       | Right-side facial spot and acne coordinate map.                                                                         | Transparent background PNG, marking facial spots and acne areas, with the same size as the original image, allowing for overlay and comparison with the original.            |
+| `left_roi_outline_map`        | Left-side facial spot and acne coordinate map.                                                                          | Transparent background PNG, marking facial spots and acne areas, with the same size as the original image, allowing for overlay and comparison with the original.            |
+
+## `return_marks`
+
+Available problem-area marks, including coordinates and related information, in the response.
+
+| Field                    | Description                                                                                              |
+|:-------------------------|:---------------------------------------------------------------------------------------------------------|
+| `wrinkle_mark`           | Contour coordinates for the facial areas: forehead, nose, crow's feet, cheeks, and between the eyebrows. |
+| `right_nasolabial_list`  | Coordinates, depth, and length of the right nasolabial fold wrinkles.                                    |
+| `right_mouth_list`       | Coordinates, depth, and length of the right mouth corner wrinkles.                                       |
+| `right_eye_wrinkle_list` | Coordinates, depth, and length of the right eye area wrinkles.                                           |
+| `right_crowsfeet_list`   | Coordinates, depth, and length of the right eye area crow's feet wrinkles.                               |
+| `right_cheek_list`       | Coordinates, depth, and length of the right cheek wrinkles.                                              |
+| `left_nasolabial_list`   | Coordinates, depth, and length of the left nasolabial fold wrinkles.                                     |
+| `left_mouth_list`        | Coordinates, depth, and length of the left mouth corner wrinkles.                                        |
+| `left_eye_wrinkle_list`  | Coordinates, depth, and length of the left eye area wrinkles.                                            |
+| `left_crowsfeet_list`    | Coordinates, depth, and length of the left eye area crow's feet wrinkles.                                |
+| `left_cheek_list`        | Coordinates, depth, and length of the left cheek wrinkles.                                               |
+| `glabella_wrinkle_list`  | Coordinates, depth, and length of the wrinkles between the eyebrows.                                     |
+| `forehead_wrinkle_list`  | Coordinates, depth, and length of the forehead wrinkles.                                                 |
+| `dark_circle_outline`    | Coordinates of the contour lines for dark circles under the left and right eyes.                         |
+| `sensitivity_mark`       | Coordinates of the red areas, indicating regions of facial redness due to sensitivity or inflammation.   |
+| `melanin_mark`           | Coordinates of the pigmentation areas, indicating regions of facial pigmentation.                        |
+| `dark_circle_outline`    | Coordinates of the contour lines for dark circles under the left and right eyes.                         |
+| `cheekbone_mark`         | Coordinates of the facial apple cheeks.                                                                  |
+
+## `roi_outline_color`
+
+Color settings used to highlight problem areas in images returned by `return_maps`.
+
+| Field                    | Default  | Description                                                                        |
+|:-------------------------|:---------|:-----------------------------------------------------------------------------------|
+| `pores_color`            | `0000FF` | Pore Color: Draw the `return_maps > texture_enhanced_pores` issue image.           |
+| `blackhead_color`        | `FF0000` | Blackhead Color: Draw the `return_maps > texture_enhanced_blackheads` issue image. |
+| `wrinkle_color`          | `6E9900` | Deep Wrinkle Color: Draw the `return_maps > texture_enhanced_lines` issue image.   |
+| `fine_line_color`        | `8DFE2A` | Fine Wrinkle Color: Draw the `return_maps > texture_enhanced_lines` issue image.   |
+| `closed_comedones_color` | `00FF00` | Closed Comedone Color: Draw the `return_maps > roi_outline_map` issue image.       |
+| `acne_pustule_color`     | `9F21F6` | Pustule Color: Draw the `return_maps > roi_outline_map` issue image.               |
+| `acne_nodule_color`      | `FF00FD` | Nodule Color: Draw the `return_maps > roi_outline_map` issue image.                |
+| `acne_color`             | `FE0100` | Papule Color: Draw the `return_maps > roi_outline_map` issue image.                |
+| `brown_spot_color`       | `7E2A28` | Pigmentation Color: Draw the `return_maps > roi_outline_map` issue image.          |
+
+<Tip>
+  Example: The format `CC00FF` represents the following RGB values:
+
+  - **R (Red)**: CC (204 in decimal)
+  - **G (Green)**: 00 (0 in decimal)
+  - **B (Blue)**: FF (255 in decimal)
+
+  The input format is restricted to a 6-digit hexadecimal string, case-insensitive.
+
+  If no modifications are made, the default color parameters will be used for drawing.
+</Tip>
+
+## `return_side_results`
+
+Available side-profile analysis results in the response.
+
+| Field          | Description                                                                                                                                                                                                                                                                                                                                                        |
+|:---------------|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `jawline_info` | Includes profile image quality assessment, jawline angle, and jawline coordinates in the `left_side_result` and `right_side_result` structures. |

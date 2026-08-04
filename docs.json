@@ -26,6 +26,9 @@
   "api":             {
     "playground": {
       "proxy": false
+    },
+    "examples": {
+      "prefill": true
     }
   },
   "seo":             {
@@ -552,17 +555,10 @@
                     "pages": [
                       "docs/ai-portrait/analysis/skin-analysis-pro",
                       "docs/ai-portrait/analysis/skin-analysis-pro/api",
+                      "docs/ai-portrait/analysis/skin-analysis-pro/request",
+                      "docs/ai-portrait/analysis/skin-analysis-pro/response",
                       "docs/ai-portrait/analysis/skin-analysis-pro/degree-score",
-                      {
-                        "group": "Version Logs",
-                        "icon":  "clock-rotate-left",
-                        "pages": [
-                          "docs/ai-portrait/analysis/skin-analysis-pro/api-v171",
-                          "docs/ai-portrait/analysis/skin-analysis-pro/api-v166",
-                          "docs/ai-portrait/analysis/skin-analysis-pro/api-v162",
-                          "docs/ai-portrait/analysis/skin-analysis-pro/api-v151"
-                        ]
-                      }
+                      "docs/ai-portrait/analysis/skin-analysis-pro/version-logs"
                     ]
                   },
                   {
