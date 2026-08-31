@@ -146,7 +146,6 @@
                     },
                     {
                       "type": "object",
-
                       "properties": {
                         "data": {
                           "type": "array",
@@ -264,7 +263,6 @@
                     },
                     {
                       "type": "object",
-
                       "properties": {
                         "task_status": {
                           "type": "integer",
@@ -412,7 +410,6 @@
                     },
                     {
                       "type": "object",
-
                       "properties": {
                         "task_id": {
                           "$ref": "#/components/schemas/AsyncTaskId"
@@ -816,7 +813,6 @@
                     },
                     {
                       "type": "object",
-
                       "properties": {
                         "task_id": {
                           "$ref": "#/components/schemas/AsyncTaskId"
@@ -1386,7 +1382,6 @@
                     },
                     {
                       "type": "object",
-
                       "properties": {
                         "task_id": {
                           "$ref": "#/components/schemas/AsyncTaskId"
@@ -1733,7 +1728,6 @@
                     },
                     {
                       "type": "object",
-
                       "properties": {
                         "task_id": {
                           "$ref": "#/components/schemas/AsyncTaskId"
@@ -2099,7 +2093,6 @@
                     },
                     {
                       "type": "object",
-
                       "properties": {
                         "task_id": {
                           "$ref": "#/components/schemas/AsyncTaskId"
@@ -2411,7 +2404,6 @@
                     },
                     {
                       "type": "object",
-
                       "properties": {
                         "task_id": {
                           "$ref": "#/components/schemas/AsyncTaskId"
@@ -2482,7 +2474,6 @@
                     },
                     {
                       "type": "object",
-
                       "properties": {
                         "task_id": {
                           "$ref": "#/components/schemas/AsyncTaskId"
@@ -2553,7 +2544,6 @@
                     },
                     {
                       "type": "object",
-
                       "properties": {
                         "task_id": {
                           "$ref": "#/components/schemas/AsyncTaskId"
@@ -2648,7 +2638,6 @@
                     },
                     {
                       "type": "object",
-
                       "properties": {
                         "task_id": {
                           "$ref": "#/components/schemas/AsyncTaskId"
@@ -2841,7 +2830,6 @@
                     },
                     {
                       "type": "object",
-
                       "properties": {
                         "task_id": {
                           "$ref": "#/components/schemas/AsyncTaskId"
@@ -3155,7 +3143,6 @@
                     },
                     {
                       "type": "object",
-
                       "properties": {
                         "task_id": {
                           "$ref": "#/components/schemas/AsyncTaskId"
@@ -3236,7 +3223,6 @@
                     },
                     {
                       "type": "object",
-
                       "properties": {
                         "task_id": {
                           "$ref": "#/components/schemas/AsyncTaskId"
@@ -3322,7 +3308,6 @@
                     },
                     {
                       "type": "object",
-
                       "properties": {
                         "task_id": {
                           "$ref": "#/components/schemas/AsyncTaskId"
@@ -3403,7 +3388,6 @@
                     },
                     {
                       "type": "object",
-
                       "properties": {
                         "task_id": {
                           "$ref": "#/components/schemas/AsyncTaskId"
@@ -3474,7 +3458,6 @@
                     },
                     {
                       "type": "object",
-
                       "properties": {
                         "task_id": {
                           "$ref": "#/components/schemas/AsyncTaskId"
@@ -3566,7 +3549,6 @@
                     },
                     {
                       "type": "object",
-
                       "properties": {
                         "task_id": {
                           "$ref": "#/components/schemas/AsyncTaskId"
@@ -3685,7 +3667,6 @@
                     },
                     {
                       "type": "object",
-
                       "properties": {
                         "task_id": {
                           "$ref": "#/components/schemas/AsyncTaskId"
@@ -3756,7 +3737,6 @@
                     },
                     {
                       "type": "object",
-
                       "properties": {
                         "task_id": {
                           "$ref": "#/components/schemas/AsyncTaskId"
@@ -3827,7 +3807,6 @@
                     },
                     {
                       "type": "object",
-
                       "properties": {
                         "task_id": {
                           "$ref": "#/components/schemas/AsyncTaskId"
@@ -3898,7 +3877,6 @@
                     },
                     {
                       "type": "object",
-
                       "properties": {
                         "task_id": {
                           "$ref": "#/components/schemas/AsyncTaskId"
@@ -4042,7 +4020,6 @@
                     },
                     {
                       "type": "object",
-
                       "properties": {
                         "task_id": {
                           "$ref": "#/components/schemas/AsyncTaskId"
@@ -7723,7 +7700,6 @@
                     },
                     {
                       "type": "object",
-
                       "properties": {
                         "task_id": {
                           "$ref": "#/components/schemas/AsyncTaskId"
@@ -7944,7 +7920,6 @@
                     },
                     {
                       "type": "object",
-
                       "properties": {
                         "task_id": {
                           "$ref": "#/components/schemas/AsyncTaskId"
@@ -8786,16 +8761,30 @@
             "multipart/form-data": {
               "schema": {
                 "type": "object",
+                "required": [
+                  "task_type",
+                  "image",
+                  "mask"
+                ],
                 "properties": {
+                  "task_type": {
+                    "type": "string",
+                    "enum": [
+                      "async",
+                      "sync"
+                    ],
+                    "default": "sync",
+                    "description": "Task Type. \n- `async`: Asynchronous tasks. **Recommended for all new tasks and will be enforced in future updates.** \n- `sync`: Synchronous tasks."
+                  },
                   "image": {
                     "type": "string",
                     "format": "binary",
-                    "description": "Original image."
+                    "description": "Original image. - Image format: `JPEG` `JPG` `PNG` \n- Image size: No more than 5 MB. \n- Image resolution: Less than 4096x4096px."
                   },
                   "mask": {
                     "type": "string",
                     "format": "binary",
-                    "description": "Mask image."
+                    "description": "Mask image. - Image format: `JPEG` `JPG` `PNG` \n- Image size: No more than 5 MB. \n- Image resolution: Less than 4096x4096px."
                   }
                 }
               }
@@ -8815,18 +8804,48 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "object"
+                  "allOf": [
+                    {
+                      "$ref": "#/components/schemas/PublicResponseFields"
+                    },
+                    {
+                      "type": "object",
+                      "properties": {
+                        "task_id": {
+                          "$ref": "#/components/schemas/AsyncTaskId"
+                        }
+                      }
+                    }
+                  ]
                 },
-                "example": {
-                  "request_id": "",
-                  "log_id": "",
-                  "error_detail": {
-                    "code": "",
-                    "code_message": "",
-                    "message": ""
+                "examples": {
+                  "async": {
+                    "summary": "Async",
+                    "value": {
+                      "request_id": "",
+                      "log_id": "",
+                      "error_detail": {
+                        "code": "",
+                        "code_message": "",
+                        "message": ""
+                      },
+                      "task_id": ""
+                    }
                   },
-                  "data": {
-                    "image_url": ""
+                  "sync": {
+                    "summary": "Sync",
+                    "value": {
+                      "request_id": "",
+                      "log_id": "",
+                      "error_detail": {
+                        "code": "",
+                        "code_message": "",
+                        "message": ""
+                      },
+                      "data": {
+                        "image_url": ""
+                      }
+                    }
                   }
                 }
               }
@@ -8848,16 +8867,20 @@
             "multipart/form-data": {
               "schema": {
                 "type": "object",
+                "required": [
+                  "image",
+                  "mask"
+                ],
                 "properties": {
                   "image": {
                     "type": "string",
                     "format": "binary",
-                    "description": "Original image."
+                    "description": "Original image. - Image format: `JPEG` `JPG` `PNG` \n- Image size: No more than 5 MB. \n- Image resolution: Less than 4096x4096px."
                   },
                   "mask": {
                     "type": "string",
                     "format": "binary",
-                    "description": "Mask image."
+                    "description": "Mask image. - Image format: `JPEG` `JPG` `PNG` \n- Image size: No more than 5 MB. \n- Image resolution: Less than 4096x4096px."
                   }
                 }
               }
@@ -8877,7 +8900,26 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "object"
+                  "allOf": [
+                    {
+                      "$ref": "#/components/schemas/PublicResponseFields"
+                    },
+                    {
+                      "type": "object",
+                      "properties": {
+                        "data": {
+                          "type": "object",
+                          "description": "The content of the result data returned.",
+                          "properties": {
+                            "image_url": {
+                              "type": "string",
+                              "description": "Result image URL."
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
                 },
                 "example": {
                   "request_id": "",
@@ -10041,7 +10083,6 @@
                     },
                     {
                       "type": "object",
-
                       "properties": {
                         "task_id": {
                           "$ref": "#/components/schemas/AsyncTaskId"
@@ -10465,7 +10506,6 @@
                     },
                     {
                       "type": "object",
-
                       "properties": {
                         "data": {
                           "type": "object",
@@ -10545,7 +10585,6 @@
                     },
                     {
                       "type": "object",
-
                       "properties": {
                         "data": {
                           "type": "object",
@@ -10632,7 +10671,6 @@
                     },
                     {
                       "type": "object",
-
                       "properties": {
                         "data": {
                           "type": "object",
@@ -10749,7 +10787,6 @@
                     },
                     {
                       "type": "object",
-
                       "properties": {
                         "data": {
                           "type": "object",
