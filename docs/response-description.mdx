@@ -79,6 +79,9 @@ title: "Response Description"
 | 404         | `ERROR_USER_NOT_FOUND`                      | User not found.                                                                                                 |
 | 404         | `ERROR_FACE_TOKEN_NOT_FOUND`                | Face token not found.                                                                                           |
 | 404         | `ERROR_CONTENT_NOT_FOUND`                   | Content not found.                                                                                              |
+| 404         | `ERROR_USER_NOT_EXISTS`                     | The user does not exist.                                                                                        |
+| 404         | `ERROR_APPLICATIONS_NOT_EXISTS`             | The application does not exist.                                                                                 |
+| 404         | `ERROR_AI_NOT_EXISTS`                       | AI does not exist or has been deactivated, please contact the platform.                                         |
 | 405         | `ERROR_METHOD_NOT_ALLOWED`                  | The request method is not allowed.                                                                              |
 | 406         | `ERROR_NOT_ACCEPTABLE`                      | The server cannot produce a response matching the request requirements.                                         |
 | 406         | `ERROR_INVALID_RESPONSE_FORMAT`             | Incorrect response format (Accept not supported).                                                               |
@@ -173,12 +176,14 @@ title: "Response Description"
 | 422         | `ERROR_POSE_NOT_ENOUGH_KEYPOINTS`           | Pose detection failed: Not enough keypoints were detected.                                                      |
 | 422         | `ERROR_FACE_COUNT_INVALID`                  | Face detection failed: The number of detected faces does not meet the requirements.                             |
 | 423         | `ERROR_LOCKED`                              | The requested resource is locked.                                                                               |
+| 423         | `ERROR_USER_LOCKED`                         | The user is locked.                                                                                             |
 | 424         | `ERROR_FAILED_DEPENDENCY`                   | The request failed because a dependent operation failed.                                                        |
 | 425         | `ERROR_TOO_EARLY`                           | The request is too early and may be replayed.                                                                   |
 | 426         | `ERROR_UPGRADE_REQUIRED`                    | A protocol upgrade is required.                                                                                 |
 | 428         | `ERROR_PRECONDITION_REQUIRED`               | The request must include the required preconditions.                                                            |
 | 429         | `ERROR_TOO_MANY_REQUESTS`                   | Too many requests. Please try again later.                                                                      |
 | 429         | `ERROR_BATCH_TASK_LIMIT_EXCEEDED`           | Batch task processing limit exceeded.                                                                           |
+| 429         | `ERROR_NOT_ENOUGH_CREDITS`                  | Insufficient credits.                                                                                           |
 | 431         | `ERROR_REQUEST_HEADER_FIELDS_TOO_LARGE`     | Request header fields are too large.                                                                            |
 | 451         | `ERROR_UNAVAILABLE_FOR_LEGAL_REASONS`       | The requested resource is unavailable for legal reasons.                                                        |
 | 500         | `ERROR_INTERNAL_SERVER_ERROR`               | Internal server error. Please try again later. If not resolved promptly, contact the platform.                  |
@@ -189,7 +194,7 @@ title: "Response Description"
 | 501         | `ERROR_IMAGE_STORAGE_NOT_SUPPORTED`         | Image storage not supported.                                                                                    |
 | 502         | `ERROR_BAD_GATEWAY`                         | Bad gateway. Please try again later. If not resolved promptly, contact the platform.                            |
 | 502         | `AI_SERVICE_ERROR`                          | AI service error. Please try again later. If not resolved promptly, contact the platform.                       |
-| 502         | `PROCESSING_FAILURE`                        | Processing failed.                                                                                              |
+| 502         | `PROCESSING_FAILURE`                        | Processing failure.                                                                                             |
 | 502         | `ERROR_FILE_DOWNLOAD_FAILED`                | File download failed.                                                                                           |
 | 502         | `ERROR_FILE_UPLOAD_FAILED`                  | File upload failed.                                                                                             |
 | 502         | `ERROR_DATA_TRANSFER_FAILED`                | Data transfer (download or upload) failed.                                                                      |
@@ -200,6 +205,7 @@ title: "Response Description"
 | 502         | `AI_SERVICE_INTERNAL_ERROR`                 | AI service internal error. Please try again later. If not resolved promptly, contact the platform.              |
 | 502         | `AI_SERVICE_UNAUTHORIZED`                   | AI service unauthorized. Please try again later. If not resolved promptly, contact the platform.                |
 | 502         | `AI_SERVICE_NOT_FOUND`                      | AI service not found. Please try again later. If not resolved promptly, contact the platform.                   |
+| 502         | `ERROR_GATEWAY`                             | Gateway error, please try again later. If it is not resolved in time, please contact the platform.              |
 | 503         | `ERROR_SERVICE_UNAVAILABLE`                 | The service is temporarily unavailable. Please try again later. If not resolved promptly, contact the platform. |
 | 503         | `ERROR_INSUFFICIENT_RESOURCES`              | Insufficient resources.                                                                                         |
 | 503         | `ERROR_RESOURCE_UNAVAILABLE`                | Resource temporarily unavailable.                                                                               |
