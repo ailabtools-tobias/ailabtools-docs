@@ -152,7 +152,6 @@
                           "description": "Credit entries grouped by API.",
                           "items": {
                             "type": "object",
-
                             "properties": {
                               "unique_sign": {
                                 "type": "string",
@@ -238,6 +237,7 @@
           {
             "name": "task_id",
             "in": "query",
+            "required": true,
             "schema": {
               "type": "string"
             },
@@ -298,7 +298,6 @@
         }
       }
     },
-
     "/api/portrait/effects/portrait-animation": {
       "post": {
         "tags": [
@@ -480,7 +479,6 @@
                   },
                   "source_similarity": {
                     "type": "number",
-                    "format": "float",
                     "enum": [
                       0,
                       0.1,
@@ -1061,32 +1059,32 @@
                   "whitening": {
                     "type": "integer",
                     "description": "Whitening Degree. `0` means no whitening effect, `100` represents the highest degree.",
-                    "example": "50"
+                    "example": 50
                   },
                   "smoothing": {
                     "type": "integer",
                     "description": "Smoothing Degree. `0` means no smoothing effect, `100` represents the highest degree.",
-                    "example": "50"
+                    "example": 50
                   },
                   "thinface": {
                     "type": "integer",
                     "description": "Face Slimming Degree. `0` means no face slimming effect, `100` represents the highest degree.",
-                    "example": "50"
+                    "example": 50
                   },
                   "shrink_face": {
                     "type": "integer",
                     "description": "Small Face Degree. `0` means no small face effect, `100` represents the highest degree.",
-                    "example": "50"
+                    "example": 50
                   },
                   "enlarge_eye": {
                     "type": "integer",
                     "description": "Big Eyes Degree. `0` means no big eyes effect, `100` represents the highest degree.",
-                    "example": "50"
+                    "example": 50
                   },
                   "remove_eyebrow": {
                     "type": "integer",
                     "description": "Eyebrow Removal Degree. `0` means no eyebrow removal effect, `100` represents the highest degree.",
-                    "example": "50"
+                    "example": 50
                   },
                   "filter_type": {
                     "type": "string",
@@ -1161,17 +1159,116 @@
             "multipart/form-data": {
               "schema": {
                 "type": "object",
+                "required": [
+                  "image",
+                  "resource_type"
+                ],
                 "properties": {
                   "image": {
                     "type": "string",
-                    "format": "binary"
+                    "format": "binary",
+                    "description": "- Image format: `JPEG` `JPG` `PNG` `BMP` \n- Image size: No more than 5 MB. \n- Image resolution: Less than 4096x4096px."
                   },
                   "resource_type": {
-                    "type": "string",
-                    "description": "Picture style."
+                    "type": "integer",
+                    "description": "Effects. See [Supported resource_type values](/docs/ai-portrait/effects/face-filter/api#resource_type).",
+                    "enum": [
+                      10001,
+                      10002,
+                      10003,
+                      10004,
+                      10005,
+                      10006,
+                      10007,
+                      10008,
+                      10009,
+                      10010,
+                      10011,
+                      10012,
+                      10013,
+                      10014,
+                      10015,
+                      10016,
+                      10017,
+                      10018,
+                      10019,
+                      10020,
+                      10021,
+                      10022,
+                      10023,
+                      10024,
+                      10025,
+                      10026,
+                      10027,
+                      10028,
+                      10029,
+                      10030,
+                      10031,
+                      10032,
+                      10033,
+                      10034,
+                      10035,
+                      10036,
+                      10037,
+                      10038,
+                      10039,
+                      10040,
+                      10041,
+                      10042,
+                      10043,
+                      10044,
+                      10045,
+                      10046,
+                      10047,
+                      10048,
+                      10049,
+                      10050,
+                      10051,
+                      10052,
+                      10053,
+                      10054,
+                      10055,
+                      10056,
+                      10057,
+                      10058,
+                      10059,
+                      10060,
+                      10061,
+                      10062,
+                      10063,
+                      10064,
+                      10065,
+                      10066,
+                      10067,
+                      10068,
+                      10069,
+                      10070,
+                      10071,
+                      10072,
+                      10073,
+                      10074,
+                      10075,
+                      10076,
+                      10077,
+                      10078
+                    ]
                   },
                   "strength": {
-                    "type": "string",
+                    "type": "number",
+                    "enum": [
+                      0,
+                      0.1,
+                      0.2,
+                      0.3,
+                      0.4,
+                      0.5,
+                      0.6,
+                      0.7,
+                      0.8,
+                      0.9,
+                      1.0
+                    ],
+                    "default": 0.8,
                     "description": "Filter intensity."
                   }
                 }
@@ -1192,7 +1289,26 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "object"
+                  "allOf": [
+                    {
+                      "$ref": "#/components/schemas/PublicResponseFields"
+                    },
+                    {
+                      "type": "object",
+                      "properties": {
+                        "data": {
+                          "type": "object",
+                          "description": "The content of the result data returned.",
+                          "properties": {
+                            "image_url": {
+                              "type": "string",
+                              "description": "Result image URL."
+                            }
+                          }
+                        }
+                      }
+                    }
+                  ]
                 },
                 "example": {
                   "request_id": "",
@@ -2855,7 +2971,6 @@
         }
       }
     },
-
     "/api/portrait/editing/try-on-clothes": {
       "post": {
         "tags": [
@@ -2957,7 +3072,7 @@
                   "resolution": {
                     "type": "number",
                     "description": "Output Image Resolution. If you need to call **[Try on Clothes Refiner](https://documenter.getpostman.com/view/26387069/2s93JxqgHE#75de8e09-37dd-4b31-b4f8-33a666cebb2a)** in the future, select `-1`. \n- `-1`: Original image resolution. \n- `1024`: 576x1024px. \n- `1280`: 720x1280px.",
-                    "example": "-1"
+                    "example": -1
                   },
                   "restore_face": {
                     "type": "boolean",
@@ -3038,7 +3153,7 @@
                   "resolution": {
                     "type": "number",
                     "description": "Output Image Resolution. If you need to call **[Try on Clothes Refiner](https://documenter.getpostman.com/view/26387069/2s93JxqgHE#75de8e09-37dd-4b31-b4f8-33a666cebb2a)** in the future, select `-1`. \n- `-1`: Original image resolution. \n- `1024`: 576x1024px. \n- `1280`: 720x1280px.",
-                    "example": "-1"
+                    "example": -1
                   },
                   "restore_face": {
                     "type": "boolean",
@@ -4045,7 +4160,6 @@
         }
       }
     },
-
     "/api/portrait/enhance/try-on-clothes-refiner": {
       "post": {
         "tags": [
@@ -4127,7 +4241,6 @@
         }
       }
     },
-
     "/api/portrait/analysis/face-key-points": {
       "post": {
         "tags": [
@@ -7725,7 +7838,6 @@
         }
       }
     },
-
     "/api/image/generation/ai-flower-wallpaper": {
       "post": {
         "tags": [
@@ -7814,7 +7926,6 @@
         }
       }
     },
-
     "/api/image/effects/ai-anime-generator": {
       "post": {
         "tags": [
@@ -8315,7 +8426,6 @@
         }
       }
     },
-
     "/api/image/editing/image-cropping": {
       "post": {
         "tags": [
@@ -8970,17 +9080,17 @@
                   "steps": {
                     "type": "integer",
                     "description": "Sampling steps determine the level of detail in the generated image. A higher value may result in better quality, but it will significantly increase the processing time.",
-                    "example": "25"
+                    "example": 25
                   },
                   "scale": {
                     "type": "integer",
                     "description": "The degree to which the text description influences the output.",
-                    "example": "5"
+                    "example": 5
                   },
                   "seed": {
                     "type": "number",
                     "description": "Random seed, used as the basis for determining the initial state of the diffusion process. It must be a non-negative number (`-1` represents a random seed). If the random seed is the same positive integer and all other parameters are identical, the generated image will most likely be consistent.",
-                    "example": "-1"
+                    "example": -1
                   }
                 }
               }
@@ -9047,52 +9157,57 @@
                   "steps": {
                     "type": "integer",
                     "description": "Sampling steps determine the level of detail in the generated image. A higher value may result in better quality, but it will significantly increase the processing time.",
-                    "example": "30"
+                    "example": 30
                   },
                   "strength": {
                     "type": "number",
+                    "format": "float",
                     "description": "The smaller the value, the closer it is to the original image.",
-                    "example": "0.8"
+                    "example": 0.8
                   },
                   "scale": {
                     "type": "integer",
                     "description": "The degree to which the text description influences the output.",
-                    "example": "7"
+                    "example": 7
                   },
                   "seed": {
                     "type": "integer",
                     "description": "Random seed, used as the basis for determining the initial state of the diffusion process. It must be a non-negative number (`-1` represents a random seed). If the random seed is the same positive integer and all other parameters are identical, the generated image will most likely be consistent.",
-                    "example": "0"
+                    "example": 0
                   },
                   "top": {
                     "type": "number",
+                    "format": "float",
                     "description": "Upward expansion ratio.",
-                    "example": "0.1"
+                    "example": 0.1
                   },
                   "bottom": {
                     "type": "number",
+                    "format": "float",
                     "description": "Downward expansion ratio.",
-                    "example": "0.1"
+                    "example": 0.1
                   },
                   "left": {
                     "type": "number",
+                    "format": "float",
                     "description": "Leftward expansion ratio.",
-                    "example": "0.1"
+                    "example": 0.1
                   },
                   "right": {
                     "type": "number",
+                    "format": "float",
                     "description": "Rightward expansion ratio.",
-                    "example": "0.1"
+                    "example": 0.1
                   },
                   "max_height": {
                     "type": "integer",
                     "description": "Maximum output height. Resized to the specified dimensions as a fallback after the image expansion process.",
-                    "example": "1920"
+                    "example": 1920
                   },
                   "max_width": {
                     "type": "integer",
                     "description": "Maximum output width. Resized to the specified dimensions as a fallback after the image expansion process.",
-                    "example": "1920"
+                    "example": 1920
                   }
                 }
               }
@@ -9280,7 +9395,6 @@
         }
       }
     },
-
     "/api/image/enhance/image-defogging": {
       "post": {
         "tags": [
@@ -9784,7 +9898,6 @@
         }
       }
     },
-
     "/api/image/rating/image-composition-aesthetics-scoring": {
       "post": {
         "tags": [
@@ -9949,7 +10062,6 @@
         }
       }
     },
-
     "/api/cutout/general/universal-background-removal": {
       "post": {
         "tags": [
@@ -10451,7 +10563,6 @@
         }
       }
     },
-
     "/api/cutout/portrait/portrait-background-removal": {
       "post": {
         "tags": [
