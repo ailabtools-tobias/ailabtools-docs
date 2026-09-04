@@ -2722,10 +2722,16 @@
                     "description": "Output Image Aspect Ratio.",
                     "enum": [
                       "1:1",
+                      "2:3",
+                      "3:2",
                       "3:4",
                       "4:3",
+                      "4:5",
+                      "5:4",
                       "9:16",
-                      "16:9"
+                      "9:21",
+                      "16:9",
+                      "21:9"
                     ],
                     "default": "1:1"
                   }
@@ -3226,7 +3232,7 @@
                   "name": {
                     "type": "string",
                     "description": "Contact Lens Name (English only).",
-                    "maxLength": 500
+                    "maxLength": 200
                   },
                   "desc": {
                     "type": "string",
@@ -3306,7 +3312,7 @@
                   "name": {
                     "type": "string",
                     "description": "Eyelash Name (English only).",
-                    "maxLength": 500
+                    "maxLength": 200
                   },
                   "desc": {
                     "type": "string",
@@ -3471,7 +3477,7 @@
                   "name": {
                     "type": "string",
                     "description": "Hair Color Name (English only).",
-                    "maxLength": 500
+                    "maxLength": 200
                   },
                   "desc": {
                     "type": "string",
